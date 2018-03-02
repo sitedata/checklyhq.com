@@ -1,0 +1,50 @@
+.plans {
+
+  .plans-header {
+    text-align: center;
+    height: 110px;
+  }
+
+  .plans-card {
+    padding: 1rem 0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-color: $gray-light;
+    border: 0;
+
+    .card-header {
+      padding-bottom: 0;
+    }
+
+    .car-block {
+      padding: 1rem 1rem 0 1rem;
+    }
+
+    .table {
+      tr {
+        text-align: center;
+      }
+      td {
+        padding: .75rem;
+      }
+    }
+  }
+
+  .price-block {
+    font-size: $font-size-sm;
+    color: $gray;
+    .dollar-sign {
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: $font-weight-normal;
+      transform: translateY(3px) translateX(-3px);
+      vertical-align: super;
+      color: $gray-dark;
+    }
+    .price {
+      font-size: 2.5rem;
+      margin-right: .2rem;
+      color: $gray-dark;
+    }
+  }
+}

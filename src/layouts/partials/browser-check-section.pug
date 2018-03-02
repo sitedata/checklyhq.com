@@ -1,0 +1,110 @@
+section.browser-checks-section
+  .container
+    .row
+      .col-sm-12.text-center
+        h2.section-header No more broken shopping carts
+    .row
+      .col-sm-12.col-lg-8.offset-lg-2.text-center
+        p.lead-text.mb-2.pb-0
+          | Write a Node.JS script using Google's Puppeteer framework or modify one of the examples.
+          | Check your most crucial user flows every 5 minutes.
+    .row
+      .col-sm-12.text-center.mb-4
+        a.info-link(href='#faq') Wait, how does this work?
+    //.row.mb-2
+    //  .col-sm-12.text-center
+    //    form.form
+    //      .row
+    //        .col-sm-6.col-lg-3.offset-lg-3
+    //          .form-group
+    //            button.btn.btn-primary.btn-block(@click.prevent='postBrowserCheck()', :disabled='checkIsBusy') Run browser check
+    //              .btn-spinner(v-if='checkIsBusy')
+    //        .col-sm-6.col-lg-3
+    //          .form-group
+    //            select.custom-select(v-model='browserCheck', @change='showEditor = true')
+    //              option(v-for='example in browserExamples', :value='example') {{example.name}}
+    //.row.mb-3
+    //  .col-sm-12.col-lg-10.offset-lg-1.font-height
+    //    a(href='#', @click.prevent='showEditor = !showEditor', v-show='!showEditor') Back to editor
+    //.row
+    //  .col-sm-12.col-lg-10.offset-lg-1
+    //    transition(name='drop-up', mode='out-in')
+    //      .editor.big-drop-shadow(v-if='showEditor', key='editor')
+    //        codemirror(v-model='browserCheck.script', :options='editorOptions')
+    //      .browser-check-results.big-drop-shadow(v-else, key='results')
+    //        transition(name='drop-down', mode='out-in')
+    //          // loading screen
+    //
+    //          .browser-check-results-status(v-if='checkIsBusy && browserCheckResults.length === 0', key='pending')
+    //            .pt-5.text-center
+    //              img.pulse(src='../../assets/browser.svg')
+    //              .text-muted.lead-text {{runBrowserCheckButtonText}}
+    //
+    //          // results
+    //
+    //          div(v-else, key='results')
+    //            .form-section.mb-4
+    //              .form-header {{browserCheck.name}}
+    //
+    //            // Mocha output
+    //
+    //            .results-mocha-output
+    //              table.table(v-if='browserCheckResults.length > 0')
+    //                thead
+    //                  tr
+    //                    th.mocha-table-status Status
+    //                    th Test
+    //                    th.mocha-table-duration Duration
+    //                tbody(name='drop-down', is='transition-group')
+    //                  tr(v-for='(test, index) of browserCheckResults', :key='index')
+    //                    td
+    //                      status-circle(
+    //                      size='small',
+    //                      :muted='false',
+    //                      :hasFailures='test.state !== "passed"',
+    //                      :hasErrors='test.state !== "passed"',
+    //                      :hasStatus='true',
+    //                      :activated='true'
+    //                      )
+    //                    td
+    //                      span(v-if='test.state === "passed"') {{test.title}}
+    //                      span(v-else)
+    //                        .mocha-table-test-result-title(href='#', @click.prevent='toggleShowDetails(index)', :class='{ open : test.showDetails }') {{test.title}}
+    //                        transition(name='drop-down')
+    //                          .mocha-test-details(v-show='test.showDetails')
+    //                            table.table(v-if='test.err')
+    //                              tbody
+    //                                tr
+    //                                  th Actual
+    //                                  td.text-nowrap {{test.err.actual}}
+    //                                tr
+    //                                  th Expected
+    //                                  td.text-nowrap {{test.err.expected}}
+    //                                  td  {{test.err.message}}
+    //
+    //                    td.text-right {{test.duration | duration}} {{test.duration | durationUnit }}
+    //              .text-center.pb-4(v-if='checkIsBusy')
+    //                spinner(inline='true')
+    //            .mocha-tests-summary(v-if='browserCheckResults.length > 0')
+    //              label.form-control-label.mb-3 Summary
+    //              .test-completed.text-muted {{testsCompletedCount}} tests completed
+    //              .tests-failed.text-danger {{testsFailedCount}} tests failed
+    //            .results-wrapper(v-if='checkIsDone')
+    //
+    //              // Puppeteer output logs
+    //
+    //
+    //              .results-console-output(v-show='browserCheckRun.result.consoleLog')
+    //                label.form-control-label.mb-3 Console output
+    //                pre(v-if='browserCheckRun.result.consoleLog') {{browserCheckRun.result.consoleLog}}
+    //                pre(v-else) no output
+    //
+    //            // Errors
+    //
+    //            .browser-check-results-errors
+    //              .text-left(v-if='browserCheckRun.error')
+    //                h5.mb-3 There was an error running your code
+    //                pre
+    //                  | {{browserCheckRun.error.message}}
+    //                  | {{browserCheckRun.error.stack}}
+    //

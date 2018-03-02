@@ -1,0 +1,128 @@
+section.api-checks-section
+  .container
+    .row
+      .col-sm-12.text-center
+        h2.section-header No more broken API's
+    .row
+      .col-sm-12.col-lg-8.offset-lg-2.text-center
+        p.lead-text
+          | Set up your API GET & POST requests and add assertions to check for response time, response content, JSON
+          | schema, headers and many more things.
+          | Try it out below!
+    .row.mb-2
+      .col-sm-12.text-center
+        form.form
+          .row
+            .col-sm-6.col-lg-3.offset-lg-3
+              .form-group
+                button.btn.btn-primary.btn-block(@click.prevent='postApiCheck()', :disabled='apiLoading') {{runApiCheckButtonText}}
+                  .btn-spinner(v-if='apiLoading')
+            .col-sm-6.col-lg-3
+              .form-group
+                select.custom-select(v-model='apiCheck.check.request', @change='showApiResult = false')
+                  option(v-for='example in apiExamples', :value='example') {{example.name}}
+    .row.mb-3
+      .col-sm-12.col-lg-10.offset-lg-1.font-height
+        a(href='#', @click.prevent='showApiResult = false', v-show='showApiResult') Back to HTTP request
+    .row
+      .col-sm-12.col-lg-10.offset-lg-1
+        .api-check-container.big-drop-shadow
+          transition(name='move-right')
+            .form-section.mb-4(v-show='showApiResult')
+              .text-center
+                h4.mb-4(v-show='apiCheck.result.hasFailures || apiCheck.result.hasErrors') Whoops, you're check failed!
+                h4.mb-4(v-show='!apiCheck.result.hasFailures && !apiCheck.result.hasErrors') This check is awesome!
+                .d-inline-block
+                  status-circle.mb-3(
+                  size='large',
+                  muted=false,
+                  activated=true,
+                  has-status=true,
+                  :has-failures='apiCheck.result.hasFailures || apiCheck.result.hasFailures.hasErrors'
+                  )
+              span(v-show='apiCheck.result.hasErrors')
+                h5 Error message
+                pre.mb-2 {{apiCheck.result.response.error}}
+
+              label.form-control-label Request URL
+              pre {{apiCheck.check.request.method}} {{apiCheck.check.request.url}}
+              .row
+                .col-sm-6
+                  label.form-control-label Status code
+                  pre {{apiCheck.result.response.status}}
+                .col-sm-6
+                  label.form-control-label Response time
+                  pre {{apiCheck.result.responseTime | duration}} {{apiCheck.result.responseTime | durationUnit}}
+
+              .assertion-result(v-show='apiCheck.check.request.assertions.length > 0')
+                h5 Assertion results
+                table.table.table-responsive-sm.mb-4(v-show='apiCheck.check.request.assertions.length > 0')
+                  thead
+                    tr
+                      th
+                      th Source
+                      th Property
+                      th Comparison
+                      th Target
+                  tbody
+                    tr(v-for='assertion in apiCheck.result.assertions', :class='{ "table-danger" : assertion.error }')
+                      td
+                        status-circle(
+                        size='small',
+                        muted=false,
+                        activated=true,
+                        has-status=true,
+                        :has-failures='!!(assertion.error)'
+                        )
+                      td {{assertion.source}}
+                      td {{assertion.property}}
+                      td {{assertion.comparison}}
+                      td {{assertion.target}}
+          transition(name='move-left')
+            div(v-show='!showApiResult')
+              .form-section.mb-4
+                .form-header HTTP Request
+                .form-group
+                  .row
+                    .col-2
+                      label.form-control-label
+                        | Method
+                        span.ml-1.text-danger *
+                      select.custom-select(v-model='apiCheck.check.request.method')
+                        option(value='GET') GET
+                        option(value='POST') POST
+                        option(value='PUT') PUT
+                        option(value='HEAD') HEAD
+                        option(value='DELETE') DELETE
+                        option(value='PATCH') PATCH
+                    .col-10
+                      label.form-control-label
+                        | URL
+                        span.ml-1.text-danger *
+                      input.form-control(
+                      v-model='apiCheck.check.request.url'
+                      name='url'
+                      type='text'
+                      )
+              .form-section
+                .form-header Assertions
+                .table-responsive
+                  table.table.check-edit-table.mb-0
+                    thead
+                      tr
+                        th Source
+                        th Property
+                        th Comparison
+                        th Target
+                    tbody
+                      tr(v-for='(assertion, index) of apiCheck.check.request.assertions' v-show='apiCheck.check.request.assertions.length > 0')
+                        td
+                          select.custom-select(v-model='apiCheck.check.request.assertions[index].source')
+                            option(v-for='source in assertionSources', :value='source.value') {{source.text}}
+                        td
+                          input.form-control(type='text', v-model='apiCheck.check.request.assertions[index].property')
+                        td
+                          select.custom-select(v-model='apiCheck.check.request.assertions[index].comparison')
+                            option(v-for='comparison of assertionComparisons', :value='comparison.value') {{comparison.text}}
+                        td
+                          input.form-control(type='text', v-model='apiCheck.check.request.assertions[index].target')

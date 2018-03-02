@@ -9,7 +9,11 @@
     "build": "gulp build",
     "build-preview": "gulp build-preview",
     "start": "gulp server",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "deploy:cacheable": "s3-deploy './dist/**' --cwd './dist/' --region 'eu-central-1' --bucket 'docs.checklyhq.com' --gzip --etag --cache 315360000",
+    "deploy:non-cacheable": "s3-deploy './dist/**/*.html' --cwd './dist/' --region 'eu-central-1' --bucket 'docs.checklyhq.com' --gzip --etag --cache 0",
+    "deploy": "npm run deploy:non-cacheable && npm run deploy:cacheable",
+    "deploy:production": "NODE_ENV=production npm run generate && npm run deploy"
   },
   "author": "",
   "license": "MIT",
@@ -40,7 +44,21 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.0.0",
     "url-loader": "^0.6.2",
+    "vue": "^2.5.13",
     "webpack": "3.10.0",
     "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-html": "^4.0.2",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-rev-all": "^0.9.7",
+    "gulp-sass": "^3.1.0",
+    "run-sequence": "^2.2.1",
+    "s3-deploy": "^0.10.0"
   }
 }

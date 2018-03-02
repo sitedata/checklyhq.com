@@ -5,10 +5,20 @@ export default {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif|webp|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'static/img/[name].[hash:7].[ext]'
+        }
+      },
+      {
         test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
         loader: "file-loader?name=/[hash].[ext]"
       },
-      {test: /\.json$/, loader: "json-loader"},
+      {
+        test: /\.json$/, loader: "json-loader"
+      },
       {
         loader: "babel-loader",
         test: /\.js?$/,
@@ -29,7 +39,7 @@ export default {
     app: ["./js/app"]
   },
   output: {
-    path: path.join(__dirname, "dist"),
+    path: path.join(__dirname, "dist/js"),
     publicPath: "/",
     filename: "[name].js"
   },
