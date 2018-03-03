@@ -35,7 +35,7 @@ gulp.task('build-preview', ['pug', 'css', 'js', 'fonts'], (cb) => buildSite(cb, 
 
 // Compile pug to HTML
 gulp.task('pug', function buildHTML () {
-  gulp.src('./src/layouts/*.pug')
+  gulp.src(['./src/layouts/**/*.pug', '!./src/layouts/partials/**/*'])
     .pipe(pug({
       doctype: 'html',
       pretty: false

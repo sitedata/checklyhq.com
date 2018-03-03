@@ -1,0 +1,85 @@
+include  ../partials/head
+body
+    include ../partials/navbar.pug
+    .main
+        .plans
+            .container
+                .row
+                    .col-sm-12.plans-header
+                        h3 Simple, fair pricing
+                        p Find the perfect plan — 100% satisfaction guaranteed 🍍
+                .row
+                    .col-sm-10.offset-sm-1
+                        .plans-table.d-block
+                            .card-deck
+
+                                // Starter
+
+                                .card.plans-card
+                                    .card-header.text-center
+                                        h5.text-accent Starter
+                                        .price-block
+                                            span.dollar-sign $
+                                            span.price 10
+                                            | / mo
+                                    .card-block.text-center
+                                        table.table.text-left
+                                            tr
+                                                td 10 API checks
+                                            tr
+                                                td 5 Browser checks
+                                            tr
+                                                td 8 regions
+
+                                    .card-footer.text-center
+                                        button.btn.btn-success() Free 15-day trial
+
+                                // Growth
+
+                                .card.plans-card
+                                    .card-header.text-center
+                                        h5.text-success Growth
+                                        .price-block
+                                            span.dollar-sign $
+                                            span.price 20
+                                            | / mo
+                                    .card-block.text-center
+                                        table.table.text-left
+                                            tr
+                                                td 30 API checks
+                                            tr
+                                                td 15 Browser checks
+                                            tr
+                                                td 8 regions
+
+                                    .card-footer.text-center
+                                        button.btn.btn-success() Free 15-day trial
+
+                                // Business
+
+                                .card.plans-card
+                                    .card-header.text-center
+                                        h5.text-primary Business
+                                        .price-block
+                                            span.dollar-sign $
+                                            span.price 30
+                                            | / mo
+                                    .card-block.text-center
+                                        table.table.text-left
+                                            tr
+                                                td 80 API checks
+                                            tr
+                                                td 30 Browser checks
+                                            tr
+                                                td 8 regions
+
+                                    .card-footer.text-center
+                                        button.btn.btn-success() Free 15-day trial
+
+                .row
+                    .col-sm-12.text-center
+                        p.py-3 Don't see a plan that works for you? #[a( href='http://google.com' ) Contact us]
+
+
+
+    include ../partials/footer.pug
