@@ -393,7 +393,7 @@ p {
 }
 
 .public-stats-section {
-  padding-top: $spacer;
+  padding-top: 2 * $spacer;
   padding-bottom: 4 * $spacer;
   .counter-text {
     color: $gray;

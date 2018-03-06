@@ -5,6 +5,7 @@ import gutil from 'gulp-util'
 import postcss from 'gulp-postcss'
 import cssImport from 'postcss-import'
 import cssnext from 'postcss-cssnext'
+import inlineCss from 'gulp-inline-css'
 import sass from 'gulp-sass'
 import pug from 'gulp-pug'
 import revall from 'gulp-rev-all'
@@ -85,6 +86,12 @@ gulp.task('hash', () => {
   gulp.src('./dist/**')
     .pipe(revall.revision({ dontRenameFile: [/^\/favicon.ico$/g, '.html', 'sitemap.xml'] }))
     .pipe(gulp.dest('./dist'))
+})
+
+gulp.task('inline', function() {
+  return gulp.src('./dist/index.html')
+    .pipe(inlineCss())
+    .pipe(gulp.dest('./dist/index.html'))
 })
 
 // Development server with browsersync

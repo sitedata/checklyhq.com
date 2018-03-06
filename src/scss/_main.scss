@@ -1,3 +1,7 @@
 .main {
   min-height: calc(100vh - 196px - 90px); // full height - footer height - navbar height
 }
+
+[v-cloak] {
+  display: none;
+}
