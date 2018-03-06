@@ -15,12 +15,12 @@ section.api-checks-section
           .row
             .col-sm-6.col-lg-3.offset-lg-3
               .form-group
-                button.btn.btn-primary.btn-block(@click.prevent='postApiCheck()', :disabled='apiLoading') {{runApiCheckButtonText}}
+                button.btn.btn-primary.btn-block(@click.prevent='postApiCheck()', :disabled='apiLoading') ${runApiCheckButtonText}
                   .btn-spinner(v-if='apiLoading')
             .col-sm-6.col-lg-3
               .form-group
                 select.custom-select(v-model='apiCheck.check.request', @change='showApiResult = false')
-                  option(v-for='example in apiExamples', :value='example') {{example.name}}
+                  option(v-for='example in apiExamples', :value='example') ${example.name}
     .row.mb-3
       .col-sm-12.col-lg-10.offset-lg-1.font-height
         a(href='#', @click.prevent='showApiResult = false', v-show='showApiResult') Back to HTTP request
@@ -42,17 +42,17 @@ section.api-checks-section
                   )
               span(v-show='apiCheck.result.hasErrors')
                 h5 Error message
-                pre.mb-2 {{apiCheck.result.response.error}}
+                pre.mb-2 ${apiCheck.result.response.error}
 
               label.form-control-label Request URL
-              pre {{apiCheck.check.request.method}} {{apiCheck.check.request.url}}
+              pre ${apiCheck.check.request.method} ${apiCheck.check.request.url}
               .row
                 .col-sm-6
                   label.form-control-label Status code
-                  pre {{apiCheck.result.response.status}}
+                  pre ${apiCheck.result.response.status}
                 .col-sm-6
                   label.form-control-label Response time
-                  pre {{apiCheck.result.responseTime | duration}} {{apiCheck.result.responseTime | durationUnit}}
+                  pre ${apiCheck.result.responseTime | duration} ${apiCheck.result.responseTime | durationUnit}
 
               .assertion-result(v-show='apiCheck.check.request.assertions.length > 0')
                 h5 Assertion results
@@ -74,10 +74,10 @@ section.api-checks-section
                         has-status=true,
                         :has-failures='!!(assertion.error)'
                         )
-                      td {{assertion.source}}
-                      td {{assertion.property}}
-                      td {{assertion.comparison}}
-                      td {{assertion.target}}
+                      td ${assertion.source}
+                      td ${assertion.property}
+                      td ${assertion.comparison}
+                      td ${assertion.target}
           transition(name='move-left')
             div(v-show='!showApiResult')
               .form-section.mb-4
@@ -118,11 +118,11 @@ section.api-checks-section
                       tr(v-for='(assertion, index) of apiCheck.check.request.assertions' v-show='apiCheck.check.request.assertions.length > 0')
                         td
                           select.custom-select(v-model='apiCheck.check.request.assertions[index].source')
-                            option(v-for='source in assertionSources', :value='source.value') {{source.text}}
+                            option(v-for='source in assertionSources', :value='source.value') ${source.text}
                         td
                           input.form-control(type='text', v-model='apiCheck.check.request.assertions[index].property')
                         td
                           select.custom-select(v-model='apiCheck.check.request.assertions[index].comparison')
-                            option(v-for='comparison of assertionComparisons', :value='comparison.value') {{comparison.text}}
+                            option(v-for='comparison of assertionComparisons', :value='comparison.value') ${comparison.text}
                         td
                           input.form-control(type='text', v-model='apiCheck.check.request.assertions[index].target')

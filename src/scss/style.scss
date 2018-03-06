@@ -1,6 +1,7 @@
 @import '../../../checkly-webapp/src/style/scss/variables';
 @import '../../../checkly-webapp/src/style/fonts/fonts.scss';
 @import '../../../checkly-webapp/src/style/scss/style.scss';
+@import '../../node_modules/highlight.js/styles/monokai-sublime.css';
 
 @import 'main';
 @import 'navbar';

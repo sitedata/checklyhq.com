@@ -326,8 +326,8 @@ p {
       .mocha-table-test-result-title {
         color: $link-color;
         &:after {
-          content: 'Y';
-          font-family: 'icon-works';
+          content: '\f123';
+          font-family: Ionicons;
           margin-left: 1rem;
         }
         &:hover {
@@ -335,8 +335,8 @@ p {
         }
         &.open {
           &:after {
-            content: 'y';
-            font-family: 'icon-works';
+            content: '\f126';
+            font-family: Ionicons;
             margin-left: 1rem;
           }
         }
@@ -369,11 +369,15 @@ p {
   background-color: #272822;
   border-radius: 5px 5px 5px 5px;
   min-height: 400px;
-}
-.CodeMirror {
-  font-size: 14px;
-  height: auto;
-  font-family: 'Source Code Pro', monospace;
+  pre {
+    background-color: #272822;
+    margin-bottom: 0;
+    code {
+      font-size: 14px;
+      height: auto;
+      font-family: 'Source Code Pro', monospace;
+    }
+  }
 }
 
 .api-checks-section {

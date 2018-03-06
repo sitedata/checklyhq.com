@@ -1,0 +1,35 @@
+@import '../../../../../checkly-webapp/src/style/scss/variables';
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner-inline:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-top: -10px;
+  margin-left: -25px;
+  border-radius: 50%;
+  border: 3px solid $gray-light;
+  border-top-color: $blue;
+  animation: spinner .75s linear infinite;
+
+}
+.spinner-full:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 3px solid $gray-light;
+  border-top-color: $blue;
+  animation: spinner .75s linear infinite;
+}

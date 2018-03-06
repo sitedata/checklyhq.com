@@ -2,6 +2,11 @@ import webpack from "webpack";
 import path from "path";
 
 export default {
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  },
   module: {
     rules: [
       {
@@ -11,6 +16,15 @@ export default {
           limit: 10000,
           name: 'static/img/[name].[hash:7].[ext]'
         }
+      },
+      {
+        test: /\.(pug|jade)(\?.*)?$/,
+        exclude: /node_modules/,
+        loader: ['html-loader','pug-html-loader']
+      },
+      {
+        test:/\.(s*)css$/,
+        use:['css-loader', 'sass-loader']
       },
       {
         test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
@@ -44,4 +58,4 @@ export default {
     filename: "[name].js"
   },
   externals:  [/^vendor\/.+\.js$/]
-};
+}
