@@ -7,3 +7,13 @@ title = "Checkly"
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[[menu.docs]]
+	name = "API"
+	url = "/docs/api-checks/"
+	weight = 10
+
+[[menu.docs]]
+	name = "Browser"
+	url = "/docs/browser-checks/"
+	weight = 20

@@ -1,0 +1,43 @@
+.sidebar-menu {
+  a {
+    color: $gray;
+    &.active {
+      color: $brand-primary;
+    }
+  }
+  list-style-type: none;
+  padding-left: 0;
+  .sidebar-menu-item {
+    padding-left: 0;
+    margin-bottom: .75rem;
+    a {
+      color: $gray-dark;
+      font-weight: 400;
+      padding: .5rem 0;
+      display: block;
+    }
+  }
+
+  .sidebar-menu-sub {
+    list-style-type: none;
+    padding-left: .75rem;
+    margin-bottom: .5rem;
+    .sidebar-menu-sub-item {
+      a {
+        color: $gray;
+        text-decoration: none;
+        padding: .2rem 0;
+
+        &:hover {
+          color: $gray-dark;
+          font-weight: 400;
+        }
+      }
+      &.active {
+        a {
+          color: $brand-primary;
+        }
+      }
+    }
+  }
+}

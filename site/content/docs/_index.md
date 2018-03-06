@@ -2,7 +2,7 @@
 title: Support
 ---
 
-# HAproxy-rest - DEPRECATED
+# HAproxy-rest
 
 > This repo is no longer maintained. Haproxy-rest is surpassed by [Vamp Router](https://github.com/magneticio/vamp-router)
 
