@@ -326,8 +326,7 @@ p {
       .mocha-table-test-result-title {
         color: $link-color;
         &:after {
-          content: '\f123';
-          font-family: Ionicons;
+          content: 'more';
           margin-left: 1rem;
         }
         &:hover {
@@ -335,8 +334,7 @@ p {
         }
         &.open {
           &:after {
-            content: '\f126';
-            font-family: Ionicons;
+            content: 'close';
             margin-left: 1rem;
           }
         }

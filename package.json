@@ -13,7 +13,7 @@
     "deploy:cacheable": "s3-deploy './dist/**' --cwd './dist/' --region 'eu-central-1' --bucket 'docs.checklyhq.com' --gzip --etag --cache 315360000",
     "deploy:non-cacheable": "s3-deploy './dist/**/*.html' --cwd './dist/' --region 'eu-central-1' --bucket 'docs.checklyhq.com' --gzip --etag --cache 0",
     "deploy": "npm run deploy:non-cacheable && npm run deploy:cacheable",
-    "deploy:production": "NODE_ENV=production npm run generate && npm run deploy"
+    "deploy:production": "NODE_ENV=production npm run build && npm run deploy"
   },
   "author": "",
   "license": "MIT",
@@ -48,6 +48,7 @@
     "uuid": "^3.2.1",
     "vue": "^2.5.13",
     "vue-highlightjs": "^1.3.3",
+    "vue-lazyload": "^1.2.1",
     "webpack": "3.10.0",
     "whatwg-fetch": "^2.0.3"
   },

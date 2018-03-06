@@ -26,9 +26,9 @@ section.features-section
               span.btn-icon.mr-3 🌎
               | Global coverage
             p.feature-body Check your API's and browser transactions from up to eight datacenters at no extra cost.
-      .col-sm-9
-        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 1', src='/images/alerts-screen@2x.png')
-        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 2', src='/images/show-screen@2x.png')
-        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 3', src='/images/result-detail-screen@2x.png')
-        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 4', src='/images/locations-screen@2x.png')
+      .col-sm-9(v-lazy-container='{ selector: "img" }')
+        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 1', data-src='/images/alerts-screen@2x.png')
+        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 2', data-src='/images/show-screen@2x.png')
+        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 3', data-src='/images/result-detail-screen@2x.png')
+        img.fade-in.screen-image.ml-lg-5(v-show='selectedFeature === 4', data-src='/images/locations-screen@2x.png')
 

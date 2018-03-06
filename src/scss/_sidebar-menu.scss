@@ -12,7 +12,7 @@
     margin-bottom: .75rem;
     a {
       color: $gray-dark;
-      font-weight: 400;
+      font-weight: 300;
       padding: .5rem 0;
       display: block;
     }
@@ -36,6 +36,7 @@
       &.active {
         a {
           color: $brand-primary;
+          font-weight: 400;
         }
       }
     }
