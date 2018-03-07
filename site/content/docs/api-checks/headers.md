@@ -2,5 +2,5 @@
 title: Headers
 menu:
   docs:
-    parent: "API"
+    parent: "API Checks"
 ---

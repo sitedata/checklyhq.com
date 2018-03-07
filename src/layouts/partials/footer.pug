@@ -1,15 +1,43 @@
 footer.footer
     .container
-        .row.py-5
-            .col-sm-12.col-md-8.offset-md-2.text-center
-                img.mb-3(src='/images/racoon_logo.svg' width='40px')
-                p
-                    | Checkly · info@checklyhq.com · Paul-Lincke-Ufer 30, 10999, Berlin ·
-                    a.ml-1(href='/privacy') Privacy
-// main scripts
-script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous")
-script(src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous")
-script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous")
+        .row.footer-top
+            .col-sm-2
+                .mb-3.mb-md-0
+                    img(src='/images/text_racoon_logo.svg' width='100px')
+            .col-sm-2
+                .mb-3.mb-md-0
+                    h6 Product
+                    ul
+                        li
+                            a(href='/pricing') Pricing
+                        li
+                            a(href='/docs') Docs
 
-script(src='/js/app.js')
+            .col-sm-2
+                .mb-3.mb-md-0
+                    h6 Company
+                    ul
+                        li
+                            a(href='/support') Support
+                        li
+                            a(href='/privacy') Privacy policy
+            .col-sm-6
+                h6 Get on topic product info and updates
+                #mc_embed_signup
+                    form.form-inline(action="https://run.us15.list-manage.com/subscribe/post?u=9af9712f622c6511cb2113669&amp;id=cb3c4cb1f3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
+                        input.form-control.email-address-input.mb-3.mb-md-0.mr-md-2(type="email" value="" name="EMAIL"  width="280px" id="mce-EMAIL" placeholder="Email address")
+                        button.btn.btn-primary.submit-button(type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button") Subscribe
 
+                        #mce-responses.clear
+                            #mce-error-response.response(style="display:none")
+                            #mce-success-response.response(style="display:none")
+                        div(style="position: absolute; left: -5000px;" aria-hidden="true")
+                            input(type="text" name="b_9af9712f622c6511cb2113669_cb3c4cb1f3" tabindex="-1" value="")
+                .pt-2.text-muted
+                    small no spam - unsubscribe anytime
+        .row.footer-bottom
+            .col-12
+                span Checkly · Paul-Lincke-Ufer 30, 10999, Berlin · Copyright © 2018
+
+
+include scripts

@@ -3,27 +3,6 @@ body
     include ../partials/navbar.pug
     .main.container
         .row
-            .col-sm-3
-                aside
-                    ul.sidebar-menu
-                        | !{'{{ $currentPage := . }}'}
-                        | !{'{{ range .Site.Menus.docs }}'}
-                        | !{'{{ if .HasChildren }}'}
-                        li.sidebar-menu-item
-                            a
-                                span #{'{{.Name}}'}
-                            ul.sidebar-menu-sub
-                                | !{'{{range .Children}}'}
-                                | !{'{{ $has := $currentPage.IsMenuCurrent "docs" . }}'}
-                                li.sidebar-menu-sub-item(class='{{if $has}}active{{end}}')
-                                    a(href="{{.URL}}") #{'{{.Name}}'}
-                                | !{'{{end}}'}
-                        | !{'{{else}}'}
-                        li.sidebar-menu-item
-                            a(href="{{.URL}}") #{'{{.Name}}'}
-                    | !{'{{end}}'}
-                    | !{'{{end}}'}
-
-            .col-sm-9
+            .col-sm-12
                 span.markdown #{'{{.Content}}'}
     include ../partials/footer.pug

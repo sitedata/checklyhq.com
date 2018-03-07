@@ -10,19 +10,22 @@
   .sidebar-menu-item {
     padding-left: 0;
     margin-bottom: .75rem;
-    a {
+    h3 {
       color: $gray-dark;
-      font-weight: 300;
-      padding: .5rem 0;
+      font-size: $font-size-base;
+      font-weight: 400;
       display: block;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
   }
 
   .sidebar-menu-sub {
     list-style-type: none;
-    padding-left: .75rem;
+    padding-left: 0;
     margin-bottom: .5rem;
     .sidebar-menu-sub-item {
+      margin-bottom: .2rem;
       a {
         color: $gray;
         text-decoration: none;

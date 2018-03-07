@@ -9,11 +9,11 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 
 [[menu.docs]]
-	name = "API"
+	name = "API Checks"
 	url = "/docs/api-checks/"
 	weight = 10
 
 [[menu.docs]]
-	name = "Browser"
+	name = "Browser Checks"
 	url = "/docs/browser-checks/"
 	weight = 20

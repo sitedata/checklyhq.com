@@ -2,7 +2,7 @@
 title: Getting started
 menu:
   docs:
-    parent: "API"
+    parent: "API Checks"
 ---
 
 # Getting started

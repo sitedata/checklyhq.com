@@ -1,9 +1,24 @@
 .footer {
-  //position: absolute;
-  //bottom: 0;
-  width: 100%;
   background-color: $gray-lightest;
-  a {
-    color: $body-text;
+  .footer-top {
+    padding: 4 * $spacer 0;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    a {
+      color: $body-text;
+    }
+    input {
+      background-color: $white;
+      width: 70%;
+    }
+  }
+
+  .footer-bottom {
+    padding: 1.5rem 0;
+    border-top: 1px solid $gray-light;
+    color: $gray;
   }
 }

@@ -2,5 +2,5 @@
 title: Puppeteer
 menu:
   docs:
-    parent: Browser
+    parent: "Browser Checks"
 ---
