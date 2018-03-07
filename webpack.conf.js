@@ -50,7 +50,8 @@ export default {
 
   context: path.join(__dirname, "src"),
   entry: {
-    app: ["./js/app"]
+    app: ["./js/app"],
+    index: ["./js/index"]
   },
   output: {
     path: path.join(__dirname, "dist/js"),
