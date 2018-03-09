@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "Checkly | Active Monitoring for Dev & Ops teams"
+title = "Checkly | Active Monitoring for Dev & Ops Teams"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [params]

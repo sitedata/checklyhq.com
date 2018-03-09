@@ -6,10 +6,10 @@ body
             .container
                 .row
                     .col-sm-12.plans-header
-                        h3 Simple, fair pricing
+                        h2 Simple, fair pricing
                         p Find the perfect plan — 100% satisfaction guaranteed 🍍
                 .row
-                    .col-sm-10.offset-sm-1
+                    .col-sm-12
                         .plans-table.d-block
                             .card-deck
 
@@ -20,12 +20,12 @@ body
                                         h5.text-accent Starter
                                         .price-block
                                             span.dollar-sign $
-                                            span.price 10
+                                            span.price 20
                                             | / mo
                                     .card-block.text-center
                                         table.table.text-left
                                             tr
-                                                td 10 API checks
+                                                td 15 API checks
                                             tr
                                                 td 5 Browser checks
                                             tr
@@ -41,12 +41,12 @@ body
                                         h5.text-success Growth
                                         .price-block
                                             span.dollar-sign $
-                                            span.price 20
+                                            span.price 40
                                             | / mo
                                     .card-block.text-center
                                         table.table.text-left
                                             tr
-                                                td 30 API checks
+                                                td 40 API checks
                                             tr
                                                 td 15 Browser checks
                                             tr
@@ -62,12 +62,12 @@ body
                                         h5.text-primary Business
                                         .price-block
                                             span.dollar-sign $
-                                            span.price 30
+                                            span.price 80
                                             | / mo
                                     .card-block.text-center
                                         table.table.text-left
                                             tr
-                                                td 80 API checks
+                                                td 100 API checks
                                             tr
                                                 td 30 Browser checks
                                             tr
@@ -79,7 +79,12 @@ body
                 .row
                     .col-sm-12.text-center
                         p.py-3 Don't see a plan that works for you? Contact us at info@checklyhq.com
-
-
+                .row
+                    .col-sm-12.text-center
+                        h2.py-5 Pricing FAQ
+                    | !{'{{ $cols := split .RawContent "<split>" }}'}
+                    | !{'{{range $cols}}'}
+                    .col-sm-6.markdown.text-left #{'{{ . | markdownify }}'}
+                    | !{'{{end}}'}
 
     include ../partials/footer.pug
