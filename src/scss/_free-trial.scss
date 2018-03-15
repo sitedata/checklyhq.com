@@ -1,0 +1,12 @@
+.free-trial-section {
+  padding-bottom: 4 * $spacer;
+  .card {
+    border: none;
+    border-top: 6px solid $brand-accent;
+    @include screen-shadow();
+    background-image: url('/images/css/tropical-bg.png');
+    background-position: center bottom -30px;
+    background-repeat: repeat-x;
+    background-size: 100%;
+  }
+}
