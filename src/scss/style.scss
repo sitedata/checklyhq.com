@@ -16,3 +16,7 @@
 @import 'markdown';
 @import 'status-circle';
 @import 'syntax';
+
+body {
+  padding-top: 90px; // navbar height
+}
