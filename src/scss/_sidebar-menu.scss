@@ -1,21 +1,23 @@
 .sidebar-menu {
+  position: fixed;
   a {
     color: $gray;
     &.active {
       color: $brand-primary;
     }
   }
+
   list-style-type: none;
   padding-left: 0;
+
   .sidebar-menu-item {
     padding-left: 0;
     margin-bottom: .75rem;
     h3 {
       color: $gray-dark;
-      font-size: 17px;
-      font-weight: 400;
+      font-size: $font-size-base;
       display: block;
-      margin-top: 1rem;
+      margin-top: 2rem;
       margin-bottom: 1rem;
     }
   }
@@ -24,24 +26,45 @@
     list-style-type: none;
     padding-left: 0;
     margin-bottom: .5rem;
+
     .sidebar-menu-sub-item {
-      margin-bottom: .2rem;
+      margin-bottom: .5rem;
       a {
         color: $gray;
         text-decoration: none;
-        padding: .2rem 0;
-
+        padding: .4rem 0;
         &:hover {
-          color: $gray-dark;
-          font-weight: 400;
+          color: $brand-primary;
         }
       }
       &.active {
         a {
           color: $brand-primary;
-          font-weight: 400;
+          font-weight: $font-weight-bold;
         }
       }
     }
+  }
+
+  .side-bar-menu-toc {
+    ul, ol {
+      padding-left: 0;
+      list-style-type: none;
+      li {
+        line-height: 1rem;
+        margin-bottom: .5rem;
+      }
+    }
+
+    a {
+      font-weight: $font-weight-normal !important;
+      color: $body-color !important;
+      font-size: 85%;
+
+    }
+
+    border-left: 2px solid $gray-lighter;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
   }
 }
