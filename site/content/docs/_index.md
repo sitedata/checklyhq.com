@@ -2,6 +2,6 @@
 title: Docs
 ---
 
-Hang tight, the docs will be here soon! 🙏
+# Documentation
 
-![](https://imgs.xkcd.com/comics/supported_features.png)
+

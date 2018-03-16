@@ -1,0 +1,12 @@
+.toc-sidebar {
+  position: relative;
+  right: 0;
+  padding-left: .5rem;
+  font-size: $font-size-sm;
+  ul, ol {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  border-left: 2px solid $brand-primary;
+}

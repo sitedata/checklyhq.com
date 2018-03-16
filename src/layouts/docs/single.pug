@@ -1,10 +1,10 @@
 include  ../partials/head
 body
     include ../partials/navbar.pug
-    .main
+    .main.docs
         .container
             .row
-                .col-sm-3
+                .col-sm-2
                     ul.sidebar-menu
                         | !{'{{ $currentPage := . }}'}
                         | !{'{{ range .Site.Menus.docs }}'}
@@ -23,6 +23,12 @@ body
                     | !{'{{end}}'}
                     | !{'{{end}}'}
 
-                .col-sm-9
-                    span.markdown #{'{{.Content}}'}
+                .col-sm-7
+                    .markdown
+                        h1 #{'{{ .Title }}'}
+                        span #{'{{.Content}}'}
+                    hr.my-4
+                    p Last updated on #{'{{.Page.Lastmod.Format '} "January 2, 2006" #{' }}'}
+                .col-sm-3
+                    include ../partials/toc-sidebar.pug
     include ../partials/footer.pug

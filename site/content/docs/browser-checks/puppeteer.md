@@ -1,5 +1,6 @@
 ---
 title: Puppeteer
+weight: 2
 menu:
   docs:
     parent: "Browser Checks"
