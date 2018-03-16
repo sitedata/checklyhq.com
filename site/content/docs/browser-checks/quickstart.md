@@ -1,7 +1,8 @@
 ---
 title: Quickstart
 weight: 1
-lastmod: 2018-03-12
+aliases:
+- "/docs/browser-checks/"
 menu:
   docs:
     parent: "Browser Checks"
@@ -32,3 +33,61 @@ than etc. You use assert in combination with Mocha to validate the actual values
 to control the interactions you want to happen on a web page. 
 
 
+## Run a script on your local machine
+
+We've created a Github repo you can clone run from you local machine to get a feel for writing browser checks.
+Clone the [checkly/browser-checks-starter](https://github.com/checkly/browser-checks-starter.git) repo and run the provided example. 
+
+```bash
+git clone https://github.com/checkly/browser-checks-starter.git
+cd browser-checks-starter
+npm install
+mocha check_duckduckgo.js
+```
+
+The result should look something like this, if you are working on a Mac or on Linux.
+
+{{< asciinema f3F570OMM20PnEFvSbttfFbTu >}}
+
+## Analysing the browser check
+
+The piece of code you just ran is a fully featured browser check. You can copy and paste it into Checkly and it would 
+check the search results of Duck Duck Go search every x minutes.
+Let's step through the code step by step
+
+
+```js
+const assert = require('assert')
+const puppeteer = require('puppeteer')
+
+let browser
+let page
+```
+
+```js
+before(async () => {
+  browser = await puppeteer.launch()
+  page = await browser.newPage()
+})
+
+describe('Duck Duck Go Search', () => {
+  it('returns Chrome Puppeteer Github repo as first search result', async () => {
+
+    await page.goto('https://duckduckgo.com/', { waitUntil: 'networkidle2' })
+    await page.type('input#search_form_input_homepage', 'chrome puppeteer', { delay: 50 })
+    await page.click('input#search_button_homepage')
+    await page.waitForSelector('.results--main #r1-0')
+    
+    const githubLink = await page.evaluate(() => document.querySelector('a.result__a').textContent.trim())
+    assert(githubLink, 'https://github.com/GoogleChrome/puppeteer')
+    await page.screenshot({ path: 'duckduckgo.png' })
+  }).timeout(10000)
+})
+
+after(async () => {
+  await browser.close()
+})
+```
+
+
+{{< info >}} You can find a ton more Puppeteer and Mocha examples in the dedicated Github repo [checkly/puppeteer-examples](https://github.com/checkly/puppeteer-examples){{< /info >}}

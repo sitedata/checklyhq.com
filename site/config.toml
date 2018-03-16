@@ -3,7 +3,10 @@ languageCode = "en-us"
 languageLang = "en"
 title = "Checkly | Active Monitoring for Dev & Ops Teams"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+enableGitInfo = true
 
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 [params]
     description = "Checkly is the easiest way to monitor your browser click flows and API responses from a single dashboard"
 

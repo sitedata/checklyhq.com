@@ -4,7 +4,7 @@ body
     .main.docs
         .container
             .row
-                .col-sm-2
+                .col-sm-2.pl-0
                     ul.sidebar-menu
                         | !{'{{ $currentPage := . }}'}
                         | !{'{{ range .Site.Menus.docs }}'}
@@ -23,12 +23,13 @@ body
                     | !{'{{end}}'}
                     | !{'{{end}}'}
 
-                .col-sm-7
+                .col-sm-8
                     .markdown
                         h1 #{'{{ .Title }}'}
                         span #{'{{.Content}}'}
                     hr.my-4
                     p Last updated on #{'{{.Page.Lastmod.Format '} "January 2, 2006" #{' }}'}
-                .col-sm-3
+
+                .col-sm-2.pr-0
                     include ../partials/toc-sidebar.pug
     include ../partials/footer.pug
