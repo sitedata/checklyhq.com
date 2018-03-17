@@ -13,7 +13,17 @@ Browser checks are monitors based on Node.js scripts using industry standard tes
 Each browser check uses an actual Chrome browser to execute clicks, fill out forms and validate if these interactions have 
 the correct results.
 
+#### Do all plans have the same scheduling options?
+
+Yes, all plans allow 5 minute schedules and longer, up to once per day.
+
 <split>
+
+
+#### Are all alerting integrations the same for all plans?
+
+Yes, all plans have email, webhook and Slack integration to alert you when checks fail.
+
 #### How does the 15-day trial work?
 By signing up, you get full access to all of Checkly's functions for a period of 15 days. You do not need a credit card
 to get started. After the 15 day period, you will still have access to your account but we will suspend the running of 
