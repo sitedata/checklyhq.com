@@ -1,5 +1,5 @@
 .article {
-
+  margin-bottom: 3 * $spacer;
   a {
     h1, h2, h3, h4, h5 {
       color: $body-color;
@@ -8,7 +8,7 @@
 
   .article-header {
     .article-title {
-      font-size: $font-size-h2;
+      font-size: $font-size-h3;
       margin-bottom: 0.5 * $spacer;
     }
     .article-sub {
