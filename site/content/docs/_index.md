@@ -1,7 +1,0 @@
----
-title: Docs
----
-
-# Documentation
-
-

@@ -10,13 +10,12 @@ pygmentsUseClasses = true
 [params]
     description = "Checkly is the easiest way to monitor your browser click flows and API responses from a single dashboard"
 
-
 [[menu.docs]]
 	name = "API Checks"
 	url = "/docs/api-checks/"
-	weight = 10
+	weight = 20
 
 [[menu.docs]]
 	name = "Browser Checks"
 	url = "/docs/browser-checks/"
-	weight = 20
+	weight = 30
