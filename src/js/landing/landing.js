@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueHighlightJS from 'vue-highlightjs'
-import VueLazyLoad from 'vue-lazyload'
 import uuid from 'uuid'
 
 import SocketClient from '../services/socket-client'
@@ -14,10 +13,6 @@ import StatusCircle from '../components/status-circle/status-circle'
 import axios from 'axios'
 
 Vue.use(VueHighlightJS)
-Vue.use(VueLazyLoad, {
-  preLoad: 1.3,
-  attempt: 1
-})
 
 axios.defaults.baseURL = 'https://api.checklyhq.com'
 
