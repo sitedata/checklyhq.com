@@ -1,8 +1,9 @@
 ---
-title: Creating an API request
+title: Quickstart
 menu:
   docs:
     parent: "API Checks"
+    identifier: quickstart-api
 ---
 
 Hang tight, the docs will be here soon! 🙏

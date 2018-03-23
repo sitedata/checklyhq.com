@@ -1,7 +1,7 @@
 .sidebar-menu {
 
   @include media-breakpoint-up(sm) {
-    position: fixed;
+    position: relative;
   }
 
   a {

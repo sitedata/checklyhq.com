@@ -6,6 +6,7 @@ aliases:
 menu:
   docs:
     parent: "Browser Checks"
+    identifier: quickstart-browser
 ---
 
 This quick start should give you all the info to create your first browser check with Checkly. You should have some prior

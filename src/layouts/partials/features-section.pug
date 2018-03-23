@@ -10,7 +10,7 @@ section.features-section
             .feature-header
               span.btn-icon.mr-3 🔔
               | Alerting
-            p.feature-body Get alerted via email, Slack or webhooks.
+            p.feature-body Get alerted via email, Slack or webhooks. We rerun every failed check, just to be sure.
           li(@click.prevent='selectedFeature = 2', :class='{ "feature-selected" : selectedFeature === 2 }')
             .feature-header 📈
               span.btn-icon.mr-3
