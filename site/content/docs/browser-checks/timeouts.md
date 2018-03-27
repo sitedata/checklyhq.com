@@ -57,7 +57,7 @@ describe('Check Google Homepage', (suite) => {
 In your Puppeteer code, you have a range of options to set timeouts for different actions. The default for most actions
 is 30 seconds. There are two very important ones that you should use in almost every browser check:
 
-**page.waitForSelector()**
+### page.waitForSelector()
 
 This method waits for an element to appear in the page. This is your bread and butter and should be used whenever something
 needs to be loaded after clicking, hovering, navigating etc. You can pass it an options object with a timeout attribute
@@ -84,14 +84,14 @@ This works exactly the same for the `page.waitForXpath()` function is you are us
 
 [Read more in the Puppeteer API docs](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#framewaitforselectorselector-options)
 
-**page.setDefaultNavigationTimeout(timeout)**
+### page.setDefaultNavigationTimeout(timeout)
 
 You can tweak the navigation timeout with `page.setDefaultNavigationTimeout()`. This impact the timeout limits of the 
 initial load of your page or app and all subsequent navigation.
 
 [Read more in the Puppeteer API docs](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagesetdefaultnavigationtimeouttimeout)
 
-**page.waitFor(timeout)**
+### page.waitFor(timeout)
 
 Some pages can be finicky because of animations or some non-linear behaviour or dynamic content. This method allows you 
 to "just wait" for a set amount of time. The example below passes in a number. The result is the test will wait for five

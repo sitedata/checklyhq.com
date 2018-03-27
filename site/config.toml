@@ -8,7 +8,7 @@ enableGitInfo = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 [params]
-    description = "Checkly is the easiest way to monitor your browser click flows and API responses from a single dashboard"
+    description = "Checkly is the easiest way to actively monitor your API endpoints and Browser click flows from a single dashboard"
 
 [[menu.docs]]
 	name = "API Checks"

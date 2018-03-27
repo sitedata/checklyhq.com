@@ -64,9 +64,12 @@
     height: 90px;
     visibility: hidden;
   }
-
-  code {
-    border: 1px solid $gray-light;
+  p {
+    code {
+      border: 1px solid $gray-light;
+      color: #d82553;
+      font-size: 85%;
+    }
   }
 
   pre {

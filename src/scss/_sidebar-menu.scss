@@ -67,6 +67,14 @@
 
     }
 
+    // hacky way to hide 3rd level heading in little page TOC because Hugo does not allow filtering the TOC by level
+
+    #TableOfContents {
+      ul > li > ul > li > ul {
+        display: none;
+      }
+    }
+
     border-left: 2px solid $gray-lighter;
     padding-left: 1rem;
     margin-bottom: 1rem;
