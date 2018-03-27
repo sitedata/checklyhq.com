@@ -65,4 +65,13 @@
     visibility: hidden;
   }
 
+  code {
+    border: 1px solid $gray-light;
+  }
+
+  pre {
+    code {
+      border: none;
+    }
+  }
 }
