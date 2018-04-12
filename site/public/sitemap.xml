@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/docs/browser-checks/quickstart/</loc>
+    <lastmod>2018-03-23T23:46:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/browser-checks/screenshots/</loc>
+    <lastmod>2018-03-29T19:04:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/browser-checks/timeouts/</loc>
+    <lastmod>2018-03-27T18:09:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/browser-checks/runner-specification/</loc>
+    <lastmod>2018-03-17T19:23:42+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/whats-new/introducing-double-checks/</loc>
+    <lastmod>2018-03-23T23:46:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/whats-new/introducing-screenshots/</loc>
+    <lastmod>2018-03-23T23:46:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/whats-new/puppeteer-v120/</loc>
+    <lastmod>2018-03-17T19:23:42+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/whats-new/</loc>
+    <lastmod>2018-03-16T12:35:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/whats-new/private-beta-updates/</loc>
+    <lastmod>2018-03-16T12:35:37+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-03-23T23:46:57+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/docs/</loc>
+    <lastmod>2018-03-21T22:15:02+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/alerting/settings/</loc>
+    <lastmod>2018-03-23T23:46:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pricing/</loc>
+    <lastmod>2018-03-17T18:02:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/privacy/</loc>
+    <lastmod>2018-03-07T15:23:16+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/api-checks/getting-started/</loc>
+    <lastmod>2018-03-23T23:46:57+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/support/</loc>
+    <lastmod>2018-03-07T15:23:16+01:00</lastmod>
+  </url>
+  
+</urlset>
