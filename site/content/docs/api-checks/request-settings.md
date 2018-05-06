@@ -37,7 +37,7 @@ This options sets the `Content-Type` request header to `application/json`. Forma
 {
   "key1": "val2",
   "key2: {
-  	"nestedKey1: "val2"
+    "nestedKey1: "val2"
   }
 }
 ```
@@ -58,7 +58,7 @@ Use this input if neither JSON nor form parameters work for you. No `Content-Typ
 
 ## Headers
 
-Add HTTP request headers. The type ahead feature is pre-populated with the most common standard headers, but you can add any custom headers you want.
+Add HTTP request headers. The type ahead feature is pre-populated with the most common headers, but you can add any custom headers you want.
 
 ![](/docs/images/api-checks/headers-query.png)
 
