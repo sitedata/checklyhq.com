@@ -1,26 +1,45 @@
 .markdown {
 
-  h2, h3 {
-    padding-bottom: .3em;
+  *[id]:before {
+    display: block;
+    content: " ";
+    margin-top: -90px;
+    height: 90px;
+    visibility: hidden;
   }
+
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
   }
 
   h2 {
     font-size: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 400;
+    border-bottom: 1px solid $gray-light;
+    padding-bottom: 1rem;
   }
 
   h3 {
-    font-size: 1.35rem;
+    font-size: 1rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    font-weight: $font-weight-light;
+    font-weight: $font-weight-bold;
+    padding-bottom: .3em;
+    &::before {
+      content: "#" !important;
+      color: $brand-primary;
+      position: absolute;
+      left: -0.4em;
+      margin-top: 0rem !important;
+      padding-right: 0.5em;
+      line-height: 1;
+      visibility: visible !important;
+    }
   }
+
   p {
     color: $body-color;
     margin-bottom: 1rem;
@@ -29,7 +48,11 @@
 
   blockquote {
     padding: 0 1em;
-    border-left: 0.25em solid $brand-primary;
+    border-left: 0.25rem solid $brand-primary;
+    background-color: transparentize($brand-primary, 0.95);
+    p {
+      padding: .75rem
+    }
   }
 
   pre {
@@ -57,13 +80,6 @@
     max-width: 100%;
   }
 
-  *[id]:before {
-    display: block;
-    content: " ";
-    margin-top: -90px;
-    height: 90px;
-    visibility: hidden;
-  }
   p {
     code {
       border: 1px solid $gray-light;

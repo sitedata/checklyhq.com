@@ -51,7 +51,7 @@ The result should look something like this, if you are working on a Mac or on Li
 
 {{< asciinema f3F570OMM20PnEFvSbttfFbTu >}}
 
-## Analysing the browser check
+## Breaking down the browser check step by step
 
 The piece of code you just ran is a fully featured browser check. You can copy and paste it into Checkly and it would 
 check the search results of Duck Duck Go search every x minutes.
