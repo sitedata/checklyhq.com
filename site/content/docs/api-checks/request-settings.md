@@ -9,7 +9,7 @@ menu:
 A full HTTP request is created by filling out the various parts of the HTTP request settings screen. Not all sections and fields
 are mandatory, only a name and URL are required to get going.
 
-While building up your API check, you can run the request and its assertions using the **Run request** button. This will run the 
+While building up your API check, you can run the request and its assertions using the **Run request** button. This will run the
 API checks on the production infrastructure and help you debug any issues.
 
 ## Method & URL
@@ -27,7 +27,7 @@ in handy when testing 404 pages or 500 error handling.
 
 ## Body
 
-Add body content to your request by formatting your content as text. Selecting the type of content will automatically set the correct `Content-Type` header for your request. 
+Add body content to your request by formatting your content as text. Selecting the type of content will automatically set the correct `Content-Type` header for your request.
 
 ### JSON
 
@@ -76,6 +76,11 @@ To add [HTTP basic authentication parameters](https://developer.mozilla.org/en-U
 request, use the username and password fields in the relevant section.
 
 ![](/docs/images/api-checks/basic-auth.png)
+
+## Import a curl request
+
+You can import the request method, url, headers and body from a [curl](https://curl.haxx.se/) command.
+Arguments `--user-agent`, `--cookie` and `--compressed` also work.
 
 
 
