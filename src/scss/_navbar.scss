@@ -35,6 +35,13 @@
     }
   }
 
+  @include media-breakpoint-down(sm) {
+    &.navbar-toggleable-md > .container {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
   .nav-link {
     color: $gray;
     font-weight: 400;
