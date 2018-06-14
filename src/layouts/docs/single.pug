@@ -4,7 +4,7 @@ body
     .main.docs
         .container
             .row
-                .col-sm-3
+                .col-sm-3.col-md-3
                     ul.sidebar-menu
                         | !{'{{ $currentPage := . }}'}
                         | !{'{{ range .Site.Menus.docs }}'}
@@ -27,7 +27,7 @@ body
                     | !{'{{end}}'}
                     | !{'{{end}}'}
 
-                .col-sm-9
+                .col-sm-9.col-md-8
                     .markdown.py-3
                         h1 #{'{{ .Title }}'}
                         span #{'{{.Content}}'}

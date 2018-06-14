@@ -30,6 +30,9 @@
     &:hover {
       cursor: pointer;
     }
+    &.navbar-toggler-right {
+      right: 0;
+    }
   }
 
   .nav-link {
