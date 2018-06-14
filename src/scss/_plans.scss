@@ -1,5 +1,17 @@
 .plans {
 
+  .card-starter {
+    border-top: 6px solid $pink;
+  }
+
+  .card-growth {
+    border-top: 6px solid $green;
+  }
+
+  .card-business {
+    border-top: 6px solid $brand-primary;
+  }
+
   table.plans-features-table {
     tbody {
       tr:first-child td {
