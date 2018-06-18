@@ -1,6 +1,8 @@
 ---
 title: Adding team members
 weight: 1
+aliases:
+- "/docs/teams/"
 menu:
   docs:
     parent: "Teams"

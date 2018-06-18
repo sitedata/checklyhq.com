@@ -82,5 +82,17 @@ request, use the username and password fields in the relevant section.
 You can import the request method, url, headers and body from a [curl](https://curl.haxx.se/) command.
 Arguments `--user-agent`, `--cookie` and `--compressed` also work.
 
+## Import a Swagger / OpenAPI specification
 
+If your API implements the Swagger 2.0 or OpenAPI spec, you can import the `swagger.json` spec. The importer
+parses your spec and prompts you to make some decisions which requests to imported and how.
+
+![](/docs/images/api-checks/swagger.png)
+
+- **Name:** you can set the check name to the "description" or "url" from your spec.
+- **Tags:** import tags from you spec.
+- **Headers:** import HTTP headers from you spec.
+- **Query parameters:** import query parameters from you spec.
+- **Add a "group" tag:** Copy the name of you spec to a tag and add it to each imported request. This helps
+filtering and grouping related in the Checkly dashboard.
 

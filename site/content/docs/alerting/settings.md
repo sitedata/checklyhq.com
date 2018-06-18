@@ -1,5 +1,8 @@
 ---
 title: General settings
+weight: 1
+aliases:
+- "/docs/alerting/"
 menu:
   docs:
     parent: "Alerting"
