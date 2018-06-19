@@ -7,7 +7,7 @@ menu:
 ---
 
 A big part of knowing your API is still working as designed is parsing and checking the response body. In many cases this will be
-a JSON formatted document returned from REST API.
+a JSON formatted document returned from a REST API.
 
 ## Asserting basic types
 
