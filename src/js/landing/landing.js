@@ -249,7 +249,7 @@ new Vue({
         case runStates.PRISTINE:
           return 'Run browser check'
         case runStates.SUBMITTED:
-          return 'Queueing your script...'
+          return 'Queueing your script'
         case runStates.RUNNING:
           return 'Running script'
         case runStates.ERROR:
