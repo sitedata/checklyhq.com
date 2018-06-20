@@ -24,28 +24,28 @@ before(async () => {
       variables: [],
       alertChannels: {},
       websocketClientId: '',
-      script: `describe('Check Etsy shopping cart', () => {
-  it('shows the correct category', async () => {
-    await page.goto('https://www.etsy.com/c/art-and-collectibles/collectibles/figurines?ref=catnav-66')
-    const categoryTitle = await page.evaluate(() => document.querySelector('h1').textContent)
-    assert.equal(categoryTitle, 'Figurines & Knicknacks')
+      script: `describe('Etsy shopping cart', () => {
+  it('shows the privacy modal', async () => {
+    await page.goto('https://www.etsy.com/c/art-and-collectibles/collectibles/figurines?ref=catnav-66', { waitUntil: 'networkidle2' })
+    await page.waitForSelector('[data-gdpr-single-choice-accept]')
+    await page.click('[data-gdpr-single-choice-accept]')
   }).timeout(20000)
 
   it('selects the first product', async () => {
+    await page.waitForSelector('.placeholder-content')
     const products = await page.$$('.placeholder-content')
-    await products[0].click()
+    await products[5].click()
     await page.waitForSelector('button.btn-buy-box')
-    assert.ok('Buy button showing')
+    assert.ok('Add to cart button showing')
   }).timeout(10000)
 
   it('adds the product to the cart', async () => {
     await page.click('button.btn-buy-box')
     await page.waitForSelector('h1.item-count')
-    const quantity = await page.evaluate(() => document.querySelector('h1.item-count').textContent)
+    const quantity = await page.evaluate(() => document.querySelector('h1.item-count').textContent.trim())
     assert.equal(quantity, '1 item in your cart')
   }).timeout(10000)
-})`
-    },
+})`},
     {
       name: 'Check Alibaba product search',
       checkType: 'BROWSER',
