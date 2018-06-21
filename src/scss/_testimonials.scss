@@ -1,12 +1,8 @@
 .testimonial {
-  background: $light-blue;
-  padding: 5 * $spacer-y 0;
+  padding: 3 * $spacer-y 0;
   &.testimonial-1 {
     .testimonial-card {
-      border-top: 6px solid #ffde47;
-      border-bottom: none;
-      border-left: none;
-      border-right: none;
+      border: none;
       .card-block {
         padding: 2 * $spacer;
       }
@@ -20,7 +16,6 @@
       color: $gray-dark;
       font-weight: 300;
       padding: .5 * $spacer-y 0;
-      font-style: italic;
     }
     .testimonial-portrait {
       display: flex;
