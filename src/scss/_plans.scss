@@ -13,12 +13,27 @@
   }
 
   table.plans-features-table {
+    margin-bottom: 0;
     tbody {
       tr:first-child td {
         border-top: none;
       }
       td {
         padding-left: 0;
+        color: $gray;
+      }
+    }
+  }
+
+  ul.plans-features-common-list {
+    li {
+      padding: .5 * $spacer-y;
+      &::before {
+        content: '\F121';
+        font-family: Ionicons;
+        display: inline-block;
+        margin-right: .5 * $spacer-x;
+        color: $brand-success;
       }
     }
   }
@@ -26,6 +41,7 @@
   .price-block {
     font-size: $font-size-sm;
     color: $gray;
+    margin-bottom: $spacer-y;
     .dollar-sign {
       display: inline-block;
       font-size: 1.25rem;

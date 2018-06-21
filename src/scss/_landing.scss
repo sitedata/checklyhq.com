@@ -77,10 +77,6 @@ p {
 
 // Image & Video
 
-.big-drop-shadow {
-  @include screen-shadow();
-}
-
 .screen-video {
   background-color: $white;
   border-radius: 4px;
