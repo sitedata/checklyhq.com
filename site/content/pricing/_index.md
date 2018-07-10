@@ -15,7 +15,8 @@ the correct results.
 
 #### Do all plans have the same scheduling options?
 
-Yes, all plans allow 5 minute schedules and longer, up to once per day.
+API checks can be run **every minute**, whereas Browser checks start at **5 minute** intervals. Longer intervals (30 minutes, once per day etc.)
+are the same for all check types.
 
 <split>
 
