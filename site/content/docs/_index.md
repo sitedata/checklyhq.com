@@ -12,5 +12,6 @@ exact control over how your API's and web apps should be monitored.
 - [API checks](/docs/api-checks/api-checks/)
 - [Browser checks](/docs/browser-checks/)
 - [Alerting](/docs/alerting/)
+- [Dashboards] (/docs/dashboards)
 - [Teams](/docs/teams/)
 
