@@ -1,0 +1,28 @@
+@import '../variables';
+
+.api-monitoring-section {
+  padding-top: $section-top-padding;
+  padding-bottom: $section-bottom-padding;
+  height: 690px;
+  overflow: hidden;
+
+  background-image: url('/images/css/bowed_bg.svg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  img.results {
+    left: 180px;
+  }
+
+  img.assertions {
+    left: -100px;
+    top: 180px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .api-monitoring-section {
+    height: 670px;
+  }
+}

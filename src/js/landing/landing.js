@@ -261,7 +261,7 @@ new Vue({
       }
     },
     runApiCheckButtonText () {
-      return this.apiLoading ? 'Sending API request' : 'Run API check'
+      return this.apiLoading ? 'Running' : 'Run API check'
     }
   }
 })

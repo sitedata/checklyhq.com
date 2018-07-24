@@ -1,0 +1,33 @@
+@import '../variables';
+
+.results-section {
+  padding-top: 3 * $section-top-padding;
+  padding-bottom: $section-bottom-padding;
+
+  height: 1195px;
+  overflow: hidden;
+
+  .results-image {
+    @include screen-shadow();
+    border-radius: 5px;
+    border: 1px solid $gray-light;
+
+    @include media-breakpoint-up(xs) {
+      width: 360px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      width: 480px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 900px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .results-section {
+    height: 700px;
+  }
+}

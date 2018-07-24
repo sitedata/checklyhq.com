@@ -1,4 +1,4 @@
-@import '../../../checkly-webapp/src/style/scss/variables';
+@import 'variables';
 @import '../../../checkly-webapp/src/style/fonts/fonts.scss';
 @import '../../../checkly-webapp/src/style/scss/style.scss';
 @import '../../node_modules/highlight.js/styles/monokai-sublime.css';
@@ -7,9 +7,9 @@
 @import 'main';
 @import 'navbar';
 @import 'sidebar-menu';
+@import 'sections';
 @import 'landing';
 @import 'free-trial';
-@import 'testimonials';
 @import 'footer';
 @import 'plans';
 @import 'docs';
@@ -18,6 +18,18 @@
 @import 'markdown';
 @import 'status-circle';
 @import 'syntax';
+
+@import 'sections/hero';
+@import 'sections/api-monitoring';
+@import 'sections/alerting';
+@import 'sections/results';
+@import 'sections/features';
+@import 'sections/all-features';
+@import 'sections/site-monitoring';
+@import 'sections/testimonials';
+@import 'sections/public-stats';
+@import 'sections/faq';
+
 
 body {
   padding-top: 90px; // navbar height

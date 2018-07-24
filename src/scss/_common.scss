@@ -1,3 +1,121 @@
+// reset
+body {
+  overflow-x: hidden;
+}
+
+p {
+  color: $body-text;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+// typography
+
+.handwritten {
+  font-family: 'Kalam', cursive;
+  color: $pink;
+}
+
+.font-height {
+  height: $font-size-base;
+}
+
+.info-link {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  margin-bottom: 3px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.cta-link {
+  color: $brand-primary;
+  font-weight: $font-weight-normal;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  &::after {
+    transform: rotate(45deg) translate3d(0,0,0);
+    transition: transform .2s ease-in-out;
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-right-width: 2px;
+    border-right-style: solid;
+    content: "";
+    display: inline-block;
+    margin-left: .3em;
+    position: relative;
+    pointer-events: none;
+    width: 6px;
+    height: 6px;
+    top: -1px;
+  }
+}
+
+.green-dot {
+  height: 8px;
+  width: 8px;
+  background-color: $green;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: .4rem
+}
+
+// Forms
+
+.form-header {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+
+.custom-select {
+  height: auto !important;
+  padding: 0.75rem 1.75rem 0.75rem 1.5rem;
+  width: 100%;
+}
+
+.form-control {
+  padding: .75rem 1rem;
+}
+
+
+// Image & Video
+
+.screen-video {
+  background-color: $white;
+  border-radius: 4px;
+  border: 1px solid $gray-light;
+}
+
+.screen-image {
+  background-color: $white;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid $gray-light;
+  @include drop-shadow();
+  box-sizing: content-box;
+  opacity: 1;
+}
+
+
+// Styles
+
 .big-drop-shadow {
   @include screen-shadow();
+}
+
+
+// alignment
+
+.text-side {
+  margin-top: 80px;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
 }

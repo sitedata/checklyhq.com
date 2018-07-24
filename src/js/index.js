@@ -15,3 +15,14 @@ $(document).on('scroll', () => {
 /**
  * END Navbar
  */
+
+$(document).ready(() => {
+  fetch('https://api.checklyhq.com/public-stats')
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (res) {
+      $('#api-check-results').text(res.apiCheckResults)
+      $('#browser-check-results').text(res.browserCheckResults)
+    })
+})

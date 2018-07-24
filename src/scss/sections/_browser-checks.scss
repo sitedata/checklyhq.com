@@ -1,0 +1,79 @@
+@import '../variables';
+
+.browser-checks-section {
+  padding-top: $section-top-padding;
+  padding-bottom: $section-bottom-padding;
+  min-height: 850px;
+
+  background-image: url('/images/css/bowed_bg.svg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+
+  .browser-check-results {
+    padding: 2 * $spacer;
+    border-radius: 4px;
+    border: 1px solid $gray-light;
+    min-height: 370px;
+    background-color: $white;
+
+    .results-mocha-output {
+      .mocha-table-status {
+        width: 60px;
+      }
+      .mocha-table-duration {
+        width: 130px;
+        text-align: right;
+      }
+      .mocha-table-test-result-title {
+        color: $link-color;
+        &:after {
+          content: 'more';
+          margin-left: 1rem;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &.open {
+          &:after {
+            content: 'close';
+            margin-left: 1rem;
+          }
+        }
+      }
+      .mocha-test-details {
+        margin: $spacer-y 0;
+      }
+    }
+
+    .mocha-tests-summary {
+      margin-bottom: $spacer-y;
+    }
+
+    .result-screenshots-images {
+      .screenshot {
+        img {
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+    }
+  }
+
+  .editor {
+    padding: 1rem 0;
+    background-color: #272822;
+    border-radius: 5px 5px 5px 5px;
+    min-height: 400px;
+    pre {
+      background-color: #272822;
+      margin-bottom: 0;
+      code {
+        font-size: 14px;
+        height: auto;
+        font-family: 'Source Code Pro', monospace;
+      }
+    }
+  }
+}

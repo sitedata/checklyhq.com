@@ -1,5 +1,8 @@
-.testimonial {
-  padding: 3 * $spacer-y 0;
+.testimonial-section {
+
+  padding-top: 5 * $section-top-padding;
+  padding-bottom: 2 * $section-bottom-padding;
+
   &.testimonial-1 {
     .testimonial-card {
       border: none;
@@ -32,5 +35,11 @@
         float: left;
       }
     }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .testimonial-section {
+    padding-top: 2 * $section-top-padding;
   }
 }

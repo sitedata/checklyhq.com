@@ -1,9 +1,9 @@
 section.public-stats-section
   .container
     .row
-      .col-sm-12.text-center
+      .col-sm-12
         .counter-text We ran
-          span.counter ${publicStats.apiCheckResults}
+          span.counter(id='api-check-results')
           | API checks and
-          span.counter ${publicStats.browserCheckResults}
+          span.counter(id='browser-check-results')
           | Browser checks with 💖
