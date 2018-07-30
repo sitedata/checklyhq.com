@@ -1,0 +1,21 @@
+include  ../partials/head
+body
+  include ../partials/navbar.pug
+  .main
+    .container
+      .row
+        .col-sm-12.col-md-8.offset-md-2
+          .span.markdown.blog #{'{{.Content}}'}
+            | !{' {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }} '}
+            include ../partials/blog-meta-data.pug
+            article
+              a.blog-header(href="{{.RelPermalink }}") #{' {{.Title}} '}
+              .markdown.blog-body
+                | !{' {{ .Summary | markdownify  }} '}
+              span
+                | !{' {{ if .Truncated }} '}
+                div
+                  a(href="{{.RelPermalink }}") Read more...
+                | !{'{{end}}'}
+            | !{'{{end}}'}
+  include ../partials/footer.pug
