@@ -18,7 +18,7 @@ Assertions are statements you create that check one aspect of the HTTP response.
 - HTTP response header "X-Custom-Header" equals "SomeValue".
 - HTTP response JSON body has a key called "accountBalance" with a value greater than 9999
 
-In each assertion, a **source** is connected to a **comparison** and a **target**. 
+In each assertion, a **source** is connected to a **comparison** and a **target**.
 
 ![](/docs/images/api-checks/assertions-1.png)
 
@@ -33,7 +33,7 @@ Assertions are executed from top to bottom. If one assertion fails, the full che
 On each API check assertion, the following sources are available:
 
 ### STATUS_CODE
-The HTTP response status, parsed as an integer. 
+The HTTP response status, parsed as an integer.
 
 ### JSON_BODY
 The response body parsed as JSON. This allows inspection of the JSON object using the "HAS\_KEY" and "HAS\_VALUE" comparisons.
@@ -53,7 +53,7 @@ The property field is a free form text field, mostly used to identify the name o
 
 When used on JSON bodies, the property field accepts **nested identifiers** in the form of dot-separated strings to target nested properties in an object, i.e. `product.size`.
 
-[Read more about asserting JSON response bodies here]({{< ref "asserting-json-bodies.md" >}})
+Read more about asserting JSON response bodies below.
 
 ## Comparison
 
@@ -73,6 +73,30 @@ On each API check assertion, the following sources are available:
 ## Target
 
 The target field is a free form text field that determines the desired outcome of your assertion.
+
+
+## Asserting JSON responses
+
+A big part of knowing your API is still working as designed is parsing and checking the response body. In many cases this will be
+a JSON formatted document returned from a REST API.
+
+## Asserting basic types
+
+Asserting string, boolean and number values works exactly as you'd expect, e.g. the example below asserts the number value of
+the `id` property is greater than `2000`.
+
+![](/docs/images/api-checks/assertions-4.png)
+
+## Nested properties
+
+You can traverse a JSON object using a dot notation. In the example below we are checking the string-based `size`
+property that is part of the `product` object in the JSON response.
+
+![](/docs/images/api-checks/assertions-3.png)
+
+This next example checks for a **boolean** value in the `owner.site_admin` property
+
+![](/docs/images/api-checks/assertions-5.png)
 
 
 
