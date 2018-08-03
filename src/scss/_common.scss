@@ -61,8 +61,10 @@ p {
   background-color: $green;
   border-radius: 50%;
   display: inline-block;
-  vertical-align: baseline;
-  margin-left: .4rem
+  margin-left: .4rem;
+  vertical-align: middle;
+  position: relative;
+  margin-top: -2px
 }
 
 // Forms
