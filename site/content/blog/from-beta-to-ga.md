@@ -1,6 +1,6 @@
 ---
 date: 2018-07-04T09:00:00+00:00
-title: "Lessons learned fom taking a solo startup from beta to GA"
+title: "Seven discernible stages in taking a solo startup from beta to GA"
 author: "Tim Nolet"
 avatar: "tnolet.jpg"
 tags: ["company", "entrepreneurship"]
@@ -10,9 +10,9 @@ publishdate: 2018-08-03
 ![Crossing the River Styx" by Joachim Patinir](/blog/crossing.png)
 <small> "Crossing the River Styx" by Joachim Patinir (circa 1480-1524) - Museo Nacional del Prado. Licensed under Public Domain via Wikimedia Commons</small>
 
-Last week the "beta" tag officially came off of Checkly 🍾 yay for me! This is a write up on some of the things I bumped
-into in the period between [launching a private beta](https://hackernoon.com/things-i-learned-from-my-saas-projects-private-beta-period-cd69a11d9e58)
-and hammering down on all features and ripping the beta notice of the navbar.
+Last week the "beta" tag officially came off of Checkly 🍾🎉! I bumped into many things in the period between [launching a private beta](https://hackernoon.com/things-i-learned-from-my-saas-projects-private-beta-period-cd69a11d9e58)
+and hammering down on all features and ripping the beta notice of the nav.navbar. In this post, I tried to funnel a bunch of these
+learnings into a somewhat logical order, as they felled like hoops I had to jump through to get to the next hoop.
 
 > Note: Don't take any of this as gospel. Every situation is different. Stay critical.
 
@@ -20,8 +20,10 @@ and hammering down on all features and ripping the beta notice of the navbar.
 
 ## 1. Taking payments with Stripe
 
-Once you ask for money, it becomes real. I added a pricing page and a way to pay some months before I actively started 
-steering users towards the paid plans. Stripe get's good press for its developer friendliness but integration was more of a 
+Once you ask for money, it becomes real. If you have no way to get money, it never becomes real.
+No brainer, but this is where it starts. And "yes", you can ask money for a product in beta. I did and people paid. 
+
+I actually added a pricing page and a way to pay some months before I actively started steering users towards the paid plans. Stripe get's good press for its developer friendliness but integration was more of a 
 hassle than I expected.
 
 1. Discounts can only be applied **AFTER** a person has signed up for a subscription. That's pretty weird from the customer perspective. Also, their widgets have no input box for coupons.
@@ -69,7 +71,7 @@ prepared enough, as I added some major new things like [double checks](https://c
 
 {{< tweet 978185749421051904 >}}
 
-## 5. Buy vs. Build
+## 5. The buy vs. build dilemma
 
 If you're starting a SaaS then your next hobby will be collecting other SaaS-es. Hosting, email, payments, databases the list goes on.
 Here's what I'm paying now, straight from the credit card slip:
@@ -94,7 +96,7 @@ What 😱 !! Yes, I spend some time meeting with the nice folks of a pretty big 
 of me and Checkly at this early stage. This is enough material for another post, suffice to say we didn't strike a deal in the end and
 parted ways on good terms. Also, it didn't really derail me that much. More later.
 
-## 7. Switching the 80/20 time division.
+## 7. The 80/20 - engineer/sales division.
 
 During beta period, I roughly divided my time into 80% engineering and 20% marketing and sales. Now I'm flipping that.
 I'll be spending 80% of my time emailing, tweeting, blogging, calling and talking to users to get more launching customers.
