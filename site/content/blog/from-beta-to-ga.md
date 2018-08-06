@@ -1,5 +1,5 @@
 ---
-date: 2018-07-04T09:00:00+00:00
+date: 2018-08-06T09:00:00+00:00
 title: "Seven discernible stages in taking a solo startup from beta to GA"
 author: "Tim Nolet"
 avatar: "tnolet.jpg"
