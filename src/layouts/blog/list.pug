@@ -5,17 +5,17 @@ body
     .container
       .row
         .col-sm-12.col-md-8.offset-md-2
-          .span.markdown.blog #{'{{.Content}}'}
+          .span.markdown.blog.py-4 #{'{{.Content}}'}
             | !{' {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }} '}
-            include ../partials/blog-meta-data.pug
             article
               a.blog-header(href="{{.RelPermalink }}") #{' {{.Title}} '}
+              include ../partials/blog-meta-data.pug
               .markdown.blog-body
                 | !{' {{ .Summary | markdownify  }} '}
               span
                 | !{' {{ if .Truncated }} '}
                 div
-                  a(href="{{.RelPermalink }}") Read more...
+                  a.btn.btn-primary.btn-sm(href="{{.RelPermalink }}") Read more
                 | !{'{{end}}'}
             | !{'{{end}}'}
   include ../partials/footer.pug

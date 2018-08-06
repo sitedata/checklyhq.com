@@ -33,5 +33,7 @@
 
 
 body {
-  padding-top: 90px; // navbar height
+  &.fixed-top-padding {
+    padding-top: 90px; // navbar height
+  }
 }

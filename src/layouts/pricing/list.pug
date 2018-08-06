@@ -69,7 +69,7 @@ body
                                 li.list-inline-item 1 minute resolution for API checks / 5 resolution for Browser checks
                                 li.list-inline-item 1 public dashboard with a custom domain
                                 li.list-inline-item SSL expiration checks
-                                li.list-inline-item SMS, email, webhook and Slack integration
+                                li.list-inline-item Pagerduty, SMS, email, webhook and Slack integration
                                 li.list-inline-item Weekly summary email
                 .row
                     .col-sm-12.text-center
@@ -79,5 +79,5 @@ body
                     .col-sm-6.markdown.text-left #{'{{ . | markdownify }}'}
                     | !{'{{end}}'}
 
-    include ../partials/free-trial-row
+    include ../partials/free-trial-row.pug
     include ../partials/footer.pug

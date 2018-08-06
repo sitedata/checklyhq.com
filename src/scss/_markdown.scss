@@ -74,6 +74,10 @@
 
   ul, ol {
     padding-left: 2rem;
+
+    li {
+      margin-bottom: .5 * $spacer-y;
+    }
   }
 
   img {

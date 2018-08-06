@@ -24,8 +24,12 @@ Click **Finish integration** to save your settings and redirect you back to Chec
 ![](/docs/images/alerting/pagerduty_step3.png)
 
 4. Back in Checkly, you should see your Pagerduty **integration credentials** reflected in the alert settings. 
-Checkly will notify Pagerduty when checks fail and when they resolve.
 ![](/docs/images/alerting/pagerduty_step4.png)
+
+5. Checkly will trigger an incident in Pagerduty when checks fail and also mark them as resolved when the checks are passing again.
+![](/docs/images/alerting/pagerduty_step5.png)
+
+
 
 If you want to change your Pagerduty integration, first remove it and then go through the setup steps again
 

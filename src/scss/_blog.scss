@@ -3,6 +3,21 @@
   article {
     margin-bottom: 5 * $spacer;
   }
+
+  h2, h3 {
+    border-bottom: none;
+  }
+
+  h2 {
+    font-weight: $font-weight-bold;
+  }
+
+  small {
+    font-size: 80% !important;
+    font-weight: $font-weight-base;
+    color: $gray;
+  }
+
   .blog-content {
 
   }
@@ -12,12 +27,14 @@
     color: $gray-dark;
     font-weight: $font-weight-bold;
     line-height: 1.3;
-    margin-bottom: $spacer;
+    margin-bottom: $spacer-y;
     @media (max-width: 321px) {
       font-size: 35px;
     }
   }
   a.blog-header {
+    display: block;
+    margin-bottom: $spacer-y;
     &:hover {
       color: $brand-primary !important;
     }
@@ -26,7 +43,7 @@
     margin-bottom: 1.5 * $spacer;
     letter-spacing: .01em;
     img.blog-meta-data-avatar {
-      width: 48px;
+      width: 36px;
       border-radius: 30px;
       vertical-align: top;
       margin-right: $spacer;
@@ -49,5 +66,9 @@
   }
 
   .blog-body {
+    font-size: 1.05rem;
+    img {
+      padding: 1rem 0;
+    }
   }
 }
