@@ -49,8 +49,8 @@ sections:
   label: Pricing
   create: all
   match: "**/*"
-upload_dir: site/static/uploads
-public_path: "/uploads"
+upload_dir: site/static
+public_path: ''
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
