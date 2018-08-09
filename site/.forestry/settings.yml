@@ -1,0 +1,57 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: 
+webhook_url: 
+sections:
+- type: directory
+  path: site/content
+  label: Pages
+  create: all
+  match: "*"
+- type: directory
+  path: site/content/support
+  label: Support
+  create: all
+  match: "**/*"
+- type: directory
+  path: site/content/docs
+  label: Docs
+  create: all
+  match: "**/*"
+- type: directory
+  path: site/content/features
+  label: Features
+  create: all
+  match: "**/*"
+- type: directory
+  path: site/content/blog
+  label: Blog
+  create: all
+  match: "**/*"
+- type: directory
+  path: site/content/whats-new
+  label: Whats new
+  create: all
+  match: "**/*"
+- type: directory
+  path: site/content/privacy
+  label: Privacy
+  create: all
+  match: "**/*"
+- type: directory
+  path: site/content/maintenance
+  label: Maintenance
+  create: all
+  match: "**/*"
+- type: directory
+  path: site/content/pricing
+  label: Pricing
+  create: all
+  match: "**/*"
+upload_dir: site/static
+public_path: ''
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":filename:"
+version: 0.37.1
