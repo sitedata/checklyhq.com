@@ -9,7 +9,7 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 
 [permalinks]
-  blog = "/:year/:month/:title/"
+  blog = "/blog/:year/:month/:title/"
 
 [params]
     description = "Checkly is the easiest way to actively monitor your API endpoints and browser click flows from a single dashboard"

@@ -5,6 +5,7 @@ author: "Tim Nolet"
 avatar: "tnolet.jpg"
 tags: ["company", "entrepreneurship"]
 publishdate: 2018-08-03
+alias: /2018/08/seven-discernible-stages-in-taking-a-solo-startup-from-beta-toga/
 ---
 
 ![Crossing the River Styx" by Joachim Patinir](/blog/crossing.png)
