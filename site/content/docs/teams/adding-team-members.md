@@ -13,9 +13,9 @@ Team members can have different [roles](/docs/teams/roles/)
 
 ## Inviting team members
 
-Go to the **users** section of your account overview.
+Go to the **team** section of your account overview.
 
-![](/docs/images/teams/users.png)
+![](/docs/images/teams/team.png)
 
 Click the **Invite users** button and add the users' email addresses you want to invite. A pending invite will be added
 to your list of users. The invite is valid for 30 days. You can retract the invite at any moment.

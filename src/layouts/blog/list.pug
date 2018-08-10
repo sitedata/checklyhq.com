@@ -4,7 +4,7 @@ body
   .main
     .container
       .row
-        .col-sm-12.col-md-8.offset-md-2
+        .col-sm-12.col-lg-8.offset-lg-2
           .span.markdown.blog.py-4 #{'{{.Content}}'}
             | !{' {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }} '}
             article
