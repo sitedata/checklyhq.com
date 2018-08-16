@@ -93,17 +93,19 @@ function start () {
 Anything you need to persist over navigations and opening/closing the popup UI should go into either the `session` or `sync`
 store. The `sync` store should be synced over Chrome browsers hooked up with Chrome Sync. For more, see [State](#state) below.
 
-"Globals are bad 'm kay". For instance, testing anything that uses them can be a hassle. When global are used over multiple,
-normally loosely coupled, objects things get  hairy, quickly. Having said that, the Chrome team did a 
-good job keeping the `chrome` global's interface fairly minimal. Keeping as much of the calls out of your popup UI, where 
+"Globals are bad 'm kay". For instance, testing anything that uses them can be a hassle. When globals are used over multiple,
+normally loosely coupled, objects things get  hairy, quickly.  
+
+Having said that, the Chrome team did a good job keeping the `chrome` global's interface fairly minimal. Keeping as much of the calls out of your popup UI, where 
 you will probably use a "modern" web framework will keep things sane. 
 
 
 ## State
 
-State is persisted using the native `chrome.storage` API. No other way around it. This will get/set basically Javascript
-object you give it, much like the `localStorage` API. Wrapping it in some non-global function helps keeping things sane.
-Be sure to check values returning from the store, e.g:
+State is persisted using the native `chrome.storage` API. No other way around it. This will get/set basically any Javascript
+object you give it, much like the `localStorage` API.  
+
+Wrapping it in some non-global function helps keeping things sane. Be sure to check values returning from the store, e.g:
 
 ```javascript
 function loadState (cb) {
@@ -135,13 +137,13 @@ State is handled slightly different by each architectural component:
 
 ### The popup's state does not persist 
 
-When opening & closing the extension though clicking on its icon in the toolbar, the popup looses all state. You need to write everything
-to the session store and reload it on opening.
+When opening & closing the extension by clicking on its icon in the toolbar, the popup looses all state. You need to 
+write everything to the session store and reload it on opening.
 
 ### The background script's state does persist
 
-The background scripts acts a bit like a worker thread, as it is not reloaded unless an explicit reload method is called.
-This means it should (probably) function as you main source of truth
+The background script acts a bit like a worker thread, as it is not reloaded unless an explicit reload method is called.
+This means it should (probably) function as you main source of truth.
 
 ### The content script's state depends on many things
  
@@ -207,8 +209,8 @@ and options UI all run in separate contexts.
     ![chrome extension project layout](/blog/chrome_extension_background_link.png)
 - **popup and options** are opened by right-clicking in the UI of the popup / options window and clicking **Inspect**
 
-Prepare to do some nice window Tetrissing! Of course, technically this makes sense, but the workflow suffers tremendously,
-especially when you are used to React, Vue or vanilla JS app development and you have a need timeline of all your debug
+Prepare to do some nice window Tetrising! Of course, technically this makes sense, but the workflow suffers tremendously,
+especially when you are used to React, Vue or vanilla JS app development and you have a neat timeline of all your debug
 statements etc. in one console.
  
 
@@ -221,7 +223,7 @@ However, when you are used to tech like Vue.js and ES6/ES7 syntax, you will ente
 - Vue.js single file components
 - SASS/SCSS compilation
 
-Getting the build right was a bit tricky as specifically Webpack examples and corresponding versions seem to be deprecated
+Getting the build right was a bit tricky as Webpack examples and corresponding versions seem to be deprecated
 faster than the speed of light. 
 
 {{<tweet 1030139648490856451 >}}
@@ -235,16 +237,16 @@ and you can see what works for Puppeteer Recorder.
 We use [Jest](https://jestjs.io/) for testing. We don't go for 100% test coverage and tests are being added as we speak.
 They fall into three categories:
 
-1. Unit tests at the module or function level
-2. UI tests rendering Vue.js components and using Jest [snapshots](https://jestjs.io/docs/en/snapshot-testing#snapshot-testing-with-jest) to validate correctness 
+1. Unit tests at the module or function level.
+2. UI tests rendering Vue.js components and using Jest [snapshots](https://jestjs.io/docs/en/snapshot-testing#snapshot-testing-with-jest) to validate correctness. 
 3. End 2 end tests that build and install the extension.
 
 For 1 and 2, there is no specific magic except that you have to...
 
 ### Mock out calls to the `chrome` global
 
-its methods. You can go crazy here, but we managed (for now) to get by with a fairly simple mock. The (edited) example below shows
-a Vue component being mounted, injected with a mock and asserted. The actual test live at [App.spec.js](https://github.com/checkly/puppeteer-recorder/blob/master/src/popup/components/__tests__/App.spec.js)
+You need to mock `chrome`. You can go crazy here, but we managed (for now) to get by with a fairly simple mock. The (edited) example below shows
+a Vue component being mounted, injected with a mock and asserted. The actual test lives at [App.spec.js](https://github.com/checkly/puppeteer-recorder/blob/master/src/popup/components/__tests__/App.spec.js)
 on Github.
 
 ```javascript
@@ -275,8 +277,8 @@ describe('App.vue', () => {
 
 ### Check build & install with Puppeteer
 
-In the end you need to deliver a zip file with code to Google to publish on the web store. You probably want to know that
-that distributable "binary" actually installs. You can test this with Puppeteer. The below example shows how we build the
+In the end you need to deliver a zip file with code to Google to publish on the web store. You probably want to know if
+the distributable "binary" actually installs. You can test this with Puppeteer. The below example shows how we build the
 code and install it as an extension in a Chrome instance. 
 
 When using Jest, be sure to run these test cases sequentially by using the `--runInBand` flag. 
@@ -323,7 +325,7 @@ Getting your extension on the web store is a three part process.
 
 ### 1. Package your code into a zip file
 
-Your extension needs to be uploaded to Google as zip. You can have your build tool create a zip file for you. We "stole"
+Your extension needs to be uploaded to Google as a zip. You can have your build tool create a zip file for you. We "stole"
 this script from [Kocal's vue-web-extension](https://github.com/Kocal/vue-web-extension) repo, check it out in 
 the [scripts directory](https://github.com/checkly/puppeteer-recorder/tree/master/scripts).  
 Kudos to Kocal and Kudos to Google for keeping the distribution format as simple as a zip 👌.
