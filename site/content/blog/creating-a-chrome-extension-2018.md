@@ -25,7 +25,7 @@ architectural gotcha's. Source code for the extension in question is on [github]
 
 ## Architecture
 
-Google's documentation does a fairly ok job of talking you through all the moving parts an extension is made of in their
+Google's documentation does a fairly ok job of talking you through all the moving parts of an extension in their
 [getting started guide](https://developer.chrome.com/extensions/getstarted). However, the docs mix explaining secondary 
 concerns / aspects like security, packaging, setting icons etc. with the five core architectural components. You would do 
 well to set up your project's code structure to reflect these five core components, i.e.
@@ -90,10 +90,8 @@ function start () {
 
 2. **Accessing storage**
 
-Anything you need to persists over navigations and opening/closing the popup UI should go into either the `session` or `sync`
+Anything you need to persist over navigations and opening/closing the popup UI should go into either the `session` or `sync`
 store. The `sync` store should be synced over Chrome browsers hooked up with Chrome Sync. For more, see [State](#state) below.
-
-**Can we have your votes please?**
 
 "Globals are bad 'm kay". For instance, testing anything that uses them can be a hassle. When global are used over multiple,
 normally loosely coupled, objects things get  hairy, quickly. Having said that, the Chrome team did a 
