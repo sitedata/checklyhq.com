@@ -8,7 +8,7 @@ publishdate: 2018-08-16
 ---
 
 
-![Actors as construction workers](/blog/workers.jpg)
+![Actors as construction workers](/blog/workers1.jpg)
 <small> "Actors as Construction Workers" by Utagawa Kunisada (1860) - [Museum of Fine Arts, Boston.](https://www.mfa.org/collections/object/a-roof-raising-ceremony-on-an-auspicious-day-kisshin-medetai-muneage-no-zu-actors-sawamura-tanosuke-iii-nakamura-shikan-iv-r-kawarazaki-gonj%C3%BBr%C3%B4-i-ichikawa-kodanji-iv-c-ichikawa-ichiz%C3%B4-iii-and-onoe-baik%C3%B4-45-later-jitsukawa-enjaku-i-l)</small>
 
 
