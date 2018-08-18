@@ -6,15 +6,17 @@
   &.testimonial-1 {
     .testimonial-card {
       border: none;
+      height: 354px;
       .card-block {
         padding: 2 * $spacer;
       }
     }
     .testimonial-logo {
-      width: 165px;
+      height: 24px;
       margin-bottom: 1rem;
     }
     .testimonial-text {
+      height: 160px;
       font-size: $font-size-base;
       color: $gray-dark;
       font-weight: 300;
