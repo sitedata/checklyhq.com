@@ -7,6 +7,12 @@
   height: 880px;
   overflow: hidden;
 
+  .alerting-options-image {
+    @include media-breakpoint-down(xs) {
+      width: 240px;
+    }
+  }
+
   .alerting-image {
     @include screen-shadow();
     border-radius: 5px;

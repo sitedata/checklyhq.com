@@ -1,6 +1,9 @@
 ---
 title: Pagerduty integration
 weight: 4
+menu:
+  docs:
+    parent: "Alerting"
 ---
 
 Checkly integrates with [Pagerduty](https://pagerduty.com) and can deliver all failure and recovery events 
