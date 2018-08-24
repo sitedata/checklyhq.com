@@ -2,12 +2,12 @@ include  ../partials/head
 body
     include ../partials/navbar.pug
     .main
-        .plans.py-5
+        .plans.pt-5
             .container
                 .row
                     .col-sm-12.col-md-8.offset-md-2.plans-header.text-center.mb-4
                         h2 Simple, fair pricing 🍍
-                        p.py-4
+                        p.mb-4
                             | Checkly has plans for companies at any level, from small startups to corporates.
                 .row
                     .col-sm-4
@@ -85,5 +85,5 @@ body
                     .col-sm-6.markdown.text-left #{'{{ . | markdownify }}'}
                     | !{'{{end}}'}
 
-    include ../partials/free-trial-row.pug
+    include ../partials/testimonial-trial-row.pug
     include ../partials/footer.pug
