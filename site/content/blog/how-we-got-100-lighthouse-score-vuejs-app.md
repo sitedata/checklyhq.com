@@ -10,18 +10,19 @@ publishdate: 2018-08-23
 ![tunnel](/blog/tunnel1.jpg)
 <small> "High Speed Tunnel" by Sekino Junichiro (late 20th century) - [Ukiyo.org](https://ukiyo-e.org/image/artelino/15177g1)</small>
 
-Since launch, we did not pay too much attention to the front end performance of the main Checkly web app. Shame on us. 
-What better occasion to dive into this after the publishing of Google's Addy Osmani excellent
+Since launch, we didn't pay too much attention to the front end performance of the main Checkly web app. Shame on us. 
+What better reason to dive into this than the publishing of Google's Addy Osmani excellent
  [The Cost of Javascript in 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)?
  
-Turns out it took about half a day to go from an **abysmal 34 to 100 Lighthouse score** on our Vue.js app.
+TL;DR: it took about half a day to go from **an abysmal 34 to a 100 Lighthouse score** on our Vue.js app.
 
 <!--more-->
 
 ## Very short primer on web app performance
 
 The article by Osmani goes into why web/mobile performance is important, what Javascript has to do with it
-and what concerns there are regarding mobile, device types etc. Read it if you are not familiar with these topics. The gist is:
+and what concerns there are regarding mobile, device type, render cycles, loading etc. Read it if you are not familiar with 
+these topics. The gist is:
 
 1. Javascript is the most expensive part of your site performance wise. Not images, not CSS.
 2. Faster sites increase revenue.
@@ -35,19 +36,20 @@ for some more in depth knowledge around this topic.
 To get a handle on the current performance of the Checkly app, I ran [Lighthouse](https://developers.google.com/web/tools/lighthouse/) 
 on the login screen. Lighthouse is a performance auditing tool embedded in every Chrome browser.
 
-Admittedly, the login page is not the page where most users spend most of their time, but definitely the page EVERY will always have to deal with. 
+Admittedly, the login page is not where most users spend most of their time, but it is definitely the page everyone will
+always have to deal with at least once.
 
 Lighthouse ran with the following settings to optimize for the intended audience:
 
-- **Device**: desktop. Mobile is not really a factor (yet?) for Checkly's current audience.
-- **Audits**: performance. Other options are SEO, Accessibility etc. We are only interested in performance here.
-- **Throttling**: no throttling. Checkly is a B2B, DevOps app. 99% of users will be using it in an office. 3G and 4G performance
-is not really important.
+- **Device: desktop.** Mobile or tablet usage is not really a factor (yet?) for Checkly's current audience.
+- **Audits: performance.** Other options are SEO, Accessibility etc. We are only interested in performance here.
+- **Throttling: no throttling.** Checkly is a B2B, DevOps app. 99% of users will be using it in an office. 3G and 4G performance
+is not really that important.
 
 Note that the Device and Throttling settings *do* matter for the site and blog post you are reading right now. At least
 25% of checklyhq.com visitors are on mobile.
 
-The results speak for themselves. A score of 34. Lots of red letters. Pretty terrible. 😞
+We ran the test and the results speak for themselves. A score of 34. Lots of red letters and warning signs. Pretty terrible. 😞
 
 ![lighthouse score 1](/blog/cost1.png)
 
@@ -80,11 +82,11 @@ This will start up a browser after each build and show you something similar to 
 ![webpack bundle size](/blog/cost2.png)
 
 Yes. That is a total of 2.01MB of (uncompressed) javascript Checkly was shipping. A far cry from the 170KB compressed / 0.7MB uncompressed
-advices as a ball park figure in the Cost of Javascript article. 
+that is adviced as a ball park figure in the Cost of Javascript article. 
 
-Our Webpack setup is based on the settings introduced by Vue-CLI and splits code into **vendor**, **app** and **manifest** files. 
-This is a common practice and really helps with caching the vendor dependencies for a long time, while still enabling you 
-to update your app on a regular basis.
+Our Webpack setup is based on the settings introduced by Vue-CLI and splits code into **vendor**, **app** and **manifest** files as 
+you can see in the screenshot above. This is a common practice and really helps with caching the vendor dependencies for a 
+long time, while still enabling you to update your app on a regular basis.
 
 We attacked the **vendor.js** file first.
 
@@ -92,7 +94,7 @@ We attacked the **vendor.js** file first.
 
 Moment.js is a great date and time handling library. It just ships with a full range of locale files. We use none in our app.
 Sadly there is no way to optionally install them and it turns out [we are not the only ones slightly annoyed by this](https://github.com/moment/moment/issues/2416). 
-We got rid of the locales using built in Webpack Ignore plugin:
+We got rid of the locales using the built in Webpack Ignore plugin:
 
 ```javascript
   plugins: [
@@ -102,28 +104,26 @@ We got rid of the locales using built in Webpack Ignore plugin:
 ### Gutting Codemirror: 1.58MB -> 1.05MB (!)
  
 Codemirror is used on the browser check edit screen in the Checkly app. As with Moment.js, it ships with a whole bunch
-of code styles and themes we we're not using.  
-Lucky us, there was already a thin Vue.js wrapper for a slimmed down
+of code styles and themes we we're not using. Lucky us, there was already a thin Vue.js wrapper for a slimmed down
 Codemirror install called [VueCodeMirrorLite](https://github.com/cnu4/vue-codemirror-lite). After some minor code tweaks and
-specifically downloading the Monokai theme and Javascript code style we saved almost 0.5MB! 
+a separate install of the Monokai theme and Javascript code style we saved almost 0.5MB! 
 
 
 ### Removing full lodash: 1.05Mb -> 1019.82KB
 
 A quick code scan showed we only used four methods of Lodash (`clonedeep` is gold). We ditched the full install and just
-installed the used methods.
+installed the methods we actually used. Kudos to the Lodash people for supporting this.
 
 ### Selective import of bootstrap-vue: 1019.82KB -> 934.75KB
 
 Parts of the UI are using a Vue.js-ified version of Bootstrap called [Bootstrap Vue](https://bootstrap-vue.js.org/). By just 
 importing the modules from the library we are using (modals, tooltips, navs etc.) we got the vendor.js bundle under 1MB 🎉 
 
-
 ## Second stop: Code Splitting
 
 To attack the **app.js** file, we looked at code splitting. The idea of code splitting is that you serve the right amount
-of javascript at the right moment using XHR calls. This means there is not initial, up front cost to load the full application
-resulting in a quicker time to first paint and subsequent interaction.
+of javascript at the right moment using XHR calls. This means there is no big initial, up front cost to load the full application.
+This should result in a quicker time to first paint and subsequent interaction.
 
 [This great article](https://vuejsdevelopers.com/2017/07/03/vue-js-code-splitting-webpack/)
 on code splitting in Vue.js describes the nitty gritty. The gist is:
@@ -131,7 +131,7 @@ on code splitting in Vue.js describes the nitty gritty. The gist is:
 1. You want to use components, "Single File" or not. (at Checkly we use separate `.pug` and `.scss` files)
 2. You want to use Webpack. Read the mentioned article on how to set this up. If you use Vue-CLI for starting a Vue app, you
 are already good.
-3. You want to split by route. There are other options, but this is by far the most straightforward and nicely mimics
+3. You want to split by route. There are other options, but this is by far the most straightforward one and nicely mimics
 traditional (non SPA) sites by requesting resources on page navigation.
 
 I was happily surprised that literally the only changes need in our app were a list of import statements in our `router.js`
@@ -178,11 +178,11 @@ shows the nicely numbered javascript chunks flying over the network when navigat
 ## Running Lighthouse again
 
 We were pretty happy with the bundle size reduction and how easy it was to implement code splitting. We were not prepared
-for the huge impact it had. Running Lighthouse again (same settings as mentioned above) painted a totally different picture.
+for the huge impact it had. Running Lighthouse again — same settings as mentioned above — painted a totally different picture: 
+A score of 100 and green text everywhere! Wow!
 
 ![lighthouse second run](/blog/cost4.png)
 
-A score of 100 and green text everywhere! 😲
 
 As mentioned, the login page is not the most exciting thing going on in the app. We ran the test on the home dashboard and check results
 pages, which both contain a fair amount of XHR calls, data parsing and graph drawing.
