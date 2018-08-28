@@ -11,6 +11,6 @@ standard library or to arbitrary NPM modules. Currently every runner is equipped
 
 - **Node** 8.x
 - **Mocha** 5.0.0
-- **Puppeteer** 1.5.0
+- **Puppeteer** 1.7.0
 
 
