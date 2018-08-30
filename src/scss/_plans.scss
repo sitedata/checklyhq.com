@@ -12,6 +12,56 @@
     border-top: 6px solid $brand-primary;
   }
 
+  .billing-cycle-toggler {
+    display: inline-block;
+    width: 160px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .toggle {
+      width: 50%;
+      padding: .3rem .6rem;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: $font-size-xs;
+      transition: .3s cubic-bezier(0,0,0,1);
+      font-weight: $font-weight-bold;
+      background-color: $gray-lighter;
+      color: $gray;
+
+      &.toggle-left {
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+
+      &.toggle-right {
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+
+      &:hover {
+        background-color: $blue-light;
+      }
+
+
+      &.toggle-selected {
+        background-color: $brand-primary;
+        color: $white;
+      }
+    }
+  }
+
+  .savings-box {
+    display: inline-block;
+    text-align: left;
+    margin-left: .5rem;
+    font-weight: $font-weight-bold;
+    font-size: .65rem;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+  }
+
   table.plans-features-table {
     margin-bottom: 0;
     tbody {

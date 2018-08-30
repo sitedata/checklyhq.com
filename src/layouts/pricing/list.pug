@@ -7,8 +7,15 @@ body
                 .row
                     .col-sm-12.col-md-8.offset-md-2.plans-header.text-center.mb-4
                         h2 Simple, fair pricing 🍍
-                        p.mb-4
-                            | Checkly has plans for companies at any level, from small startups to corporates.
+                        p.mb-4 affordable plans for all company sizes - start a free trial today
+                        .billing-cycle-toggler
+                          #billing-monthly.toggle.toggle-left.toggle-selected Monthly
+                          #billing-annual.toggle.toggle-right Annual
+                        .savings-box
+                          .text-accent One month free
+                          svg(fill='#FF659D' width="22" height="16" viewBox="0 0 22 16")
+                            path(d="M2.39,17,1,17l.07-2c11.37.39,17.9-4.17,20-14l2,.42C20.83,11.76,13.9,17,2.39,17Z" transform="translate(-1 -1)")
+
                 .row
                     .col-sm-4
                         .card.p-3.mb-3.mb-md-0.card-starter
@@ -25,8 +32,8 @@ body
                                         td 50 SMS credits
                                 .price-block
                                     span.dollar-sign $
-                                    span.price 15
-                                    | / month
+                                    span.price(data-starter-price) 15
+                                    span(data-billing-interval) month
                                 a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                     .col-sm-4
                         .card.p-3.mb-3.mb-md-0.card-growth.big-drop-shadow
@@ -43,8 +50,8 @@ body
                                       td 150 SMS credits
                                 .price-block
                                     span.dollar-sign $
-                                    span.price 40
-                                    | / month
+                                    span.price(data-growth-price) 40
+                                    span(data-billing-interval) month
                                 a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                     .col-sm-4
                         .card.p-3.mb-3.mb-md-0.card-business
@@ -62,8 +69,8 @@ body
                                       td 300 SMS credits
                                 .price-block
                                     span.dollar-sign $
-                                    span.price 80
-                                    | / month
+                                    span.price(data-business-price) 80
+                                    span(data-billing-interval) month
                                 a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                 .row.pt-5
                     .col-sm-12
