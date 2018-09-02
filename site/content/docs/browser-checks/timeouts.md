@@ -51,13 +51,25 @@ This works exactly the same for the `page.waitForXpath()` function is you are us
 
 ### page.waitForNavigation()
 
-In your Puppeteer script you can click on link that triggers the navigation to a new page. Every time you do this, you
-should add the `page.waitForNavigation()` method.
+In your Puppeteer script you can click on a link that triggers a navigation to a new page. Use Puppeteer's `page.waitForNavigation()`
+method, although it is slightly unintuitive to use as the associated promise has to be initialized before waiting for it.
+This means the following **will not work**
 
 ```javascript
 await page.click('a.some-link')
-await page.waitForNavigation()
+await page.waitForNavigation() // does not works as expected
 ```
+
+but this will work
+
+```javascript
+const navigationPromise =  page.waitForNavigation()
+await page.click('a.some-link')
+await navigationPromise
+```
+
+
+But this will work
 
 [Reed more in the Puppeteer API docs](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagewaitfornavigationoptions)
 
@@ -77,11 +89,6 @@ seconds.
 ```javascript
 await page.waitFor(5000)
 ```
-
-
-
-
-
 
 ## Timeouts in Mocha
 
