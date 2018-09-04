@@ -11,7 +11,7 @@ publishdate: 2018-08-23
 <small> "High Speed Tunnel" by Sekino Junichiro (late 20th century) - [Ukiyo.org](https://ukiyo-e.org/image/artelino/15177g1)</small>
 
 Since launch, we didn't pay too much attention to the front end performance of the main Checkly web app. Shame on us. 
-What better reason to dive into this than the publishing of excellent [The Cost of Javascript in 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
+What better reason to dive into this than the publishing of the excellent [The Cost of Javascript in 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
 by Google's Addy Osmani?
  
 TL;DR: it took about half a day to go from **an abysmal 34 to a 100 Lighthouse score** on our Vue.js app.
