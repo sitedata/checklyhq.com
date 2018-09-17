@@ -5,6 +5,7 @@ author: "Tim Nolet"
 avatar: "tnolet.jpg"
 tags: ["dev", "javascript", "chrome", "vue", "performance"]
 publishdate: 2018-08-23
+featured_image: "https://checklyhq.com/blog/tunnel1.jpg"
 ---
 
 ![tunnel](/blog/tunnel1.jpg)

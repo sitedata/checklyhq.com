@@ -5,6 +5,7 @@ author: "Tim Nolet"
 avatar: "tnolet.jpg"
 tags: ["dev", "javascript", "chrome", "vue", "jest"]
 publishdate: 2018-08-16
+featured_image: "https://checklyhq.com/blog/workers1.jpg"
 ---
 
 

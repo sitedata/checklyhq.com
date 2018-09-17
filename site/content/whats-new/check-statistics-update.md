@@ -2,6 +2,7 @@
 title: UI and performance tweaks to Check statistics page
 date: 2018-09-17
 author: Tim Nolet
+featured_image: 'https://checklyhq.com/whats-new/check_statistics_1.png'
 ---
 
 We made a couple of tweaks to the Check statistics page based on customer feedback and to address some performance issues.
