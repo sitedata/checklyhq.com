@@ -1,6 +1,6 @@
 ---
 title: Triggers
-weight: 4
+weight: 5
 menu:
   docs:
     parent: "Browser Checks"

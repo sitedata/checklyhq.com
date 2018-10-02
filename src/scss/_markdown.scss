@@ -62,7 +62,7 @@
     line-height: 1.45;
     border-radius: $border-radius;
     background-color: $gray-lighter;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     &.chroma {
       background-color: #272822;
     }
@@ -84,17 +84,29 @@
     max-width: 100%;
   }
 
-  p {
-    code {
-      border: 1px solid $gray-light;
-      color: #d82553;
-      font-size: 85%;
-    }
+  code {
+    border: 1px solid $gray-light;
+    color: #d82553;
+    font-size: 85%;
   }
 
   pre {
     code {
       border: none;
     }
+  }
+
+  kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: $gray-dark;
+    vertical-align: middle;
+    background-color: $gray-lightest;
+    border: solid 1px $gray-lighter;
+    border-bottom-color: $gray-light;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 $gray;
   }
 }

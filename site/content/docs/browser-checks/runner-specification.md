@@ -10,6 +10,7 @@ All browser checks are ran in a Docker container on our cloud backend. You do no
 standard library or to arbitrary NPM modules. Currently every runner is equipped with the following libraries:
 
 - **Node** 8.x
+- **Chai** 4.2.0
 - **Mocha** 5.0.0
 - **Puppeteer** 1.7.0
 
