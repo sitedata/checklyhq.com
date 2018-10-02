@@ -14,5 +14,5 @@ exact control over how your API's and web apps should be monitored.
 - [Alerting](/docs/alerting/)
 - [Dashboards] (/docs/dashboards)
 - [Teams](/docs/teams/)
-- [Puppeteer Recorder](/docs/puppeteer-recorder/)
+- [Puppeteer Recorder](/puppeteer-recorder/)
 

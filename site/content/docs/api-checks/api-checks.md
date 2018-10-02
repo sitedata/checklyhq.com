@@ -6,6 +6,7 @@ aliases:
 menu:
   docs:
     parent: "API Checks"
+    identifier: overview-api-checks
 ---
 
 API checks consist of two parts:

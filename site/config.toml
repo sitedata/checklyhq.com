@@ -23,3 +23,23 @@ pygmentsUseClasses = true
 	name = "Browser Checks"
 	url = "/docs/browser-checks/"
 	weight = 30
+
+[[menu.docs]]
+	name = "Alerting"
+	url = "/docs/alerting/"
+	weight = 40
+
+[[menu.docs]]
+	name = "TV-mode dashboards"
+	url = "/docs/dashboards/"
+	weight = 50
+
+[[menu.docs]]
+	name = "Teams"
+	url = "/docs/teams/"
+	weight = 50
+
+[[menu.docs]]
+	name = "Puppeteer Recorder"
+	url = "/docs/puppeteer-recorder/"
+	weight = 9999
