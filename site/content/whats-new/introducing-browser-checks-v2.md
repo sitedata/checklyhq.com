@@ -1,23 +1,33 @@
 ---
 title: Introducing Browser Checks V2
-date: 2018-10-03
+date: 2018-10-02
 author: Tim Nolet
+featured_image: "https://checklyhq.com/blog/workers1.jpg"
 ---
 
-![](/whats-new/sms_pagerduty.png)
+![](/whats-new/browser_checks_v2.png)
 
-We did a poll over the last few months what alerting integrations were still missing in Checkly. It was a tie between
-SMS and Pagerduty so we build both! 
+As of today all Checkly's browser checks are running on the second iteration of the browser checks site transaction monitoring system. 
+This upgrade brings the following benefits:
 
-## 📞 SMS Alerting
+- **Every valid Puppeteer script is now a valid check.** If your Puppeteer script passes, your check passes.
+- **Assertions are now optional.** You can still use assertions (more on that below) but you don't need to. A failing
+script is enough to signal something is wrong and trigger an alert.
+- **More and better logging**. We now report debug and console logs directly to the user on each run. This makes debugging
+flaky checks a lot easier.
+- **Use Chai.js assertions**. When you do want to use assertions, you can now use all functions from the popular Chai.js library. 
 
-Still a gold standard in incident response. Got a cell signal? That's enough. Every plan comes with a generous SMS bundle, see the
-pricing page for more details or [read more about how to setup SMS alerting](docs/alerting/ssl-delivery/)
+We are confident that this new iteration will make monitoring your vital site transactions a lot easier.  
 
-## 📟 Pagerduty Alerting
+<!--more--> 
 
-You can link your Pagerduty account to Checkly and we will trigger events whenever a check fails and when it recovers.
-This integration only works at the account level, not the individual check level. [Read more about integrating Pagerduty](docs/alerting/pagerduty/)
-on our site or check [Pagerduty's integration guide.](https://www.pagerduty.com/docs/guides/checkly-integration-guide/)
+## What are browser checks?
 
-<!--more-->
+A browser check is a Node.js script that starts up a Chrome browser, loads a web page and interacts with that web page.
+The script validates assumptions you have about that web page, for instance:
+
+- Is my shopping cart visible?
+- Can users add products to the shopping cart?
+- Can users log in to my app?
+
+[Learn more about browser checks](/docs/browser-checks/quickstart/)
