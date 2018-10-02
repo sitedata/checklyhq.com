@@ -6,10 +6,8 @@ menu:
     parent: "Puppeteer Recorder"
 ---
 
-Click this button {{< webstore >}} to install Puppeteer Recorder.  
-
-If that fails, just go to the [Chrome Webstore](https://chrome.google.com/webstore/detail/puppeteer-recorder/djeegiggegleadkkbgopoonhjimgehda)
-and install it by hand as follows:
+To install Puppeteer Recorder, go to the [Chrome Webstore](https://chrome.google.com/webstore/detail/puppeteer-recorder/djeegiggegleadkkbgopoonhjimgehda)
+and install it as follows:
 
 ![](/docs/images/browser-checks/chrome-webstore.png)
 
