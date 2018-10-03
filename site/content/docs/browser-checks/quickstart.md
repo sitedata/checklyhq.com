@@ -36,8 +36,8 @@ interactions you want to happen on a web page.
 
 ## Breaking down a browser check step-by-step
 
-Let's look a more real life example and break down each step. The code below logs into Checkly, waits for the dashboard
-to fully load and then snap a screenshot.
+Let's look at a more real life example and break down each step. The code below logs into Checkly, waits for the dashboard
+to fully load and then snaps a screenshot.
 
 ```js
 const puppeteer = require('puppeteer') // 1
@@ -60,7 +60,7 @@ await browser.close()
 **2. Initial navigation:** We use the `page.goto()` method to load the first page.
 
 **3. Fill out input fields and submit:** Using the `page.type()` and `page.click()` methods we enter our email address and
-password and click the login button. You would actually usedenvironment variables here normally to keep sensitive data
+password and click the login button. You would normally use environment variables here to keep sensitive data
 out of your scripts. See [Login scenarios and secrets](/docs/browser-checks/login-and-secrets/) for more info.
 
 **4. Wait for dashboard and close:** The expected behaviour is that the dashboard loads. In our case we can recognise this
@@ -86,10 +86,10 @@ to Checkly.
 
 ## How do I assert assumptions?
 
-Navigating around your app or site can already give you a lot of confidence critical infrastructure is working correctly.
+Navigating around your app or site can already give you a lot of confidence your critical business processes are working correctly.
 However, many times you want to assert specific values on a page.
 
-- After login in, you want the users name to be displayed.
+- After login, you want the user name to be displayed.
 - On a dashboard, you want certain panels to be visible and filled with data.
 - Submitting a form should return a specific value.
 
@@ -110,7 +110,7 @@ const page = await browser.newPage()
 await page.goto('https://checklyhq.com/')
 
 // get the text of the button
-const buttonText = await page.evaluate(() => document.querySelector('a.btn-lg').innerText);
+const buttonText = await page.$eval('a.btn-lg', el => el.innerText)
 
 // assert using built-in assert function
 assert.equal(buttonText, 'Start your free trial') 
@@ -119,9 +119,13 @@ expect(buttonText).to.equal('Start your free trial')
 
 await browser.close()
  ```
+Note the following:
+
+- We use the `page.$eval()` method to grab the button element and get its innerText property.
+- We use a basic `assert` and a Chai.js `expect` statement to verify the text is correct.
 
 When an assertion fails, your check fails. Your check's result will show the log output for the error. Any configured 
-alerting channels will be triggered alerting your team that something is up.
+alerting channels will be triggered, notifying your team that something is up.
 
 ![](/docs/images/browser-checks/failed_assertion.png)
 

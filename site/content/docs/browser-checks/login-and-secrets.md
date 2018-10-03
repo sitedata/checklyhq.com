@@ -6,8 +6,8 @@ menu:
     parent: "Browser Checks"
 ---
 
-Login scenarios, where a user provides credentials to get access to a web app are extremely common. They are also
-a great candidate for a browser check as they these site transactions tend to be very crucial. 
+Scenarios where a user provides credentials to get access to a web app are extremely common. They are also
+a great candidate for a browser check as these site transactions tend to be very crucial. 
 
 ## Using Environment Variables
 
@@ -40,15 +40,15 @@ await page.click('[name="commit"]')
 browser.close()
 ``` 
 
-To run the browser check, add the environment variables to the check and save them. Any data you "lock" is store
-encrypted at rest and in flight on our back end and is only decrypted when used.
+To run the browser check, add the environment variables to the check and save them. Any data you "lock" is
+encrypted at rest and in flight on our back end and is only decrypted when needed.
 
 ![](/docs/images/browser-checks/environment_variables.png)
 
 ## Social Login
 
 Authenticating via social login providers like Facebook, Google and Github can be a bit tricky to script because of the 
-redirects involved. Also, many provider make their login pages "bot resistant" which makes scripting harder. The example 
+redirects involved. Also, many providers make their login pages "bot resistant" which makes scripting harder. The example 
 below uses the Google social login option on the Checkly login page.
 
 ```js
@@ -60,14 +60,17 @@ await page.goto('https://checklyhq.com/login')
 
 const navigationPromise = page.waitForNavigation()
 
+// Click Google login and wait for redirect
 await page.waitForSelector('div > .social > .text-center > .login-google-button > span')
 await page.click('div > .social > .text-center > .login-google-button > span')
 await navigationPromise
 
+// provide email address and click next
 await page.waitForSelector('input[type="email"]')
 await page.type('input[type="email"]', process.env.GOOGLE_USER)
 await page.click('#identifierNext')
 
+// provide password, click next and wait for redirect back to Checkly
 await page.waitForSelector('input[type="password"]', { visible: true })
 await page.type('input[type="password"]',process.env.GOOGLE_PWD)  
 
