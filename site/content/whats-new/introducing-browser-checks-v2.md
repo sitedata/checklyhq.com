@@ -2,7 +2,7 @@
 title: Introducing Browser Checks V2
 date: 2018-10-02
 author: Tim Nolet
-featured_image: "https://checklyhq.com/blog/workers1.jpg"
+featured_image: "https://checklyhq.com/whats-new/browser_checks_v2.png"
 ---
 
 ![](/whats-new/browser_checks_v2.png)
