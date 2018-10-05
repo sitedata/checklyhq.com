@@ -41,7 +41,7 @@ Learn how HTTP works. Obsess over tools like curl and your browsers debugger net
 
 Next to HTTP, SSH is basically essential. It lets you quickly navigate and troubleshoot almost any current stack. Except the serverless ones I guess. Creating and using keys and swift usage of any SSH client (whether on Linux or Windows) must feel like second nature. Strangely, FTP seems to be going extinct.
 
-> 💡 Tunneling over SSH will save you one day. [Learn it](https://www.ssh.com/ssh/tunneling/example)
+> 💡 Tunnelling over SSH will save you one day. [Learn it](https://www.ssh.com/ssh/tunneling/example)
 
 
 ## 5. CPU, process and storage
