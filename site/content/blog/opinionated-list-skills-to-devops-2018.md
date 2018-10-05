@@ -1,6 +1,6 @@
 ---
 date: 2018-08-16T09:00:00+00:00
-title: "An Opinionated List of Skills You Need for Starting a DevOps Job in 2018"
+title: "An Opinionated List of Skills You Need for a DevOps Job in 2018"
 author: "Tim Nolet"
 avatar: "tnolet.jpg"
 tags: ["dev", "devops", "guide"]
