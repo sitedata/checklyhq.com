@@ -18,6 +18,27 @@
     color: $gray;
   }
 
+  .blog-recent-post-list {
+    position: absolute;
+    width: 230px;
+    z-index: 9999;
+    right: 12px;
+    padding: 1rem;
+    margin-top: 2 * $spacer;
+    p {
+      font-size: $font-size-sm;
+      color: $gray;
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      li {
+        margin-bottom: .5rem;
+      }
+    }
+  }
+
   .blog-content {
 
   }

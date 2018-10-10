@@ -5,7 +5,7 @@
     .blog-meta-data-published-date !{'{{ .PublishDate.Format "January 2, 2006" }}'} · !{'{{ .ReadingTime }}'} min read
   .blog-meta-data-tags
     | !{'{{ if .Params.tags }}'}
-    ul.badges.d-inline.ml-md-3.pl-0
+    ul.badges.d-inline.ml-md-3.ml-sm-3.pl-0
       | !{'{{ range .Params.tags }}'}
       li.badge.badge-default.mb-md-0.mb-2.mr-2 !{'{{ . }}'}
       | !{'{{ end }}'}

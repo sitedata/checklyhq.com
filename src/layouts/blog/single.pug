@@ -2,6 +2,16 @@ include  ../partials/head
 body
   include ../partials/navbar.pug
   .main.blog
+    .blog-recent-post-list.hidden-md-down
+      | !{'{{ $related := .Site.RegularPages.Related . | first 4 }}'}
+      | !{'{{ with $related }}'}
+      p.mb-2 More posts like this
+      ul
+        | !{'{{ range .}}'}
+        li
+          a(href="{'{{ .Permalink }}'}") #{'{{ .Title }}'}
+        | !{'{{ end }}'}
+      | !{'{{ end }}'}
     .container
       .row
         .col-smf-12.col-lg-8.offset-lg-2
@@ -11,6 +21,7 @@ body
             .markdown.blog-body #{'{{.Content}}'}
             .py-4
               include ../partials/social-share.pug
+
     include ../partials/free-trial-row.pug
   script(type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b5efec24db95a45")
   include ../partials/footer.pug
