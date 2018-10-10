@@ -41,7 +41,7 @@ This options sets the `Content-Type` request header to `application/json`. Forma
   }
 }
 ```
-JSON bodies are commonly used with REST API's.
+JSON bodies are commonly used with REST APIs.
 
 ### FORM
 

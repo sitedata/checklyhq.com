@@ -1,0 +1,9 @@
+include  ../partials/head
+body
+  include ../partials/navbar.pug
+  .main.container.pt-5
+    .row
+      .col-sm-12
+        span.product.markdown #{'{{.Content}}'}
+  include ../partials/free-trial-row.pug
+  include ../partials/footer.pug

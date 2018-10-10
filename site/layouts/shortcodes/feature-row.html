@@ -1,0 +1,11 @@
+{{ $header := .Get "header" }}
+{{ $image := .Get "img" }}
+<div class="row py-4">
+	<div class="col-sm-4">
+		<h2 class="section-header mt-0 pb-0">{{$header}}</h2>
+		<p>{{.Inner}}</p>
+	</div>
+	<div class="col-sm-8">
+		<img src="{{$image}}" alt="">
+	</div>
+</div>

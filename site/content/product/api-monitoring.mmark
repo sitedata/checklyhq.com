@@ -1,0 +1,60 @@
+---
+title: API Monitoring
+---
+
+{.text-center .hero-text}
+# Your APIs correct *and* fast 24x7
+
+<p class="text-center hero-sub hero-sub-center mb-lg-5">
+Your business and your customers rely on APIs. Whether internal or 3rd party. Downtime caused by performance degradation,
+misconfiguration or even expiring credentials can have serious business impact. Checkly's deep but easy to use API
+monitoring solutions checks your mobile, webapp or IOT APIs for performance, uptime and correctness.
+</p>
+
+<div class="row">
+{{< sm-4-col-item "Monitor for performance" "Check the response time for each request, down to TCP, DNS and first byte times. Add assertions for maximum response time." >}}
+{{< sm-4-col-item "Monitor for correctness" "Check payloads, return codes, headers, authentication and response times. Dive inside JSON responses and validate specific items." >}}
+{{< sm-4-col-item "Monitor globally" "We monitor your APIs from up to eight data center locations around the world." >}}
+{{< sm-4-col-item "Get alerted ASAP" "API checks run as often as every minute so you will get alerted as soon as things go south." >}}
+{{< sm-4-col-item "Import from tools you know" "Use our cUrl or Swagger imported to create a fully fledged API check with a couple of clicks." >}}
+{{< sm-4-col-item "Trigger on-demand" "Integrate your API checks into your QA or continuous delivery process by triggering adhoc runs from the command line." >}}
+</div>
+
+{.text-center .hero-text}
+# How it works
+
+{{% feature-row header="Create an HTTP request" img="/product/api-monitoring/http-request.png" %}}
+Import an HTTP request from cUrl, Swagger or assemble one by hand. You have full control over all HTTP request options:
+HTTP method, URL, query parameters, request headers, and body for each request. Add credentials or a Bearer
+token for authentication.
+{{% cta-link "Learn more" "/docs/api-checks/request-settings/" %}}
+
+
+{{% /feature-row %}}
+
+{{% feature-row header="Add assertions" img="/product/api-monitoring/assertions.png" %}}
+Using the simple matrix, create as many assertions per check as you want. Validate the response time, HTTP status code,
+plain text or JSON bodies and response headers. You can drill into JSON responses and match nested items.
+{{% cta-link "Learn more" "/docs/api-checks/assertions/" %}}
+
+
+{{% /feature-row %}}
+
+{{% feature-row header="Run it every minute" img="/product/api-monitoring/results.png" %}}
+Schedule your API check to run as often as every minute. This gives you a consistent and accurate view of your API's performance.
+Next to aggregating metric over time, we give you access to each response from each of the configured data centers.
+{{% /feature-row %}}
+
+{.text-center .hero-text}
+# Alerting for any situation
+{.text-center .mb-lg-5 .img-w360}
+![alerting options](/landing/alerting-options@2x.png)
+
+<p class="text-center lead-text mb-lg-5">
+When a check fails, you and your team need timely and actionable insights to address any down time.
+Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
+Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
+{{% cta-link "Learn more" "/docs/alerting/settings/" %}}
+
+</p>
+

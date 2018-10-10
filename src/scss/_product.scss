@@ -1,0 +1,67 @@
+@import 'variables.scss';
+.product {
+  $product-max-width: 900px;
+
+  &.markdown {
+
+    h1 {
+      &.hero-text {
+        &:not(:first-child) {
+          padding-top: 3 * $spacer;
+        }
+        margin-bottom: 2 * $spacer;
+        font-weight: 500;
+        font-size: 3rem;
+      }
+    }
+
+    h2 {
+      &.section-header {
+        font-size: 1.75rem;
+        border-bottom: none;
+      }
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin-top: 0;
+      border-bottom: 0;
+    }
+
+    h5 {
+      font-size: .8rem;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+    }
+
+    p {
+      &.hero-sub {
+        font-weight: 300;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+        color: $body-text;
+      }
+
+      &.hero-sub-center {
+        max-width: $product-max-width;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.lead-text {
+        color: $body-text;
+        max-width: $product-max-width;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    figure {
+      &.text-center {
+        margin-left: auto;
+        margin-right: auto
+      }
+    }
+  }
+}

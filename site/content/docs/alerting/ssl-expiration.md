@@ -6,7 +6,7 @@ menu:
     parent: "Alerting"
 ---
 
-An expired SSL certificate can cause havoc to sites and API's. Checkly alerts you 30 days, 14 days, 3 days and at day zero when
+An expired SSL certificate can cause havoc to sites and APIs. Checkly alerts you 30 days, 14 days, 3 days and at day zero when
 your SSL certificate is about to expire. We will alert you on all the alerting channels you have configured.
 
 Because API checks and Browser checks are a bit different, SSL checking for each is a bit different:

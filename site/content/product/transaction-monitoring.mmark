@@ -1,0 +1,89 @@
+---
+title: Site Transaction Monitoring
+---
+
+{.text-center .hero-text}
+# Monitor your vital click flows 24x7
+
+<p class="text-center hero-sub hero-sub-center mb-lg-5">
+Broken signup forms and flaky shopping carts are extremely frustrating to your customers.
+With Checkly's transaction monitoring (or Browser checks as we call them) you can accurately simulate interaction with your site or webapp and validate the
+correctness and performance of signup forms, shopping carts and other crucial click paths.
+</p>
+
+<div class="row">
+{{< sm-4-col-item "Real browsers" "Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions." >}}
+{{< sm-4-col-item "Validate all the things" "In a Browser check you can check for specific content items, browser responses, visibility and error responses." >}}
+{{< sm-4-col-item "Screen shots" "Take a screen shot at any stage in your transaction for quick and easy reference. You can take full page shots, or just a specific page element for more focus." >}}
+{{< sm-4-col-item "Monitor globally" "We monitor your transactions from up to four data center locations around the world." >}}
+{{< sm-4-col-item "Trigger on-demand" "Integrate your Browser checks into your QA or continuous delivery process by triggering adhoc runs from the command line." >}}
+{{< sm-4-col-item "Coding optional" "Use our browser plugin to record a script and import it into Checkly. Want more control? Dive into the code and tweak your script to perfection." >}}
+
+</div>
+
+{.text-center .hero-text}
+# How it works
+
+<p class="text-center hero-sub hero-sub-center mb-lg-5">
+Checkly uses the Chrome Puppeteer framework to drive your Browser checks and accurately simulate interactions with a Chrome browser.
+Getting a check going is a lot easier than you might think.
+</p>
+
+
+{{% feature-row header="Create a script" img="/product/transaction-monitoring/script.png" %}}
+Pick one of the examples from our built-in library as your starting point. Alternatively, you can install and fire up the
+[Puppeteer Recorder](/docs/puppeteer-recorder/overview/) browser extension and record a script in real-time as you click through your site.
+{{% cta-link "Learn more" "/docs/browser-checks/quickstart/" %}}
+{{% /feature-row %}}
+
+{{% feature-row header="Tweak it" img="/product/transaction-monitoring/tweak.png" %}}
+Use our in app debugger to iterate on your script and directly see the results. Add extra assertions, screenshots
+and navigation actions. For even more control, you add the industry standard Mocha and Chai libraries to get more control
+over what is checked and how it is reported.
+{{% cta-link "Learn more" "/docs/browser-checks/using-mocha//" %}}
+{{% /feature-row %}}
+
+{{% feature-row header="Run it every five minutes" img="/product/transaction-monitoring/results.png" %}}
+Schedule your API check to run as often as every minute. This gives you a consistent and accurate view of your API's performance.
+Next to aggregating metric over time, we give you access to each response from each of the configured data centers.
+{{% cta-link "Learn more" "/docs/browser-checks/quickstart/" %}}
+{{% /feature-row %}}
+
+
+{.text-center .hero-text}
+# Coding optional
+
+<p class="text-center hero-sub hero-sub-center mb-lg-4">
+Coding your own scripts gives you a ton of power over exactly how your click paths and interactions should interact with
+the browser. However, you don't need to start there. We give you a built-in example library of examples and the Puppeteer
+Recorder Chrome browser extension to get started ASAP.
+</p>
+
+<div class="row mb-lg-5">
+{{% sm-6-col-item header="Example Library" image="/product/transaction-monitoring/examples.png" %}}
+Our examples library contains example scripts that cover a range of scenario's: from scraping content and validating text
+to login and shopping carts. Use them a jumping off point and customize them for your own situation.
+{{% cta-link "Learn more" "/puppeteer-recorder/" %}}
+{{% /sm-6-col-item %}}
+{{% sm-6-col-item header="Puppeteer Recorder" image="/product/transaction-monitoring/recorder.png" %}}
+Install the Puppeteer Recorder browser extension in your Chrome browser and start recording scripts in under a minute.
+Puppeteer recorder provides many options for tweaking your scripts as you click through your site and fill out web forms.
+{{% cta-link "Learn more" "/docs/puppeteer-recorder/basic-usage/" %}}
+{{% /sm-6-col-item %}}
+</div>
+
+
+
+{.text-center .hero-text}
+# Alerting for any situation
+{.text-center .mb-lg-5 .img-w360}
+![alerting options](/landing/alerting-options@2x.png)
+
+<p class="text-center lead-text mb-lg-5">
+When a check fails, you and your team need timely and actionable insights to address any down time.
+Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
+Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
+{{% cta-link "Learn more" "/docs/alerting/settings/" %}}
+
+</p>
+

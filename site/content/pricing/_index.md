@@ -20,7 +20,6 @@ are the same for all check types.
 
 <split>
 
-
 #### Are all alerting integrations the same for all plans?
 
 Yes, all plans have email, webhook and Slack integration to alert you when checks fail.
@@ -29,6 +28,11 @@ Yes, all plans have email, webhook and Slack integration to alert you when check
 By signing up, you get full access to all of Checkly's functions for a period of 30 days. You do not need a credit card
 to get started. After the 30 day period, you will still have access to your account but we will suspend the running of
 your checks.
+
+#### Can I switch plans easily?
+
+Absolutely. You can upgrade or downgrade your plan at any moment from your account page. We will prorate the cost so you always pay exactly what
+you owe: no double bookings. We will also add a proration line to your invoice.
 
 #### What payment types do you accept?
 
