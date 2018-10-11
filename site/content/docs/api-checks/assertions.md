@@ -16,7 +16,7 @@ Assertions are statements you create that check one aspect of the HTTP response.
 - HTTP response body equals the text "success".
 - HTTP response time is lower than 2000 milliseconds.
 - HTTP response header "X-Custom-Header" equals "SomeValue".
-- HTTP response JSON body has a key called "accountBalance" with a value greater than 9999
+- HTTP response JSON object has a key called "accountBalance" with a value greater than 9999
 
 In each assertion, a **source** is connected to a **comparison** and a **target**.
 
@@ -32,19 +32,23 @@ Assertions are executed from top to bottom. If one assertion fails, the full che
 
 On each API check assertion, the following sources are available:
 
-### STATUS_CODE
+### Status code
 The HTTP response status, parsed as an integer.
 
-### JSON_BODY
-The response body parsed as JSON. This allows inspection of the JSON object using the "HAS\_KEY" and "HAS\_VALUE" comparisons.
+### JSON object
+The response body parsed as a JSON object. This allows inspection of the JSON object using the "Has key" and "Has value" comparisons.
 
-### TEXT_BODY
+### JSON array
+The response body parsed as a JSON array. With JSON arrays, you get the option to target the last, first or any *nth* item and then apply
+the same comparison as a JSON object. Very handy when your API endpoint returns collections. 
+
+### Text body
 The response body as plain text.
 
-### HEADERS
+### Headers
 The response headers as an array of key/value pairs. This allows the inspection of headers using the "property" field to match the header name and the "target" field to match the header value.
 
-### RESPONSE_TIME
+### Response time
 The response time of the full API request in milliseconds, parsed as an integer value.
 
 ## Property
@@ -59,16 +63,12 @@ Read more about asserting JSON response bodies below.
 
 On each API check assertion, the following sources are available:
 
-- EQUALS
-- NOT_EQUALS
-- IS_EMPTY
-- NOT_EMPTY
-- HAS_KEY
-- NOT\_HAS\_KEY
-- HAS_VALUE
-- NOT\_HAS\_VALUE
-- GREATER_THAN
-- LESS_THAN
+- Equals / Not equals
+- Is empty / Not empty
+- Has key / Not has key
+- Has value / Not has value
+- Greater than
+- Less than
 
 ## Target
 
@@ -98,5 +98,25 @@ This next example checks for a **boolean** value in the `owner.site_admin` prope
 
 ![](/docs/images/api-checks/assertions-5.png)
 
+## JSON arrays
+
+For response bodies with JSON arrays instead of objects you have the following options:
+
+- **Length:** let's check you checks the amount of items in the returned array.
+- **First item:** picks the first item in the array.
+- **Last item:** picks the last item in the array.
+- **Nth item:** picks any item in the array by index.
+
+In the first example below we check if the total array has more than 30 items using the **Length** and **Greater than** options.
+
+![](/docs/images/api-checks/assertions-6.png)
+
+In this example we pick the last item in the array and check if the `customerId` property has the value `123ab`  
+
+![](/docs/images/api-checks/assertions-7.png)
+
+In the last example we pick the item with index value 4. This is the 5th item as array indexes start at 0. We then assert
+that the `responseTime` property is less than `2000`.  
 
 
+![](/docs/images/api-checks/assertions-8.png)
