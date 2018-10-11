@@ -8,7 +8,7 @@ title: API Monitoring
 <p class="text-center hero-sub hero-sub-center mb-lg-5">
 Your business and your customers rely on APIs. Whether internal or 3rd party. Downtime caused by performance degradation,
 misconfiguration or even expiring credentials can have serious business impact. Checkly's deep but easy to use API
-monitoring solutions checks your mobile, webapp or IOT APIs for performance, uptime and correctness.
+monitoring solution checks your mobile, webapp or IOT APIs for performance, uptime and correctness.
 </p>
 
 <div class="row">
@@ -16,7 +16,7 @@ monitoring solutions checks your mobile, webapp or IOT APIs for performance, upt
 {{< sm-4-col-item "Monitor for correctness" "Check payloads, return codes, headers, authentication and response times. Dive inside JSON responses and validate specific items." >}}
 {{< sm-4-col-item "Monitor globally" "We monitor your APIs from up to eight data center locations around the world." >}}
 {{< sm-4-col-item "Get alerted ASAP" "API checks run as often as every minute so you will get alerted as soon as things go south." >}}
-{{< sm-4-col-item "Import from tools you know" "Use our cUrl or Swagger imported to create a fully fledged API check with a couple of clicks." >}}
+{{< sm-4-col-item "Import from tools you know" "Use our cUrl or Swagger imported to create fully fledged API checks with a couple of clicks." >}}
 {{< sm-4-col-item "Trigger on-demand" "Integrate your API checks into your QA or continuous delivery process by triggering adhoc runs from the command line." >}}
 </div>
 
@@ -42,7 +42,7 @@ plain text or JSON bodies and response headers. You can drill into JSON response
 
 {{% feature-row header="Run it every minute" img="/product/api-monitoring/results.png" %}}
 Schedule your API check to run as often as every minute. This gives you a consistent and accurate view of your API's performance.
-Next to aggregating metric over time, we give you access to each response from each of the configured data centers.
+Next to aggregating metrics over time, we give you access to each response from each of the configured data centers.
 {{% /feature-row %}}
 
 {.text-center .hero-text}

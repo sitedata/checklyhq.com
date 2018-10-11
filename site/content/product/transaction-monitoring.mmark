@@ -12,7 +12,7 @@ correctness and performance of signup forms, shopping carts and other crucial cl
 </p>
 
 <div class="row">
-{{< sm-4-col-item "Real browsers" "Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions." >}}
+{{< sm-4-col-item "Real browsers" "Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions. We run each session in a sealed of sandbox for extra security." >}}
 {{< sm-4-col-item "Validate all the things" "In a Browser check you can check for specific content items, browser responses, visibility and error responses." >}}
 {{< sm-4-col-item "Screen shots" "Take a screen shot at any stage in your transaction for quick and easy reference. You can take full page shots, or just a specific page element for more focus." >}}
 {{< sm-4-col-item "Monitor globally" "We monitor your transactions from up to four data center locations around the world." >}}
@@ -26,7 +26,7 @@ correctness and performance of signup forms, shopping carts and other crucial cl
 
 <p class="text-center hero-sub hero-sub-center mb-lg-5">
 Checkly uses the Chrome Puppeteer framework to drive your Browser checks and accurately simulate interactions with a Chrome browser.
-Getting a check going is a lot easier than you might think.
+Getting a check going is a lot easier than you might think. Just follow the steps below and you'll be up in no time.
 </p>
 
 
@@ -38,14 +38,15 @@ Pick one of the examples from our built-in library as your starting point. Alter
 
 {{% feature-row header="Tweak it" img="/product/transaction-monitoring/tweak.png" %}}
 Use our in app debugger to iterate on your script and directly see the results. Add extra assertions, screenshots
-and navigation actions. For even more control, you add the industry standard Mocha and Chai libraries to get more control
+and navigation actions. You can also add the industry standard Mocha and Chai libraries to get more control
 over what is checked and how it is reported.
 {{% cta-link "Learn more" "/docs/browser-checks/using-mocha//" %}}
 {{% /feature-row %}}
 
 {{% feature-row header="Run it every five minutes" img="/product/transaction-monitoring/results.png" %}}
-Schedule your API check to run as often as every minute. This gives you a consistent and accurate view of your API's performance.
-Next to aggregating metric over time, we give you access to each response from each of the configured data centers.
+Schedule your Browser check to run as often as every five minutes. A regular interval gives you an accurate insight into
+how your vital transactions are performing over time. We also give you full access to the log files for each run in case
+an alert is triggered.
 {{% cta-link "Learn more" "/docs/browser-checks/quickstart/" %}}
 {{% /feature-row %}}
 
@@ -62,7 +63,7 @@ Recorder Chrome browser extension to get started ASAP.
 <div class="row mb-lg-5">
 {{% sm-6-col-item header="Example Library" image="/product/transaction-monitoring/examples.png" %}}
 Our examples library contains example scripts that cover a range of scenario's: from scraping content and validating text
-to login and shopping carts. Use them a jumping off point and customize them for your own situation.
+to login and shopping carts. Use them as a jumping off point and customize them for your own situation.
 {{% cta-link "Learn more" "/puppeteer-recorder/" %}}
 {{% /sm-6-col-item %}}
 {{% sm-6-col-item header="Puppeteer Recorder" image="/product/transaction-monitoring/recorder.png" %}}
