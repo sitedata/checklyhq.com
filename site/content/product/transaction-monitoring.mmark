@@ -11,7 +11,7 @@ With Checkly's transaction monitoring (or Browser checks as we call them) you ca
 correctness and performance of signup forms, shopping carts and other crucial click paths.
 </p>
 
-<div class="row">
+<div class="row pt-4">
 {{< sm-4-col-item "Real browsers" "Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions. We run each session in a sealed of sandbox for extra security." >}}
 {{< sm-4-col-item "Validate all the things" "In a Browser check you can check for specific content items, browser responses, visibility and error responses." >}}
 {{< sm-4-col-item "Screen shots" "Take a screen shot at any stage in your transaction for quick and easy reference. You can take full page shots, or just a specific page element for more focus." >}}
@@ -63,7 +63,7 @@ Recorder Chrome browser extension to get started ASAP.
 <div class="row mb-lg-5">
 {{% sm-6-col-item header="Example Library" image="/product/transaction-monitoring/examples.png" %}}
 Our examples library contains example scripts that cover a range of scenario's: from scraping content and validating text
-to login and shopping carts. Use them as a jumping off point and customize them for your own situation.
+to login and shopping carts. Use them as pa jumping off point and customize them for your own situation.
 {{% cta-link "Learn more" "/puppeteer-recorder/" %}}
 {{% /sm-6-col-item %}}
 {{% sm-6-col-item header="Puppeteer Recorder" image="/product/transaction-monitoring/recorder.png" %}}

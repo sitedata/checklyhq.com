@@ -11,7 +11,7 @@ misconfiguration or even expiring credentials can have serious business impact. 
 monitoring solution checks your mobile, webapp or IOT APIs for performance, uptime and correctness.
 </p>
 
-<div class="row">
+<div class="row pt-4">
 {{< sm-4-col-item "Monitor for performance" "Check the response time for each request, down to TCP, DNS and first byte times. Add assertions for maximum response time." >}}
 {{< sm-4-col-item "Monitor for correctness" "Check payloads, return codes, headers, authentication and response times. Dive inside JSON responses and validate specific items." >}}
 {{< sm-4-col-item "Monitor globally" "We monitor your APIs from up to eight data center locations around the world." >}}
