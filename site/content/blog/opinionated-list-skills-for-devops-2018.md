@@ -13,20 +13,21 @@ featured_image: "https://checklyhq.com/blog/devops_skills.jpg"
 
 The world of DevOps is a pretty confusing place for folks just starting out. Even figuring out what "DevOps" means can be hard. Is it **CI/CD with Kubernetes and Serverless** to drive Agile™ product iterations? Or is it SSH-ing into a box and **restarting Apache**? You guessed it. All of the above and most things in between.
 
-After ~20 years in Ops and later Dev I thought I'd write up a biased, but hopefully helpful list of **technical and organisational skills** that I would look for when hiring someone for a DevOps position. 
- 
+After ~20 years in Ops and later Dev I thought I'd write up a biased, but hopefully helpful list of **technical and organisational skills** that I would look for when hiring someone for a DevOps position.   
+
+*2018-10-11: Keen Reddit user mentioned I forgot Git. He was right and I added it.* 
 <!--more-->
 
 ## 1. Deploying.
 
-DevOps is very much related to "releasing stuff" and making that work without a hitch. If there is *anything* you should get paranoid about it is about managing, prepping, rehearsing, checking (and later automating) releases and deployments. Regardless of language, platform, framework, sector, industry or any other technical / organisational details this is the thing that REALLY matters.
+DevOps is very much related to "releasing stuff" and making that work without a hitch. If there is *anything* you should get paranoid about it is managing, prepping, rehearsing, checking (and later automating) releases and deployments. Regardless of language, platform, framework, sector, industry or any other technical / organisational details this is the thing that REALLY matters.
 
 > 💡 Two life tips: Don't buy pans from Ikea and never deploy on Fridays.
 
 
 ## 2. Monitoring
 
-Intrinsically connected to deploying is making sure that deployment works as expected and within parameters. This is about as vague as it gets. Just make sure you are somewhat comfortable with the various types of monitoring out there: uptime monitoring, process monitoring, real-user monitoring, synthetic monitoring etc. The bigger, more complex your stack, the more of these you will need. Again this the bread & butter. Screw this up and you are dead and blind.
+Intrinsically connected to deploying is making sure that deployments work as expected and within parameters. This is about as vague as it gets. Just make sure you are somewhat comfortable with the various types of monitoring out there: uptime monitoring, process monitoring, real-user monitoring, synthetic monitoring etc. The bigger, more complex your stack, the more of these you will need. Again this the bread & butter. Screw this up and you are dead and blind.
 
 > 💡 Nagios, Graphite and other "old school" tools are still very useful to grasp the essentials. 
 
@@ -54,8 +55,8 @@ Regardless of the cause (bad programming, failing disks, slow CPU) you will need
 
 ## 6. Triaging
 
-Probably the easiest way to spot a junior engineer is observing how they go about find the cause of some arcane bug or mysterious outage. Don't get me wrong, this is a hard skill to grow. The systematic process of identifying, analyzing, developing and implementing a remedy for a problem is something you just have to do a lot to master it.
-It is the opposite of "have you tried turning it off and on again?". This skills also transfers well to other business domains and even your daily life. 
+Probably the easiest way to spot a junior engineer is observing how they go about finding the root cause of some arcane bug or mysterious outage. Don't get me wrong, this is a hard skill to grow. The systematic process of identifying, analyzing, developing and implementing a remedy for a problem is something you just have to do a lot to master it.
+It is the opposite of "have you tried turning it off and on again?". This skill also transfers well to other business domains and even your daily life. 
 
 > 💡 Read error messages. You'd be amazed how many people skip this essential step.
 
@@ -69,11 +70,20 @@ You don’t have to be a full blown DBA. You do need to recognise that databases
 
 ## 8. CI/CD
 
-Continuous Integration and Continuous Deployment only at place eight? That should be number one, right? Actually, no. Without understanding how databases and migrations work I dare you to create a useful deployment pipeline. Without understanding how HTTP works and how sessions are (not) handles, I dare you to do continuous deployment without interrupting users and generally creating a very bad time for your customers and coworkers. 
+Continuous Integration and Continuous Deployment only at place eight? That should be number one, right? Actually, no. Without understanding how databases and migrations work I dare you to create a useful deployment pipeline. Without understanding how HTTP works and how sessions are (not) handled, I dare you to do continuous deployment without interrupting users and generally creating a very bad time for your customers and coworkers. 
 
 > 💡 Master doing things manually. Understand them deeply. Only then automate them.
 
-## 9. Risk assessment
+## 9. Git
+
+I started with CVS and SVN. They are pretty fine source code versioning tools. But Git is way more than that in a DevOps
+context. Git (with Github or Gitlab or any hosted platform) is now your bookkeeper, collaboration platform, todo list and
+many more things. Versioning is just one part of it. Learn it.
+
+> 💡 Reset, rebase and merge fixes can be tricky. There is no shame in using a UI tool.
+
+
+## 10. Risk assessment
 
 Isn’t this part of deploying? Kind of, but with added security and business insights. As you and your organisation mature you will have to judge whether the path you are taking is safe, secure and even legal in the broadest sense. Storing those user files in S3? Porting production backups to test environments? 
 
@@ -82,7 +92,7 @@ Many times your product and business coworkers will not see (or care) about the 
 > 💡 Security testing or penetration testing help. Do them quarterly.
 
 
-## 10. Load & performance testing
+## 11. Load & performance testing
 
 You will need to be able to at least make a guesstimation on performance for new products or features. Even in the age of auto scaling and quick cloud provisioning. Remember that databases, some external services or expensive / specific hardware don't not scale that well.
 Start with simple tools like Apache Bench and slowly ramp up to platforms like Jmeter or Gatling. Try to use data and usage patterns that are somewhat representative of real users. This is hard.
@@ -90,35 +100,35 @@ Start with simple tools like Apache Bench and slowly ramp up to platforms like J
 > 💡 Don't expect load patterns found in test to translate 1:1 to prod. Stay vigilant.
 
 
-## 11. Language runtimes and their configuration 
+## 12. Language runtimes and their configuration 
 
 One language shops exist, but don’t bet on it. Get some inkling on how a basic app is build, started and configured for multiple platforms. Building and running a Node.js app is pretty different from a Java / JVM app, which can be split into Scala an Kotlin and Clojure variations. They use different package managers, require different types of monitoring and have different resource usage patterns.
 
 > 💡 Starting with a JVM language helps, even if your shop doesn't use Java.
 
 
-## 12. Infrastructure as code
+## 13. Infrastructure as code
 
-You can do CI/CD easily without any automated infrastructure provisioning. And infrastructure as code not a super valuable “business booster”. Except when things get bigger and scale happens. This can also be “internal scale” when you have to duplicate environments for development and testing purposes. Get handy with Terraform, Ansible, Puppet or AWS Cloudformation. Spinning up a new environment with the touch of a button is pretty damn cool also.
+You can do CI/CD easily without any automated infrastructure provisioning. And infrastructure as code is not a super valuable “business booster”. Except when things get bigger and scale happens. This can also be “internal scale” when you have to duplicate environments for development and testing purposes. Get handy with Terraform, Ansible, Puppet or AWS Cloudformation. Spinning up a new environment with the touch of a button is pretty damn cool also.
 
 > 💡 Don't try to get 100% full reproducibility. It is an endless time sink.
 
-## 13. Developer Experience
+## 14. Developer Experience
 
 You are expensive and so are your developer pals. Keeping them happy is actually pretty important on many levels. The term “DX” is pretty new but makes sense. As the DevOps mindset enters an organisation tools, platforms and infrastructure can get overwhelming. A smooth, transparent workflow where teams can easily access resources, ship new projects and get feedback on their new services is a holy grail for many companies. There is no easy solution for this. Listen and take baby steps.
 
 > 💡 Sometimes a cup of coffee or having lunch together is all the DX that is needed.
 
 
-## 14. Containers
+## 15. Containers
 
 (Docker) containers are here to stay, so you probably need to get comfortable with the eco system. None of this is terribly hard, especially not if you have some Linux chops. Most important is to recognize when to use them and when they are just an unnecessary burden.
-Do not "containerize all the thing".
+Do not "containerize all the things".
 
 > 💡 Docker portability between Mac, Windows and *NIX is not 100%. Expect some issues.
 
 
-## 15. Container orchestration 
+## 16. Container orchestration 
 
 In a mature technical organisation at some form of scale, you will be introduced to container orchestration issues at some stage. It is where the industry is going. By all means, use Kubernetes or any of its competitors but remain critical.  
 
