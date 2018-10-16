@@ -31,13 +31,13 @@ Add body content to your request by formatting your content as text. Selecting t
 
 ### JSON
 
-This options sets the `Content-Type` request header to `application/json`. Format your input as standard JSON, i.e:
+This option sets the `Content-Type` request header to `application/json`. Format your input as standard JSON, i.e:
 
-```
+```js
 {
   "key1": "val2",
-  "key2: {
-    "nestedKey1: "val2"
+  "key2": {
+    "nestedKey1": "val2"
   }
 }
 ```
@@ -47,7 +47,7 @@ JSON bodies are commonly used with REST APIs.
 
 This option sets `Content-Type` request header to `application/x-www-form-urlencoded`. Format your input as a string of key/value pairs concatenated with ampersands, i.e:
 
-```
+```bash
 key1=value1&key2=value2
 ```
 Form encodes bodies are commonly used "traditional" HTML form submissions.
