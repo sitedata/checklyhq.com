@@ -13,10 +13,11 @@ featured_image: "https://checklyhq.com/blog/devops_skills.jpg"
 
 The world of DevOps is a pretty confusing place for folks just starting out. Even figuring out what "DevOps" means can be hard. Is it **CI/CD with Kubernetes and Serverless** to drive Agile™ product iterations? Or is it SSH-ing into a box and **restarting Apache**? You guessed it. All of the above and most things in between.
 
+<!--more-->
+
 After ~20 years in Ops and later Dev I thought I'd write up a biased, but hopefully helpful list of **technical and organisational skills** that I would look for when hiring someone for a DevOps position.   
 
 *2018-10-11: Keen Reddit user mentioned I forgot Git. He was right and I added it.* 
-<!--more-->
 
 ## 1. Deploying.
 

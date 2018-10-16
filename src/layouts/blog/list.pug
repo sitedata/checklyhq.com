@@ -8,14 +8,14 @@ body
           .span.markdown.blog.py-4 #{'{{.Content}}'}
             | !{' {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }} '}
             article
-              a.blog-header(href="{{.RelPermalink }}") #{' {{.Title}} '}
+              a.blog-header.blog-header-list(href="{{.RelPermalink }}") #{' {{.Title}} '}
               include ../partials/blog-meta-data.pug
-              .markdown.blog-body
+              .markdown.blog-body.blog-body-preview
                 | !{' {{ .Summary | markdownify  }} '}
               span
                 | !{' {{ if .Truncated }} '}
                 div
-                  a.btn.btn-primary.btn-sm(href="{{.RelPermalink }}") Read more
+                  a.btn.btn-outline-secondary.btn-sm(href="{{.RelPermalink }}") Read more
                 | !{'{{end}}'}
             | !{'{{end}}'}
   script(type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b5efec24db95a45")

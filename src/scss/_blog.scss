@@ -1,7 +1,7 @@
 @import 'variables.scss';
 .blog {
   article {
-    margin-bottom: 5 * $spacer;
+    margin-bottom: 4 * $spacer;
   }
 
   h2, h3 {
@@ -52,6 +52,10 @@
     @media (max-width: 321px) {
       font-size: 35px;
     }
+
+    &.blog-header-list {
+      font-size: $font-size-h3;
+    }
   }
   a.blog-header {
     display: block;
@@ -90,6 +94,18 @@
     font-size: 1.05rem;
     img {
       padding: 1rem 0;
+    }
+
+    &.blog-body-preview {
+      p {
+        color: $body-text;
+      }
+      img {
+        display: none;
+      }
+      small {
+        display: none;
+      }
     }
   }
 }

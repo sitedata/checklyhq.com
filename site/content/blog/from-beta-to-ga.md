@@ -15,9 +15,9 @@ Last week the "beta" tag officially came off of Checkly 🍾🎉! I bumped into 
 and hammering down on all features and ripping the beta notice of the nav.navbar. In this post, I tried to funnel a bunch of these
 learnings into a somewhat logical order, as they felled like hoops I had to jump through to get to the next hoop.
 
-> Note: Don't take any of this as gospel. Every situation is different. Stay critical.
-
 <!--more-->
+
+> Note: Don't take any of this as gospel. Every situation is different. Stay critical.
 
 ## 1. Taking payments with Stripe
 

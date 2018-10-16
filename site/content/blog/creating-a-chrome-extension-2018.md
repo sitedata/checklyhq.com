@@ -19,10 +19,10 @@ a Puppeteer script.
 It turns out Chrome extension development is *almost* like real web development, but with a weird dash of 
 quasi embedded development mixed in. 
 
+<!--more--> 
+
 This post talks you through the development lifecycle when creating an extension and lists some of the
 architectural gotcha's. Source code for the extension in question is on [github](https://github.com/checkly/puppeteer-recorder).
-
-<!--more--> 
 
 ## Architecture
 
