@@ -9,7 +9,7 @@ body
       ul
         | !{'{{ range .}}'}
         li
-          a(href="{'{{ .Permalink }}'}") #{'{{ .Title }}'}
+          a(href="{{ .Permalink }}") #{'{{ .Title }}'}
         | !{'{{ end }}'}
       | !{'{{ end }}'}
     .container
