@@ -34,7 +34,7 @@ Puppeteer allows you to screen shot a full page, including the content below the
 a long landing page or blog site. Just add the `fullPage: true`. Puppeteer will scroll and stitch the images together.
 
 ```js
-await page.screenshot({ path: "my_screenshot.png", { fullPage: true } })
+await page.screenshot({ path: "my_screenshot.png", fullPage: true })
 ```
 
 ## Screenshots of specific elements

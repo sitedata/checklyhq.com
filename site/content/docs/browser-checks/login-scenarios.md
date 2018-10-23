@@ -1,6 +1,8 @@
 ---
-title: Login scenarios and secrets
-weight: 3
+title: Login scenarios
+weight: 4
+aliases:
+- login-and-secrets
 menu:
   docs:
     parent: "Browser Checks"
@@ -9,9 +11,9 @@ menu:
 Scenarios where a user provides credentials to get access to a web app are extremely common. They are also
 a great candidate for a browser check as these site transactions tend to be very crucial. 
 
-## Using Environment Variables
+## Username / password login
 
-The code snippet below show how you can log into Github.
+The code snippet below shows how you can log into Github.
 
 ```js
 const browser = await puppeteer.launch()
@@ -23,12 +25,8 @@ await page.click('[name="commit"]')
 browser.close()
 ```
 
-However, when creating browser checks, you probably run some code locally, store it in a Git repo or copy and paste it around
-a bit. This means the credentials in the script are at risk of being exposed.
-
-You should therefore **replace any confidential data in your browser check scripts with environment variables.**
-For example, in the Github example the username and password are replaced with  `process.env.GITHUB_USER` and 
-`process.env.GITHUB_PWD`. This uses the default Node.js syntax for exposing variables.
+However, notice we are hard coding the username and password into our script. That's never a good idea...
+Better to replace them with some environment variables. Read more about [how to use environment variables in your browser checks.](/docs/browser-checks/variables/)
 
 ```js
 const browser = await puppeteer.launch()
@@ -39,11 +37,6 @@ await page.type('#password', process.env.GITHUB_PWD)
 await page.click('[name="commit"]')
 browser.close()
 ``` 
-
-To run the browser check, add the environment variables to the check and save them. Any data you "lock" is
-encrypted at rest and in flight on our back end and is only decrypted when needed.
-
-![](/docs/images/browser-checks/environment_variables.png)
 
 ## Social Login
 
