@@ -4,5 +4,8 @@ title: Support
 
 # Support
 
-Need help? The [docs](/docs) section is a good place to start for technical topics.  
-For questions regarding pricing, plans or other things please contact us at info@checklyhq.com
+Got questions regarding features, pricing or bugs? No problem.
+
+- The [docs](/docs) section is a good place to start for technical topics.
+- Chat with us using the chat widget in the bottom right corner. We respond quickly.
+- Email us at info@checklyhq.com

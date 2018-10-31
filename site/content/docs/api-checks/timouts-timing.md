@@ -6,7 +6,7 @@ menu:
     parent: "API Checks"
 ---
 
-All API checks are capped at a timeout of **8 seconds**. With each request, we record the most relevant timing phases. This can help you troubleshoot slow responses, e.g. your DNS might be slow.
+All API checks are capped at a timeout of **8s seconds**. With each request, we record the most relevant timing phases. This can help you troubleshoot slow responses, e.g. your DNS might be slow.
 
 The timing phases correspond to to the Node.js request library timing phases:
 
