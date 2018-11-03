@@ -14,10 +14,10 @@ featured_image: "https://checklyhq.com/blog/sailing_boat.jpg"
 At Checkly, we run our [browser checks](https://checklyhq.com/docs/browser-checks/quickstart/) on AWS EC2 instances managed by Terraform. 
 When shipping a new version, we don't want to interrupt our service, so we need zero downtime deployments. 
 Hashicorp has [their own write up](https://www.hashicorp.com/blog/zero-downtime-updates-with-terraform) on zero downtime upgrades, 
-but it only introduces the Terraform configuration without a lot of context, workflow or other details that are 
+but it only introduces the Terraform configuration without any context, workflow or other details that are 
 needed to actually make this work in real life™.
 
-This is the full lowdown of how we do it in production for ~1.5 million Chrome-based browser checks since launch.
+This is the full lowdown on how we do it in production for ~1.5 million Chrome-based browser checks since launch.
 
 <!--more-->
 
@@ -26,7 +26,7 @@ This is the full lowdown of how we do it in production for ~1.5 million Chrome-b
 3. [Terraform modules and config ← jump here for the code](#terraform-modules-and-config)
 4. [Deployment workflow](#deployment-workflow)
 5. [Monitoring](#monitoring)
-6. [Conclusion](#Conclusion)
+6. [Conclusion](#conclusion)
 
 ## The problem(s)
 
@@ -34,7 +34,7 @@ For those less initiated into "infra structure as code" and "immutable infrastru
 You will see that you have to build your app in a specific way and have some specific middleware (i.e. queues) in place
 to benefit from this approach. Skip this if you are a grizzled veteran.
 
-You can chop this problem a bunch of parts. Some are Terraform related, some are not, but they all need to be in place
+You can chop this problem into a bunch of parts. Some are Terraform related, some are not, but they all need to be in place
 before you can pull this off without annoying your users.
 
 For Checkly, the app in question can be defined as a "worker". The workers processes incoming requests based on a queue of work. More on this
