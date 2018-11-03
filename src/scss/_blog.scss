@@ -40,7 +40,6 @@
   }
 
   .blog-content {
-
   }
 
   .blog-header {
@@ -91,7 +90,18 @@
   }
 
   .blog-body {
-    font-size: 1.05rem;
+    font-family: 'Merriweather', serif;
+    font-size: 15px !important;
+    line-height: 2;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'fakt-soft', sans-serif;
+    }
+
+    strong {
+      font-weight: 600 !important;
+    }
+
     img {
       padding: 1rem 0;
     }
