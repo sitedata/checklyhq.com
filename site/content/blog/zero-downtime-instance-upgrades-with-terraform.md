@@ -71,9 +71,9 @@ In Checkly's case, the architecture is as follows:
 
 1. A cron process pushes a check to an SQS queue. Each check is a JSON formatted message and represents one run for one check in a customer's account.
 2. Workers subscribe to a queue. There are 5 active workers per EC2 instance. The worker is a Node.js process in a Docker container.
-This is not a necessity, but makes deploying easier as you'll see in the next chapter. The worker uses the [SQS consumer library](https://github.com/bbc/sqs-consumer).
+Docker is not a necessity, but makes deploying easier as you'll see in the next chapter. The worker uses the [SQS consumer library](https://github.com/bbc/sqs-consumer).
 When a job finishes, it calls a `done()` callback which deletes the message from the queue.
-3. If work is not finished successfully, the `done()` callback is never called. This triggers SQS specific behaviour where the message 
+3. If work is not finished successfully, the `done()` callback is never called or is called with an error `done(err)`. This triggers SQS specific behaviour where the message 
 becomes visible again in the queue and other workers can pick it up. This is key, as we are now free to kill a worker without missing any work. 
 This is an SQS function but comes with almost any queueing platform.
 4. If work is finished successfully, the result is posted to another queue for processing and storage.
@@ -81,7 +81,7 @@ This is an SQS function but comes with almost any queueing platform.
 Applying this pattern solves our architecture related problems to the pattern's inherent load balancing and decoupling attributes.
 Of course, this pattern also allows for pretty easy scaling. More messages === more workers. 
 
-Moreover, this also allows for some measure of auto scaling based on load characteristics like the amount of messages in a 
+Moreover, this also allows for some measure of **auto scaling** based on load characteristics like the amount of messages in a 
 queue (and their relative age) or the 1m, 5m and 15m load average of the EC2 instances. The reason for this is that scaling up
 is easy, but scaling down without annoying users or impacting your service is a lot harder. Solving this issue for deployments
 also solves it for auto scaling. Two birds with one stone.
@@ -311,8 +311,8 @@ const trackRunCount = function () {
 
 This is, again, specific to our situation as users don't interact with the workers directly. In a typical
 client/web server scenario the amount of 500 errors, or the lack of 200 response codes could function as a similar trigger.
-In the end, you need to establish your app is processing user request successfully, regardless of whether your deployment 
-was successful.
+In the end, **you need to establish your app is processing user requests successfully, regardless of whether your deployment 
+was successful**.
 
 Terraform also [provides a ton of monitoring providers](https://www.terraform.io/docs/providers/type/monitor-index.html) that
 you can hook into your deployment routine. If your particular monitoring solution is there, use it.
