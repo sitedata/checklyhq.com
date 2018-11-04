@@ -9,30 +9,32 @@
 }</style><!-- Global site tag (gtag.js) - Google Analytics--><script async src="https://www.googletagmanager.com/gtag/js?id=UA-110523681-1"></script><script>  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'UA-110523681-1');</script><!-- Drift code--><script>if (location.host === 'checklyhq.com') {
-!(function () {
-  var t = window.driftt = window.drift = window.driftt || []
-  if (!t.init) {
-    if (t.invoked) return void (window.console && console.error && console.error('Drift snippet included twice.'))
-    t.invoked = !0, t.methods = [ 'identify', 'config', 'track', 'reset', 'debug', 'show', 'ping', 'page', 'hide', 'off', 'on' ],
-    t.factory = function (e) {
-      return function () {
-        var n = Array.prototype.slice.call(arguments)
-        return n.unshift(e), t.push(n), t
+  gtag('config', 'UA-110523681-1');</script><!-- Drift code--><script>{{ if ne .Section "blog" }} 
+ if (location.host === 'checklyhq.com') {
+  !(function () {
+    var t = window.driftt = window.drift = window.driftt || []
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error('Drift snippet included twice.'))
+      t.invoked = !0, t.methods = [ 'identify', 'config', 'track', 'reset', 'debug', 'show', 'ping', 'page', 'hide', 'off', 'on' ],
+      t.factory = function (e) {
+        return function () {
+          var n = Array.prototype.slice.call(arguments)
+          return n.unshift(e), t.push(n), t
+        }
+      }, t.methods.forEach(function (e) {
+        t[e] = t.factory(e)
+      }), t.load = function (t) {
+        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement('script')
+        o.type = 'text/javascript', o.async = !0, o.crossorigin = 'anonymous', o.src = 'https://js.driftt.com/include/' + n + '/' + t + '.js'
+        var i = document.getElementsByTagName('script')[0]
+        i.parentNode.insertBefore(o, i)
       }
-    }, t.methods.forEach(function (e) {
-      t[e] = t.factory(e)
-    }), t.load = function (t) {
-      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement('script')
-      o.type = 'text/javascript', o.async = !0, o.crossorigin = 'anonymous', o.src = 'https://js.driftt.com/include/' + n + '/' + t + '.js'
-      var i = document.getElementsByTagName('script')[0]
-      i.parentNode.insertBefore(o, i)
     }
-  }
-}())
-drift.SNIPPET_VERSION = '0.3.1'
-drift.load('7bxit3egu3zv')
-}</script><!-- Heap tracking code--><script>if (location.host === 'checklyhq.com') {
+  }())
+  drift.SNIPPET_VERSION = '0.3.1'
+  drift.load('7bxit3egu3zv')
+ }
+{{ end }}</script><!-- Heap tracking code--><script>if (location.host === 'checklyhq.com') {
   window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
   heap.load("3553865455");
 }</script></head></html><body><nav class="navbar navbar-toggleable-md fixed-top"><div class="container"><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"><span></span><span></span><span></span></button><a class="navbar-brand" href="/"><img src="/images/text_racoon_logo.svg" width="120"></a><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink" href="#">Product</a><div class="dropdown-menu big-drop-shadow"><a class="dropdown-item" href="/product/api-monitoring/">API Monitoring</a><a class="dropdown-item" href="/product/transaction-monitoring/">Transaction Monitoring</a></div></li><li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li><li class="nav-item"><a class="nav-link" href="/docs">Docs</a></li><li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li></ul><form class="form-inline my-2 my-lg-0 ml-md-3"><a class="btn btn-outline-secondary my-2 my-sm-0 mr-3 ml-md-3" href="https://app.checklyhq.com/">Log in</a><a class="btn btn-success my-2 my-sm-0" href="https://app.checklyhq.com/signup">Start your free trial</a></form></div></div></nav><div class="main"><div class="plans pt-5"><div class="container"><div class="row"><div class="col-sm-12 col-md-8 offset-md-2 plans-header text-center mb-4"><h2>Simple, fair pricing 🍍</h2><p class="mb-4">affordable plans for all company sizes - start a free trial today</p><div class="billing-cycle-toggler"><div class="toggle toggle-left toggle-selected" id="billing-monthly">Monthly</div><div class="toggle toggle-right" id="billing-annual">Annual</div></div><div class="savings-box"><div class="text-accent">One month free</div><svg fill="#FF659D" width="22" height="16" viewBox="0 0 22 16"><path d="M2.39,17,1,17l.07-2c11.37.39,17.9-4.17,20-14l2,.42C20.83,11.76,13.9,17,2.39,17Z" transform="translate(-1 -1)"></path></svg></div></div></div><div class="row"><div class="col-sm-4"><div class="card p-3 mb-3 mb-md-0 card-starter"><div class="card-block"><h2 class="text-accent">Starter</h2><table class="table table-sm plans-features-table"><tr><td>15 API checks</td></tr><tr><td>5 Browser checks</td></tr><tr><td>5 Team members</td></tr><tr><td>50 SMS credits</td></tr></table><div class="price-block"><span class="dollar-sign">$</span><span class="price" data-starter-price>15</span><span data-billing-interval>month</span></div><a class="btn btn-outline-primary btn-block" href="https://app.checklyhq.com/signup">Start your free trial</a></div></div></div><div class="col-sm-4"><div class="card p-3 mb-3 mb-md-0 card-growth big-drop-shadow"><div class="card-block"><h2 class="text-success">Growth</h2><table class="table table-sm plans-features-table"><tr><td>40 API checks</td></tr><tr><td>15 Browser checks</td></tr><tr><td>10 Team members</td></tr><tr><td>150 SMS credits</td></tr></table><div class="price-block"><span class="dollar-sign">$</span><span class="price" data-growth-price>40</span><span data-billing-interval>month</span></div><a class="btn btn-success btn-block" href="https://app.checklyhq.com/signup">Start your free trial</a></div></div></div><div class="col-sm-4"><div class="card p-3 mb-3 mb-md-0 card-business"><div class="card-block"><h2 class="text-primary">Business</h2><table class="table table-sm plans-features-table"><tr><td>100 API checks</td></tr><tr><td>30 Browser checks</td></tr><tr><td>20 Team members</td></tr><tr><td>300 SMS credits</td></tr></table><div class="price-block"><span class="dollar-sign">$</span><span class="price" data-business-price>80</span><span data-billing-interval>month</span></div><a class="btn btn-outline-primary btn-block" href="https://app.checklyhq.com/signup">Start your free trial</a></div></div></div></div><div class="row pt-5"><div class="col-sm-12"><div class="text-center"><p>Every plan comes with</p></div><div class="text-center"><ul class="list-inline plans-features-common-list"><li class="list-inline-item">8 regions</li><li class="list-inline-item">1m interval for API checks / 5m interval for Browser checks</li><li class="list-inline-item">1 public dash with a custom domain</li><li class="list-inline-item">SSL expiration checks</li><li class="list-inline-item">Pagerduty, SMS, email, webhook and Slack integration</li><li class="list-inline-item">Weekly summary email</li></ul></div></div></div><div class="row"><div class="col-sm-12 text-center"><h2 class="py-5">Pricing FAQ</h2></div>{{ $cols := split .RawContent "<split>" }}
