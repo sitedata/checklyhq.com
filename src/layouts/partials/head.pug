@@ -8,15 +8,14 @@ html(lang='en')
 
         meta(property='og:type' content='article')
         meta(property='og:title' content='{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}')
-        meta(property='og:description' content='{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}')
-        //meta(property='og:image' content='https://checklyhq.com/images/dashboard-screen@2x.png')
+        meta(property='og:description' content='{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}')
         meta(property='og:type' content='{{ if .IsPage }}article{{ else }}website{{ end }}')
 
         meta(property='og:image' content='{{ if .IsPage }}{{ with .Params.featured_image }}{{ . }}{{end}}{{ else}}https://checklyhq.com/images/dashboard-screen@2x.png{{end}}')
 
         meta(property='twitter:card' content='summary')
         meta(property='twitter:title' content='{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}')
-        meta(property='twitter:description' content='{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}')
+        meta(property='twitter:description' content='{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}')
         meta(property='twitter:image' content='{{ if .IsPage }}{{ with .Params.featured_image }}{{ . }}{{end}}{{ else}}https://checklyhq.com/images/dashboard-screen@2x.png{{end}}')
 
         link(href='https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700' rel='stylesheet')

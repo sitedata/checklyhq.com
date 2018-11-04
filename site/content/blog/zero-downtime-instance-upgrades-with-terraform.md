@@ -6,6 +6,12 @@ avatar: "tnolet.jpg"
 tags: ["dev", "devops","terraform"]
 publishdate: 2018-11-03
 featured_image: "https://checklyhq.com/blog/sailing_boat.jpg"
+description: >
+    At Checkly, we run our [browser checks](https://checklyhq.com/docs/browser-checks/quickstart/) on AWS EC2 instances managed by Terraform. 
+    When shipping a new version, we don't want to interrupt our service, so we need zero downtime deployments. 
+    Hashicorp has [their own write up](https://www.hashicorp.com/blog/zero-downtime-updates-with-terraform) on zero downtime upgrades, 
+    but it only introduces the Terraform configuration without any context, workflow or other details that are 
+    needed to actually make this work in real life™.
 ---
 
 ![zero downtime deployments terraform](/blog/sailing_boat.jpg)
