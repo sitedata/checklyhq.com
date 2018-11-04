@@ -3,21 +3,24 @@
 .site-monitoring-section {
   padding-top: 3 * $section-top-padding;
   padding-bottom: 3 * $section-bottom-padding;
-  height: 750px;
+  height: 640px;
   background-color: $light-blue;
   overflow: hidden;
 
-  img.screenshots {
-    left: -200px;
-    top: 400px;
-  }
   img.code {
-    left: -300px;
+    left: -100px;
   }
+
+  img.screenshots {
+    left: 180px;
+    top: 320px;
+    z-index: 9999;
+  }
+
 }
 
 @include media-breakpoint-down(sm) {
   .site-monitoring-section {
-    height: 600px;
+    height: 760px;
   }
 }

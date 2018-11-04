@@ -11,18 +11,18 @@
   background-repeat: no-repeat;
   background-size: contain;
 
-  img.results {
-    left: 180px;
-  }
-
   img.assertions {
     left: -100px;
     top: 180px;
+  }
+
+  img.results {
+    left: 180px;
   }
 }
 
 @include media-breakpoint-down(sm) {
   .api-monitoring-section {
-    height: 670px;
+    height: 650px;
   }
 }
