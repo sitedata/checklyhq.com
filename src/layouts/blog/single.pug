@@ -19,9 +19,11 @@ body
             include ../partials/blog-meta-data.pug
             h1.blog-header #{'{{ .Title }}'}
             .markdown.blog-body #{'{{.Content}}'}
-            .py-4
-              include ../partials/social-share.pug
 
     include ../partials/free-trial-row.pug
-  script(type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b5efec24db95a45")
+  script(type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false")
+  script(type="text/javascript")
+    | window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"9af9712f622c6511cb2113669","lid":"adb061483c","uniqueMethods":true}) })
   include ../partials/footer.pug
+
+
