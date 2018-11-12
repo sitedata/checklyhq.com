@@ -29,7 +29,7 @@ Click **Finish integration** to save your settings and redirect you back to Chec
 4. Back in Checkly, you should see your Pagerduty **integration credentials** reflected in the alert settings. 
 ![](/docs/images/alerting/pagerduty_step4.png)
 
-5. Checkly will trigger an incident in Pagerduty when checks fail and also mark them as resolved when the checks are passing again.
+5. Checkly will trigger an incident in Pagerduty when checks fail and also mark them as resolved when the checks are passing again
 ![](/docs/images/alerting/pagerduty_step5.png)
 
 
