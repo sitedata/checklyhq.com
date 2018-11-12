@@ -1,6 +1,6 @@
 ---
 title: API Monitoring
-description: "Downtime caused by API performance has serious business impact. Checkly's deep but easy to use API
+description: "Checkly's deep but easy to use API
 monitoring solution checks your mobile, webapp or IOT API for performance, uptime and correctness."
 ---
 
@@ -13,19 +13,19 @@ monitoring solution to check your mobile, webapp or IOT API for performance, upt
 </p>
 
 <div class="row pt-4">
-{{< sm-4-col-item "Monitor for performance" "Checkly checks the response time for each API call, down to TCP, DNS and first byte times. Add assertions for maximum response time." >}}
+{{< sm-4-col-item "Monitor for performance" "Checkly records the response time for each request, down to TCP, DNS and first byte times. Add assertions for maximum response time." >}}
 {{< sm-4-col-item "Monitor for correctness" "Check payloads, return codes, headers, and authentication. Dive inside JSON payloads and validate specific items." >}}
 {{< sm-4-col-item "Monitor globally" "Checkly monitors your APIs from up to eight data center locations around the world." >}}
-{{< sm-4-col-item "Get alerted ASAP" "API checks run as often as every minute so you will get alerted as soon as things go south." >}}
-{{< sm-4-col-item "Import from tools you know" "Use Checkly's cUrl or Swagger imported to create fully fledged API checks with a couple of clicks." >}}
-{{< sm-4-col-item "Trigger on-demand" "Integrate your API checks into your QA or continuous delivery process by triggering adhoc runs from the command line." >}}
+{{< sm-4-col-item "Get alerted ASAP" "Checks run as often as every minute so you will get alerted as soon as things go south." >}}
+{{< sm-4-col-item "Import from tools you know" "Checkly's cUrl and Swagger API importers create fully fledged API checks with just a couple of clicks." >}}
+{{< sm-4-col-item "Trigger on-demand" "Integrate your API monitoring into your QA or continuous delivery process by triggering adhoc runs from the command line." >}}
 </div>
 
 {.text-center .hero-text}
 # How it works
 
 {{% feature-row header="Create an HTTP request" img="/product/api-monitoring/http-request.png" %}}
-Use our cUrl and Swagger importers or assemble one by hand. Checkly gives you full control over all HTTP request options:
+Import your HTTP requests or assemble one by hand. Checkly gives you full control over all HTTP request options:
 HTTP method, URL, query parameters, headers, and body. Add credentials or a Bearer
 token for authentication.
 {{% cta-link "Learn more" "/docs/api-checks/request-settings/" %}}
@@ -34,16 +34,16 @@ token for authentication.
 {{% /feature-row %}}
 
 {{% feature-row header="Add assertions" img="/product/api-monitoring/assertions.png" %}}
-Use Checkly's simple assertion matrix to create as many assertions per check as you want. Validate the response time, HTTP status code,
+Checkly's simple assertion matrix helps you create as many assertions per check as you want. Monitor your API for correct response times, HTTP status code,
 plain text or JSON bodies and headers. You can drill into JSON payloads and match nested items.
 {{% cta-link "Learn more" "/docs/api-checks/assertions/" %}}
 
 
 {{% /feature-row %}}
 
-{{% feature-row header="Run it every minute" img="/product/api-monitoring/results.png" %}}
-Checkly schedules your API checks to run as often as every minute. This gives you a consistent and accurate view of your API's performance.
-Next to aggregating metrics over time, we give you access to each result from each of the configured data centers.
+{{% feature-row header="Monitor your API every minute" img="/product/api-monitoring/results.png" %}}
+We monitor your API as often as once per minute. This gives you a consistent and accurate view of your API performance.
+Next to aggregating metrics, we give you access to each result from each of the configured data centers.
 {{% /feature-row %}}
 
 {.text-center .hero-text}
@@ -52,9 +52,9 @@ Next to aggregating metrics over time, we give you access to each result from ea
 ![alerting options](/landing/alerting-options@2x.png)
 
 <p class="text-center lead-text mb-lg-5">
-When a check fails, Checkly gives you and your team a timely and actionable insights to address any down time.
+When a check fails, Checkly gives you and your team actionable insights to address downtime and API performance issues.
 Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
-Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
+Need more control? Webhooks give you full access to the JSON data.
 {{% cta-link "Learn more" "/docs/alerting/settings/" %}}
 
 </p>
