@@ -4,6 +4,8 @@ html(lang='en')
         title !{'{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}'}
         meta(charset='utf-8')
         meta(name='description' content='{{.Description | default .Site.Params.Description}}')
+        meta(name='description' content='{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}')
+
         meta(name='viewport' content='width=device-width', initial-scale=1, maximum-scale=1, user-scalable=no)
 
         meta(property='og:type' content='article')
