@@ -1,7 +1,7 @@
 baseurl = "https://checklyhq.com"
 languageCode = "en-us"
 languageLang = "en"
-title = "Checkly | Active Monitoring for Dev & Ops Teams"
+title = "Checkly | API and Site Transaction Monitoring for Dev & Ops Teams"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 enableGitInfo = true
 
@@ -12,7 +12,7 @@ pygmentsUseClasses = true
   blog = "/blog/:year/:month/:title/"
 
 [params]
-    description = "Checkly is the easiest way to actively monitor your API endpoints and browser click flows from a single dashboard"
+    description = "Monitor the performance and correctness of your API endpoints & vital site transactions from a single, simple dashboard"
 
 [[menu.docs]]
 	name = "API Checks"
