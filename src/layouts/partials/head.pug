@@ -18,6 +18,7 @@ html(lang='en')
         meta(property='twitter:title' content='{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}')
         meta(property='twitter:description' content='{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}')
         meta(property='twitter:image' content='{{ if .IsPage }}{{ with .Params.featured_image }}{{ . }}{{end}}{{ else}}https://checklyhq.com/images/dashboard-screen@2x.png{{end}}')
+        meta(name='msvalidate.01' content='36F243A91FAA24DE468D8A8EECF33554')
 
         link(href='https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700' rel='stylesheet')
 
