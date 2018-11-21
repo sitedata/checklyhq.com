@@ -7,7 +7,10 @@ body
                 .row
                     .col-sm-12.col-md-8.offset-md-2.plans-header.text-center.mb-4
                         h2 Simple, fair pricing 🍍
-                        p.mb-4 affordable plans for all company sizes - start a free trial today
+                        p.mb-4
+                          | Take advantage of our &nbsp;
+                          strong.text-accent super low launch pricing &nbsp;
+                          | - prices will go up in 2019.
                         .billing-cycle-toggler
                           #billing-monthly.toggle.toggle-left.toggle-selected Monthly
                           #billing-annual.toggle.toggle-right Annual
@@ -34,6 +37,7 @@ body
                                     span.dollar-sign $
                                     span.price(data-starter-price) 15
                                     span(data-billing-interval) month
+                                .strike-out-price $30 / month
                                 a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                     .col-sm-4
                         .card.p-3.mb-3.mb-md-0.card-growth.big-drop-shadow
@@ -52,6 +56,7 @@ body
                                     span.dollar-sign $
                                     span.price(data-growth-price) 40
                                     span(data-billing-interval) month
+                                .strike-out-price $70 / month
                                 a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                     .col-sm-4
                         .card.p-3.mb-3.mb-md-0.card-business
@@ -71,6 +76,7 @@ body
                                     span.dollar-sign $
                                     span.price(data-business-price) 80
                                     span(data-billing-interval) month
+                                .strike-out-price $130 / month
                                 a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                 .row.pt-5
                     .col-sm-12

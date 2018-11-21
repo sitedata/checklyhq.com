@@ -91,7 +91,6 @@
   .price-block {
     font-size: $font-size-sm;
     color: $gray;
-    margin-bottom: $spacer-y;
     .dollar-sign {
       display: inline-block;
       font-size: 1.25rem;
@@ -105,6 +104,12 @@
       margin-right: .2rem;
       color: $gray-dark;
     }
+  }
+
+  .strike-out-price {
+    margin-bottom: $spacer-y;
+    color: $gray;
+    text-decoration: line-through;
   }
 
 }
