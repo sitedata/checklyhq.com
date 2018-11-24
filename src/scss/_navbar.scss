@@ -3,7 +3,6 @@
   transition: all .5s;
   z-index: 9999;
   background-color: $white;
-
   .beta {
     font-size: 15px;
     font-weight: $font-weight-bold;
@@ -70,5 +69,11 @@
     .btn {
       padding: 0.5rem .75rem;
     }
+  }
+}
+
+.home-nav-wrapper {
+  .navbar {
+    top: 28px !important;
   }
 }

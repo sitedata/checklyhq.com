@@ -1,0 +1,12 @@
+.promo-banner {
+  position: fixed;
+  top: 0;
+  padding: .3 * $spacer-y;
+  z-index: 999999;
+  width: 100%;
+
+  &.black-friday {
+    background-color: $gray-dark;
+    color: $white;
+  }
+}
