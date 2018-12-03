@@ -1,6 +1,6 @@
 ---
 title: Triggers
-weight: 6
+weight: 7
 menu:
   docs:
     parent: "API Checks"

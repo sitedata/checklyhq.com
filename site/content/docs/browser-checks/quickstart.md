@@ -6,11 +6,12 @@ aliases:
 menu:
   docs:
     parent: "Browser Checks"
-    identifier: quickstart-browser
 ---
 
 This quick start should give you all the info to create your first browser check with Checkly. You should have some prior
 knowledge working with Javascript and/or Node.js.
+
+{{< page-toc >}}
 
 ## What is a browser check?
 
@@ -135,6 +136,7 @@ alerting channels will be triggered, notifying your team that something is up.
 - Learn how to deal with [login scenarios and private data](/docs/browser-checks/login-and-secrets/).
 - Install and use [Puppeteer Recorder](docs/puppeteer-recorder/overview/) to record scripts without coding.
 - Learn more about [taking screenshots](/docs/browser-checks/screenshots/).
+- Learn more about [creating reusable code snippets](/docs/browser-checks/partials-code-snippets/).
 
 ## More Puppeteer resources
 

@@ -16,7 +16,7 @@ monitoring solution to check your mobile, webapp or IOT API for performance, upt
 {{< sm-4-col-item "Monitor for performance" "Checkly records the response time for each request, down to TCP, DNS and first byte times. Add assertions for maximum response time." >}}
 {{< sm-4-col-item "Monitor for correctness" "Check payloads, return codes, headers, and authentication. Dive inside JSON payloads and validate specific items." >}}
 {{< sm-4-col-item "Monitor globally" "Checkly monitors your APIs from up to eight data center locations around the world." >}}
-{{< sm-4-col-item "Get alerted ASAP" "Checks run as often as every minute so you will get alerted as soon as things go south." >}}
+{{< sm-4-col-item "Setup & Teardown scripts" "Run custom Javascript before and after your API check. Sign requests, get tokens and/or clean up test data." >}}
 {{< sm-4-col-item "Import from tools you know" "Checkly's cUrl and Swagger API importers create fully fledged API checks with just a couple of clicks." >}}
 {{< sm-4-col-item "Trigger on-demand" "Integrate your API monitoring into your QA or continuous delivery process by triggering adhoc runs from the command line." >}}
 </div>
@@ -37,6 +37,15 @@ token for authentication.
 Checkly's simple assertion matrix helps you create as many assertions per check as you want. Monitor your API for correct response times, HTTP status code,
 plain text or JSON bodies and headers. You can drill into JSON payloads and match nested items.
 {{% cta-link "Learn more" "/docs/api-checks/assertions/" %}}
+
+
+{{% /feature-row %}}
+
+{{% feature-row header="Customize setup & teardown" img="/product/api-monitoring/setup-teardown.png" %}}
+If needed, you can take full control of how your request executes. Use setup scripts to cryptographically sign requests,
+fetch tokens and update request attributes before any request is done. Use teardown scripts to clean up test data or
+scrub sensitive data from the response.
+{{% cta-link "Learn more" "/docs/api-checks/setup-teardown-scripts/" %}}
 
 
 {{% /feature-row %}}

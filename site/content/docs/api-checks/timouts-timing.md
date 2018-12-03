@@ -1,6 +1,6 @@
 ---
 title: Timeouts and timing phases
-weight: 5
+weight: 6
 menu:
   docs:
     parent: "API Checks"
