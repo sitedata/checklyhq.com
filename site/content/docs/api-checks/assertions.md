@@ -8,6 +8,8 @@ menu:
 
 The response of an API request can be checked for correctness and timeliness by using assertions on the response data. Assertions are flexible statements that combine preset modifiers with custom values to meet the needs of a broad set of use cases.
 
+{{< page-toc >}}
+
 ## How assertions work
 
 Assertions are statements you create that check one aspect of the HTTP response. You can create multiple assertions for one check that assert various aspects of a response, for example:

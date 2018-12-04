@@ -1,5 +1,4 @@
 .markdown {
-
   *[id]:before {
     display: block;
     content: " ";
@@ -73,9 +72,11 @@
 
   ul, ol {
     padding-left: 2rem;
+    line-height: $line-height-pub-site;
 
     li {
       margin-bottom: .5 * $spacer-y;
+      line-height: $line-height-pub-site;
     }
   }
 

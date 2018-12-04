@@ -12,6 +12,8 @@ are mandatory, only a name and URL are required to get going.
 While building up your API check, you can run the request and its assertions using the **Run request** button. This will run the
 API checks on the production infrastructure and help you debug any issues.
 
+{{< page-toc >}}
+
 ## Method & URL
 
 An API check starts with creating an HTTP request including a HTTP verb (GET, POST, PUT, etc.) and a URL at the minimum.

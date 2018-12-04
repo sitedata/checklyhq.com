@@ -5,7 +5,7 @@ body {
 
 p {
   color: $body-text;
-  line-height: 28px;
+  line-height: $line-height-pub-site;
   font-weight: 300;
 }
 

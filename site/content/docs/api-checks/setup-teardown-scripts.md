@@ -38,7 +38,7 @@ Both setup and teardown scrips have a **maximum execution time of 4 seconds**.
 
  
 {{<warning >}}
-Setup scripts run once per check; Teardown scripts run on each data center location.
+Setup scripts run once per check. Teardown scripts run on each data center location.
 {{</warning >}}
 
 ## Setup scripts
