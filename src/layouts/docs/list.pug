@@ -1,7 +1,7 @@
 include  ../partials/head
 body
     include ../partials/navbar.pug
-    .main
+    .main.docs
         .container
             .row
                 .col-sm-3.p
@@ -24,5 +24,13 @@ body
                     | !{'{{end}}'}
 
                 .col-sm-9
-                    span.markdown #{'{{.Content}}'}
+                  .markdown.py-3
+                    h1 #{'{{ .Title }}'}
+                    span #{'{{.Content}}'}
+                  h5.text-left
+                    | !{' {{range (.Paginator 1).Pages}} '}
+                    a(href='{{.Title}}') Next: #{' {{.Title }} '}
+                    | !{'{{end}}'}
+                  hr.my-4
+                  include ../partials/last-updated.pug
     include ../partials/footer.pug
