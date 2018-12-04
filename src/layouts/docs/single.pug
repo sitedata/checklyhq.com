@@ -31,11 +31,12 @@ body
                     .markdown.py-3
                         h1 #{'{{ .Title }}'}
                         span #{'{{.Content}}'}
-                    h5.text-left
-                      span
-                        | !{' {{if .PrevInSection}} '}
+
+                    span
+                      | !{' {{if .PrevInSection}} '}
+                      h5.text-left
                         a(href='{{.PrevInSection.Permalink}}') Next: #{'{{.PrevInSection.Title }} '}
-                        | !{'{{end}}'}
+                      | !{'{{end}}'}
                     hr.my-4
                     include ../partials/last-updated.pug
 include ../partials/footer.pug
