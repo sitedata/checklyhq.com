@@ -150,15 +150,29 @@ response.statusCode = 201
 
 ### Example: delete created test data based on response
 
+This is an actual script we use to monitor our own "create API check" API endpoint. It runs after a normal API check where
+we POST an JSON blob to the `/accounts/<uuid>/checks` endpoint, which returns the created resource with its ID.
+Notice how we reuse the environment variables to pass in credentials and tokens.
+
 ```javascript
 // explicitly import axios
 const axios = require('axios')
 
-// get the customerId value from the JSON response body
-const customerId = response.body.customerId
+// parse the create resource,
+const createdResource = JSON.parse(response.body)
 
-// use 'await' on an axios HTTP get to delete the customer
-await axios.delete('https://example.com/api/customers/' + customerId)
+// setup the correct url and its parameters
+const host = 'https://api.checklyhq.com'
+const path = '/checks/' + createdResource.id
+
+// set the correct auth headers
+const headers = {
+  'Authorization': 'Bearer ' + environment['API_BEARER'],
+  'X-Checkly-Account': environment['CHECKLY_ACCOUNT_ID']
+}
+
+// delete the just created resource using the axios HTTP client
+await axios.delete(host + path, { headers })
 ```
 
 ### Example: updating the JSON response body
