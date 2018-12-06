@@ -1,7 +1,7 @@
 baseurl = "https://checklyhq.com"
 languageCode = "en-us"
 languageLang = "en"
-title = "Checkly | API and Site Transaction Monitoring for Dev & Ops Teams"
+title = "Checkly | API Monitoring and Site Transaction Monitoring for DevOps Teams"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 enableGitInfo = true
 enableRobotsTXT = true
