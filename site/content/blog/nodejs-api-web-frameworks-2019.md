@@ -5,7 +5,7 @@ author: "Tim Nolet"
 avatar: "tnolet.jpg"
 tags: ["dev", "javascript", "Node", "frameworks"]
 publishdate: 2018-12-10
-featured_image: "https://checklyhq.com/blog/tunnel1.jpg"
+featured_image: "https://checklyhq.com/blog/newyear1.jpg"
 description: "We list the popular & trending Node.js API and web frameworks for 2019 based on **Github stars**, dependencies, language features, security and sponsorship status."
 ---
 
