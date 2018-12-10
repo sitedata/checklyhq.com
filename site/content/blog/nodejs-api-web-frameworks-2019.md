@@ -10,16 +10,16 @@ description: "We list the popular & trending Node.js API and web frameworks for 
 ---
 
 ![newyear](/blog/newyear1.jpg)
-<small> "Sunrise on New Year’s Day at Susaki" by Utagawa Hiroshigw (1853) - [Museom of Fine Arts Boston](https://www.mfa.org/collections/object/sunrise-on-new-years-day-at-susaki-susaki-hatsu-hinode-from-the-series-famous-places-in-edo-edo-meisho-202200)</small>
+<small> "Sunrise on New Year’s Day at Susaki" by Utagawa Hiroshigw (1853) - [Museum of Fine Arts Boston](https://www.mfa.org/collections/object/sunrise-on-new-years-day-at-susaki-susaki-hatsu-hinode-from-the-series-famous-places-in-edo-edo-meisho-202200)</small>
 
-Last year was an interesting one for Node.js API / Web frameworks, and open source software in general. Discussions raged
-about corporate sponsorship and how to maintain a project used by millions but not supported financially*.
+2018 was an interesting year for Node.js frameworks and open source software in general. Developer communities discussed
+the role of corporate sponsorship and how to maintain a project used by millions but not supported financially.
 
 Similarly, security concerns were top of mind with some popular Node / JS packages [being hijacked](https://github.com/bitpay/copay/issues/9346) and
 [Github launching their security alerts feature](https://blog.github.com/2017-11-16-introducing-security-alerts-on-github/) for projects hosted
 on their site.
 
-That is why in this 2019 Node.js framework roundup we have categories on **sponsorship**, **donations** and **NPM audit vulnerabilities**
+That is why in this Node.js framework roundup we have categories on **sponsorship**, **donations** and **NPM audit vulnerabilities**
 to give better insight into how each of the frameworks listed tackles these issues. Frameworks are evaluated alphabetically.
 
 <!--more-->
@@ -41,7 +41,7 @@ are all available out of the box.
 In the community, AdonisJs is often compared to PHP's Laravel although this can be said of any framework using implementing
 MVC patterns.
 
-|                       |                                                  |
+|[https://adonisjs.com/](https://adonisjs.com/)                       |                                                  |
 |-----------------------|--------------------------------------------------|
 | **Version**               | 5.0.12                                           |
 | **Github stars**          | 5195 / up ~60% in 2018                           |
@@ -67,9 +67,9 @@ bare bones API server. Extra functionality is added using one of the many middle
 Due to its minimal footprint, frameworks like Sails.js and Nest use Express as a base application layer and extend it with extra, opinionated features.
 
 
-|                       |                     |
+| [http://expressjs.com/](http://expressjs.com/)                      |                     |
 |-----------------------|---------------------|
-| Version               | 4.16.4              |
+| **Version**               | 4.16.4              |
 | **Github stars**          | 41.417 / up ~18% in 2018              |
 | **Dependencies**          | 30                  |
 | **Weekly downloads**  | 7.170.825           |
@@ -92,9 +92,9 @@ middlewares, greatly expanding possible use cases.
 
 Fastify comes with experimental HTTP 2.0 support and ships with TypeScript typings.
 
-|                       |                      |
+|[https://www.fastify.io/](https://www.fastify.io/)                       |                      |
 |-----------------------|----------------------|
-| Version               | 1.13.1               |
+| **Version**               | 1.13.1               |
 | **Github stars**          | 8.901 / up ~60% in 2018    |
 | **Dependencies**          | 13                   |
 | **Weekly downloads**  | 15.335               |
@@ -121,9 +121,9 @@ dependencies making security issues much more controllable.
 
 Version 17.x is a ground up rewrite leveraging ES6 and ES7 features throughout the whole stack.
 
-|                       |                                                      |
+|[https://hapijs.com/](https://hapijs.com/)                       |                                                      |
 |-----------------------|------------------------------------------------------|
-| Version               | 17.8.1                                               |
+| **Version**               | 17.8.1                                               |
 | **Github stars**          | 10.485 / up ~19% in 2018                             |
 | **Dependencies**          | 18                                                   |
 | **Weekly downloads**  | 219.046                                              |
@@ -149,9 +149,9 @@ Koa comes with a list of third party middlewares almost as long as Express altho
 just not maintained on a regular basis.
 
 
-|                       |                                  |
+|[https://koajs.com/](https://koajs.com/)                       |                                  |
 |-----------------------|----------------------------------|
-| Version               | 2.6.2                            |
+| **Version**               | 2.6.2                            |
 | **Github stars**          | 24.170 / up ~27% in 2018                          |
 | **Dependencies**          | 24                               |
 | **Weekly downloads**  | 275.369                          |
@@ -175,9 +175,9 @@ are recipes available for more traditional ORMs and databases such Mongo using M
 
 2018 was a good year for Nest and we're excited to see what 2019 brings.
 
-|                       |                                                        |
+|[https://nestjs.com/](https://nestjs.com/)                       |                                                        |
 |-----------------------|--------------------------------------------------------|
-| Version               | 5.5.0                                                  |
+| **Version**               | 5.5.0                                                  |
 | **Github stars**          | 10.732 / up 280% in 2018                                                |
 | **Dependencies**          | 10                                                     |
 | **Weekly downloads**  | 61.907                                                 |
@@ -202,9 +202,9 @@ plugin API, although the third party plugins are spread very thin.
 Stressing debuggability as one of its main pilllars, it is cool to see that Restify includes automatic generation of Dtrace probes,
 a feature not commonly found in any of the other frameworks.
 
-|                       |                       |
+|[http://restify.com/](http://restify.com/)                       |                       |
 |-----------------------|-----------------------|
-| Version               | 7.3.0                 |
+| **Version**               | 7.3.0                 |
 | **Github stars**          | 8.857 / up ~24% in 2018                 |
 | **Dependencies**          | 22                    |
 | **Weekly downloads**  | 101.211               |
@@ -230,9 +230,9 @@ Sails comes with its own Waterline ORM which can front multiple database types l
 
 Originated at the Balderdashy company, they have now renamed to "the Sails Company" and provide enterprise support.
 
-|                       |                                  |
+|[https://sailsjs.com/](https://sailsjs.com/)                       |                                  |
 |-----------------------|----------------------------------|
-| Version               | 1.1.0                            |
+| **Version**               | 1.1.0                            |
 | **Github stars**          | 19.976 / up ~14% in 2018                           |
 | **Dependencies**          | 44                               |
 | **Weekly downloads**  | 23.742                           |
@@ -258,9 +258,9 @@ Because Server.js is also based on Express, you can use Express middlewares to e
 Next to having a great NPM package name, Server.js looks very promising as light weight but stilly pretty full stack
 API and web framework.
 
-|                       |                                           |
+|[https://serverjs.io/](https://serverjs.io/)                       |                                           |
 |-----------------------|-------------------------------------------|
-| Version               | 1.0.8                                     |
+| **Version**               | 1.0.8                                     |
 | **Github stars**          | 3.229 / up ~15% in 2018                                    |
 | **Dependencies**          | 22                                        |
 | **Weekly downloads**  | 1.559                                     |
@@ -277,7 +277,7 @@ API and web framework.
 
 |                       |                                           |
 |-----------------------|-------------------------------------------|
-| Version               | The version used for checking vulnerabilities & dependencies                                |
+| **Version**               | The version used for checking vulnerabilities & dependencies                                |
 | **Github stars**          | Stars as of 10-12-2018 compared to roughly 01-01-2018                               |
 | **Dependencies**          | Number of direct dependencies listed on NPM                                        |
 | **Weekly downloads**       | umber of weekly downloads listed on NPM                                     |
@@ -290,4 +290,4 @@ API and web framework.
 | **Notes**                  | Any extra notes                                          |
 | **File under**            | Free form tags that try to categories the framework                          |
 
-**Disclosure: Checkly sponsors Hapi.js and its lead developer [Eran Hammer](https://www.patreon.com/eranhammer/overview)*
+Disclosure: Checkly sponsors Hapi.js and its lead developer [Eran Hammer](https://www.patreon.com/eranhammer/overview)
