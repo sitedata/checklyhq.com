@@ -20,7 +20,7 @@ Similarly, security concerns were top of mind with some popular Node / JS packag
 on their site.
 
 That is why in this 2019 Node.js framework roundup we have categories on **sponsorship**, **donations** and **NPM audit vulnerabilities**
-to give a better insight into how each of the frameworks listed tackles this issues. Frameworks are evaluated alphabetically.
+to give better insight into how each of the frameworks listed tackles these issues. Frameworks are evaluated alphabetically.
 
 <!--more-->
 
