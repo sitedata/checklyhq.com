@@ -14,11 +14,24 @@ body
       | !{'{{ end }}'}
     .container
       .row
-        .col-smf-12.col-lg-8.offset-lg-2
+        .col-sm-12.col-lg-8.offset-lg-2
           .blog-content.py-4
             include ../partials/blog-meta-data.pug
             h1.blog-header #{'{{ .Title }}'}
             .markdown.blog-body #{'{{.Content}}'}
+      .row
+        .col-sm-12.col-lg-8.offset-lg-2.mb-4
+          | !{' {{ $related := .Site.RegularPages.Related . | first 3 }} '}
+          | !{' {{ with $related }} '}
+          h4 Also see
+          ul
+            | !{' {{ range . }} '}
+            li
+              a(href="#{' {{ .RelPermalink }} '}") {{ .Title }}
+            | !{' {{ end }} '}
+          | !{' {{ end }} '}
+
+
 
     include ../partials/free-trial-row.pug
   script(type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false")
