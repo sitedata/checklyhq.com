@@ -25,8 +25,10 @@ $(document).ready(() => {
       return response.json()
     })
     .then(function (res) {
-      $('#api-check-results').text(res.apiCheckResults)
-      $('#browser-check-results').text(res.browserCheckResults)
+      const countApi = res.apiCheckResults.toLocaleString()
+      const countBrowser = res.browserCheckResults.toLocaleString()
+      $('#api-check-results').text(countApi)
+      $('#browser-check-results').text(countBrowser)
     })
 })
 

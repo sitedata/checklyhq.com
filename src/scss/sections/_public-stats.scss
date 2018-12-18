@@ -8,12 +8,11 @@
   .counter-text {
     color: $gray;
     font-weight: 200;
-    font-size: $font-size-h2;
+    font-size: $font-size-h3;
   }
   .counter {
     color: $gray-dark;
     margin: .5rem;
-    font-size: larger;
     font-weight: 500;
   }
   @include media-breakpoint-down(sm) {

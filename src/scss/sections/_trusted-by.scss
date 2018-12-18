@@ -1,0 +1,16 @@
+@import '../variables';
+
+.trusted-by-section {
+  text-align: center;
+  padding-top: 6 * $spacer;
+  padding-bottom: 3 * $spacer;
+
+  img.trusted-by-image {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    text-align: left;
+  }
+}
