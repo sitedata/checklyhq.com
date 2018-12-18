@@ -1,7 +1,7 @@
 ---
 title: Pricing
 ---
-#### What's are API checks?
+#### What are API checks?
 
 API checks are monitors that issue POST, GET and other typical HTTP requests at API endpoints. You have full control
 over the payload, headers etc. In addition, you can create assertions to check if the response from your
