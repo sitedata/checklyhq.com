@@ -1,25 +1,22 @@
 ---
 date: 2018-12-10T09:00:00+00:00
-title: "Node.js API and Web Frameworks for 2019"
+title: "Java API and Web Frameworks for 2019"
 author: "Tim Nolet"
 avatar: "tnolet.jpg"
-tags: ["dev", "javascript", "Node", "frameworks"]
+tags: ["dev", "Java", "frameworks"]
 publishdate: 2018-12-10
+draft: true
 featured_image: "https://checklyhq.com/blog/newyear1.jpg"
-description: "We list the popular & trending Node.js API and web frameworks for 2019 based on **Github stars**, dependencies, language features, security and sponsorship status."
+description: "We list the popular & trending Java API and web frameworks for 2019 based on **Github stars**, dependencies, language features, security and sponsorship status."
 ---
 
 ![newyear](/blog/newyear1.jpg)
-<small> "Sunrise on New Year’s Day at Susaki" by Utagawa Hiroshige (1853) - [Museum of Fine Arts Boston](https://www.mfa.org/collections/object/sunrise-on-new-years-day-at-susaki-susaki-hatsu-hinode-from-the-series-famous-places-in-edo-edo-meisho-202200)</small>
+<small> "Sunrise on New Year’s Day at Susaki" by Utagawa Hiroshigw (1853) - [Museum of Fine Arts Boston](https://www.mfa.org/collections/object/sunrise-on-new-years-day-at-susaki-susaki-hatsu-hinode-from-the-series-famous-places-in-edo-edo-meisho-202200)</small>
 
-2018 was an interesting year for Node.js frameworks and open source software in general. Developer communities discussed
-the role of corporate sponsorship and how to maintain a project used by millions but not supported financially.
+Just like our roundup for [Node.js web & API frameworks](https://checklyhq.com/blog/2018/12/node.js-api-and-web-frameworks-for-2019/) 
+this article dives into to popular and trending Java web and API frameworks for 2019 based on more than just Github stars.
 
-Similarly, security concerns were top of mind with some popular Node / JS packages [being hijacked](https://github.com/bitpay/copay/issues/9346) and
-[Github launching their security alerts feature](https://blog.github.com/2017-11-16-introducing-security-alerts-on-github/) for projects hosted
-on their site.
-
-That is why in this Node.js framework roundup we have categories on **sponsorship**, **donations** and **NPM audit vulnerabilities**
+More specifically, this roundup contains categories on **sponsorship**,  **donations** and **vulnerabilities**
 to give better insight into how each of the frameworks listed tackles these issues. Frameworks are evaluated alphabetically.
 
 <!--more-->

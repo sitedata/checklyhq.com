@@ -84,7 +84,7 @@ gulp.task('assets', () => (
 
 gulp.task('hash', () => {
   gulp.src('./dist/**')
-    .pipe(revall.revision({ dontRenameFile: [/^\/favicon.ico$/g, '.html', 'sitemap.xml'] }))
+    .pipe(revall.revision({ dontRenameFile: [/^\/favicon.ico$/g, '.html', 'sitemap.xml', 'robots.txt', '.woff', '.eot', '.ttf'] }))
     .pipe(gulp.dest('./dist'))
 })
 

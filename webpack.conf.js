@@ -50,7 +50,6 @@ export default {
 
   context: path.join(__dirname, "src"),
   entry: {
-    app: ["./js/app"],
     index: ["./js/index"]
   },
   output: {
