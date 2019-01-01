@@ -6,11 +6,13 @@
   padding-bottom: 3 * $spacer;
 
   img.trusted-by-image {
+    max-width: 1110px;
     width: 100%;
     padding: 1rem 0;
   }
 
   @include media-breakpoint-down(sm) {
-    text-align: left;
+    padding-top: $section-top-padding;
+    padding-bottom: $section-bottom-padding;
   }
 }

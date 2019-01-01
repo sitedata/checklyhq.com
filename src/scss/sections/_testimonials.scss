@@ -42,6 +42,6 @@
 
 @include media-breakpoint-down(sm) {
   .testimonial-section {
-    padding-top: 2 * $section-top-padding;
+    padding-top: $section-top-padding;
   }
 }
