@@ -39,18 +39,21 @@ $(document).ready(() => {
 const plans = [
   {
     name: 'starter',
-    year: 165,
-    month: 15
+    year: 264,
+    month: 24,
+    monthByYear: '22.00'
   },
   {
     name: 'growth',
-    year: 440,
-    month: 40
+    year: 649,
+    month: 59,
+    monthByYear: '54.03'
   },
   {
     name: 'business',
-    year: 880,
-    month: 80
+    year: 1309,
+    month: 119,
+    monthByYear: '109.08'
   }
 ]
 
@@ -63,17 +66,16 @@ $(document).ready(() => {
 
     for (let plan of plans) {
       $(`[data-${plan.name}-price]`).text(plan.month)
+      $(`[data-${plan.name}-strikeout-price]`).hide()
     }
-    $('[data-billing-interval]').text('/ month')
-
   })
   annual.click(() => {
     $('.toggle').toggleClass('toggle-selected')
 
     for (let plan of plans) {
-      $(`[data-${plan.name}-price]`).text(plan.year)
+      $(`[data-${plan.name}-price]`).text(plan.monthByYear)
+      $(`[data-${plan.name}-strikeout-price]`).text(` $ ${plan.month} / month `).show()
     }
-    $('[data-billing-interval]').text('/ year')
   })
 })
 /**

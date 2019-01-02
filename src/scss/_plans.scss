@@ -107,6 +107,8 @@
   }
 
   .strike-out-price {
+    font-size: 18px;
+    display: none;
     margin-bottom: $spacer-y;
     color: $gray;
     text-decoration: line-through;

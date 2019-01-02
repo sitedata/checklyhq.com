@@ -8,9 +8,7 @@ body
                     .col-sm-12.col-md-8.offset-md-2.plans-header.text-center.mb-4
                         h2 Simple, fair pricing 🍍
                         p.mb-4
-                          | Take advantage of our &nbsp;
-                          strong super low launch pricing &nbsp;
-                          | - prices will go up in 2019.
+                          | Sign up for a yearly plan and receive one month for free.
                         .billing-cycle-toggler
                           #billing-monthly.toggle.toggle-left.toggle-selected Monthly
                           #billing-annual.toggle.toggle-right Annual
@@ -35,9 +33,9 @@ body
                                         td 50 SMS credits
                                 .price-block
                                     span.dollar-sign $
-                                    span.price(data-starter-price) 15
-                                    span(data-billing-interval) month
-                                .strike-out-price $30 / month
+                                    span.price(data-starter-price) 24
+                                    span(data-billing-interval) / month
+                                .strike-out-price(data-starter-strikeout-price) $24 / month
                                 a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                     .col-sm-4
                         .card.p-3.mb-3.mb-md-0.card-growth.big-drop-shadow
@@ -54,9 +52,9 @@ body
                                       td 150 SMS credits
                                 .price-block
                                     span.dollar-sign $
-                                    span.price(data-growth-price) 40
-                                    span(data-billing-interval) month
-                                .strike-out-price $70 / month
+                                    span.price(data-growth-price) 59
+                                    span(data-billing-interval) / month
+                                .strike-out-price(data-growth-strikeout-price) $59 / month
                                 a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                     .col-sm-4
                         .card.p-3.mb-3.mb-md-0.card-business
@@ -74,9 +72,9 @@ body
                                       td 300 SMS credits
                                 .price-block
                                     span.dollar-sign $
-                                    span.price(data-business-price) 80
-                                    span(data-billing-interval) month
-                                .strike-out-price $130 / month
+                                    span.price(data-business-price) 119
+                                    span(data-billing-interval) / month
+                                .strike-out-price(data-business-strikeout-price) $119 / month
                                 a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
                 .row.pt-5
                     .col-sm-12
@@ -86,6 +84,7 @@ body
                             ul.list-inline.plans-features-common-list
                                 li.list-inline-item 8 regions
                                 li.list-inline-item 1m interval for API checks / 5m interval for Browser checks
+                                li.list-inline-item Setup / Teardown scripts & code snippets
                                 li.list-inline-item 1 public dash with a custom domain
                                 li.list-inline-item SSL expiration checks
                                 li.list-inline-item Pagerduty, SMS, email, webhook and Slack integration
