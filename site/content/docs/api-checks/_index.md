@@ -20,4 +20,4 @@ This is where you configure the method, body, headers etc. which determines the 
 This is where you determine whether the response of the HTTP request is correct or within acceptable bounds.  
 [Read more about assertions]({{< ref "assertions.md" >}})
 
-These two phases are executed under the hood by the Node.js request library and the chai.js assertions library. All checks are executed on Amazon's AWS Lambda infrastructure.
+These two phase are executed under the hood by the Node.js request library and the chai.js assertions library. All checks are executed on Amazon's AWS Lambda infrastructure.

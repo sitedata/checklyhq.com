@@ -29,7 +29,7 @@ body
                     span #{'{{.Content}}'}
                   h5.text-left
                     | !{' {{range (.Paginator 1).Pages}} '}
-                    a(href='{{.Title}}') Next: #{' {{.Title }} '}
+                    a(href='{{.Permalink}}') Next: #{' {{.Title }} '}
                     | !{'{{end}}'}
                   hr.my-4
                   include ../partials/last-updated.pug

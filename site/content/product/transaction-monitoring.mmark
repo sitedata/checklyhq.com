@@ -21,10 +21,10 @@ correctness and performance of all your crucial click paths.
 
 </div>
 
-{.text-center .hero-text}
-# How it works
+{.text-center .section-header .mb-4}
+## How it works
 
-<p class="text-center hero-sub hero-sub-center mb-lg-5">
+<p class="text-center hero-sub hero-sub-center mb-5">
 Checkly uses the Chrome Puppeteer framework to accurately simulate interactions with a Chrome browser.
 Getting a monitoring script going is a lot easier than you might think. Just follow the steps below and you'll be up in no time.
 </p>
@@ -51,10 +51,10 @@ an alert is triggered.
 {{% /feature-row %}}
 
 
-{.text-center .hero-text}
-# Coding optional
+{.text-center .section-header .mb-4}
+## Coding optional
 
-<p class="text-center hero-sub hero-sub-center mb-lg-4">
+<p class="text-center hero-sub hero-sub-center mb-5">
 Coding your own scripts gives you a ton of power over exactly how your click paths and interactions should interact with
 the browser. However, you don't need to start there. We give you a built-in example library of examples and the Puppeteer
 Recorder Chrome browser extension to get started ASAP.
@@ -75,8 +75,8 @@ This extension has a ton of options for tweaking your scripts as you click throu
 
 
 
-{.text-center .hero-text}
-# Alerting for any situation
+{.text-center .section-header}
+## Alerting for any situation
 {.text-center .mb-lg-5 .img-w360}
 ![alerting options](/landing/alerting-options@2x.png)
 
