@@ -1,16 +1,80 @@
 ---
-title: General settings
+title: Alert settings
 weight: 1
 menu:
   docs:
     parent: "Alerting"
 ---
 
-##  Global & per check alert channels
+Checkly's alert settings give you a lot of options to tailor when, how and how often you want to be alerted when 
+a check fails. This is also sometimes referred to as "threshold alerting" For example:
 
-Checkly allows you to manage your alert channels on two different levels:
+- Get an alert of on the second or third failure.
+- Get an alert after 5 minutes of failures.
+- Get one or more reminders after a failure is triggered.
 
-- Global account level
+Configuring is really simple. Just remember that you can configure your alert settings at two levels:
+
+- **Account** level: This is the default level and applies to all of your check unless you override these settings at the check level.
+
+![alert settings account / threshold alerting](/docs/images/alerting/alert-settings.png)
+
+- **Check** level: You can explicitly override the alert settings per check. Very handy for debugging or other one-off cases.
+
+![alert settings check / threshold alerting](/docs/images/alerting/alert-settings-check.png)
+
+{{<info >}}
+Whenever possible, use the alert settings at the account level. This keeps things simple.
+{{</info>}}
+
+Alert settings give you the following options:
+
+### Escalation
+
+The escalation box allows you to decide when an alert should be triggered. We give you two options:
+
+**1. Run based**
+
+We alert you when a check has failed a number of times consecutively. We call this a *Run Based* escalation. Note that failing checks
+for a different region but part of the same run are not considered "consecutive". 
+
+Here's an example. You want to be alerted after two failures, so you set the escalation to 
+
+![escalation when a check has failed 2 time(s)](/docs/images/alerting/escalation-1.png) 
+
+Your check runs in Frankfurt and Tokio. It fails from both regions because your server is down. We consider this
+one run. Five minutes later, the check fails again - assuming the check runs on a 5 minute schedule. Now we alert you.
+
+**2. Time based**
+
+We alert you when a check is still failing after a period of time, regardless of the amount of check runs that are failing.
+This option should mostly be used when checks are run very regularly, i.e. once every minute or five minutes.
+
+Here's an example. You want to be alerted if your check is failing for more than 10 minutes. You set escalation to:
+
+![escalation when a check is failing for more than 10 minutes](/docs/images/alerting/escalation-2.png)
+
+Your check runs every minute. It starts failing at 15:00. Failing check results come in and are visible in the dashboard.
+After 10 minutes, the clock strikes 15:10. Any failing check results that come in now trigger an alert. If the check has
+resolved, no alert are triggered.
+
+### Reminders
+
+People are busy, life is complex. For this reason you can set up one or more reminders. With the example below, Checkly
+would send you two reminders: the first reminder five minutes after the first alert is triggered and the second five minutes
+after that.
+
+![send reminder two times over ten minutes](/docs/images/alerting/reminders-1.png)
+
+{{<info >}}
+When a check failure is resolved, we cancel any outstanding reminders.
+{{</info>}}
+
+##  Alert channels
+
+Similar to the alert settings, Checkly allows you to manage your alert channels on two different levels:
+
+- Account level
 - Per check level
 
 Use the account level to make sure everyone is always updated for all failing and recovered checks. This where you would
@@ -20,7 +84,6 @@ If you want to alert one specific person or team for one specific check, you can
 You are free to mix and match both levels.
 
 {{< info >}} Alerts are de-doubled before alerting, so you will never get two alerts because they were set at both levels.{{< /info >}}
-
 
 ## Muting alerts
 
