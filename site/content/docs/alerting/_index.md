@@ -67,7 +67,7 @@ after that.
 ![send reminder two times over ten minutes](/docs/images/alerting/reminders-1.png)
 
 {{<info >}}
-When a check failure is resolved, we cancel any outstanding reminders.
+When a check failure is resolved, we cancel any outstanding reminders so you don't get mixed signals.
 {{</info>}}
 
 ##  Alert channels
