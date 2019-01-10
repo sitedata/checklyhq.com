@@ -55,7 +55,7 @@ an alert is triggered.
 ## Coding optional
 
 <p class="text-center hero-sub hero-sub-center mb-5">
-Coding your own scripts gives you a ton of power over exactly how your click paths and interactions should interact with
+Coding your own scripts lets you controle exactly how your click paths should interact with
 the browser. However, you don't need to start there. We give you a built-in example library of examples and the Puppeteer
 Recorder Chrome browser extension to get started ASAP.
 </p>
@@ -75,7 +75,7 @@ This extension has a ton of options for tweaking your scripts as you click throu
 
 
 
-{.text-center .section-header}
+{.text-center .section-header .pt-5}
 ## Alerting for any situation
 {.text-center .mb-lg-5 .img-w360}
 ![alerting options](/landing/alerting-options@2x.png)
@@ -85,6 +85,15 @@ When a check fails, you and your team need timely and actionable insights to add
 Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
 Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
 {{% cta-link "Learn more" "/docs/alerting/settings/" %}}
+</p>
 
+{.text-center .section-header .pt-5}
+## Global coverage
+{.text-center .mb-lg-5 .img-w720}
+![alerting options](/landing/data-center-locations@2x.png)
+
+<p class="text-center lead-text mb-lg-5">
+Get a clear picture of how your services perform for all your users around the world. Run your check from any of sixteen
+data center locations spread over the Americas, EMEA and Asia Pacific.
 </p>
 

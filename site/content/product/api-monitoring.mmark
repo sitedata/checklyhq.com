@@ -55,7 +55,7 @@ We monitor your API as often as once per minute. This gives you a consistent and
 Next to aggregating metrics, we give you access to each result from each of the configured data centers.
 {{% /feature-row %}}
 
-{.text-center .section-header}
+{.text-center .section-header .pt-5}
 ## Alerting for any situation
 {.text-center .mb-lg-5 .img-w360}
 ![alerting options](/landing/alerting-options@2x.png)
@@ -65,6 +65,18 @@ When a check fails, Checkly gives you and your team actionable insights to addre
 Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
 Need more control? Webhooks give you full access to the JSON data.
 {{% cta-link "Learn more" "/docs/alerting/settings/" %}}
-
 </p>
+
+{.text-center .section-header .pt-5}
+## Global coverage
+{.text-center .mb-lg-5 .img-w720}
+![alerting options](/landing/data-center-locations@2x.png)
+
+<p class="text-center lead-text mb-lg-5">
+Get a clear picture of how your services perform for all your users around the world. Run your check from any of sixteen
+data center locations spread over the Americas, EMEA and Asia Pacific.
+</p>
+
+
+
 
