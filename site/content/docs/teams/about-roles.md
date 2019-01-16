@@ -12,10 +12,10 @@ When inviting a team member to join your account you can assign one of three rol
     - Can change the team name
 2. **Admin**
     - Can invite, edit and remove other team members
-    - Can change the account name
+    - Can change the account settings
 3. **Read & Write**
     - Can create, update and delete checks
-    - Can create, update and delete alert setting
+    - Can create, update and delete alert settings of individual checks.
 4. **Read Only**
     - Look, no touch.
 
