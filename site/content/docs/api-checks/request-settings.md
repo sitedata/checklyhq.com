@@ -98,3 +98,36 @@ parses your spec and prompts you to make some decisions which requests to import
 - **Add a "group" tag:** Copy the name of you spec to a tag and add it to each imported request. This helps
 filtering and grouping related in the Checkly dashboard.
 
+## Responses
+
+In almost all cases, you have full access to the HTTP response for assertions. We also store the full response
+for later retrieval and triaging issues.
+
+However, if your API responds with a binary type body, i.e. a PDF or video file, we scrub the body and replace
+it with a short text saying that we scrubbed it. We determine the body content type by looking at the `Content-Type`
+response header. 
+
+This list shows all content types that we scrub from the response data.
+
+| content type |
+| ------------- |
+|`application/pdf`|
+|`audio/wave`|
+|`audio/wav`|
+|`audio/x-wav`|
+|`audio/x-pn-wav`|
+|`audio/mpeg`|
+|`audio/x-ms-wma`|
+|`audio/vnd.rn-realaudio`|
+|`application/octet-stream`|
+|`application/ogg`|
+|`application/x-shockwave-flash`|
+|`application/zip`|
+|`video/mpeg`|
+|`video/mp4`|
+|`video/quicktime`|
+|`video/x-ms-wmv`|
+|`video/x-msvideo`|
+|`video/x-flv`|
+|`video/webm`|
+
