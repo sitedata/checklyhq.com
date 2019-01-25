@@ -63,7 +63,8 @@ Read more about asserting JSON response bodies below.
 
 ## Comparison
 
-On each API check assertion, the following sources are available:
+Comparisons are the operators that work on the source data and target data, i.e. `response time (source) is LESS THAN 150 (target)` or `status code EQUALS 200`. You get it.
+On each API check assertion, the following comparisons are available:
 
 - Equals / Not equals
 - Is empty / Not empty
