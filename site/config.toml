@@ -9,6 +9,8 @@ enableRobotsTXT = true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
+disqusShortname = "checkly"
+
 [permalinks]
   blog = "/blog/:year/:month/:title/"
 

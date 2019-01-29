@@ -33,6 +33,12 @@ body
           | !{' {{ end }} '}
 
     include ../partials/free-trial-row.pug
+
+    .container.mb-5
+      .row
+        .col-sm-12.col-lg-8.offset-lg-2
+          span !{' {{ template "_internal/disqus.html" . }} '}
+
   script(type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false")
   script(type="text/javascript")
     | window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"9af9712f622c6511cb2113669","lid":"adb061483c","uniqueMethods":true}) })
