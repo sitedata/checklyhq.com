@@ -59,7 +59,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "gulp-inline-css": "3.1.1",
+    "gulp-inline-css": "3.3.1",
     "gulp-pug": "^3.3.0",
     "gulp-rev-all": "^0.9.7",
     "gulp-sass": "^3.1.0",
