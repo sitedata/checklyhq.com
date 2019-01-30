@@ -9,7 +9,6 @@ import inlineCss from 'gulp-inline-css'
 import sass from 'gulp-sass'
 import pug from 'gulp-pug'
 import revall from 'gulp-rev-all'
-import sequence from 'run-sequence'
 import del from 'del'
 
 import BrowserSync from 'browser-sync'
@@ -20,23 +19,13 @@ const browserSync = BrowserSync.create()
 
 // Hugo arguments
 const hugoArgsDefault = ['-d', '../dist', '-s', 'site', '-v']
-const hugoArgsPreview = ['--buildDrafts', '--buildFuture']
 
 // Development tasks
 gulp.task('hugo', (cb) => buildSite(cb))
-gulp.task('hugo-preview', (cb) => buildSite(cb, hugoArgsPreview))
-
-gulp.task('build', (done) => {
-  sequence('clean', 'render', 'hash', done)
-})
-
-// Build/production tasks
-gulp.task('render', ['pug', 'css', 'js', 'fonts'], (cb) => buildSite(cb, [], 'production'))
-gulp.task('build-preview', ['pug', 'css', 'js', 'fonts'], (cb) => buildSite(cb, hugoArgsPreview, 'production'))
 
 // Compile pug to HTML
 gulp.task('pug', function buildHTML () {
-  gulp.src(['./src/layouts/**/*.pug', '!./src/layouts/partials/**/*'])
+  return gulp.src(['./src/layouts/**/*.pug', '!./src/layouts/partials/**/*'])
     .pipe(pug({
       doctype: 'html',
       pretty: false
@@ -46,13 +35,13 @@ gulp.task('pug', function buildHTML () {
 })
 
 // Compile CSS with PostCSS
-gulp.task('css', () => (
-  gulp.src('./src/scss/*.scss')
+gulp.task('css', function buildCss () {
+  return gulp.src('./src/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([cssImport({from: './src/css/main.css'}), cssnext()]))
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream())
-))
+})
 
 // Compile Javascript
 gulp.task('js', (cb) => {
@@ -83,7 +72,7 @@ gulp.task('assets', () => (
 ))
 
 gulp.task('hash', () => {
-  gulp.src('./dist/**')
+  return gulp.src('./dist/**')
     .pipe(revall.revision({
       dontRenameFile: [/^\/favicon.ico$/g, '.html', 'sitemap.xml', 'robots.txt', '.woff', '.eot', '.ttf'],
       dontUpdateReference: ['.woff', '.eot', '.ttf']
@@ -98,7 +87,7 @@ gulp.task('inline', function () {
 })
 
 // Development server with browsersync
-gulp.task('server', ['pug', 'hugo', 'css', 'js', 'fonts'], () => {
+gulp.task('server', gulp.series(['pug', 'hugo', 'css', 'js', 'fonts']), () => {
   browserSync.init({
     server: {
       baseDir: './dist'
@@ -114,6 +103,10 @@ gulp.task('server', ['pug', 'hugo', 'css', 'js', 'fonts'], () => {
 gulp.task('clean', () => {
   return del(['./dist/**/*'])
 })
+
+// Build/production tasks
+gulp.task('render', gulp.series(['pug', 'css', 'js', 'fonts', 'hugo']))
+gulp.task('build', gulp.series(['clean', 'render', 'hash']))
 
 /**
  * Run hugo and build the site

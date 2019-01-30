@@ -2,11 +2,6 @@ import webpack from "webpack";
 import path from "path";
 
 export default {
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    }
-  },
   module: {
     rules: [
       {
@@ -20,7 +15,7 @@ export default {
       {
         test: /\.(pug|jade)(\?.*)?$/,
         exclude: /node_modules/,
-        loader: ['html-loader','pug-html-loader']
+        loader: ['html-loader', 'pug-html-loader']
       },
       {
         test:/\.(s*)css$/,
