@@ -84,11 +84,14 @@ gulp.task('assets', () => (
 
 gulp.task('hash', () => {
   gulp.src('./dist/**')
-    .pipe(revall.revision({ dontRenameFile: [/^\/favicon.ico$/g, '.html', 'sitemap.xml', 'robots.txt', '.woff', '.eot', '.ttf'] }))
+    .pipe(revall.revision({
+      dontRenameFile: [/^\/favicon.ico$/g, '.html', 'sitemap.xml', 'robots.txt', '.woff', '.eot', '.ttf'],
+      dontUpdateReference: ['.woff', '.eot', '.ttf']
+    }))
     .pipe(gulp.dest('./dist'))
 })
 
-gulp.task('inline', function() {
+gulp.task('inline', function () {
   return gulp.src('./dist/index.html')
     .pipe(inlineCss())
     .pipe(gulp.dest('./dist/index.html'))
