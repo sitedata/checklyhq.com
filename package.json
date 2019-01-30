@@ -44,16 +44,7 @@
     "url-loader": "^0.6.2",
     "uuid": "^3.3.2",
     "webpack": "3.10.0",
-    "whatwg-fetch": "^2.0.4"
-  },
-  "devDependencies": {
-    "css-loader": "^0.28.11",
-    "del": "^3.0.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-html": "^4.0.6",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
+    "whatwg-fetch": "^2.0.4",
     "gulp-inline-css": "3.3.1",
     "gulp-pug": "^4.0.1",
     "gulp-rev-all": "^0.9.8",
@@ -61,7 +52,16 @@
     "html-loader": "^0.5.5",
     "pug-html-loader": "^1.1.5",
     "run-sequence": "^2.2.1",
-    "s3-deploy": "^0.10.0",
-    "sass-loader": "^6.0.7"
+    "sass-loader": "^6.0.7",
+    "css-loader": "^0.28.11",
+    "del": "^3.0.0"
+  },
+  "devDependencies": {
+
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-html": "^4.0.6",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
   }
 }
