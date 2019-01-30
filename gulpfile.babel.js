@@ -80,19 +80,30 @@ gulp.task('inline', function () {
     .pipe(gulp.dest('./dist/index.html'))
 })
 
-// Development server with browsersync
-gulp.task('server', gulp.series(['pug', 'hugo', 'css', 'js', 'fonts']), () => {
+gulp.task('serve', (done) => {
   browserSync.init({
     server: {
       baseDir: './dist'
     }
   })
-  gulp.watch('./src/layouts/**/*.pug', ['pug'])
-  gulp.watch('./src/js/**/*.js', ['js'])
-  gulp.watch('./src/scss/**/*.scss', ['css'])
-  gulp.watch('./src/fonts/**/*', ['fonts'])
-  gulp.watch('./site/**/*', ['hugo'])
+  done()
 })
+
+gulp.task('reload', (done) => {
+  browserSync.reload()
+  done()
+})
+
+gulp.task('watch', () => {
+  gulp.watch('./src/layouts/**/*.pug', gulp.series('pug', 'reload'))
+  gulp.watch('./src/js/**/*.js', gulp.series('js', 'reload'))
+  gulp.watch('./src/scss/**/*.scss', gulp.series('css', 'reload'))
+  gulp.watch('./src/fonts/**/*', gulp.series('fonts', 'reload'))
+  gulp.watch('./site/**/*', gulp.series('hugo', 'reload'))
+})
+
+// Development server with browsersync
+gulp.task('server', gulp.series(['pug', 'hugo', 'css', 'js', 'fonts', 'serve', 'watch']))
 
 gulp.task('clean', () => {
   return del(['./dist/**/*'])

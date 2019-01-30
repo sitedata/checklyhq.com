@@ -1,6 +1,7 @@
 @import 'variables';
-@import '../../../checkly-webapp/src/style/fonts/fonts.scss';
-@import '../../../checkly-webapp/src/style/scss/style.scss';
+
+@import './checkly-webapp-src/style/fonts/fonts.scss';
+@import './checkly-webapp-src/style/scss/style.scss';
 
 @import 'common';
 @import 'main';

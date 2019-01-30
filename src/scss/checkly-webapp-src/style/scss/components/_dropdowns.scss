@@ -1,0 +1,16 @@
+ .dropdown-menu {
+   @include screen-shadow();
+ }
+
+ .dropdown-toggle {
+   &:after {
+     border: none;
+     vertical-align: middle;
+     line-height: 0;
+     content: '\F123';
+     display: inline-block;
+     font-family: Ionicons;
+     margin: 0.5rem;
+     font-size: 10px;
+   }
+ }
