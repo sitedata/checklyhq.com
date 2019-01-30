@@ -5,6 +5,10 @@ menu:
   docs:
     parent: "Browser Checks"
 ---
+
+All browser checks are capped at **60 seconds**. This means everything in your script needs to happen within
+those 60 seconds.  
+
 ## Dealing with timeouts
 
 Setting correct timeout values can mean the difference between a good night's sleep or alerts bugging
