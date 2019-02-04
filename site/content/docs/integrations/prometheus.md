@@ -9,11 +9,17 @@ menu:
 If you are using [Prometheus](https://prometheus.io/) for monitoring and the popular [Grafana](https://grafana.com/) stack
 for dashboarding, you can expose Checkly's core metrics on a dedicated, secured endpoint.
 
-Checkly exposes two type of metrics in a Prometheus-compatible format. 
-
-- **checkly_check_status**: this metric reports if a check is failing. 1 means the check is passing, 0 means the check is failing.
-- **checkly_check_result**: this metric reports the last collected response time for check in a specific region. This means
+Checkly exposes two type of metrics in a Prometheus-compatible format.
+ 
+1. `checkly_check_status` reports if a check is failing. `1` means the check is passing, `0` means the check is failing.
+2. `checkly_check_result` reports the last collected response time for check in a specific region. This means
 you get one checkly_check_result stanza for each region the check is configured to run in.
+
+Each metric has the following labels
+
+- `check_name`, the name of your check.
+- `check_type`, either `api` or `browser`.
+- `tags`, this check's tags.
 
 Here is an example:
 
@@ -21,7 +27,7 @@ Here is an example:
 # HELP checkly_check_status The status of the last check. 1 is passing, 0 is failing
 # TYPE checkly_check_status gauge
 checkly_check_status{check_name="Alerts fetch",check_type="api",muted="false",activated="true" tags="alerts,public"} 1
-checkly_check_status{check_name="Email login",check_type="browser",muted="false",activated="true" tags="auth,browser-checks,public"} 1
+checkly_check_status{check_name="Email login",check_type="browser",muted="false",activated="true" tags="auth,browser-checks,public"} 0
 # HELP checkly_check_result The response time of the last check per region.
 # TYPE checkly_check_result gauge
 checkly_check_result{check_name="Alerts fetch",check_type="api",region="ap-northeast-2",tags="alerts,public"} 1168
@@ -31,6 +37,15 @@ checkly_check_result{check_name="Alerts fetch",check_type="api",region="eu-west-
 checkly_check_result{check_name="Alerts fetch",check_type="api",region="us-east-2",tags="alerts,public"} 432
 checkly_check_result{check_name="Email login",check_type="browser",region="ap-south-1",tags="auth,browser-checks,public"} 10174
 ```
+
+Notice that:
+
+- The check for "Email login" is failing.
+- The `checkly_check_status` metric has `muted` and `activated` labels, reflecting if a check is sending out alerts or is actually
+running.
+- The `checkly_check_result` metric has a `region` label.
+
+
 
 Activating this integration is simple.
 
