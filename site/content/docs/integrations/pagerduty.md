@@ -1,6 +1,8 @@
 ---
 title: Pagerduty
 weight: 1
+aliases:
+- /docs/integrations
 menu:
   docs:
     parent: "Integrations"

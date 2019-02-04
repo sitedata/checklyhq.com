@@ -226,7 +226,7 @@ delete environment['SOME_OTHER_KEY']
 In setup scripts, the modified environment object is used for the subsequent HTTP request. In teardown
 script, the modified environment object is just there for informational purposes.
 
-[More about using environment variables](/api-check/variables/)
+[More about using environment variables](/api-checks/variables/)
 
 ### Request
 

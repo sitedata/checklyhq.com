@@ -131,7 +131,7 @@ alerting channels will be triggered, notifying your team that something is up.
 ## Next Steps
 
 - Learn how to deal with [login scenarios and private data](/docs/browser-checks/login-and-secrets/).
-- Install and use [Puppeteer Recorder](docs/puppeteer-recorder/overview/) to record scripts without coding.
+- Install and use [Puppeteer Recorder](/docs/puppeteer-recorder/overview/) to record scripts without coding.
 - Learn more about [taking screenshots](/docs/browser-checks/screenshots/).
 - Learn more about [creating reusable code snippets](/docs/browser-checks/partials-code-snippets/).
 
