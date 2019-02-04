@@ -43,6 +43,11 @@ disqusShortname = "checkly"
 	weight = 50
 
 [[menu.docs]]
+	name = "Integrations"
+	url = "/docs/integrations/"
+	weight = 60
+
+[[menu.docs]]
 	name = "Puppeteer Recorder"
 	url = "/docs/puppeteer-recorder/"
 	weight = 9999
