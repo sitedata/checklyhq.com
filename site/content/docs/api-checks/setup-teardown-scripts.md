@@ -123,8 +123,8 @@ const options = {
 
 // set up AWS credentials
 const credentials = {
-  secretAccessKey: environment.get('AWS_SECRET_ACCESS_KEY'),
-  accessKeyId: environment.get('AWS_ACCESS_KEY_ID')
+  secretAccessKey: environment['AWS_SECRET_ACCESS_KEY'],
+  accessKeyId: environment['AWS_ACCESS_KEY_ID']
 }
 
 // use the aws4 library to sign the request
