@@ -10,7 +10,7 @@ menu:
     identifier: overview-puppeteer-recorder
 ---
 
-![](/docs/images/browser-checks/puppeteer-recorder_1400.png)
+![Puppeteer Recorder Chrome extension](/docs/images/browser-checks/puppeteer-recorder_1400.png)
 
 Puppeteer recorder is a Chrome extension that records your browser interactions and generates a Puppeteer script. 
 Use it to create Checkly browser checks without writing any code! Puppeteer recorder has the following functions:

@@ -12,7 +12,7 @@ Create a trigger URL in the **triggers** tab of your check.
 
 The trigger URL can be called with a simple HTTP `GET` request.
 Triggers for browser checks work *almost* exactly the same, read more about them [in the browser checks section](/docs/browser-checks/triggers/)
-![](/docs/images/api-checks/triggers.png)
+![trigger api monitoring checks from CI/CD](/docs/images/api-checks/triggers.png)
 
 Calling the trigger (with cURL for example) executes a **synchronous** check, e.g. the cURL request will "hang" until
 the checks is finished. For most API checks this should be fine and resolve with a second or so.

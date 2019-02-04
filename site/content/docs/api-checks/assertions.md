@@ -22,11 +22,11 @@ Assertions are statements you create that check one aspect of the HTTP response.
 
 In each assertion, a **source** is connected to a **comparison** and a **target**.
 
-![](/docs/images/api-checks/assertions-1.png)
+![api monitoring assertions example 1](/docs/images/api-checks/assertions-1.png)
 
 In some cases a **property** is added, for example when asserting headers or JSON response bodies.
 
-![](/docs/images/api-checks/assertions-2.png)
+![api monitoring assertions example 2](/docs/images/api-checks/assertions-2.png)
 
 Assertions are executed from top to bottom. If one assertion fails, the full check is considered as failed.
 
@@ -88,18 +88,18 @@ a JSON formatted document returned from a REST API.
 Asserting string, boolean and number values works exactly as you'd expect, e.g. the example below asserts the number value of
 the `id` property is greater than `2000`.
 
-![](/docs/images/api-checks/assertions-4.png)
+![api monitoring assertions example 4](/docs/images/api-checks/assertions-4.png)
 
 ## Nested properties
 
 You can traverse a JSON object using a dot notation. In the example below we are checking the string-based `size`
 property that is part of the `product` object in the JSON response.
 
-![](/docs/images/api-checks/assertions-3.png)
+![api monitoring assertions JSON object](/docs/images/api-checks/assertions-3.png)
 
 This next example checks for a **boolean** value in the `owner.site_admin` property
 
-![](/docs/images/api-checks/assertions-5.png)
+![api monitoring assertions nested JSON object](/docs/images/api-checks/assertions-5.png)
 
 ## JSON arrays
 
@@ -112,14 +112,14 @@ For response bodies with JSON arrays instead of objects you have the following o
 
 In the first example below we check if the total array has more than 30 items using the **Length** and **Greater than** options.
 
-![](/docs/images/api-checks/assertions-6.png)
+![api monitoring assertions nested JSON array](/docs/images/api-checks/assertions-6.png)
 
 In this example we pick the last item in the array and check if the `customerId` property has the value `123ab`  
 
-![](/docs/images/api-checks/assertions-7.png)
+![api monitoring assertions nested JSON array pick item](/docs/images/api-checks/assertions-7.png)
 
 In the last example we pick the item with index value 4. This is the 5th item as array indexes start at 0. We then assert
 that the `responseTime` property is less than `2000`.  
 
 
-![](/docs/images/api-checks/assertions-8.png)
+![api monitoring assertions nested JSON array pick nth item](/docs/images/api-checks/assertions-8.png)

@@ -14,4 +14,4 @@ Because API checks and Browser checks are a bit different, SSL checking for each
 - **API checks**: we check the domain automatically as we can parse it from the `URL` in the HTTP request settings.
 - **Browser checks**: We give you a separate input field to add the domain you want checked.
 
-![](/docs/images/alerting/browser_ssl_check.png)
+![SSL checks for browser checks](/docs/images/alerting/browser_ssl_check.png)

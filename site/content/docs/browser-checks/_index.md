@@ -125,7 +125,7 @@ Note the following:
 When an assertion fails, your check fails. Your check's result will show the log output for the error. Any configured 
 alerting channels will be triggered, notifying your team that something is up.
 
-![](/docs/images/browser-checks/failed_assertion.png)
+![failed api monitoring assertion](/docs/images/browser-checks/failed_assertion.png)
 
 
 ## Next Steps

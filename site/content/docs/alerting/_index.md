@@ -109,4 +109,4 @@ to catch false positives.
 
 This feature is switched on by default for all checks.
 
-![](/docs/images/alerting/double_check.png)
+![double checks against false positives](/docs/images/alerting/double_check.png)
