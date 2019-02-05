@@ -1,0 +1,81 @@
+<head>
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}" />
+  <meta name="viewport" content="width=device-width" initial-scale="1" maximum-scale="1" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}" />
+  <meta property="og:description" content="{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}" />
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+  <meta property="og:image" content="{{ if .Params.featured_image }}{{ .Params.featured_image }}{{ else}}https://checklyhq.com/images/dashboard-screen@2x.png{{end}}" />
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}" />
+  <meta property="twitter:description" content="{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}" />
+  <meta property="og:image" content="{{ if .Params.featured_image }}{{ .Params.featured_image }}{{ else }}https://checklyhq.com/images/dashboard-screen@2x.png{{end}}" />
+  <meta name="msvalidate.01" content="36F243A91FAA24DE468D8A8EECF33554" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/images/racoon_favicon.png" />
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="en-us" />
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <!-- main styles-->
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.cookielaw.org/consent/e4c8a868-c0ad-4c0c-b61e-f6eb6cad2810.js" type="text/javascript" charset="UTF-8"></script>
+  <script type="text/javascript">
+    function OptanonWrapper() {}
+  </script>
+  <style>
+    .qc-cmp-ui {
+      background-color: #45c8f1 !important;
+    }
+
+    .qc-cmp-publisher-purposes-table .qc-cmp-table-header {
+      background-color: #fafafa !important;
+    }
+
+    .qc-cmp-publisher-purposes-table .qc-cmp-table-row {
+      background-color: #ffffff !important;
+    }
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+  <script type="text/plain" async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-110523681-1" class="optanon-category-2"></script>
+  <script type="text/plain" class="optanon-category-2">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-110523681-1');
+  </script>
+  <!-- Drift code-->
+  <script type="text/plain" class="optanon-category-2">
+    {{ if ne .Section "blog" }}
+      if (location.host === 'checklyhq.com') {
+        !(function() {
+          var t = window.driftt = window.drift = window.driftt || []
+          if (!t.init) {
+            if (t.invoked) return void(window.console && console.error && console.error('Drift snippet included twice.'))
+            t.invoked = !0, t.methods = ['identify', 'config', 'track', 'reset', 'debug', 'show', 'ping', 'page', 'hide', 'off', 'on'],
+              t.factory = function(e) {
+                return function() {
+                  var n = Array.prototype.slice.call(arguments)
+                  return n.unshift(e), t.push(n), t
+                }
+              }, t.methods.forEach(function(e) {
+              t[e] = t.factory(e)
+            }), t.load = function(t) {
+              var e = 3e5,
+                n = Math.ceil(new Date() / e) * e,
+                o = document.createElement('script')
+              o.type = 'text/javascript', o.async = !0, o.crossorigin = 'anonymous', o.src = 'https://js.driftt.com/include/' + n + '/' + t + '.js'
+              var i = document.getElementsByTagName('script')[0]
+              i.parentNode.insertBefore(o, i)
+            }
+          }
+        }())
+        drift.SNIPPET_VERSION = '0.3.1'
+        drift.load('7bxit3egu3zv')
+      }
+    {{ end }}
+  </script>
+</head>
