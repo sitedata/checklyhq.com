@@ -123,8 +123,8 @@ const options = {
 
 // set up AWS credentials
 const credentials = {
-  secretAccessKey: environment.get('AWS_SECRET_ACCESS_KEY'),
-  accessKeyId: environment.get('AWS_ACCESS_KEY_ID')
+  secretAccessKey: environment['AWS_SECRET_ACCESS_KEY'],
+  accessKeyId: environment['AWS_ACCESS_KEY_ID']
 }
 
 // use the aws4 library to sign the request
@@ -226,7 +226,7 @@ delete environment['SOME_OTHER_KEY']
 In setup scripts, the modified environment object is used for the subsequent HTTP request. In teardown
 script, the modified environment object is just there for informational purposes.
 
-[More about using environment variables](/api-check/variables/)
+[More about using environment variables](/api-checks/variables/)
 
 ### Request
 

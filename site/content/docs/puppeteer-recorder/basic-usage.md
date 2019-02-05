@@ -33,7 +33,7 @@ is in Incognito Mode helps you dodge this pitfall, as it will become immediately
 session cookies. You need to explicitly allow the Puppeteer Recorder extension to run in Incognito mode on the details
 section on the Extension page of your Chrome browser:
 
-![](/docs/images/browser-checks/allow_incognito.png)
+![puppeteer authentication and cookies](/docs/images/browser-checks/allow_incognito.png)
 
 
 ## Filling out forms

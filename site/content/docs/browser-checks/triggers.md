@@ -10,7 +10,7 @@ menu:
 Triggers enable you to call a check from a CI/CD pipeline, a bash shell or programmatically in your code.
 Create a trigger URL in the **triggers** tab of your check. The trigger URL can be called with a simple HTTP `GET` request.
 
-![](/docs/images/browser-checks/triggers.png)
+![trigger browser checks from CI/CD](/docs/images/browser-checks/triggers.png)
 
 Calling the trigger (with cURL for example) executes a **synchronous** check, e.g. the cURL request will "hang" until
 the checks is finished. For browser checks, this could take a substantial amount of time, e.g. 10 to 30 seconds for

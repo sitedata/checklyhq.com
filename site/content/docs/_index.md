@@ -9,7 +9,8 @@ exact control over how your APIs and web apps should be monitored.
 - [API checks](/docs/api-checks/)
 - [Browser checks](/docs/browser-checks/)
 - [Alerting](/docs/alerting/)
-- [Dashboards] (/docs/dashboards)
+- [Dashboards](/docs/dashboards)
 - [Teams](/docs/teams/)
+- [Integrations](/docs/integrations)
 - [Puppeteer Recorder](/puppeteer-recorder/)
 

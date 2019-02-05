@@ -16,4 +16,4 @@ TV-mode dashboards have a lot of tweakable options to make them work for you in 
 - **pagination:** Depending on your screen height and amount of checks, we can paginate through them so you have a full overview
 without sacrificing legibility per check.
 
-![](/docs/images/dashboards/look_feel.png)
+![config public monitoring dashboard](/docs/images/dashboards/look_feel.png)
