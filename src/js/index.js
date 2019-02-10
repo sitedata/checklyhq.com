@@ -38,10 +38,16 @@ $(document).ready(() => {
 
 const plans = [
   {
+    name: 'developer',
+    year: 77,
+    month: 7,
+    monthByYear: '6.41'
+  },
+  {
     name: 'starter',
     year: 264,
     month: 24,
-    monthByYear: '22.00'
+    monthByYear: '22'
   },
   {
     name: 'growth',
@@ -51,30 +57,30 @@ const plans = [
   },
   {
     name: 'business',
-    year: 1309,
-    month: 119,
-    monthByYear: '109.08'
+    year: 1749,
+    month: 159,
+    monthByYear: '145.75'
   }
 ]
 
 $(document).ready(() => {
-  const monthly = $('#billing-monthly')
-  const annual = $('#billing-annual')
+  const button = $('.billing-cycle-toggler')
+  let current = 'MONTH'
 
-  monthly.click(() => {
+  button.click(() => {
     $('.toggle').toggleClass('toggle-selected')
-
-    for (let plan of plans) {
-      $(`[data-${plan.name}-price]`).text(plan.month)
-      $(`[data-${plan.name}-strikeout-price]`).hide()
-    }
-  })
-  annual.click(() => {
-    $('.toggle').toggleClass('toggle-selected')
-
-    for (let plan of plans) {
-      $(`[data-${plan.name}-price]`).text(plan.monthByYear)
-      $(`[data-${plan.name}-strikeout-price]`).text(` $ ${plan.month} / month `).show()
+    if (current === 'YEAR') {
+      for (let plan of plans) {
+        $(`[data-${plan.name}-price]`).text(plan.month)
+        $(`[data-${plan.name}-strikeout-price]`).hide()
+      }
+      current = 'MONTH'
+    } else {
+      for (let plan of plans) {
+        $(`[data-${plan.name}-price]`).text(plan.monthByYear)
+        $(`[data-${plan.name}-strikeout-price]`).text(` $ ${plan.month} / month `).show()
+      }
+      current = 'YEAR'
     }
   })
 })

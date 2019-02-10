@@ -1,111 +1,425 @@
 include  ../partials/head
 body
-    include ../partials/navbar.pug
-    .main
-        .plans.pt-3
-            .container
-                .row
-                    .col-sm-12.col-md-8.offset-md-2.plans-header.text-center.mb-4
-                        h2 Simple, fair pricing 🍍
-                        p.mb-4
-                          | Sign up for a yearly plan and receive one month for free.
-                        .billing-cycle-toggler
-                          #billing-monthly.toggle.toggle-left.toggle-selected Monthly
-                          #billing-annual.toggle.toggle-right Annual
-                        .savings-box
-                          .text-accent One month free
-                          svg(fill='#FF659D' width="22" height="16" viewBox="0 0 22 16")
-                            path(d="M2.39,17,1,17l.07-2c11.37.39,17.9-4.17,20-14l2,.42C20.83,11.76,13.9,17,2.39,17Z" transform="translate(-1 -1)")
+  include ../partials/navbar.pug
+  .main
+    .plans.pt-3
+      .container.mb-4
+        .row
+          .col-sm-12.col-md-8.offset-md-2.plans-header.text-center
+            h2 Simple, fair pricing 🍍
+            p.mb-4
+              | Sign up for a yearly plan and receive one month for free.
+            .billing-cycle-toggler
+              #billing-monthly.toggle.toggle-left.toggle-selected Monthly
+              #billing-annual.toggle.toggle-right Annual
+            .savings-box
+              .text-accent One month free
+              svg(fill='#FF659D' width="22" height="16" viewBox="0 0 22 16")
+                path(d="M2.39,17,1,17l.07-2c11.37.39,17.9-4.17,20-14l2,.42C20.83,11.76,13.9,17,2.39,17Z" transform="translate(-1 -1)")
+      .container
+        .crpt-plain.crpt-plain-checkly
+          .pt-cols.pt-cols-4
+            .pt-cols-side
+              .pt-list-block
+                .pt-list-item API checks
+                .pt-list-item Browser checks
+                .pt-list-item Check interval
+                .pt-list-item Team members
+                .pt-list-item
+                  span.pt-tooltip-show-text
+                    span.pt-tooltip-show Data center locations
+                    span.pt-tooltip.pt-tooltip-right-bottom
+                      span.pt-tooltip-content
+                        | Choose up to eight simultaneous check locations for API checks and up to four location for browser checks
+                .pt-list-item SSL Monitoring
+                .pt-list-item Public dashboard
+                .pt-list-item
+                  | Email, Slack & webhooks
+                .pt-list-item
+                  | SMS credits
+                .pt-list-item
+                  span.pt-tooltip-show-text
+                    span.pt-tooltip-show CI/CD triggers
+                    span.pt-tooltip.pt-tooltip-right-bottom
+                      span.pt-tooltip-content
+                        | Trigger a check run from the terminal or your CI/CD pipeline for automated testing before or after
+                        | building and deploying. Works with any CI/CD provider.
+                .pt-list-item
+                  | Setup & teardown scripts
+                .pt-list-item
+                  | Pagerduty integration
+                .pt-list-item
+                  span.pt-tooltip-show-text
+                         span.pt-tooltip-show Prometheus endpoint
+                         span.pt-tooltip.pt-tooltip-right-bottom
+                           span.pt-tooltip-content
+                            | We provision a custom, secured endpoint that exposes checks statuses and response times
+                            | in Prometheus format.
+                .pt-list-item
+                  | SAML login
+                .pt-list-item
+                  | Invoice payment
+            .pt-cols-main
+              .pt-col
+                .pt-block
+                  .pt-back
+                  .pt-title.text-warning Developer
+                  .pt-price
+                    .price-block
+                      span.price(data-developer-price) 7
+                      span(data-billing-interval) / month
+                    .strike-out-price(data-developer-strikeout-price) $7 / month
+                  .pt-list
+                    .pt-list-item
+                      .pt-text
+                        | API checks
+                      .pt-value
+                        | 5
+                    .pt-list-item
+                      .pt-text
+                        | Browser checks
+                      .pt-value
+                        | 1
+                    .pt-list-item
+                      .pt-text Check interval
+                      .pt-value
+                        span.pt-tooltip-show-text
+                          span.pt-tooltip-show 1 minute / 30 minutes
+                          span.pt-tooltip
+                            span.pt-tooltip-content
+                             | API checks can be scheduled every minute, browser checks every 30 minutes.
+                    .pt-list-item
+                      .pt-text
+                        | Team members
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | Data center locations
+                      .pt-value
+                        | 16
+                    .pt-list-item
+                      .pt-text SSL monitoring
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Public dashboard
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Email, Slack, webhooks
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SMS credits
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | CI/CD triggers
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | Setup & teardown scripts
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | Pagerduty integration
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | Prometheus endpoint
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | SAML Login
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | Invoice payment
+                      .pt-value
+                        i.ion-close-round
+                  .pt-footer
+                    a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start free trial
+              .pt-col
+                .pt-block
+                  .pt-back
+                  .pt-title.text-accent Starter
+                  .pt-price
+                    .price-block
+                      span.price(data-starter-price) 24
+                      span(data-billing-interval) / month
+                    .strike-out-price(data-starter-strikeout-price) $24 / month
+                  .pt-list
+                    .pt-list-item
+                      .pt-text
+                        | API checks
+                      .pt-value
+                        | 15
+                    .pt-list-item
+                      .pt-text
+                        | Browser checks
+                      .pt-value
+                        | 5
+                    .pt-list-item
+                      .pt-text Check interval
+                      .pt-value
+                        span.pt-tooltip-show-text
+                          span.pt-tooltip-show 1 minute / 10 minutes
+                          span.pt-tooltip
+                            span.pt-tooltip-content
+                              | API checks can be scheduled every minute, browser checks every 10 minutes.
+                    .pt-list-item
+                      .pt-text
+                        | Team members
+                      .pt-value
+                        | 5
+                    .pt-list-item
+                      .pt-text
+                        | Data center locations
+                      .pt-value
+                        | 16
+                    .pt-list-item
+                      .pt-text SSL monitoring
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Public dashboard
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Email, Slack, webhooks
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SMS credits
+                      .pt-value
+                        | 50
+                    .pt-list-item
+                      .pt-text
+                        | CI/CD triggers
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Setup & teardown scripts
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Pagerduty integration
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Prometheus endpoint
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SAML Login
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | Invoice payment
+                      .pt-value
+                        i.ion-close-round
+                  .pt-footer
+                    a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start free trial
+              .pt-col
+                .pt-block
+                  .pt-back
+                  .pt-title.text-success Growth
+                  .pt-price
+                    .price-block
+                      span.price(data-growth-price) 59
+                      span(data-billing-interval) / month
+                    .strike-out-price(data-growth-strikeout-price) $59 / month
+                  .pt-list
+                    .pt-list-item
+                      .pt-text
+                        | API checks
+                      .pt-value
+                        | 40
+                    .pt-list-item
+                      .pt-text
+                        | Browser checks
+                      .pt-value
+                        | 15
+                    .pt-list-item
+                      .pt-text Check interval
+                      .pt-value
+                        span.pt-tooltip-show-text
+                          span.pt-tooltip-show 1 minute / 10 minutes
+                          span.pt-tooltip
+                            span.pt-tooltip-content
+                              | API checks can be scheduled every minute, browser checks every 10 minutes.
+                    .pt-list-item
+                      .pt-text
+                        | Team members
+                      .pt-value
+                        | 10
+                    .pt-list-item
+                      .pt-text
+                        | Data center locations
+                      .pt-value
+                        | 16
+                    .pt-list-item
+                      .pt-text SSL monitoring
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Public dashboard
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Email, Slack, webhooks
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SMS credits
+                      .pt-value
+                        | 150
+                    .pt-list-item
+                      .pt-text
+                        | CI/CD triggers
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Setup & teardown scripts
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Pagerduty integration
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Prometheus endpoint
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SAML Login
+                      .pt-value
+                        i.ion-close-round
+                    .pt-list-item
+                      .pt-text
+                        | Invoice payment
+                      .pt-value
+                        i.ion-close-round
+                  .pt-footer
+                    a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start free trial
+              .pt-col
+                .pt-block.pt-not-available
+                  .pt-back
+                  .pt-title.text-primary Business
+                  .pt-price
+                    .price-block
+                      span.price(data-business-price) 159
+                      span(data-billing-interval) / month
+                    .strike-out-price(data-business-strikeout-price) $159 / month
+                  .pt-list
+                    .pt-list-item
+                      .pt-text
+                        | API checks
+                      .pt-value
+                        | 100
+                    .pt-list-item
+                      .pt-text
+                        | Browser checks
+                      .pt-value
+                        | 30
+                    .pt-list-item
+                      .pt-text Check interval
+                      .pt-value
+                        span.pt-tooltip-show-text
+                          span.pt-tooltip-show 1 minute / 5 minutes
+                          span.pt-tooltip
+                            span.pt-tooltip-content
+                              | API checks can be scheduled every minute, browser checks every 5 minutes.
+                    .pt-list-item
+                      .pt-text
+                        | Team members
+                      .pt-value
+                        | 20
+                    .pt-list-item
+                      .pt-text
+                        | Data center locations
+                      .pt-value
+                        | 16
+                    .pt-list-item
+                      .pt-text SSL monitoring
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Public dashboard
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text Email, Slack, webhooks
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SMS credits
+                      .pt-value
+                        | 300
+                    .pt-list-item
+                      .pt-text
+                        | CI/CD triggers
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Setup & teardown scripts
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Pagerduty integration
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Prometheus endpoint
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SAML Login
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Invoice payment
+                      .pt-value
+                        i.ion-checkmark-round
+                  .pt-footer
+                    a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start free trial
 
-                .row
-                    .col-sm-4
-                        .card.px-3.card-starter
-                            .card-block
-                                strong.text-uppercase.text-accent Starter
-                                .price-block
-                                  span.price(data-starter-price) 24
-                                  span(data-billing-interval) / month
-                                .strike-out-price(data-starter-strikeout-price) $24 / month
-                                table.table.table-sm.plans-features-table
-                                    tr
-                                      td.has-feature  15 API checks
-                                    tr
-                                      td.has-feature  5 Browser checks
-                                    tr
-                                      td.has-feature  5 Team members
-                                    tr
-                                      td.has-feature  50 SMS credits
-                                    tr
-                                      td.has-feature  16 global data centers
-                                    tr
-                                      td.has-feature  Public dash with a custom domain
-                                    tr
-                                      td.has-feature  SSL checks
-                                    tr
-                                      td.no-feature &nbsp;
-                                a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
-                    .col-sm-4
-                        .card.px-3.mb-3.mb-md-0.card-growth.big-drop-shadow
-                            .card-block
-                                strong.text-uppercase.text-success Growth
-                                .price-block
-                                  span.price(data-growth-price) 59
-                                  span(data-billing-interval) / month
-                                .strike-out-price(data-growth-strikeout-price) $59 / month
-                                table.table.table-sm.plans-features-table
-                                    tr
-                                      td.has-feature
-                                        strong All starter features
-                                    tr
-                                        td.has-feature 40 API checks
-                                    tr
-                                      td.has-feature  10 Browser checks
-                                    tr
-                                      td.has-feature  10 Team members
-                                    tr
-                                      td.has-feature  150 SMS credits
-                                    tr
-                                      td.has-feature  Pagerduty integration
-                                    tr
-                                      td.has-feature  Prometheus integration
-                                    tr
-                                      td.has-feature  Setup / Teardown scripts
-                                a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
-                    .col-sm-4
-                        .card.px-3.mb-3.mb-md-0.card-business
-                            .card-block
-                                strong.text-uppercase.text-primary Business
-                                .price-block
-                                  span.price(data-business-price) 119
-                                  span(data-billing-interval) / month
-                                .strike-out-price(data-business-strikeout-price) $119 / month
-                                table.table.table-sm.plans-features-table
-                                    tr
-                                      td.has-feature
-                                        strong All growth features
-                                    tr
-                                      td.has-feature  100 API checks
-                                    tr
-                                      td.has-feature  20 Browser checks
-                                    tr
-                                      td.has-feature  20 Team members
-                                    tr
-                                      td.has-feature  300 SMS credits
-                                    tr
-                                      td.has-feature  SSO / SAML authentication
-                                    tr
-                                      td.no-feature &nbsp;
-                                    tr
-                                      td.no-feature &nbsp;
-                                a.btn.btn-outline-primary.btn-block(href='https://app.checklyhq.com/signup') Start your free trial
-                .row
-                    .col-sm-12.text-center
-                        h2.py-5 Pricing FAQ
-                    | !{'{{ $cols := split .RawContent "<split>" }}'}
-                    | !{'{{range $cols}}'}
-                    .col-sm-6.markdown.text-left #{'{{ . | markdownify }}'}
-                    | !{'{{end}}'}
 
-    include ../partials/trusted-by-section.pug
-    include ../partials/testimonial-trial-row.pug
-    include ../partials/footer.pug
+      .container
+        .row
+          .col-sm-12.text-center
+            h2.py-5 Pricing FAQ
+          | !{'{{ $cols := split .RawContent "<split>" }}'}
+          | !{'{{range $cols}}'}
+          .col-sm-6.markdown.text-left #{'{{ . | markdownify }}'}
+          | !{'{{end}}'}
+
+      include ../partials/trusted-by-section.pug
+      include ../partials/testimonial-trial-row.pug
+      include ../partials/footer.pug
+

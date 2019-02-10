@@ -1,4 +1,13 @@
 .plans {
+  .card {
+    border-radius: 0;
+  }
+
+  .card-developer {
+    border-top: 6px solid $brand-warning;
+    min-height: 565px;
+  }
+
   .card-starter {
     border-top: 6px solid $pink;
     min-height: 565px;
@@ -93,7 +102,7 @@
   .price-block {
     font-size: $font-size-sm;
     color: $gray;
-    line-height: 1.5;
+    white-space: nowrap;
     .price {
       font-size: 3rem;
       margin-right: .2rem;
@@ -112,7 +121,7 @@
   }
 
   .strike-out-price {
-    font-size: 18px;
+    font-size: 14px;
     display: none;
     margin-bottom: $spacer-y;
     color: $gray;
