@@ -45,21 +45,21 @@ const plans = [
   },
   {
     name: 'starter',
-    year: 264,
-    month: 24,
-    monthByYear: '22'
+    year: 319,
+    month: 29,
+    monthByYear: '26.58'
   },
   {
     name: 'growth',
-    year: 649,
-    month: 59,
-    monthByYear: '54.03'
+    year: 825,
+    month: 75,
+    monthByYear: '68.75'
   },
   {
     name: 'business',
-    year: 1749,
-    month: 159,
-    monthByYear: '145.75'
+    year: 2189,
+    month: 199,
+    monthByYear: '182.42'
   }
 ]
 

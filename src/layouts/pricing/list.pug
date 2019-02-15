@@ -30,11 +30,17 @@ body
                     span.pt-tooltip-show Data center locations
                     span.pt-tooltip.pt-tooltip-right-bottom
                       span.pt-tooltip-content
-                        | Choose up to eight simultaneous check locations for API checks and up to four location for browser checks
+                        | Choose up to eight simultaneous check locations for API checks and up to four locations for browser checks
                 .pt-list-item SSL Monitoring
                 .pt-list-item Public dashboard
                 .pt-list-item
                   | Email, Slack & webhooks
+                .pt-list-item
+                  span.pt-tooltip-show-text
+                    span.pt-tooltip-show Threshold based alerting
+                    span.pt-tooltip.pt-tooltip-right-bottom
+                      span.pt-tooltip-content
+                        | Configure when and how often your are alerted and how many reminders you should get
                 .pt-list-item
                   | SMS credits
                 .pt-list-item
@@ -45,7 +51,11 @@ body
                         | Trigger a check run from the terminal or your CI/CD pipeline for automated testing before or after
                         | building and deploying. Works with any CI/CD provider.
                 .pt-list-item
-                  | Setup & teardown scripts
+                  span.pt-tooltip-show-text
+                    span.pt-tooltip-show Setup & teardown scripts
+                    span.pt-tooltip.pt-tooltip-right-bottom
+                      span.pt-tooltip-content
+                        | Have full control over request data and responses using custom Javascript snippets.
                 .pt-list-item
                   | Pagerduty integration
                 .pt-list-item
@@ -79,15 +89,15 @@ body
                       .pt-text
                         | Browser checks
                       .pt-value
-                        | 1
+                        | 2
                     .pt-list-item
                       .pt-text Check interval
                       .pt-value
                         span.pt-tooltip-show-text
-                          span.pt-tooltip-show 1 min / 30 min
+                          span.pt-tooltip-show 1 min / 10 min
                           span.pt-tooltip
                             span.pt-tooltip-content
-                             | API checks can be scheduled every minute, browser checks every 30 min.
+                             | API checks can be scheduled every minute, browser checks every 10 min.
                     .pt-list-item
                       .pt-text
                         | Team members
@@ -112,9 +122,13 @@ body
                         i.ion-checkmark-round
                     .pt-list-item
                       .pt-text
-                        | SMS credits
+                        | Threshold based alerting
                       .pt-value
-                        i.ion-close-round
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | SMS credits
+                      .pt-value 10
                     .pt-list-item
                       .pt-text
                         | CI/CD triggers
@@ -153,9 +167,9 @@ body
                   .pt-title.text-accent Starter
                   .pt-price
                     .price-block
-                      span.price(data-starter-price) 24
+                      span.price(data-starter-price) 29
                       span(data-billing-interval) / month
-                    .strike-out-price(data-starter-strikeout-price) $24 / month
+                    .strike-out-price(data-starter-strikeout-price) $29 / month
                   .pt-list
                     .pt-list-item
                       .pt-text
@@ -195,6 +209,11 @@ body
                         i.ion-checkmark-round
                     .pt-list-item
                       .pt-text Email, Slack, webhooks
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Threshold based alerting
                       .pt-value
                         i.ion-checkmark-round
                     .pt-list-item
@@ -240,9 +259,9 @@ body
                   .pt-title.text-success Growth
                   .pt-price
                     .price-block
-                      span.price(data-growth-price) 59
+                      span.price(data-growth-price) 75
                       span(data-billing-interval) / month
-                    .strike-out-price(data-growth-strikeout-price) $59 / month
+                    .strike-out-price(data-growth-strikeout-price) $75 / month
                   .pt-list
                     .pt-list-item
                       .pt-text
@@ -286,6 +305,11 @@ body
                         i.ion-checkmark-round
                     .pt-list-item
                       .pt-text
+                        | Threshold based alerting
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
                         | SMS credits
                       .pt-value
                         | 150
@@ -322,14 +346,14 @@ body
                   .pt-footer
                     a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start free trial
               .pt-col
-                .pt-block.pt-not-available
+                .pt-block
                   .pt-back
                   .pt-title.text-primary Business
                   .pt-price
                     .price-block
-                      span.price(data-business-price) 159
+                      span.price(data-business-price) 199
                       span(data-billing-interval) / month
-                    .strike-out-price(data-business-strikeout-price) $159 / month
+                    .strike-out-price(data-business-strikeout-price) $199 / month
                   .pt-list
                     .pt-list-item
                       .pt-text
@@ -345,7 +369,7 @@ body
                       .pt-text Check interval
                       .pt-value
                         span.pt-tooltip-show-text
-                          span.pt-tooltip-show 1 min / 5 min
+                          span.pt-tooltip-show 1 min / 10 min
                           span.pt-tooltip
                             span.pt-tooltip-content
                               | API checks can be scheduled every minute, browser checks every 5 min.
@@ -369,6 +393,11 @@ body
                         i.ion-checkmark-round
                     .pt-list-item
                       .pt-text Email, Slack, webhooks
+                      .pt-value
+                        i.ion-checkmark-round
+                    .pt-list-item
+                      .pt-text
+                        | Threshold based alerting
                       .pt-value
                         i.ion-checkmark-round
                     .pt-list-item
