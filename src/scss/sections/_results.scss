@@ -7,6 +7,8 @@
   height: 1100px;
   overflow: hidden;
 
+  background-color: $ash;
+
   .results-image {
     @include screen-shadow();
     border-radius: 5px;
