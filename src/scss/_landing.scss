@@ -12,11 +12,15 @@
   img.big-landing-image {
     width: 800px;
     position: absolute;
+    border: 1px solid $gray-light;
+    border-radius: 5px;
   }
 
   img.landing-image {
     width: 100%;
     position: absolute;
+    border: 1px solid $gray-light;
+    border-radius: 5px;
   }
 
   @include media-breakpoint-down(sm) {
