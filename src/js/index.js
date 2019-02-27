@@ -1,4 +1,9 @@
 /* eslint-env jquery */
+// Show the dashboard button is cookie is present
+if (document.cookie.split(';').filter((item) => item.trim().startsWith('checkly_has_account=')).length) {
+  $('#login-button').hide()
+  $('#dashboard-button').show()
+}
 
 /**
  * START Navbar
@@ -38,43 +43,49 @@ $(document).ready(() => {
 
 const plans = [
   {
+    name: 'developer',
+    year: 77,
+    month: 7,
+    monthByYear: '6.41'
+  },
+  {
     name: 'starter',
-    year: 264,
-    month: 24,
-    monthByYear: '22.00'
+    year: 319,
+    month: 29,
+    monthByYear: '26.58'
   },
   {
     name: 'growth',
-    year: 649,
-    month: 59,
-    monthByYear: '54.03'
+    year: 825,
+    month: 75,
+    monthByYear: '68.75'
   },
   {
     name: 'business',
-    year: 1309,
-    month: 119,
-    monthByYear: '109.08'
+    year: 2189,
+    month: 199,
+    monthByYear: '182.42'
   }
 ]
 
 $(document).ready(() => {
-  const monthly = $('#billing-monthly')
-  const annual = $('#billing-annual')
+  const button = $('.billing-cycle-toggler')
+  let current = 'MONTH'
 
-  monthly.click(() => {
+  button.click(() => {
     $('.toggle').toggleClass('toggle-selected')
-
-    for (let plan of plans) {
-      $(`[data-${plan.name}-price]`).text(plan.month)
-      $(`[data-${plan.name}-strikeout-price]`).hide()
-    }
-  })
-  annual.click(() => {
-    $('.toggle').toggleClass('toggle-selected')
-
-    for (let plan of plans) {
-      $(`[data-${plan.name}-price]`).text(plan.monthByYear)
-      $(`[data-${plan.name}-strikeout-price]`).text(` $ ${plan.month} / month `).show()
+    if (current === 'YEAR') {
+      for (let plan of plans) {
+        $(`[data-${plan.name}-price]`).text(plan.month)
+        $(`[data-${plan.name}-strikeout-price]`).hide()
+      }
+      current = 'MONTH'
+    } else {
+      for (let plan of plans) {
+        $(`[data-${plan.name}-price]`).text(plan.monthByYear)
+        $(`[data-${plan.name}-strikeout-price]`).text(` $ ${plan.month} / month `).show()
+      }
+      current = 'YEAR'
     }
   })
 })

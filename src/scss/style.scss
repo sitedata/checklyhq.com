@@ -42,3 +42,6 @@ body {
   }
   color: $gray-dark;
 }
+
+@import '../css/vendor/pricing-tables.css';
+@import 'pricing-tables-checkly';

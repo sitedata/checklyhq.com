@@ -20,6 +20,9 @@ nav.navbar.navbar-toggleable-md.fixed-top
             li.nav-item
               a.nav-link(href='/blog') Blog
           form.form-inline.my-2.my-lg-0.ml-md-3
-            a.btn.btn-outline-secondary.my-2.my-sm-0.mr-3.ml-md-3(href='https://app.checklyhq.com/') Log in
+            a#login-button.btn.btn-outline-secondary.my-2.my-sm-0.mr-3.ml-md-3(href='https://app.checklyhq.com/') Log in
+            a#dashboard-button.btn.btn-outline-secondary.my-2.my-sm-0.mr-3.ml-md-3(style='display: none;' href='https://app.checklyhq.com/')
+              | Dashboard
+              .ion-arrow-right-c.d-inline.ml-2
             a.btn.btn-success.my-2.my-sm-0(href='https://app.checklyhq.com/signup') Start your free trial
 
