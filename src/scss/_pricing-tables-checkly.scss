@@ -92,6 +92,8 @@
   color: $gray-dark;
 }
 .crpt-plain-checkly .pt-list-block {
+  font-family: $font-family-base !important;
+  text-align: left;
   color: $gray-dark;
 }
 .crpt-plain-checkly .pt-selected .pt-back:before,
