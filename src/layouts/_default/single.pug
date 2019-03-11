@@ -1,8 +1,10 @@
-include  ../partials/head
-body
-    include ../partials/navbar.pug
-    .main.container
-        .row
-            .col-sm-12
-                span.markdown #{'{{.Content}}'}
-    include ../partials/footer.pug
+doctype html
+html(lang='en')
+    | !{'{{ partial "head" . }}'}
+    body
+        include ../partials/navbar.pug
+        .main.container
+            .row
+                .col-sm-12
+                    span.markdown #{'{{.Content}}'}
+        include ../partials/footer.pug

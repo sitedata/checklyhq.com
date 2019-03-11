@@ -1,47 +1,49 @@
-include  ../partials/head
-body
-  include ../partials/navbar.pug
-  .main.blog
-    .blog-recent-post-list.hidden-md-down
-      | !{'{{ $related := .Site.RegularPages.Related . | first 4 }}'}
-      | !{'{{ with $related }}'}
-      p.mb-2 More posts like this
-      ul
-        | !{'{{ range .}}'}
-        li
-          a(href="{{ .Permalink }}") #{'{{ .Title }}'}
+doctype html
+html(lang='en')
+  | !{'{{ partial "head" . }}'}
+  body
+    include ../partials/navbar.pug
+    .main.blog
+      .blog-recent-post-list.hidden-md-down
+        | !{'{{ $related := .Site.RegularPages.Related . | first 4 }}'}
+        | !{'{{ with $related }}'}
+        p.mb-2 More posts like this
+        ul
+          | !{'{{ range .}}'}
+          li
+            a(href="{{ .Permalink }}") #{'{{ .Title }}'}
+          | !{'{{ end }}'}
         | !{'{{ end }}'}
-      | !{'{{ end }}'}
-    .container
-      .row
-        .col-sm-12.col-lg-8.offset-lg-2
-          .blog-content.py-4
-            include ../partials/blog-meta-data.pug
-            h1.blog-header #{'{{ .Title }}'}
-            .markdown.blog-body #{'{{.Content}}'}
+      .container
+        .row
+          .col-sm-12.col-lg-8.offset-lg-2
+            .blog-content.py-4
+              include ../partials/blog-meta-data.pug
+              h1.blog-header #{'{{ .Title }}'}
+              .markdown.blog-body #{'{{.Content}}'}
 
-      .row
-        .col-sm-12.col-lg-8.offset-lg-2.mb-4
-          | !{' {{ $related := .Site.RegularPages.Related . | first 3 }} '}
-          | !{' {{ with $related }} '}
-          h4 Also see
-          ul
-            | !{' {{ range . }} '}
-            li
-              a(href="#{' {{ .RelPermalink }} '}") {{ .Title }}
+        .row
+          .col-sm-12.col-lg-8.offset-lg-2.mb-4
+            | !{' {{ $related := .Site.RegularPages.Related . | first 3 }} '}
+            | !{' {{ with $related }} '}
+            h4 Also see
+            ul
+              | !{' {{ range . }} '}
+              li
+                a(href="#{' {{ .RelPermalink }} '}") {{ .Title }}
+              | !{' {{ end }} '}
             | !{' {{ end }} '}
-          | !{' {{ end }} '}
 
-    include ../partials/free-trial-row.pug
+      include ../partials/free-trial-row.pug
 
-    .container.mb-5
-      .row
-        .col-sm-12.col-lg-8.offset-lg-2
-          span !{' {{ template "_internal/disqus.html" . }} '}
+      .container.mb-5
+        .row
+          .col-sm-12.col-lg-8.offset-lg-2
+            span !{' {{ template "_internal/disqus.html" . }} '}
 
-  script(type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false")
-  script(type="text/javascript")
-    | window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"9af9712f622c6511cb2113669","lid":"adb061483c","uniqueMethods":true}) })
-  include ../partials/footer.pug
+    script(type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false")
+    script(type="text/javascript")
+      | window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us15.list-manage.com","uuid":"9af9712f622c6511cb2113669","lid":"adb061483c","uniqueMethods":true}) })
+    include ../partials/footer.pug
 
 

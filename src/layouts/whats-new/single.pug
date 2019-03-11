@@ -1,22 +1,24 @@
-include  ../partials/head
-body
-    include ../partials/navbar.pug
-    .main
-        .alert-info-pattern.mb-5
-            .container
+doctype html
+html(lang='en')
+    | !{'{{ partial "head" . }}'}
+    body
+        include ../partials/navbar.pug
+        .main
+            .alert-info-pattern.mb-5
+                .container
+                    .row
+                        .col-sm-12.col-md-8.offset-md-2
+                            h1.py-5.mb-0.font-weight-normal
+                                a(href='/whats-new') News & product updates
+            .container.mb-5
                 .row
                     .col-sm-12.col-md-8.offset-md-2
-                        h1.py-5.mb-0.font-weight-normal
-                            a(href='/whats-new') News & product updates
-        .container.mb-5
-            .row
-                .col-sm-12.col-md-8.offset-md-2
-                    article.article
-                        .article-header
-                            h2.article-title #{'{{ .Title }}'}
-                            .article-sub posted by #{'{{ .Params.Author }}'} on #{'{{ .PublishDate.Format '} "January 2, 2006" #{' }}'}
-                        .article-body
-                            span.markdown #{'{{ .Content }}'}
+                        article.article
+                            .article-header
+                                h2.article-title #{'{{ .Title }}'}
+                                .article-sub posted by #{'{{ .Params.Author }}'} on #{'{{ .PublishDate.Format '} "January 2, 2006" #{' }}'}
+                            .article-body
+                                span.markdown #{'{{ .Content }}'}
 
-    include ../partials/free-trial-row
-    include ../partials/footer.pug
+        include ../partials/free-trial-row
+        include ../partials/footer.pug

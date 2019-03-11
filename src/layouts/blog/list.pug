@@ -1,22 +1,24 @@
-include  ../partials/head
-body
-  include ../partials/navbar.pug
-  .main
-    .container
-      .row
-        .col-sm-12.col-lg-8.offset-lg-2
-          .span.markdown.blog.py-4 #{'{{.Content}}'}
-            | !{' {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }} '}
-            article
-              a.blog-header.blog-header-list(href="{{.RelPermalink }}") #{' {{.Title}} '}
-              include ../partials/blog-meta-data.pug
-              .markdown.blog-body.blog-body-preview
-                | !{' {{ .Summary | markdownify  }} '}
-              span
-                | !{' {{ if .Truncated }} '}
-                div
-                  a.btn.btn-outline-secondary.btn-sm(href="{{.RelPermalink }}") Read more
-                | !{'{{end}}'}
-            | !{'{{end}}'}
-  include ../partials/footer.pug
+doctype html
+html(lang='en')
+  | !{'{{ partial "head" . }}'}
+  body
+    include ../partials/navbar.pug
+    .main
+      .container
+        .row
+          .col-sm-12.col-lg-8.offset-lg-2
+            .span.markdown.blog.py-4 #{'{{.Content}}'}
+              | !{' {{ range (.Paginator 10).Pages.ByPublishDate.Reverse }} '}
+              article
+                a.blog-header.blog-header-list(href="{{.RelPermalink }}") #{' {{.Title}} '}
+                include ../partials/blog-meta-data.pug
+                .markdown.blog-body.blog-body-preview
+                  | !{' {{ .Summary | markdownify  }} '}
+                span
+                  | !{' {{ if .Truncated }} '}
+                  div
+                    a.btn.btn-outline-secondary.btn-sm(href="{{.RelPermalink }}") Read more
+                  | !{'{{end}}'}
+              | !{'{{end}}'}
+    include ../partials/footer.pug
 

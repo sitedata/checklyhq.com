@@ -1,9 +1,4 @@
 /* eslint-env jquery */
-// Show the dashboard button is cookie is present
-if (document.cookie.split(';').filter((item) => item.trim().startsWith('checkly_has_account=')).length) {
-  $('#login-button').hide()
-  $('#dashboard-button').show()
-}
 
 /**
  * START Navbar
@@ -20,6 +15,13 @@ if (window.location.pathname === '/') {
 } else {
   $('nav.navbar').removeClass('fixed-top')
 }
+
+// Show the dashboard button is cookie is present
+if (document.cookie.split(';').filter((item) => item.trim().startsWith('checkly_has_account=')).length) {
+  $('#login-button').hide()
+  $('#dashboard-button').show()
+}
+
 /**
  * END Navbar
  */

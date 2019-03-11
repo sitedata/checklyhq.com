@@ -1,9 +1,11 @@
-include  ../partials/head
-body
-    include ../partials/navbar
-    .main
-        .container
-            .row
-                .col-sm-12.text-center.py-5
-                    span #{'{{.Content}}'}
-    include ../partials/footer
+doctype html
+html(lang='en')
+    | !{'{{ partial "head" . }}'}
+    body
+        include ../partials/navbar
+        .main
+            .container
+                .row
+                    .col-sm-12.text-center.py-5
+                        span #{'{{.Content}}'}
+        include ../partials/footer

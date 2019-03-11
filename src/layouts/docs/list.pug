@@ -1,36 +1,38 @@
-include  ../partials/head
-body
-    include ../partials/navbar.pug
-    .main.docs
-        .container
-            .row
-                .col-sm-3.p
-                    ul.sidebar-menu
-                        | !{'{{ $currentPage := . }}'}
-                        | !{'{{ range .Site.Menus.docs }}'}
-                        | !{'{{ if .HasChildren }}'}
-                        li.sidebar-menu-item
-                            h3 #{'{{.Name}}'}
-                            ul.sidebar-menu-sub
-                                | !{'{{range .Children}}'}
-                                | !{'{{ $has := $currentPage.IsMenuCurrent "docs" . }}'}
-                                li.sidebar-menu-sub-item(class='{{if $has}}active{{end}}')
-                                    a(href="{{.URL}}") #{'{{.Name}}'}
-                                | !{'{{end}}'}
-                        | !{'{{else}}'}
-                        li.sidebar-menu-item
-                            h3 #{'{{.Name}}'}
-                        | !{'{{end}}'}
-                        | !{'{{end}}'}
+doctype html
+html(lang='en')
+  | !{'{{ partial "head" . }}'}
+  body
+      include ../partials/navbar.pug
+      .main.docs
+          .container
+              .row
+                  .col-sm-3.p
+                      ul.sidebar-menu
+                          | !{'{{ $currentPage := . }}'}
+                          | !{'{{ range .Site.Menus.docs }}'}
+                          | !{'{{ if .HasChildren }}'}
+                          li.sidebar-menu-item
+                              h3 #{'{{.Name}}'}
+                              ul.sidebar-menu-sub
+                                  | !{'{{range .Children}}'}
+                                  | !{'{{ $has := $currentPage.IsMenuCurrent "docs" . }}'}
+                                  li.sidebar-menu-sub-item(class='{{if $has}}active{{end}}')
+                                      a(href="{{.URL}}") #{'{{.Name}}'}
+                                  | !{'{{end}}'}
+                          | !{'{{else}}'}
+                          li.sidebar-menu-item
+                              h3 #{'{{.Name}}'}
+                          | !{'{{end}}'}
+                          | !{'{{end}}'}
 
-                .col-sm-9
-                  .markdown.py-3
-                    h1 #{'{{ .Title }}'}
-                    span #{'{{.Content}}'}
-                  h5.text-left
-                    | !{' {{range (.Paginator 1).Pages}} '}
-                    a(href='{{.Permalink}}') Next: #{' {{.Title }} '}
-                    | !{'{{end}}'}
-                  hr.my-4
-                  include ../partials/last-updated.pug
-    include ../partials/footer.pug
+                  .col-sm-9
+                    .markdown.py-3
+                      h1 #{'{{ .Title }}'}
+                      span #{'{{.Content}}'}
+                    h5.text-left
+                      | !{' {{range (.Paginator 1).Pages}} '}
+                      a(href='{{.Permalink}}') Next: #{' {{.Title }} '}
+                      | !{'{{end}}'}
+                    hr.my-4
+                    include ../partials/last-updated.pug
+      include ../partials/footer.pug
