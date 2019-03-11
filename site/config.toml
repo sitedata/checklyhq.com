@@ -18,6 +18,12 @@ disqusShortname = "checkly"
     description = "Monitor the performance and correctness of your API endpoints & vital site transactions from a single, simple dashboard"
 
 [[menu.docs]]
+	name = "Monitoring"
+	url = "/docs/monitoring/"
+	weight = 10
+
+
+[[menu.docs]]
 	name = "API Checks"
 	url = "/docs/api-checks/"
 	weight = 20

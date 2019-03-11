@@ -49,6 +49,8 @@ and a set of [3rd party libraries](#included-third-party-libraries).
  
 Note: any libraries need to be explicitly imported using a 'require' statement.
 
+## Setup script examples
+
 ### Example: Add a custom header
 
 ```javascript
@@ -135,12 +137,47 @@ const result = await axios.get(url, { headers: signature.headers })
 environment["AWS_V4_RESULT"] = result.data
 ```
 
+### Example: fetch an OAuth2 access token
+
+This example works great for OAuth2 providers like [Okta](https://www.okta.com/) and [Auth0](https://auth0.com/) that provide the "client credentials" grant type.
+
+```javascript
+// we use the request-promise library here as it supports posting Form data.
+const requestPromise = require('request-promise')
+const btoa = require('btoa')
+
+// grab the necessary credentials set up earlier in your environment variables.
+const { ISSUER, TEST_CLIENT_ID, TEST_CLIENT_SECRET, DEFAULT_SCOPE } = environment
+
+// assemble a token 
+const token = btoa(`${TEST_CLIENT_ID}:${TEST_CLIENT_SECRET}`)
+
+// fetch an access token
+const { access_token } = await requestPromise({
+  uri: `${ISSUER}/v1/token`,
+  json: true,
+  method: 'POST',
+  headers: {
+    authorization: `Basic ${token}`,
+  },
+  form: {
+    grant_type: 'client_credentials',
+    scope: DEFAULT_SCOPE,
+  },
+})
+
+// set the Authorization header
+request.headers["Authorization"] = `Bearer ${access_token}`
+```
+
 ## Teardown scripts
 
 Teardown scripts are run after the HTTP request has finished, but before any assertions are validated. Next to the [request](#request) 
 and [environment](#environment) objects, teardown scripts also have access to the [response](#response) object. Use teardown scripts to clean up
 any created test data or clean up response data that might contain sensitive information you do not want to store on the 
 Checkly backend.
+
+## Teardown script examples
 
 ### Example: update response status
 
@@ -259,14 +296,17 @@ Response properties are exposed a standard Javascript object. These are only ava
 All setup and teardown scripts run in a sandboxed environment on our cloud backed. You do not have full access to the Node.js
 standard library or to arbitrary NPM modules. Currently every runner is equipped with the following libraries:
 
-- **[node](https://nodejs.org/en/blog/release/v0.8.10/)** 8.10: The general Node.js execution environment.
+
 - **[assert](https://nodejs.org/docs/latest-v8.x/api/assert.html)** 8.x: Built-in assertion function.
-- **[moment](https://momentjs.com)** 2.22.2: Popular library for all things time related.
-- **[axios](https://github.com/axios/axios)**  0.18.0: A modern HTTP library. Support async/await.
+- **[aws4](https://github.com/mhart/aws4)** 1.8.0: Third-party library for easily signing AWS API requests.
+- **[axios](https://github.com/axios/axios)**  0.18.0: A modern HTTP library. Supports async/await.
 - **[crypto-js](https://github.com/brix/crypto-js)** 3.1.9: Cryptographic function library.
 - **[lodash](https://lodash.com)** 4.14.11: Javascript toolkit for many object, array and other functions.
-- **[aws4](https://github.com/mhart/aws4)** 1.8.0: Third-party library for easily signing AWS API requests.
-
+- **[moment](https://momentjs.com)** 2.22.2: Popular library for all things time related.
+- **[node](https://nodejs.org/en/blog/release/v0.8.10/)** 8.10: The general Node.js execution environment.
+- **[request](https://github.com/request/request)** 2.88.0: An alternative HTTP client to Axios that supports posting Form data.
+- **[request-promise](https://github.com/request/request-promise)** 4.2.2: A plugin for the request library to enable promises.
+- **[btoa](https://www.npmjs.com/package/btoa)** 1.2.1: Binary to base64 encoded ascii. Handy for parsing some response bodies.
 
 ## Technical limitations
 
