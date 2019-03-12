@@ -19,10 +19,18 @@ nav.navbar.navbar-toggleable-md.fixed-top
               a.nav-link(href='/docs') Docs
             li.nav-item
               a.nav-link(href='/blog') Blog
-          form.form-inline.my-2.my-lg-0.ml-md-3
-            a#login-button.btn.btn-outline-secondary.my-2.my-sm-0.mr-3.ml-md-3(href='https://app.checklyhq.com/') Log in
-            a#dashboard-button.btn.btn-outline-secondary.my-2.my-sm-0.mr-3.ml-md-3(style='display: none;' href='https://app.checklyhq.com/')
-              | Dashboard
-              .ion-arrow-right-c.d-inline.ml-2
-            a.btn.btn-success.my-2.my-sm-0(href='https://app.checklyhq.com/signup') Start your free trial
+          span
+            | !{'{{ if eq .Section "docs" }} '}
+            form.form-inline.search-wrapper
+              .form-group
+                i.ion-search
+                input.form-control.py-2#search(type='search', placeholder='Search the docs')
+            | !{'{{else}}'}
+            form.form-inline.my-2.my-lg-0.ml-md-3
+              a#login-button.btn.btn-outline-secondary.my-2.my-sm-0.mr-3.ml-md-3(href='https://app.checklyhq.com/') Log in
+              a#dashboard-button.btn.btn-outline-secondary.my-2.my-sm-0.mr-3.ml-md-3(style='display: none;' href='https://app.checklyhq.com/')
+                | Dashboard
+                .ion-arrow-right-c.d-inline.ml-2
+              a.btn.btn-success.my-2.my-sm-0(href='https://app.checklyhq.com/signup') Start your free trial
+            | !{'{{end}}'}
 
