@@ -4,16 +4,6 @@ html(lang='en')
   body
     include ../partials/navbar.pug
     .main.blog
-      .blog-recent-post-list.hidden-md-down
-        | !{'{{ $related := .Site.RegularPages.Related . | first 4 }}'}
-        | !{'{{ with $related }}'}
-        p.mb-2 More posts like this
-        ul
-          | !{'{{ range .}}'}
-          li
-            a(href="{{ .Permalink }}") #{'{{ .Title }}'}
-          | !{'{{ end }}'}
-        | !{'{{ end }}'}
       .container
         .row
           .col-sm-12.col-lg-8.offset-lg-2
@@ -23,22 +13,18 @@ html(lang='en')
               .markdown.blog-body #{'{{.Content}}'}
 
         .row
-          .col-sm-12.col-lg-8.offset-lg-2.mb-4
-            | !{' {{ $related := .Site.RegularPages.Related . | first 3 }} '}
-            | !{' {{ with $related }} '}
-            h4 Also see
-            ul
-              | !{' {{ range . }} '}
-              li
-                a(href="#{' {{ .RelPermalink }} '}") {{ .Title }}
-              | !{' {{ end }} '}
-            | !{' {{ end }} '}
+          .col-sm-12.col-lg-8.offset-lg-2
+            .divider.mb-5
 
-      include ../partials/free-trial-row.pug
+        include ../partials/mailchimp-signup-row.pug
+
+        include  ../partials/more-like-this-row.pug
+
+      include ../partials/share-list.pug
 
       .container.mb-5
         .row
-          .col-sm-12.col-lg-8.offset-lg-2
+          .col-sm-12.col-lg-6.offset-lg-3
             span !{' {{ template "_internal/disqus.html" . }} '}
 
     script(type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false")
