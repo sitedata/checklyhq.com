@@ -38,14 +38,13 @@ Pick one of the examples from our built-in library as your starting point. Alter
 
 {{% feature-row header="Tweak it" img="/product/transaction-monitoring/tweak.png" %}}
 Use our in app debugger to iterate on your script and directly see the results. Add extra assertions, screenshots
-and navigation actions. You can also add the industry standard Mocha and Chai libraries to get more control
-over what is checked and how it is reported.
+and navigation actions. Add the industry standard **Mocha and Chai libraries** for a familiar workflow.
 {{% cta-link "Learn more" "/docs/browser-checks/using-mocha//" %}}
 {{% /feature-row %}}
 
 {{% feature-row header="Run it every five minutes" img="/product/transaction-monitoring/results.png" %}}
-Schedule your site transaction monitoring script to run as often as every five minutes. A regular interval gives you an accurate insight into
-how your vital transactions are performing over time. We also give you full access to the log files for each run in case
+Schedule your script to run as often as every ten minutes. A regular interval gives you an accurate insight into
+how your vital transactions are performing over time. We also give you **full access to the log files** for each run in case
 an alert is triggered.
 {{% cta-link "Learn more" "/docs/browser-checks/quickstart/" %}}
 {{% /feature-row %}}

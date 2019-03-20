@@ -17,13 +17,13 @@ you want. Know when your service fails before your customers do.
 ## How it works
 
 {{% feature-row header="Set up your thresholds" img="/product/alerting/alert_settings@2x.png" %}}
-The internet can be flaky. Sometimes a failing service is just fine 2 seconds later. Dodge false positives by specifying
+The internet can be flaky. Sometimes a failing service is just fine 2 seconds later. **Dodge false positives** by specifying
 exactly when you should alerted and how often you want to be reminded.
 {{% cta-link "Learn more" "/docs/alerting/settings/" %}}
 {{% /feature-row %}}
 
 {{% feature-row header="Pick your channels" img="/product/alerting/channels@2x.png" %}}
-Choose one or more of the available alerting channels. We have everything from email, to Pagerduty to SMS. Need something
+Choose one or more of the available alerting channels. We have everything from **email, to Pagerduty to SMS**. Need something
 custom? Use the webhooks or hook up [our Prometheus integration](/docs/integrations/prometheus/) and roll your own alerting.
 {{% cta-link "Learn more" "/docs/alerting/settings/" %}}
 {{% /feature-row %}}
