@@ -71,24 +71,6 @@
     }
   }
 
-  .create-check-dropdown-item {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    padding: .5 * $spacer-y 0;
-
-    .check-icon {
-      display: flex;
-      i {
-        align-self: center;
-        display: inline-block;
-        height: 30px;
-        width: 30px;
-        margin-right: $spacer-x;
-      }
-    }
-  }
-
   .search-wrapper {
     i {
       position: absolute;

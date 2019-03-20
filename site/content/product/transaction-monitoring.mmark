@@ -84,7 +84,7 @@ This extension has a ton of options for tweaking your scripts as you click throu
 When a check fails, you and your team need timely and actionable insights to address any down time.
 Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
 Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
-{{% cta-link "Learn more" "/docs/alerting/settings/" %}}
+{{% cta-link "Learn more" "/product/alerting/" %}}
 </p>
 
 {.text-center .section-header .pt-5}

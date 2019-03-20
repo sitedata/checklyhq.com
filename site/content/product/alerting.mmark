@@ -1,0 +1,35 @@
+---
+title: Alerting
+---
+
+{.text-center .hero-text}
+# We hope you'll never see this message...
+
+<p class="text-center hero-sub hero-sub-center mb-lg-5">
+...but things fail all the time. It's how you respond that makes the difference. Get quick and contextful alerts on any channel
+you want. Know when your service fails before your customers do.
+</p>
+
+{.text-center .mb-lg-5 .img-w720}
+![alerting options](/product/alerting/api_alert@2x.png)
+
+{.text-center .section-header .mb-4}
+## How it works
+
+{{% feature-row header="Set up your thresholds" img="/product/alerting/alert_settings@2x.png" %}}
+The internet can be flaky. Sometimes a failing service is just fine 2 seconds later. Dodge false positives by specifying
+exactly when you should alerted and how often you want to be reminded.
+{{% cta-link "Learn more" "/docs/alerting/settings/" %}}
+{{% /feature-row %}}
+
+{{% feature-row header="Pick your channels" img="/product/alerting/channels@2x.png" %}}
+Choose one or more of the available alerting channels. We have everything from email, to Pagerduty to SMS. Need something
+custom? Use the webhooks or hook up [our Prometheus integration](/docs/integrations/prometheus/) and roll your own alerting.
+{{% cta-link "Learn more" "/docs/alerting/settings/" %}}
+{{% /feature-row %}}
+
+<div class="row pt-5 pb-5">
+{{< sm-4-col-item "No limits" "We don't put any limits on the amount of email, Slack, Pagerduty or webhooks alerts you can send." >}}
+{{< sm-4-col-item "SSL alerting" "We check your domain's SSL certificates for expiry and follow the exact same alerting patterns as all the other checks." >}}
+{{< sm-4-col-item "Double checking" "By default, we retry any failing check from another data center location, just to be sure. " >}}
+</div>
