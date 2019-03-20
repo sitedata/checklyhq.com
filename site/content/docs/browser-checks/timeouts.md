@@ -1,6 +1,6 @@
 ---
 title: Timeouts
-weight: 7
+weight: 8
 menu:
   docs:
     parent: "Browser Checks"

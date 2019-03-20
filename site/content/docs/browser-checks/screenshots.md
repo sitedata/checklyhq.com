@@ -1,6 +1,6 @@
 ---
 title: Taking screenshots
-weight: 2
+weight: 3
 menu:
   docs:
     parent: "Browser Checks"

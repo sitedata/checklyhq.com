@@ -1,6 +1,6 @@
 ---
 title: Responsible use
-weight: 9
+weight: 10
 menu:
   docs:
     parent: "Browser Checks"

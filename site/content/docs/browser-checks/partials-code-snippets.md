@@ -1,6 +1,6 @@
 ---
 title: Partials and code snippets
-weight: 5
+weight: 6
 menu:
   docs:
     parent: "Browser Checks"

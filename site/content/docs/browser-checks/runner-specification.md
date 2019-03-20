@@ -6,7 +6,7 @@ menu:
     parent: "Browser Checks"
 ---
 
-All browser checks run in a Docker container on our cloud backend. You do not have full access to the Node.js
+All browser checks run in a sandboxed runtime environment on our cloud backend. You do not have full access to the Node.js
 standard library or to arbitrary NPM modules. Currently every runner is equipped with the following libraries:
 
 - **[node](https://nodejs.org/en/blog/release/v0.8.10/)** 8.10: The general Node.js execution environment.
