@@ -10,6 +10,7 @@
     "build-preview": "gulp build-preview",
     "start": "gulp server",
     "lint": "eslint src",
+    "generate-api-docs": "curl -OL http://localhost:3000/swagger.json && widdershins --user_templates api-docs/widdershins-user-templates --search false --language_tabs 'shell:curl' --summary --maxDepth 0 swagger.json -o api-docs/shins/source/index.html.md && cd api-docs/shins && node shins --logo ../logo.png  --customcss",
     "deploy:cacheable": "s3-deploy './dist/**' --cwd './dist/' --region 'eu-central-1' --bucket 'checklyhq.com' --etag --cache 315360000",
     "deploy:non-cacheable": "s3-deploy './dist/**/*.html' --cwd './dist/' --region 'eu-central-1' --bucket 'checklyhq.com' --etag --cache 0",
     "deploy": "npm run deploy:non-cacheable && npm run deploy:cacheable",
@@ -63,6 +64,8 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "s3-deploy": "^1.2.1"
+    "s3-deploy": "^1.2.1",
+    "shins": "^2.3.2-4",
+    "widdershins": "^3.6.7"
   }
 }
