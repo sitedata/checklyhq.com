@@ -93,7 +93,7 @@ Base URLs:
 
 {{? block.rows.length}}|Name|Type|Description|
 |---|---|---|---|---|{{?}}
-{{~ block.rows :p}}|{{=p.displayName}}{{? p.required}}<br><span class="requiredParam">(required)</span>{{?}}|{{=p.safeType}}|{{=p.description||'none'}}|
+{{~ block.rows :p}}|{{=p.displayName}}{{? p.required}}<div class="requiredParam">(required)</div>{{?}}|{{=p.safeType}}|{{=p.description||'none'}}|
 {{~}}
 {{~}}
 {{? (blocks[0].rows.length === 0) && (blocks.length === 1) }}
