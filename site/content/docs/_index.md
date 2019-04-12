@@ -13,4 +13,6 @@ exact control over how your APIs and web apps should be monitored.
 - [Teams](/docs/teams/)
 - [Integrations](/docs/integrations)
 - [Puppeteer Recorder](/puppeteer-recorder/)
+- [API documention](/docs/api)
+
 

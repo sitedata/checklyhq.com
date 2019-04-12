@@ -4,7 +4,7 @@
   }
 
   a {
-    color: $gray;
+    color: $gray-darkish;
     &.active {
       color: $brand-primary;
     }
@@ -19,6 +19,7 @@
     h3 {
       color: $gray-dark;
       font-size: $font-size-base;
+      font-weight: 500;
       display: block;
       margin-top: 2rem;
       margin-bottom: .5rem;
@@ -33,7 +34,7 @@
     .sidebar-menu-sub-item {
       margin-bottom: .3rem;
       a {
-        color: $gray;
+        color: $gray-darkish;
         text-decoration: none;
         padding: .4rem 0;
         &:hover {
