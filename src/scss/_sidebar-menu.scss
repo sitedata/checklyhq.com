@@ -13,6 +13,23 @@
   list-style-type: none;
   padding-left: 0;
 
+  .api-reference-link {
+    border-top: 1px solid $gray-light;
+    padding-top: .5rem;
+    display: inline-block;
+    color: $gray-darkish;
+    &:hover {
+      text-decoration: none;
+      color: $brand-primary
+    }
+    &:after {
+      margin-left: 1rem;
+      color: $gray;
+      font-family: Ionicons;
+      content: '\f39c'
+    }
+  }
+
   .sidebar-menu-item {
     padding-left: 0;
     margin-bottom: .75rem;

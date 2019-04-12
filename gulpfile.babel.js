@@ -67,7 +67,7 @@ gulp.task('assets', () => (
 
 // copy all rendered API docs
 gulp.task('api-docs', () => (
-  gulp.src('./api-docs/shins/**/*')
+  gulp.src(['./api-docs/shins/**/*', '!./api-docs/shins/node_modules/', '!./api-docs/shins/node_modules/**/*'])
     .pipe(gulp.dest('./dist/docs/api'))
     .pipe(browserSync.stream())
 ))
