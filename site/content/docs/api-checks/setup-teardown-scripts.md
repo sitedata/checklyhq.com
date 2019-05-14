@@ -137,9 +137,10 @@ const result = await axios.get(url, { headers: signature.headers })
 environment["AWS_V4_RESULT"] = result.data
 ```
 
-### Example: fetch an OAuth2 access token
+### Example: fetch an OAuth2 access token using the `client_credentials` grant
 
-This example works great for OAuth2 providers like [Okta](https://www.okta.com/) and [Auth0](https://auth0.com/) that provide the "client credentials" grant type.
+This example works great for OAuth2 providers like [Okta](https://www.okta.com/) and [Auth0](https://auth0.com/) that 
+provide the "client_credentials" grant type.
 
 ```javascript
 // we use the request-promise library here as it supports posting Form data.
@@ -170,6 +171,38 @@ const { access_token } = await requestPromise({
 request.headers["Authorization"] = `Bearer ${access_token}`
 ```
 
+### Example: fetch an OAuth2 access token using the `password` grant
+
+
+This example works great for OAuth2 providers like [Okta](https://www.okta.com/) and [Auth0](https://auth0.com/) that 
+provide the "password" grant type. We actually use this one ourselves for monitoring Checkly!
+
+```javascript
+// we use the request-promise library here as it supports posting Form data.
+const requestPromise = require('request-promise')
+
+// grab the necessary credentials set up earlier in your environment variables.
+const { ISSUER, USERNAME, PASSWORD, CLIENT_ID, CLIENT_SECRET, AUDIENCE } = environment
+ 
+
+// fetch an access token
+const { access_token } = await requestPromise({
+  uri: `${ISSUER}/oauth/token`,
+  json: true,
+  method: 'POST',
+  form: {
+    grant_type: 'password',
+    username: USERNAME,
+    password: PASSWORD,
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    audience: AUDIENCE
+  },
+})
+
+// set the Authorization header
+request.headers["Authorization"] = `Bearer ${access_token}`
+```
 ## Teardown scripts
 
 Teardown scripts are run after the HTTP request has finished, but before any assertions are validated. Next to the [request](#request) 
