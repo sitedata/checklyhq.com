@@ -15,10 +15,10 @@ Current locations in Checkly are
 |------------------|---------------------------|--------------|
 | North Virginia   | Ireland                   | Singapore    |
 | Ohio             | Frankfurt                 | Tokyo        |
-| North California | London                    | Sydney       |
-| Oregon           | Paris                     | Seoul        |
-| Montreal         | Stockholm                 | Mumbai       |
-| São Paulo        | Milan (coming soon)       |              |
+| North California | London                    | Hong Kong    |
+| Oregon           | Paris                     | Sydney       |
+| Montreal         | Stockholm                 | Seoul        |
+| São Paulo        | Milan (coming soon)       | Mumbai       |
 |                  | Cape Town (coming soon)   |              |
 |                  | Bahrain (coming soon)     |              |
 

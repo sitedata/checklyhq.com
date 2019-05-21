@@ -42,7 +42,7 @@ and navigation actions. Add the industry standard **Mocha and Chai libraries** f
 {{% cta-link "Learn more" "/docs/browser-checks/using-mocha//" %}}
 {{% /feature-row %}}
 
-{{% feature-row header="Run it every five minutes" img="/product/transaction-monitoring/results.png" %}}
+{{% feature-row header="Run it every ten minutes" img="/product/transaction-monitoring/results.png" %}}
 Schedule your script to run as often as every ten minutes. A regular interval gives you an accurate insight into
 how your vital transactions are performing over time. We also give you **full access to the log files** for each run in case
 an alert is triggered.
