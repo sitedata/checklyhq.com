@@ -17,10 +17,10 @@ Every check we run generates a certain amount of data. We call these the "result
 
 We keep the results data according to the following retention policy:
 
-- Raw events for 7 days
+- Raw events for 30 days
 - 1 hour resolution forever
 
-Simply put, you can "scroll back" up to 7 days and inspect all the details of each result. After that, we store aggregates
+Simply put, you can "scroll back" up to 30 days and inspect all the details of each result. After that, we store aggregates
 of the relevant statistics like average, p95 and p99 response time and success ratio.
 
 *We are continuously working on tweaking and improving our data retention policy. Expect updates.*

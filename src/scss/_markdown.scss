@@ -15,27 +15,18 @@
   h2 {
     font-size: 1.5rem;
     margin-top: 2.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
     font-weight: 400;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $gray-light;
   }
 
   h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 400;
     padding-bottom: .3em;
-    &::before {
-      content: "#" !important;
-      color: $brand-primary;
-      position: absolute;
-      left: -0.4em;
-      margin-top: 0rem !important;
-      padding-right: 0.5em;
-      line-height: 1;
-      visibility: visible !important;
-    }
   }
 
   p {
@@ -151,12 +142,12 @@
         td {
           padding: 0.5rem;
           border-bottom: 1px solid $gray-light;
-          code {
-            padding: 0;
-            background: none;
-            border: none;
-            color: $gray-dark !important;
-          }
+          //code {
+          //  padding: 0;
+          //  background: none;
+          //  border: none;
+          //  color: $gray-dark !important;
+          //}
         }
       }
     }
