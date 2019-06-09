@@ -1,6 +1,20 @@
 /* eslint-env jquery */
 
 /**
+ * TRACKING
+ */
+
+function handleGoogleTrackSignup () {
+  console.log('track')
+// eslint-disable-next-line no-undef
+  ga('send', 'event', 'trial-signup', 'click')
+}
+
+$('.signup-button').click(function () {
+  handleGoogleTrackSignup()
+})
+
+/**
  * START Navbar
  */
 
