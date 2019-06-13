@@ -6,7 +6,7 @@
 
 function handleGoogleTrackSignup () {
   console.log('track')
-// eslint-disable-next-line no-undef
+  // eslint-disable-next-line no-undef
   ga('send', 'event', 'trial-signup', 'click')
 }
 

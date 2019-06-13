@@ -16,7 +16,7 @@ monitoring solution to check your mobile, webapp or IOT API for performance, upt
 {{< sm-4-col-item "Monitor for performance" "Checkly records the response time for each request, down to TCP, DNS and first byte times. Add assertions for maximum response time." >}}
 {{< sm-4-col-item "Monitor for correctness" "Check payloads, return codes, headers, and authentication. Dive inside JSON payloads and validate specific items." >}}
 {{< sm-4-col-item "Monitor globally" "Checkly can monitor your APIs from 16 global data center locations." >}}
-{{< sm-4-col-item "Setup & Teardown scripts" "Run custom Javascript before and after your API check. Sign requests, get tokens and/or clean up test data." >}}
+{{< sm-4-col-item "Setup & Teardown scripts" "Run custom Javascript before and after your API check. Sign requests, get auth tokens and clean up test data." >}}
 {{< sm-4-col-item "Import from tools you know" "Checkly's cUrl and Swagger API importers create fully fledged API checks with just a couple of clicks." >}}
 {{< sm-4-col-item "CI/CD integration" "Integrate your API monitoring into your QA or continuous delivery process by triggering adhoc runs from the command line." >}}
 </div>
@@ -24,7 +24,7 @@ monitoring solution to check your mobile, webapp or IOT API for performance, upt
 {.text-center .section-header .mb-4}
 ## How it works
 
-{{% feature-row header="Create an HTTP request" img="/product/api-monitoring/http-request.png" %}}
+{{% feature-row header="Create an HTTP request" img="/product/api-monitoring/http-request@2x.png" %}}
 Import your HTTP requests or assemble one by hand. Checkly gives you full control over all HTTP request options:
 **HTTP method, URL, query parameters, headers, and body**. Add credentials or a Bearer
 token for authentication.
@@ -33,9 +33,9 @@ token for authentication.
 
 {{% /feature-row %}}
 
-{{% feature-row header="Add assertions" img="/product/api-monitoring/assertions.png" %}}
-Checkly's simple assertion matrix helps you create as many assertions per check as you want. Monitor your API for correct response times, HTTP status code,
-plain text or JSON bodies and headers. You can **drill into JSON payloads** and match nested items.
+{{% feature-row header="Add API check assertions" img="/product/api-monitoring/assertions@2x.png" %}}
+Checkly's assertion matrix helps you create as many assertions per check as you want. Monitor your API for correct response times, HTTP status code,
+plain text or JSON bodies and headers. **Drill into JSON payloads with JSON path** or user regular expression.
 {{% cta-link "Learn more" "/docs/api-checks/assertions/" %}}
 
 
@@ -43,7 +43,7 @@ plain text or JSON bodies and headers. You can **drill into JSON payloads** and 
 
 {{% feature-row header="Customize setup & teardown" img="/product/api-monitoring/setup-teardown.png" %}}
 If needed, you can take full control of how your request executes. Use setup scripts to **cryptographically sign requests**,
-fetch bearer tokens and update request attributes before any request is done. Use teardown scripts to clean up test data or
+fetch OAuth tokens and update request attributes before any request is done. Use teardown scripts to clean up test data or
 **scrub sensitive data** from the response.
 {{% cta-link "Learn more" "/docs/api-checks/setup-teardown-scripts/" %}}
 
@@ -61,11 +61,12 @@ Next to aggregating metrics, we give you **access to each result** from each of 
 ![alerting options](/landing/alerting-options@2x.png)
 
 <p class="text-center lead-text mb-lg-5">
-When a check fails, Checkly gives you and your team actionable insights to address downtime and API performance issues.
+When a check fails, you and your team need timely and actionable insights to address any down time.
 Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
-Need more control? Webhooks give you full access to the JSON data.
-{{% cta-link "Learn more" "/docs/alerting/settings/" %}}
+Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
+{{% cta-link "Learn more" "/product/alerting/" %}}
 </p>
+
 
 {.text-center .section-header .pt-5}
 ## Global coverage
@@ -75,7 +76,13 @@ Need more control? Webhooks give you full access to the JSON data.
 <p class="text-center lead-text mb-lg-5">
 Get a clear picture of how your services perform for all your users around the world. Run your check from any of sixteen
 data center locations spread over the Americas, EMEA and Asia Pacific.
+
+{{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
 </p>
+
+
+
+
 
 
 

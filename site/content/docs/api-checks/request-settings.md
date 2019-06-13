@@ -45,6 +45,22 @@ This option sets the `Content-Type` request header to `application/json`. Format
 ```
 JSON bodies are commonly used with REST APIs.
 
+### GraphQL
+
+
+This option also sets the `Content-Type` request header to `application/json`, but allows you to type GraphQL queries and
+format them as such, i.e.
+
+```graphql
+query {
+  allUsers {
+    posts {
+      id
+    }
+  }
+}
+```
+
 ### FORM
 
 This option sets `Content-Type` request header to `application/x-www-form-urlencoded`. Format your input as a string of key/value pairs concatenated with ampersands, i.e:

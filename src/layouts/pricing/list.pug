@@ -444,6 +444,7 @@ html(lang='en')
                     .pt-footer
                       a.btn.btn-success.btn-block(href='https://app.checklyhq.com/signup') Start free trial
 
+        include ../partials/testimonial-full-width
 
         .container
           .row
@@ -454,7 +455,5 @@ html(lang='en')
             .col-sm-6.markdown.text-left #{'{{ . | markdownify }}'}
             | !{'{{end}}'}
 
-        include ../partials/trusted-by-section.pug
-        include ../partials/testimonial-trial-row.pug
         include ../partials/footer.pug
 
