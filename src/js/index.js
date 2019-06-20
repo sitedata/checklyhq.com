@@ -5,9 +5,10 @@
  */
 
 function handleGoogleTrackSignup () {
-  console.log('track')
   // eslint-disable-next-line no-undef
-  ga('send', 'event', 'trial-signup', 'click')
+  gtag('event', 'sign_up', {
+    'event_category': 'engagement'
+  })
 }
 
 $('.signup-button').click(function () {

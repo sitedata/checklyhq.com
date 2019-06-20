@@ -90,6 +90,21 @@
       }
     }
   }
+
+  &.testimonial-3 {
+    .testimonial-text {
+      //font-family: Georgia, serif;
+      font-weight: 400;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+    .testimonial-logo {
+      height: 25px;
+
+      margin-bottom: 1px;
+      margin-left: .5rem;
+    }
+  }
 }
 
 @include media-breakpoint-down(sm) {
