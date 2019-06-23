@@ -93,10 +93,23 @@
 
   &.testimonial-3 {
     .testimonial-text {
-      //font-family: Georgia, serif;
+      font-family: Georgia, serif;
       font-weight: 400;
       margin-bottom: 0;
       font-size: 18px;
+      &:before {
+        content: "“";
+        font-family: serif;
+        position: absolute;
+        width: 10px;
+        font-size: 6rem;
+        right: 50%;
+        top: -3rem;
+        color: $brand-primary;
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
     }
     .testimonial-logo {
       height: 25px;
