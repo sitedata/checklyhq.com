@@ -1,6 +1,6 @@
 ---
-title: Prometheus (beta)
-weight: 1
+title: Prometheus
+weight: 2
 menu:
   docs:
     parent: "Integrations"

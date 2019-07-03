@@ -30,10 +30,6 @@ html(lang='en')
                     .markdown.py-3
                       h1 #{'{{ .Title }}'}
                       span #{'{{.Content}}'}
-                    h5.text-left
-                      | !{' {{range (.Paginator 1).Pages}} '}
-                      a(href='{{.Permalink}}') Next: #{' {{.Title }} '}
-                      | !{'{{end}}'}
                     hr.my-4
                     include ../partials/last-updated.pug
       include ../partials/footer.pug
