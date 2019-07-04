@@ -33,7 +33,7 @@ is in Incognito Mode helps you dodge this pitfall, as it will become immediately
 session cookies. You need to explicitly allow the Puppeteer Recorder extension to run in Incognito mode on the details
 section on the Extension page of your Chrome browser:
 
-![puppeteer authentication and cookies](/docs/images/browser-checks/allow_incognito.png)
+![puppeteer authentication and cookies](/docs/images/puppeteer-recorder/allow_incognito.png)
 
 
 ## Filling out forms
@@ -56,3 +56,23 @@ after recording. In Checkly, you can replace these credentials with environment 
 The demo video below gives an impression on how filling out a form works. 
 
 {{< youtube d_9HEmtv52E >}}
+
+## Screenshots
+
+You can take two kinds of screenshots.
+
+1. A screenshot of the **current visible page**.
+2. A **clipped screenshot** of a part of the page.
+
+Activate either mode by either using the right click context menu
+
+![puppeteer recorder context menu](/docs/images/puppeteer-recorder/context_menu.png)
+
+Or using keyboard short cuts
+
+| Action             | Short cut    |
+|--------------------|--------------|
+| Screenshot         | Ctrl+Shift+A |
+| Screenshot Clipped | Ctrl+Shift+M |
+
+

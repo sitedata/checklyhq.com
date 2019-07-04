@@ -1,3 +1,12 @@
 .docs {
   padding: 1rem 0;
+
+  &-cta-section-shortcode {
+    margin-top: 1.5 * $spacer-y;
+    margin-bottom: $spacer-y;
+    padding-top: $spacer-y;
+    border: 1px solid $blue-light;
+    border-radius: 8px;
+    background: $blue-lightest;
+  }
 }
