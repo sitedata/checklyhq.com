@@ -15,7 +15,7 @@ menu:
 
 {{% docs-cta-section %}}
 
-💕 We're working on a new, better version of Puppeteer Recorder. [Help us out and take the 2-minute survey](https://surveys.hotjar.com/s?siteId=717179&surveyId=137462) 💕
+💕 We're working on a new, better version of Puppeteer Recorder. [Help us out and take the 5-question survey](https://surveys.hotjar.com/s?siteId=717179&surveyId=137462) 💕
 
 {{% /docs-cta-section %}}
 
