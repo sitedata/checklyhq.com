@@ -7,7 +7,7 @@
   background-position: center bottom;
   background-repeat: repeat-x;
   background-size: 100%;
-  margin-bottom: $section-bottom-margin;
+  margin-bottom: $section-bottom-margin + 2 * $spacer-y;
   border-bottom: 1px solid $gray-light;
 
   .hero-text {
