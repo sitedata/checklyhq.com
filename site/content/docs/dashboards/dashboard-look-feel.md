@@ -3,10 +3,10 @@ title: Look & feel
 weight: 2
 menu:
   docs:
-    parent: "TV-mode dashboards"
+    parent: "Dashboards"
 ---
 
-TV-mode dashboards have a lot of tweakable options to make them work for you in your situation.
+Dashboards have a lot of tweakable options to make them work for you in your situation.
 
 - **logo:** Display any image on the top left side of your dashboard.
 - **header:** Add a clarifying text like a team or environment name. This is separate from your custom URL or domain.

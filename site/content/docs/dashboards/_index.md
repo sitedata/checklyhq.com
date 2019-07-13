@@ -3,14 +3,14 @@ title: Url and Custom Domain
 weight: 1
 menu:
   docs:
-    parent: "TV-mode dashboards"
+    parent: "Dashboards"
 ---
 
-TV-mode dashboards are public dashboards available on every Checkly plan. Use them on your wall mounted TV's or 
+Checkly dashboards are public dashboards available on every plan. Use them on your wall mounted TV's or 
 shared monitors around the office or as a status page on your site.
 
-You can create multiple, distinct dashboards based on your plan. Edit your TV-mode dashboard by clicking on 
-the **TV-mode** button on the Checkly default dashboard page.
+You can create multiple, distinct dashboards based on your plan. Edit your dashboard by clicking on 
+the **Dashboards** button on the Checkly default dashboard page.
 
 ## Custom URL
 

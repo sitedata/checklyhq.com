@@ -39,7 +39,7 @@ disqusShortname = "checkly"
 	weight = 40
 
 [[menu.docs]]
-	name = "TV-mode dashboards"
+	name = "Dashboards"
 	url = "/docs/dashboards/"
 	weight = 50
 
