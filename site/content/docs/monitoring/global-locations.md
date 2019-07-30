@@ -19,6 +19,6 @@ Current locations in Checkly are
 | Oregon           | Paris                     | Sydney       |
 | Montreal         | Stockholm                 | Seoul        |
 | São Paulo        | Milan (coming soon)       | Mumbai       |
+|                  | Bahrain                   |              |
 |                  | Cape Town (coming soon)   |              |
-|                  | Bahrain (coming soon)     |              |
 
