@@ -12,7 +12,7 @@ standard library or to arbitrary NPM modules. Currently every runner is equipped
 - **[node](https://nodejs.org/en/blog/release/v0.8.10/)** 8.10: The general Node.js execution environment.
 - **[chai](https://www.chaijs.com/)** 4.2.0: Popular assertion library.
 - **[mocha](https://mochajs.org/)** 5.0.0: Popular test runner library.
-- **[puppeteer](https://github.com/GoogleChrome/puppeteer)** 1.11.0: Framework for controlling Chrome from Node.js.
+- **[puppeteer](https://github.com/GoogleChrome/puppeteer)** 1.19.0: Framework for controlling Chrome from Node.js.
 - **[assert](https://nodejs.org/docs/latest-v8.x/api/assert.html)** 8.x: Built-in assertion function.
 - **[moment](https://momentjs.com)** 2.22.2: Popular library for all things time related.
 - **[axios](https://github.com/axios/axios)**  0.18.0: A modern HTTP library. Support async/await.
