@@ -45,7 +45,7 @@ redirects involved. Also, many providers make their login pages "bot resistant" 
 below uses the Google social login option on the Checkly login page.
 
 ```js
-const browser = await puppeteer.launch({ headless: false })
+const browser = await puppeteer.launch()
 const page = await browser.newPage()
 
 await page.setViewport({ width: 1280, height: 800 })

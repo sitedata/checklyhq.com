@@ -1,7 +1,7 @@
 # Authentication
 
 The Checkly API uses API keys to authenticate requests. You can manage your API keys in the
-[Checkly account settings](https://app/checklyhq.com/account/api-keys). Your API key is like a password: keep it secure!
+[Checkly account settings](https://app.checklyhq.com/account/api-keys). Your API key is like a password: keep it secure!
 
 Authentication to the API is performed using the bearer auth method in the Authorization header.
 
