@@ -11,7 +11,7 @@ function handleGoogleTrackSignup () {
   })
 }
 
-$('.signup-button').click(function () {
+$('[data-signup]').click(function () {
   handleGoogleTrackSignup()
 })
 
@@ -73,9 +73,9 @@ const plans = [
   },
   {
     name: 'growth',
-    year: 825,
-    month: 75,
-    monthByYear: '68.75'
+    year: 649,
+    month: 59,
+    monthByYear: '54.08'
   },
   {
     name: 'business',
