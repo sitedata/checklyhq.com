@@ -55,7 +55,7 @@ Note: any libraries need to be explicitly imported using a 'require' statement.
 
 ```javascript
 // request.headers is a standard Javascript object
-request.headers["X-Custom-Header"] = 'my value'
+request.headers['X-Custom-Header'] = 'my value'
 ```
 
 ### Example: Update the URL
@@ -75,7 +75,7 @@ const axios = require('axios')
 const result = await axios.get('https://example.com/api/token')
 
 // add the token as a query parameters
-request.queryParameters["token"] = result.token
+request.queryParameters['token'] = result.token
 ```
 
 ### Example: Sign an HMAC request
@@ -86,8 +86,8 @@ const CryptoJS = require('crypto-js')
 const moment = require('moment')
 
 // get keys stored in environment variables
-const privateKey = environment["PRIVATE_KEY"]
-const publicKey = environment["PUBLIC_KEY"]
+const privateKey = environment['PRIVATE_KEY']
+const publicKey = environment['PUBLIC_KEY']
 
 // collect the fields used in signing the request
 const method = request.method
@@ -103,9 +103,9 @@ const signature = [method, contentMd5, contentType, timestamp].join(',\n')
 const encryptedSignature = publicKey + ':' + CryptoJS.HmacSHA1(signature, privateKey).toString(CryptoJS.enc.Base64)
 
 // set or update the results as environment variables, to be used in the HTTP request.
-environment["TIMESTAMP"] = timestamp
-environment["ENCRYPTED_SIGNATURE"] = encryptedSignature
-environment["CONTENT_TYPE"] = contentType
+environment['TIMESTAMP'] = timestamp
+environment['ENCRYPTED_SIGNATURE'] = encryptedSignature
+environment['CONTENT_TYPE'] = contentType
 ```
 
 ### Example: Sign an AWS API request
@@ -134,7 +134,7 @@ const signature = aws4.sign(options, credentials)
 
 // fetch the data and store in an environment variable
 const result = await axios.get(url, { headers: signature.headers })
-environment["AWS_V4_RESULT"] = result.data
+environment['AWS_V4_RESULT'] = result.data
 ```
 
 ### Example: fetch an OAuth2 access token using the `client_credentials` grant
@@ -168,7 +168,7 @@ const { access_token } = await requestPromise({
 })
 
 // set the Authorization header
-request.headers["Authorization"] = `Bearer ${access_token}`
+request.headers['Authorization'] = `Bearer ${access_token}`
 ```
 
 ### Example: fetch an OAuth2 access token using the `password` grant
@@ -201,7 +201,7 @@ const { access_token } = await requestPromise({
 })
 
 // set the Authorization header
-request.headers["Authorization"] = `Bearer ${access_token}`
+request.headers['Authorization'] = `Bearer ${access_token}`
 ```
 ## Teardown scripts
 
@@ -276,12 +276,17 @@ Inside each script, you have access to certain data structures of the API check 
 ### Environment
 
 You have access to all environment variables configured in the variables section on the account page.
-They are exposed as a regular Javascript object named `environment`. You can create, read, update and delete
-any of the attributes in this object.
+They are exposed as a regular Javascript object named `environment`. 
+
+You can create, read, update and delete any of the attributes in this object.
+
+
+The current data center location the script is running in is exposed as the AWS region code in the `REGION` constant, 
+i.e. `eu-west-1` or `us-east-1`
 
 ```javascript
 // read values and use them for further processing
-const myValue = environment.MY_KEY
+const myValue = environment.['MY_KEY']
 
 // write values
 environment['MY_KEY'] = myValue + 10
@@ -291,6 +296,9 @@ environment['NEW_KEY'] = 'new value'
 
 // remove a key
 delete environment['SOME_OTHER_KEY']
+
+// read the current region
+const region = environment['REGION']
 ```
 
 In setup scripts, the modified environment object is used for the subsequent HTTP request. In teardown
@@ -329,8 +337,26 @@ Response properties are exposed a standard Javascript object. These are only ava
 All setup and teardown scripts run in a sandboxed environment on our cloud backed. You do not have full access to the Node.js
 standard library or to arbitrary NPM modules. Currently every runner is equipped with the following libraries:
 
+### Built-in module
+- assert
+- buffer
+- crypto
+- path
+- querystring
+- readline
+- stream
+- string_decoder
+- stream
+- timers
+- tls
+- url
+- util
+- zlib
 
-- **[assert](https://nodejs.org/docs/latest-v8.x/api/assert.html)** 8.x: Built-in assertion function.
+See the [built-in module documentation on the official Node.js site](https://nodejs.org/dist/latest-v10.x/docs/api/) 
+
+### External modules
+
 - **[aws4](https://github.com/mhart/aws4)** 1.8.0: Third-party library for easily signing AWS API requests.
 - **[axios](https://github.com/axios/axios)**  0.18.0: A modern HTTP library. Supports async/await.
 - **[crypto-js](https://github.com/brix/crypto-js)** 3.1.9: Cryptographic function library.
