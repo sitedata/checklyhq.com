@@ -38,8 +38,7 @@ When typing in most of the variable-enabled fields we show a small helper popup 
 
 Note, just the Body input field does not show this helper popup.
 
-
-> We are working on a "Group" feature, where we will allow variables per group of checks for finer grained control. This is why the variables in the account section are explicitly named "Global"
+> You can access the current data center location using the implicit `{{REGION}}` variable. This resolve to the AWS region name, i.e. 'us-east-1'
 
 
 

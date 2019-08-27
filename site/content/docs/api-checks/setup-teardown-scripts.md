@@ -332,12 +332,13 @@ Response properties are exposed a standard Javascript object. These are only ava
 | `response.timingPhases`  | Time durations for each request phase. | Object |
 
 
-## Included third party libraries
+## Included libraries
 
 All setup and teardown scripts run in a sandboxed environment on our cloud backed. You do not have full access to the Node.js
 standard library or to arbitrary NPM modules. Currently every runner is equipped with the following libraries:
 
 ### Built-in modules
+
 - assert
 - buffer
 - crypto

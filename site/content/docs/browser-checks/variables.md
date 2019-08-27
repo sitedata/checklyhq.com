@@ -48,6 +48,9 @@ await page.click('[name="commit"]')
 browser.close()
 ``` 
 
+> You can access the current data center location using the implicit `process.env.REGION` variable. This resolve to the AWS region name, i.e. 'us-east-1'
+
+
 ## Variable hierarchy
 
 As browser checks are scheduled, Checkly merges the local and global environment variables into one data set and exposes them
@@ -57,8 +60,5 @@ Or in another words, local variables trump global variables.
 
 You can make use of this by providing a default value for a specific variable at the global level, but allow that variable to 
 be overridden at the local level.
-
-> *We are working on a "Group" feature, where we will allow variables per group of checks for finer grained control. This is why the variables in the account section are explicitly named "Global"
-
 
 
