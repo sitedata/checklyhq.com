@@ -18,6 +18,11 @@ the correct results.
 API checks can be run **every minute**, whereas browser checks start at **10 minute** intervals. Longer intervals (30 minutes, once per day etc.)
 are the same for all check types.
 
+#### Can I get a custom plan with more / less checks?
+
+Yes, we can customize the plan exactly to your needs. 500 API checks and 0 browser checks, or any combination really.
+Just <a href="#" class='open-intercom-link'>contact us</a> and we'll make you a quote. 
+
 <split>
 
 #### Are all alerting integrations the same for all plans?
