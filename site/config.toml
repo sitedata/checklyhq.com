@@ -39,19 +39,24 @@ disqusShortname = "checkly"
 	weight = 40
 
 [[menu.docs]]
+	name = "CI/CD integration"
+	url = "/docs/cicd/"
+	weight = 50
+
+[[menu.docs]]
 	name = "Dashboards"
 	url = "/docs/dashboards/"
-	weight = 50
+	weight = 60
 
 [[menu.docs]]
 	name = "Teams"
 	url = "/docs/teams/"
-	weight = 50
+	weight = 70
 
 [[menu.docs]]
 	name = "Integrations"
 	url = "/docs/integrations/"
-	weight = 60
+	weight = 80
 
 [[menu.docs]]
 	name = "Puppeteer Recorder"

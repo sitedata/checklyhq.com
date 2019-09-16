@@ -53,7 +53,13 @@ html(lang='en')
                           | Have full control over request data and responses using custom Javascript snippets.
                   .pt-list-item
                     span.pt-tooltip-show-text
-                      span.pt-tooltip-show CI/CD triggers
+                      span.pt-tooltip-show Github triggers
+                      span.pt-tooltip.pt-tooltip-right-bottom
+                        span.pt-tooltip-content
+                          | Automatically trigger checks from Github PR or commits. Works out-of-the-box with Zeit, Heroku etc.
+                  .pt-list-item
+                    span.pt-tooltip-show-text
+                      span.pt-tooltip-show CI/CD custom triggers
                       span.pt-tooltip.pt-tooltip-right-bottom
                         span.pt-tooltip-content
                           | Trigger a check run from the terminal or your CI/CD pipeline for automated testing before or after
@@ -139,7 +145,12 @@ html(lang='en')
                           i.ion-checkmark-round
                       .pt-list-item
                         .pt-text
-                          | CI/CD triggers
+                          | Github triggers
+                        .pt-value
+                          i.ion-checkmark-round
+                      .pt-list-item
+                        .pt-text
+                          | CI/CD custom triggers
                         .pt-value
                           i.ion-close-round
                       .pt-list-item
@@ -232,7 +243,12 @@ html(lang='en')
                           i.ion-checkmark-round
                       .pt-list-item
                         .pt-text
-                          | CI/CD triggers
+                          | Github triggers
+                        .pt-value
+                          i.ion-checkmark-round
+                      .pt-list-item
+                        .pt-text
+                          | CI/CD custom triggers
                         .pt-value
                           i.ion-checkmark-round
                       .pt-list-item
@@ -263,7 +279,7 @@ html(lang='en')
                     .pt-title.text-success Growth
                     .pt-price
                       .price-block
-                        span.price(data-growth-price) 59
+                        span.price(data-growth-price) 75
                         span(data-billing-interval) / month
                       .strike-out-price(data-growth-strikeout-price) $75 / month
                     p Everything + growing room for new apps and projects
@@ -325,7 +341,12 @@ html(lang='en')
                           i.ion-checkmark-round
                       .pt-list-item
                         .pt-text
-                          | CI/CD triggers
+                          | Github triggers
+                        .pt-value
+                          i.ion-checkmark-round
+                      .pt-list-item
+                        .pt-text
+                          | CI/CD custom triggers
                         .pt-value
                           i.ion-checkmark-round
                       .pt-list-item
@@ -414,6 +435,11 @@ html(lang='en')
                       .pt-list-item
                         .pt-text
                           | Setup & teardown scripts
+                        .pt-value
+                          i.ion-checkmark-round
+                      .pt-list-item
+                        .pt-text
+                          | Github triggers
                         .pt-value
                           i.ion-checkmark-round
                       .pt-list-item
