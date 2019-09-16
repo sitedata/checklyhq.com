@@ -6,6 +6,8 @@ menu:
     parent: "API Checks"
 ---
 
+{{< page-toc >}}
+
 You can tailor each HTTP request made by an API check to your exact situation by using setup and/or teardown scripts.
 
 - **Setup scripts** give you access to properties like the URL, headers and query parameters of the HTTP request as well as 
@@ -360,13 +362,14 @@ See the [built-in module documentation on the official Node.js site](https://nod
 
 - **[aws4](https://github.com/mhart/aws4)** 1.8.0: Third-party library for easily signing AWS API requests.
 - **[axios](https://github.com/axios/axios)**  0.18.0: A modern HTTP library. Supports async/await.
+- **[btoa](https://www.npmjs.com/package/btoa)** 1.2.1: Binary to base64 encoded ascii. Handy for parsing some response bodies.
+- **[jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)**  8.5.1: Implementation of JSON web tokens. Helps with signing.
 - **[crypto-js](https://github.com/brix/crypto-js)** 3.1.9: Cryptographic function library.
 - **[lodash](https://lodash.com)** 4.14.11: Javascript toolkit for many object, array and other functions.
 - **[moment](https://momentjs.com)** 2.22.2: Popular library for all things time related.
 - **[node](https://nodejs.org/en/blog/release/v0.8.10/)** 8.10: The general Node.js execution environment.
 - **[request](https://github.com/request/request)** 2.88.0: An alternative HTTP client to Axios that supports posting Form data.
 - **[request-promise](https://github.com/request/request-promise)** 4.2.2: A plugin for the request library to enable promises.
-- **[btoa](https://www.npmjs.com/package/btoa)** 1.2.1: Binary to base64 encoded ascii. Handy for parsing some response bodies.
 
 ## Technical limitations
 
