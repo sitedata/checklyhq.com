@@ -205,6 +205,36 @@ const { access_token } = await requestPromise({
 // set the Authorization header
 request.headers['Authorization'] = `Bearer ${access_token}`
 ```
+### Example: create a JWT token using the jsonwebtoken library
+
+```javascript
+// we use the jsonwebtoken library as it makes creating JTW's really easy
+const jwt = require('jsonwebtoken');
+
+// grab the secret from our environment variables
+const secret = environment.SECRET
+
+// define a helper function to sign the token
+const getToken = () => {
+  return new Promise((resolve, reject) => {
+    jwt.sign({
+      expiry: Math.floor(Date.now() / 1000) + (60 * 60), // set the expiry time to 60 minutes
+      email: '',
+      userId: '',
+    }, secret , (err, token) => {
+      if(err) return reject(err);
+      resolve(token);
+    });
+  })
+}
+
+// create the token
+const token = await getToken();
+
+// set the Authorization header
+request.headers['Authorization'] = `Bearer ${token}`
+```
+
 ## Teardown scripts
 
 Teardown scripts are run after the HTTP request has finished, but before any assertions are validated. Next to the [request](#request) 
