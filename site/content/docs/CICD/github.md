@@ -41,6 +41,42 @@ Now, go to the **CI/CD tab** of the check you want to link to a Github repositor
 You can hook up multiple checks to the same repo. We will just run all of them as a test suite.
 {{</info>}}
 
+## Using environment URL's
+
+Github reports a **environment URL** on each deployment event. Depending on what deployment service you use,
+this environment URL can be used to run your check on different target environments than configured in your check.  
+
+The primary use case for this is that temporary review/branch deployments such as provided by Zeit and Heroku Pipelines
+can be validated before going to production. 
+
+So, when you enable the **"Use environment URL from deployment trigger"** checkbox there are two scenarios:
+
+### API checks & environment URL's 
+
+With API checks, we replace the hostname part of your request url with the host in the environment URL. 
+For example:
+
+- Your configured URL: `https://api.acme.com/v1/customers?page=1`
+- Environment URL: `https://now.customer-api.qis6va2z7.now.sh`
+- Replaced URL: `https://now.customer-api.qis6va2z7.now.sh/v1/customers?page=1`
+
+Notice we only replace the **host** part, not the URL path or any query parameters.
+
+### Browser checks & environment URL's
+
+For browser checks, the environment URL is exposed as the `ENVIRONMENT_URL` environment variable. This means you can use that
+variable in your code to replace any hardcoded URL you might have, i.e.
+
+```javascript
+const puppeteer = require("puppeteer");
+
+const browser = await puppeteer.launch();
+const page = await browser.newPage();
+
+const myURL = process.env.ENVIRONMENT_URL || 'https://acme.com'
+await page.goto(myURL);
+
+await browser.close();
 ```
 
 

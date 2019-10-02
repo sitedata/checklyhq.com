@@ -8,7 +8,7 @@ menu:
 ---
 
 Any standard Node.js script that successfully finishes a Puppeteer session is a valid, passing browser check. However, in
-many cases you want to validate whether the sessions is actually showing the right stuff to the user.
+many cases you want to validate whether the session is actually showing the right stuff to the user.
 
 This is a two step process:
 
@@ -135,7 +135,7 @@ the `page.$$eval()` method.
 
 ## Puppeteer built-in shortcuts
 
-The Puppeteer offers some built-in short cuts to access common elements of a typical webpage. For the full details see
+Puppeteer offers some built-in shortcuts to access common elements of a typical webpage. For the full details see
 [the Puppeteer docs](https://pptr.dev/#?product=Puppeteer&show=api-class-page).
 
 ```javascript
