@@ -19,5 +19,5 @@ Go to the `docsearch-scraper` directory
 
 ```bash
 pipenv shell
-./docsearch run checkly_docs.json
+./docsearch run ./config.json
 ```
