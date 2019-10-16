@@ -73,9 +73,9 @@ const plans = [
   },
   {
     name: 'growth',
-    year: 649,
-    month: 59,
-    monthByYear: '54.08'
+    year: 825,
+    month: 75,
+    monthByYear: 68.75
   },
   {
     name: 'business',

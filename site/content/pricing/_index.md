@@ -31,7 +31,7 @@ All plans have SMS, email, webhook and Slack integrations to alert you when a ch
 we add integrations like Pagerduty and give you more SMS credits.
 
 #### How does the 14-day trial work?
-By signing up, you get full access to all of Checkly's functions for a period of 30 days. You do not need a credit card
+By signing up, you get full access to all of Checkly's functions for a period of 14 days. You do not need a credit card
 to get started. After the 14 day period, you will still have access to your account but we will suspend the running of
 your checks.
 
