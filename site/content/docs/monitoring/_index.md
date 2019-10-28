@@ -29,6 +29,7 @@ A picture is a thousand words:
 3. If the check fails and "double check" is enabled, the check is retried once in the same location *and* in different location.
 The other location is picked, at random, from all the configured locations.
 4. If the check is an API check and has a [teardown script](docs/api-checks/setup-teardown-scripts/), the teardown script is executed.
+Teardown scripts are run *before* any assertions are validated.
 5. The result is stored in our central database and any alerts are send where applicable.
 
  
