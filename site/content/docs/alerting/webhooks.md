@@ -42,8 +42,26 @@ You can use the following event related variables in both URL and payload.
 
 ### Trello
 
-You can create a Trello card using just the URL and no payload by 
+You can create a [Trello](https://trello.com) card using just the URL and no payload:
 
 ```
 https://api.trello.com/1/cards?idList=5b28c04aed47522097be8bc4&key={{TRELLO_KEY}}&token={{TRELLO_TOKEN}}&name={{CHECK_NAME}}
+```
+
+
+### Pushover
+
+Send a message using [Pushover](https://pushover.net/) by posting this body:
+
+```
+{
+  "token":"FILL_IN_YOUR_SECRET_TOKEN_FROM_PUSHOVER",
+  "user":"FILL_IN_YOUR_USER_FROM_PUSHOVER",
+  "title":"{{ALERT_TITLE}}",
+  "html":1,
+  "priority":2,
+  "retry":30,
+  "expire":10800,
+  "message":"{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
+}
 ```
