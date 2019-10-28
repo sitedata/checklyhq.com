@@ -77,21 +77,6 @@ after that.
 When a check failure is resolved, we cancel any outstanding reminders so you don't get mixed signals.
 {{</info>}}
 
-##  Alert channels
-
-Similar to the alert settings, Checkly allows you to manage your alert channels on two different levels:
-
-- Account level
-- Per check level
-
-Use the account level to make sure everyone is always updated for all failing and recovered checks. This where you would
-put your team's email address or add a hook for your Ops team's Slack channel.
-
-If you want to alert one specific person or team for one specific check, you can set the alerts on the check level.
-You are free to mix and match both levels.
-
-{{< info >}} Alerts are de-doubled before alerting, so you will never get two alerts because they were set at both levels.{{< /info >}}
-
 ## Muting alerts
 
 Toggling the "mute" checkbox on a check stops the sending of all alerts but keeps the check running. This is useful when

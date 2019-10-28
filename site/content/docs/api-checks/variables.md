@@ -13,7 +13,7 @@ like an authentication token, a specific user name or even just some specific pa
 
 ## Managing variables
 
-You can add variables on the **Variables** tab in the **Account** section. The variables stored here are globally accessible 
+You can add variables on the **Environment variables** tab. The variables stored here are globally accessible 
 throughout Checkly, hence the "Global environment variables" title*.  
 
 All variables are stored as string values. You can click the lock icon to encrypt the values and hide the value from all users

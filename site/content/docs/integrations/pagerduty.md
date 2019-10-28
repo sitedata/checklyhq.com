@@ -14,10 +14,10 @@ to Pagerduty account. After setting up the integration, Checkly will:
 1. Trigger alerts in Pagerduty when a check fails.
 2. Resolve alerts when a check recovers.
 
-Integration is as simple as following the three step Pagerduty connect process.
+Integration is as simple as following the three step Pagerduty connect process. You can add as many Pagerduty channels as 
+you wish.
 
-
-1. Navigate to the **integrations** tab on the account screen and click the 'Alert with Pagerduty' button.
+1. Navigate to the **alert settings** tab on the account screen and click the 'Add channels' button.
 ![setup checkly pagerduty integration step 1](/docs/images/integrations/pagerduty_step1.png)
 
 2. Clicking the **Alert with Pagerduty** button will take you to a Pagerduty login screen. Provide your credentials and click
@@ -28,13 +28,10 @@ Integration is as simple as following the three step Pagerduty connect process.
 Click **Finish integration** to save your settings and redirect you back to Checkly. 
 ![set up checkly pagerduty integration step 3](/docs/images/integrations/pagerduty_step3.png)
 
-4. Back in Checkly, you should see your Pagerduty **integration credentials** reflected in the alert settings. 
+4. Back in Checkly, you should see your Pagerduty **integration credentials** reflected in the alert settings. Don't forget
+to hit **Save Pagerduty channel**
+
 ![set up checkly pagerduty integration step 4](/docs/images/integrations/pagerduty_step4.png)
 
 5. Checkly will trigger an incident in Pagerduty when checks fail and also mark them as resolved when the checks are passing again
 ![set up checkly pagerduty integration step 5](/docs/images/integrations/pagerduty_step5.png)
-
-
-
-If you want to change your Pagerduty integration, first remove it and then go through the setup steps again
-
