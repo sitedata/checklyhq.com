@@ -5,13 +5,13 @@ html(lang='en')
     include ../partials/navbar.pug
     .main.container.py-5
       .row.mb-5
-        .col-sm-12.col-md-8.offset-md-2.text-center
+        .col-sm-12.col-lg-8.offset-lg-2.text-center
           h1 Join Us. From Anywhere.
 
           span.markdown #{'{{.Content}}'}
 
       .row.mb-4
-        .col-sm-12.col-md-8.offset-md-2.text-left
+        .col-sm-12.col-lg-8.offset-lg-2.text-left
           | !{'{{ range first 10 .Data.Pages }}'}
           a(href="{{.RelPermalink}}")
             .d-flex.flex-row.justify-content-start

@@ -4,9 +4,23 @@ title: About us
 
 # About us
 
-For general questions contact us via email at [info@checklyhq.com](mailto:info@checklyhq.com)
+Checkly is a bootstrapped company founded in 2018 and has been growing steadily. 
+We are a small team, working from Berlin 🇩🇪 (mostly) but 100% committed to remote work.
 
-Checkly is a service run by Pink Robots B.V. with its registered office at J.P. Coenstraat 24 BIS in Utrecht, The Netherlands.
+Our customers are spread accross the world, from China to Colorado. From Sweden to South Africa.  
+
+We care about open communication, sharing knowledge and delivering an awesome service.   
+We work on Checkly and open source projects like Puppeteer Recorder.  
+We don't take ourselves too serious; we take our work and our customers very serious.  
+
+If you want to join us, have a look at our [jobs page](/jobs).
+
+# Imprint
+
+Checkly is a service run by Pink Robots B.V. with its registered office at: 
+
+J.P. Coenstraat 24 BIS  
+Utrecht, The Netherlands  
 
 **Chamber of Commerce**: 74069349   
 **VAT**: NL859762609B01
