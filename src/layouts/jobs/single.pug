@@ -1,0 +1,18 @@
+doctype html
+html(lang='en')
+  | !{'{{ partial "head" . }}'}
+  body
+    include ../partials/navbar.pug
+    .main.container.py-5
+      .row
+        .col-sm-12.col-md-8.offset-md-2
+          h1 #{'{{.Title}}'}
+          span.markdown #{'{{.Content}}'}
+          .mt-5.card.card-block
+            h4 How to apply
+            p
+              | Send your application by email to #[a( href='mailto:jobs@checklyhq.com?subject=Applying for {{.Title}}' ) jobs@checklyhq.com]. Remember to include
+              | a written motivation on why you want to join Checkly and what motivates in a job.
+            a.btn.btn-success.text-white(href='mailto:jobs@checklyhq.com?subject=Applying for {{.Title}}') Apply now
+    include ../partials/footer.pug
+
