@@ -11,7 +11,7 @@ position_state: Open
 ## About the role
 
 Checkly is looking for an experienced JavaScript developer. This is a great opportunity to join an early stage
-company, influence the product road map and help us do what we love most: building tools for moder DevOps teams.
+company, influence the product road map and help us do what we love most: building tools for modern DevOps teams.
 
 ### Build & shape our frontend
 You will be working on all aspects of our Vue.js based frontend. Projects we have lined up are new dashboards & graphs, a collection
