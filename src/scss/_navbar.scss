@@ -3,14 +3,14 @@
   transition: all .5s;
   z-index: 9999;
   background-color: $white;
-  .beta {
-    font-size: 15px;
-    font-weight: $font-weight-bold;
-    margin-left: .5rem;
-    display: inline;
+  .callout {
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
     color: $pink;
     line-height: 1.1rem;
-    vertical-align: text-bottom;
+    align-self: center;
+    white-space: nowrap;
   }
 
   .navbar-toggler {
