@@ -14,7 +14,7 @@ be alerted, on what channels like email, SMS, Slack etc. If you need more, you c
 ## Alert settings
 
 The alert settings tab give you a lot of options to tailor when, how and how often you want to be alerted when 
-a check fails. This is also sometimes referred to as "threshold alerting" For example:
+a check fails. This is also sometimes referred to as **threshold alerting** For example:
 
 - Get an alert on the second or third failure.
 - Get an alert after 5 minutes of failures.

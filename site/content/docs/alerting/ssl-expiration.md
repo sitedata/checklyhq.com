@@ -1,6 +1,6 @@
 ---
 title: SSL certificate expiration
-weight: 3
+weight: 4
 menu:
   docs:
     parent: "Alerting"

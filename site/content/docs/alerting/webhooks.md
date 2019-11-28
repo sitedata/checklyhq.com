@@ -1,6 +1,6 @@
 ---
 title: Webhooks
-weight: 5
+weight: 6
 menu:
   docs:
     parent: "Alerting"
