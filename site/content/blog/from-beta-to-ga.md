@@ -70,8 +70,6 @@ The "one more feature" trap is a pretty well known trope of the startup industry
 prepared enough, as I added some major new things like [double checks](https://checklyhq.com/docs/alerting/settings/#double-checking), 
 [triggers](https://checklyhq.com/docs/browser-checks/triggers/) and [teams](https://checklyhq.com/docs/teams/). Sorry, totally failed on this one.
 
-{{< tweet 978185749421051904 >}}
-
 ## 5. The buy vs. build dilemma
 
 If you're starting a SaaS then your next hobby will be collecting other SaaS-es. Hosting, email, payments, databases the list goes on.

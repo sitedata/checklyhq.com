@@ -227,8 +227,6 @@ However, when you are used to tech like Vue.js and ES6/ES7 syntax, you will ente
 Getting the build right was a bit tricky as Webpack examples and corresponding versions seem to be deprecated
 faster than the speed of light. 
 
-{{<tweet 1030139648490856451 >}}
-
 So, long story short, have peek at the [webpack config](https://github.com/checkly/puppeteer-recorder/blob/master/webpack.config.babel.js)
 and corresponding [package.json](https://github.com/checkly/puppeteer-recorder/blob/master/webpack.config.babel.js) on Github
 and you can see what works for Puppeteer Recorder. 
