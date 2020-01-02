@@ -24,7 +24,8 @@
   }
 
   .billing-cycle-toggler {
-    display: inline-block;
+    display: flex;
+    margin: auto;
     width: 160px;
 
     &:hover {
@@ -60,17 +61,6 @@
         color: $white;
       }
     }
-  }
-
-  .savings-box {
-    display: inline-block;
-    text-align: left;
-    margin-left: .5rem;
-    font-weight: $font-weight-bold;
-    font-size: .65rem;
-    text-transform: uppercase;
-    position: absolute;
-    bottom: 10px;
   }
 
   table.plans-features-table {

@@ -1,13 +1,16 @@
-{{ $header := .Get "header" }}
-{{ $image := .Get "img" }}
+{{ $header := .Get "header" }} {{ $image := .Get "img" }}
 <div class="row pt-4 pb-5">
-	<div class="col-sm-4 text-left d-flex">
-		<div class="feature-row-item-wrapper my-auto">
-			<h3 class="section-header mt-0 pb-0">{{$header}}</h3>
-			<p>{{.Inner | markdownify }}</p>
-		</div>
-	</div>
-	<div class="col-sm-8 text-right">
-		<img src="{{$image}}" alt="{{$header}}" class="img-w720 big-drop-shadow rounded">
-	</div>
+  <div class="col-sm-4 text-left d-flex">
+    <div class="feature-row-item-wrapper my-auto">
+      <h3 class="section-header mt-0 pb-0">{{$header}}</h3>
+      <p>{{.Inner | markdownify }}</p>
+    </div>
+  </div>
+  <div class="col-sm-8 text-right">
+    <img
+      src="{{$image}}"
+      alt="{{$header}}"
+      class="img-w720 big-drop-shadow rounded"
+    />
+  </div>
 </div>

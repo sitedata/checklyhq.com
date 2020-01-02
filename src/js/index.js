@@ -18,8 +18,7 @@ $('[data-signup]').click(function () {
 /**
  * START Navbar
  */
-
-if (window.location.pathname === '/') {
+$(document).ready(() => {
   $(document).on('scroll', () => {
     if ($(document).scrollTop() > 100) {
       $('nav.navbar').addClass('navbar-fixed-drop-shadow')
@@ -27,19 +26,20 @@ if (window.location.pathname === '/') {
       $('nav.navbar').removeClass('navbar-fixed-drop-shadow')
     }
   })
-} else {
-  $('nav.navbar').removeClass('fixed-top')
-}
+})
 
+$(document).ready(() => {
 // Show the dashboard button is cookie is present
-if (document.cookie.split(';').filter((item) => item.trim().startsWith('checkly_has_account=')).length) {
-  $('#login-button').hide()
-  $('#dashboard-button').show()
-}
+  if (document.cookie.split(';').filter((item) => item.trim().startsWith('checkly_has_account=')).length) {
+    $('#login-button').hide()
+    $('#dashboard-button').show()
+  }
+})
 
 /**
  * END Navbar
  */
+
 
 $(document).ready(() => {
   fetch('https://api.checklyhq.com/public-stats')

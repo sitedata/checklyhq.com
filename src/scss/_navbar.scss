@@ -1,5 +1,5 @@
 .navbar {
-  min-height: 90px;
+  min-height: 4rem;
   transition: all .5s;
   z-index: 9999;
   background-color: $white;
@@ -61,32 +61,10 @@
 
   &.navbar-fixed-drop-shadow {
     box-shadow: 0 1px 2px 0px rgba(31, 45, 61, 0.15);
-    min-height: 60px;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    .btn {
-      padding: 0.5rem .75rem;
-    }
-  }
-
-  .search-wrapper {
-    i {
-      position: absolute;
-      z-index: 2;
-      display: block;
-      width: 2.375rem;
-      height: 2.375rem;
-      line-height: 2.375rem;
-      text-align: center;
-      pointer-events: none;
-      color: #aab4c6;
-    }
-
-    input {
-      padding-left: 2rem;
-    }
   }
 }
 

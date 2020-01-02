@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head" . }}
+</head>
+
+<body>
+  {{ partial "navbar" . }}
+  {{ block "main" . }}
+  {{ end }}
+  {{ partial "scripts" . }}
+  <script>
+    docsearch({
+      apiKey: 'b2b616fdea14b860ff00c72fa72bf267',
+      indexName: 'checkly_docs',
+      appId: 'LCMJSZN73Z',
+      inputSelector: '#search',
+      debug: false
+    })
+  </script>
+</body>
+</html>

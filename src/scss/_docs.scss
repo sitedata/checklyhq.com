@@ -1,5 +1,194 @@
 .docs {
-  padding: 1rem 0;
+  $top: 4rem;
+  $menu-width: 15rem;
+  $toc-width: 14rem;
+
+  .algolia-autocomplete .ds-dropdown-menu {
+    width: 500px;
+    z-index: 99999 !important;
+  }
+
+  aside nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-menu {
+    flex: 0 0 $menu-width;
+    font-size: .875rem;
+
+    nav {
+      width: $menu-width;
+      padding: 0 1rem 1rem 1rem;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin: 0;
+      margin-top: $top + 5rem;
+      top: 0;
+      position: fixed;
+      ul {
+        list-style: none;
+      }
+    }
+
+    a {
+      color: $gray-darkish;
+      &.active {
+        color: $brand-primary;
+      }
+    }
+
+    &-search {
+      padding: 0 1rem;
+      position: fixed;
+      top: $top + 1rem;
+      z-index: 1000;
+      background-color: white;
+    }
+
+    &-title {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.750rem;
+      margin-bottom: 0.5rem
+    }
+    &-sub {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: .5rem;
+
+      &-item {
+        margin-bottom: .3rem;
+        a {
+          color: $gray-darkish;
+          text-decoration: none;
+          padding: .4rem 0;
+          &:hover {
+            color: $brand-primary;
+          }
+        }
+        &.active {
+          a {
+            color: $brand-primary;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    &-item {
+      padding-left: 0;
+      margin-bottom: .75rem;
+      h3 {
+        color: $gray-dark;
+        font-size: $font-size-base;
+        font-weight: 500;
+        display: block;
+        margin-top: 2rem;
+        margin-bottom: .5rem;
+      }
+    }
+
+    .api-reference-link {
+      padding-top: .5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      color: $gray-darkish;
+      &:hover {
+        text-decoration: none;
+        color: $brand-primary
+      }
+      &:after {
+        margin-left: 1rem;
+        color: $gray;
+        font-family: Ionicons;
+        content: '\f39c'
+      }
+    }
+  }
+
+  &-page {
+    min-width: 20rem;
+    flex-grow: 1;
+    padding: 0 1rem;
+    margin-top: $top;
+  }
+
+  &-toc {
+    flex: 0 0 $toc-width;
+    font-size: .875rem;
+
+    nav {
+      width: $toc-width;
+      padding: 1rem 0 1rem 0;
+      position: fixed;
+      top: $top;
+      bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto
+    }
+    // hacky way to hide 3rd level heading in little page TOC because Hugo does not allow filtering the TOC by level
+
+    nav#TableOfContents {
+      ul > li > ul > li > li {
+        display: none;
+      }
+    }
+
+    nav ul ul {
+      padding-left: 1rem;
+    }
+
+    &-mobile {
+      display: none;
+    }
+  }
+
+  // Responsive styles
+  aside nav,
+  .docs-page,
+  .markdown {
+    transition: 0.2s ease-in-out;
+    transition-property: transform, margin-left, opacity;
+    will-change: transform, margin-left;
+  }
+
+  @include media-breakpoint-down(md) {
+    .docs-toc {
+      display: none;
+    }
+    .docs-toc-mobile {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .docs-menu {
+      margin-left: -$menu-width;
+      font-size: $font-size-base;
+    }
+
+    .book-header {
+      display: flex;
+    }
+
+    #menu-control:checked + main {
+      .book-menu nav,
+      .book-page {
+        transform: translateX($menu-width);
+      }
+
+      .book-header label {
+        transform: rotate(90deg);
+      }
+
+      .markdown {
+        opacity: 0.25;
+      }
+    }
+  }
 
   &-cta-section-shortcode {
     margin-top: 1.5 * $spacer-y;

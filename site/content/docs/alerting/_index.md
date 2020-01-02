@@ -9,8 +9,6 @@ menu:
 Alerting in Checkly is pretty flexible and should address most common needs. You can tweak exactly when and how you should
 be alerted, on what channels like email, SMS, Slack etc. If you need more, you can integrate with Pagerduty!
 
-{{< page-toc >}}
-
 ## Alert settings
 
 The alert settings tab give you a lot of options to tailor when, how and how often you want to be alerted when 

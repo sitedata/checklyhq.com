@@ -1,0 +1,46 @@
+<aside class="docs-menu">
+  <form class="form-inline docs-menu-search">
+    <input class="form-control py-2" id="search" type="search" placeholder="Search..."/>
+  </form>
+  <nav>
+    <a
+        class="api-reference-link"
+        href="/docs/api"
+        target="_blank">API reference
+      <div class="badge badge-accent badge-sm ml-2">beta</div></a>
+    <ul class="docs-menu-content">
+      {{ $currentPage := . }} {{ range .Site.Menus.docs }} {{ if .HasChildren }}
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">{{.Name}}</div>
+        <ul class="docs-menu-sub">
+          {{range .Children}} {{ $has := $currentPage.IsMenuCurrent "docs" . }}
+          <li class="docs-menu-sub-item {{if $has}}active{{end}}">
+            <a href="{{.URL}}">
+              {{ partial "docs-title" . }}
+            </a>
+          </li>
+          {{end}}
+        </ul>
+      </li>
+      {{else}}
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">{{.Name}}</div>
+      </li>
+      {{end}} {{end}}
+    </ul>
+  </nav>
+
+  <!-- Restore menu position as soon as possible to avoid flickering -->
+  <script>
+    (function () {
+      var menu = document.querySelector('aside.docs-menu nav')
+  addEventListener('beforeunload', function () {
+        localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  })
+  menu.scrollTop = localStorage.getItem('menu.scrollTop')
+})()
+  </script>
+
+</aside>
+
+

@@ -1,6 +1,8 @@
 ---
 title: Pricing
 ---
+
+{{< columns >}}
 #### What are API checks?
 
 API checks are monitors that issue POST, GET and other typical HTTP requests at API endpoints. You have full control
@@ -23,7 +25,7 @@ are the same for all check types.
 Yes, we can customize the plan exactly to your needs. 500 API checks and 0 browser checks, or any combination really.
 Just <a href="#" class='open-intercom-link'>contact us</a> and we'll make you a quote. 
 
-<split>
+<--->
 
 #### Are all alerting integrations the same for all plans?
 
@@ -43,3 +45,4 @@ you owe: no double bookings. We will also add a proration line to your invoice.
 #### What payment types do you accept?
 
 We accept Visa, Mastercard and American Express credit card payments. All payments are handled by Stripe.
+{{< /columns >}}

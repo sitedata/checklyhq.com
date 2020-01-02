@@ -6,7 +6,6 @@ import cssImport from 'postcss-import'
 import cssnext from 'postcss-cssnext'
 import inlineCss from 'gulp-inline-css'
 import sass from 'gulp-sass'
-import pug from 'gulp-pug'
 import revall from 'gulp-rev-all'
 import del from 'del'
 
@@ -21,17 +20,6 @@ const hugoArgsDefault = ['-d', '../dist', '-s', 'site', '-v']
 
 // Development tasks
 gulp.task('hugo', (cb) => buildSite(cb))
-
-// Compile pug to HTML
-gulp.task('pug', function buildHTML () {
-  return gulp.src(['./src/layouts/**/*.pug', '!./src/layouts/partials/**/*'])
-    .pipe(pug({
-      doctype: 'html',
-      pretty: false
-    }))
-    .pipe(gulp.dest('./site/layouts'))
-    .pipe(browserSync.stream())
-})
 
 // Compile CSS with PostCSS
 gulp.task('css', function buildCss () {
@@ -102,7 +90,6 @@ gulp.task('reload', (done) => {
 })
 
 gulp.task('watch', () => {
-  gulp.watch('./src/layouts/**/*.pug', gulp.series('pug', 'reload'))
   gulp.watch('./src/js/**/*.js', gulp.series('js', 'reload'))
   gulp.watch('./src/scss/**/*.scss', gulp.series('css', 'reload'))
   gulp.watch('./src/fonts/**/*', gulp.series('fonts', 'reload'))
@@ -110,14 +97,14 @@ gulp.task('watch', () => {
 })
 
 // Development server with browsersync
-gulp.task('server', gulp.series(['pug', 'hugo', 'css', 'js', 'fonts', 'serve', 'watch']))
+gulp.task('server', gulp.series(['hugo', 'css', 'js', 'fonts', 'serve', 'watch']))
 
 gulp.task('clean', () => {
   return del(['./dist/**/*'])
 })
 
 // Build/production tasks
-gulp.task('render', gulp.series(['pug', 'css', 'js', 'fonts', 'hugo']))
+gulp.task('render', gulp.series(['css', 'js', 'fonts', 'hugo']))
 gulp.task('build', gulp.series(['clean', 'render', 'hash']))
 
 /**

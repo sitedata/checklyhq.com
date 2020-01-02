@@ -8,8 +8,6 @@ menu:
 This quick start should give you all the info to create your first browser check with Checkly. You should have some prior
 knowledge working with Javascript and/or Node.js.
 
-{{< page-toc >}}
-
 ## What is a browser check?
 
 The five lines of code below are already a valid browser check. Its usefulness might be not that great, but still...

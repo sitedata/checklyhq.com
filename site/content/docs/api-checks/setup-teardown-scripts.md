@@ -6,8 +6,6 @@ menu:
     parent: "API Checks"
 ---
 
-{{< page-toc >}}
-
 You can tailor each HTTP request made by an API check to your exact situation by using setup and/or teardown scripts.
 
 - **Setup scripts** give you access to properties like the URL, headers and query parameters of the HTTP request as well as 
@@ -18,10 +16,7 @@ response data for regulatory reasons.
 
 ![setup and teardown script for http requests](/docs/images/api-checks/setup-teardown-1.png)
 
-
 Both script types are written in Javascript and have access to popular libraries like moment, axios and 
-
-{{< page-toc >}}
 
 ## Script execution flow
 
@@ -53,21 +48,21 @@ Note: any libraries need to be explicitly imported using a 'require' statement.
 
 ## Setup script examples
 
-### Example: Add a custom header
+### Add a custom header
 
 ```javascript
 // request.headers is a standard Javascript object
 request.headers['X-Custom-Header'] = 'my value'
 ```
 
-### Example: Update the URL
+### Update the URL
 
 ```javascript
 // append a value to the request url
 request.url = request.url + '/extra'
 ```
 
-### Example: Fetch an external token 
+### Fetch an external token 
 
 ```javascript
 // explicitly import axios
@@ -80,7 +75,7 @@ const result = await axios.get('https://example.com/api/token')
 request.queryParameters['token'] = result.token
 ```
 
-### Example: Sign an HMAC request
+### Sign an HMAC request
 
 ```javascript
 // explicitly import libraries
@@ -110,7 +105,7 @@ environment['ENCRYPTED_SIGNATURE'] = encryptedSignature
 environment['CONTENT_TYPE'] = contentType
 ```
 
-### Example: Sign an AWS API request
+### Sign an AWS API request
 
 ```javascript
 // explicitly import libraries
@@ -139,7 +134,7 @@ const result = await axios.get(url, { headers: signature.headers })
 environment['AWS_V4_RESULT'] = result.data
 ```
 
-### Example: fetch an OAuth2 access token using the `client_credentials` grant
+### fetch an OAuth2 access token using the `client_credentials` grant
 
 This example works great for OAuth2 providers like [Okta](https://www.okta.com/) and [Auth0](https://auth0.com/) that 
 provide the "client_credentials" grant type.
@@ -173,7 +168,7 @@ const { access_token } = await requestPromise({
 request.headers['Authorization'] = `Bearer ${access_token}`
 ```
 
-### Example: fetch an OAuth2 access token using the `password` grant
+### fetch an OAuth2 access token using the `password` grant
 
 
 This example works great for OAuth2 providers like [Okta](https://www.okta.com/) and [Auth0](https://auth0.com/) that 
@@ -205,7 +200,7 @@ const { access_token } = await requestPromise({
 // set the Authorization header
 request.headers['Authorization'] = `Bearer ${access_token}`
 ```
-### Example: create a JWT token using the jsonwebtoken library
+### create a JWT token using the jsonwebtoken library
 
 ```javascript
 // we use the jsonwebtoken library as it makes creating JTW's really easy
@@ -244,13 +239,13 @@ Checkly backend.
 
 ## Teardown script examples
 
-### Example: update response status
+### update response status
 
 ```javascript
 response.statusCode = 201
 ```
 
-### Example: delete created test data based on response
+### delete created test data based on response
 
 This is an actual script we use to monitor our own "create API check" API endpoint. It runs after a normal API check where
 we POST an JSON blob to the `/accounts/<uuid>/checks` endpoint, which returns the created resource with its ID.
@@ -277,7 +272,7 @@ const headers = {
 await axios.delete(host + path, { headers })
 ```
 
-### Example: updating the JSON response body
+### updating the JSON response body
 
 ```javascript
 // Parse the body as JSON
