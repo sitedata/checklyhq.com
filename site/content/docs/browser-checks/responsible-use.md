@@ -14,5 +14,5 @@ purpose of monitoring web applications and sites. This means we actively keep an
 - overuse / spamming the interactive script runner
 
 Checkly uses multiple mitigating techniques to make sure this type of behaviour and traffic is flagged and dealed with as
-soon as possible. If you have any questions about this, please contact us at info@checklyhq.com
+soon as possible. If you have any questions about this, please contact us at support@checklyhq.com
 

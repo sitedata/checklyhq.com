@@ -56,7 +56,7 @@ In addition, we may use your contact information to market to you, and provide y
 our products and services, including but not limited to our Service. If you decide at any time that you no
 longer wish to receive such information or communications from us, please un-follow us, or follow the unsubscribe
 instructions provided in any of the communications. You may also opt out from receiving commercial email
-from us by sending your request to us by email at info@checklyhq.com.
+from us by sending your request to us by email at support@checklyhq.com.
 
 ## 5. Log Data
 When you visit the Site, our servers automatically record information that your browser sends whenever you

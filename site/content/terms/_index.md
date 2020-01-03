@@ -80,4 +80,4 @@ f. Pink Robots strives to achieve, but does not warrant, that: 1) The Service wi
 g. You are responsible for not submitting sensitive data to the Service, including but not limited to credit card information, medical files or anything deemed confidential. The Service offers ways to sanitize the data submitted to the Service.  
 
 
-Questions about the Terms of Use may be directed to the email address info@checklyhq.com.  
+Questions about the Terms of Use may be directed to the email address support@checklyhq.com.  
