@@ -2,9 +2,9 @@
 title: About us
 ---
 
-# About us 🏡
+# About us
 
-Checkly is a bootstrapped company founded in 2018 and has been growing steadily. 
+Checkly is a bootstrapped company founded in 2018 and has been growing steadily.  
 We are a small team, working from Berlin 🇩🇪 (mostly) but 100% committed to remote work.
 
 Our customers are spread accross the world, from China to Colorado. From Sweden to South Africa.  
@@ -17,11 +17,10 @@ If you want to join us, have a look at our [jobs page](/jobs).
 
 # We ❤️ open source
 
-We aim to donate 1% of our revenue to non-corporate backed open source maintainers. 
-
+We aim to donate 1% of our revenue to non-corporate backed open source maintainers.  
 See [https://github.com/tnolet?tab=sponsoring](https://github.com/tnolet?tab=sponsoring) for our current sponsorship status.
 
-# Imprint 📄
+# Imprint
 
 Checkly is a service run by Pink Robots B.V. with its registered office at: 
 
