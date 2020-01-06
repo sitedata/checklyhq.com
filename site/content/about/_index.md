@@ -9,9 +9,9 @@ We are a small team, working from Berlin 🇩🇪 (mostly) but 100% committed to
 
 Our customers are spread accross the world, from China to Colorado. From Sweden to South Africa.  
 
-We care about open communication, sharing knowledge and delivering an awesome service.   
-We work on Checkly and open source projects like Puppeteer Recorder.  
-We don't take ourselves too serious; we take our work and our customers very serious.  
+- We care about open communication, sharing knowledge and delivering an awesome service.   
+- We work on Checkly and open source projects like Puppeteer Recorder.  
+- We don't take ourselves too serious; we take our work and our customers very serious.  
 
 If you want to join us, have a look at our [jobs page](/jobs).
 
