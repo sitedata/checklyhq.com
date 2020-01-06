@@ -43,7 +43,7 @@ export default {
     index: ["./js/index"]
   },
   output: {
-    path: path.join(__dirname, "dist/js"),
+    path: path.join(__dirname, "public/js"),
     publicPath: "/",
     filename: "[name].js"
   },

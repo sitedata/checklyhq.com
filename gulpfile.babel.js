@@ -16,7 +16,7 @@ import webpackConfig from './webpack.conf'
 const browserSync = BrowserSync.create()
 
 // Hugo arguments
-const hugoArgsDefault = ['-d', '../dist', '-s', 'site', '-v']
+const hugoArgsDefault = ['-d', '../public', '-s', 'site', '-v']
 
 // Development tasks
 gulp.task('hugo', (cb) => buildSite(cb))
@@ -26,7 +26,7 @@ gulp.task('css', function buildCss () {
   return gulp.src('./src/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([cssImport({from: './src/css/main.css'}), cssnext()]))
-    .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('./public/css'))
     .pipe(browserSync.stream())
 })
 
@@ -43,42 +43,42 @@ gulp.task('js', (cb) => {
 // Move all fonts in a  directory
 gulp.task('fonts', () => (
   gulp.src('./src/fonts/**/*')
-    .pipe(gulp.dest('./dist/fonts'))
+    .pipe(gulp.dest('./public/fonts'))
     .pipe(browserSync.stream())
 ))
 
 gulp.task('assets', () => (
   gulp.src('./src/fonts/**/*')
-    .pipe(gulp.dest('./dist/fonts'))
+    .pipe(gulp.dest('./public/fonts'))
     .pipe(browserSync.stream())
 ))
 
 // copy all rendered API docs
 gulp.task('api-docs', () => (
   gulp.src(['./api-docs/shins/**/*', '!./api-docs/shins/node_modules/', '!./api-docs/shins/node_modules/**/*'])
-    .pipe(gulp.dest('./dist/docs/api'))
+    .pipe(gulp.dest('./public/docs/api'))
     .pipe(browserSync.stream())
 ))
 
 gulp.task('hash', () => {
-  return gulp.src('./dist/**')
+  return gulp.src('./public/**')
     .pipe(revall.revision({
       dontRenameFile: [/^\/favicon.ico$/g, '.html', 'sitemap.xml', 'robots.txt', '.woff', '.eot', '.ttf'],
       dontUpdateReference: ['.woff', '.eot', '.ttf']
     }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./public'))
 })
 
 gulp.task('inline', function () {
-  return gulp.src('./dist/index.html')
+  return gulp.src('./public/index.html')
     .pipe(inlineCss())
-    .pipe(gulp.dest('./dist/index.html'))
+    .pipe(gulp.dest('./public/index.html'))
 })
 
 gulp.task('serve', (done) => {
   browserSync.init({
     server: {
-      baseDir: './dist'
+      baseDir: './public'
     }
   })
   done()
@@ -93,14 +93,14 @@ gulp.task('watch', () => {
   gulp.watch('./src/js/**/*.js', gulp.series('js', 'reload'))
   gulp.watch('./src/scss/**/*.scss', gulp.series('css', 'reload'))
   gulp.watch('./src/fonts/**/*', gulp.series('fonts', 'reload'))
-  gulp.watch('./site/**/*', gulp.series('hugo', 'reload'))
+  gulp.watch(['./content/**/*', './layouts/**/*'], gulp.series('hugo', 'reload'))
 })
 
 // Development server with browsersync
 gulp.task('server', gulp.series(['hugo', 'css', 'js', 'fonts', 'serve', 'watch']))
 
 gulp.task('clean', () => {
-  return del(['./dist/**/*'])
+  return del(['./public/**/*'])
 })
 
 // Build/production tasks

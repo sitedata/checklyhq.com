@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+  <title>Command Line triggers | Checkly </title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Triggers enable you to call a check from a CI/CD pipeline, a bash shell or programmatically in your code. Create a trigger URL in the CI/CD tab of your check.
+Calling triggers The trigger URL can be called with a simple HTTP GET request.
+Calling the trigger (with cURL for example) executes a synchronous check, e.g. the cURL request will &ldquo;hang&rdquo; until the checks is finished.
+For most API checks this should be fine and resolve with a second or so." />
+  <meta name="viewport" content="width=device-width" initial-scale="1" maximum-scale="1" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Command Line triggers | Checkly " />
+  <meta property="og:description" content="Triggers enable you to call a check from a CI/CD pipeline, a bash shell or programmatically in your code. Create a trigger URL in the CI/CD tab of your check.
+Calling triggers The trigger URL can be called with a simple HTTP GET request.
+Calling the trigger (with cURL for example) executes a synchronous check, e.g. the cURL request will &ldquo;hang&rdquo; until the checks is finished.
+For most API checks this should be fine and resolve with a second or so." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://checklyhq.com/images/dashboard-screen@2x.png" />
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Command Line triggers | Checkly " />
+  <meta property="twitter:description" content="Triggers enable you to call a check from a CI/CD pipeline, a bash shell or programmatically in your code. Create a trigger URL in the CI/CD tab of your check.
+Calling triggers The trigger URL can be called with a simple HTTP GET request.
+Calling the trigger (with cURL for example) executes a synchronous check, e.g. the cURL request will &ldquo;hang&rdquo; until the checks is finished.
+For most API checks this should be fine and resolve with a second or so." />
+  <meta property="og:image" content="https://checklyhq.com/images/dashboard-screen@2x.png" />
+  <meta name="msvalidate.01" content="36F243A91FAA24DE468D8A8EECF33554" />
+  <link rel="icon" type="image/png" href="/images/racoon_favicon.png" />
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+  <link rel="alternate" href="https://checklyhq.com/docs/cicd/triggers/" hreflang="en-us" />
+  <link rel="canonical" href="https://checklyhq.com/docs/cicd/triggers/" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script async src="https://cdn.cookielaw.org/consent/e4c8a868-c0ad-4c0c-b61e-f6eb6cad2810.js" type="text/javascript" charset="UTF-8"></script>
+  <script type="text/javascript">
+    function OptanonWrapper() {}
+  </script>
+  <style>
+    .qc-cmp-ui {
+      background-color: #45c8f1 !important;
+    }
+
+    .qc-cmp-publisher-purposes-table .qc-cmp-table-header {
+      background-color: #fafafa !important;
+    }
+
+    .qc-cmp-publisher-purposes-table .qc-cmp-table-row {
+      background-color: #ffffff !important;
+    }
+  </style>
+  
+  <script type="text/plain" async src="https://www.googletagmanager.com/gtag/js?id=UA-110523681-1" class="optanon-category-2"></script>
+  <script type="text/plain" async class="optanon-category-2">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-110523681-1');
+  </script>
+  
+  <script>
+    window.intercomSettings = {
+      app_id: 'ep3ft8gg',
+      custom_launcher_selector: '.open-intercom-link'
+    }
+  </script>
+  <script async class="optanon-category-2">(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/ep3ft8gg';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+
+  <script type="text/javascript" class="optanon-category-2">
+    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+    heap.load("3553865455");
+  </script>
+
+  
+  <script type="text/javascript" class="optanon-category-2">
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:717179,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+</head>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-toggleable-md fixed-top">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"><span></span><span></span><span></span></button>
+    <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.svg" width="120" alt="checkly logo"/></a><a
+      class="callout" href="/jobs">We're hiring!</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                         id="navbarDropdownMenuLink" href="#">Product</a>
+          <div class="dropdown-menu big-drop-shadow product-dropdown"><a class="dropdown-item"
+                                                                         href="/product/api-monitoring/">API
+            Monitoring</a><a class="dropdown-item" href="/product/transaction-monitoring/">Site Transaction
+            Monitoring</a><a class="dropdown-item" href="/product/alerting/">Alerting</a></div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="/docs">Docs</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://blog.checklyhq.com" target="_blank">Blog</a></li>
+        
+          <form class="form-inline">
+            <input class="form-control py-2" id="search" type="search" placeholder="Search the docs..."/>
+          </form>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="d-flex container-fluid docs">
+    <aside class="docs-menu">
+  <nav>
+    <a
+        class="api-reference-link"
+        href="/docs/api"
+        target="_blank">API reference
+      <div class="badge badge-accent badge-sm ml-2">beta</div></a>
+    <ul class="docs-menu-content">
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">Monitoring</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/monitoring/">
+              How we run checks
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/monitoring/global-locations/">
+              Global locations
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/monitoring/how-we-store-data/">
+              How we store data
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/monitoring/storing-secrets/">
+              Storing secrets
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/monitoring/white-listing/">
+              White listing &amp; filtering traffic
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">API Checks</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/api-checks/">
+              Overview
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/api-checks/request-settings/">
+              HTTP request settings
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/api-checks/variables/">
+              Environment variables
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/api-checks/assertions/">
+              Assertions
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/api-checks/limits/">
+              Response time limits
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/api-checks/setup-teardown-scripts/">
+              Setup &amp; teardown scripts
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/api-checks/timouts-timing/">
+              Timeouts and timing phases
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">Browser Checks</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/">
+              Quickstart
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/scraping-onpage-elements/">
+              Scraping &amp; asserting on page elements
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/screenshots/">
+              Taking screenshots
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/variables/">
+              Environment variables
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/login-scenarios/">
+              Login scenarios
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/partials-code-snippets/">
+              Partials and code snippets
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/using-mocha/">
+              Using Mocha with Puppeteer
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/timeouts/">
+              Timeouts
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/responsible-use/">
+              Responsible use
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/browser-checks/runner-specification/">
+              Runner specification
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">Alerting</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/alerting/">
+              Alert settings
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/alerting/alert-channels/">
+              Alert channels
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/alerting/alert-states/">
+              Alert states
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/alerting/ssl-expiration/">
+              SSL certificate expiration
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/alerting/sms-delivery/">
+              SMS delivery
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/alerting/webhooks/">
+              Webhooks
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">CI/CD integration</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/cicd/github/">
+              Github deployments
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item active">
+            <a href="/docs/cicd/triggers/">
+              Command Line triggers
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">Dashboards</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/dashboards/">
+              Url and Custom Domain
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/dashboards/dashboard-look-feel/">
+              Look &amp; feel
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">Teams</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/teams/">
+              Adding team members
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/teams/about-roles/">
+              About roles
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">Integrations</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/integrations/pagerduty/">
+              Pagerduty
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/integrations/prometheus/">
+              Prometheus
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/integrations/github/">
+              Github
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+        
+      <li class="docs-menu-item">
+        <div class="docs-menu-title">Puppeteer Recorder</div>
+        <ul class="docs-menu-sub">
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/puppeteer-recorder/">
+              Overview
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/puppeteer-recorder/installation/">
+              Installation
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/puppeteer-recorder/basic-usage/">
+              Basic Usage
+            </a>
+          </li>
+           
+          <li class="docs-menu-sub-item ">
+            <a href="/docs/puppeteer-recorder/development/">
+              Development
+            </a>
+          </li>
+          
+        </ul>
+      </li>
+       
+    </ul>
+  </nav>
+
+  
+  <script>
+    (function () {
+      var menu = document.querySelector('aside.docs-menu nav')
+  addEventListener('beforeunload', function () {
+        localStorage.setItem('menu.scrollTop', menu.scrollTop)
+  })
+  menu.scrollTop = localStorage.getItem('menu.scrollTop')
+})()
+  </script>
+
+</aside>
+
+
+
+    <div class="docs-page">
+      <article class="markdown">
+        <h1>Command Line triggers</h1>
+        
+        <div class="docs-toc-mobile">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#calling-triggers">Calling triggers</a></li>
+    <li><a href="#optional-deployment-parameters">Optional deployment parameters</a></li>
+  </ul>
+</nav>
+        </div>
+        <p>Triggers enable you to call a check from a CI/CD pipeline, a bash shell or programmatically in your code.
+Create a trigger URL in the <strong>CI/CD</strong> tab of your check.</p>
+<p><img src="/docs/images/cicd/triggers.png" alt="trigger monitoring checks from CI/CD"></p>
+<h2 id="calling-triggers">Calling triggers</h2>
+<p>The trigger URL can be called with a simple HTTP <code>GET</code> request.</p>
+<p>Calling the trigger (with cURL for example) executes a <strong>synchronous</strong> check, e.g. the cURL request will &ldquo;hang&rdquo; until
+the checks is finished.</p>
+<p>For most <strong>API checks</strong> this should be fine and resolve with a second or so.</p>
+<p>For <strong>browser checks</strong>, this could take a substantial amount of time, e.g. 10 to 30 seconds for
+typical checks. Be sure to take this into account when configuring timeout setting when calling the trigger URL.</p>
+<p>A trigger returns two possible <strong>status codes</strong>:</p>
+<ul>
+<li><code>200 OK</code> means your checks and all its assertions passed successfully.</li>
+<li><code>503 Service Unavailable</code> means your check failed, either on the request or the assertions.</li>
+</ul>
+<p>In addition to the status code, the trigger returns a JSON response. Because the trigger URL allows direct
+access to running the check with further authentication, Checkly limits the amount of information in the response
+for API check triggers to a <code>hasFailures</code> boolean and the <code>responseTime</code> in milliseconds.</p>
+<pre><code>http https://api.checklyhq.com/checks/3355b7c2-c563-8884-a88b-0e1313300033/trigger/Ew2hAXAlhXXk
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Encoding: gzip
+Content-Type: application/json; charset=utf-8
+Date: Fri, 29 Jun 2018 12:05:17 GMT
+
+{
+    &quot;hasFailures&quot;: false,
+    &quot;responseTime&quot;: 238.5946100000292
+}
+</code></pre><blockquote>
+<p>Note: triggers are rate limited to <strong>10 requests per minute per trigger</strong> and are only run from the <strong>Frankfurt region</strong></p>
+</blockquote>
+<h2 id="optional-deployment-parameters">Optional deployment parameters</h2>
+<p>You can add the following query parameters to any trigger request. This enables you to record deployments in the Checkly
+event timeline, in turn enabling you to track application performance across deploys.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>required</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deployment</code></td>
+<td>Boolean</td>
+<td>false</td>
+<td>Set to true to record each trigger invocation as a deployment event.</td>
+</tr>
+<tr>
+<td><code>repository</code></td>
+<td>String</td>
+<td>true</td>
+<td>Repository name, i.e. &ldquo;checkly/backend-api&rdquo;</td>
+</tr>
+<tr>
+<td><code>sha</code></td>
+<td>String</td>
+<td>true</td>
+<td>Git hash, tag, version &ldquo;v1.0.1&rdquo; or other identifier making this deploy unique</td>
+</tr>
+</tbody>
+</table>
+<p>For example, this curl request</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">curl -X GET <span class="s2">&#34;http://api.checklyhq.com/checks/&lt;uuid&gt;/trigger/c0hYw?deployment=true&amp;repository=acme/customer-api&amp;sha=v1.0.2-beta&#34;</span>
+</code></pre></div><p>Would record the following deployment on your events tab.</p>
+<p><img src="/docs/images/cicd/trigger_parameters.png" alt="deployment parameters from CI/CD"></p>
+<blockquote>
+<p>Note: if you want to run multiple triggers for one deployment, just provide the same <code>repository</code> and <code>sha</code> parameter on each request. We will only record one deployment.</p>
+</blockquote>
+</article>
+      <hr class="pt-2 mb-2" />
+      
+      <div class="text-right mb-4">
+        <a href="https://checklyhq.com/docs/integrations/prometheus/">Next: Prometheus
+        </a>
+      </div>
+      
+    </div>
+    
+    <aside class="docs-toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#calling-triggers">Calling triggers</a></li>
+    <li><a href="#optional-deployment-parameters">Optional deployment parameters</a></li>
+  </ul>
+</nav>
+    </aside>
+    
+  </div>
+
+  
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script src="/js/index.js"></script>
+
+  <script>
+    docsearch({
+      apiKey: 'b2b616fdea14b860ff00c72fa72bf267',
+      indexName: 'checkly_docs',
+      appId: 'LCMJSZN73Z',
+      inputSelector: '#search',
+      debug: false
+    })
+  </script>
+</body>
+</html>
