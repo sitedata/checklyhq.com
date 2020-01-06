@@ -13,11 +13,6 @@ export default {
         }
       },
       {
-        test: /\.(pug|jade)(\?.*)?$/,
-        exclude: /node_modules/,
-        loader: ['html-loader', 'pug-html-loader']
-      },
-      {
         test:/\.(s*)css$/,
         use:['css-loader', 'sass-loader']
       },
