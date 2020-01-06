@@ -3,7 +3,7 @@ languageCode = "en-us"
 languageLang = "en"
 title = "API monitoring and Site Transaction Monitoring for DevOps Teams"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
-enableGitInfo = true
+enableGitInfo = false
 enableRobotsTXT = true
 
 pygmentsCodeFences = true

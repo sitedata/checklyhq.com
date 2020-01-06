@@ -1,9 +1,9 @@
 ---
-title: Alert settings
+title: 'Alert settings'
 weight: 1
 menu:
-  docs:
-    parent: "Alerting"
+    docs: {parent: Alerting}
+lastmod: 01-06-2020
 ---
 
 Alerting in Checkly is pretty flexible and should address most common needs. You can tweak exactly when and how you should

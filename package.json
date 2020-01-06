@@ -71,7 +71,7 @@
   "hugo-bin": {
     "buildTags": "extended"
   },
-  "engines" : {
-    "node" : ">=8.0.0 <11.0.0"
+  "engines": {
+    "node": ">=8.0.0 <11.0.0"
   }
 }
