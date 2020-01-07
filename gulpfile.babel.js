@@ -93,7 +93,7 @@ gulp.task('watch', () => {
   gulp.watch('./src/js/**/*.js', gulp.series('js', 'reload'))
   gulp.watch('./src/scss/**/*.scss', gulp.series('css', 'reload'))
   gulp.watch('./src/fonts/**/*', gulp.series('fonts', 'reload'))
-  gulp.watch(['./content/**/*', './layouts/**/*'], gulp.series('hugo', 'reload'))
+  gulp.watch(['./site/content/**/*', './site/layouts/**/*'], gulp.series('hugo', 'reload'))
 })
 
 // Development server with browsersync
