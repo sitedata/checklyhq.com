@@ -30,7 +30,7 @@ You can use the following event related variables in both URL and payload.
 | `CHECK_ID`          | The UUID of the check                                        |
 | `CHECK_TYPE`        | The check type, i.e. API or BROWSER.                         |
 | `ALERT_TITLE`       | Human readable title, e.g. 'Check "My API check" has failed' |
-| `ALERT_TYPE`        | Type of alert, either "ALERT_FAIL" or "ALERT_RECOVERY"       |
+| `ALERT_TYPE`        | Type of alert, either "ALERT_FAIL", "ALERT_RECOVERY", "ALERT_DEGRADED" or  "ALERT_DEGRADED_RECOVERY" |
 | `CHECK_RESULT_ID`   | The UUID of the result that triggered this message           |
 | `RESPONSE_TIME`     | The reported response time for this result                   |
 | `RUN_LOCATION`      | The location where the check ran, i.e. "N. California"       |
