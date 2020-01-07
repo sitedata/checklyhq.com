@@ -19,12 +19,12 @@
  Setup scripts give you access to properties like the URL, headers and query parameters of the HTTP request as well as all environment variables. Popular use cases are signing HMAC request. requesting tokens and setting up test data. Teardown scripts give you access to all the same data as the setup scripts plus the response object, allowing you to read and modify the response." />
   <meta property="og:image" content="https://checklyhq.com/images/dashboard-screen@2x.png" />
   <meta name="msvalidate.01" content="36F243A91FAA24DE468D8A8EECF33554" />
-  <link rel="icon" type="image/png" href="/images/racoon_favicon.png" />
+  <link rel="icon" type="image/png" href="/images/racoon_favicon.3c48bb28.png" />
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
   <link rel="alternate" href="https://checklyhq.com/docs/api-checks/setup-teardown-scripts/" hreflang="en-us" />
   <link rel="canonical" href="https://checklyhq.com/docs/api-checks/setup-teardown-scripts/" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.e5e1af43.css" />
   <script async src="https://cdn.cookielaw.org/consent/e4c8a868-c0ad-4c0c-b61e-f6eb6cad2810.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript">
     function OptanonWrapper() {}
@@ -87,7 +87,7 @@
   <div class="container">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"><span></span><span></span><span></span></button>
-    <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.svg" width="120" alt="checkly logo"/></a><a
+    <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.afa37391.svg" width="120" alt="checkly logo"/></a><a
       class="callout" href="/jobs">We're hiring!</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
@@ -504,7 +504,7 @@ all environment variables. Popular use cases are signing HMAC request. requestin
 object, allowing you to read and modify the response. Use cases are cleaning up test data and scrubbing sensitive
 response data for regulatory reasons.</li>
 </ul>
-<p><img src="/docs/images/api-checks/setup-teardown-1.png" alt="setup and teardown script for http requests"></p>
+<p><img src="/docs/images/api-checks/setup-teardown-1.71bfba25.png" alt="setup and teardown script for http requests"></p>
 <p>Both script types are written in Javascript and have access to popular libraries like moment, axios and</p>
 <h2 id="script-execution-flow">Script execution flow</h2>
 <p>Setup and teardown scripts are executed in a specific order in the Checkly backend. Being aware of this order is important
@@ -517,7 +517,7 @@ script. This means your teardown script <em>can run multiple times!</em></li>
 <li>After the teardown script has run, all results are collected in our central storage.</li>
 </ol>
 <p>Both setup and teardown scrips have a <strong>maximum execution time of 4 seconds</strong>.</p>
-<p><img src="/docs/images/api-checks/setup-teardown-2.png" alt="setup and teardown script execution"></p>
+<p><img src="/docs/images/api-checks/setup-teardown-2.b1d56145.png" alt="setup and teardown script execution"></p>
 <div class="alert alert-warning">Setup scripts run once per check. Teardown scripts run on each data center location.</div>
 
 <h2 id="setup-scripts">Setup scripts</h2>
@@ -717,7 +717,7 @@ Notice how we reuse the environment variables to pass in credentials and tokens.
 <h2 id="reusable-code-snippets">Reusable code snippets</h2>
 <p>To DRY (Dont&rsquo; Repeat Yourself) up your code, we advise you strongly to create all setup and teardown scripts as code
 snippets. You can create, update and delete code snippets in the account section. Snippets are available to all checks.</p>
-<p><img src="/docs/images/api-checks/snippets-list.png" alt="reusable code snippets"></p>
+<p><img src="/docs/images/api-checks/snippets-list.b5f0971c.png" alt="reusable code snippets"></p>
 <p>Once created, just select any snippets from the drop down menu in setup and teardown scripts section of your API check.</p>
 <h2 id="built-in-variables">Built-in variables</h2>
 <p>Inside each script, you have access to certain data structures of the API check lifecycle.</p>
@@ -934,7 +934,7 @@ standard library or to arbitrary NPM modules. Currently every runner is equipped
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/index.9773e75c.js"></script>
 
   <script>
     docsearch({

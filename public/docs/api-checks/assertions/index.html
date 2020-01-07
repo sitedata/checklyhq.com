@@ -19,12 +19,12 @@ How assertions work Assertions are statements you create that check one aspect o
 How assertions work Assertions are statements you create that check one aspect of the HTTP response. You can create multiple assertions for one check that assert various aspects of a response, for example:" />
   <meta property="og:image" content="https://checklyhq.com/images/dashboard-screen@2x.png" />
   <meta name="msvalidate.01" content="36F243A91FAA24DE468D8A8EECF33554" />
-  <link rel="icon" type="image/png" href="/images/racoon_favicon.png" />
+  <link rel="icon" type="image/png" href="/images/racoon_favicon.3c48bb28.png" />
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
   <link rel="alternate" href="https://checklyhq.com/docs/api-checks/assertions/" hreflang="en-us" />
   <link rel="canonical" href="https://checklyhq.com/docs/api-checks/assertions/" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.e5e1af43.css" />
   <script async src="https://cdn.cookielaw.org/consent/e4c8a868-c0ad-4c0c-b61e-f6eb6cad2810.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript">
     function OptanonWrapper() {}
@@ -87,7 +87,7 @@ How assertions work Assertions are statements you create that check one aspect o
   <div class="container">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"><span></span><span></span><span></span></button>
-    <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.svg" width="120" alt="checkly logo"/></a><a
+    <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.afa37391.svg" width="120" alt="checkly logo"/></a><a
       class="callout" href="/jobs">We're hiring!</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
@@ -490,9 +490,9 @@ How assertions work Assertions are statements you create that check one aspect o
 <li>HTTP response JSON object has a key called &ldquo;accountBalance&rdquo; with a value greater than 9999</li>
 </ul>
 <p>In each assertion, a <strong>source</strong> is connected to a <strong>comparison</strong> and a <strong>target</strong>.</p>
-<p><img src="/docs/images/api-checks/assertions-1.png" alt="api monitoring assertions example 1"></p>
+<p><img src="/docs/images/api-checks/assertions-1.e8f220b6.png" alt="api monitoring assertions example 1"></p>
 <p>In some cases a <strong>property</strong> is added, for example when asserting headers or JSON response bodies.</p>
-<p><img src="/docs/images/api-checks/assertions-2.png" alt="api monitoring assertions example 2"></p>
+<p><img src="/docs/images/api-checks/assertions-2.211a674f.png" alt="api monitoring assertions example 2"></p>
 <p>Assertions are executed from top to bottom. If one assertion fails, the full check is considered as failed.</p>
 <h2 id="source">Source</h2>
 <p>On each API check assertion, the following sources are available:</p>
@@ -715,24 +715,24 @@ module</a> under the hood.</p>
 <h3 id="asserting-basic-types">Asserting basic types</h3>
 <p>Asserting string, boolean and number values works exactly as you'd expect, e.g. the example below asserts the number value of
 the <code>id</code> property is greater than <code>2000</code>.</p>
-<p><img src="/docs/images/api-checks/assertions-4.png" alt="api monitoring assertions example 4"></p>
+<p><img src="/docs/images/api-checks/assertions-4.52a53274.png" alt="api monitoring assertions example 4"></p>
 <h3 id="nested-properties">Nested properties</h3>
 <p>You can traverse a JSON object using a dot notation. In the example below we are checking the string-based <code>size</code>
 property that is part of the <code>product</code> object in the JSON response.</p>
-<p><img src="/docs/images/api-checks/assertions-3.png" alt="api monitoring assertions JSON object"></p>
+<p><img src="/docs/images/api-checks/assertions-3.43a18a11.png" alt="api monitoring assertions JSON object"></p>
 <p>This next example checks for a <strong>boolean</strong> value in the <code>owner.site_admin</code> property</p>
-<p><img src="/docs/images/api-checks/assertions-5.png" alt="api monitoring assertions nested JSON object"></p>
+<p><img src="/docs/images/api-checks/assertions-5.3b5b5d15.png" alt="api monitoring assertions nested JSON object"></p>
 <h3 id="asserting-arrays">Asserting arrays</h3>
 <p>For response bodies with JSON arrays you use JSON paths <code>[]</code> expressions.</p>
 <p>In the first example below we check if the first item in our result array has a property <code>title</code></p>
-<p><img src="/docs/images/api-checks/assertions-6.png" alt="api monitoring assertions nested JSON array"></p>
+<p><img src="/docs/images/api-checks/assertions-6.28105299.png" alt="api monitoring assertions nested JSON array"></p>
 <p>In the next example we pick the last item in the array and check if the <code>customerId</code> property has the value <code>123abc</code></p>
-<p><img src="/docs/images/api-checks/assertions-7.png" alt="api monitoring assertions nested JSON array pick item"></p>
+<p><img src="/docs/images/api-checks/assertions-7.cdabb814.png" alt="api monitoring assertions nested JSON array pick item"></p>
 <p>In this example we pick the item with index value 4. This is the 5th item as array indexes start at 0. We then assert
 that the <code>responseTime</code> property is less than <code>2000</code>.</p>
-<p><img src="/docs/images/api-checks/assertions-8.png" alt="api monitoring assertions nested JSON array pick nth item"></p>
+<p><img src="/docs/images/api-checks/assertions-8.f844319c.png" alt="api monitoring assertions nested JSON array pick nth item"></p>
 <p>In the last example we check if the returned array has more than 10 items.</p>
-<p><img src="/docs/images/api-checks/assertions-9.png" alt="api monitoring array has more than 10 items"></p>
+<p><img src="/docs/images/api-checks/assertions-9.75e31329.png" alt="api monitoring array has more than 10 items"></p>
 <h2 id="deprecated-custom-non-json-path-properties">Deprecated: Custom, non-JSON path properties</h2>
 <p>Before we released the feature to use JSON path queries, Checkly had a custom way of querying the contents of a JSON
 response body.</p>
@@ -740,7 +740,7 @@ response body.</p>
 powerful.</p>
 <p>For reference, here is an example. We are checking the <code>size</code> property that is part of the product object in the JSON response
 and has a value of &lsquo;XL&rsquo;.</p>
-<p><img src="/docs/images/api-checks/assertions-dep-1.png" alt="api monitoring deprecated custom query"></p>
+<p><img src="/docs/images/api-checks/assertions-dep-1.bb569f8c.png" alt="api monitoring deprecated custom query"></p>
 <h2 id="using-regular-expressions">Using regular expressions</h2>
 <p>Regular expressions give you the power to extract specific parts of text from a larger text using <strong>capturing groups</strong>.
 You can use regular expressions with two assertions sources:</p>
@@ -768,13 +768,13 @@ The first item <code>quick brown fox</code> is the full match, we do not return.
 <h3 id="text-body-assertions-with-regular-expressions">Text body assertions with regular expressions</h3>
 <p>If our API returns HTML, there might be a <code>lang=&quot;en&quot;</code> attribute in the <code>&lt;html&gt;</code> element. We can capture the two character
 country/language code value of that attribute with the following expression.</p>
-<p><img src="/docs/images/api-checks/assertions-10.png" alt="api monitoring use regular expression on text body"></p>
+<p><img src="/docs/images/api-checks/assertions-10.c03673e5.png" alt="api monitoring use regular expression on text body"></p>
 <p>The expression <code>lang=&quot;(.{2})&quot;</code> means &lsquo;grab any of the first two characters between <code>lang=&quot;</code> and the next <code>&quot;</code>&rsquo;. If we were
 sure there are only non-capital characters, we could tighten it up a bit with <code>lang=&quot;([a-z]*)&quot;</code>.</p>
 <h3 id="header-assertions-with-regular-expressions">Header assertions with regular expressions</h3>
 <p>We can use regular expressions with headers too. In this example, we check if the <code>max-age</code> property of a <code>Strict-Transport-Security</code>
 response header is above a <code>100000</code></p>
-<p><img src="/docs/images/api-checks/assertions-11.png" alt="api monitoring use regular expression on http header"></p>
+<p><img src="/docs/images/api-checks/assertions-11.f3ba690a.png" alt="api monitoring use regular expression on http header"></p>
 </article>
       <hr class="pt-2 mb-2" />
       
@@ -825,7 +825,7 @@ response header is above a <code>100000</code></p>
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/index.9773e75c.js"></script>
 
   <script>
     docsearch({

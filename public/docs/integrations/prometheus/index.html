@@ -6,28 +6,28 @@
   <meta charset="utf-8" />
   <meta name="description" content="If you are using Prometheus for monitoring and the popular Grafana stack for dashboarding, you can expose Checkly&#39;s core metrics on a dedicated, secured endpoint.
 Checkly exposes two type of metrics in a Prometheus-compatible format.
- checkly_check_status reports if a check is failing. 1 means the check is passing, 0 means the check is failing. checkly_check_result reports the last collected response time for check in a specific region. This means you get one checkly_check_result stanza for each region the check is configured to run in." />
+ checkly_check_status reports if a check is passing or failing. 1 means the check is passing, 0 means the check is failing. checkly_check_degraded_status reports if a check is degraded. 1 means the check is not-degraded, 0 means the check is degraded." />
   <meta name="viewport" content="width=device-width" initial-scale="1" maximum-scale="1" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Prometheus | Checkly " />
   <meta property="og:description" content="If you are using Prometheus for monitoring and the popular Grafana stack for dashboarding, you can expose Checkly&#39;s core metrics on a dedicated, secured endpoint.
 Checkly exposes two type of metrics in a Prometheus-compatible format.
- checkly_check_status reports if a check is failing. 1 means the check is passing, 0 means the check is failing. checkly_check_result reports the last collected response time for check in a specific region. This means you get one checkly_check_result stanza for each region the check is configured to run in." />
+ checkly_check_status reports if a check is passing or failing. 1 means the check is passing, 0 means the check is failing. checkly_check_degraded_status reports if a check is degraded. 1 means the check is not-degraded, 0 means the check is degraded." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://checklyhq.com/images/dashboard-screen@2x.png" />
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:title" content="Prometheus | Checkly " />
   <meta property="twitter:description" content="If you are using Prometheus for monitoring and the popular Grafana stack for dashboarding, you can expose Checkly&#39;s core metrics on a dedicated, secured endpoint.
 Checkly exposes two type of metrics in a Prometheus-compatible format.
- checkly_check_status reports if a check is failing. 1 means the check is passing, 0 means the check is failing. checkly_check_result reports the last collected response time for check in a specific region. This means you get one checkly_check_result stanza for each region the check is configured to run in." />
+ checkly_check_status reports if a check is passing or failing. 1 means the check is passing, 0 means the check is failing. checkly_check_degraded_status reports if a check is degraded. 1 means the check is not-degraded, 0 means the check is degraded." />
   <meta property="og:image" content="https://checklyhq.com/images/dashboard-screen@2x.png" />
   <meta name="msvalidate.01" content="36F243A91FAA24DE468D8A8EECF33554" />
-  <link rel="icon" type="image/png" href="/images/racoon_favicon.png" />
+  <link rel="icon" type="image/png" href="/images/racoon_favicon.3c48bb28.png" />
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
   <link rel="alternate" href="https://checklyhq.com/docs/integrations/prometheus/" hreflang="en-us" />
   <link rel="canonical" href="https://checklyhq.com/docs/integrations/prometheus/" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.e5e1af43.css" />
   <script async src="https://cdn.cookielaw.org/consent/e4c8a868-c0ad-4c0c-b61e-f6eb6cad2810.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript">
     function OptanonWrapper() {}
@@ -90,7 +90,7 @@ Checkly exposes two type of metrics in a Prometheus-compatible format.
   <div class="container">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"><span></span><span></span><span></span></button>
-    <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.svg" width="120" alt="checkly logo"/></a><a
+    <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.afa37391.svg" width="120" alt="checkly logo"/></a><a
       class="callout" href="/jobs">We're hiring!</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
@@ -463,7 +463,8 @@ Checkly exposes two type of metrics in a Prometheus-compatible format.
 for dashboarding, you can expose Checkly's core metrics on a dedicated, secured endpoint.</p>
 <p>Checkly exposes two type of metrics in a Prometheus-compatible format.</p>
 <ol>
-<li><code>checkly_check_status</code> reports if a check is failing. <code>1</code> means the check is passing, <code>0</code> means the check is failing.</li>
+<li><code>checkly_check_status</code> reports if a check is passing or failing. <code>1</code> means the check is passing, <code>0</code> means the check is failing.</li>
+<li><code>checkly_check_degraded_status</code> reports if a check is degraded. <code>1</code> means the check is not-degraded, <code>0</code> means the check is degraded.</li>
 <li><code>checkly_check_result</code> reports the last collected response time for check in a specific region. This means
 you get one checkly_check_result stanza for each region the check is configured to run in.</li>
 </ol>
@@ -476,19 +477,24 @@ you get one checkly_check_result stanza for each region the check is configured 
 <p>Here is an example:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># HELP checkly_check_status The status of the last check. 1 is passing, 0 is failing</span>
 <span class="c1"># TYPE checkly_check_status gauge</span>
-checkly_check_status<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Alerts fetch&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,muted<span class="o">=</span><span class="s2">&#34;false&#34;</span>,activated<span class="o">=</span><span class="s2">&#34;true&#34;</span> <span class="nv">tags</span><span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">1</span>
+checkly_check_status<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Customer API&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,muted<span class="o">=</span><span class="s2">&#34;false&#34;</span>,activated<span class="o">=</span><span class="s2">&#34;true&#34;</span> <span class="nv">tags</span><span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">1</span>
 checkly_check_status<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Email login&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;browser&#34;</span>,muted<span class="o">=</span><span class="s2">&#34;false&#34;</span>,activated<span class="o">=</span><span class="s2">&#34;true&#34;</span> <span class="nv">tags</span><span class="o">=</span><span class="s2">&#34;auth,browser-checks,public&#34;</span><span class="o">}</span> <span class="m">0</span>
+<span class="c1"># HELP checkly_check_degraded_status The degraded status of the last check. 1 is not-degraded, 0 is degraded</span>
+<span class="c1"># TYPE checkly_check_degraded_status gauge</span>
+checkly_check_status<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Customer API&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,muted<span class="o">=</span><span class="s2">&#34;false&#34;</span>,activated<span class="o">=</span><span class="s2">&#34;true&#34;</span> <span class="nv">tags</span><span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">0</span>
+checkly_check_status<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Email login&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;browser&#34;</span>,muted<span class="o">=</span><span class="s2">&#34;false&#34;</span>,activated<span class="o">=</span><span class="s2">&#34;true&#34;</span> <span class="nv">tags</span><span class="o">=</span><span class="s2">&#34;auth,browser-checks,public&#34;</span><span class="o">}</span> <span class="m">1</span>
 <span class="c1"># HELP checkly_check_result The response time of the last check per region.</span>
 <span class="c1"># TYPE checkly_check_result gauge</span>
-checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Alerts fetch&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;ap-northeast-2&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">1168</span>
-checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Alerts fetch&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;ap-southeast-1&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">932</span>
-checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Alerts fetch&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;ca-central-1&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">424</span>
-checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Alerts fetch&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;eu-west-2&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">138</span>
-checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Alerts fetch&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;us-east-2&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">432</span>
+checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Customer API&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;ap-northeast-2&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">1168</span>
+checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Customer API&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;ap-southeast-1&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">932</span>
+checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Customer API&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;ca-central-1&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">424</span>
+checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Customer API&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;eu-west-2&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">138</span>
+checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Customer API&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;api&#34;</span>,region<span class="o">=</span><span class="s2">&#34;us-east-2&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;alerts,public&#34;</span><span class="o">}</span> <span class="m">432</span>
 checkly_check_result<span class="o">{</span><span class="nv">check_name</span><span class="o">=</span><span class="s2">&#34;Email login&#34;</span>,check_type<span class="o">=</span><span class="s2">&#34;browser&#34;</span>,region<span class="o">=</span><span class="s2">&#34;ap-south-1&#34;</span>,tags<span class="o">=</span><span class="s2">&#34;auth,browser-checks,public&#34;</span><span class="o">}</span> <span class="m">10174</span>
 </code></pre></div><p>Notice that:</p>
 <ul>
 <li>The check for &ldquo;Email login&rdquo; is failing.</li>
+<li>The check for &ldquo;Customer API&rdquo; is degraded, but not failing.</li>
 <li>The <code>checkly_check_status</code> metric has <code>muted</code> and <code>activated</code> labels, reflecting if a check is sending out alerts or is actually
 running.</li>
 <li>The <code>checkly_check_result</code> metric has a <code>region</code> label.</li>
@@ -497,11 +503,11 @@ running.</li>
 <ol>
 <li>
 <p>Navigate to the <strong>integrations</strong> tab on the account screen and click the &lsquo;Create Prometheus endpoint&rsquo; button.
-<img src="/docs/images/integrations/prometheus_step1.png" alt="Prometheus integration step 1"></p>
+<img src="/docs/images/integrations/prometheus_step1.c9c75d60.png" alt="Prometheus integration step 1"></p>
 </li>
 <li>
 <p>We directly create an endpoint for you and five your the URL and the required Bearer token.
-<img src="/docs/images/integrations/prometheus_step2.png" alt="Prometheus integration step 2"></p>
+<img src="/docs/images/integrations/prometheus_step2.5c68e5ab.png" alt="Prometheus integration step 2"></p>
 </li>
 <li>
 <p>Creat a new job in your Prometheus <code>prometheus.yml</code> config and set up a scraping interval. We recommend an interval
@@ -518,10 +524,6 @@ Here is an example</p>
 </span><span class="w">  </span>static_configs<span class="p">:</span><span class="w">  
 </span><span class="w">  </span>-<span class="w"> </span>targets<span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;api.checklyhq.com&#39;</span><span class="p">]</span><span class="w">
 </span></code></pre></div><p>Now restart Prometheus and you should see metrics coming in.</p>
-<blockquote>
-<p><strong>Note</strong>: The Prometheus integration is now in beta. Anything missing? Anything wrong? Use the chat widget for suggestions.
-We respond quickly and always integrate good user feedback.</p>
-</blockquote>
 </article>
       <hr class="pt-2 mb-2" />
       
@@ -549,7 +551,7 @@ We respond quickly and always integrate good user feedback.</p>
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/index.9773e75c.js"></script>
 
   <script>
     docsearch({
