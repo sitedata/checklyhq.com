@@ -51,3 +51,29 @@ During execution, the code snippet will be inlined before the script is run.
     await page.click('.header-search-input')
     ```
 
+### Passing variables to partials
+
+You might want to create a partials that has a generic login routine and then pass it different username / password combinations
+based on your script. Or you might want to pass other variables to your partials.
+
+Under the hood, we use [Handlebars' partials](https://handlebarsjs.com/guide/partials.html#basic-partials) and it supports 
+passing variables. Let's look at the following example:
+
+This is our partial. We call it **log_things**.
+
+```js
+console.log({{username}})
+console.log({{password}})
+console.log("{{extra}}")
+```
+
+This is our browser script, using the partial. We fly in two environment variables `USERNAME` and `PASSWORD`.
+
+```js
+{{> log_things username="process.env.USER" password="process.env.PWD" extra="text" }}
+```
+Notice three things:
+1. All partial variables are passed in as key/value pairs, where the value is a "string".
+2. The environment variables `process.env.xxx` are evaluated to a string in the partial.
+3. A standard string like the `extra="text"` pair is passed as is. Notice the extra quotes in the partial.
+

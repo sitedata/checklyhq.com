@@ -29,7 +29,7 @@ setup script are distributed to each check run on each data center location.
 script. This means your teardown script *can run multiple times!*
 3. After the teardown script has run, all results are collected in our central storage.
 
-Both setup and teardown scrips have a **maximum execution time of 4 seconds**.
+Both setup and teardown scrips have a **maximum execution time of 9 seconds**.
 
 ![setup and teardown script execution](/docs/images/api-checks/setup-teardown-2.png)
 

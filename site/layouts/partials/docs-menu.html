@@ -6,9 +6,14 @@
         target="_blank">API reference
       <div class="badge badge-accent badge-sm ml-2">beta</div></a>
     <ul class="docs-menu-content">
-      {{ $currentPage := . }} {{ range .Site.Menus.docs }} {{ if .HasChildren }}
-      <li class="docs-menu-item">
-        <div class="docs-menu-title">{{.Name}}</div>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.docs }} {{ if .HasChildren }}
+      <li class='docs-menu-item'>
+        <a class='docs-menu-title {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}' href="{{.URL}}">{{.Name}}</a>
+
+        {{if $currentPage.HasMenuCurrent "docs" . }}
+
+
         <ul class="docs-menu-sub">
           {{range .Children}} {{ $has := $currentPage.IsMenuCurrent "docs" . }}
           <li class="docs-menu-sub-item {{if $has}}active{{end}}">
@@ -18,6 +23,9 @@
           </li>
           {{end}}
         </ul>
+
+        {{end}}
+
       </li>
       {{else}}
       <li class="docs-menu-item">
