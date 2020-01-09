@@ -35,9 +35,6 @@
 
     a {
       color: $gray-darkish;
-      &.active {
-        color: $brand-primary;
-      }
     }
 
     &-search {
@@ -52,7 +49,11 @@
       display: block;
       font-weight: 500;
       font-size: 0.875rem;
-      margin-bottom: 0.5rem
+      margin-bottom: 0.5rem;
+      &.active {
+        font-weight: 400;
+        color: $brand-primary;
+      }
     }
     &-sub {
       list-style-type: none;
