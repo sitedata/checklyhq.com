@@ -4,7 +4,7 @@ title: Privacy policy
 
 # Privacy policy
 
-Last Updated: February 26, 2019
+Last Updated: January 15, 2020
 
 ---
   
@@ -23,8 +23,9 @@ activities may take place in the United States.
 - We will not sell your data to anyone.
 - We will send you some emails regarding product updates and such.
 - If you log in with a third party provider (Google, Github etc.) we will read some data from that account.
-- We use services like Drift to chat with you and help you with support and sales related questions.
+- We use services like Intercom to chat with you and help you with support and sales related questions.
 - We use services like Google Analytics and Heap to see how you interact with the product. You can opt out of both.
+- We use 3rd party providers like AWS and Heroku to process and store our data.
 
 ## 1. Information Collection and Use
 
@@ -92,15 +93,46 @@ technologies to collect information regarding your interaction with email messag
 clicked on, or forwarded a message. This information is gathered from all users, and may be connected with
 other information about you.
 
-## 7. Third Party Web Beacons and Third Party Buttons
+### Google Analytics
+We use Google Analytics to measure the effectiveness of our website.
 
-We may display third-party content on the Service. Third-party content may
-use cookies, web beacons, or other mechanisms for obtaining data in connection with your viewing of the third
-party content on the Service. Additionally, we may implement third party buttons (such as the Facebook “share” button)
-that may function as web beacons even when you do not interact with the button. Information collected through
-third-party web beacons and buttons is collected directly by these third parties, not by Checkly.
-Information collected by a third party in this manner is subject to that third party’s own data collection,
-use, and disclosure policies.
+### Intercom
+We use Intercom for customer support & product announcements either through email or in-app messages. 
+
+### Heap Analytics
+We use Heap to give us insights into how customers use our application and where we could improve it.
+
+### Hotjar
+We use Hotjar to give us insights into how customers use our application and where we could improve it.
+
+
+## 7. Third Parties
+
+Some of your personal data is shared with third party service providers:
+
+### Google
+We use GSuite by Google. Emails send to us pass through Google. We also use Google Drive and store spreadsheets there 
+that might contain your email address.
+
+### Intercom
+We use Intercom for customer support. Your name, email address, approximated location and browser vendor & version are 
+stored in Intercom. All emails sent to support@checklyhq.com are also stored in Intercom.
+
+### Stripe
+Stripe handles our payment. Your credit card data, name, address and email address are securely stored and processed by Stripe.
+We don't have access to your credit card number or CVC.
+
+### Moneybird
+We use Moneybird for invoicing and general bookkeeping. For this to be possible, we store your contact information in Moneybird.
+
+### Amazon Web Services
+We use Amazon Web Services (AWS) for sending out email and SMS alerts. If provided through our app, we will send your phone number, email address or both to AWS when an alert triggers.
+
+### Heroku
+We use Heroku as a database storage provider. If provided, your email address and/or phone number will be stored in a database managed by Heroku. The database is encrypted.
+
+### Auth0
+We use Auth0 as a identity provider. Auth0 stores any password you may provide when opting to use email login. We do not have access to this password.
 
 ## 8. Security
 
