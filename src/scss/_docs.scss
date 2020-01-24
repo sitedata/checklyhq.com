@@ -130,7 +130,7 @@
       width: $toc-width;
       padding: 1rem 0 1rem 0;
       position: fixed;
-      top: $top;
+      top: $top + 1rem;
       bottom: 0;
       overflow-x: hidden;
       overflow-y: auto
@@ -147,8 +147,19 @@
       padding-left: 1rem;
     }
 
+    &-header {
+      color: $gray;
+      text-transform: uppercase;
+      position: fixed;
+      padding-top: $top;
+    }
+
     &-mobile {
       display: none;
+      .docs-toc-header {
+        position: relative;
+        padding-top: 0;
+      }
     }
   }
 
