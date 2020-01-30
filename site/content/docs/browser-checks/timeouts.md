@@ -72,10 +72,38 @@ await page.click('a.some-link')
 await navigationPromise
 ```
 
+### Navigation wait times
 
-But this will work
+The `page.waitForNavigation()` method — but also almost all other methods that deal with navigation like `page.reload()` and `page.goBack()`) — 
+has a very important set of options that tell Puppeteer what it should consider a "navigation".
 
-[Reed more in the Puppeteer API docs](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagewaitfornavigationoptions)
+These options come in two categories:
+
+**DOM event based**
+These two options are directly related to the events your browser emits when it has reached a certain loading stage. These events 
+are not specific to Puppeteer and are used in almost all browsers.
+
+- `load` - This the most strict: your whole page including all dependent resources, i.e. images, scripts, css etc. [More info](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
+- `domcontentloaded` - less strict: when your HTML has loaded. [More info](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)
+
+Note: the `load` option is the default. It is pretty strict, so if you have slow dependencies it can be less than optimal.
+
+**Heuristic based**
+These two options are Puppeteer specific and are based on the heuristic that if (almost) all network connections your browser has
+are no longer active, your page has *probably* finished loading.
+
+- `networkidle0` - consider navigation to be finished when there are no more than 0 network connections for at least 500 ms.
+- `networkidle2` - consider navigation to be finished when there are no more than 2 network connections for at least 500 ms.
+
+So, which one to choose? This really depends on your situation:
+
+- Have an SPA that needs to be fully rendered? Probably go with `load`
+- Have a server side rendered page but some slow dynamically loaded sections that are not crucial: go for `networkidle2`
+
+Options are set as follows: `page.waitForNavigation({ waitUntil: 'networkidle2' })`. You can also specify an array of 
+`waitUntil` options.
+
+[Read more in the Puppeteer API docs](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagewaitfornavigationoptions)
 
 ### page.setDefaultNavigationTimeout(timeout)
 
