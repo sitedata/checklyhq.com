@@ -80,6 +80,7 @@ has a very important set of options that tell Puppeteer what it should consider 
 These options come in two categories:
 
 **DOM event based**
+
 These two options are directly related to the events your browser emits when it has reached a certain loading stage. These events 
 are not specific to Puppeteer and are used in almost all browsers.
 
@@ -89,6 +90,7 @@ are not specific to Puppeteer and are used in almost all browsers.
 Note: the `load` option is the default. It is pretty strict, so if you have slow dependencies it can be less than optimal.
 
 **Heuristic based**
+
 These two options are Puppeteer specific and are based on the heuristic that if (almost) all network connections your browser has
 are no longer active, your page has *probably* finished loading.
 
@@ -121,6 +123,8 @@ seconds.
 ```javascript
 await page.waitFor(5000)
 ```
+
+> Note: using `page.waitFor()` should be a last option. Use it sparingly as it can quickly break your script if load times vary a lot
 
 ## Timeouts in Mocha
 
