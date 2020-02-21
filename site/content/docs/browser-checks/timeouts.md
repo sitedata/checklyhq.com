@@ -3,7 +3,7 @@ title: Timeouts
 weight: 8
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
 ---
 
 All browser checks are capped at **60 seconds**. This means everything in your script needs to happen within

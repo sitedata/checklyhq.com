@@ -5,7 +5,7 @@ aliases:
 - login-and-secrets
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
 ---
 
 Scenarios where a user provides credentials to get access to a web app are extremely common. They are also

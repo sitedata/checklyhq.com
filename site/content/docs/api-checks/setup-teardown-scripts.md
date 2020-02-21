@@ -3,7 +3,7 @@ title: Setup & teardown scripts
 weight: 6
 menu:
   docs:
-    parent: "API Checks"
+    parent: "API checks"
 ---
 
 You can tailor each HTTP request made by an API check to your exact situation by using setup and/or teardown scripts.

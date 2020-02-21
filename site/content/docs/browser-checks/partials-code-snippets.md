@@ -3,7 +3,7 @@ title: Partials and code snippets
 weight: 6
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
 ---
 
 You can reuse commonly used parts of code by referencing code snippets in any browser check. To do this, you use the 

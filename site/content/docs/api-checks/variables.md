@@ -3,7 +3,7 @@ title: Environment variables
 weight: 3
 menu:
   docs:
-    parent: "API Checks"
+    parent: "API checks"
     identifier: variables-api-checks
 ---
 

@@ -3,7 +3,7 @@ title: HTTP request settings
 weight: 2
 menu:
   docs:
-    parent: "API Checks"
+    parent: "API checks"
 ---
 
 A full HTTP request is created by filling out the various parts of the HTTP request settings screen. Not all sections and fields

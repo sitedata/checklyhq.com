@@ -3,7 +3,7 @@ title: Runner specification
 weight: 9999
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
 ---
 
 All browser checks run in a sandboxed runtime environment on our cloud backend. You do not have full access to the Node.js

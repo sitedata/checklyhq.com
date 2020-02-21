@@ -3,7 +3,7 @@ title: Responsible use
 weight: 10
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
 ---
 
 Checkly reserves the right to block, remove or otherwise disable any browser checks that are not created for the intented

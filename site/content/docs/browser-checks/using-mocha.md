@@ -3,7 +3,7 @@ title: Using Mocha with Puppeteer
 weight: 7
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
 ---
 
 To add more structure to your browser check, you can use the **[Mocha](https://mochajs.org/)** testing framework in combination

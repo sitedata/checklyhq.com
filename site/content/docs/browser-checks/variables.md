@@ -3,7 +3,7 @@ title: Environment variables
 weight: 4
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
     identifier: variables-browser-checks
 ---
 

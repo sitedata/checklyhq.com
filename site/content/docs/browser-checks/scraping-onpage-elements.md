@@ -4,7 +4,7 @@ description: How to scrape web page elements like texts, buttons and forms with 
 weight: 2
 menu:
   docs:
-    parent: "Browser Checks"
+    parent: "Browser checks"
 ---
 
 Any standard Node.js script that successfully finishes a Puppeteer session is a valid, passing browser check. However, in

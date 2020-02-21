@@ -4,7 +4,7 @@ weight: 1
 slug: /
 menu:
   docs:
-    parent: "API Checks"
+    parent: "API checks"
     identifier: overview-api-checks
 ---
 
