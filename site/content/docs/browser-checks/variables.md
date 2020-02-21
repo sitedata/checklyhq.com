@@ -15,17 +15,20 @@ You should therefore **replace any confidential data in your browser check scrip
 
 For browser checks, you can create environment variables at two hierarchical levels:
 
-- **Local** or check level:
+- **Check** level
+- **Group** level
 - **Global** level
 
-Local variables are added on the **Variables** tab for each browser check. Any data you "lock" is
+Check variables are added on the **Variables** tab for each browser check. Any data you "lock" is
 encrypted at rest and in flight on our back end and is only decrypted when needed.
 
 ![add local variables](/docs/images/browser-checks/add-local-variable.png)
 
+Group variables are added on the **Variables** tab in a [group](/docs/groups) . The variables stored here are accessible 
+only in the group context.
 
 Global variables are added on the **Variables** tab in the **Account** section. The variables stored here are globally accessible 
-throughout Checkly, hence the "Global environment variables" title*. 
+throughout Checkly, hence the "Global environment variables" title. 
 
 ![add global variables](/docs/images/api-checks/add-variables.png)
 
@@ -35,7 +38,7 @@ Whenever possible, store variables at the global level. This DRY's up your code.
 
 ## Accessing variables
 
-Both local and global environment variables are accessible in your code using the standard Node.js `process.env.MY_VAR` notation. 
+Both check, group and global environment variables are accessible in your code using the standard Node.js `process.env.MY_VAR` notation. 
 For example, the code snippet below show how you can log into GitHub. We have more [examples of login scenarios on this page.](/docs/browser-checks/login-scenarios/)
 
 ```js
@@ -53,12 +56,14 @@ browser.close()
 
 ## Variable hierarchy
 
-As browser checks are scheduled, Checkly merges the local and global environment variables into one data set and exposes them
-to the runtime environment. During merging, any local variable with the same name as a global variable **overrides the global variable.**  
+As browser checks are scheduled, Checkly merges the check, group and global environment variables into one data set and exposes them
+to the runtime environment. During merging, any check variable with the same name as a global or group variable **overrides that variable.**  
 
-Or in another words, local variables trump global variables.  
+Or in another words:
 
-You can make use of this by providing a default value for a specific variable at the global level, but allow that variable to 
-be overridden at the local level.
+> **check** variables trump **group** variables trump **global** variables.  
+
+You can make use of this by providing a default value for a specific variable at the global or group level, but allow that variable to 
+be overridden at the check level.
 
 
