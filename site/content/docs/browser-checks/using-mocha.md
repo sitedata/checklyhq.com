@@ -11,7 +11,7 @@ with Puppeteer. Mocha is a widely used Javascript test runner. Mocha allows you 
  
 ## Run an example script on your local machine
  
- We've created a Github repo you can clone run from you local machine to get a feel for writing browser checks with Mocha.
+ We've created a GitHub repo you can clone run from you local machine to get a feel for writing browser checks with Mocha.
  Clone the [checkly/browser-checks-starter-mocha](https://github.com/checkly/browser-checks-starter-mocha.git) repo and run the provided example. 
  
  ```bash
@@ -59,7 +59,7 @@ with Puppeteer. Mocha is a widely used Javascript test runner. Mocha allows you 
  
  ```js
  describe('Duck Duck Go Search', () => {
-   it('returns Chrome Puppeteer Github repo as first search result', async () => {
+   it('returns Chrome Puppeteer GitHub repo as first search result', async () => {
  ```
  **4. Search for a term:** There's a lot going on here:
  

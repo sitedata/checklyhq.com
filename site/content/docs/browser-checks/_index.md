@@ -135,8 +135,8 @@ alerting channels will be triggered, notifying your team that something is up.
 
 ## More Puppeteer resources
 
-- [checkly/puppeteer-examples](https://github.com/checkly/puppeteer-examples) is our Github repo with a ton of real life examples on how to use Puppeteer.
+- [checkly/puppeteer-examples](https://github.com/checkly/puppeteer-examples) is our GitHub repo with a ton of real life examples on how to use Puppeteer.
 - [pptr.dev](https://pptr.dev/) is the official API documentation site for the Puppeteer framework.
-- [awesome-puppeteer](https://github.com/transitive-bullshit/awesome-puppeteer) is a great Github repo full of Puppeteer related libraries, tips and resources.
+- [awesome-puppeteer](https://github.com/transitive-bullshit/awesome-puppeteer) is a great GitHub repo full of Puppeteer related libraries, tips and resources.
 
-{{< info >}} You can find a ton more Puppeteer and Mocha examples in the dedicated Github repo [checkly/puppeteer-examples](https://github.com/checkly/puppeteer-examples){{< /info >}}
+{{< info >}} You can find a ton more Puppeteer and Mocha examples in the dedicated GitHub repo [checkly/puppeteer-examples](https://github.com/checkly/puppeteer-examples){{< /info >}}

@@ -7,13 +7,13 @@ menu:
 ---
 
 Puppeteer recorder is a fairly recent addition to the Checkly arsenal of tools. 
-It is under active development and new features are added on a monthly basis. You can [check the project on Github](https://github.com/checkly/puppeteer-recorder)
+It is under active development and new features are added on a monthly basis. You can [check the project on GitHub](https://github.com/checkly/puppeteer-recorder)
 However, this means that not all DOM elements, browser interactions and events are all recorded at this stage.
 
 ## Bugs & Feature requests
 
-- **Bugs:** If you find obvious bugs please file and issue on the [Github issue tracker](https://github.com/checkly/puppeteer-recorder/issues).  
-- **Feature requests**: Similarly, if you have suggestion for a great feature, also file a request at the [Github issue tracker](https://github.com/checkly/puppeteer-recorder/issues).
+- **Bugs:** If you find obvious bugs please file and issue on the [GitHub issue tracker](https://github.com/checkly/puppeteer-recorder/issues).  
+- **Feature requests**: Similarly, if you have suggestion for a great feature, also file a request at the [GitHub issue tracker](https://github.com/checkly/puppeteer-recorder/issues).
 
 ## Recorded elements & events
 

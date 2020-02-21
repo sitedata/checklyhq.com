@@ -1,40 +1,40 @@
 ---
-title: Github deployments
+title: GitHub deployments
 weight: 2
 menu:
   docs:
     parent: "CI/CD integration"
 ---
 
-Github deployments are webhook events triggered by Github whenever a deployment service reports a successful deployment 
+GitHub deployments are webhook events triggered by GitHub whenever a deployment service reports a successful deployment 
 event. This works out-of-the-box with the following services. 
 
-- [Zeit / Now for Github](https://zeit.co/docs/v2/advanced/now-for-github/)
+- [Zeit / Now for GitHub](https://zeit.co/docs/v2/advanced/now-for-github/)
 - [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines)
 
-Any (SaaS) service that interacts with the [Github deployments API](https://developer.github.com/v3/repos/deployments/) and
+Any (SaaS) service that interacts with the [GitHub deployments API](https://developer.github.com/v3/repos/deployments/) and
 reports the correct "success" message will work.
 
-## Setting up your Github integration
+## Setting up your GitHub integration
 
-1. Go to the **integrations tab** in your account settings and click the "Integrate with Github" button.    
-![set up Github integration step 1](/docs/images/cicd/github_setup_1.png)
+1. Go to the **integrations tab** in your account settings and click the "Integrate with GitHub" button.    
+![set up GitHub integration step 1](/docs/images/cicd/github_setup_1.png)
 
-2. You will be redirected to Github and prompted to select an account and install the Checkly Github App.  
-![set up Github integration step 2](/docs/images/cicd/github_setup_2.png)
+2. You will be redirected to GitHub and prompted to select an account and install the Checkly GitHub App.  
+![set up GitHub integration step 2](/docs/images/cicd/github_setup_2.png)
 
 3. When accepting the installation, you are redirected back to Checkly and the integration is installed. 
-Now, go to the **CI/CD tab** of the check you want to link to a Github repository.    
-![set up Github integration step 3](/docs/images/cicd/github_setup_3.png)
+Now, go to the **CI/CD tab** of the check you want to link to a GitHub repository.    
+![set up GitHub integration step 3](/docs/images/cicd/github_setup_3.png)
 
-4. Click the **"Link Github repo"** button and select the repository you want to link.  
-![set up Github integration step 4](/docs/images/cicd/github_setup_4.png)
+4. Click the **"Link GitHub repo"** button and select the repository you want to link.  
+![set up GitHub integration step 4](/docs/images/cicd/github_setup_4.png)
 
-5. On each deployment event, we will run your check and report the results directly in **your Github timeline and PR overview**.  
-![set up Github integration step 5](/docs/images/cicd/github_setup_5.png)
+5. On each deployment event, we will run your check and report the results directly in **your GitHub timeline and PR overview**.  
+![set up GitHub integration step 5](/docs/images/cicd/github_setup_5.png)
 
 6. You will also get an overview of the check result in the *details* section
-![set up Github integration step 6](/docs/images/cicd/github_setup_6.png)
+![set up GitHub integration step 6](/docs/images/cicd/github_setup_6.png)
 
 
 {{<info >}}
@@ -43,7 +43,7 @@ You can hook up multiple checks to the same repo. We will just run all of them a
 
 ## Using environment URL's
 
-Github reports a **environment URL** on each deployment event. Depending on what deployment service you use,
+GitHub reports a **environment URL** on each deployment event. Depending on what deployment service you use,
 this environment URL can be used to run your check on different target environments than configured in your check.  
 
 The primary use case for this is that temporary review/branch deployments such as provided by Zeit and Heroku Pipelines

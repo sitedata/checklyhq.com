@@ -160,4 +160,4 @@ describe('Check Google Homepage', (suite) => {
 })
 ```
 
-[Read more on the Mocha site](https://mochajs.org/#timeouts) and in this [enlightening Github issue](https://github.com/mochajs/mocha/issues/2018)
+[Read more on the Mocha site](https://mochajs.org/#timeouts) and in this [enlightening GitHub issue](https://github.com/mochajs/mocha/issues/2018)

@@ -36,7 +36,7 @@ Whenever possible, store variables at the global level. This DRY's up your code.
 ## Accessing variables
 
 Both local and global environment variables are accessible in your code using the standard Node.js `process.env.MY_VAR` notation. 
-For example, the code snippet below show how you can log into Github. We have more [examples of login scenarios on this page.](/docs/browser-checks/login-scenarios/)
+For example, the code snippet below show how you can log into GitHub. We have more [examples of login scenarios on this page.](/docs/browser-checks/login-scenarios/)
 
 ```js
 const browser = await puppeteer.launch()

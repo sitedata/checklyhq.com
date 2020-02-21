@@ -31,7 +31,7 @@ Puppeteer recorder has the following features:
 - Generates a Puppeteer script, ready for copy & pasting. 
 - Shows which events are being recorded.
 - Offers configuration options to tweak the generated code.
-- Is open source, check the code on the [Github repo](https://github.com/checkly/puppeteer-recorder)
+- Is open source, check the code on the [GitHub repo](https://github.com/checkly/puppeteer-recorder)
 
 **Next steps**
 

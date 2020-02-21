@@ -1,5 +1,5 @@
 ---
-title: Github
+title: GitHub
 weight: 3
 aliases:
 - /docs/integrations
@@ -8,5 +8,5 @@ menu:
     parent: "Integrations"
 ---
 
-Integrate with Github and run checks on deployment events triggered by services like Zeit and Heroku Pipelines.
-To get started, check out [the docs on Github deployments](/docs/cicd/github/)
+Integrate with GitHub and run checks on deployment events triggered by services like Zeit and Heroku Pipelines.
+To get started, check out [the docs on GitHub deployments](/docs/cicd/github/)

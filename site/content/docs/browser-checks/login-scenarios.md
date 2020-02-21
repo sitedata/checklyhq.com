@@ -13,7 +13,7 @@ a great candidate for a browser check as these site transactions tend to be very
 
 ## Username / password login
 
-The code snippet below shows how you can log into Github.
+The code snippet below shows how you can log into GitHub.
 
 ```js
 const browser = await puppeteer.launch()
@@ -40,7 +40,7 @@ browser.close()
 
 ## Social Login
 
-Authenticating via social login providers like Facebook, Google and Github can be a bit tricky to script because of the 
+Authenticating via social login providers like Facebook, Google and GitHub can be a bit tricky to script because of the 
 redirects involved. Also, many providers make their login pages "bot resistant" which makes scripting harder. The example 
 below uses the Google social login option on the Checkly login page.
 

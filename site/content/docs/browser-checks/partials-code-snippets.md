@@ -17,9 +17,9 @@ This comes in very handy when you have multiple browser checks targeting the sam
 
 Using partials is very straightforward. Any code snippets are just copied inline as is.
 
-### Example: Github login
+### Example: GitHub login
 
-Say we want to validate some parts of the Github website only available to logged in users. We want to have separate, small
+Say we want to validate some parts of the GitHub website only available to logged in users. We want to have separate, small
 browser checks to have granular feedback whether each part functions.  
 
 1. Create a snippet named **github_login** in the "code snippets" section with the code below.

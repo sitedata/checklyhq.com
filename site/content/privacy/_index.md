@@ -22,7 +22,7 @@ activities may take place in the United States.
 
 - We will not sell your data to anyone.
 - We will send you some emails regarding product updates and such.
-- If you log in with a third party provider (Google, Github etc.) we will read some data from that account.
+- If you log in with a third party provider (Google, GitHub etc.) we will read some data from that account.
 - We use services like Intercom to chat with you and help you with support and sales related questions.
 - We use services like Google Analytics and Heap to see how you interact with the product. You can opt out of both.
 - We use 3rd party providers like AWS and Heroku to process and store our data.
@@ -45,9 +45,9 @@ such instances may include your IP address, full user name, password, email addr
 credit card and other billing information, preferences, telephone number, and other information that you decide
 to provide us with. We may link such information with other information you provide about yourself.
 
-## 3. Use of Google and/or Github User Data
+## 3. Use of Google and/or GitHub User Data
 
-If you choose to connect a Google profile or Github profile to your Checkly account, we will access certain information
+If you choose to connect a Google profile or GitHub profile to your Checkly account, we will access certain information
 obtained from Google regarding your account. In particular we may store your name and email address.
 This data will only be used by Checkly to provide you with the service you expect and will not be shared with any third parties.
 
