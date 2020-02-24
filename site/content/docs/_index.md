@@ -8,6 +8,7 @@ exact control over how your APIs and web apps should be monitored.
 
 - [API checks](/docs/api-checks/)
 - [Browser checks](/docs/browser-checks/)
+- [Groups](/docs/groups/)
 - [Alerting](/docs/alerting/)
 - [CI/CD](/docs/cicd/)
 - [Dashboards](/docs/dashboards)

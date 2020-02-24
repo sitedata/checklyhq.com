@@ -46,7 +46,7 @@
     }
 
     &-title {
-      display: block;
+      display: inline-block;
       font-weight: 500;
       font-size: 0.875rem;
       margin-bottom: 0.5rem;
@@ -91,6 +91,20 @@
         margin-top: 2rem;
         margin-bottom: .5rem;
       }
+      &.active {
+        &:before {
+          padding-right: .25rem;
+          color: $gray;
+          font-family: Ionicons;
+          content: '\f3d0'
+        }
+      }
+      &:before {
+        padding-right: .25rem;
+        color: $gray;
+        font-family: Ionicons;
+        content: '\f3d3'
+      }
     }
 
     .api-reference-link {
@@ -118,7 +132,7 @@
     padding: 0 2rem;
     margin-top: $top + 1rem;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 0;
   }
 
   &-toc {
@@ -138,6 +152,10 @@
     // hacky way to hide 3rd level heading in little page TOC because Hugo does not allow filtering the TOC by level
 
     nav#TableOfContents {
+      ul {
+        border-left: 2px solid $brand-primary;
+        padding-left: .5rem;
+      }
       ul > li > ul > li > li {
         display: none;
       }
@@ -145,6 +163,7 @@
 
     nav ul ul {
       padding-left: 1rem;
+      border-left: none !important;
     }
 
     &-header {
@@ -173,6 +192,17 @@
   }
 
   @include media-breakpoint-down(md) {
+    .docs-page {
+      padding: .5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .docs-menu {
+      margin-left: -$menu-width;
+      font-size: $font-size-base;
+    }
+
     .docs-toc {
       display: none;
     }
@@ -182,11 +212,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    .docs-menu {
-      margin-left: -$menu-width;
-      font-size: $font-size-base;
-    }
-
     .book-header {
       display: flex;
     }
