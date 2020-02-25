@@ -17,6 +17,7 @@
   &-menu {
     flex: 0 0 $menu-width;
     font-size: .875rem;
+    margin-left: auto;
 
     nav {
       width: $menu-width;
@@ -62,7 +63,7 @@
 
       &-item {
         margin-bottom: .3rem;
-        padding-left: .5rem;
+        padding-left: 1rem;
         a {
           color: $gray-darkish;
           text-decoration: none;
@@ -131,7 +132,7 @@
     flex-grow: 1;
     padding: 0 2rem;
     margin-top: $top + 1rem;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: 0;
   }
 
