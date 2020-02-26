@@ -12,6 +12,6 @@ First you'll need to [create an Incoming WebHook integration](https://my.slack.c
 
 ![Add a Slack WebHook URL to Checkly](/docs/images/alerting/slack.png)
 
-You have the option to customize the default channel you've set on Slack by setting a channel name while creating your Alert Channel. You can use a #public-channel-name, @username for Direct Messages or a channel ID. If you omit this field, the message will arrive in the default channel you've picked while creating the Incoming WebHook URL in Slack.
+You have the option to customize the default channel you've set on Slack by setting a channel name while creating your Alert Channel. You can use a **#public-channel-name**, **@username** for Direct Messages or a channel ID. If you omit this field, the message will arrive in the default channel you've picked while creating the Incoming WebHook URL in Slack.
 
 By customizing the channel name, alerting options & checks for that alert channel, you can use a single Incoming WebHook URL for multiple scenarios.
