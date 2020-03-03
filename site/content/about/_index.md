@@ -22,10 +22,20 @@ See [https://github.com/tnolet?tab=sponsoring](https://github.com/tnolet?tab=spo
 
 # Imprint
 
-Checkly is a service run by Pink Robots B.V. with its registered office at: 
+Checkly is a service run by Pink Robots B.V. with its registered offices at: 
 
-J.P. Coenstraat 24 BIS  
-Utrecht, The Netherlands  
+🇳🇱 **The Netherlands**  
+The J.P. Coenstraat 24 BIS  
+Utrecht  
+
+🇩🇪 **Germany**  
+Kopernikusstraße 35
+10243 Berlin
+
+entrance at:  
+Comeniushof "Fabrik"
+Gubener Straße 47
+
 
 **Chamber of Commerce**: 74069349   
 **VAT**: NL859762609B01
