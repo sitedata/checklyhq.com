@@ -35,7 +35,6 @@ We are migrating from Sketch to Figma for our main design tooling.
 
 - You have 3+ years experience in product and UI design.
 - You have experience in creating a design system.
-- You like to work in a growing company with experienced founders.
 - You know how to communicate with coworkers and customers in English.
 - You are quick to pick up on new stuff and enjoy the process of learning new things.
 - You love making software for other developers!
@@ -44,6 +43,7 @@ We are migrating from Sketch to Figma for our main design tooling.
 
 - Hands-on experience with Vue.js, SCSS.  
 - Experience with building SaaS tools for developers.
+- Experience working remotely in a distributed team.
 
 ## What we offer
 

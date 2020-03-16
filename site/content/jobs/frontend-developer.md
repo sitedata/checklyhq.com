@@ -32,7 +32,6 @@ We deploy (almost) every day and keep things simple. Tools we use are Clubhouse,
 
 - You have deep experience in building application with Vue.js in a professional product (SaaS) environment.
 - You have experience in writing frontend tests.
-- You like to work in a growing company with experienced founders.
 - You know how to communicate with coworkers and customers in English.
 - You are quick to pick up on new stuff and enjoy the process of learning new things.
 - You love making software for other developers!
@@ -41,6 +40,7 @@ We deploy (almost) every day and keep things simple. Tools we use are Clubhouse,
 
 - Hands-on experience with UX design. 
 - Experience with building SaaS tools for developers.
+- Experience working remotely in a distributed team.
 
 ## What we offer
 
