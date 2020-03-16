@@ -1,10 +1,10 @@
 ---
 title: Full Stack Javascript Engineer
-subtitle: Full time / Berlin / Remote
+subtitle: Full time / Remote
 position_state: Open
 ---
 
-- Berlin (Germany) / Remote
+- Remote
 - Javascript; Node, Vue.js, Hapi.js. AWS / Heroku / Postgres / Redis.
 - Full time
 

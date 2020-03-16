@@ -1,10 +1,10 @@
 ---
 title: Product designer
-subtitle: Full time / Berlin / Remote
+subtitle: Full time / Remote
 position_state: Open
 ---
 
-- Berlin (Germany) / Remote
+- Remote
 - web design, product design, digital design
 - Full time
 
