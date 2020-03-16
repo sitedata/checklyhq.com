@@ -9,7 +9,7 @@
     <div class="row mb-4">
       <div class="col-sm-12 col-lg-8 offset-lg-2 text-left">
         {{ range first 10 .Data.Pages }}<a href="{{.RelPermalink}}"
-          ><div class="d-flex flex-row justify-content-start">
+          ><div class="d-flex flex-row justify-content-start mb-2">
             <div class="d-flex flex-column">
               <h2 class="mb-2 text-primary">{{ .Title }}</h2>
               <h6 class="text-primary">{{ .Params.subtitle }}</h6>
