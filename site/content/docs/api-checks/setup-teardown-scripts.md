@@ -381,7 +381,7 @@ standard library or to arbitrary NPM modules. Currently every runner is equipped
 - util
 - zlib
 
-See the [built-in module documentation on the official Node.js site](https://nodejs.org/dist/latest-v10.x/docs/api/) 
+See the [built-in module documentation on the official Node.js site](https://nodejs.org/dist/latest-v10.x/docs/api/)
 
 ### External modules
 
@@ -392,7 +392,7 @@ See the [built-in module documentation on the official Node.js site](https://nod
 - **[crypto-js](https://github.com/brix/crypto-js)** 3.1.9: Cryptographic function library.
 - **[lodash](https://lodash.com)** 4.14.11: Javascript toolkit for many object, array and other functions.
 - **[moment](https://momentjs.com)** 2.22.2: Popular library for all things time related.
-- **[node](https://nodejs.org/en/blog/release/v0.8.10/)** 8.10: The general Node.js execution environment.
+- **[node](https://nodejs.org/docs/latest-v10.x/api/)** 10.x: The general Node.js execution environment.
 - **[request](https://github.com/request/request)** 2.88.0: An alternative HTTP client to Axios that supports posting Form data.
 - **[request-promise](https://github.com/request/request-promise)** 4.2.2: A plugin for the request library to enable promises.
 - **[uuid](https://github.com/kelektiv/node-uuid)** 3.3.3: Simple, fast generation of UUIDS.
