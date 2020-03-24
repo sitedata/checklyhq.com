@@ -6,7 +6,7 @@ menu:
     parent: "Browser checks"
 ---
 
-You can take up to three screenshots per browser check. This is really handy when debugging a failure situation or just
+You can take up to ten screenshots per browser check. This is really handy when debugging a failure situation or just
 in general to get a comfy feeling everything is OK.  
 
 Ad a screenshot anywhere by using the following syntax in your script
