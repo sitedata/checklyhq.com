@@ -1,7 +1,7 @@
 baseurl = "https://checklyhq.com"
 languageCode = "en-us"
 languageLang = "en"
-title = "API monitoring and Site Transaction Monitoring for DevOps Teams"
+title = "Active Reliability for Modern DevOps Teams"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 enableGitInfo = false
 enableRobotsTXT = true
