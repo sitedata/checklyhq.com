@@ -67,3 +67,6 @@ disqusShortname = "checkly"
 	name = "Puppeteer Recorder"
 	url = "/docs/puppeteer-recorder/"
 	weight = 9999
+
+[markup.goldmark.renderer]
+unsafe = true

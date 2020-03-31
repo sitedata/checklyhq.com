@@ -1,14 +1,18 @@
 .footer {
-  background-color: $gray-lightest;
+  background-color: $black;
+  color: $white;
   .footer-top {
     padding: 4 * $spacer 0;
+    h6 {
+      color: $ash;
+    }
     ul {
       list-style-type: none;
       padding-left: 0;
       margin-bottom: 0;
     }
     a {
-      color: $body-text;
+      color: $gray-light;
     }
     input {
       background-color: $white;
@@ -19,6 +23,6 @@
   .footer-bottom {
     padding: 1.5rem 0;
     border-top: 1px solid $gray-light;
-    color: $gray;
+    color: $gray-light;
   }
 }

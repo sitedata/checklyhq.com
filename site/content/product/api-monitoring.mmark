@@ -28,6 +28,7 @@ monitoring solution to check your mobile, webapp or IOT API for performance, upt
 Import your HTTP requests or assemble one by hand. Checkly gives you full control over all HTTP request options:
 **HTTP method, URL, query parameters, headers, and body**. Add credentials or a Bearer
 token for authentication.
+
 {{% cta-link "Learn more" "/docs/api-checks/request-settings/" %}}
 
 
