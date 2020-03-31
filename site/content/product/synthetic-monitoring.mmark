@@ -4,12 +4,12 @@ alias:
     - transaction-monitoring
 ---
 
-{.text-center .hero-text}
+{.text-center .hero-text .col-sm-12 .col-lg-10 .offset-lg-1}
 # Synthetic monitoring for your vital click flows
 
 <p class="text-center hero-sub hero-sub-center mb-lg-5">
 Broken signup forms and flaky shopping carts are extremely frustrating to your customers.
-With Checkly's synthetic monitoring you can accurately simulate interaction with your site and validate the
+With Checkly's Browser checks you can accurately simulate interaction with your site and validate the
 correctness and performance of all your crucial click paths.
 </p>
 
