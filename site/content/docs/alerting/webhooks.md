@@ -40,6 +40,30 @@ You can use the following event related variables in both URL and payload.
 
 ## Webhook examples
 
+### OpsGenie
+
+You can create an [OpsGenie](https://opsgenie.com) alert by POST-ing the following body
+
+```json
+{
+  "message": "{{ALERT_TITLE}}",
+  "description":"{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
+}
+```
+
+to the OpsGenie `alerts` API endpoint
+
+```
+https://{{OPSGENIE_API_KEY}}@api.opsgenie.com/v2/alerts
+```
+
+Or you can add the OpsGenie API key in the headers, e.g.
+
+```
+Authorization: GenieKey {{OPSGENIE_API_KEY}
+```
+
+
 ### Trello
 
 You can create a [Trello](https://trello.com) card using just the URL and no payload:
@@ -53,7 +77,7 @@ https://api.trello.com/1/cards?idList=5b28c04aed47522097be8bc4&key={{TRELLO_KEY}
 
 Send a message using [Pushover](https://pushover.net/) by posting this body:
 
-```
+```json
 {
   "token":"FILL_IN_YOUR_SECRET_TOKEN_FROM_PUSHOVER",
   "user":"FILL_IN_YOUR_USER_FROM_PUSHOVER",
