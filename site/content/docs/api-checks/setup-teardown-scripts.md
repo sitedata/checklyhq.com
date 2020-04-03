@@ -16,12 +16,12 @@ response data for regulatory reasons.
 
 ![setup and teardown script for http requests](/docs/images/api-checks/setup-teardown-1.png)
 
-Both script types are written in Javascript and have access to popular libraries like moment, axios and 
+Both script types are written in JavaScript and have access to popular libraries like moment, axios and lodash. See the full list of available libraries [here](#included-libraries).
 
 ## Script execution flow
 
 Setup and teardown scripts are executed in a specific order in the Checkly backend. Being aware of this order is important
-to get the most out of this feature 
+to get the most out of this feature:
 
 1. Each setup script is executed once per check is a dedicated execution sandbox directly as it is scheduled to run. Any changes you make in the
 setup script are distributed to each check run on each data center location.
@@ -358,7 +358,6 @@ Response properties are exposed a standard Javascript object. These are only ava
 | `response.timings`  | Various timestamps for the request stage relative to the starting time.  | Object |
 | `response.timingPhases`  | Time durations for each request phase. | Object |
 
-
 ## Included libraries
 
 All setup and teardown scripts run in a sandboxed environment on our cloud backed. You do not have full access to the Node.js
@@ -396,6 +395,7 @@ See the [built-in module documentation on the official Node.js site](https://nod
 - **[request](https://github.com/request/request)** 2.88.0: An alternative HTTP client to Axios that supports posting Form data.
 - **[request-promise](https://github.com/request/request-promise)** 4.2.2: A plugin for the request library to enable promises.
 - **[uuid](https://github.com/kelektiv/node-uuid)** 3.3.3: Simple, fast generation of UUIDS.
+
 
 ## Technical limitations
 
