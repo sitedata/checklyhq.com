@@ -1,16 +1,16 @@
 ---
-title: Product designer
+title: UI/UX designer
 subtitle: Full time / Remote
 position_state: Open
 ---
 
 - Remote
-- web design, product design, digital design
+- UI, UX, web design, product design, digital design
 - Full time
 
 ## About the role
 
-Checkly is looking for an experienced product designer. We want to take the next step in what customers are constantly
+Checkly is looking for an experienced UI/UX designer. We want to take the next step in what customers are constantly
 complimenting us on: our great UI and UX. You will be working directly with the founders, frontend devs and backend devs in 
 creating the best working and most lovable monitoring application for developers.
 
