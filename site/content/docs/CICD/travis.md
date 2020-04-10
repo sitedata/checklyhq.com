@@ -6,8 +6,8 @@ menu:
     parent: "CI/CD integration"
 ---
 
-You can trigger your checks from your Travis CI builds. Below you will an example of a `.travis.yml`. This integration 
-uses the Checkly [command line trigger](/docs/cicd/triggers/) feature to run checks from any CI/CD solution.
+You can trigger your checks from your Travis CI builds. Below is an example of a `.travis.yml` that uses the 
+Checkly [command line trigger](/docs/cicd/triggers/) feature to run checks from any CI/CD solution.
 
 ## Travis CI example
 
