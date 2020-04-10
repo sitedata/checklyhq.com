@@ -1,10 +1,10 @@
 ---
 title: Frontend Developer (Vue.js)
-subtitle: Full time / Berlin / Remote
+subtitle: Full time / Remote
 position_state: Open
 ---
 
-- Berlin (Germany) / Remote
+- Remote
 - Vue.js, Vue Router, Vuex, Javascript, SCSS
 - Full time
 

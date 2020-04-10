@@ -9,9 +9,9 @@ menu:
 You can add as many of the following alert channels as you want: 
 
 - Email
-- Slack
-- SMS
-- Webhook
+- [Slack]({{< ref "slack.md" >}})
+- [SMS]({{< ref "sms-delivery.md" >}})
+- [Webhook]({{< ref "webhooks.md" >}})
 - Pagerduty
 
 When adding a channel, you can select which checks to subscribe to the channel. This way you can create specific routings
