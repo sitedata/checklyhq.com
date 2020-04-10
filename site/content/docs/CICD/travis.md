@@ -11,15 +11,15 @@ uses the Checkly [command line trigger](/docs/cicd/triggers/) feature to run che
 
 ## Travis CI example
 
-This `.travis.yml` file is from our [checkly-ci-test](https://github.com/checkly/checkly-ci-test) GitHub repo. This file 
-goes through the following steps:
+This `.travis.yml` file is from our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test).  This file 
+goes through the following phases:
+
 1. Install dependencies
 2. Run unit tests.
 3. Deploy to an environment
 4. Run Checkly checks 
 
-
-The install, build, unit test, and deployment step are of course highly specific to your stack and environment. 
+The install, unit test, build and deployment phases are of course highly specific to your stack and environment. 
 
 ```yaml
 # The language, build and unit test phases are just examples from our example repo
