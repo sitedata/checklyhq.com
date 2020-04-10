@@ -4,7 +4,7 @@
 $light-blue: #EBFAFF;
 
 // typography
-$body-text: darken($gray, 15%);
+$body-text: $gray-dark;
 $line-height-pub-site: 28px !important;
 
 // sections
