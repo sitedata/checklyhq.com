@@ -171,12 +171,13 @@
       color: $gray;
       text-transform: uppercase;
       position: fixed;
-      padding-top: $top;
+      top: $top;
     }
 
     &-mobile {
       display: none;
       .docs-toc-header {
+        top: 0;
         position: relative;
         padding-top: 0;
       }
