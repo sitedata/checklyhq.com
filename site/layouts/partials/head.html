@@ -7,11 +7,14 @@
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}" />
   <meta property="og:description" content="{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}" />
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-  <meta property="og:image" content="{{ if .Params.featured_image }}{{ .Params.featured_image }}{{ else}}https://checklyhq.com/images/dashboard-screen@2x.png{{end}}" />
-  <meta property="twitter:card" content="summary" />
+  <meta property="og:image" content="{{ if .Params.featured_image }}{{ .Params.featured_image }}{{ else }}https://checklyhq.com/images/checkly_og_image.png{{end}}" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:creator" content="@checklyHQ" />
+  <meta property="twitter:domain" content="https://checklyhq.com" />
+  <meta property="twitter:site" content="@checklyHQ" />
   <meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | Checkly {{ end }}" />
   <meta property="twitter:description" content="{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}" />
-  <meta property="og:image" content="{{ if .Params.featured_image }}{{ .Params.featured_image }}{{ else }}https://checklyhq.com/images/dashboard-screen@2x.png{{end}}" />
+  <meta property="twitter:image" content="{{ if .Params.featured_image }}{{ .Params.featured_image }}{{ else }}https://checklyhq.com/images/checkly_og_image.png{{end}}" />
   <meta name="msvalidate.01" content="36F243A91FAA24DE468D8A8EECF33554" />
   <link rel="icon" type="image/png" href="/images/racoon_favicon.png" />
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
@@ -19,7 +22,7 @@
   <link rel="alternate" href="{{ .Permalink }}" hreflang="en-us" />
   <link rel="canonical" href="{{ .Permalink }}" />
   <link rel="stylesheet" href="/css/style.css" />
-<!--  <script async src="https://cdn.cookielaw.org/consent/e4c8a868-c0ad-4c0c-b61e-f6eb6cad2810.js" type="text/javascript" charset="UTF-8"></script>-->
+  <script async src="https://cdn.cookielaw.org/consent/e4c8a868-c0ad-4c0c-b61e-f6eb6cad2810.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript">
     function OptanonWrapper() {}
   </script>
