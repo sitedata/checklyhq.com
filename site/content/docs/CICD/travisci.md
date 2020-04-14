@@ -1,6 +1,6 @@
 ---
 title: Travis CI
-weight: 3
+weight: 6
 menu:
   docs:
     parent: "CI/CD integration"
@@ -51,4 +51,14 @@ after_deploy:
   - if [ $(grep -c '"hasFailures":true' $PWD/checkly.json) -ne 0 ]; then exit 1; fi
 ```
 
+
+{{< info >}}
+This is a v1 integration. We are working on providing better feedback, longer runs, GitHub PR feedback and more customization options
+for checks triggered directly via the API. 
+{{< /info >}}
+ 
+ {{< warning >}}
+ The total run time of all checks cannot exceed 30 seconds or you will receive a timeout error. 
+ {{< /warning >}}
+  
 
