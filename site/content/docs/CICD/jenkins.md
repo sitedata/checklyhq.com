@@ -11,10 +11,10 @@ Checkly [command line trigger](/docs/cicd/triggers/) feature to run checks throu
 
 In both cases, you will need to set your `CHECKLY_TOKEN` as an environment variable for your job. This allows it to be picked up by the trigger command without the need to expose it in plain text in your repository.
 
-![Jenkins Pipeline Checkly Token Config](https://raw.githubusercontent.com/ragog/JenkinsChecklyIntExample/master/jenkins-param.png)
+![Jenkins Pipeline Checkly Token Config](/docs/images/cicd/jenkins-param.png)
 
 ## Jenkins Pipelines Example
-This `Jenkinsfile` is from our [checkly-ci-test GitHub repo](todo). This file contains different stages (here shown as generic placeholders) going from application build to deployment, with an added post-deployment stage to trigger Checkly checks and mark the build passed or failed depending on the outcome.
+This `Jenkinsfile` is from our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test). This file contains different stages (here shown as generic placeholders) going from application build to deployment, with an added post-deployment stage to trigger Checkly checks and mark the build passed or failed depending on the outcome.
 
 The content of each previous stage will of course be highly specific to your stack, environment and build process.
 ```groovy
@@ -56,7 +56,7 @@ If you are not using Jenkins Pipelines, you can leverage Checkly in your standal
 
 An example could look like the following:
 
-![Jenkins Job Checkly Build Config](https://raw.githubusercontent.com/ragog/JenkinsChecklyIntExample/master/jenkins-freestyle-param.png)
+![Jenkins Job Checkly Build Config](/docs/images/cicd/jenkins-freestyle-build.png)
 
 {{< info >}}
 This is a v1 integration. We are working on providing better feedback, longer runs, GitHub PR feedback and more customization options
