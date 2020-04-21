@@ -11,7 +11,7 @@ You can integrate Checkly in your CI/CD pipeline in two ways:
 
 
 The easiest way to get started is by using our GitHub integration to leverage the GitHub deployments API. This requires 
-minimal setup and works great with providers like **Zeit** and **Heroku**.
+minimal setup and works great with providers like **Vercel** and **Heroku**.
 
 - [GitHub deployments](/docs/cicd/github/)
 
@@ -23,7 +23,7 @@ You can also integrate with your CI/CD using our API directly:
 - [Heroku](/docs/cicd/heroku/)
 - [Jenkins](/docs/cicd/jenkins/)
 - [Travis CI](/docs/cicd/travisci/)
-- [ZEIT](/docs/cicd/zeit/)
+- [Vercel](/docs/cicd/vercel/)
 
 For any other platform, check out how to use our command line trigger API:
 
