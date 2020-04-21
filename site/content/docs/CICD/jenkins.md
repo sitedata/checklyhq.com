@@ -13,7 +13,7 @@ In both cases, you will need to set your `CHECKLY_TOKEN` as an environment varia
 
 ![Jenkins Pipeline Checkly Token Config](/docs/images/cicd/jenkins-param.png)
 
-## Jenkins Pipelines Example
+## Jenkins Pipelines example
 This `Jenkinsfile` is from our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test). This file contains different stages (here shown as generic placeholders) going from application build to deployment, with an added post-deployment stage to trigger Checkly checks and mark the build passed or failed depending on the outcome.
 
 The content of each previous stage will of course be highly specific to your stack, environment and build process.
@@ -51,7 +51,7 @@ pipeline {
 }
 ```
 
-## Standalone Jenkins Job Config Example
+## Standalone Jenkins job config example
 If you are not using Jenkins Pipelines, you can leverage Checkly in your standalone Jenkins jobs by adding a build step to kick off your checks. Just select `Execute shell` as build step type and paste in your shell commands.
 
 An example could look like the following:

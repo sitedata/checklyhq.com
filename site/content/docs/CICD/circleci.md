@@ -8,12 +8,12 @@ menu:
 
 Below you can find an example that leverages the Checkly [command line trigger](/docs/cicd/triggers/) feature to run checks from your CircleCI projects.
 
-First of all, you will need to set your `CHECKLY_TOKEN` as an environment variable for your project. This allows it to be picked up by the trigger command without the need to expose it in plain text in your repository.
+As a first step, you will need to set your `CHECKLY_TOKEN` as an environment variable for your project on CircleCI. This allows the value to be picked up by the trigger command without the need to expose it in plain text in your repository.
 
 ![CircleCI Checkly Token Config](/docs/images/cicd/circleci-param.png)
 
-## CircleCI Example
-This `config.yml` is from our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test). This file contains different steps (here shown as generic placeholders) going from application build to deployment, with an added post-deployment step to trigger Checkly checks and mark the build passed or failed depending on the outcome.
+## CircleCI example
+This `config.yml` file is taken from our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test). It contains different steps (here shown as generic placeholders) going from application build to deployment, with an added post-deployment step to trigger Checkly checks and mark the build passed or failed depending on the outcome.
 
 The content of each previous step will of course be highly specific to your stack, environment and build process.
 ```yml
@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Deploy
           command: 
-            echo "Running tests..."
+            echo "Deplyoing..."
             # Insert your own deployment procedure
       - run:
           name: Trigger Checkly

@@ -8,15 +8,21 @@ menu:
 
 Checkly can work with Heroku either through its [GitHub Deployments integration](/docs/cicd/github/) or with Heroku CI. When in doubt between the two, our recommended solution is to use the GitHub Deployments integration.
 
-## Heroku CI Example
+## Heroku CI example
 If you are using Heroku CI, you can add a post-deploy step in your `app.json` file:
 ```json
 {
+    "name": "MyApplication",
+
+    // ...
+
     "scripts": {
       "postdeploy": "echo 'Deployment finished.' && curl 'https://api-test.checklyhq.com/check-groups/4/trigger/$CHECKLY_TOKEN' > $PWD/checkly.json' && if [ $(grep -c '\"hasFailures\":true' $PWD/checkly.json) -ne 0 ]; then exit 1; fi"
     }
 }
 ```
+
+You can find an example of `app.json` file in our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test).
 
 Additionally, you will need to set your `CHECKLY_TOKEN` as a [config variable](https://devcenter.heroku.com/articles/config-vars) for your app on Heroku CI. This allows it to be picked up by the trigger command without the need to expose it in plain text in your repository.
 
