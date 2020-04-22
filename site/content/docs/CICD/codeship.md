@@ -22,6 +22,8 @@ Additionally, you will need to set the `CHECKLY_TOKEN` environment variable from
 
 ![Codeship Checkly Token Setting](/docs/images/cicd/codeship-param.png)
 
+_Note: the Checkly Token is the very last part of the check's command line trigger URL._
+
 {{< info >}}
 This is a v1 integration. We are working on providing better feedback, longer runs, GitHub PR feedback and more customization options
 for checks triggered directly via the API. 

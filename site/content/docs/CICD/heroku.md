@@ -26,6 +26,8 @@ You can find an example of `app.json` file in our [checkly-ci-test GitHub repo](
 
 Additionally, you will need to set your `CHECKLY_TOKEN` as a [config variable](https://devcenter.heroku.com/articles/config-vars) for your app on Heroku CI. This allows it to be picked up by the trigger command without the need to expose it in plain text in your repository.
 
+_Note: the Checkly Token is the very last part of the check's command line trigger URL._
+
 ![Jenkins Pipeline Checkly Token Config](/docs/images/cicd/herokuci-param.png)
 
 {{< info >}}

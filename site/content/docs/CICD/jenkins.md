@@ -13,6 +13,8 @@ In both cases, you will need to set your `CHECKLY_TOKEN` as an environment varia
 
 ![Jenkins Pipeline Checkly Token Config](/docs/images/cicd/jenkins-param.png)
 
+_Note: the Checkly Token is the very last part of the check's command line trigger URL._
+
 ## Jenkins Pipelines example
 This `Jenkinsfile` is from our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test). This file contains different stages (here shown as generic placeholders) going from application build to deployment, with an added post-deployment stage to trigger Checkly checks and mark the build passed or failed depending on the outcome.
 

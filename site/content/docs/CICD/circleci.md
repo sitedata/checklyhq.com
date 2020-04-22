@@ -8,7 +8,9 @@ menu:
 
 Below you can find an example that leverages the Checkly [command line trigger](/docs/cicd/triggers/) feature to run checks from your CircleCI projects.
 
-As a first step, you will need to set your `CHECKLY_TOKEN` as an environment variable for your project on CircleCI. This allows the value to be picked up by the trigger command without the need to expose it in plain text in your repository.
+As a first step, you will need to set your `CHECKLY_TOKEN` as an environment variable for your project on CircleCI. This allows the value to be picked up by the trigger command without the need to expose it in plain text in your repository. 
+
+_Note: the Checkly Token is the very last part of the check's command line trigger URL._
 
 ![CircleCI Checkly Token Config](/docs/images/cicd/circleci-param.png)
 
