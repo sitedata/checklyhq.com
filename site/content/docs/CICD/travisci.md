@@ -51,6 +51,9 @@ after_deploy:
   - if [ $(grep -c '"hasFailures":true' $PWD/checkly.json) -ne 0 ]; then exit 1; fi
 ```
 
+Last but not least, you will need to set your `CHECKLY_TOKEN` as an [environment variable](https://docs.travis-ci.com/user/environment-variables/#defining-encrypted-variables-in-travisyml) in your `.travis.yml`. This allows it to be picked up by the trigger command without the need to expose it in plain text in your repository.
+
+_Note: the Checkly Token is the very last part of the check's command line trigger URL._
 
 {{< info >}}
 This is a v1 integration. We are working on providing better feedback, longer runs, GitHub PR feedback and more customization options
