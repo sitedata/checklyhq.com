@@ -1,7 +1,8 @@
 ---
 title: UI/UX designer
 subtitle: Full time / Remote
-position_state: Open
+position_state: Closed
+draft: true
 ---
 
 - Remote
