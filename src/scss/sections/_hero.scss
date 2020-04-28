@@ -37,7 +37,7 @@
     }
 
     @include media-breakpoint-up(md) {
-      width: 900px;
+      width: 960px;
     }
   }
 }
@@ -45,7 +45,7 @@
 @include media-breakpoint-down(sm) {
   .hero-section {
     margin-bottom: 2rem;
-    height: 550px;
+    height: 700px;
 
     .hero-text {
       font-size: 2.5rem;

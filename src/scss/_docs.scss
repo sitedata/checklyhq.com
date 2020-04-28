@@ -16,7 +16,7 @@
 
   &-menu {
     flex: 0 0 $menu-width;
-    font-size: .875rem;
+    font-size: 1rem;
     margin-left: auto;
 
     nav {
@@ -35,7 +35,7 @@
     }
 
     a {
-      color: $gray-darkish;
+      color: $gray-dark;
     }
 
     &-search {
@@ -49,7 +49,7 @@
     &-title {
       display: inline-block;
       font-weight: 500;
-      font-size: 0.875rem;
+      font-size: 1rem;
       margin-bottom: 0.5rem;
       &.active {
         font-weight: 400;
@@ -62,10 +62,10 @@
       margin-bottom: .5rem;
 
       &-item {
-        margin-bottom: .3rem;
-        padding-left: 1rem;
+        margin-bottom: .2rem;
+
         a {
-          color: $gray-darkish;
+          color: $gray-dark;
           text-decoration: none;
           padding: .4rem 0;
           &:hover {
@@ -92,27 +92,12 @@
         margin-top: 2rem;
         margin-bottom: .5rem;
       }
-      &.active {
-        &:before {
-          padding-right: .25rem;
-          color: $gray;
-          font-family: Ionicons;
-          content: '\f3d0'
-        }
-      }
-      &:before {
-        padding-right: .25rem;
-        color: $gray;
-        font-family: Ionicons;
-        content: '\f3d3'
-      }
     }
 
     .api-reference-link {
-      padding-top: 1rem;
       margin-bottom: 1rem;
       display: inline-block;
-      color: $gray-darkish;
+      color: $gray-dark;
       &:hover {
         text-decoration: none;
         color: $brand-primary
@@ -130,8 +115,7 @@
     min-width: 20rem;
     max-width: 60rem;
     flex-grow: 1;
-    padding: 0 2rem;
-    margin-top: $top + 1rem;
+    padding: 1rem 1rem 1rem 1.5rem;
     margin-left: 0;
     margin-right: 0;
   }
@@ -157,7 +141,7 @@
         border-left: 2px solid $brand-primary;
         padding-left: .5rem;
       }
-      ul > li > ul > li > li {
+      ul > li > ul {
         display: none;
       }
     }
@@ -171,12 +155,13 @@
       color: $gray;
       text-transform: uppercase;
       position: fixed;
-      padding-top: $top;
+      top: $top;
     }
 
     &-mobile {
       display: none;
       .docs-toc-header {
+        top: 0;
         position: relative;
         padding-top: 0;
       }

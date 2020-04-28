@@ -13,7 +13,7 @@ $pink:   #FF659D;
 $purple: #613d7c !default;
 
 // grayscale types & borders
-$gray-dark:                 #3C4858;
+$gray-dark: #3c4858;
 $gray-darkish:              #697280;
 $gray:                      #8492A6;
 $gray-light:                #E0E6ED;
@@ -52,6 +52,6 @@ $enable-print-styles:       true !default;
 // Settings for the `<body>` element.
 
 $body-bg:       $white;
-$body-color:    $gray-darkish;
+$body-color:    $gray-dark;
 $inverse-bg:    $gray-dark;
 $inverse-color: $gray-lighter;

@@ -1,12 +1,20 @@
 .promo-banner {
-  position: fixed;
-  top: 0;
-  padding: .3 * $spacer-y;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 56px;
   z-index: 999999;
   width: 100%;
-
-  &.black-friday {
-    background-color: $gray-dark;
-    color: $white;
+  padding: .5rem;
+  font-size: 15px;
+  .promo-banner-link {
+    display: flex;
+    text-decoration: none;
+  }
+  &.funding {
+    background-color: $blue-light;
+    color: $gray-dark;
   }
 }

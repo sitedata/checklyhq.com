@@ -1,7 +1,7 @@
 ---
 title: Documentation
 ---
-Checkly is an API monitoring and site transaction monitoring solution aimed at development and operations teams. Checkly gives you broad, deep and
+Checkly is an API monitoring and synthetic monitoring solution aimed at development and operations teams. Checkly gives you broad, deep and
 exact control over how your APIs and web apps should be monitored.
 
 ## Featured documentation

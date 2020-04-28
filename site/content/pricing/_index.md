@@ -13,7 +13,7 @@ API is valid and performant.
 
 Browser checks are monitors based on Node.js scripts using industry standard testing tools like Mocha and Puppeteer.
 Each browser check uses an actual Chrome browser to execute clicks, fill out forms and validate if these interactions have
-the correct results.
+the correct results. This is also commonly called "synthetic monitoring".
 
 #### Do all plans have the same scheduling options?
 
@@ -23,7 +23,7 @@ are the same for all check types.
 #### Can I get a custom plan with more / less checks?
 
 Yes, we can customize the plan exactly to your needs. 500 API checks and 0 browser checks, or any combination really.
-Just <a href="#" class='open-intercom-link'>contact us</a> and we'll make you a quote. 
+Just <a href="#" class='open-intercom-link'>contact us</a> and we'll make you a quote.
 
 <--->
 

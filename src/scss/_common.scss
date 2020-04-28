@@ -118,6 +118,13 @@ p {
   width: 720px;
 }
 
+img.avatar {
+  flex-shrink: 0;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+}
+
 // Styles
 
 .big-drop-shadow {

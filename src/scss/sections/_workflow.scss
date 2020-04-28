@@ -1,0 +1,10 @@
+@import '../variables';
+
+.workflow-section {
+  padding-top: 3 * $section-top-padding;
+  padding-bottom: 3 * $section-bottom-padding;
+
+  img {
+    height: 64px;
+  }
+}

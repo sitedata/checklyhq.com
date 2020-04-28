@@ -1,0 +1,11 @@
+@import '../variables';
+
+.e2e-pr-section {
+  padding-top: 4 * $section-top-padding;
+  padding-bottom: $section-bottom-padding;
+  background: $white;
+
+  img.pr-image {
+    width: 750px;
+  }
+}

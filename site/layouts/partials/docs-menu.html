@@ -10,10 +10,6 @@
       {{ range .Site.Menus.docs }} {{ if .HasChildren }}
       <li class='docs-menu-item {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}'>
         <a class='docs-menu-title {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}' href="{{.URL}}">{{.Name}}</a>
-
-        {{if $currentPage.HasMenuCurrent "docs" . }}
-
-
         <ul class="docs-menu-sub">
           {{range .Children}} {{ $has := $currentPage.IsMenuCurrent "docs" . }}
           <li class="docs-menu-sub-item {{if $has}}active{{end}}">
@@ -23,9 +19,6 @@
           </li>
           {{end}}
         </ul>
-
-        {{end}}
-
       </li>
       {{else}}
       <li class="docs-menu-item">

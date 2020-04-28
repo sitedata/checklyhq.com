@@ -9,6 +9,10 @@ menu:
 If you are using [Prometheus](https://prometheus.io/) for monitoring and the popular [Grafana](https://grafana.com/) stack
 for dashboarding, you can expose Checkly's core metrics on a dedicated, secured endpoint.
 
+
+> 💡 Check out our [blog post on using this integration with Prometheus and Grafana](https://blog.checklyhq.com/monitoring-website-performance-with-checkly-prometheus-grafana/) for some cool real-life applications.
+
+
 Checkly exposes two type of metrics in a Prometheus-compatible format.
  
 1. `checkly_check_status` reports if a check is passing or failing. `1` means the check is passing, `0` means the check is failing.
