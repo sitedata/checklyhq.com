@@ -50,6 +50,6 @@ You can then [set the Cookie header](https://checklyhq.com/docs/api-checks/reque
 
 ## Whitelisting browser checks
 
-To whitelist browser checks, allow traffic with user agent containing `X-Checkly-Account:<UUID>`, with `<UUID>` being your shortened Checkly ID. 
+To whitelist browser checks, allow traffic with user agent containing `Checkly/<UUID>`, with `<UUID>` being your shortened Checkly ID. 
 
 You will then be able to set up the matching user agent in your browser checks using Puppeteer's [setUserAgent method](https://pptr.dev/#?product=Puppeteer&version=v3.0.1&show=api-pagesetuseragentuseragent), e.g.: `await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36 Checkly/abcd1234');`
