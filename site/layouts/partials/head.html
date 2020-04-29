@@ -16,6 +16,7 @@
   <meta property="twitter:description" content="{{ with .Description }}{{ . | markdownify }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify}}{{ end }}{{ end }}{{ end }}" />
   <meta property="twitter:image" content="{{ if .Params.featured_image }}{{ .Params.featured_image }}{{ else }}https://checklyhq.com/images/checkly_og_image.png{{end}}" />
   <meta name="msvalidate.01" content="36F243A91FAA24DE468D8A8EECF33554" />
+  <link rel="alternate" type="application/rss+xml" title="The Checkly Blog" href="https://blog.checklyhq.com/rss/" />
   <link rel="icon" type="image/png" href="/images/racoon_favicon.png" />
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
