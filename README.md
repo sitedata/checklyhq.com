@@ -8,10 +8,8 @@ npm run start
 
 Deploy
 
-```bash
-npm run deploy:production
-```
-
+- push to any branch will deploy to preview via Vercel / Zeit
+- push to `master` will deploy to production via Vercel / Zeit
 
 ## Updating search
 
