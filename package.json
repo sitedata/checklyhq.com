@@ -10,7 +10,7 @@
     "build-preview": "gulp build-preview",
     "start": "gulp server",
     "lint": "eslint src",
-    "generate-api-docs": "curl -OL https://api.checklyhq.com/swagger.json && widdershins --user_templates api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o api-docs/shins/source/index.html.md && cd api-docs/shins && node shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss",
+    "generate-api-docs": "curl -OL https://api.checklyhq.com/swagger.json && widdershins --user_templates src/api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o src/api-docs/shins/source/index.html.md && cd src/api-docs/shins && shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss",
     "generate-api-docs:dev": "curl -OL http://localhost:3000/swagger.json && widdershins --user_templates api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o api-docs/shins/source/index.html.md && cd api-docs/shins && node shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss",
     "copy-api-docs": "gulp api-docs",
     "deploy:cacheable": "s3-deploy './public/**' --cwd './public/' --region 'eu-central-1' --bucket 'checklyhq.com' --etag --cache 315360000",
