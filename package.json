@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
-    "build": "gulp build",
+    "build": "gulp build && npm run generate-api-docs && npm run copy-api-docs",
     "build-preview": "gulp build-preview",
     "start": "gulp server",
     "lint": "eslint src",
