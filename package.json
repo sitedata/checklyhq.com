@@ -10,8 +10,8 @@
     "build-preview": "gulp build-preview",
     "start": "gulp server",
     "lint": "eslint src",
-    "generate-api-docs": "curl -OL https://api.checklyhq.com/swagger.json && widdershins --user_templates src/api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o src/api-docs/shins/source/index.html.md && cd src/api-docs/shins && shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss --output ./index.html",
-    "generate-api-docs:dev": "curl -OL http://localhost:3000/swagger.json && widdershins --user_templates src/api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o src/api-docs/shins/source/index.html.md && cd src/api-docs/shins && shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss --output ./index.html",
+    "generate-api-docs": "curl -OL https://api.checklyhq.com/swagger.json && widdershins --user_templates src/api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o src/api-docs/shins/source/index.html.md && cd src/api-docs/shins && shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss --inline --output ./index.html",
+    "generate-api-docs:dev": "curl -OL http://localhost:3000/swagger.json && widdershins --user_templates src/api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o src/api-docs/shins/source/index.html.md && cd src/api-docs/shins && shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss --inline --output ./index.html",
     "copy-api-docs": "gulp api-docs"
   },
   "author": "",
@@ -61,7 +61,7 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "s3-deploy": "^1.4.0",
-    "shins": "^2.4.0",
+    "shins": "^2.4.1-0",
     "widdershins": "^3.6.7"
   },
   "hugo-bin": {
