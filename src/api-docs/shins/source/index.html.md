@@ -75,8 +75,8 @@ Lists all configured alert channels and their subscribed checks.
         "activated": true
       }
     ],
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 ```
@@ -127,8 +127,8 @@ Show details of a specific alert channel.
       "activated": true
     }
   ],
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -286,8 +286,8 @@ Lists all current check groups in your account. The "checks" property is an arra
     "tearDownSnippetId": 0,
     "localSetupScript": "string",
     "localTearDownScript": "string",
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 ```
@@ -443,8 +443,8 @@ Creates a new check group. You can add checks to the group by setting the "group
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -583,8 +583,8 @@ Show details of one check in a specific check group with the group settings appl
       }
     ]
   },
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -722,8 +722,8 @@ Show details of a specific check group
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -864,8 +864,8 @@ Lists all checks in a specific check group with the group settings applied.
         }
       ]
     },
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 ```
@@ -1025,8 +1025,8 @@ Updates a check group.
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -1166,8 +1166,8 @@ Lists all current checks in your account.
         }
       ]
     },
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 ```
@@ -1377,8 +1377,8 @@ Creates a new API or browser check. Will return a `402` when you are over the li
       }
     ]
   },
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -1554,8 +1554,8 @@ Show details of a specific API or browser check
       }
     ]
   },
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -1765,8 +1765,8 @@ Updates a new API or browser check.
       }
     ]
   },
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -1819,7 +1819,7 @@ Lists the rolled up check results *per hour* for a specific check. <br><br>This 
     "errorCount": 0,
     "failureCount": 0,
     "resultsCount": 0,
-    "hour": "2020-04-30",
+    "hour": "2020-05-05",
     "responseTimes": [
       "string"
     ]
@@ -1889,9 +1889,9 @@ Lists the full, raw check results for a specific check. We keep raw results for 
     "isDegraded": true,
     "overMaxResponseTime": true,
     "runLocation": "string",
-    "startedAt": "2020-04-30",
-    "stoppedAt": "2020-04-30",
-    "created_at": "2020-04-30",
+    "startedAt": "2020-05-05",
+    "stoppedAt": "2020-05-05",
+    "created_at": "2020-05-05",
     "responseTime": 0,
     "apiCheckResult": {},
     "browserCheckResult": {},
@@ -1946,9 +1946,9 @@ Show details of a specific check result.
   "isDegraded": true,
   "overMaxResponseTime": true,
   "runLocation": "string",
-  "startedAt": "2020-04-30",
-  "stoppedAt": "2020-04-30",
-  "created_at": "2020-04-30",
+  "startedAt": "2020-05-05",
+  "stoppedAt": "2020-05-05",
+  "created_at": "2020-05-05",
   "responseTime": 0,
   "apiCheckResult": {},
   "browserCheckResult": {},
@@ -2000,8 +2000,8 @@ Shows the current status information for all checks in your account. The check s
     "lastRunLocation": "string",
     "lastCheckRunId": "string",
     "sslDaysRemaining": 0,
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 ```
@@ -2052,8 +2052,8 @@ Show the current status information for a specific check.
   "lastRunLocation": "string",
   "lastCheckRunId": "string",
   "sslDaysRemaining": 0,
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -2397,8 +2397,8 @@ Lists all current snippets in your account.
     "id": 0,
     "name": "string",
     "script": "string",
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 ```
@@ -2452,8 +2452,8 @@ Creates a new snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -2534,8 +2534,8 @@ Show details of a specific snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -2590,8 +2590,8 @@ Updates a snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 ```
 
@@ -2914,8 +2914,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       "activated": true
     }
   ],
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 
 ```
@@ -2948,8 +2948,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         "activated": true
       }
     ],
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 
@@ -3467,8 +3467,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "tearDownSnippetId": 0,
     "localSetupScript": "string",
     "localTearDownScript": "string",
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 
@@ -3906,8 +3906,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       }
     ]
   },
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 
 ```
@@ -4063,8 +4063,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       }
     ]
   },
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 
 ```
@@ -4221,8 +4221,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         }
       ]
     },
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 
@@ -4260,7 +4260,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "errorCount": 0,
   "failureCount": 0,
   "resultsCount": 0,
-  "hour": "2020-04-30",
+  "hour": "2020-05-05",
   "responseTimes": [
     "string"
   ]
@@ -4292,7 +4292,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "errorCount": 0,
     "failureCount": 0,
     "resultsCount": 0,
-    "hour": "2020-04-30",
+    "hour": "2020-05-05",
     "responseTimes": [
       "string"
     ]
@@ -4347,9 +4347,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "isDegraded": true,
   "overMaxResponseTime": true,
   "runLocation": "string",
-  "startedAt": "2020-04-30",
-  "stoppedAt": "2020-04-30",
-  "created_at": "2020-04-30",
+  "startedAt": "2020-05-05",
+  "stoppedAt": "2020-05-05",
+  "created_at": "2020-05-05",
   "responseTime": 0,
   "apiCheckResult": {},
   "browserCheckResult": {},
@@ -4395,9 +4395,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "isDegraded": true,
     "overMaxResponseTime": true,
     "runLocation": "string",
-    "startedAt": "2020-04-30",
-    "stoppedAt": "2020-04-30",
-    "created_at": "2020-04-30",
+    "startedAt": "2020-05-05",
+    "stoppedAt": "2020-05-05",
+    "created_at": "2020-05-05",
     "responseTime": 0,
     "apiCheckResult": {},
     "browserCheckResult": {},
@@ -4429,8 +4429,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "lastRunLocation": "string",
   "lastCheckRunId": "string",
   "sslDaysRemaining": 0,
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 
 ```
@@ -4467,8 +4467,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "lastRunLocation": "string",
     "lastCheckRunId": "string",
     "sslDaysRemaining": 0,
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 
@@ -4584,8 +4584,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         }
       ]
     },
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 
@@ -4855,8 +4855,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 
 ```
@@ -4881,8 +4881,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "id": 0,
     "name": "string",
     "script": "string",
-    "created_at": "2020-04-30",
-    "updated_at": "2020-04-30"
+    "created_at": "2020-05-05",
+    "updated_at": "2020-05-05"
   }
 ]
 
@@ -5011,8 +5011,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2020-04-30",
-  "updated_at": "2020-04-30"
+  "created_at": "2020-05-05",
+  "updated_at": "2020-05-05"
 }
 
 ```
