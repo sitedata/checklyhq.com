@@ -69,10 +69,10 @@ request.url = request.url + '/extra'
 const axios = require('axios')
 
 // use 'await' on an axios HTTP get to fetch a token from a location
-const result = await axios.get('https://example.com/api/token')
+const { data } = await axios.get('https://example.com/api/token')
 
 // add the token as a query parameters
-request.queryParameters['token'] = result.token
+request.queryParameters['token'] = data.token
 ```
 
 ### Sign an HMAC request
@@ -130,8 +130,8 @@ const credentials = {
 const signature = aws4.sign(options, credentials)
 
 // fetch the data and store in an environment variable
-const result = await axios.get(url, { headers: signature.headers })
-environment['AWS_V4_RESULT'] = result.data
+const { data } = await axios.get(url, { headers: signature.headers })
+environment['AWS_V4_RESULT'] = data
 ```
 
 ### fetch an OAuth2 access token using the `client_credentials` grant
