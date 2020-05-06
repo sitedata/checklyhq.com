@@ -17,8 +17,8 @@ nutshell, you can:
 
 The example above shows a webhook configured to create a Jira ticket on each event. Notice the following:
 
-- We use the variables **JIRA_USER** and **JIRA_TOKEN** in the URL. We previously stored these variables in the environment variables section.
-- We use the variables **RESULT_LINK** and **ALERT_TITLE** in the payload. These are event based variables and will change with each call.
+- We use the variables `JIRA_USER` and `JIRA_TOKEN` in the URL. We previously stored these variables in the environment variables section.
+- We use the variables `RESULT_LINK` and`ALERT_TITLE` in the payload. These are event based variables and will change with each call.
 
 In both cases we use the familiar Handlebars templating braces, i.e. `{{ }}` to insert the variable.
 
@@ -37,10 +37,45 @@ You can use the following event related variables in both URL and payload.
 | `RESULT_LINK`       | The full link to the check result                            |
 | `STARTED_AT`        | The ISO timestamp from when this check run started           |
 
+## Using Handlebars helpers
+
+We've extended the [Handlebars](https://handlebarsjs.com/) templating system with some handy helpers to make our webhooks
+even more powerful.
+
+- You can use `{{$UUID}}` to generate a random UUID/v4, i.e. `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`.
+- You can use `{{RANDOM_NUMBER}}` to generate a random decimal number between 0 and 1000, i.e. `345`.
+
+You can also use conditional helpers like `{{#eq}}` statements. Here is an example:
+ 
+```json
+{
+  "message": "Check is {{#eq ALERT_TYPE 'ALERT_FAILURE'}}DOWN{{/eq}} {{#eq ALERT_TYPE 'ALERT_RECOVERY'}}UP{{/eq}}"
+}
+```
+
+The above webhook body uses the `{{#eq}}` helper to execute the logic 
+
+*If the ALERT_TYPE variable equals 'ALERT_FAILURE', print 'DOWN', if it equals 'ALERT_RECOVERY' print 'UP'*
+
+So in the case of a failure event, the body would render to:
+
+```json
+{
+  "message": "Check is DOWN"
+}
+```
+
+Two clear benefits here:
+- You only need to create one webhook to inform a 3rd party system.
+- You can translate Checkly terms to your 3rd party tool's term for the same concept, i.e. the "up status" of a check.
+
+You can find the [full list of helpers in the README.md file](https://github.com/checkly/handlebars) of the underlying library we are using.
 
 ## Webhook examples
 
-### OpsGenie
+The following examples give an idea how to integrate Checkly with 3rd party alerting and issue tracking systems.
+
+## OpsGenie
 
 You can create an [OpsGenie](https://opsgenie.com) alert by POST-ing the following body
 
@@ -63,17 +98,7 @@ Or you can add the OpsGenie API key in the headers, e.g.
 Authorization: GenieKey {{OPSGENIE_API_KEY}
 ```
 
-
-### Trello
-
-You can create a [Trello](https://trello.com) card using just the URL and no payload:
-
-```
-https://api.trello.com/1/cards?idList=5b28c04aed47522097be8bc4&key={{TRELLO_KEY}}&token={{TRELLO_TOKEN}}&name={{CHECK_NAME}}
-```
-
-
-### Pushover
+## Pushover
 
 Send a message using [Pushover](https://pushover.net/) by posting this body:
 
@@ -88,4 +113,13 @@ Send a message using [Pushover](https://pushover.net/) by posting this body:
   "expire":10800,
   "message":"{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
 }
+```
+
+
+## Trello
+
+You can create a [Trello](https://trello.com) card using just the URL and no payload:
+
+```
+https://api.trello.com/1/cards?idList=5b28c04aed47522097be8bc4&key={{TRELLO_KEY}}&token={{TRELLO_TOKEN}}&name={{CHECK_NAME}}
 ```
