@@ -38,7 +38,14 @@ When typing in most of the variable-enabled fields we show a small helper popup 
 
 Note, just the Body input field does not show this helper popup.
 
-> You can access the current data center location using the implicit `{{REGION}}` variable. This resolve to the AWS region name, i.e. 'us-east-1'
+## Template function and built-in variables
+
+Next to your own variables, you can reference some built in helpers:
+
+- You can access the current data center location using the implicit `{{REGION}}` variable. This resolves to the AWS region name, i.e. `us-east-1`.
+- You can use `{{$UUID}}` to generate a random UUID/v4, i.e. `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`.
+- You can use `{{RANDOM_NUMBER}}` to generate a random decimal number between 0 and 1000, i.e. `345`.
+
 
 
 
