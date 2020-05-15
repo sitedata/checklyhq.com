@@ -35,7 +35,7 @@ Getting a monitoring script going is a lot easier than you might think. Just fol
 {{% feature-row header="Create a script" img="/product/transaction-monitoring/script.png" %}}
 Pick one of the examples from our built-in library as your starting point. Alternatively, you can install and fire up the
 [Puppeteer Recorder](/docs/puppeteer-recorder/) browser extension and record a script in real-time as you click through your site.
-{{% cta-link "Learn more" "/docs/browser-checks/quickstart/" %}}
+{{% cta-link "Learn more" "/docs/browser-checks/" %}}
 {{% /feature-row %}}
 
 {{% feature-row header="Tweak it" img="/product/transaction-monitoring/tweak.png" %}}
