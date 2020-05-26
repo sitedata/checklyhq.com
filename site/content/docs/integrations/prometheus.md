@@ -66,7 +66,7 @@ Activating this integration is simple.
 2. We directly create an endpoint for you and five your the URL and the required Bearer token.
 ![Prometheus integration step 2](/docs/images/integrations/prometheus_step2.png)
 
-3. Creat a new job in your Prometheus `prometheus.yml` config and set up a scraping interval. We recommend an interval
+3. Create a new job in your Prometheus `prometheus.yml` config and set up a scraping interval. We recommend an interval
 between 30 seconds and 60 seconds. Add the URL (divided into `metrics_path`, `scheme` and `target`) and `bearer_token`.
 Here is an example
 
