@@ -82,7 +82,7 @@ You can create an [OpsGenie](https://opsgenie.com) alert by POST-ing the followi
 ```json
 {
   "message": "{{ALERT_TITLE}}",
-  "description":"{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
+  "description": "{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
 }
 ```
 
@@ -95,8 +95,27 @@ https://{{OPSGENIE_API_KEY}}@api.opsgenie.com/v2/alerts
 Or you can add the OpsGenie API key in the headers, e.g.
 
 ```
-Authorization: GenieKey {{OPSGENIE_API_KEY}
+Authorization: GenieKey {{OPSGENIE_API_KEY}}
 ```
+
+This could be an example of a full alert body:
+
+```json
+{
+  "message": "{{ALERT_TITLE}}",
+  "description": "{{ALERT_TYPE}}: {{CHECK_NAME}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}",
+  "responders": [
+        {
+            "id":"4513b7ea-3b91-438f-b7e4-e3e54af9147c",
+            "type":"team"
+        }
+  ],
+  "tags": ["Critical", "Production"],
+  "priority":"P1",
+  "note": "Location: {{RUN_LOCATION}}"
+}
+```
+
 
 ## Pushover
 
