@@ -19,6 +19,7 @@ You can also integrate with your CI/CD using our API directly:
 - [Heroku](/docs/cicd/heroku/)
 - [Jenkins](/docs/cicd/jenkins/)
 - [Travis CI](/docs/cicd/travisci/)
+- [GitLab CI](/docs/cicd/gitlabci)
 - [Vercel (formerly Zeit)](/docs/cicd/vercel/)
 
 For any other platform, check out how to use our command line trigger API:
