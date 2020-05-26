@@ -1,6 +1,6 @@
 ---
 title: Vercel (formerly Zeit)
-weight: 6
+weight: 9
 menu:
   docs:
     parent: "CI/CD integration"
