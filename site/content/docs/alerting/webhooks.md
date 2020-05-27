@@ -124,8 +124,7 @@ In case you would like different teams to be responsible for different Check Gro
           "id":"{{CHECK_GROUP_TEAM}}",
           "type":"team"
       }
-],
-}
+]
 ```
 
 ## Pushover
