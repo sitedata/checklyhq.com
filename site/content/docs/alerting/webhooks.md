@@ -10,7 +10,7 @@ Webhooks allows you to POST custom payloads to any endpoint in your own infrastr
 nutshell, you can:
 
 - Create a **custom URL** by adding in authentication tokens or other secret.
-- Create a **custom payload body** using any environment variables and specific instance variables per event.
+- Create a **custom payload body** using any environment variables and specific instance variables per event. Note: that means that if you are attaching the webhook to a Group, you will be able to access Group-level variables, too.
 - **Debug and test the webhook** in the editor by sending test messages.
 
 ![webhook editor](/docs/images/alerting/webhook_editor.png)
@@ -77,12 +77,12 @@ The following examples give an idea how to integrate Checkly with 3rd party aler
 
 ## OpsGenie
 
-You can create an [OpsGenie](https://opsgenie.com) alert by POST-ing the following body
+You can create an <a href="https://docs.opsgenie.com/docs/alert-api" target="_blank">OpsGenie</a> alert by POST-ing the following body
 
 ```json
 {
   "message": "{{ALERT_TITLE}}",
-  "description":"{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
+  "description": "{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
 }
 ```
 
@@ -95,7 +95,36 @@ https://{{OPSGENIE_API_KEY}}@api.opsgenie.com/v2/alerts
 Or you can add the OpsGenie API key in the headers, e.g.
 
 ```
-Authorization: GenieKey {{OPSGENIE_API_KEY}
+Authorization: GenieKey {{OPSGENIE_API_KEY}}
+```
+
+This is an example of a full alert body:
+
+```json
+{
+  "message": "{{ALERT_TITLE}}",
+  "description": "{{ALERT_TYPE}}: {{CHECK_NAME}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}",
+  "responders": [
+        {
+            "id":"4513b7ea-3b91-438f-b7e4-e3e54af9147c",
+            "type":"team"
+        }
+  ],
+  "tags": ["Critical", "Production"],
+  "priority":"P1",
+  "note": "Location: {{RUN_LOCATION}}"
+}
+```
+
+In case you would like different teams to be responsible for different Check Groups, you could add a `CHECK_GROUP_TEAM` variable with a different value for each Group, then modify the above snippet with the following:
+
+```json
+"responders": [
+      {
+          "id":"{{CHECK_GROUP_TEAM}}",
+          "type":"team"
+      }
+]
 ```
 
 ## Pushover
