@@ -116,6 +116,17 @@ This could be an example of a full alert body:
 }
 ```
 
+In case you would like different teams to be responsible for different Check Groups, you could add a `CHECK_GROUP_TEAM` variable with a different value for each Group, then modify the above snippet with the following:
+
+```json
+"responders": [
+      {
+          "id":"{{CHECK_GROUP_TEAM}}",
+          "type":"team"
+      }
+],
+}
+```
 
 ## Pushover
 
