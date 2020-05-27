@@ -77,7 +77,7 @@ The following examples give an idea how to integrate Checkly with 3rd party aler
 
 ## OpsGenie
 
-You can create an [OpsGenie](https://opsgenie.com) alert by POST-ing the following body
+You can create an <a href="https://docs.opsgenie.com/docs/alert-api" target="_blank">OpsGenie</a> alert by POST-ing the following body
 
 ```json
 {
