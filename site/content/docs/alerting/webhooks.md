@@ -98,7 +98,7 @@ Or you can add the OpsGenie API key in the headers, e.g.
 Authorization: GenieKey {{OPSGENIE_API_KEY}}
 ```
 
-This could be an example of a full alert body:
+This is an example of a full alert body:
 
 ```json
 {
