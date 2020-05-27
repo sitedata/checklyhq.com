@@ -10,7 +10,7 @@ Webhooks allows you to POST custom payloads to any endpoint in your own infrastr
 nutshell, you can:
 
 - Create a **custom URL** by adding in authentication tokens or other secret.
-- Create a **custom payload body** using any environment variables and specific instance variables per event.
+- Create a **custom payload body** using any environment variables and specific instance variables per event. Note: that means that if you are attaching the webhook to a Group, you will be able to access Group-level variables, too.
 - **Debug and test the webhook** in the editor by sending test messages.
 
 ![webhook editor](/docs/images/alerting/webhook_editor.png)
