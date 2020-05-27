@@ -56,7 +56,7 @@ an alert is triggered.
 ## Coding optional
 
 <p class="text-center hero-sub hero-sub-center mb-5">
-Coding your own scripts lets you controle exactly how your click paths should interact with
+Coding your own scripts lets you control exactly how your click paths should interact with
 the browser. However, you don't need to start there. We give you a built-in example library of examples and the Puppeteer
 Recorder Chrome browser extension to get started ASAP.
 </p>
