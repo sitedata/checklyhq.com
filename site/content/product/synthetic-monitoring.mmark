@@ -14,7 +14,7 @@ correctness and performance of all your crucial click paths.
 </p>
 
 <div class="row pt-4">
-{{< sm-4-col-item "Real browsers" "Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions. We run each session in a sealed of sandbox for extra security." >}}
+{{< sm-4-col-item "Real browsers" "Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions. We run each session in a sealed off sandbox for extra security." >}}
 {{< sm-4-col-item "Validate all the things" "In a Browser check you can check for specific content items, browser responses, visibility and error responses." >}}
 {{< sm-4-col-item "Screen shots" "Take a screen shot at any stage in your transaction for quick and easy reference. You can take full page shots, or just a specific page element for more focus." >}}
 {{< sm-4-col-item "Monitor globally" "We monitor your transactions from up to four data center locations around the world." >}}
