@@ -26,7 +26,7 @@ You will be working on all frontend projects we have at Checkly.
 - All other free, open source tools we have like https://puppeteersandbox.com
 
 We care about design, we care about small but awesome frontend tweaks that delight our customers. We care about performance.
-We deploy (almost) every day and keep things simple. Tools we use are Clubhouse, Sketch, Figma, Zeit, AWS and Heroku.
+We deploy (almost) every day and keep things simple. Tools we use are Clubhouse, Sketch, Figma, Vercel (formerly Zeit), AWS and Heroku.
 
 ## Your skills
 
