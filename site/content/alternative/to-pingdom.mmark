@@ -1,0 +1,71 @@
+---
+title: Checkly the modern alternative to Pingdom for Developers.
+description: "Checkly is built for developers eager to use modern tool stack to check their API’s and site transaction flows."
+---
+
+
+{.text-center .section-header .mb-4}
+## Difference between Pingdom and Checkly
+
+<p class="text-center lead-text mb-lg-5">
+Checkly is built for developers eager to use modern tool stack to check their API’s and site transactions. Fully customize your checks with setup and teardown scripts and tailor your checks to your needs. 
+You can also leverage the power of Puppeteer to run checks in a real browser globally. Finally, Checkly integrates with your workflow and your favorite tools like Github, Slack, Pagerduty, and many more.
+</p>
+
+{.text-center .section-header .pt-5}
+## Convert your checks with a simple Node script
+
+{{% feature-row header="Pingdom-2-Checkly" img="/alternative/pingdom2checkly.png" %}}
+We have you covered; use our existing Pingdom-2-Checkly migration script to get kickstarted. Please get in touch if you have any questions. 
+
+{{% cta-link "Learn more" "https://github.com/checkly/pingdom-2-checkly" %}}
+
+{{% /feature-row %}}
+
+
+{.text-center .section-header .mb-4}
+## What makes Checkly unique
+
+{{% feature-row header="API monitoring for developers" img="/product/api-monitoring/setup-teardown.png" %}}
+Checkly supports you to create flexible HTTP Checks tailored to your needs.
+- Monitor your API for Performance & Correctness
+- Run custom JavaScript before and after your check with Setup & Teardown Scripts
+- Easily create your Checks with Terraform and our Swagger importer 
+
+{{% cta-link "Learn more" "/product/api-monitoring/" %}}
+
+{{% /feature-row %}}
+
+
+{{% feature-row header="E2E-Checks with Puppeteer" img="/product/transaction-monitoring/script.png" %}}
+Code your own checks and control exactly how your tests interact with the Browser.
+- Use real and worldwide distributed Browsers to validate what you need
+- We support you with examples and our Puppeteer recorder - coding is optional
+- Run your checks constantly or via our CI/CD Integrations
+
+{{% cta-link "Learn more" "/product/synthetic-monitoring/" %}}
+
+{{% /feature-row %}}
+
+<section class="trusted-by-section"><div class="container"><div class="row"><div class="col-sm-12 col-lg-10 offset-lg-1"><h5 class="section-super-header mb-3">Trusted by engineering teams at</h5></div></div><div class="row"><div class="col-sm-12"><img class="trusted-by-image" src="/images/testimonials/customer_logos_horizontal_2@2x.png" alt="trusted by companies for api and browser transaction monitoring"/></div></div></div></section>
+
+
+{.text-center .section-header .pt-5}
+## Global coverage
+{.text-center .mb-lg-5 .img-w720}
+![alerting options](/landing/data-center-locations@2x.png)
+
+<p class="text-center lead-text mb-lg-5">
+Get a clear picture of how your services perform for all your users around the world. Run your check from any of sixteen
+data center locations spread over the Americas, EMEA, Asia Pacific and Africa.
+
+{{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
+</p>
+
+
+
+
+
+
+
+
