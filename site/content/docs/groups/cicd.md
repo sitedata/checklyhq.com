@@ -19,10 +19,10 @@ fire at once.
 2. The result reported now is an aggregate of all check runs, with individual check results as part of the message, i.e.
 
 
-## Github deployment triggers
+## GitHub deployment triggers
 
-We can run your check group whenever Github sends out a deployment webhook. Works great with services like 
-[Zeit](https://zeit.co) and [Heroku](https://heroku.com).
+We can run your check group whenever GitHub sends out a deployment webhook. Works great with services like 
+[Vercel](https://vercel.com) and [Heroku](https://heroku.com).
 
 To get started:
  1. [install the Checkly GitHub app as described here](/docs/cicd/github/)

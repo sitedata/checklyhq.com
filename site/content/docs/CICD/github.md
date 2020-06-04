@@ -9,7 +9,7 @@ menu:
 GitHub deployments are webhook events triggered by GitHub whenever a deployment service reports a successful deployment 
 event. This works out-of-the-box with the following services. 
 
-- [Zeit / Now for GitHub](https://zeit.co/docs/v2/advanced/now-for-github/)
+- [Vercel for GitHub](https://vercel.com/docs/v2/git-integrations/vercel-for-github)
 - [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines)
 
 Any (SaaS) service that interacts with the [GitHub deployments API](https://developer.github.com/v3/repos/deployments/) and
@@ -46,7 +46,7 @@ You can hook up multiple checks to the same repo. We will just run all of them a
 GitHub reports a **environment URL** on each deployment event. Depending on what deployment service you use,
 this environment URL can be used to run your check on different target environments than configured in your check.  
 
-The primary use case for this is that temporary review/branch deployments such as provided by Zeit and Heroku Pipelines
+The primary use case for this is that temporary review/branch deployments such as provided by Vercel and Heroku Pipelines
 can be validated before going to production. 
 
 So, when you enable the **"Use environment URL from deployment trigger"** checkbox there are two scenarios:
