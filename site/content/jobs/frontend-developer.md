@@ -1,16 +1,16 @@
 ---
-title: Frontend Developer (Vue.js)
+title: Frontend Lead (Vue.js)
 subtitle: Full time / Remote
 position_state: Open
 ---
 
-- Remote
+- Remote (GMT +3/-3)
 - Vue.js, Vue Router, Vuex, Javascript, SCSS
 - Full time
 
 ## About the role
 
-Checkly is looking for an experienced frontend developer. We use Vue.js extensively. Our core webapp is already quite a 
+Checkly is looking for an experienced frontend lead. We use Vue.js extensively. Our core webapp is already quite a 
 beast. It uses all of Vue.js (core, router and Vuex) and we are migrating everything to SFC. We do extensive XHR calls to our
 own API and many 3rd party APIs. We use web sockets for all kinds of updates. You get it: it's a mature webapp.
 
