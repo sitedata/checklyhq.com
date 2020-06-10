@@ -70,6 +70,7 @@ Response time is empty? JSON Object is less than? We block out the comparisons w
 - Greater than
 - Less than
 - Contains / Not contains
+- Is null / Not null
 - Has key / Not has key (deprecated)
 - Has value / Not has value (deprecated)
 
