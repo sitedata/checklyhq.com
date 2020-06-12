@@ -7,13 +7,17 @@ description: "Checkly is perfect for developers eager to use modern tool stack t
 {.text-center .section-header .mb-4}
 ## Why Checkly and not Pingdom? 
 
-<p class="text-center lead-text mb-lg-5">
-Checkly is built for developers and DevOps teams, eager to use modern tool stack to check their API’s and site transactions. Pingdom is great when you want to know if your API’s and websites are up. Anyway, it is hard to understand if endpoints and web apps are actually working correctly and perform well. Therefore, Checkly provides powerful insights and tools to customize your checks. Instead of a simple ping, you can create full-fledged configurable HTTP checks with Javascript to monitor APIs. 
-Beyond checking your API’s with Checkly you can monitor your vital click flows in a real Chrome browser. At Checkly you don’t have to use a code editor that technical savvy folks may find too restrictive, instead you can write Puppeteer scripts and run browser checks across 20 locations globally.
-Please see below for more details on how you can convert tests easily from Pingdom to Checkly and get started.
+<p class="text-center hero-sub hero-sub-center mb-lg-5">
+Checkly is built for developers and DevOps teams eager to use a modern tool stack.
 </p>
 
-{.text-center .section-header .pt-5}
+<div class="row pt-1 pb-1">
+{{< sm-4-col-item "Deeper Insights" "Pingdom is great when you want to know if your websites are up. But it doesn't show you whether your web app and endpoints are working correctly and performing well." >}}
+{{< sm-4-col-item "Flexible HTTP Checks" "Checkly provides powerful insights and tools to customize your checks. Instead of a simple ping, you can create full-fledged configurable HTTP checks to monitor APIs." >}}
+{{< sm-4-col-item "Powerful E2E Checks" "Monitor your vital click flows in a real Chrome browser. With Checkly you can use Javascript to code your checks, instead of using a restrictive limited scripting editor." >}}
+</div>
+
+{.text-center .section-header .pt-2}
 ## Convert your checks with a simple Node script
 
 {{% feature-row header="Pingdom-2-Checkly" img="/alternative/pingdom2checkly.png" %}}
