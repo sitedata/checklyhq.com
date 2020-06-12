@@ -1,15 +1,15 @@
 ---
 title: Checkly the modern alternative to Pingdom for Developers.
-description: "Checkly is built for developers eager to use modern tool stack to check their API’s and site transaction flows."
+description: "Checkly is perfect for developers eager to use modern tool stack to check their API's and site transaction flows."
 ---
 
 
 {.text-center .section-header .mb-4}
-## Difference between Pingdom and Checkly
+## Why Checkly and not Pingdom? 
 
 <p class="text-center lead-text mb-lg-5">
-Checkly is built for developers eager to use modern tool stack to check their API’s and site transactions. Fully customize your checks with setup and teardown scripts and tailor your checks to your needs. 
-You can also leverage the power of Puppeteer to run checks in a real browser globally. Finally, Checkly integrates with your workflow and your favorite tools like Github, Slack, Pagerduty, and many more.
+Checkly is perfect for developers eager to use modern tool stack to check their API's and site transactions. Fully customize your checks with setup and teardown scripts and tailor your tests to your needs. 
+It takes you literally seconds, not minutes to configure your first check.
 </p>
 
 {.text-center .section-header .pt-5}
@@ -38,7 +38,7 @@ Checkly supports you to create flexible HTTP Checks tailored to your needs.
 
 
 {{% feature-row header="E2E-Checks with Puppeteer" img="/product/transaction-monitoring/script.png" %}}
-Code your own checks and control exactly how your tests interact with the Browser.
+Code your checks and control exactly how your tests interact with the Browser.
 - Use real and worldwide distributed Browsers to validate what you need
 - We support you with examples and our Puppeteer recorder - coding is optional
 - Run your checks constantly or via our CI/CD Integrations
@@ -57,15 +57,7 @@ Code your own checks and control exactly how your tests interact with the Browse
 
 <p class="text-center lead-text mb-lg-5">
 Get a clear picture of how your services perform for all your users around the world. Run your check from any of sixteen
-data center locations spread over the Americas, EMEA, Asia Pacific and Africa.
+data center locations spread over the Americas, EMEA, Asia Pacific, and Africa.
 
 {{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
 </p>
-
-
-
-
-
-
-
-
