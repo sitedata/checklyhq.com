@@ -20,8 +20,9 @@ security flaw that might impact our customer and / or our products, please let u
 - We’ll investigate the issue and determine its impact. We won’t disclose issues until our investigation is finished.
 - Once the issue is resolved, we’ll post a security update along with thanks and credit for the discovery.
 
-Thanks for working with us
+## Thanks for helping small companies stay secure
 
-Tim Nolet
-Founder
+- [Faizan Ahmed Kahn](https://www.facebook.com/fizan.ahmed.3998)
+- [Max Schmitt](https://twitter.com/maxibanki)
+
 
