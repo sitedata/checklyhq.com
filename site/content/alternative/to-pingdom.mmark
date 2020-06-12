@@ -8,8 +8,9 @@ description: "Checkly is perfect for developers eager to use modern tool stack t
 ## Why Checkly and not Pingdom? 
 
 <p class="text-center lead-text mb-lg-5">
-Checkly is perfect for developers eager to use modern tool stack to check their API's and site transactions. Fully customize your checks with setup and teardown scripts and tailor your tests to your needs. 
-It takes you literally seconds, not minutes to configure your first check.
+Checkly is built for developers and DevOps teams, eager to use modern tool stack to check their API’s and site transactions. Pingdom is great when you want to know if your API’s and websites are up. Anyway, it is hard to understand if endpoints and web apps are actually working correctly and perform well. Therefore, Checkly provides powerful insights and tools to customize your checks. Instead of a simple ping, you can create full-fledged configurable HTTP checks with Javascript to monitor APIs. 
+Beyond checking your API’s with Checkly you can monitor your vital click flows in a real Chrome browser. At Checkly you don’t have to use a code editor that technical savvy folks may find too restrictive, instead you can write Puppeteer scripts and run browser checks across 20 locations globally.
+Please see below for more details on how you can convert tests easily from Pingdom to Checkly and get started.
 </p>
 
 {.text-center .section-header .pt-5}
@@ -41,7 +42,7 @@ Checkly supports you to create flexible HTTP Checks tailored to your needs.
 Code your checks and control exactly how your tests interact with the Browser.
 - Use real and worldwide distributed Browsers to validate what you need
 - We support you with examples and our Puppeteer recorder - coding is optional
-- Run your checks constantly or via our CI/CD Integrations
+- Run your tests constantly or via our CI/CD Integrations
 
 {{% cta-link "Learn more" "/product/synthetic-monitoring/" %}}
 
