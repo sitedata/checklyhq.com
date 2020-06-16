@@ -1,6 +1,6 @@
 ---
 title: Using Mocha with Puppeteer
-weight: 7
+weight: 8
 menu:
   docs:
     parent: "Browser checks"
