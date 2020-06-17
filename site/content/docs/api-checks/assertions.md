@@ -40,10 +40,9 @@ On each API check assertion, the following sources are available:
 
 ## Property
 
-The property field is a free form text field used to identify the name of a header, the part of a JSON object using JSON path
-or part of text body.
+The property field is a free form text field used to identify the name of a header, the part of a JSON object using JSON path or part of a text body.
 
-- With **JSON response bodies**, the property field accepts **JSON path** expression in the form of dot-separated strings to 
+- With **JSON response bodies**, the property field accepts **JSON path** expressions in the form of dot-separated strings to 
 target nested properties in an object, i.e. `$.product.size` or an item in an array, i.e. `$.[1].key`
 
 - With **text response bodies**, the property field accepts a **regular expression** with a capture group to pick out parts, 
@@ -56,7 +55,7 @@ Read more about asserting JSON response bodies below.
 
 ## Comparison
 
-Comparisons are the operators that work on the source data and target data, i.e. 
+Comparisons are the operators that work on the source data and target data, e.g. 
 
 - Response time is `LESS THAN` 150 milliseconds. 
 - Status code `EQUALS` 200.
@@ -189,19 +188,19 @@ property that is part of the `product` object in the JSON response.
 
 ![api monitoring assertions JSON object](/docs/images/api-checks/assertions-3.png)
 
-This next example checks for a **boolean** value in the `owner.site_admin` property
+This next example checks for a **boolean** value in the `owner.site_admin` property:
 
 ![api monitoring assertions nested JSON object](/docs/images/api-checks/assertions-5.png)
 
 ### Asserting arrays
 
-For response bodies with JSON arrays you use JSON paths `[]` expressions.
+For response bodies with JSON arrays you use JSON path's `[]` expressions.
 
-In the first example below we check if the first item in our result array has a property `title`
+In the first example below we check if the first item in our result array has a property `title`:
 
 ![api monitoring assertions nested JSON array](/docs/images/api-checks/assertions-6.png)
 
-In the next example we pick the last item in the array and check if the `customerId` property has the value `123abc`  
+In the next example we pick the last item in the array and check if the `customerId` property has the value `123abc`:
 
 ![api monitoring assertions nested JSON array pick item](/docs/images/api-checks/assertions-7.png)
 
@@ -221,12 +220,7 @@ Before we released the feature to use JSON path queries, Checkly had a custom wa
 response body.
 
 This method is still available for backwards compatibility reasons, but no longer advised as it is much less flexible and 
-powerful. 
-
-For reference, here is an example. We are checking the `size` property that is part of the product object in the JSON response
-and has a value of 'XL'. 
-
-![api monitoring deprecated custom query](/docs/images/api-checks/assertions-dep-1.png)
+powerful.
 
 ## Using regular expressions
 

@@ -32,7 +32,7 @@ Variables can be used in the following API checks fields:
 - Query parameters values
 - Basic authentication username and password
 
-When typing in most of the variable-enabled fields we show a small helper popup to help with selecting of the right variable.
+When typing in most of the variable-enabled fields we show a small helper popup to help select the right variable.
 
 ![access variables](/docs/images/api-checks/access-variables.png)
 
@@ -40,7 +40,7 @@ Note, just the Body input field does not show this helper popup.
 
 ## Template function and built-in variables
 
-Next to your own variables, you can reference some built in helpers:
+Next to your own variables, you can reference some built-in helpers:
 
 - You can access the current data center location using the implicit `{{REGION}}` variable. This resolves to the AWS region name, i.e. `us-east-1`.
 - You can use `{{$UUID}}` to generate a random UUID/v4, i.e. `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`.
