@@ -20,5 +20,5 @@ Current locations in Checkly are
 | Montreal         | Stockholm                 | Seoul        |
 | São Paulo        | Milan                     | Mumbai       |
 |                  | Bahrain                   |              |
-|                  | Cape Tow                  |              |
+|                  | Cape Town                 |              |
 

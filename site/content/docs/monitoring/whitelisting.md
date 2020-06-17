@@ -6,17 +6,15 @@ menu:
     parent: "Monitoring"
 ---
 
-Whitelisting Checkly traffic in your firewall or loadbalancer by IP address is not possible at this moment as Checkly uses a non-static set of IP addresses in the cloud to run its checks.
+Whitelisting Checkly traffic in your firewall or load balancer by IP address is not possible at this moment as Checkly uses a non-static set of IP addresses in the cloud to run its checks.
 
 This is a feature we want to implement so expect changes on this topic in the future.
 
-You can however fetch a list of the dynamic IP addresses in use at AWS, our cloud provider. Reference this documentation
-
-[https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html)
+You can however fetch a list of the [dynamic IP addresses](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in use at AWS, our cloud provider.
 
 # Filtering Google Analytics
 
-If you want to filter Checkly traffic in Google Analytics (and possible) because Checkly browser checks are skewing your 
+If you want to filter Checkly traffic in Google Analytics because Checkly browser checks are skewing your 
 numbers, here is one way how to do it:
 
 1. Ad a UTM source tag to the URL's your requesting, i.e.
@@ -30,7 +28,7 @@ await page.goto('https://app.checklyhq.com/login?utm_source=monitoring')
 ![filter google analytics traffic on campaign source](/docs/images/monitoring/analytics.png)
 
 
-For detailed instructions, see [the Google Analytics docs on custom filters](https://support.google.com/analytics/answer/1033162#CustomFilters)
+For detailed instructions, see [the Google Analytics docs on custom filters](https://support.google.com/analytics/answer/1033162#CustomFilters).
 
  > Note, it will take some hours for this to take effect.
 
@@ -40,7 +38,7 @@ If you are using Cloudflare, one or more of your automated checks might trigger 
 
 If you want to prevent that from happening, without exposing your website to any and all automated traffic, you might want to set up a new [firewall rule](https://developers.cloudflare.com/firewall/cf-firewall-rules/) allowing traffic from Checkly as long as it contains a specific header or sets a certain user agent.
 
-You can make the header and/or user agent specific to your own Checkly user account by grabbing the first eight digits of your unique user ID, which you can find below your account name on the [Account Settings page](https://app.checklyhq.com/account/). Embedding this value in your checks will allow them to be allowed through by your firewall rules.
+You can make the header and/or user agent specific to your own Checkly user account by grabbing the first eight digits of your unique user ID, which you can find below your account name on the [Account Settings page](https://app.checklyhq.com/account/). Embedding this value in your checks will enable them to be allowed through by your firewall rules.
 
 ## Whitelisting API checks
 

@@ -8,7 +8,7 @@ menu:
 
 Every check we run generates a certain amount of data. We call these the "results". Results are made up of various parts:
 
-- Meta data like timestamps, response times, fail/success flags, run location etc.
+- Metadata like timestamps, response times, fail/success flags, run location etc.
 - JSON or other response bodies, response headers, request timing data
 - Screenshot files
 - Run logs with debug or `console.log` statements.
