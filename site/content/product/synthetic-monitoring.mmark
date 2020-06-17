@@ -94,7 +94,7 @@ Need more control? Webhooks give you full access to the JSON data we use ourselv
 ![alerting options](/landing/data-center-locations@2x.png)
 
 <p class="text-center lead-text mb-lg-5">
-Get a clear picture of how your services perform for all your users around the world. Run your check from any of sixteen
+Get a clear picture of how your services perform for all your users around the world. Run your check from any of twenty
 data center locations spread over the Americas, EMEA and Asia Pacific.
 
 {{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
