@@ -17,7 +17,7 @@ We have different minimum intervals for each check type:
 You can select one or more data center locations to run your check from. We advise to **always select at least 2 locations**.
 There are two reason for this:
 
-1. Redundancy: We might have an issue in one location, but not the other. 
+1. Redundancy: we might have an issue in one location, but not the other. 
 2. Double checking: if your check fails and you have "double check" enabled we will retry the check from the other location.
 
 A picture is a thousand words:
