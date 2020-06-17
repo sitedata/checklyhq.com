@@ -1,6 +1,6 @@
 ---
-title: Checkly the modern alternative to Pingdom for Developers.
-description: "Checkly is perfect for developers eager to use modern tool stack to check their API's and site transaction flows."
+title: Checkly — the modern alternative to Pingdom for Developers.
+description: "Checkly is perfect for developers eager to use a modern tool stack to check their API's and site transaction flows."
 ---
 
 
@@ -13,15 +13,15 @@ Checkly is built for developers and DevOps teams eager to use a modern tool stac
 
 <div class="row pt-1 pb-1">
 {{< sm-4-col-item "Deeper Insights" "Pingdom is great when you want to know if your websites are up. But it doesn't show you whether your web app and endpoints are working correctly and performing well." >}}
-{{< sm-4-col-item "Flexible HTTP Checks" "Checkly provides powerful insights and tools to customize your checks. Instead of a simple ping, you can create full-fledged configurable HTTP checks to monitor APIs." >}}
-{{< sm-4-col-item "Powerful E2E Checks" "Monitor your vital click flows in a real Chrome browser. With Checkly you can use Javascript to code your checks, instead of using a restrictive limited scripting editor." >}}
+{{< sm-4-col-item "Flexible HTTP Checks" "Checkly provides powerful insights and tools to customize your checks. Instead of a simple ping, you can create fully fledged configurable HTTP checks to monitor APIs." >}}
+{{< sm-4-col-item "Powerful E2E Checks" "Monitor your vital click flows in a real Chrome browser. With Checkly you can use Javascript to code your checks, instead of using a restrictive scripting editor." >}}
 </div>
 
 {.text-center .section-header .pt-2}
 ## Convert your checks with a simple Node script
 
 {{% feature-row header="Pingdom-2-Checkly" img="/alternative/pingdom2checkly.png" %}}
-We have you covered; use our existing Pingdom-2-Checkly migration script to get kickstarted. Please get in touch if you have any questions. 
+Easily migrate from Pingdom to Checkly by using our existing Pingdom-2-Checkly migration script. Please get in touch if you have any questions. 
 
 {{% cta-link "Learn more" "https://github.com/checkly/pingdom-2-checkly" %}}
 
@@ -33,9 +33,9 @@ We have you covered; use our existing Pingdom-2-Checkly migration script to get 
 
 {{% feature-row header="API monitoring for developers" img="/product/api-monitoring/setup-teardown.png" %}}
 Checkly supports you to create flexible HTTP Checks tailored to your needs.
-- Monitor your API for Performance & Correctness
-- Run custom JavaScript before and after your check with Setup & Teardown Scripts
-- Easily create your Checks with Terraform and our Swagger importer 
+- Monitor your API for performance & correctness
+- Run custom JavaScript before and after your check with setup & teardown Scripts
+- Easily create your checks with Terraform and our Swagger importer 
 
 {{% cta-link "Learn more" "/product/api-monitoring/" %}}
 
@@ -43,10 +43,10 @@ Checkly supports you to create flexible HTTP Checks tailored to your needs.
 
 
 {{% feature-row header="E2E-Checks with Puppeteer" img="/product/transaction-monitoring/script.png" %}}
-Code your checks and control exactly how your tests interact with the Browser.
-- Use real and worldwide distributed Browsers to validate what you need
-- We support you with examples and our Puppeteer recorder - coding is optional
-- Run your tests constantly or via our CI/CD Integrations
+Code your checks and control exactly how they interact with the browser.
+- Use real and worldwide distributed browsers to validate what you need
+- We support you with examples and our Puppeteer recorder — coding is optional
+- Run your tests constantly or via our CI/CD integrations
 
 {{% cta-link "Learn more" "/product/synthetic-monitoring/" %}}
 
@@ -61,7 +61,7 @@ Code your checks and control exactly how your tests interact with the Browser.
 ![alerting options](/landing/data-center-locations@2x.png)
 
 <p class="text-center lead-text mb-lg-5">
-Get a clear picture of how your services perform for all your users around the world. Run your check from any of sixteen
+Get a clear picture of how your services perform for all your users around the world. Run your checks from any of our twenty
 data center locations spread over the Americas, EMEA, Asia Pacific, and Africa.
 
 {{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
