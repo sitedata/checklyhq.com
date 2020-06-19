@@ -16,12 +16,12 @@ This is a two step process:
 2. Assert that it shows what you expect. 
 
 Puppeteer offers many ways to scrape elements like buttons, forms or any arbitrary HTML element. We've listed the most
-used ones below, together with some tips on how to use them effectively. In each 
+used ones below, together with some tips on how to use them effectively.
 
 ## Scraping text values
 
 Puppeteer's `page.$eval()` method is a very powerful way to actually run a selector query inside a web page. See the example
-below. Note, we are using the `chai.js` library for assertions here.
+below. Note: we are using the `chai.js` library for assertions here.
 
 ```javascript
 const puppeteer = require('puppeteer')
@@ -37,11 +37,11 @@ expect(name).to.equal("Hacker News")
 await browser.close()
 ```
 
-Ok, what's happening here
+Ok, let's break this down:
 
 1. We require all needed modules and load a page.
 2. We use `$page.eval()` and pass it two arguments: 1) a query selector string 2) a callback to handle the resulting element.
-3. We inspect the elements `textContent` property and use the `trim()` method to get rid of any trailing white space.
+3. We inspect the element's `textContent` property and use the `trim()` method to get rid of any trailing white space.
 4. We validate that indeed the name is as expected.
 
 > Some may want to use the `innerText` property here, but `textContent` is [actually better](https://stackoverflow.com/questions/35213147/difference-between-textcontent-vs-innertext)
@@ -53,7 +53,7 @@ Using the `page.$$()` (notice the two dollar signs) we can scrape an array of el
 when the query selector you are providing targets multiple similar elements on a page, say a list of links:
 
 ```javascript
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer')
 const expect = require('chai').expect
 
 const browser = await puppeteer.launch()
@@ -68,7 +68,7 @@ await browser.close()
 ```
 
 1. We select all `<a>` elements that have the CSS class `storylink`.
-2. We pass these into the callback and use the `map()` methods to return just the link text.
+2. We pass these into the callback and use the `map()` method to return just the link text.
 3. We slice of the first 10 items.
 
 
@@ -87,7 +87,7 @@ const page = await browser.newPage()
 
 await page.goto('https://duckduckgo.com/', { waitUntil: 'networkidle2' })  
 await page.type('#search_form_input_homepage', 'Puppeteer')
-const searchValue = await page.$eval('#search_form_input_homepage', el => el.value);
+const searchValue = await page.$eval('#search_form_input_homepage', el => el.value)
 expect(searchValue).to.equal("Puppeteer")
 
 
@@ -101,7 +101,7 @@ Scraping the values of other common form elements is pretty similar to scraping 
 there.
 
 ```javascript
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer')
 const browser = await puppeteer.launch()
 
 const page = await browser.newPage()
@@ -130,7 +130,7 @@ Key takeaways are:
 
 1. Checkboxes are mostly singular items, use the `page.$eval()` method.
 2. Radio buttons come in groups, use the `page.$$eval()` method and `.map()` over result.
-3. For selects, you are probably interested in the nested `option` elements, not so much the parent `select` element. use
+3. For selects, you are probably interested in the nested `option` elements, not so much the parent `select` element. Use
 the `page.$$eval()` method.
 
 ## Puppeteer built-in shortcuts
@@ -155,5 +155,4 @@ console.log("Page width is:", viewport.width)
 if (viewport.isMobile) {
   console.log("We're on mobile!")
 }
-
 ```

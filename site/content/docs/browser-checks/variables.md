@@ -13,7 +13,7 @@ You should therefore **replace any confidential data in your browser check scrip
 
 ## Managing variables
 
-For browser checks, you can create environment variables at two hierarchical levels:
+For browser checks, you can create environment variables at three hierarchical levels:
 
 - **Check** level
 - **Group** level
@@ -24,13 +24,15 @@ encrypted at rest and in flight on our back end and is only decrypted when neede
 
 ![add local variables](/docs/images/browser-checks/add-local-variable.png)
 
-Group variables are added on the **Variables** tab in a [group](/docs/groups) . The variables stored here are accessible 
+Group variables are added on the **Variables** tab in a [group](/docs/groups). The variables stored here are accessible 
 only in the group context.
+
+![add group variables](/docs/images/api-checks/add-group-variable.png)
 
 Global variables are added on the **Variables** tab in the **Account** section. The variables stored here are globally accessible 
 throughout Checkly, hence the "Global environment variables" title. 
 
-![add global variables](/docs/images/api-checks/add-variables.png)
+![add global variables](/docs/images/api-checks/add-global-variable.png)
 
 {{<info >}}
 Whenever possible, store variables at the global level. This DRY's up your code.
