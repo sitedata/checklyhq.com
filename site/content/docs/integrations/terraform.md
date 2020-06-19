@@ -13,7 +13,7 @@ the definition of your checks in your code repository.
 
 To get started, take the following steps:
 
-1. Checkout the Checkly Terraform provider in [this GitHub repo](https://github.com/bitfield/terraform-provider-checkly)
+1. Checkout the Checkly Terraform provider in [this GitHub repo](https://github.com/checkly/terraform-provider-checkly)
 2. Build the provider and add it to your Terraform installation.
 3. Write your first Checkly resource and apply it.
 
