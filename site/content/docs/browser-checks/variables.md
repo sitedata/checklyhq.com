@@ -29,7 +29,7 @@ only in the group context.
 
 ![add group variables](/docs/images/browser-checks/add-group-variable.png)
 
-Global variables are added on the **Variables** tab in the **Account** section. The variables stored here are globally accessible 
+Global variables are added on the **Variables** tab. The variables stored here are globally accessible 
 throughout Checkly, hence the "Global environment variables" title. 
 
 ![add global variables](/docs/images/browser-checks/add-global-variable.png)
