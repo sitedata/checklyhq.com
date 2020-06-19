@@ -27,12 +27,12 @@ encrypted at rest and in flight on our back end and is only decrypted when neede
 Group variables are added on the **Variables** tab in a [group](/docs/groups). The variables stored here are accessible 
 only in the group context.
 
-![add group variables](/docs/images/api-checks/add-group-variable.png)
+![add group variables](/docs/images/browser-checks/add-group-variable.png)
 
 Global variables are added on the **Variables** tab in the **Account** section. The variables stored here are globally accessible 
 throughout Checkly, hence the "Global environment variables" title. 
 
-![add global variables](/docs/images/api-checks/add-global-variable.png)
+![add global variables](/docs/images/browser-checks/add-global-variable.png)
 
 {{<info >}}
 Whenever possible, store variables at the global level. This DRY's up your code.
