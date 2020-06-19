@@ -8,7 +8,7 @@ menu:
 
 All API checks are capped at a timeout of **30 seconds**. With each request, we record the most relevant timing phases. This can help you troubleshoot slow responses, e.g. your DNS might be slow.
 
-The timing phases correspond to to the Node.js request library timing phases:
+The timing phases correspond to the Node.js request library timing phases:
 
 - `wait`: Duration of socket initialization
 - `dns`: Duration of DNS lookup

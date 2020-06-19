@@ -9,7 +9,7 @@ menu:
 You can tailor each HTTP request made by an API check to your exact situation by using setup and/or teardown scripts.
 
 - **Setup scripts** give you access to properties like the URL, headers and query parameters of the HTTP request as well as 
-all environment variables. Popular use cases are signing HMAC request. requesting tokens and setting up test data.
+all environment variables. Popular use cases are signing HMAC requests, requesting tokens and setting up test data.
 - **Teardown scripts** give you access to all the same data as the setup scripts plus the response
 object, allowing you to read and modify the response. Use cases are cleaning up test data and scrubbing sensitive 
 response data for regulatory reasons.
@@ -23,7 +23,7 @@ Both script types are written in JavaScript and have access to popular libraries
 Setup and teardown scripts are executed in a specific order in the Checkly backend. Being aware of this order is important
 to get the most out of this feature:
 
-1. Each setup script is executed once per check is a dedicated execution sandbox directly as it is scheduled to run. Any changes you make in the
+1. Each setup script is executed once per check in a dedicated execution sandbox directly as it is scheduled to run. Any changes you make in the
 setup script are distributed to each check run on each data center location.
 2. For each configured data center location, the HTTP request of your API check is executed directly followed by the teardown
 script. This means your teardown script *can run multiple times!*
@@ -248,14 +248,14 @@ response.statusCode = 201
 ### delete created test data based on response
 
 This is an actual script we use to monitor our own "create API check" API endpoint. It runs after a normal API check where
-we POST an JSON blob to the `/accounts/<uuid>/checks` endpoint, which returns the created resource with its ID.
+we POST a JSON blob to the `/accounts/<uuid>/checks` endpoint, which returns the created resource with its ID.
 Notice how we reuse the environment variables to pass in credentials and tokens.
 
 ```javascript
 // explicitly import axios
 const axios = require('axios')
 
-// parse the create resource,
+// parse the created resource
 const createdResource = JSON.parse(response.body)
 
 // setup the correct url and its parameters
@@ -289,8 +289,8 @@ Note: Remember that teardown scripts run on each configured data center location
 
 ## Reusable code snippets
 
-To DRY (Dont' Repeat Yourself) up your code, we advise you strongly to create all setup and teardown scripts as code
-snippets. You can create, update and delete code snippets in the account section. Snippets are available to all checks.
+To DRY (Don't Repeat Yourself) up your code, we strongly advice you create all setup and teardown scripts as code
+snippets. You can create, update and delete code snippets in the 'Code Snippets' section. Snippets are available to all checks.
 
 ![reusable code snippets](/docs/images/api-checks/snippets-list.png)
 
@@ -340,7 +340,7 @@ Request properties are exposed a standard Javascript object. This object is avai
 | property | description | type |
 | ------------- | ------------- | --- |
 | `request.method`  | The HTTP request method, i.e. 'GET', 'POST' etc. | String |
-| `request.url`  | The request url. Any separately defined query parameters are added at the end.  | String |
+| `request.url`  | The request URL. Any separately defined query parameters are added at the end.  | String |
 | `request.body`  | The request body in string format.  | String  |
 | `request.headers`  | The request headers.  | Object |
 | `request.queryParameters`  | The request query parameters. | Object | 
@@ -360,7 +360,7 @@ Response properties are exposed a standard Javascript object. These are only ava
 
 ## Included libraries
 
-All setup and teardown scripts run in a sandboxed environment on our cloud backed. You do not have full access to the Node.js
+All setup and teardown scripts run in a sandboxed environment on our cloud backend. You do not have full access to the Node.js
 standard library or to arbitrary NPM modules. Currently every runner is equipped with the following libraries:
 
 ### Built-in modules
@@ -402,4 +402,4 @@ See the [built-in module documentation on the official Node.js site](https://nod
 - Setup and teardown scripts are implicitly wrapped in async function. This means you can always use `await` statements.
 - You cannot use nested callbacks as there is no way to determine the callback function. Always use `await` statements.
 - Script execution is limited to 4 seconds maximum.
-- You need to include modules and libraries explicitly, i.e. `const moment = require('moment')` before you can use them.
+- You need to include modules and libraries explicitly, e.g. `const moment = require('moment')` before you can use them.

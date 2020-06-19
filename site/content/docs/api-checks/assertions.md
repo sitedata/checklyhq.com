@@ -228,7 +228,7 @@ Regular expressions give you the power to extract specific parts of text from a 
 You can use regular expressions with two assertions sources:
 
 1. **Text body:** Use the property field to add your regex.
-2. **Headers:** First select the header your interested in in the property field, then click "add regex".
+2. **Headers:** First select the header you are interested in in the property field, then click "add regex".
 
 Under the hood, we use the stock Javascript regular expressions implementation. Specifically, we use the [.match()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
 method. We *do not use the `/g` modifier* and return the first matched group the expression finds.
@@ -236,7 +236,6 @@ method. We *do not use the `/g` modifier* and return the first matched group the
 Sounds more complicated than it is. Here is an example:
 
 ```javascript
-
 const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.'
 const regex = /quick (.*) fox/
 const found = paragraph.match(regex)
@@ -249,7 +248,7 @@ console.log(found)
 ```
 
 In the example above we return the string `brown` because it is the first capture group, the `(.*)` bit.
-The first item `quick brown fox` is the full match, we do not return.
+The first item `quick brown fox` is the full match, which we do not return.
 
 {{<info >}}
 Remember: regular expressions in assertions only return the **first capturing group**
