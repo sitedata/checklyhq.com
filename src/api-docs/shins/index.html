@@ -1513,7 +1513,7 @@ Darkula color scheme from the JetBrains family of IDEs
 var n=this.pipeline.run(e.tokenizer(t)),r=new e.Vector,i=[],o=this._fields.reduce(function(e,t){return e+t.boost},0);return n.some(function(e){return this.tokenStore.has(e)},this)?(n.forEach(function(t,n,s){var a=1/s.length*this._fields.length*o,u=this,c=this.tokenStore.expand(t).reduce(function(n,i){var o=u.corpusTokens.indexOf(i),s=u.idf(i),c=1,l=new e.SortedSet;if(i!==t){var f=Math.max(3,i.length-t.length);c=1/Math.log(f)}return o>-1&&r.insert(o,a*s*c),Object.keys(u.tokenStore.get(i)).forEach(function(e){l.add(e)}),n.union(l)},new e.SortedSet);i.push(c)},this),i.reduce(function(e,t){return e.intersect(t)}).map(function(e){return{ref:e,score:r.similarity(this.documentVector(e))}},this).sort(function(e,t){return t.score-e.score})):[]},e.Index.prototype.documentVector=function(t){for(var n=this.documentStore.get(t),r=n.length,i=new e.Vector,o=0;o<r;o++){var s=n.elements[o],a=this.tokenStore.get(s)[t].tf,u=this.idf(s);i.insert(this.corpusTokens.indexOf(s),a*u)}return i},e.Index.prototype.toJSON=function(){return{version:e.version,fields:this._fields,ref:this._ref,documentStore:this.documentStore.toJSON(),tokenStore:this.tokenStore.toJSON(),corpusTokens:this.corpusTokens.toJSON(),pipeline:this.pipeline.toJSON()}},e.Index.prototype.use=function(e){var t=Array.prototype.slice.call(arguments,1);t.unshift(this),e.apply(this,t)},e.Store=function(){this.store={},this.length=0},e.Store.load=function(t){var n=new this;return n.length=t.length,n.store=Object.keys(t.store).reduce(function(n,r){return n[r]=e.SortedSet.load(t.store[r]),n},{}),n},e.Store.prototype.set=function(e,t){this.has(e)||this.length++,this.store[e]=t},e.Store.prototype.get=function(e){return this.store[e]},e.Store.prototype.has=function(e){return e in this.store},e.Store.prototype.remove=function(e){this.has(e)&&(delete this.store[e],this.length--)},e.Store.prototype.toJSON=function(){return{store:this.store,length:this.length}},e.stemmer=function(){var e={ational:"ate",tional:"tion",enci:"ence",anci:"ance",izer:"ize",bli:"ble",alli:"al",entli:"ent",eli:"e",ousli:"ous",ization:"ize",ation:"ate",ator:"ate",alism:"al",iveness:"ive",fulness:"ful",ousness:"ous",aliti:"al",iviti:"ive",biliti:"ble",logi:"log"},t={icate:"ic",ative:"",alize:"al",iciti:"ic",ical:"ic",ful:"",ness:""},n="[aeiouy]",r="[^aeiou][^aeiouy]*",i=new RegExp("^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*"),o=new RegExp("^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*[aeiouy][aeiou]*[^aeiou][^aeiouy]*"),s=new RegExp("^([^aeiou][^aeiouy]*)?[aeiouy][aeiou]*[^aeiou][^aeiouy]*([aeiouy][aeiou]*)?$"),a=new RegExp("^([^aeiou][^aeiouy]*)?[aeiouy]"),u=/^(.+?)(ss|i)es$/,c=/^(.+?)([^s])s$/,l=/^(.+?)eed$/,f=/^(.+?)(ed|ing)$/,d=/.$/,p=/(at|bl|iz)$/,h=new RegExp("([^aeiouylsz])\\1$"),g=new RegExp("^"+r+n+"[^aeiouwxy]$"),v=/^(.+?[^aeiou])y$/,m=/^(.+?)(ational|tional|enci|anci|izer|bli|alli|entli|eli|ousli|ization|ation|ator|alism|iveness|fulness|ousness|aliti|iviti|biliti|logi)$/,y=/^(.+?)(icate|ative|alize|iciti|ical|ful|ness)$/,x=/^(.+?)(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ou|ism|ate|iti|ous|ive|ize)$/,b=/^(.+?)(s|t)(ion)$/,w=/^(.+?)e$/,T=/ll$/,S=new RegExp("^"+r+n+"[^aeiouwxy]$");return function(n){var r,E,C,k,N,j,A;if(n.length<3)return n;if(C=n.substr(0,1),"y"==C&&(n=C.toUpperCase()+n.substr(1)),k=u,N=c,k.test(n)?n=n.replace(k,"$1$2"):N.test(n)&&(n=n.replace(N,"$1$2")),k=l,N=f,k.test(n)){var L=k.exec(n);k=i,k.test(L[1])&&(k=d,n=n.replace(k,""))}else if(N.test(n)){var L=N.exec(n);r=L[1],N=a,N.test(r)&&(n=r,N=p,j=h,A=g,N.test(n)?n+="e":j.test(n)?(k=d,n=n.replace(k,"")):A.test(n)&&(n+="e"))}if(k=v,k.test(n)){var L=k.exec(n);r=L[1],n=r+"i"}if(k=m,k.test(n)){var L=k.exec(n);r=L[1],E=L[2],k=i,k.test(r)&&(n=r+e[E])}if(k=y,k.test(n)){var L=k.exec(n);r=L[1],E=L[2],k=i,k.test(r)&&(n=r+t[E])}if(k=x,N=b,k.test(n)){var L=k.exec(n);r=L[1],k=o,k.test(r)&&(n=r)}else if(N.test(n)){var L=N.exec(n);r=L[1]+L[2],N=o,N.test(r)&&(n=r)}if(k=w,k.test(n)){var L=k.exec(n);r=L[1],k=o,N=s,j=S,(k.test(r)||N.test(r)&&!j.test(r))&&(n=r)}return k=T,N=o,k.test(n)&&N.test(n)&&(k=d,n=n.replace(k,"")),"y"==C&&(n=C.toLowerCase()+n.substr(1)),n}}(),e.Pipeline.registerFunction(e.stemmer,"stemmer"),e.stopWordFilter=function(t){if(-1===e.stopWordFilter.stopWords.indexOf(t))return t},e.stopWordFilter.stopWords=new e.SortedSet,e.stopWordFilter.stopWords.length=119,e.stopWordFilter.stopWords.elements=["","a","able","about","across","after","all","almost","also","am","among","an","and","any","are","as","at","be","because","been","but","by","can","cannot","could","dear","did","do","does","either","else","ever","every","for","from","get","got","had","has","have","he","her","hers","him","his","how","however","i","if","in","into","is","it","its","just","least","let","like","likely","may","me","might","most","must","my","neither","no","nor","not","of","off","often","on","only","or","other","our","own","rather","said","say","says","she","should","since","so","some","than","that","the","their","them","then","there","these","they","this","tis","to","too","twas","us","wants","was","we","were","what","when","where","which","while","who","whom","why","will","with","would","yet","you","your"],e.Pipeline.registerFunction(e.stopWordFilter,"stopWordFilter"),e.trimmer=function(e){return e.replace(/^\W+/,"").replace(/\W+$/,"")},e.Pipeline.registerFunction(e.trimmer,"trimmer"),e.TokenStore=function(){this.root={docs:{}},this.length=0},e.TokenStore.load=function(e){var t=new this;return t.root=e.root,t.length=e.length,t},e.TokenStore.prototype.add=function(e,t,n){var n=n||this.root,r=e[0],i=e.slice(1);return r in n||(n[r]={docs:{}}),0===i.length?(n[r].docs[t.ref]=t,void(this.length+=1)):this.add(i,t,n[r])},e.TokenStore.prototype.has=function(e){if(!e)return!1;for(var t=this.root,n=0;n<e.length;n++){if(!t[e[n]])return!1;t=t[e[n]]}return!0},e.TokenStore.prototype.getNode=function(e){if(!e)return{};for(var t=this.root,n=0;n<e.length;n++){if(!t[e[n]])return{};t=t[e[n]]}return t},e.TokenStore.prototype.get=function(e,t){return this.getNode(e,t).docs||{}},e.TokenStore.prototype.count=function(e,t){return Object.keys(this.get(e,t)).length},e.TokenStore.prototype.remove=function(e,t){if(e){for(var n=this.root,r=0;r<e.length;r++){if(!(e[r]in n))return;n=n[e[r]]}delete n.docs[t]}},e.TokenStore.prototype.expand=function(e,t){var n=this.getNode(e),r=n.docs||{},t=t||[];return Object.keys(r).length&&t.push(e),Object.keys(n).forEach(function(n){"docs"!==n&&t.concat(this.expand(e+n,t))},this),t},e.TokenStore.prototype.toJSON=function(){return{root:this.root,length:this.length}},function(e,t){"function"==typeof define&&define.amd?define(t):"object"==typeof exports?module.exports=t():e.lunr=t()}(this,function(){return e})}(),function(){function e(){}function t(e,t){for(var n=e.length;n--;)if(e[n].listener===t)return n;return-1}function n(e){return function(){return this[e].apply(this,arguments)}}var r=e.prototype,i=this,o=i.EventEmitter;r.getListeners=function(e){var t,n,r=this._getEvents();if("object"==typeof e){t={};for(n in r)r.hasOwnProperty(n)&&e.test(n)&&(t[n]=r[n])}else t=r[e]||(r[e]=[]);return t},r.flattenListeners=function(e){var t,n=[];for(t=0;e.length>t;t+=1)n.push(e[t].listener);return n},r.getListenersAsObject=function(e){var t,n=this.getListeners(e);return n instanceof Array&&(t={},t[e]=n),t||n},r.addListener=function(e,n){var r,i=this.getListenersAsObject(e),o="object"==typeof n;for(r in i)i.hasOwnProperty(r)&&-1===t(i[r],n)&&i[r].push(o?n:{listener:n,once:!1});return this},r.on=n("addListener"),r.addOnceListener=function(e,t){return this.addListener(e,{listener:t,once:!0})},r.once=n("addOnceListener"),r.defineEvent=function(e){return this.getListeners(e),this},r.defineEvents=function(e){for(var t=0;e.length>t;t+=1)this.defineEvent(e[t]);return this},r.removeListener=function(e,n){var r,i,o=this.getListenersAsObject(e);for(i in o)o.hasOwnProperty(i)&&-1!==(r=t(o[i],n))&&o[i].splice(r,1);return this},r.off=n("removeListener"),r.addListeners=function(e,t){return this.manipulateListeners(!1,e,t)},r.removeListeners=function(e,t){return this.manipulateListeners(!0,e,t)},r.manipulateListeners=function(e,t,n){var r,i,o=e?this.removeListener:this.addListener,s=e?this.removeListeners:this.addListeners;if("object"!=typeof t||t instanceof RegExp)for(r=n.length;r--;)o.call(this,t,n[r]);else for(r in t)t.hasOwnProperty(r)&&(i=t[r])&&("function"==typeof i?o.call(this,r,i):s.call(this,r,i));return this},r.removeEvent=function(e){var t,n=typeof e,r=this._getEvents();if("string"===n)delete r[e];else if("object"===n)for(t in r)r.hasOwnProperty(t)&&e.test(t)&&delete r[t];else delete this._events;return this},r.removeAllListeners=n("removeEvent"),r.emitEvent=function(e,t){var n,r,i,o=this.getListenersAsObject(e);for(i in o)if(o.hasOwnProperty(i))for(r=o[i].length;r--;)n=o[i][r],!0===n.once&&this.removeListener(e,n.listener),n.listener.apply(this,t||[])===this._getOnceReturnValue()&&this.removeListener(e,n.listener);return this},r.trigger=n("emitEvent"),r.emit=function(e){var t=Array.prototype.slice.call(arguments,1);return this.emitEvent(e,t)},r.setOnceReturnValue=function(e){return this._onceReturnValue=e,this},r._getOnceReturnValue=function(){return!this.hasOwnProperty("_onceReturnValue")||this._onceReturnValue},r._getEvents=function(){return this._events||(this._events={})},e.noConflict=function(){return i.EventEmitter=o,e},"function"==typeof define&&define.amd?define("eventEmitter/EventEmitter",[],function(){return e}):"object"==typeof module&&module.exports?module.exports=e:this.EventEmitter=e}.call(this),function(e){function t(t){var n=e.event;return n.target=n.target||n.srcElement||t,n}var n=document.documentElement,r=function(){};n.addEventListener?r=function(e,t,n){e.addEventListener(t,n,!1)}:n.attachEvent&&(r=function(e,n,r){e[n+r]=r.handleEvent?function(){var n=t(e);r.handleEvent.call(r,n)}:function(){var n=t(e);r.call(e,n)},e.attachEvent("on"+n,e[n+r])});var i=function(){};n.removeEventListener?i=function(e,t,n){e.removeEventListener(t,n,!1)}:n.detachEvent&&(i=function(e,t,n){e.detachEvent("on"+t,e[t+n]);try{delete e[t+n]}catch(r){e[t+n]=void 0}});var o={bind:r,unbind:i};"function"==typeof define&&define.amd?define("eventie/eventie",o):e.eventie=o}(this),function(e,t){"function"==typeof define&&define.amd?define(["eventEmitter/EventEmitter","eventie/eventie"],function(n,r){return t(e,n,r)}):"object"==typeof exports?module.exports=t(e,require("wolfy87-eventemitter"),require("eventie")):e.imagesLoaded=t(e,e.EventEmitter,e.eventie)}(window,function(e,t,n){function r(e,t){for(var n in t)e[n]=t[n];return e}function i(e){return"[object Array]"===d.call(e)}function o(e){var t=[];if(i(e))t=e;else if("number"==typeof e.length)for(var n=0,r=e.length;r>n;n++)t.push(e[n]);else t.push(e);return t}function s(e,t,n){if(!(this instanceof s))return new s(e,t);"string"==typeof e&&(e=document.querySelectorAll(e)),this.elements=o(e),this.options=r({},this.options),"function"==typeof t?n=t:r(this.options,t),n&&this.on("always",n),this.getImages(),c&&(this.jqDeferred=new c.Deferred);var i=this;setTimeout(function(){i.check()})}function a(e){this.img=e}function u(e){this.src=e,p[e]=this}var c=e.jQuery,l=e.console,f=void 0!==l,d=Object.prototype.toString;s.prototype=new t,s.prototype.options={},s.prototype.getImages=function(){this.images=[];for(var e=0,t=this.elements.length;t>e;e++){var n=this.elements[e];"IMG"===n.nodeName&&this.addImage(n);var r=n.nodeType;if(r&&(1===r||9===r||11===r))for(var i=n.querySelectorAll("img"),o=0,s=i.length;s>o;o++){var a=i[o];this.addImage(a)}}},s.prototype.addImage=function(e){var t=new a(e);this.images.push(t)},s.prototype.check=function(){function e(e,i){return t.options.debug&&f&&l.log("confirm",e,i),t.progress(e),n++,n===r&&t.complete(),!0}var t=this,n=0,r=this.images.length;if(this.hasAnyBroken=!1,!r)return void this.complete();for(var i=0;r>i;i++){var o=this.images[i];o.on("confirm",e),o.check()}},s.prototype.progress=function(e){this.hasAnyBroken=this.hasAnyBroken||!e.isLoaded;var t=this;setTimeout(function(){t.emit("progress",t,e),t.jqDeferred&&t.jqDeferred.notify&&t.jqDeferred.notify(t,e)})},s.prototype.complete=function(){var e=this.hasAnyBroken?"fail":"done";this.isComplete=!0;var t=this;setTimeout(function(){if(t.emit(e,t),t.emit("always",t),t.jqDeferred){var n=t.hasAnyBroken?"reject":"resolve";t.jqDeferred[n](t)}})},c&&(c.fn.imagesLoaded=function(e,t){return new s(this,e,t).jqDeferred.promise(c(this))}),a.prototype=new t,a.prototype.check=function(){var e=p[this.img.src]||new u(this.img.src);if(e.isConfirmed)return void this.confirm(e.isLoaded,"cached was confirmed");if(this.img.complete&&void 0!==this.img.naturalWidth)return void this.confirm(0!==this.img.naturalWidth,"naturalWidth");var t=this;e.on("confirm",function(e,n){return t.confirm(e.isLoaded,n),!0}),e.check()},a.prototype.confirm=function(e,t){this.isLoaded=e,this.emit("confirm",this,t)};var p={};return u.prototype=new t,u.prototype.check=function(){if(!this.isChecked){var e=new Image;n.bind(e,"load",this),n.bind(e,"error",this),e.src=this.src,this.isChecked=!0}},u.prototype.handleEvent=function(e){var t="on"+e.type;this[t]&&this[t](e)},u.prototype.onload=function(e){this.confirm(!0,"onload"),this.unbindProxyEvents(e)},u.prototype.onerror=function(e){this.confirm(!1,"onerror"),this.unbindProxyEvents(e)},u.prototype.confirm=function(e,t){this.isConfirmed=!0,this.isLoaded=e,this.emit("confirm",this,t)},u.prototype.unbindProxyEvents=function(e){n.unbind(e.target,"load",this),n.unbind(e.target,"error",this)},s}),function(){if("ontouchstart"in window){var e,t,n,r,i,o,s={};e=function(e,t){return Math.abs(e[0]-t[0])>5||Math.abs(e[1]-t[1])>5},t=function(e){this.startXY=[e.touches[0].clientX,e.touches[0].clientY],this.threshold=!1},n=function(t){if(this.threshold)return!1;this.threshold=e(this.startXY,[t.touches[0].clientX,t.touches[0].clientY])},r=function(t){if(!this.threshold&&!e(this.startXY,[t.changedTouches[0].clientX,t.changedTouches[0].clientY])){var n=t.changedTouches[0],r=document.createEvent("MouseEvents");r.initMouseEvent("click",!0,!0,window,0,n.screenX,n.screenY,n.clientX,n.clientY,!1,!1,!1,!1,0,null),r.simulated=!0,t.target.dispatchEvent(r)}},i=function(e){var t=Date.now(),n=t-s.time,r=e.clientX,i=e.clientY,a=[Math.abs(s.x-r),Math.abs(s.y-i)],u=o(e.target,"A")||e.target,c=u.nodeName,l="A"===c,f=window.navigator.standalone&&l&&e.target.getAttribute("href");if(s.time=t,s.x=r,s.y=i,(!e.simulated&&(n<500||n<1500&&a[0]<50&&a[1]<50)||f)&&(e.preventDefault(),e.stopPropagation(),!f))return!1;f&&(window.location=u.getAttribute("href")),u&&u.classList&&(u.classList.add("energize-focus"),window.setTimeout(function(){u.classList.remove("energize-focus")},150))},o=function(e,t){for(var n=e;n!==document.body;){if(!n||n.nodeName===t)return n;n=n.parentNode}return null},document.addEventListener("touchstart",t,!1),document.addEventListener("touchmove",n,!1),document.addEventListener("touchend",r,!1),document.addEventListener("click",i,!0)}}(),function(){"use strict";function e(e){if(e&&""!==e){$(".lang-selector a").removeClass("active"),$(".lang-selector a[data-language-name='"+e+"']").addClass("active");for(var t=0;t<a.length;t++)$(".highlight.tab-"+a[t]).hide(),$(".lang-specific."+a[t]).hide();$(".highlight.tab-"+e).show(),$(".lang-specific."+e).show(),window.recacheHeights(),$(window.location.hash).get(0)&&$(window.location.hash).get(0).scrollIntoView(!0)}}function t(e){return"string"!=typeof e?{}:(e=e.trim().replace(/^(\?|#|&)/,""),e?e.split("&").reduce(function(e,t){var n=t.replace(/\+/g," ").split("="),r=n[0],i=n[1];return r=decodeURIComponent(r),i=void 0===i?null:decodeURIComponent(i),e.hasOwnProperty(r)?Array.isArray(e[r])?e[r].push(i):e[r]=[e[r],i]:e[r]=i,e},{}):{})}function n(e){return e?Object.keys(e).sort().map(function(t){var n=e[t];return Array.isArray(n)?n.sort().map(function(e){return encodeURIComponent(t)+"="+encodeURIComponent(e)}).join("&"):encodeURIComponent(t)+"="+encodeURIComponent(n)}).join("&"):""}function r(){if(location.search.length>=1){var e=t(location.search).language;if(e)return e;if(-1!=jQuery.inArray(location.search.substr(1),a))return location.search.substr(1)}return!1}function i(e){var r=t(location.search);return r.language?(r.language=e,n(r)):e}function o(e){if(history){var t=window.location.hash;t&&(t=t.replace(/^#+/,"")),history.pushState({},"","?"+i(e)+"#"+t),localStorage.setItem("language",e)}}function s(t){var n=localStorage.getItem("language");a=t;var i=r();i?(e(i),localStorage.setItem("language",i)):e(null!==n&&-1!=jQuery.inArray(n,a)?n:a[0])}var a=[];window.setupLanguages=s,window.activateLanguage=e,window.getLanguageFromQueryString=r,$(function(){$(".lang-selector a").on("click",function(){var t=$(this).data("language-name");return o(t),e(t),!1})})}(),function(){"use strict";function e(){$("h1, h2").each(function(){var e=$(this),t=e.nextUntil("h1, h2");f.add({id:e.prop("id"),title:e.text(),body:t.text()})}),t()}function t(){f.tokenStore.length>5e3&&(c=300)}function n(){s=$(".content"),a=$(".search-results"),$("#input-search").on("keyup",function(e){!function(){return function(e,t){clearTimeout(l),l=setTimeout(e,t)}}()(function(){r(e)},c)})}function r(e){var t=$("#input-search")[0];if(o(),a.addClass("visible"),27===e.keyCode&&(t.value=""),t.value){var n=f.search(t.value).filter(function(e){return e.score>1e-4});n.length?(a.empty(),$.each(n,function(e,t){var n=document.getElementById(t.ref);a.append("<li><a href='#"+t.ref+"'>"+$(n).text()+"</a></li>")}),i.call(t)):(a.html("<li></li>"),$(".search-results li").text('No Results Found for "'+t.value+'"'))}else o(),a.removeClass("visible")}function i(){this.value&&s.highlight(this.value,u)}function o(){s.unhighlight(u)}var s,a,u={element:"span",className:"search-highlight"},c=0,l=0,f=new lunr.Index;f.ref("id"),f.field("title",{boost:10}),f.field("body"),f.pipeline.add(lunr.trimmer,lunr.stopWordFilter),$(e),$(n)}(),function(){"use strict";function e(e,i,o,s){var a={},u=0,c=0,l=document.title,f=function(){a={},u=$(document).height(),c=$(window).height(),e.find(i).each(function(){var e=$(this).attr("href");"#"===e[0]&&(a[e]=$(e).offset().top)})},d=function(){var n=$(document).scrollTop()+s;n+c>=u&&(n=u+1e3);var r=null;for(var f in a)(a[f]<n&&a[f]>a[r]||null===r)&&(r=f);n!=s||t||(r=window.location.hash,t=!0);var d=e.find("[href='"+r+"']").first();if(!d.hasClass("active")){e.find(".active").removeClass("active"),e.find(".active-parent").removeClass("active-parent"),d.addClass("active"),d.parents(o).addClass("active").siblings(i).addClass("active-parent"),d.siblings(o).addClass("active"),e.find(o).filter(":not(.active)").slideUp(150),e.find(o).filter(".active").slideDown(150),window.history.replaceState&&window.history.replaceState(null,"",r);var p=d.data("title");void 0!==p&&p.length>0?document.title=p+" – "+l:document.title=l}};!function(){f(),d(),$("#nav-button").click(function(){return $(".toc-wrapper").toggleClass("open"),$("#nav-button").toggleClass("open"),!1}),$(".page-wrapper").click(r),$(".toc-link").click(r),e.find(i).click(function(){setTimeout(function(){d()},0)}),$(window).scroll(n(d,200)),$(window).resize(n(f,200))}(),window.recacheHeights=f,window.refreshToc=d}var t=!1,n=function(e,t){var n=!1;return function(){!1===n&&(setTimeout(function(){e(),n=!1},t),n=!0)}},r=function(){$(".toc-wrapper").removeClass("open"),$("#nav-button").removeClass("open")};window.loadToc=e}(),$(function(){loadToc($("#toc"),".toc-link",".toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6",10),setupLanguages($("body").data("languages")),$(".content").imagesLoaded(function(){window.recacheHeights(),window.refreshToc()})}),window.onpopstate=function(){activateLanguage(getLanguageFromQueryString())};</script>
     
     <meta name="theme-color" content="#F3F7F9" />
-<!-- Renderer: Shins v2.4.1-0 -->
+<!-- Renderer: Shins v2.6.0 -->
   </head>
 
   <body data-languages="[&quot;shell&quot;]">
@@ -1608,46 +1608,12 @@ var n=this.pipeline.run(e.tokenizer(t)),r=new e.Vector,i=[],o=this._fields.reduc
                   </li>
                 
                   <li>
-                    <a href="#retrieve-all-checks-in-a-specific-group-with-group-settings-applied" class="toc-h2 toc-link" data-title="">Retrieve all checks in a specific group with group settings applied</a>
-                    
-                  </li>
-                
-              </ul>
-            
-          </li>
-        
-          <li>
-            <a href="#checkly-api-checks" class="toc-h1 toc-link" data-title="Checks">Checks</a>
-            
-              <ul class="toc-list-h2">
-                
-                  <li>
                     <a href="#update-a-check-group" class="toc-h2 toc-link" data-title="">Update a check group</a>
                     
                   </li>
                 
                   <li>
-                    <a href="#list-all-checks" class="toc-h2 toc-link" data-title="">List all checks</a>
-                    
-                  </li>
-                
-                  <li>
-                    <a href="#create-a-check" class="toc-h2 toc-link" data-title="">Create a check</a>
-                    
-                  </li>
-                
-                  <li>
-                    <a href="#delete-a-check" class="toc-h2 toc-link" data-title="">Delete a check</a>
-                    
-                  </li>
-                
-                  <li>
-                    <a href="#retrieve-a-check" class="toc-h2 toc-link" data-title="">Retrieve a check</a>
-                    
-                  </li>
-                
-                  <li>
-                    <a href="#update-a-check" class="toc-h2 toc-link" data-title="">Update a check</a>
+                    <a href="#retrieve-all-checks-in-a-specific-group-with-group-settings-applied" class="toc-h2 toc-link" data-title="">Retrieve all checks in a specific group with group settings applied</a>
                     
                   </li>
                 
@@ -1700,6 +1666,40 @@ var n=this.pipeline.run(e.tokenizer(t)),r=new e.Vector,i=[],o=this._fields.reduc
                 
                   <li>
                     <a href="#retrieve-check-status-details" class="toc-h2 toc-link" data-title="">Retrieve check status details</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#checkly-api-checks" class="toc-h1 toc-link" data-title="Checks">Checks</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#list-all-checks" class="toc-h2 toc-link" data-title="">List all checks</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#create-a-check" class="toc-h2 toc-link" data-title="">Create a check</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#delete-a-check" class="toc-h2 toc-link" data-title="">Delete a check</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#retrieve-a-check" class="toc-h2 toc-link" data-title="">Retrieve a check</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#update-a-check" class="toc-h2 toc-link" data-title="">Update a check</a>
                     
                   </li>
                 
@@ -2170,6 +2170,31 @@ var n=this.pipeline.run(e.tokenizer(t)),r=new e.Vector,i=[],o=this._fields.reduc
                   </li>
                 
                   <li>
+                    <a href="#tocsmodel_13" class="toc-h2 toc-link" data-title="">Model_13</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocsmodel_14" class="toc-h2 toc-link" data-title="">Model_14</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocsmodel_15" class="toc-h2 toc-link" data-title="">Model_15</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocsmodel_16" class="toc-h2 toc-link" data-title="">Model_16</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#tocsmodel_17" class="toc-h2 toc-link" data-title="">Model_17</a>
+                    
+                  </li>
+                
+                  <li>
                     <a href="#tocsschema1" class="toc-h2 toc-link" data-title="">schema1</a>
                     
                   </li>
@@ -2296,8 +2321,8 @@ API requests without authentication will also fail.</p>
         <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
       }
     ],
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 </code></pre>
@@ -2322,7 +2347,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -2374,8 +2399,8 @@ API requests without authentication will also fail.</p>
       <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
     }
   ],
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="retrieve-an-alert-channel-responses">Responses</h3>
@@ -2399,7 +2424,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -2489,7 +2514,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -2603,8 +2628,8 @@ API requests without authentication will also fail.</p>
     <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 </code></pre>
@@ -2629,7 +2654,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -2650,7 +2675,6 @@ API requests without authentication will also fail.</p>
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
@@ -2785,8 +2809,8 @@ API requests without authentication will also fail.</p>
   <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="create-a-check-group-responses">Responses</h3>
@@ -2810,13 +2834,13 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>402</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.2">Payment Required</a></td>
 <td>Payment Required</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -2872,7 +2896,6 @@ API requests without authentication will also fail.</p>
   <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"locations"</span>: [
     <span class="hljs-string">"us-east-1"</span>
@@ -2961,8 +2984,8 @@ API requests without authentication will also fail.</p>
       }
     ]
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="retrieve-one-check-in-a-specific-group-with-group-settings-applied-responses">Responses</h3>
@@ -2986,7 +3009,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -3056,7 +3079,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>409</td>
@@ -3162,8 +3185,8 @@ API requests without authentication will also fail.</p>
   <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="retrieve-a-check-group-responses">Responses</h3>
@@ -3187,7 +3210,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -3197,191 +3220,6 @@ API requests without authentication will also fail.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="retrieve-all-checks-in-a-specific-group-with-group-settings-applied">Retrieve all checks in a specific group with group settings applied</h2>
-<p><a id="opIdgetV1CheckgroupsIdChecks"></a></p>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight tab tab-shell"><code>curl -X GET https://api.checklyhq.com/v1/check-groups/{id}/checks \
- -H <span class="hljs-string">'Accept: application/json'</span> \
- -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
-
-</code></pre>
-<p><code>GET /v1/check-groups/{id}/checks</code></p>
-<p>Lists all checks in a specific check group with the group settings applied.</p>
-<h3 id="retrieve-all-checks-in-a-specific-group-with-group-settings-applied-parameters">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id<br /><div class="requiredParam">(required)</div></td>
-<td>path</td>
-<td>number</td>
-<td>none</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>query</td>
-<td>number</td>
-<td>none</td>
-</tr>
-<tr>
-<td>page</td>
-<td>query</td>
-<td>number</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<blockquote>
-<p>200 Response</p>
-</blockquote>
-<pre class="highlight tab tab-json"><code>[
-  {
-    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
-    <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
-    <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"locations"</span>: [
-      <span class="hljs-string">"us-east-1"</span>
-    ],
-    <span class="hljs-attr">"request"</span>: {
-      <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
-      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
-      <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
-      <span class="hljs-attr">"headers"</span>: [],
-      <span class="hljs-attr">"queryParameters"</span>: [],
-      <span class="hljs-attr">"assertions"</span>: [],
-      <span class="hljs-attr">"basicAuth"</span>: {
-        <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
-      }
-    },
-    <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"environmentVariables"</span>: [
-      {
-        <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
-      }
-    ],
-    <span class="hljs-attr">"tags"</span>: [
-      <span class="hljs-string">"string"</span>
-    ],
-    <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"alertSettings"</span>: {
-      <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
-      <span class="hljs-attr">"runBasedEscalation"</span>: {
-        <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
-      },
-      <span class="hljs-attr">"timeBasedEscalation"</span>: {
-        <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
-      },
-      <span class="hljs-attr">"reminders"</span>: {
-        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
-      },
-      <span class="hljs-attr">"sslCertificates"</span>: {
-        <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
-      }
-    },
-    <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
-    <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
-    <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
-      {
-        <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
-      }
-    ],
-    <span class="hljs-attr">"alertChannels"</span>: {
-      <span class="hljs-attr">"email"</span>: [
-        {
-          <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
-        }
-      ],
-      <span class="hljs-attr">"webhook"</span>: [
-        {
-          <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
-          <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
-          <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
-          <span class="hljs-attr">"headers"</span>: [],
-          <span class="hljs-attr">"queryParameters"</span>: []
-        }
-      ],
-      <span class="hljs-attr">"slack"</span>: [
-        {
-          <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
-        }
-      ],
-      <span class="hljs-attr">"sms"</span>: [
-        {
-          <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
-          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
-        }
-      ]
-    },
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
-  }
-]
-</code></pre>
-<h3 id="retrieve-all-checks-in-a-specific-group-with-group-settings-applied-responses">Responses</h3>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Successful</td>
-<td><a href="#schemacheckgroupcheckslist">CheckGroupChecksList</a></td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>string</td>
-</tr>
-<tr>
-<td>404</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
-<td><a href="#schemamodel_1">Model_1</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="checkly-api-checks">Checks</h1>
 <h2 id="update-a-check-group">Update a check group</h2>
 <p><a id="opIdputV1CheckgroupsId"></a></p>
 <blockquote>
@@ -3399,7 +3237,6 @@ API requests without authentication will also fail.</p>
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
@@ -3470,7 +3307,7 @@ API requests without authentication will also fail.</p>
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemamodel_5">Model_5</a></td>
+<td><a href="#schemamodel_10">Model_10</a></td>
 <td>none</td>
 </tr>
 </tbody>
@@ -3540,8 +3377,8 @@ API requests without authentication will also fail.</p>
   <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="update-a-check-group-responses">Responses</h3>
@@ -3565,7 +3402,7 @@ API requests without authentication will also fail.</p>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -3575,19 +3412,19 @@ API requests without authentication will also fail.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="list-all-checks">List all checks</h2>
-<p><a id="opIdgetV1Checks"></a></p>
+<h2 id="retrieve-all-checks-in-a-specific-group-with-group-settings-applied">Retrieve all checks in a specific group with group settings applied</h2>
+<p><a id="opIdgetV1CheckgroupsIdChecks"></a></p>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
-<pre class="highlight tab tab-shell"><code>curl -X GET https://api.checklyhq.com/v1/checks \
+<pre class="highlight tab tab-shell"><code>curl -X GET https://api.checklyhq.com/v1/check-groups/{id}/checks \
  -H <span class="hljs-string">'Accept: application/json'</span> \
  -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
 
 </code></pre>
-<p><code>GET /v1/checks</code></p>
-<p>Lists all current checks in your account.</p>
-<h3 id="list-all-checks-parameters">Parameters</h3>
+<p><code>GET /v1/check-groups/{id}/checks</code></p>
+<p>Lists all checks in a specific check group with the group settings applied.</p>
+<h3 id="retrieve-all-checks-in-a-specific-group-with-group-settings-applied-parameters">Parameters</h3>
 <table>
 <thead>
 <tr>
@@ -3598,6 +3435,12 @@ API requests without authentication will also fail.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>id<br /><div class="requiredParam">(required)</div></td>
+<td>path</td>
+<td>number</td>
+<td>none</td>
+</tr>
 <tr>
 <td>limit</td>
 <td>query</td>
@@ -3628,7 +3471,6 @@ API requests without authentication will also fail.</p>
     <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"locations"</span>: [
       <span class="hljs-string">"us-east-1"</span>
@@ -3717,12 +3559,12 @@ API requests without authentication will also fail.</p>
         }
       ]
     },
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 </code></pre>
-<h3 id="list-all-checks-responses">Responses</h3>
+<h3 id="retrieve-all-checks-in-a-specific-group-with-group-settings-applied-responses">Responses</h3>
 <table>
 <thead>
 <tr>
@@ -3737,728 +3579,19 @@ API requests without authentication will also fail.</p>
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>Successful</td>
-<td><a href="#schemachecklist">CheckList</a></td>
+<td><a href="#schemacheckgroupcheckslist">CheckGroupChecksList</a></td>
 </tr>
 <tr>
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
-<h2 id="create-a-check">Create a check</h2>
-<p><a id="opIdpostV1Checks"></a></p>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight tab tab-shell"><code>curl -X POST https://api.checklyhq.com/v1/checks \
- -H <span class="hljs-string">'Content-Type: application/json'</span> \
- -H <span class="hljs-string">'Accept: application/json'</span> \
- -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
-
-</code></pre>
-<p><code>POST /v1/checks</code></p>
-<p>Creates a new API or browser check. Will return a <code>402</code> when you are over the limit of your plan.
-When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> can be <code>null</code></p>
-<blockquote>
-<p>Body parameter</p>
-</blockquote>
-<pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
-  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
-  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"locations"</span>: [
-    <span class="hljs-string">"us-east-1"</span>
-  ],
-  <span class="hljs-attr">"request"</span>: {
-    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
-    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
-    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
-    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
-    <span class="hljs-attr">"headers"</span>: [],
-    <span class="hljs-attr">"queryParameters"</span>: [],
-    <span class="hljs-attr">"assertions"</span>: [],
-    <span class="hljs-attr">"basicAuth"</span>: {
-      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
-    }
-  },
-  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"environmentVariables"</span>: [
-    {
-      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
-    }
-  ],
-  <span class="hljs-attr">"tags"</span>: [
-    <span class="hljs-string">"string"</span>
-  ],
-  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"alertSettings"</span>: {
-    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
-    <span class="hljs-attr">"runBasedEscalation"</span>: {
-      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
-    },
-    <span class="hljs-attr">"timeBasedEscalation"</span>: {
-      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"reminders"</span>: {
-      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"sslCertificates"</span>: {
-      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
-    }
-  },
-  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
-  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
-  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>
-}
-</code></pre>
-<h3 id="create-a-check-parameters">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>body</td>
-<td>body</td>
-<td><a href="#schemacheckcreate">CheckCreate</a></td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<blockquote>
-<p>201 Response</p>
-</blockquote>
-<pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
-  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
-  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"locations"</span>: [
-    <span class="hljs-string">"us-east-1"</span>
-  ],
-  <span class="hljs-attr">"request"</span>: {
-    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
-    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
-    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
-    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
-    <span class="hljs-attr">"headers"</span>: [],
-    <span class="hljs-attr">"queryParameters"</span>: [],
-    <span class="hljs-attr">"assertions"</span>: [],
-    <span class="hljs-attr">"basicAuth"</span>: {
-      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
-    }
-  },
-  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"environmentVariables"</span>: [
-    {
-      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
-    }
-  ],
-  <span class="hljs-attr">"tags"</span>: [
-    <span class="hljs-string">"string"</span>
-  ],
-  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"alertSettings"</span>: {
-    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
-    <span class="hljs-attr">"runBasedEscalation"</span>: {
-      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
-    },
-    <span class="hljs-attr">"timeBasedEscalation"</span>: {
-      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"reminders"</span>: {
-      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"sslCertificates"</span>: {
-      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
-    }
-  },
-  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
-  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
-  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
-    {
-      <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
-    }
-  ],
-  <span class="hljs-attr">"alertChannels"</span>: {
-    <span class="hljs-attr">"email"</span>: [
-      {
-        <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
-      }
-    ],
-    <span class="hljs-attr">"webhook"</span>: [
-      {
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
-        <span class="hljs-attr">"headers"</span>: [],
-        <span class="hljs-attr">"queryParameters"</span>: []
-      }
-    ],
-    <span class="hljs-attr">"slack"</span>: [
-      {
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
-      }
-    ],
-    <span class="hljs-attr">"sms"</span>: [
-      {
-        <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
-      }
-    ]
-  },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
-}
-</code></pre>
-<h3 id="create-a-check-responses">Responses</h3>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>201</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Created</td>
-<td><a href="#schemacheck">Check</a></td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>string</td>
-</tr>
-<tr>
-<td>402</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.2">Payment Required</a></td>
-<td>Payment Required</td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
-<h2 id="delete-a-check">Delete a check</h2>
-<p><a id="opIddeleteV1ChecksId"></a></p>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight tab tab-shell"><code>curl -X DELETE https://api.checklyhq.com/v1/checks/{id} \
- -H <span class="hljs-string">'Accept: application/json'</span> \
- -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
-
-</code></pre>
-<p><code>DELETE /v1/checks/{id}</code></p>
-<p>Permanently removes a API or browser check and all its related status and results data.</p>
-<h3 id="delete-a-check-parameters">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id<br /><div class="requiredParam">(required)</div></td>
-<td>path</td>
-<td>string</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<blockquote>
-<p>204 Response</p>
-</blockquote>
-<pre class="highlight tab tab-json"><code><span class="hljs-string">"string"</span>
-</code></pre>
-<h3 id="delete-a-check-responses">Responses</h3>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>string</td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
-<h2 id="retrieve-a-check">Retrieve a check</h2>
-<p><a id="opIdgetV1ChecksId"></a></p>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight tab tab-shell"><code>curl -X GET https://api.checklyhq.com/v1/checks/{id} \
- -H <span class="hljs-string">'Accept: application/json'</span> \
- -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
-
-</code></pre>
-<p><code>GET /v1/checks/{id}</code></p>
-<p>Show details of a specific API or browser check</p>
-<h3 id="retrieve-a-check-parameters">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id<br /><div class="requiredParam">(required)</div></td>
-<td>path</td>
-<td>string</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<blockquote>
-<p>200 Response</p>
-</blockquote>
-<pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
-  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
-  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"locations"</span>: [
-    <span class="hljs-string">"us-east-1"</span>
-  ],
-  <span class="hljs-attr">"request"</span>: {
-    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
-    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
-    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
-    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
-    <span class="hljs-attr">"headers"</span>: [],
-    <span class="hljs-attr">"queryParameters"</span>: [],
-    <span class="hljs-attr">"assertions"</span>: [],
-    <span class="hljs-attr">"basicAuth"</span>: {
-      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
-    }
-  },
-  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"environmentVariables"</span>: [
-    {
-      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
-    }
-  ],
-  <span class="hljs-attr">"tags"</span>: [
-    <span class="hljs-string">"string"</span>
-  ],
-  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"alertSettings"</span>: {
-    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
-    <span class="hljs-attr">"runBasedEscalation"</span>: {
-      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
-    },
-    <span class="hljs-attr">"timeBasedEscalation"</span>: {
-      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"reminders"</span>: {
-      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"sslCertificates"</span>: {
-      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
-    }
-  },
-  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
-  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
-  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
-    {
-      <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
-    }
-  ],
-  <span class="hljs-attr">"alertChannels"</span>: {
-    <span class="hljs-attr">"email"</span>: [
-      {
-        <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
-      }
-    ],
-    <span class="hljs-attr">"webhook"</span>: [
-      {
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
-        <span class="hljs-attr">"headers"</span>: [],
-        <span class="hljs-attr">"queryParameters"</span>: []
-      }
-    ],
-    <span class="hljs-attr">"slack"</span>: [
-      {
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
-      }
-    ],
-    <span class="hljs-attr">"sms"</span>: [
-      {
-        <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
-      }
-    ]
-  },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
-}
-</code></pre>
-<h3 id="retrieve-a-check-responses">Responses</h3>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Successful</td>
-<td><a href="#schemacheck">Check</a></td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
 <td><a href="#schemamodel_1">Model_1</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="update-a-check">Update a check</h2>
-<p><a id="opIdputV1ChecksId"></a></p>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight tab tab-shell"><code>curl -X PUT https://api.checklyhq.com/v1/checks/{id} \
- -H <span class="hljs-string">'Content-Type: application/json'</span> \
- -H <span class="hljs-string">'Accept: application/json'</span> \
- -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
-
-</code></pre>
-<p><code>PUT /v1/checks/{id}</code></p>
-<p>Updates a new API or browser check.</p>
-<blockquote>
-<p>Body parameter</p>
-</blockquote>
-<pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
-  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
-  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"locations"</span>: [
-    <span class="hljs-string">"us-east-1"</span>
-  ],
-  <span class="hljs-attr">"request"</span>: {
-    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
-    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
-    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
-    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
-    <span class="hljs-attr">"headers"</span>: [],
-    <span class="hljs-attr">"queryParameters"</span>: [],
-    <span class="hljs-attr">"assertions"</span>: [],
-    <span class="hljs-attr">"basicAuth"</span>: {
-      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
-    }
-  },
-  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"environmentVariables"</span>: [
-    {
-      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
-    }
-  ],
-  <span class="hljs-attr">"tags"</span>: [
-    <span class="hljs-string">"string"</span>
-  ],
-  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"alertSettings"</span>: {
-    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
-    <span class="hljs-attr">"runBasedEscalation"</span>: {
-      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
-    },
-    <span class="hljs-attr">"timeBasedEscalation"</span>: {
-      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"reminders"</span>: {
-      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"sslCertificates"</span>: {
-      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
-    }
-  },
-  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
-  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
-  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>
-}
-</code></pre>
-<h3 id="update-a-check-parameters">Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id<br /><div class="requiredParam">(required)</div></td>
-<td>path</td>
-<td>string</td>
-<td>none</td>
-</tr>
-<tr>
-<td>body</td>
-<td>body</td>
-<td><a href="#schemacheckcreate">CheckCreate</a></td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Example responses</p>
-</blockquote>
-<blockquote>
-<p>200 Response</p>
-</blockquote>
-<pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
-  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
-  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"locations"</span>: [
-    <span class="hljs-string">"us-east-1"</span>
-  ],
-  <span class="hljs-attr">"request"</span>: {
-    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
-    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
-    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
-    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
-    <span class="hljs-attr">"headers"</span>: [],
-    <span class="hljs-attr">"queryParameters"</span>: [],
-    <span class="hljs-attr">"assertions"</span>: [],
-    <span class="hljs-attr">"basicAuth"</span>: {
-      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
-    }
-  },
-  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"environmentVariables"</span>: [
-    {
-      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
-      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
-    }
-  ],
-  <span class="hljs-attr">"tags"</span>: [
-    <span class="hljs-string">"string"</span>
-  ],
-  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"alertSettings"</span>: {
-    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
-    <span class="hljs-attr">"runBasedEscalation"</span>: {
-      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
-    },
-    <span class="hljs-attr">"timeBasedEscalation"</span>: {
-      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"reminders"</span>: {
-      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
-    },
-    <span class="hljs-attr">"sslCertificates"</span>: {
-      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
-    }
-  },
-  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
-  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
-  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
-    {
-      <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
-      <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
-    }
-  ],
-  <span class="hljs-attr">"alertChannels"</span>: {
-    <span class="hljs-attr">"email"</span>: [
-      {
-        <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
-      }
-    ],
-    <span class="hljs-attr">"webhook"</span>: [
-      {
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
-        <span class="hljs-attr">"headers"</span>: [],
-        <span class="hljs-attr">"queryParameters"</span>: []
-      }
-    ],
-    <span class="hljs-attr">"slack"</span>: [
-      {
-        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
-      }
-    ],
-    <span class="hljs-attr">"sms"</span>: [
-      {
-        <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
-      }
-    ]
-  },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
-}
-</code></pre>
-<h3 id="update-a-check-responses">Responses</h3>
-<table>
-<thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Successful</td>
-<td><a href="#schemacheck">Check</a></td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>string</td>
 </tr>
 </tbody>
 </table>
@@ -4537,7 +3670,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"errorCount"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"failureCount"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"resultsCount"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"hour"</span>: <span class="hljs-string">"2020-05-05"</span>,
+    <span class="hljs-attr">"hour"</span>: <span class="hljs-string">"2020-06-23"</span>,
     <span class="hljs-attr">"responseTimes"</span>: [
       <span class="hljs-string">"string"</span>
     ]
@@ -4565,7 +3698,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -4684,9 +3817,9 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"isDegraded"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"overMaxResponseTime"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"runLocation"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
+    <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
     <span class="hljs-attr">"responseTime"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"apiCheckResult"</span>: {},
     <span class="hljs-attr">"browserCheckResult"</span>: {},
@@ -4716,7 +3849,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -4772,9 +3905,9 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"isDegraded"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"overMaxResponseTime"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"runLocation"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
+  <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
   <span class="hljs-attr">"responseTime"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"apiCheckResult"</span>: {},
   <span class="hljs-attr">"browserCheckResult"</span>: {},
@@ -4803,13 +3936,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -4843,8 +3976,8 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"lastRunLocation"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"lastCheckRunId"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"sslDaysRemaining"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 </code></pre>
@@ -4869,13 +4002,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
-<td><a href="#schemamodel_9">Model_9</a></td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -4926,8 +4059,8 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"lastRunLocation"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"lastCheckRunId"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"sslDaysRemaining"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="retrieve-check-status-details-responses">Responses</h3>
@@ -4951,12 +4084,894 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="checkly-api-checks">Checks</h1>
+<h2 id="list-all-checks">List all checks</h2>
+<p><a id="opIdgetV1Checks"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code>curl -X GET https://api.checklyhq.com/v1/checks \
+ -H <span class="hljs-string">'Accept: application/json'</span> \
+ -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
+
+</code></pre>
+<p><code>GET /v1/checks</code></p>
+<p>Lists all current checks in your account.</p>
+<h3 id="list-all-checks-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>query</td>
+<td>number</td>
+<td>none</td>
+</tr>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>number</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>[
+  {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
+    <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"locations"</span>: [
+      <span class="hljs-string">"us-east-1"</span>
+    ],
+    <span class="hljs-attr">"request"</span>: {
+      <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
+      <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
+      <span class="hljs-attr">"headers"</span>: [],
+      <span class="hljs-attr">"queryParameters"</span>: [],
+      <span class="hljs-attr">"assertions"</span>: [],
+      <span class="hljs-attr">"basicAuth"</span>: {
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+      }
+    },
+    <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"environmentVariables"</span>: [
+      {
+        <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+      }
+    ],
+    <span class="hljs-attr">"tags"</span>: [
+      <span class="hljs-string">"string"</span>
+    ],
+    <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"alertSettings"</span>: {
+      <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+      <span class="hljs-attr">"runBasedEscalation"</span>: {
+        <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+      },
+      <span class="hljs-attr">"timeBasedEscalation"</span>: {
+        <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+      },
+      <span class="hljs-attr">"reminders"</span>: {
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+      },
+      <span class="hljs-attr">"sslCertificates"</span>: {
+        <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+      }
+    },
+    <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
+    <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
+    <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
+      {
+        <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
+      }
+    ],
+    <span class="hljs-attr">"alertChannels"</span>: {
+      <span class="hljs-attr">"email"</span>: [
+        {
+          <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
+        }
+      ],
+      <span class="hljs-attr">"webhook"</span>: [
+        {
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
+          <span class="hljs-attr">"headers"</span>: [],
+          <span class="hljs-attr">"queryParameters"</span>: []
+        }
+      ],
+      <span class="hljs-attr">"slack"</span>: [
+        {
+          <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
+        }
+      ],
+      <span class="hljs-attr">"sms"</span>: [
+        {
+          <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
+        }
+      ]
+    },
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
+  }
+]
+</code></pre>
+<h3 id="list-all-checks-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successful</td>
+<td><a href="#schemachecklist">CheckList</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Unauthorized</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-a-check">Create a check</h2>
+<p><a id="opIdpostV1Checks"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code>curl -X POST https://api.checklyhq.com/v1/checks \
+ -H <span class="hljs-string">'Content-Type: application/json'</span> \
+ -H <span class="hljs-string">'Accept: application/json'</span> \
+ -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
+
+</code></pre>
+<p><code>POST /v1/checks</code></p>
+<p>Creates a new API or browser check. Will return a <code>402</code> when you are over the limit of your plan.
+When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> can be <code>null</code></p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
+  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"locations"</span>: [
+    <span class="hljs-string">"us-east-1"</span>
+  ],
+  <span class="hljs-attr">"request"</span>: {
+    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
+    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
+    <span class="hljs-attr">"headers"</span>: [],
+    <span class="hljs-attr">"queryParameters"</span>: [],
+    <span class="hljs-attr">"assertions"</span>: [],
+    <span class="hljs-attr">"basicAuth"</span>: {
+      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+    }
+  },
+  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"environmentVariables"</span>: [
+    {
+      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+    }
+  ],
+  <span class="hljs-attr">"tags"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"alertSettings"</span>: {
+    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+    <span class="hljs-attr">"runBasedEscalation"</span>: {
+      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+    },
+    <span class="hljs-attr">"timeBasedEscalation"</span>: {
+      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"reminders"</span>: {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"sslCertificates"</span>: {
+      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+    }
+  },
+  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
+  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>
+}
+</code></pre>
+<h3 id="create-a-check-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemacheckcreate">CheckCreate</a></td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>201 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
+  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"locations"</span>: [
+    <span class="hljs-string">"us-east-1"</span>
+  ],
+  <span class="hljs-attr">"request"</span>: {
+    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
+    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
+    <span class="hljs-attr">"headers"</span>: [],
+    <span class="hljs-attr">"queryParameters"</span>: [],
+    <span class="hljs-attr">"assertions"</span>: [],
+    <span class="hljs-attr">"basicAuth"</span>: {
+      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+    }
+  },
+  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"environmentVariables"</span>: [
+    {
+      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+    }
+  ],
+  <span class="hljs-attr">"tags"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"alertSettings"</span>: {
+    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+    <span class="hljs-attr">"runBasedEscalation"</span>: {
+      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+    },
+    <span class="hljs-attr">"timeBasedEscalation"</span>: {
+      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"reminders"</span>: {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"sslCertificates"</span>: {
+      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+    }
+  },
+  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
+  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
+    {
+      <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-attr">"alertChannels"</span>: {
+    <span class="hljs-attr">"email"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
+      }
+    ],
+    <span class="hljs-attr">"webhook"</span>: [
+      {
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
+        <span class="hljs-attr">"headers"</span>: [],
+        <span class="hljs-attr">"queryParameters"</span>: []
+      }
+    ],
+    <span class="hljs-attr">"slack"</span>: [
+      {
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
+      }
+    ],
+    <span class="hljs-attr">"sms"</span>: [
+      {
+        <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
+      }
+    ]
+  },
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
+}
+</code></pre>
+<h3 id="create-a-check-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
+<td>Created</td>
+<td><a href="#schemacheck">Check</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Unauthorized</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
+</tr>
+<tr>
+<td>402</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.2">Payment Required</a></td>
+<td>Payment Required</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-a-check">Delete a check</h2>
+<p><a id="opIddeleteV1ChecksId"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code>curl -X DELETE https://api.checklyhq.com/v1/checks/{id} \
+ -H <span class="hljs-string">'Accept: application/json'</span> \
+ -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
+
+</code></pre>
+<p><code>DELETE /v1/checks/{id}</code></p>
+<p>Permanently removes a API or browser check and all its related status and results data.</p>
+<h3 id="delete-a-check-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id<br /><div class="requiredParam">(required)</div></td>
+<td>path</td>
+<td>string</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>204 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code><span class="hljs-string">"string"</span>
+</code></pre>
+<h3 id="delete-a-check-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>204</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
+<td>No Content</td>
+<td>string</td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Unauthorized</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="retrieve-a-check">Retrieve a check</h2>
+<p><a id="opIdgetV1ChecksId"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code>curl -X GET https://api.checklyhq.com/v1/checks/{id} \
+ -H <span class="hljs-string">'Accept: application/json'</span> \
+ -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
+
+</code></pre>
+<p><code>GET /v1/checks/{id}</code></p>
+<p>Show details of a specific API or browser check</p>
+<h3 id="retrieve-a-check-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id<br /><div class="requiredParam">(required)</div></td>
+<td>path</td>
+<td>string</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
+  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"locations"</span>: [
+    <span class="hljs-string">"us-east-1"</span>
+  ],
+  <span class="hljs-attr">"request"</span>: {
+    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
+    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
+    <span class="hljs-attr">"headers"</span>: [],
+    <span class="hljs-attr">"queryParameters"</span>: [],
+    <span class="hljs-attr">"assertions"</span>: [],
+    <span class="hljs-attr">"basicAuth"</span>: {
+      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+    }
+  },
+  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"environmentVariables"</span>: [
+    {
+      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+    }
+  ],
+  <span class="hljs-attr">"tags"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"alertSettings"</span>: {
+    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+    <span class="hljs-attr">"runBasedEscalation"</span>: {
+      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+    },
+    <span class="hljs-attr">"timeBasedEscalation"</span>: {
+      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"reminders"</span>: {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"sslCertificates"</span>: {
+      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+    }
+  },
+  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
+  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
+    {
+      <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-attr">"alertChannels"</span>: {
+    <span class="hljs-attr">"email"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
+      }
+    ],
+    <span class="hljs-attr">"webhook"</span>: [
+      {
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
+        <span class="hljs-attr">"headers"</span>: [],
+        <span class="hljs-attr">"queryParameters"</span>: []
+      }
+    ],
+    <span class="hljs-attr">"slack"</span>: [
+      {
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
+      }
+    ],
+    <span class="hljs-attr">"sms"</span>: [
+      {
+        <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
+      }
+    ]
+  },
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
+}
+</code></pre>
+<h3 id="retrieve-a-check-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successful</td>
+<td><a href="#schemacheck">Check</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Unauthorized</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
+<td>Not Found</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update-a-check">Update a check</h2>
+<p><a id="opIdputV1ChecksId"></a></p>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code>curl -X PUT https://api.checklyhq.com/v1/checks/{id} \
+ -H <span class="hljs-string">'Content-Type: application/json'</span> \
+ -H <span class="hljs-string">'Accept: application/json'</span> \
+ -H <span class="hljs-string">'Authorization: Bearer API_KEY'</span>
+
+</code></pre>
+<p><code>PUT /v1/checks/{id}</code></p>
+<p>Updates a new API or browser check.</p>
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
+  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"locations"</span>: [
+    <span class="hljs-string">"us-east-1"</span>
+  ],
+  <span class="hljs-attr">"request"</span>: {
+    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
+    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
+    <span class="hljs-attr">"headers"</span>: [],
+    <span class="hljs-attr">"queryParameters"</span>: [],
+    <span class="hljs-attr">"assertions"</span>: [],
+    <span class="hljs-attr">"basicAuth"</span>: {
+      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+    }
+  },
+  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"environmentVariables"</span>: [
+    {
+      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+    }
+  ],
+  <span class="hljs-attr">"tags"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"alertSettings"</span>: {
+    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+    <span class="hljs-attr">"runBasedEscalation"</span>: {
+      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+    },
+    <span class="hljs-attr">"timeBasedEscalation"</span>: {
+      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"reminders"</span>: {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"sslCertificates"</span>: {
+      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+    }
+  },
+  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
+  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>
+}
+</code></pre>
+<h3 id="update-a-check-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id<br /><div class="requiredParam">(required)</div></td>
+<td>path</td>
+<td>string</td>
+<td>none</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemamodel_15">Model_15</a></td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<blockquote>
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
+  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"locations"</span>: [
+    <span class="hljs-string">"us-east-1"</span>
+  ],
+  <span class="hljs-attr">"request"</span>: {
+    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
+    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
+    <span class="hljs-attr">"headers"</span>: [],
+    <span class="hljs-attr">"queryParameters"</span>: [],
+    <span class="hljs-attr">"assertions"</span>: [],
+    <span class="hljs-attr">"basicAuth"</span>: {
+      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+    }
+  },
+  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"environmentVariables"</span>: [
+    {
+      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+    }
+  ],
+  <span class="hljs-attr">"tags"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"alertSettings"</span>: {
+    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+    <span class="hljs-attr">"runBasedEscalation"</span>: {
+      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+    },
+    <span class="hljs-attr">"timeBasedEscalation"</span>: {
+      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"reminders"</span>: {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"sslCertificates"</span>: {
+      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+    }
+  },
+  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
+  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
+    {
+      <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-attr">"alertChannels"</span>: {
+    <span class="hljs-attr">"email"</span>: [
+      {
+        <span class="hljs-attr">"address"</span>: <span class="hljs-string">""</span>
+      }
+    ],
+    <span class="hljs-attr">"webhook"</span>: [
+      {
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"method"</span>: <span class="hljs-string">"POST"</span>,
+        <span class="hljs-attr">"headers"</span>: [],
+        <span class="hljs-attr">"queryParameters"</span>: []
+      }
+    ],
+    <span class="hljs-attr">"slack"</span>: [
+      {
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">""</span>
+      }
+    ],
+    <span class="hljs-attr">"sms"</span>: [
+      {
+        <span class="hljs-attr">"number"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
+      }
+    ]
+  },
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
+}
+</code></pre>
+<h3 id="update-a-check-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Successful</td>
+<td><a href="#schemacheck">Check</a></td>
+</tr>
+<tr>
+<td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
+<td>Unauthorized</td>
 <td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
@@ -5044,7 +5059,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -5141,7 +5156,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>409</td>
@@ -5211,7 +5226,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -5289,7 +5304,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -5398,7 +5413,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -5463,8 +5478,8 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 </code></pre>
@@ -5489,7 +5504,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -5543,8 +5558,8 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="create-a-snippet-responses">Responses</h3>
@@ -5568,7 +5583,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -5632,7 +5647,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -5677,8 +5692,8 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="retrieve-a-snippet-responses">Responses</h3>
@@ -5702,7 +5717,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -5768,8 +5783,8 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 </code></pre>
 <h3 id="update-a-snippet-responses">Responses</h3>
@@ -5793,7 +5808,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -5876,7 +5891,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -5954,7 +5969,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -6018,7 +6033,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 </tbody>
 </table>
@@ -6086,7 +6101,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -6176,7 +6191,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>401</td>
 <td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
-<td>string</td>
+<td><a href="#schemamodel_1">Model_1</a></td>
 </tr>
 <tr>
 <td>404</td>
@@ -6203,7 +6218,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-2">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6242,7 +6257,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 
 </code></pre>
 <p><em>All checks subscribed to this channel.</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-3">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6272,12 +6287,12 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
       <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
     }
   ],
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-4">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6333,13 +6348,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
         <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
       }
     ],
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-5">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6363,7 +6378,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-6">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocslocations">locations</h2>
 <p><a id="schemalocations"></a></p>
@@ -6372,7 +6387,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-7">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocskeyvalue">KeyValue</h2>
 <p><a id="schemakeyvalue"></a></p>
@@ -6383,7 +6398,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-8">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6415,7 +6430,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>[]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-9">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6437,7 +6452,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>[]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-10">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6464,7 +6479,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-11">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6496,7 +6511,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-2">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -6573,6 +6588,14 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>comparison</td>
 <td>NOT_CONTAINS</td>
 </tr>
+<tr>
+<td>comparison</td>
+<td>IS_NULL</td>
+</tr>
+<tr>
+<td>comparison</td>
+<td>NOT_NULL</td>
+</tr>
 </tbody>
 </table>
 <h2 id="tocsassertions">assertions</h2>
@@ -6581,7 +6604,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 
 </code></pre>
 <p><em>Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the &quot;property&quot; field.</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-12">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6606,7 +6629,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-13">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6642,7 +6665,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-14">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6684,7 +6707,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-15">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsenvironmentvariable">EnvironmentVariable</h2>
 <p><a id="schemaenvironmentvariable"></a></p>
@@ -6695,7 +6718,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-16">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6733,7 +6756,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-17">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6757,7 +6780,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-18">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6774,7 +6797,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-3">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -6812,7 +6835,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-19">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6829,7 +6852,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-4">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -6864,7 +6887,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-20">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6886,7 +6909,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-5">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -6945,7 +6968,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-21">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -6967,7 +6990,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-6">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -7015,7 +7038,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-22">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7052,7 +7075,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-7">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -7079,7 +7102,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-23">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7111,7 +7134,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-24">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7190,13 +7213,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-25">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7221,7 +7244,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 
 </code></pre>
 <p><em>Tags for organizing and filtering checks</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-26">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocslocations">Locations</h2>
 <p><a id="schemalocations"></a></p>
@@ -7231,7 +7254,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 
 </code></pre>
 <p><em>An array of one or more data center locations where to run the checks</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-27">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsrequest">request</h2>
 <p><a id="schemarequest"></a></p>
@@ -7251,7 +7274,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-28">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7302,13 +7325,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the &quot;property&quot; field.</td>
 </tr>
 <tr>
-<td>basicAuth</td>
-<td><a href="#schemabasicauth">basicAuth</a></td>
+<td>basicAuth<div class="requiredParam">(required)</div></td>
+<td><a href="#schemamodel_7">Model_7</a></td>
 <td>none</td>
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-8">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -7375,7 +7398,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 
 </code></pre>
 <p><em>Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-29">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7399,7 +7422,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-30">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7425,7 +7448,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-31">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7453,7 +7476,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-32">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7490,7 +7513,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-9">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -7538,7 +7561,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-33">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7562,7 +7585,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-34">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7588,7 +7611,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-35">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7613,7 +7636,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-36">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7645,7 +7668,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-37">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7693,7 +7716,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-38">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7736,7 +7759,6 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"locations"</span>: [
     <span class="hljs-string">"us-east-1"</span>
@@ -7825,12 +7847,12 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
       }
     ]
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-39">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -7879,11 +7901,6 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>sslCheck</td>
 <td>boolean</td>
 <td>Determines if the SSL certificate should be validated for expiry</td>
-</tr>
-<tr>
-<td>sslCheckDomain</td>
-<td>string</td>
-<td>Provides the domain for the SSLCheck option</td>
 </tr>
 <tr>
 <td>shouldFail</td>
@@ -7937,7 +7954,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 <tr>
 <td>alertSettings</td>
-<td><a href="#schemamodel_7">Model_7</a></td>
+<td><a href="#schemamodel_8">Model_8</a></td>
 <td>none</td>
 </tr>
 <tr>
@@ -7987,7 +8004,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-10">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -8045,7 +8062,6 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"locations"</span>: [
     <span class="hljs-string">"us-east-1"</span>
@@ -8134,12 +8150,12 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
       }
     ]
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-40">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8190,18 +8206,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>Determines if the SSL certificate should be validated for expiry</td>
 </tr>
 <tr>
-<td>sslCheckDomain</td>
-<td>string</td>
-<td>Provides the domain for the SSLCheck option</td>
-</tr>
-<tr>
 <td>shouldFail</td>
 <td>boolean</td>
 <td>Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404</td>
 </tr>
 <tr>
 <td>locations</td>
-<td><a href="#schemamodel_8">Model_8</a></td>
+<td><a href="#schemamodel_11">Model_11</a></td>
 <td>An array of one or more data center locations where to run the this check</td>
 </tr>
 <tr>
@@ -8246,7 +8257,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 <tr>
 <td>alertSettings</td>
-<td><a href="#schemamodel_7">Model_7</a></td>
+<td><a href="#schemamodel_8">Model_8</a></td>
 <td>none</td>
 </tr>
 <tr>
@@ -8296,7 +8307,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-11">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -8355,7 +8366,6 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"locations"</span>: [
       <span class="hljs-string">"us-east-1"</span>
@@ -8444,13 +8454,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
         }
       ]
     },
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-41">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8474,7 +8484,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-42">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsrolledupcheckresult">RolledUpCheckResult</h2>
 <p><a id="schemarolledupcheckresult"></a></p>
@@ -8484,14 +8494,14 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"errorCount"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"failureCount"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"resultsCount"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"hour"</span>: <span class="hljs-string">"2020-05-05"</span>,
+  <span class="hljs-attr">"hour"</span>: <span class="hljs-string">"2020-06-23"</span>,
   <span class="hljs-attr">"responseTimes"</span>: [
     <span class="hljs-string">"string"</span>
   ]
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-43">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8547,7 +8557,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"errorCount"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"failureCount"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"resultsCount"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"hour"</span>: <span class="hljs-string">"2020-05-05"</span>,
+    <span class="hljs-attr">"hour"</span>: <span class="hljs-string">"2020-06-23"</span>,
     <span class="hljs-attr">"responseTimes"</span>: [
       <span class="hljs-string">"string"</span>
     ]
@@ -8555,7 +8565,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-44">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8577,14 +8587,14 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-45">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsbrowsercheckresult">browserCheckResult</h2>
 <p><a id="schemabrowsercheckresult"></a></p>
 <pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-46">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocscheckresult">CheckResult</h2>
 <p><a id="schemacheckresult"></a></p>
@@ -8597,9 +8607,9 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"isDegraded"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"overMaxResponseTime"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"runLocation"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
+  <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
   <span class="hljs-attr">"responseTime"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"apiCheckResult"</span>: {},
   <span class="hljs-attr">"browserCheckResult"</span>: {},
@@ -8608,7 +8618,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-47">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8712,9 +8722,9 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"isDegraded"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"overMaxResponseTime"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"runLocation"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
+    <span class="hljs-attr">"startedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"stoppedAt"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
     <span class="hljs-attr">"responseTime"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"apiCheckResult"</span>: {},
     <span class="hljs-attr">"browserCheckResult"</span>: {},
@@ -8724,7 +8734,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-48">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8753,12 +8763,12 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"lastRunLocation"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"lastCheckRunId"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"sslDaysRemaining"</span>: <span class="hljs-number">0</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-49">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8838,13 +8848,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"lastRunLocation"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"lastCheckRunId"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"sslDaysRemaining"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-50">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8873,7 +8883,6 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
     <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"locations"</span>: [
       <span class="hljs-string">"us-east-1"</span>
@@ -8962,13 +8971,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
         }
       ]
     },
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-51">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -8995,7 +9004,6 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">"sslCheckDomain"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"locations"</span>: [
     <span class="hljs-string">"us-east-1"</span>
@@ -9054,7 +9062,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-52">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9100,18 +9108,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>Determines if the SSL certificate should be validated for expiry</td>
 </tr>
 <tr>
-<td>sslCheckDomain</td>
-<td>string</td>
-<td>Provides the domain for the SSLCheck option</td>
-</tr>
-<tr>
 <td>shouldFail</td>
 <td>boolean</td>
 <td>Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404</td>
 </tr>
 <tr>
 <td>locations</td>
-<td><a href="#schemamodel_10">Model_10</a></td>
+<td><a href="#schemamodel_12">Model_12</a></td>
 <td>An array of one or more data center locations where to run the this check</td>
 </tr>
 <tr>
@@ -9156,7 +9159,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 <tr>
 <td>alertSettings</td>
-<td><a href="#schemamodel_7">Model_7</a></td>
+<td><a href="#schemamodel_8">Model_8</a></td>
 <td>none</td>
 </tr>
 <tr>
@@ -9186,7 +9189,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-12">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -9252,7 +9255,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-53">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9304,7 +9307,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 <tr>
 <td>tags</td>
-<td><a href="#schemamodel_11">Model_11</a></td>
+<td><a href="#schemamodel_16">Model_16</a></td>
 <td>A list of one or more tags that filter which checks to display on the dashboard.</td>
 </tr>
 <tr>
@@ -9319,7 +9322,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-13">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -9383,7 +9386,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-54">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9418,7 +9421,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-55">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9470,7 +9473,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 <tr>
 <td>tags</td>
-<td><a href="#schemamodel_12">Model_12</a></td>
+<td><a href="#schemamodel_17">Model_17</a></td>
 <td>A list of one or more tags that filter which checks to display on the dashboard.</td>
 </tr>
 <tr>
@@ -9480,7 +9483,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-14">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -9529,12 +9532,12 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-56">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9578,13 +9581,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
     <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+    <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+    <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
   }
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-57">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9609,7 +9612,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-58">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9642,7 +9645,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 ]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-59">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9664,7 +9667,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-60">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsmodel_2">Model_2</h2>
 <p><a id="schemamodel_2"></a></p>
@@ -9727,12 +9730,12 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
   <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-05-05"</span>,
-  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-05-05"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2020-06-23"</span>,
+  <span class="hljs-attr">"updated_at"</span>: <span class="hljs-string">"2020-06-23"</span>
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-61">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9849,7 +9852,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-62">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9891,12 +9894,11 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-63">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsmodel_5">Model_5</h2>
 <p><a id="schemamodel_5"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"id"</span>: <span class="hljs-number">0</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
@@ -9948,7 +9950,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-64">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -9959,12 +9961,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>number</td>
-<td>none</td>
-</tr>
-<tr>
-<td>name</td>
+<td>name<div class="requiredParam">(required)</div></td>
 <td>string</td>
 <td>The name of the check group</td>
 </tr>
@@ -9984,7 +9981,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>Tags for organizing and filtering checks</td>
 </tr>
 <tr>
-<td>locations</td>
+<td>locations<div class="requiredParam">(required)</div></td>
 <td><a href="#schemalocations">Locations</a></td>
 <td>An array of one or more data center locations where to run the checks</td>
 </tr>
@@ -10058,10 +10055,40 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 
 </code></pre>
 <p><em>An array of one or more data center locations where to run the this check</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-65">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsmodel_7">Model_7</h2>
 <p><a id="schemamodel_7"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+  <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+}
+
+</code></pre>
+<h3 id="properties-66">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username<div class="requiredParam">(required)</div></td>
+<td>string</td>
+<td>none</td>
+</tr>
+<tr>
+<td>password<div class="requiredParam">(required)</div></td>
+<td>string</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocsmodel_8">Model_8</h2>
+<p><a id="schemamodel_8"></a></p>
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
   <span class="hljs-attr">"runBasedEscalation"</span>: {
@@ -10081,7 +10108,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-67">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10118,7 +10145,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-15">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -10137,54 +10164,567 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h2 id="tocsmodel_8">Model_8</h2>
-<p><a id="schemamodel_8"></a></p>
-<pre class="highlight tab tab-json"><code>[
-  <span class="hljs-string">"us-east-1"</span>
-]
-
-</code></pre>
-<p><em>An array of one or more data center locations where to run the this check</em></p>
-<h3 id="properties">Properties</h3>
-<p><em>None</em></p>
 <h2 id="tocsmodel_9">Model_9</h2>
 <p><a id="schemamodel_9"></a></p>
-<pre class="highlight tab tab-json"><code>[
-  <span class="hljs-string">"string"</span>
-]
+<pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
-<p><em>None</em></p>
+<h3 id="properties-68">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>The base url for this group which you can reference with the {{GROUP_BASE_URL}} variable in all group checks.</td>
+</tr>
+<tr>
+<td>headers</td>
+<td><a href="#schemaheaders">Headers</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>queryParameters</td>
+<td><a href="#schemaqueryparameters">QueryParameters</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>assertions</td>
+<td><a href="#schemaassertions">assertions</a></td>
+<td>Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the &quot;property&quot; field.</td>
+</tr>
+<tr>
+<td>basicAuth</td>
+<td><a href="#schemabasicauth">basicAuth</a></td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
 <h2 id="tocsmodel_10">Model_10</h2>
 <p><a id="schemamodel_10"></a></p>
-<pre class="highlight tab tab-json"><code>[
-  <span class="hljs-string">"us-east-1"</span>
-]
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"tags"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"locations"</span>: [
+    <span class="hljs-string">"us-east-1"</span>
+  ],
+  <span class="hljs-attr">"concurrency"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"apiCheckDefaults"</span>: {},
+  <span class="hljs-attr">"browserCheckDefaults"</span>: {},
+  <span class="hljs-attr">"environmentVariables"</span>: [
+    {
+      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+    }
+  ],
+  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"alertSettings"</span>: {
+    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+    <span class="hljs-attr">"runBasedEscalation"</span>: {
+      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+    },
+    <span class="hljs-attr">"timeBasedEscalation"</span>: {
+      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"reminders"</span>: {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"sslCertificates"</span>: {
+      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+    }
+  },
+  <span class="hljs-attr">"alertChannelSubscriptions"</span>: [
+    {
+      <span class="hljs-attr">"alertChannelId"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>
+    }
+  ],
+  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>
+}
 
 </code></pre>
-<p><em>An array of one or more data center locations where to run the this check</em></p>
-<h3 id="properties">Properties</h3>
-<p><em>None</em></p>
+<h3 id="properties-69">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the check group</td>
+</tr>
+<tr>
+<td>activated</td>
+<td>boolean</td>
+<td>Determines if the checks in the  group are running or not</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>boolean</td>
+<td>Determines if any notifications will be send out when a check in this group fails and/or recovers</td>
+</tr>
+<tr>
+<td>tags</td>
+<td><a href="#schematags">Tags</a></td>
+<td>Tags for organizing and filtering checks</td>
+</tr>
+<tr>
+<td>locations</td>
+<td><a href="#schemalocations">Locations</a></td>
+<td>An array of one or more data center locations where to run the checks</td>
+</tr>
+<tr>
+<td>concurrency</td>
+<td>number</td>
+<td>Determines how many checks are invoked concurrently when triggering a check group from CI/CD or through the API.</td>
+</tr>
+<tr>
+<td>apiCheckDefaults</td>
+<td><a href="#schemamodel_9">Model_9</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>browserCheckDefaults</td>
+<td><a href="#schemamodel_4">Model_4</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>environmentVariables</td>
+<td><a href="#schemaenvironmentvariables">environmentVariables</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>doubleCheck</td>
+<td>boolean</td>
+<td>Setting this to &quot;true&quot; will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed</td>
+</tr>
+<tr>
+<td>useGlobalAlertSettings</td>
+<td>boolean</td>
+<td>When true, the account level alert setting will be used, not the alert setting defined on this check group</td>
+</tr>
+<tr>
+<td>alertSettings</td>
+<td><a href="#schemaalertsettingsschema">AlertSettingsSchema</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>alertChannelSubscriptions</td>
+<td><a href="#schemaalertchannelsubscriptions">alertChannelSubscriptions</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>setupSnippetId</td>
+<td>number</td>
+<td>An ID reference to a snippet to use in the setup phase of an API check in this group</td>
+</tr>
+<tr>
+<td>tearDownSnippetId</td>
+<td>number</td>
+<td>An ID reference to a snippet to use in the teardown phase of an API check in this group</td>
+</tr>
+<tr>
+<td>localSetupScript</td>
+<td>string</td>
+<td>A valid piece of Node.js code to run in the setup phase of an API check in this group</td>
+</tr>
+<tr>
+<td>localTearDownScript</td>
+<td>string</td>
+<td>A valid piece of Node.js code to run in the teardown phase of an API check in this group</td>
+</tr>
+</tbody>
+</table>
 <h2 id="tocsmodel_11">Model_11</h2>
 <p><a id="schemamodel_11"></a></p>
 <pre class="highlight tab tab-json"><code>[
-  <span class="hljs-string">"string"</span>
+  <span class="hljs-string">"us-east-1"</span>
 ]
 
 </code></pre>
-<p><em>A list of one or more tags that filter which checks to display on the dashboard.</em></p>
-<h3 id="properties">Properties</h3>
+<p><em>An array of one or more data center locations where to run the this check</em></p>
+<h3 id="properties-70">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsmodel_12">Model_12</h2>
 <p><a id="schemamodel_12"></a></p>
 <pre class="highlight tab tab-json"><code>[
+  <span class="hljs-string">"us-east-1"</span>
+]
+
+</code></pre>
+<p><em>An array of one or more data center locations where to run the this check</em></p>
+<h3 id="properties-71">Properties</h3>
+<p><em>None</em></p>
+<h2 id="tocsmodel_13">Model_13</h2>
+<p><a id="schemamodel_13"></a></p>
+<pre class="highlight tab tab-json"><code>[
+  <span class="hljs-string">"us-east-1"</span>
+]
+
+</code></pre>
+<p><em>An array of one or more data center locations where to run the this check</em></p>
+<h3 id="properties-72">Properties</h3>
+<p><em>None</em></p>
+<h2 id="tocsmodel_14">Model_14</h2>
+<p><a id="schemamodel_14"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+  <span class="hljs-attr">"runBasedEscalation"</span>: {
+    <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+  },
+  <span class="hljs-attr">"timeBasedEscalation"</span>: {
+    <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+  },
+  <span class="hljs-attr">"reminders"</span>: {
+    <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+  },
+  <span class="hljs-attr">"sslCertificates"</span>: {
+    <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+  }
+}
+
+</code></pre>
+<h3 id="properties-73">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>escalationType</td>
+<td>string</td>
+<td>Determines what type of escalation to use</td>
+</tr>
+<tr>
+<td>runBasedEscalation</td>
+<td><a href="#schemarunbasedescalation">runBasedEscalation</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>timeBasedEscalation</td>
+<td><a href="#schematimebasedescalation">timeBasedEscalation</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>reminders</td>
+<td><a href="#schemareminders">reminders</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>sslCertificates</td>
+<td><a href="#schemasslcertificates">sslCertificates</a></td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-16">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>escalationType</td>
+<td>RUN_BASED</td>
+</tr>
+<tr>
+<td>escalationType</td>
+<td>TIME_BASED</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocsmodel_15">Model_15</h2>
+<p><a id="schemamodel_15"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"checkType"</span>: <span class="hljs-string">"BROWSER"</span>,
+  <span class="hljs-attr">"frequency"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"activated"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"muted"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"doubleCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"sslCheck"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"shouldFail"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"locations"</span>: [
+    <span class="hljs-string">"us-east-1"</span>
+  ],
+  <span class="hljs-attr">"request"</span>: {
+    <span class="hljs-attr">"method"</span>: <span class="hljs-string">"GET"</span>,
+    <span class="hljs-attr">"url"</span>: <span class="hljs-string">"localhost"</span>,
+    <span class="hljs-attr">"followRedirects"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"body"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-attr">"bodyType"</span>: <span class="hljs-string">"NONE"</span>,
+    <span class="hljs-attr">"headers"</span>: [],
+    <span class="hljs-attr">"queryParameters"</span>: [],
+    <span class="hljs-attr">"assertions"</span>: [],
+    <span class="hljs-attr">"basicAuth"</span>: {
+      <span class="hljs-attr">"username"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"password"</span>: <span class="hljs-string">""</span>
+    }
+  },
+  <span class="hljs-attr">"script"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"environmentVariables"</span>: [
+    {
+      <span class="hljs-attr">"key"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"value"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-attr">"locked"</span>: <span class="hljs-literal">false</span>
+    }
+  ],
+  <span class="hljs-attr">"tags"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"setupSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"tearDownSnippetId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"localSetupScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"localTearDownScript"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"alertSettings"</span>: {
+    <span class="hljs-attr">"escalationType"</span>: <span class="hljs-string">"RUN_BASED"</span>,
+    <span class="hljs-attr">"runBasedEscalation"</span>: {
+      <span class="hljs-attr">"failedRunThreshold"</span>: <span class="hljs-number">1</span>
+    },
+    <span class="hljs-attr">"timeBasedEscalation"</span>: {
+      <span class="hljs-attr">"minutesFailingThreshold"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"reminders"</span>: {
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"interval"</span>: <span class="hljs-number">5</span>
+    },
+    <span class="hljs-attr">"sslCertificates"</span>: {
+      <span class="hljs-attr">"enabled"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"alertThreshold"</span>: <span class="hljs-number">30</span>
+    }
+  },
+  <span class="hljs-attr">"useGlobalAlertSettings"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"degradedResponseTime"</span>: <span class="hljs-number">10000</span>,
+  <span class="hljs-attr">"maxResponseTime"</span>: <span class="hljs-number">20000</span>,
+  <span class="hljs-attr">"groupId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"groupOrder"</span>: <span class="hljs-number">0</span>
+}
+
+</code></pre>
+<h3 id="properties-74">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the check</td>
+</tr>
+<tr>
+<td>checkType</td>
+<td>string</td>
+<td>The type of the check</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>number</td>
+<td>none</td>
+</tr>
+<tr>
+<td>activated</td>
+<td>boolean</td>
+<td>Determines if the check is running or not</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>boolean</td>
+<td>Determines if any notifications will be send out when a check fails and/or recovers</td>
+</tr>
+<tr>
+<td>doubleCheck</td>
+<td>boolean</td>
+<td>Setting this to &quot;true&quot; will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed</td>
+</tr>
+<tr>
+<td>sslCheck</td>
+<td>boolean</td>
+<td>Determines if the SSL certificate should be validated for expiry</td>
+</tr>
+<tr>
+<td>shouldFail</td>
+<td>boolean</td>
+<td>Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404</td>
+</tr>
+<tr>
+<td>locations</td>
+<td><a href="#schemamodel_13">Model_13</a></td>
+<td>An array of one or more data center locations where to run the this check</td>
+</tr>
+<tr>
+<td>request</td>
+<td><a href="#schemarequest">request</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>script</td>
+<td>string</td>
+<td>A valid piece of Node.js javascript code describing a browser interaction with the Puppeteer framework.</td>
+</tr>
+<tr>
+<td>environmentVariables</td>
+<td><a href="#schemaenvironmentvariables">EnvironmentVariables</a></td>
+<td>Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td><a href="#schematags">Tags</a></td>
+<td>Tags for organizing and filtering checks</td>
+</tr>
+<tr>
+<td>setupSnippetId</td>
+<td>number</td>
+<td>An ID reference to a snippet to use in the setup phase of an API check</td>
+</tr>
+<tr>
+<td>tearDownSnippetId</td>
+<td>number</td>
+<td>An ID reference to a snippet to use in the teardown phase of an API check</td>
+</tr>
+<tr>
+<td>localSetupScript</td>
+<td>string</td>
+<td>A valid piece of Node.js code to run in the setup phase</td>
+</tr>
+<tr>
+<td>localTearDownScript</td>
+<td>string</td>
+<td>A valid piece of Node.js code to run in the teardown phase</td>
+</tr>
+<tr>
+<td>alertSettings</td>
+<td><a href="#schemamodel_14">Model_14</a></td>
+<td>none</td>
+</tr>
+<tr>
+<td>useGlobalAlertSettings</td>
+<td>boolean</td>
+<td>When true, the account level alert setting will be used, not the alert setting defined on this check</td>
+</tr>
+<tr>
+<td>degradedResponseTime</td>
+<td>number</td>
+<td>The response time in milliseconds where a check should be considered degraded</td>
+</tr>
+<tr>
+<td>maxResponseTime</td>
+<td>number</td>
+<td>The response time in milliseconds where a check should be considered failing</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>number</td>
+<td>The id of the check group this check is part of</td>
+</tr>
+<tr>
+<td>groupOrder</td>
+<td>number</td>
+<td>The position of this check in a check group. It determines in what order checks are run when a group is triggered from the API or from CI/CD</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values-17">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>checkType</td>
+<td>BROWSER</td>
+</tr>
+<tr>
+<td>checkType</td>
+<td>API</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>5</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>10</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>15</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>30</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>60</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>720</td>
+</tr>
+<tr>
+<td>frequency</td>
+<td>1440</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tocsmodel_16">Model_16</h2>
+<p><a id="schemamodel_16"></a></p>
+<pre class="highlight tab tab-json"><code>[
   <span class="hljs-string">"string"</span>
 ]
 
 </code></pre>
 <p><em>A list of one or more tags that filter which checks to display on the dashboard.</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-75">Properties</h3>
+<p><em>None</em></p>
+<h2 id="tocsmodel_17">Model_17</h2>
+<p><a id="schemamodel_17"></a></p>
+<pre class="highlight tab tab-json"><code>[
+  <span class="hljs-string">"string"</span>
+]
+
+</code></pre>
+<p><em>A list of one or more tags that filter which checks to display on the dashboard.</em></p>
+<h3 id="properties-76">Properties</h3>
 <p><em>None</em></p>
 <h2 id="tocsschema1">schema1</h2>
 <p><a id="schemaschema1"></a></p>
@@ -10195,7 +10735,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-77">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10232,7 +10772,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-78">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10264,7 +10804,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-18">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -10341,6 +10881,14 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>comparison</td>
 <td>NOT_CONTAINS</td>
 </tr>
+<tr>
+<td>comparison</td>
+<td>IS_NULL</td>
+</tr>
+<tr>
+<td>comparison</td>
+<td>NOT_NULL</td>
+</tr>
 </tbody>
 </table>
 <h2 id="tocsschema3">schema3</h2>
@@ -10348,7 +10896,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>[]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-79">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10370,7 +10918,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>[]
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-80">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10393,7 +10941,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 
 </code></pre>
 <p><em>Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the &quot;property&quot; field.</em></p>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-81">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10418,7 +10966,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-82">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10429,12 +10977,12 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 </thead>
 <tbody>
 <tr>
-<td>username</td>
+<td>username<div class="requiredParam">(required)</div></td>
 <td>string</td>
 <td>none</td>
 </tr>
 <tr>
-<td>password</td>
+<td>password<div class="requiredParam">(required)</div></td>
 <td>string</td>
 <td>none</td>
 </tr>
@@ -10458,7 +11006,7 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 }
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-83">Properties</h3>
 <table>
 <thead>
 <tr>
@@ -10509,13 +11057,13 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <td>Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the &quot;property&quot; field.</td>
 </tr>
 <tr>
-<td>basicAuth</td>
+<td>basicAuth<div class="requiredParam">(required)</div></td>
 <td><a href="#schemaschema6">schema6</a></td>
 <td>none</td>
 </tr>
 </tbody>
 </table>
-<h4 id="enumerated-values">Enumerated Values</h4>
+<h4 id="enumerated-values-19">Enumerated Values</h4>
 <table>
 <thead>
 <tr>
@@ -10575,9 +11123,9 @@ When using the <code>globalAlertSetting</code>, the <code>alertSetting</code> ca
 <pre class="highlight tab tab-json"><code>{}
 
 </code></pre>
-<h3 id="properties">Properties</h3>
+<h3 id="properties-84">Properties</h3>
 <p><em>None</em></p>
-<!-- Renderer: Shins v2.4.1-0 -->
+<!-- Renderer: Shins v2.6.0 -->
       </div>
       <div class="dark-box">
         
