@@ -2,6 +2,7 @@
 title: Frontend Lead (Vue.js)
 subtitle: Full time / Remote
 position_state: Open
+draft: true
 ---
 
 - Remote (GMT +3/-3)
