@@ -16,7 +16,7 @@ the **Dashboards** button on the Checkly default dashboard page.
 
 ## Custom URL
 
-Every public dashboard comes with a configurable custom sub domain on the checkly.com domain. By default, we generate
+Every public dashboard comes with a configurable custom sub domain on the checklyhq.com domain. By default, we generate
 a random ID. You can change this sub domain to anything you like as long as it is unique among all Checkly users.
 Typically a company name works best.
 
