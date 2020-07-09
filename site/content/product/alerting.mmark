@@ -23,7 +23,7 @@ exactly when you should alerted and how often you want to be reminded.
 {{% /feature-row %}}
 
 {{% feature-row header="Pick your channels" img="/product/alerting/channels@2x.png" %}}
-Choose one or more of the available alerting channels. We have everything from **email, to Pagerduty to SMS**. Need something
+Choose one or more of the available alerting channels. We have everything from **email, to Pagerduty, Opsgenie and SMS**. Need something
 custom? Use the webhooks or hook up [our Prometheus integration](/docs/integrations/prometheus/) and roll your own alerting.
 {{% cta-link "Learn more" "/docs/alerting/settings/" %}}
 {{% /feature-row %}}
