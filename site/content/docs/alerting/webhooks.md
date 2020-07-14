@@ -71,6 +71,95 @@ Two clear benefits here:
 
 You can find the [full list of helpers in the README.md file](https://github.com/checkly/handlebars) of the underlying library we are using.
 
+## Webhook secrets
+
+You can validate each webhook we deliver to your endpoint(s). Using the optional webhook secret, you can:
+
+1. check is the webhook was sent by Checkly
+2. check if the payload was not altered in any way during transmission.
+
+When you create a webhook secret, we proceed to use that secret token to cryptographically sign the webhook payload using 
+the SHA256 hash algorithm. We added the resulting hash to the HTTP header `x-checkly-signature` on each webhook.
+
+On the receiving end, you can then use the value of the `x-checkly-signature` header to assert the validity and authenticity 
+of the webhook.
+
+Have a look at the code examples below on how to use the header and your favourite cryptographic library together.
+
+{{< tabs "webhook_secret_example_code" >}}
+{{< tab "Node.js" >}}
+
+```javascript
+// We store the webhook secret in an environment variable called CHECKLY_WEBHOOK_SECRET
+const app = require('express')();
+const bodyParser = require('body-parser');
+const crypto = require('crypto');
+
+function isVerifiedPayload (payload, signature) {
+  const secret = process.env.CHECKLY_WEBHOOK_SECRET
+  const hmac = crypto.createHmac('sha256', secret)
+  const digest = hmac.update(payload).digest('hex')
+  return digest === signature
+}
+
+app.post('/webhook', bodyParser.json({ type: 'application/json' }), (request, response) => {
+  const signature = request.headers['x-checkly-signature'];
+  if (isVerifiedPayload(JSON.stringify(request.body), signature)) {
+    console.log('Signature is valid')
+    response.status(200).send();
+  } else {
+    console.error('Signature does not match')
+    response.status(400).send();
+  }
+});
+
+app.listen(4242, () => console.log('Running on port 4242'));
+```
+
+{{< /tab >}}
+
+{{< tab "Ruby" >}}
+
+```ruby
+require 'sinatra'
+
+post '/webhook' do
+  request.body.rewind
+  payload_body = request.body.read
+  verify_signature(payload_body)
+end
+
+def verify_signature(payload_body)
+  signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), ENV['CHECKLY_WEBHOOK_SECRET'], payload_body)
+  return halt 500, "Signatures didn't match!" unless Rack::Utils.secure_compare(signature, request.env['HTTP_X_CHECKLY_SIGNATURE'])
+end
+```
+{{< /tab >}}
+
+{{< tab "PHP" >}}
+
+```php
+if (($signature = $request->headers->get('X-Hub-Signature')) == null) {
+    throw new BadRequestHttpException('Header not set');
+}
+
+$signature_parts = explode('=', $signature);
+
+if (count($signature_parts) != 2) {
+    throw new BadRequestHttpException('signature has invalid format');
+}
+
+$known_signature = hash_hmac('sha1', $request->getContent(), $known_token);
+
+if (! hash_equals($known_signature, $signature_parts[1])) {
+    throw new UnauthorizedException('Could not verify request signature ' . $signature_parts[1]);
+}
+```
+{{< /tab >}}
+
+{{< /tabs >}}
+
+
 ## Webhook examples
 
 The following examples give an idea how to integrate Checkly with 3rd party alerting and issue tracking systems.
