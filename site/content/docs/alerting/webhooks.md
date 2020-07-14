@@ -124,17 +124,23 @@ app.listen(4242, () => console.log('Running on port 4242'));
 {{< tab "Ruby" >}}
 
 ```ruby
+# We store the webhook secret in an environment variable called CHECKLY_WEBHOOK_SECRET
 require 'sinatra'
 
-post '/webhook' do
-  request.body.rewind
-  payload_body = request.body.read
-  verify_signature(payload_body)
-end
+set :port, 4242
 
-def verify_signature(payload_body)
-  signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), ENV['CHECKLY_WEBHOOK_SECRET'], payload_body)
-  return halt 500, "Signatures didn't match!" unless Rack::Utils.secure_compare(signature, request.env['HTTP_X_CHECKLY_SIGNATURE'])
+post '/webhook' do
+  signature = request.env['HTTP_X_CHECKLY_SIGNATURE']
+  payload = request.body.read
+  digest = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha256'), ENV['CHECKLY_WEBHOOK_SECRET'], payload)
+
+  if Rack::Utils.secure_compare(digest, signature)  	
+    status 200
+    return
+  else
+    status 400
+    return
+  end	
 end
 ```
 {{< /tab >}}
