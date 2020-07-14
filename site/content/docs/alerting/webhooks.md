@@ -99,12 +99,15 @@ function isVerifiedPayload (payload, signature) {
   const secret = process.env.CHECKLY_WEBHOOK_SECRET
   const hmac = crypto.createHmac('sha256', secret)
   const digest = hmac.update(payload).digest('hex')
-  return digest === signature
+  return crypto.timingSafeEqual(Buffer.from(digest), Buffer.from(signature))
 }
 
 app.post('/webhook', bodyParser.json({ type: 'application/json' }), (request, response) => {
+  
   const signature = request.headers['x-checkly-signature'];
-  if (isVerifiedPayload(JSON.stringify(request.body), signature)) {
+  const payload = JSON.stringify(request.body)
+
+  if (isVerifiedPayload(payload, signature)) {
     console.log('Signature is valid')
     response.status(200).send();
   } else {
@@ -136,24 +139,28 @@ end
 ```
 {{< /tab >}}
 
-{{< tab "PHP" >}}
+{{< tab "Python" >}}
 
-```php
-if (($signature = $request->headers->get('X-Hub-Signature')) == null) {
-    throw new BadRequestHttpException('Header not set');
-}
+```python
+# This example assumes you use Django
+import hmac
+from hashlib import sha256
 
-$signature_parts = explode('=', $signature);
+from django.conf import settings
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.encoding import force_bytes
+import json
 
-if (count($signature_parts) != 2) {
-    throw new BadRequestHttpException('signature has invalid format');
-}
+@csrf_exempt
+def webhook(request):
+    signature = request.META.get('HTTP_X_CHECKLY_SIGNATURE')
+    mac = hmac.new(settings.CHECKLY_WEBHOOK_SECRET.encode('utf-8'), msg=request.body, digestmod=sha256)
+    print(mac.hexdigest())
+    if not hmac.compare_digest(mac.hexdigest(), signature):
+        return HttpResponseBadRequest()
 
-$known_signature = hash_hmac('sha1', $request->getContent(), $known_token);
-
-if (! hash_equals($known_signature, $signature_parts[1])) {
-    throw new UnauthorizedException('Could not verify request signature ' . $signature_parts[1]);
-}
+    return HttpResponse()
 ```
 {{< /tab >}}
 
