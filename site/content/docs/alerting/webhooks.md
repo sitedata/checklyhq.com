@@ -75,16 +75,16 @@ You can find the [full list of helpers in the README.md file](https://github.com
 
 You can validate each webhook we deliver to your endpoint(s). Using the optional webhook secret, you can:
 
-1. check is the webhook was sent by Checkly
-2. check if the payload was not altered in any way during transmission.
+1. Check if the webhook was sent by Checkly.
+2. Check if the payload was not altered in any way during transmission.
 
 When you create a webhook secret, we proceed to use that secret token to cryptographically sign the webhook payload using 
-the SHA256 hash algorithm. We added the resulting hash to the HTTP header `x-checkly-signature` on each webhook.
+the SHA256 hash algorithm. We add the resulting hash to the HTTP header `x-checkly-signature` on each webhook.
 
 On the receiving end, you can then use the value of the `x-checkly-signature` header to assert the validity and authenticity 
-of the webhook.
+of the webhook and its payload.
 
-Have a look at the code examples below on how to use the header and your favourite cryptographic library together.
+Have a look at the code examples below on how to use the header and your favourite web framework.
 
 {{< tabs "webhook_secret_example_code" >}}
 {{< tab "Node.js" >}}
