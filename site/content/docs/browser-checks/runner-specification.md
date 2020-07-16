@@ -20,3 +20,5 @@ standard library or to arbitrary NPM modules. Currently every runner is equipped
 - **[crypto-js](https://github.com/brix/crypto-js)** 3.1.9: Cryptographic function library.
 - **[lodash](https://lodash.com)** 4.14.11: Javascript toolkit for many object, array and other functions.
 - **[aws4](https://github.com/mhart/aws4)** 1.8.0: Third-party library for easily signing AWS API requests.
+
+> By default, all our runners have their timezone set to UTC, regardless of their location.
