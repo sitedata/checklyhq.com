@@ -29,7 +29,7 @@ setup script are distributed to each check run on each data center location.
 script. This means your teardown script *can run multiple times!*
 3. After the teardown script has run, all results are collected in our central storage.
 
-Both setup and teardown scrips have a **maximum execution time of 9 seconds**.
+Both setup and teardown scrips have a **maximum execution time of 10 seconds**.
 
 ![setup and teardown script execution](/docs/images/api-checks/setup-teardown-2.png)
 
@@ -401,5 +401,4 @@ See the [built-in module documentation on the official Node.js site](https://nod
 
 - Setup and teardown scripts are implicitly wrapped in async function. This means you can always use `await` statements.
 - You cannot use nested callbacks as there is no way to determine the callback function. Always use `await` statements.
-- Script execution is limited to 4 seconds maximum.
 - You need to include modules and libraries explicitly, e.g. `const moment = require('moment')` before you can use them.
