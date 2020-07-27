@@ -45,4 +45,8 @@ you owe: no double bookings. We will also add a proration line to your invoice.
 #### What payment types do you accept?
 
 We accept Visa, Mastercard and American Express credit card payments. All payments are handled by Stripe.
+
+#### Do you support early startups or nonprofits?
+Yes! We do support early-stage startups that are younger than two years. 
+And nonprofits do qualify for a free Developer plan. <a href="https://forms.gle/V5fMnaD1ABCfPNfdA" target="_blank">Apply here</a>
 {{< /columns >}}
