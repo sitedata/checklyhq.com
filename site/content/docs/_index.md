@@ -11,6 +11,7 @@ exact control over how your APIs and web apps should be monitored.
 - [Groups](/docs/groups/)
 - [Alerting](/docs/alerting/)
 - [CI/CD](/docs/cicd/)
+- [Maintenance windows](/docs/maintenance-windows)
 - [Dashboards](/docs/dashboards)
 - [Teams](/docs/teams/)
 - [Integrations](/docs/integrations)

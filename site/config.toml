@@ -49,19 +49,24 @@ disqusShortname = "checkly"
 	weight = 60
 
 [[menu.docs]]
+	name = "Maintenance windows"
+	url = "/docs/maintenance-windows/"
+	weight = 70
+
+[[menu.docs]]
 	name = "Dashboards"
 	url = "/docs/dashboards/"
-	weight = 70
+	weight = 80
 
 [[menu.docs]]
 	name = "Teams"
 	url = "/docs/teams/"
-	weight = 80
+	weight = 90
 
 [[menu.docs]]
 	name = "Integrations"
 	url = "/docs/integrations/"
-	weight = 90
+	weight = 100
 
 [[menu.docs]]
 	name = "Puppeteer Recorder"
