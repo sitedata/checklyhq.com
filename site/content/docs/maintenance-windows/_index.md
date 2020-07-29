@@ -23,9 +23,7 @@ After giving your window an appropriate name, the core options you have are:
 
 ## Setting a schedule
 
-Set your preferred starting date and time for your maintenance window.
-
-{{< info >}} Note that all times are in UTC. Takes this into account, also when judging daylight savings time if applicable. {{< /info >}}
+Set your preferred starting date and time for your maintenance window. **Note that all times are in UTC.** 
 
 ## Setting repeats
 If your maintenance window repeats at a certain cadence, toggle the **repeat** option. Here you can set
@@ -34,7 +32,10 @@ If your maintenance window repeats at a certain cadence, toggle the **repeat** o
 2. The unit of repetition, i.e. **Day**, **Week** or **Month**.
 3. The date on which the repetition cycle should end.
 
-## Adding check and check groups
+{{< info >}} If you schedule a window on the 31st and add a **monthly repeat cycle**, your schedule will also activate on
+   the 30st of the revelant months and the 28th or 29th of February depending on the leap year.{{< /info >}}
+
+## Adding checks and check groups
 
 You need to select which checks and/or check groups are targeted by your maintenance window. You do this by:
  
