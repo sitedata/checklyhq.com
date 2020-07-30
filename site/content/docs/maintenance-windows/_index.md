@@ -9,7 +9,7 @@ menu:
 
 You can schedule planned maintenance for your API, app or website using Checkly's maintenance windows. During maintenance 
 windows, checks that are part of a specific window are not scheduled to run, saving you the headache of ignoring alerts and
-having big red callouts on your dashboard.
+having big red callouts on your dashboard. Miantenance windows are also exposed on our [public api](/docs/api)
 
 
 ## Creating a maintenance window 
