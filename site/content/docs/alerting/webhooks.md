@@ -172,6 +172,14 @@ def webhook(request):
 
 {{< /tabs >}}
 
+## Webhook retries
+
+Checkly will retry your webhook up to **5 times** if we get an HTTP response higher than 399, e.g. a 404 or 503. Each retry
+is backed off 20 seconds for a total retry period of `5 * 20 = 100 seconds`. 
+
+This means that for checks on a 1 minute schedule, there is a potential overlap between a failure alert and recovery alert. For this
+reason every webhook we send has a timestamp in the `x-checkly-timestamp` header. You can use this timestamp on the receiving
+end to ignore any webhooks that come in "late".
 
 ## Webhook examples
 
