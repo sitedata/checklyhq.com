@@ -11,19 +11,21 @@ with Puppeteer. Mocha is a widely used Javascript test runner. Mocha allows you 
  
 ## Run an example script on your local machine
  
- We've created a GitHub repo you can clone run from you local machine to get a feel for writing browser checks with Mocha.
- Clone the [checkly/browser-checks-starter-mocha](https://github.com/checkly/browser-checks-starter-mocha.git) repo and run the provided example. 
+ We've created a GitHub repository with example Puppeteer scripts including a few using Mocha that you can directly run from your local machine to get a better feel for writing browser checks. 
+
+ Clone the [checkly/puppeteer-examples](https://github.com/checkly/puppeteer-examples) repository and run the provided examples. In this guide, we are going to explain how to search on DuckDuckGo and take screenshot. You can find other Mocha examples [here](https://github.com/checkly/puppeteer-examples#a-mocha-tests).
  
  ```bash
- git clone https://github.com/checkly/browser-checks-starter-mocha.git
- cd browser-checks-starter-mocha
+ git clone https://github.com/checkly/puppeteer-examples.git
+ cd puppeteer-examples
  npm install
- mocha check_duckduckgo.js
+ cd "a. mocha-tests/"
+ npx mocha duck_duck_go.js
  ```
  
  The result should look something like this, if you are working on a Mac or on Linux.
  
- {{< asciinema f3F570OMM20PnEFvSbttfFbTu >}}
+ {{< asciinema 352938 >}}
  
 ## Breaking down the Mocha browser check step-by-step
  
@@ -31,34 +33,39 @@ with Puppeteer. Mocha is a widely used Javascript test runner. Mocha allows you 
  check the search results of Duck Duck Go search every x minutes.
  Let's step through the code step by step
  
- **1. Initial declarations:** We first import Assert and Puppeteer libraries. We also declare a "browser" and "page" variable
- using "let".
+ **1. Initial declarations:** We first import Assert and Puppeteer libraries. We also create a Mocha test suite and test suite using the `describe` method.
  
  ```js
  const assert = require('assert')
  const puppeteer = require('puppeteer')
  
- let browser
- let page
+ describe('Duck Duck Go Search', () => {
  ```
  
- **2. Before hook:** Inside the Mocha `before` hook, we launch a browser and a new browser page, which is like a normal browser
- tab. We do this inside the `before` hook because we always want this initialization to happen before any checks are done.
- Also notice the use of the async/await syntax.  
+ **2. Before hook:** Inside the Mocha `describe` method, we use the `before` hook to launch a browser and a new browser page, which is like a normal browser tab. We do this inside the `before` hook because we always want this initialization to happen before any checks are done.
+ Also notice the use of the async/await syntax and the way we declare a "browser" and "page" variable
+ using "let" just before the hook.
  
  Almost everything in the Puppeteer framework is asynchronous: using this syntax saves us from using callbacks or promise chains.
  
  ```js
+ let browser
+ let page
+
  before(async () => {
    browser = await puppeteer.launch()
    page = await browser.newPage()
  })
  ```
- **3. Create a test suite and test case:** We create a Mocha test suite and test case using the `describe` and `it` syntax.
- The `describe` is strictly speaking not necessary, but it helps us organise test cases if multiple tests belong together.
+ **3. Create a test case:** We create a Mocha test case using the `describe` and `it` syntax.
  
  ```js
  describe('Duck Duck Go Search', () => {
+   ...
+   before(async () => {
+     ...
+   })
+
    it('returns Chrome Puppeteer GitHub repo as first search result', async () => {
  ```
  **4. Search for a term:** There's a lot going on here:
