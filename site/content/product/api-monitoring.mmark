@@ -15,7 +15,7 @@ monitoring solution to check your mobile, webapp or IOT API for performance, upt
 <div class="row pt-4">
 {{< sm-4-col-item "Monitor for performance" "Checkly records the response time for each request, down to TCP, DNS and first byte times. Add assertions for maximum response time." >}}
 {{< sm-4-col-item "Monitor for correctness" "Check payloads, return codes, headers, and authentication. Dive inside JSON payloads and validate specific items." >}}
-{{< sm-4-col-item "Monitor globally" "Checkly can monitor your APIs from 16 global data center locations." >}}
+{{< sm-4-col-item "Monitor globally" "Checkly can monitor your APIs from 20 global data center locations." >}}
 {{< sm-4-col-item "Setup & Teardown scripts" "Run custom Javascript before and after your API check. Sign requests, get auth tokens and clean up test data." >}}
 {{< sm-4-col-item "Import from tools you know" "Checkly's cUrl and Swagger API importers create fully fledged API checks with just a couple of clicks." >}}
 {{< sm-4-col-item "CI/CD integration" "Integrate your API monitoring into your QA or continuous delivery process by triggering adhoc runs from GitHub or the command line." >}}
