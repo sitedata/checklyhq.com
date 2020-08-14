@@ -264,3 +264,24 @@ You can create a [Trello](https://trello.com) card using just the URL and no pay
 ```
 https://api.trello.com/1/cards?idList=5b28c04aed47522097be8bc4&key={{TRELLO_KEY}}&token={{TRELLO_TOKEN}}&name={{CHECK_NAME}}
 ```
+
+## SSL alert
+
+You can send your SSL alerts using webhooks. Using the following body:
+
+```json
+{
+  "message": "{{ALERT_TITLE}}",
+  "link":"{{RESULT_LINK}}"
+}
+```
+
+Will yield the following output, where we customize the `ALERT_TITLE` to include the domain and the days remaining till your
+certificate expires
+
+```json
+{
+  "message": "The SSL certificate for api.checklyhq.com will expire in 14 days",
+  "link": "http://app-test.checklyhq.com/checks/08437f9c-df8c-45ed-975a-a3f9e24d626d"
+}
+```
