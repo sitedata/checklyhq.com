@@ -25,6 +25,7 @@ You can also select which types of alerts should be send to your channel:
 - **Failure**: When a check encounters a hard error.
 - **Degradation**: When a checks is just slow, but still working.
 - **Recovery**: When a check recovers from either failing or being degraded.
+- [**SSL certificate expirations**](/docs/alerting/ssl-expiration/)
 
 Configuring alert channels is mostly self explanatory except for our [advanced webhook builder](/docs/alerting/webhooks)
 

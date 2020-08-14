@@ -6,12 +6,26 @@ menu:
     parent: "Alerting"
 ---
 
-An expired SSL certificate can cause havoc to sites and APIs. Checkly alerts you 30 days, 14 days, 3 days and at day zero when
-your SSL certificate is about to expire. We will alert you on all the alerting channels you have configured.
+> On August 13, 2020, we [changed how SSL alerting is configured](/docs/alerting/). Your [old settings](https://app.checklyhq.com/alert-settings?showSslAlertingV1Notice=true) will be supported for 3 months until November 13, 2020. This page reflects the current usage.
 
-Because API checks and Browser checks are a bit different, SSL checking for each is a bit different:
+An expired SSL certificate can cause havoc to sites and APIs. Checkly performs a daily check on your certificate and can alert you 30, 14, 7 and/or 3 days before your certificate expires. All alert channels (e-mail, SMS, OpsGenie, Webhook etc.) can be used for this alert.
 
-- **API checks**: we check the domain automatically as we can parse it from the `URL` in the HTTP request settings.
-- **Browser checks**: We give you a separate input field to add the domain you want checked.
+Simply create or pick an existing alert channel that your check subscribes to and enable *SSL certificate expiration* and set the day threshold to your preference. If you don't have your alert channels set up yet, see [Alert Channels](/docs/alerting/alert-channels/).
+
+![Example alert channel form](/docs/images/alerting/ssl_check_example.png)
+
+{{<info >}}
+**Tips**
+
+- You can create specific alert channels for certificate expirations and subscribe all checks/groups to that channel. 
+
+- You can create multiple alert channels with different thresholds if you want to be alerted at multiple thresholds.
+{{</info>}}
+
+## API checks 
+The domain for the certificate is parsed from the `URL` in the HTTP request settings so does not require any setup.
+
+## Browser checks 
+Since browser checks can connect to multiple domains, you need to set the SSL certificate domain to recieve certificate alerts for them.
 
 ![SSL checks for browser checks](/docs/images/alerting/browser_ssl_check.png)

@@ -28,25 +28,9 @@ A picture is a thousand words:
 2. The script is put into a queue to be run from the next configured data center location. If the check is an API check and has a [setup script](docs/api-checks/setup-teardown-scripts/), the setup script is executed. 
 3. If the check fails and "double check" is enabled, the check is retried once in the same location *and* in a different location.
 The other location is picked, at random, from all the configured locations.
-4. If the check is an API check and has a [teardown script](docs/api-checks/setup-teardown-scripts/), the teardown script is executed.
+4. If the check is an API check and has a [teardown script](/docs/api-checks/setup-teardown-scripts/), the teardown script is executed.
 Teardown scripts are run *before* any assertions are validated.
 5. The result is stored in our central database and any alerts are sent where applicable.
 
  
-
-## SSL Checks
-
-SSL monitoring occurs in three steps:
-
-1. When configuring API checks or browser checks, we automatically determine what domains can/should be checked for SSL certificate
-expiry. 
-
-2. Once a day, we check all your configured domains.
-
-3. If the expiry date hits a threshold in your [alert settings](/docs/alerting/), we send an alert. 
-
-
-
-
-> If you have multiple checks on the same domain (e.g. `api.example.com/products` and `api.example.com/customers`) we deduplicate them just for
-SSL checking.
+> Checkly also monitors [SSL certificate expirations](/docs/alerting/ssl-expiration/).
