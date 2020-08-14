@@ -35,6 +35,8 @@ You can use the following event related variables in both URL and payload.
 | `RESPONSE_TIME`     | The reported response time for this result                   |
 | `RUN_LOCATION`      | The location where the check ran, i.e. "N. California"       |
 | `RESULT_LINK`       | The full link to the check result                            |
+| `SSL_DAYS_REMAINING`| How many days remain on the SSL certificate. For ALERT_SSL only.                            |
+| `SSL_CHECK_DOMAIN`  | The domain of the SSL certificate. For ALERT_SSL only.       |
 | `STARTED_AT`        | The ISO timestamp from when this check run started           |
 
 ## Using Handlebars helpers
