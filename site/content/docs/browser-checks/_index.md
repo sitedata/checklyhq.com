@@ -135,6 +135,7 @@ alerting channels will be triggered, notifying your team that something is up.
 
 ## More Puppeteer resources
 
+- [theheadless.dev](https://theheadless.dev) is a living open-source collection of guides made to help you master headless browser automation.
 - [checkly/puppeteer-examples](https://github.com/checkly/puppeteer-examples) is our GitHub repo with a ton of real life examples on how to use Puppeteer.
 - [pptr.dev](https://pptr.dev/) is the official API documentation site for the Puppeteer framework.
 - [awesome-puppeteer](https://github.com/transitive-bullshit/awesome-puppeteer) is a great GitHub repo full of Puppeteer related libraries, tips and resources.

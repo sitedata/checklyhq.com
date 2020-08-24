@@ -74,7 +74,17 @@ This extension has a ton of options for tweaking your scripts as you click throu
 {{% /sm-6-col-item %}}
 </div>
 
+{.text-center .section-header .pt-5}
+## Headless made simple
 
+<p class="text-center lead-text mb-lg-5">
+Learning headless automation for testing or monitoring from scratch, or improving on existing expertise? The Headless Dev
+is a living open-source knowledge base to help you master real-world challenges with ease.
+{{% cta-link "Learn more" "https://theheadless.dev" %}}
+</p>
+
+{.text-center .mb-lg-5 .img-w680}
+![headless guides](/product/transaction-monitoring/headless.png)
 
 {.text-center .section-header .pt-5}
 ## Alerting for any situation
