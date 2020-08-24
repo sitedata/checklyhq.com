@@ -24,5 +24,5 @@ security flaw that might impact our customer and / or our products, please let u
 
 - [Faizan Ahmed Kahn](https://www.facebook.com/fizan.ahmed.3998)
 - [Max Schmitt](https://twitter.com/maxibanki)
-
+- [Rafael Souza](https://www.linkedin.com/in/rafaelsilveiradesouza/)
 
