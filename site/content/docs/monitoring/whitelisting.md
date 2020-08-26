@@ -32,7 +32,7 @@ For detailed instructions, see [the Google Analytics docs on custom filters](htt
 
  > Note, it will take some hours for this to take effect.
 
-# Cloudflare Whitelisting
+## Cloudflare Whitelisting
 
 If you are using Cloudflare, one or more of your automated checks might trigger its [bot detection mechanism](https://www.cloudflare.com/learning/bots/what-is-bot-traffic/). 
 
@@ -40,13 +40,13 @@ If you want to prevent that from happening, without exposing your website to any
 
 You can make the header and/or user agent specific to your own Checkly user account by grabbing the first eight digits of your unique user ID, which you can find below your account name on the [Account Settings page](https://app.checklyhq.com/account/). Embedding this value in your checks will enable them to be allowed through by your firewall rules.
 
-## Whitelisting API checks
+### Whitelisting API checks
 
 To whitelist API checks, allow traffic that contains a cookie in the shape of `Cookie: "checkly-account:<UUID>"`, with `<UUID>` being your shortened Checkly ID. 
 
 You can then [set the Cookie header](https://checklyhq.com/docs/api-checks/request-settings/#headers) while editing your check.
 
-## Whitelisting browser checks
+### Whitelisting browser checks
 
 To whitelist browser checks, allow traffic with user agent containing `Checkly/<UUID>`, with `<UUID>` being your shortened Checkly ID. 
 
