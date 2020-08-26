@@ -12,7 +12,7 @@ This is a feature we want to implement so expect changes on this topic in the fu
 
 You can however fetch a list of the [dynamic IP addresses](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in use at AWS, our cloud provider.
 
-# Filtering Google Analytics
+## Filtering Google Analytics
 
 If you want to filter Checkly traffic in Google Analytics because Checkly browser checks are skewing your 
 numbers, here is one way how to do it:
