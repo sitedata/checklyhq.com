@@ -1,0 +1,2 @@
+{{ $filename := .Get "filename" }}
+<p>{{ readFile $filename | markdownify}}</p>
