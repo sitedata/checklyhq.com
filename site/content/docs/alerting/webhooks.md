@@ -44,8 +44,7 @@ You can use the following event related variables in both URL and payload.
 We've extended the [Handlebars](https://handlebarsjs.com/) templating system with some handy helpers to make our webhooks
 even more powerful.
 
-- You can use `{{$UUID}}` to generate a random UUID/v4, i.e. `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`.
-- You can use `{{RANDOM_NUMBER}}` to generate a random decimal number between 0 and 1000, i.e. `345`.
+{{< readfile filename="content/_shared/handlebars-helpers.md" >}}
 
 You can also use conditional helpers like `{{#eq}}` statements. Here is an example:
  
