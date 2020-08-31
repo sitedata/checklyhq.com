@@ -53,38 +53,37 @@ an alert is triggered.
 
 
 {.text-center .section-header .mb-4}
-## Coding optional
+## Learn from the community
 
 <p class="text-center hero-sub hero-sub-center mb-5">
-Coding your own scripts lets you control exactly how your click paths should interact with
-the browser. However, you don't need to start there. We give you a built-in example library of examples and the Puppeteer
-Recorder Chrome browser extension to get started ASAP.
+Checkly helps you create scripts every step of the way. With our <strong>free & open source</strong> Chrome Extension you can get started
+without writing any code. Want to dive deeper? Dive into our open source knowledge base with practical
+coding tips and examples.
 </p>
 
 <div class="row mb-lg-5">
-{{% sm-6-col-item header="Example Library" image="/product/transaction-monitoring/examples.png" %}}
-Our examples library contains example scripts that cover a range of scenario's: from scraping content and validating text
-to login and shopping carts. Use them as pa jumping off point and customize them for your own situation.
-{{% cta-link "Learn more" "/puppeteer-recorder/" %}}
-{{% /sm-6-col-item %}}
-{{% sm-6-col-item header="Puppeteer Recorder" image="/product/transaction-monitoring/recorder.png" %}}
-Install the Puppeteer Recorder browser extension in your Chrome browser and start recording scripts in under a minute.
-This extension has a ton of options for tweaking your scripts as you click through your site and fill out web forms.
-{{% cta-link "Learn more" "/docs/puppeteer-recorder/basic-usage/" %}}
-{{% /sm-6-col-item %}}
+
+<div class="col-sm-6 mb-lg-3">
+   <div style="display: flex; flex-direction: row; align-items: baseline;">
+  <h3 class="section-header" style="margin-right: 1rem;">Puppeteer Recorder
+  </h3>
+      <a class="github-button" href="https://github.com/checkly/puppeteer-recorder" data-show-count="true" aria-label="Star checkly/puppeteer-recorder on GitHub">Star</a>
+  </div>
+  <p>Install the Puppeteer Recorder browser extension in your Chrome browser and start recording scripts in under a minute.
+     This extension has a ton of options for tweaking your scripts as you click through your site and fill out web forms.
+  </p>
+  <p>
+    {{% cta-link "Learn more" "/docs/puppeteer-recorder/basic-usage/" %}}
+  </p>
+  <img src="/product/transaction-monitoring/recorder.png" alt="" />
 </div>
 
-{.text-center .section-header .pt-5}
-## Headless made simple
-
-<p class="text-center lead-text mb-lg-5">
+{{% sm-6-col-item header="The Headless Dev" image="/landing/headless.png" %}}
 Learning headless automation for testing or monitoring from scratch, or improving on existing expertise? The Headless Dev
 is a living open-source knowledge base to help you master real-world challenges with ease.
-{{% cta-link "Learn more" "https://theheadless.dev" %}}
-</p>
-
-{.text-center .mb-lg-5 .img-w680}
-![headless guides](/product/transaction-monitoring/headless.png)
+{{% cta-link "theheadless.dev" "https://theheadless.dev" %}}
+{{% /sm-6-col-item %}}
+</div>
 
 {.text-center .section-header .pt-5}
 ## Alerting for any situation
