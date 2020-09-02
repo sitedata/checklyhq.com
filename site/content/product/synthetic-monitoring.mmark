@@ -67,10 +67,10 @@ Our examples library contains example scripts that cover a range of scenario's: 
 to login and shopping carts. Use them as pa jumping off point and customize them for your own situation.
 {{% cta-link "Learn more" "/puppeteer-recorder/" %}}
 {{% /sm-6-col-item %}}
-{{% sm-6-col-item header="Puppeteer Recorder" image="/product/transaction-monitoring/recorder.png" %}}
-Install the Puppeteer Recorder browser extension in your Chrome browser and start recording scripts in under a minute.
+{{% sm-6-col-item header="Headless Recorder" image="/product/transaction-monitoring/recorder.png" %}}
+Install the Headless Recorder browser extension in your Chrome browser and start recording scripts in under a minute.
 This extension has a ton of options for tweaking your scripts as you click through your site and fill out web forms.
-{{% cta-link "Learn more" "/docs/puppeteer-recorder/basic-usage/" %}}
+{{% cta-link "Learn more" "/docs/headless-recorder/" %}}
 {{% /sm-6-col-item %}}
 </div>
 
