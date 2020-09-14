@@ -19,9 +19,18 @@ numbers, here is one way how to do it:
 
 1. Ad a UTM source tag to the URL's your requesting, i.e.
 
-```javascript
+{{< tabs "Goto example" >}}
+{{< tab "Puppeteer" >}}
+```js
 await page.goto('https://app.checklyhq.com/login?utm_source=monitoring')
-```
+ ```
+{{< /tab >}}
+{{< tab "Playwright" >}}
+```js
+await page.goto('https://app.checklyhq.com/login?utm_source=monitoring')
+ ```
+{{< /tab >}}
+{{< /tabs >}}
 
 2. In Google Analytics, filter on campaign source.
 
@@ -50,4 +59,28 @@ You can then [set the Cookie header](https://checklyhq.com/docs/api-checks/reque
 
 To whitelist browser checks, allow traffic with user agent containing `Checkly/<UUID>`, with `<UUID>` being your shortened Checkly ID. 
 
-You will then be able to set up the matching user agent in your browser checks using Puppeteer's [setUserAgent method](https://pptr.dev/#?product=Puppeteer&version=v3.0.1&show=api-pagesetuseragentuseragent), e.g.: `await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36 Checkly/abcd1234');`
+You will then be able to set up the matching user agent in your browser checks using 
+Puppeteer's [setUserAgent method](https://pptr.dev/#?product=Puppeteer&version=v2.0.0&show=api-pagesetuseragentuseragent),
+or the `{userAgent}` option passed to Playwright's [newPage method](https://playwright.dev/#version=v1.0.2&path=docs%2Fapi.md&q=browsernewpageoptions--options-useragent).  
+
+{{< tabs "User agent example" >}}
+{{< tab "Puppeteer" >}}
+```js
+const puppeteer = require('puppeteer')
+const browser = await puppeteer.launch()
+const page = await browser.newPage()
+
+const userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36 Checkly/abcd1234'
+await page.setUserAgent(userAgent);
+```
+{{< /tab >}}
+{{< tab "Playwright" >}}
+```js
+const playwright = require('playwright')
+const browser = await playwright.chromium.launch()
+
+const userAgent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36 Checkly/abcd1234'
+const page = await browser.newPage({userAgent})
+```
+{{< /tab >}}
+{{< /tabs >}}

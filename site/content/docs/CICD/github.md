@@ -67,20 +67,32 @@ Notice we only replace the **host** part, not the URL path or any query paramete
 For browser checks, the environment URL is exposed as the `ENVIRONMENT_URL` environment variable. This means you can use that
 variable in your code to replace any hardcoded URL you might have, i.e.
 
-```javascript
-const puppeteer = require("puppeteer");
-
-const browser = await puppeteer.launch();
-const page = await browser.newPage();
+{{< tabs "Environment example" >}}
+{{< tab "Puppeteer" >}}
+```js
+const puppeteer = require('puppeteer')
+const browser = await puppeteer.launch()
+const page = await browser.newPage()
 
 const myURL = process.env.ENVIRONMENT_URL || 'https://acme.com'
-await page.goto(myURL);
+await page.goto(myURL)
 
-await browser.close();
-```
+await browser.close()
+ ```
+{{< /tab >}}
+{{< tab "Playwright" >}}
+```js
+const playwright = require('playwright')
+const browser = await playwright.chromium.launch()
+const page = await browser.newPage()
 
+const myURL = process.env.ENVIRONMENT_URL || 'https://acme.com'
+await page.goto(myURL)
 
-
+await browser.close()
+ ```
+{{< /tab >}}
+{{< /tabs >}}
 
 
 

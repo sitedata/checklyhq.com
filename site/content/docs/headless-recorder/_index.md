@@ -37,4 +37,4 @@ Puppeteer recorder has the following features:
 
 - [Install Headless Recorder](/docs/headless-recorder/installation/) and tweak some options.
 - Learn how to [record scripts](/docs/headless-recorder/basic-usage/).
-- Learn about some of the current [limitations](/docs/headless-recorder/development/) of Puppeteer Recorder and how to file bugs and feature request.
+- Learn about some of the current [limitations](/docs/headless-recorder/development/) of Headless Recorder and how to file bugs and feature request.
