@@ -36,7 +36,7 @@ browser checks to have granular feedback whether each part functions.
     ```
 
     Notice we are referencing the `GITHUB_USER` and `GITHUB_PWD` environment variables. All environment variables are available
-    in partials / snippets, just like in "normal" browser check scripts. Your snippet should look like the screen shot below.
+    in partials / snippets, just like in "normal" browser check scripts. Your snippet should look like the screenshot below.
 
     ![browser check code snippet](/docs/images/browser-checks/code-snippet.png)
 
