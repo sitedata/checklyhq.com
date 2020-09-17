@@ -61,7 +61,7 @@ To whitelist browser checks, allow traffic with user agent containing `Checkly/<
 
 You will then be able to set up the matching user agent in your browser checks using 
 Puppeteer's [setUserAgent method](https://pptr.dev/#?product=Puppeteer&version=v2.0.0&show=api-pagesetuseragentuseragent),
-or the `{userAgent}` option passed to Playwright's [newPage method](https://playwright.dev/#version=v1.0.2&path=docs%2Fapi.md&q=browsernewpageoptions--options-useragent).  
+or the `{userAgent}` option passed to Playwright's [newPage method](https://playwright.dev/#version=v1.4.0&path=docs%2Fapi.md&q=browsernewpageoptions--options-useragent).  
 
 {{< tabs "User agent example" >}}
 {{< tab "Puppeteer" >}}

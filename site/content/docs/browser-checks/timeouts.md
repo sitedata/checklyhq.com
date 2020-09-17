@@ -35,7 +35,7 @@ to override the default 30 seconds.
 
 {{< info >}} 
 Playwright `click` and `fill` methods will 
-[auto-wait](https://playwright.dev/#version=v1.0.2&path=docs%2Fcore-concepts.md&q=auto-waiting) 
+[auto-wait](https://playwright.dev/#version=v1.4.0&path=docs%2Fcore-concepts.md&q=auto-waiting) 
 for the element to be visible.
 {{< /info >}}
 
@@ -80,7 +80,7 @@ it('First search result is my link', async () => {
 {{< /tabs >}} 
 
 Read more in the [Puppeteer](https://pptr.dev/#?product=Puppeteer&version=v2.0.0&show=api-pagewaitforselectorselector-options)
-or [Playwright](https://playwright.dev/#version=v1.0.2&path=docs%2Fapi.md&q=pagewaitforselectorselector-options--options-timeout)
+or [Playwright](https://playwright.dev/#version=v1.4.0&path=docs%2Fapi.md&q=pagewaitforselectorselector-options--options-timeout)
 API docs.
 
 > Playwright allows you to use XPath selectors in the `page.waitForSelector()` method. 
@@ -179,7 +179,7 @@ page.waitForNavigation({ waitUntil: 'networkidle' })
 
 You can also specify an array of `waitUntil` options. Read more in the 
 [Puppeteer](https://pptr.dev/#?product=Puppeteer&version=v2.0.0&show=api-pagewaitfornavigationoptions)
-or [Playwright](https://playwright.dev/#version=v1.0.2&path=docs%2Fapi.md&q=pagewaitfornavigationoptions)
+or [Playwright](https://playwright.dev/#version=v1.4.0&path=docs%2Fapi.md&q=pagewaitfornavigationoptions)
 API docs.
 
 ### page.setDefaultNavigationTimeout(timeout)
@@ -189,7 +189,7 @@ initial load of your page or app and all subsequent navigation.
 
 Read more in the
 [Puppeteer](https://pptr.dev/#?product=Puppeteer&version=v2.0.0&show=api-pagesetdefaultnavigationtimeouttimeout)
-or [Playwright](https://playwright.dev/#version=v1.0.2&path=docs%2Fapi.md&q=pagesetdefaultnavigationtimeouttimeout)
+or [Playwright](https://playwright.dev/#version=v1.4.0&path=docs%2Fapi.md&q=pagesetdefaultnavigationtimeouttimeout)
 API docs.
 
 ### page.waitFor(timeout)  / page.waitForTimeout(timeout)

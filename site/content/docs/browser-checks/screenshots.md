@@ -38,7 +38,13 @@ Screenshots need to stick to the following specs:
 Read more about the options for `page.screenshot()` like transparency, clipping and quality settings in the official 
 for   
 [Puppeteer](https://pptr.dev/#?product=Puppeteer&version=v2.0.0&show=api-pagescreenshotoptions), or
-[Playwright](https://playwright.dev/#version=v1.0.2&path=docs%2Fapi.md&q=pagescreenshotoptions).
+[Playwright](https://playwright.dev/#version=v1.4.0&path=docs%2Fapi.md&q=pagescreenshotoptions).
+
+{{< warning >}}
+The experimental video recording added in [Playwright 
+1.4.0](https://github.com/microsoft/playwright/releases/tag/v1.4.0) 
+is not supported by Checkly. 
+{{</ warning >}}
 
 ## Full page screenshots
 

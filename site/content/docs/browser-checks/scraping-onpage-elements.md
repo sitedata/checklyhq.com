@@ -136,7 +136,7 @@ the `page.$$eval()` method.
 ## Puppeteer built-in shortcuts
 
 Puppeteer offers some built-in shortcuts to access common elements of a typical webpage. For the full details see
-[the Puppeteer docs](https://pptr.dev/#?product=Puppeteer&show=api-class-page).
+[the Puppeteer docs](https://pptr.dev/#?product=Puppeteer&version=v2.0.0&show=api-class-page).
 
 ```javascript
 ...

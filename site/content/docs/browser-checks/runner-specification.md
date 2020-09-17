@@ -11,8 +11,9 @@ standard library or to arbitrary NPM modules. Currently every runner is equipped
 
 - **[node](https://nodejs.org/docs/latest-v10.x/api/)** 10.x LTS: The general Node.js execution environment.
 - **[puppeteer](https://github.com/GoogleChrome/puppeteer)** 2.0.0: Framework for controlling browsers from Node.js.
-- **[playwright](https://github.com/microsoft/playwright)** 1.0.2: Framework for controlling browsers from Node.js.
-- **[chromium](https://github.com/chromium/chromium/releases/tag/77.0.3844.0)** 77.0.3844.0 (r674921): Chrome browser used with puppeteer.
+  - **[chromium](https://github.com/chromium/chromium/releases/tag/77.0.3844.0)** 77.0.3844.0 (r674921): Chrome browser used with Puppeteer.
+- **[playwright](https://github.com/microsoft/playwright)** 1.4.0: Framework for controlling browsers from Node.js.
+  - **[chromium](https://github.com/chromium/chromium/releases/tag/83.0.4103.0)** 83.0.4103.0: Chrome browser used with Playwright.
 - **[chai](https://www.chaijs.com/)** 4.2.0: Popular assertion library.
 - **[mocha](https://mochajs.org/)** 5.0.0: Popular test runner library.
 - **[assert](https://nodejs.org/docs/latest-v10.x/api/assert.html)** 10.x: Built-in assertion function.
