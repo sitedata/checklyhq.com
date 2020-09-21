@@ -31,7 +31,7 @@ can be logged in to some webapp and record a script, but on playback the script 
 
 To work around this limitation you can record the login sequence as part of your script. Always starting Headless Recorder when Chrome 
 is in Incognito Mode helps you dodge this pitfall, as it will become immediately clear when you are not logged in using
-session cookies. You need to explicitly allow the Puppeteer Recorder extension to run in Incognito mode on the details
+session cookies. You need to explicitly allow the Headless Recorder extension to run in Incognito mode on the details
 section on the Extension page of your Chrome browser:
 
 ![headless authentication and cookies](/docs/images/headless-recorder/allow_incognito.png)
@@ -39,7 +39,7 @@ section on the Extension page of your Chrome browser:
 
 ## Filling out forms
 
-Puppeteer Recorder has been tested to record the following standard html form inputs and related elements.
+Headless Recorder has been tested to record the following standard html form inputs and related elements.
 
 - `text` input elements like text and email.
 - `radio` input elements.

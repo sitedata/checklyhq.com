@@ -7,7 +7,7 @@ menu:
 ---
 
 We created Headless Recorder (formerly know as Puppeteer Recorder) as a cool Sunday afternoon side project while working on Checkly. The project is now at 
-20k+ users and 8K Github stars! Things were a little quite around the project, but that's going to change. 
+20k+ users and 8K GitHub stars! Things were a little quite around the project, but that's going to change. 
 
 Checkly is growing and we want to double down on making Headless Recorder the most awesome 100% open source E2E test 
 recorder on the planet. To be 100% transparent, we want to do this because:
