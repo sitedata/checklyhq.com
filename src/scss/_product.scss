@@ -28,15 +28,6 @@
         margin-top: 0;
         border-bottom: 0;
       }
-      &::before {
-        content: "\f121" !important;
-        color: $green;
-        font-family: Ionicons;
-        position: relative;
-        font-size: 1rem;
-        top: -3px;
-        margin-right: .75rem;
-      }
     }
 
     h5 {
