@@ -1,7 +1,7 @@
 @import '../variables';
 
 .api-monitoring-section {
-  padding-top: $section-top-padding;
+  padding-top: 3 * $section-top-padding;
   padding-bottom: $section-bottom-padding;
   height: 616px;
   overflow: hidden;
