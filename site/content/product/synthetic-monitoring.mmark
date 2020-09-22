@@ -64,9 +64,9 @@ coding tips and examples.
 
 <div class="row mb-lg-5">
 
-<div class="col-sm-6 mb-lg-3">
+<div class="col-sm-6 mb-lg-3 px-md-5 pt-md-3">
    <div style="display: flex; flex-direction: row; align-items: baseline;">
-  <h3 class="section-header" style="margin-right: 1rem;">Puppeteer Recorder
+  <h3 class="section-header" style="margin-right: 1rem;">Headless Recorder
   </h3>
       <a class="github-button" href="https://github.com/checkly/headless-recorder" data-show-count="true" aria-label="Star checkly/headless-recorder on GitHub">Star</a>
   </div>
@@ -74,7 +74,7 @@ coding tips and examples.
      This extension has a ton of options for tweaking your scripts as you click through your site and fill out web forms.
   </p>
   <p>
-    {{% cta-link "Learn more" "/docs/puppeteer-recorder/basic-usage/" %}}
+    {{% cta-link "Learn more" "/docs/headless-recorder/basic-usage/" %}}
   </p>
   <img src="/product/transaction-monitoring/recorder.png" alt="" />
 </div>
