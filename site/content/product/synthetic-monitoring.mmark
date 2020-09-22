@@ -16,7 +16,7 @@ correctness and performance of all your crucial click paths.
 <div class="row pt-4">
 {{< sm-4-col-item "Real browsers" "Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions. We run each session in a sealed off sandbox for extra security." >}}
 {{< sm-4-col-item "Validate all the things" "In a Browser check you can check for specific content items, browser responses, visibility and error responses." >}}
-{{< sm-4-col-item "Screen shots" "Take a screen shot at any stage in your transaction for quick and easy reference. You can take full page shots, or just a specific page element for more focus." >}}
+{{< sm-4-col-item "Screenshots" "Take a screenshot at any stage in your transaction for quick and easy reference. You can take full page shots, or just a specific page element for more focus." >}}
 {{< sm-4-col-item "Monitor globally" "We monitor your transactions from data center locations around the world." >}}
 {{< sm-4-col-item "CI/CD integration" "Integrate your Browser checks into your QA or continuous delivery process by triggering adhoc runs from GitHub or the command line." >}}
 {{< sm-4-col-item "Coding optional" "Use our browser plugin to record a script and import it into Checkly. Want more control? Dive into the code and tweak your script to perfection." >}}
@@ -27,14 +27,14 @@ correctness and performance of all your crucial click paths.
 ## How it works
 
 <p class="text-center hero-sub hero-sub-center mb-5">
-Checkly uses the Chrome Puppeteer framework to accurately simulate interactions with a Chrome browser.
+Checkly uses the Puppeteer & Playwright frameworks to accurately simulate interactions with a Chrome browser.
 Getting a monitoring script going is a lot easier than you might think. Just follow the steps below and you'll be up in no time.
 </p>
 
 
 {{% feature-row header="Create a script" img="/product/transaction-monitoring/script.png" %}}
 Pick one of the examples from our built-in library as your starting point. Alternatively, you can install and fire up the
-[Puppeteer Recorder](/docs/puppeteer-recorder/) browser extension and record a script in real-time as you click through your site.
+[Headless Recorder](/docs/headless-recorder/) browser extension and record a script in real-time as you click through your site.
 {{% cta-link "Learn more" "/docs/browser-checks/" %}}
 {{% /feature-row %}}
 
@@ -56,6 +56,7 @@ an alert is triggered.
 ## Learn from the community
 
 <p class="text-center hero-sub hero-sub-center mb-5">
+
 Checkly helps you create scripts every step of the way. With our <strong>free & open source</strong> Chrome Extension you can get started
 without writing any code. Want to dive deeper? Dive into our open source knowledge base with practical
 coding tips and examples.

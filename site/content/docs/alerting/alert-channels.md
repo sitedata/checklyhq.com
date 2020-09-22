@@ -12,7 +12,7 @@ You can add as many of the following alert channels as you want:
 - [Slack]({{< ref "slack.md" >}})
 - [SMS]({{< ref "sms-delivery.md" >}})
 - [Webhook]({{< ref "webhooks.md" >}})
-- Pagerduty
+- [Pagerduty]({{< ref "docs/integrations/pagerduty.md" >}})
 - [Opsgenie]({{< ref "docs/integrations/opsgenie.md" >}})
 
 When adding a channel, you can select which checks to subscribe to the channel. This way you can create specific routings

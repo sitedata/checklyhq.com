@@ -64,7 +64,7 @@ event timeline, in turn enabling you to track application performance across dep
 | `repository` | String  | true     | Repository name, i.e. "checkly/backend-api"                                   |
 | `sha`        | String  | true     | Git hash, tag, version "v1.0.1" or other identifier making this deploy unique |
 
-For example, this curl request 
+For example, this cURL request 
 
 ```bash
 curl -X GET "http://api.checklyhq.com/checks/<uuid>/trigger/c0hYw?deployment=true&repository=acme/customer-api&sha=v1.0.2-beta"

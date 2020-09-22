@@ -3,13 +3,13 @@ title: Roadmap
 weight: 5
 menu:
   docs:
-    parent: "Puppeteer Recorder"
+    parent: "Headless Recorder"
 ---
 
-We created Puppeteer Recorder as a cool Sunday afternoon side project while working on Checkly. The project is now at 
-10k+ users and 7K Github stars! Things were a little quite around the project, but that's going to change. 
+We created Headless Recorder (formerly know as Puppeteer Recorder) as a cool Sunday afternoon side project while working on Checkly. The project is now at 
+20k+ users and 8K GitHub stars! Things were a little quite around the project, but that's going to change. 
 
-Checkly is growing and we want to double down on making Puppeteer Recorder the most awesome 100% open source E2E test 
+Checkly is growing and we want to double down on making Headless Recorder the most awesome 100% open source E2E test 
 recorder on the planet. To be 100% transparent, we want to do this because:
 
 1. It is good for unsucking E2E test creation in general.
@@ -85,7 +85,7 @@ This is an open ended question. Here is a curated overview of replies:
 
 ## Roadmap (work in progress)
 
-Based on our own findings at Checkly and the survey results, we are going to start working on a new version of Puppeteer Recorder.
+Based on our own findings at Checkly and the survey results, we are going to start working on a new version of Headless Recorder.
 As always, we cannot give any hard promises on dates or features, but this is an initial sketch of what we want to achieve.
 
 - Support Puppeteer & Playwright.

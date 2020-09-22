@@ -11,7 +11,7 @@ API is valid and performant.
 
 #### What are browser checks?
 
-Browser checks are monitors based on Node.js scripts using industry standard testing tools like Mocha and Puppeteer.
+Browser checks are monitors based on Node.js scripts using industry-standard testing tools like Mocha, Puppeteer, and Playwright.
 Each browser check uses an actual Chrome browser to execute clicks, fill out forms and validate if these interactions have
 the correct results. This is also commonly called "synthetic monitoring".
 

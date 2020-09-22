@@ -38,14 +38,8 @@ When typing in most of the variable-enabled fields we show a small helper popup 
 
 Note, just the Body input field does not show this helper popup.
 
-## Template function and built-in variables
+## Using Handlebars helpers & built in variables
 
-Next to your own variables, you can reference some built-in helpers:
-
-- You can access the current data center location using the implicit `{{REGION}}` variable. This resolves to the AWS region name, i.e. `us-east-1`.
-- You can use `{{$UUID}}` to generate a random UUID/v4, i.e. `9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d`.
-- You can use `{{RANDOM_NUMBER}}` to generate a random decimal number between 0 and 1000, i.e. `345`.
-
-
-
-
+Next to your own variables, we've added some built-in variables and extended the [Handlebars](https://handlebarsjs.com/) templating system:
+                          
+{{< readfile filename="content/_shared/handlebars-helpers.md" >}}

@@ -69,8 +69,8 @@ disqusShortname = "checkly"
 	weight = 100
 
 [[menu.docs]]
-	name = "Puppeteer Recorder"
-	url = "/docs/puppeteer-recorder/"
+	name = "Headless Recorder"
+	url = "/docs/headless-recorder/"
 	weight = 9999
 
 [markup.goldmark.renderer]

@@ -1,7 +1,7 @@
 ---
 title: API Monitoring
 description: "Checkly's deep but easy to use API
-monitoring solution checks your mobile, webapp or IOT API for performance, uptime and correctness."
+monitoring solution checks your mobile, webapp or IoT API for performance, uptime and correctness."
 ---
 
 {.text-center .hero-text}
@@ -9,7 +9,7 @@ monitoring solution checks your mobile, webapp or IOT API for performance, uptim
 
 <p class="text-center hero-sub hero-sub-center mb-lg-5">
 Downtime caused by API performance has serious business impact. Use Checkly's deep but easy to use API
-monitoring solution to check your mobile, webapp or IOT API for performance, uptime and correctness.
+monitoring solution to check your mobile, webapp or IoT API for performance, uptime and correctness.
 </p>
 
 <div class="row pt-4">

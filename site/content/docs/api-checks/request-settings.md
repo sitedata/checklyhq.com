@@ -93,9 +93,9 @@ request, use the username and password fields in the relevant section.
 
 ![api monitoring basic auth](/docs/images/api-checks/basic-auth.png)
 
-## Import a curl request
+## Import a cURL request
 
-You can import the request method, url, headers and body from a [curl](https://curl.haxx.se/) command.
+You can import the request method, url, headers and body from a [cURL](https://curl.haxx.se/) command.
 Arguments `--user-agent`, `--cookie` and `--compressed` also work.
 
 ## Import a Swagger / OpenAPI specification
