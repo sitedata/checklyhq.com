@@ -1,6 +1,6 @@
 ---
 title: Checkly — the modern alternative to Pingdom for Developers.
-description: "Checkly is perfect for developers eager to use a modern tool stack to check their API's and site transaction flows."
+description: "Checkly is perfect for developers eager to use a modern tool stack to check their APIs and site transaction flows."
 ---
 
 
@@ -42,10 +42,10 @@ Checkly supports you to create flexible HTTP Checks tailored to your needs.
 {{% /feature-row %}}
 
 
-{{% feature-row header="E2E-Checks with Puppeteer" img="/product/transaction-monitoring/script.png" %}}
-Code your checks and control exactly how they interact with the browser.
-- Use real and worldwide distributed browsers to validate what you need
-- We support you with examples and our Puppeteer recorder — coding is optional
+{{% feature-row header="E2E checks with real browsers" img="/product/transaction-monitoring/script.png" %}}
+Code your checks and control exactly how they interact with a real browser.
+- Use real and worldwide distributed browsers to validate what you need using Puppeteer or Playwright frameworks
+- We support you with examples and our Headless Recorder — coding is optional
 - Run your tests constantly or via our CI/CD integrations
 
 {{% cta-link "Learn more" "/product/synthetic-monitoring/" %}}

@@ -88,7 +88,7 @@ API docs.
 
 ### page.waitForNavigation()
 
-In both Puppeteer & Playwright you can click on a link that triggers a navigation to a new page. 
+In both Puppeteer and Playwright you can click on a link that triggers a navigation to a new page. 
 Use the `page.waitForNavigation()`
 method, although it is slightly unintuitive to use as the associated promise has to be initialized before waiting for it.
 This means the following **will not work**

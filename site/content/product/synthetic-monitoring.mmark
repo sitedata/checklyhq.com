@@ -27,14 +27,14 @@ correctness and performance of all your crucial click paths.
 ## How it works
 
 <p class="text-center hero-sub hero-sub-center mb-5">
-Checkly uses the Chrome Puppeteer framework to accurately simulate interactions with a Chrome browser.
+Checkly uses the Puppeteer & Playwright frameworks to accurately simulate interactions with a Chrome browser.
 Getting a monitoring script going is a lot easier than you might think. Just follow the steps below and you'll be up in no time.
 </p>
 
 
 {{% feature-row header="Create a script" img="/product/transaction-monitoring/script.png" %}}
 Pick one of the examples from our built-in library as your starting point. Alternatively, you can install and fire up the
-[Puppeteer Recorder](/docs/puppeteer-recorder/) browser extension and record a script in real-time as you click through your site.
+[Headless Recorder](/docs/headless-recorder/) browser extension and record a script in real-time as you click through your site.
 {{% cta-link "Learn more" "/docs/browser-checks/" %}}
 {{% /feature-row %}}
 
@@ -57,7 +57,7 @@ an alert is triggered.
 
 <p class="text-center hero-sub hero-sub-center mb-5">
 Coding your own scripts lets you control exactly how your click paths should interact with
-the browser. However, you don't need to start there. We give you a built-in example library of examples and the Puppeteer
+the browser. However, you don't need to start there. We give you a built-in example library of examples and the Headless
 Recorder Chrome browser extension to get started ASAP.
 </p>
 
@@ -65,7 +65,7 @@ Recorder Chrome browser extension to get started ASAP.
 {{% sm-6-col-item header="Example Library" image="/product/transaction-monitoring/examples.png" %}}
 Our examples library contains example scripts that cover a range of scenario's: from scraping content and validating text
 to login and shopping carts. Use them as a jumping off point and customize them for your own situation.
-{{% cta-link "Learn more" "/puppeteer-recorder/" %}}
+{{% cta-link "Learn more" "/headless-recorder/" %}}
 {{% /sm-6-col-item %}}
 {{% sm-6-col-item header="Headless Recorder" image="/product/transaction-monitoring/recorder.png" %}}
 Install the Headless Recorder browser extension in your Chrome browser and start recording scripts in under a minute.
