@@ -35,9 +35,10 @@ You can use the following event related variables in both URL and payload.
 | `RESPONSE_TIME`     | The reported response time for this result                   |
 | `RUN_LOCATION`      | The location where the check ran, i.e. "N. California"       |
 | `RESULT_LINK`       | The full link to the check result                            |
-| `SSL_DAYS_REMAINING`| How many days remain on the SSL certificate. For ALERT_SSL only.                            |
+| `SSL_DAYS_REMAINING`| How many days remain on the SSL certificate. For ALERT_SSL only.|
 | `SSL_CHECK_DOMAIN`  | The domain of the SSL certificate. For ALERT_SSL only.       |
 | `STARTED_AT`        | The ISO timestamp from when this check run started           |
+| `TAGS`              | An array of tags assigned to the check. Have a look at our Opsgenie example below on how to render this to a JSON array. |
 
 ## Using Handlebars helpers
 
@@ -190,10 +191,11 @@ The following examples give an idea how to integrate Checkly with 3rd party aler
 
 You can create an <a href="https://docs.opsgenie.com/docs/alert-api" target="_blank">OpsGenie</a> alert by POST-ing the following body
 
-```json
+```
 {
   "message": "{{ALERT_TITLE}}",
-  "description": "{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}"
+  "description": "{{ALERT_TYPE}} <br>{{STARTED_AT}} ({{RESPONSE_TIME}}ms) <br>{{RESULT_LINK}}",
+  "tags": [{{#each TAGS}} "{{this}}" {{#unless @last}},{{/unless}} {{/each}}]
 }
 ```
 
