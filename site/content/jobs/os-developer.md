@@ -2,7 +2,7 @@
 title: Lead Developer Open Source
 subtitle: Full time / Remote
 position_state: Open
-draft: true
+draft: false
 ---
 
 - Remote (GMT +3/-3)
@@ -11,35 +11,37 @@ draft: true
 
 ## About the role
 
-Checkly is looking for an experienced frontend lead. We use Vue.js extensively. Our core webapp is already quite a 
-beast. It uses all of Vue.js (core, router and Vuex) and we are migrating everything to SFC. We do extensive XHR calls to our
-own API and many 3rd party APIs. We use web sockets for all kinds of updates. You get it: it's a mature webapp.
+Checkly is 100% committed to open source. That's why we are looking for an experienced developer to drive our open source initiatives:
 
-This is a great opportunity to join an early stage company, influence the product road map and help us do what we love most: 
-building the best active monitoring service for modern DevOps teams.
+ - [headless recorder](https://github.com/checkly/headless-recorder)
+ - [theheadless.dev](https://theheadless.dev/)
+ - All our integrations with the Puppeteer and Playwright eco systems.
+ - Our integrations with Terraform and Prometheus
+ - Any future initiatives!
+ 
+You will be the "spider in the web" for Checkly, our customers and the external open source developers we work with on a daily basis. 
 
-### Build our frontend(s)
-You will be working on all frontend projects we have at Checkly.
+## Your responsibilities
 
-- Our main webapp https://app.checklyhq.com.
-- Our marketing site https://checklyhq.com.
-- Our [popular open source Chrome extension Puppeteer Recorder](https://github.com/checkly/puppeteer-recorder)!
-- All other free, open source tools we have like https://puppeteersandbox.com
-
-We care about design, we care about small but awesome frontend tweaks that delight our customers. We care about performance.
-We deploy (almost) every day and keep things simple. Tools we use are Clubhouse, Sketch, Figma, Vercel (formerly Zeit), AWS and Heroku.
-
+This job is mostly a coding job, but has a crucial advocacy & community component.
+ 
+ - Make sure our projects are relevant and useful to the community.
+ - Evangelize and educate the community: GitHub, Twitter, blogs, talks, video etc.
+ - Evolve and expand our existing projects.
+ - Ship awesome features.
+ - Kill terrible bugs!
+ 
 ## Your skills
 
-- You have deep experience in building application with Vue.js in a professional product (SaaS) environment.
-- You have experience in writing frontend tests.
-- You know how to communicate with coworkers and customers in English.
-- You are quick to pick up on new stuff and enjoy the process of learning new things.
-- You love making software for other developers!
+- You have deep experience in building JavaScript applications in the open source arena.
+- You have experience as a maintainer or key contributor on a public GitHub-hosted open source project.
+- You are hands on in shipping product: you can push a feature from start to end.
+- You know how to communicate with coworkers, contributors and customers in English.
+- You love making software for other developers.
 
 *Bonus points*
 
-- Hands-on experience with UX design. 
+- Hands-on experience with headless browser frameworks like Puppeteer and Playwright.
 - Experience with building SaaS tools for developers.
 - Experience working remotely in a distributed team.
 
@@ -51,3 +53,5 @@ We deploy (almost) every day and keep things simple. Tools we use are Clubhouse,
 - Contribute to open source.
 - Modern laptop and equipment provided.
 
+This is a great opportunity to join an early stage company, influence the product road map and help us do what we love most: 
+building the best active monitoring service for modern developers.
