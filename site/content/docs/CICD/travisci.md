@@ -15,7 +15,7 @@ This `.travis.yml` file is from our [checkly-ci-test GitHub repo](https://github
 goes through the following phases:
 
 1. Install dependencies
-2. Run unit tests.
+2. Run unit tests
 3. Deploy to an environment
 4. Run Checkly checks 
 
