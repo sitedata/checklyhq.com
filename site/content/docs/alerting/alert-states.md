@@ -16,7 +16,7 @@ Sending out alert notifications like emails and Slack hooks depends on four fact
 As you can see, 1 and 2 are how Checkly works in the backend; you have no influence on this. But 3 and 4 are user configurable.
 We can even add a fifth factor: if the check is muted, no alerts are send out at all.
 
-> Note: Browser checks currently do not have a degraded state.s
+> Note: Browser checks currently do not have a degraded states.
 
 ## Alert states & transitions
 
@@ -29,12 +29,12 @@ as the history or "vector" of the state transition influences how we alert.
 ✅ --> ⚠️ | Degraded | x|`ALERT_DEGRADED`|Send directly, if threshold is *"alert after 1 failure"*|
 ✅ --> ❌ | Failure  |x |`ALERT_FAILURE`|Send directly, if threshold is *"alert after 1 failure"*|
 ⚠️ --> ⚠️ | Degraded|x |`ALERT_DEGRADED_REMAIN` |i.e. when threshold is *"alert after 2 failures"* or *"after 5 minutes"*| 
-⚠️ --> ✅ | Recovery |-|`ALERT_DEGRADED_RECOVERY`| but only if you received a degraded notification before|
+⚠️ --> ✅ | Recovery |-|`ALERT_DEGRADED_RECOVERY`|Send but only if you received a degraded notification before|
 ⚠️ --> ❌ | Failure |-|`ALERT_DEGRADED_FAILURE`|This is an **escalation**, it overrides any threshold setting. We send this even if you already received degraded notifications| 
 ❌ --> ❌ | Failure | x|`ALERT_FAILURE_REMAIN` |i.e. when threshold is *"alert after 2 failures"* or *"after 5 minutes"*|
 ❌ --> ⚠️ | Degraded  |-|`ALERT_FAILURE_DEGRADED`|This is a **deescalation**, it overrides any thresholds settings. We send this even if you already received failure notifications|
 ❌️ --> ✅ | Recovery |-|`ALERT_RECOVERY`|Send directly|
 
-✅ = passing  
-⚠️ = degraded  
-❌ = "hard" failing  
+✅  = passing  
+⚠️  = degraded  
+❌  = "hard" failing  
