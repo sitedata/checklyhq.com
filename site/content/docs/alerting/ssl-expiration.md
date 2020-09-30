@@ -23,9 +23,9 @@ Simply create or pick an existing alert channel that your check subscribes to an
 {{</info>}}
 
 ## API checks 
-The domain for the certificate is parsed from the `URL` in the HTTP request settings so does not require any setup.
+The domain for the certificate is parsed from the `URL` in the HTTP request settings so it does not require any setup.
 
 ## Browser checks 
-Since browser checks can connect to multiple domains, you need to set the SSL certificate domain to recieve certificate alerts for them.
+Since browser checks can connect to multiple domains, you need to set the SSL certificate domain to receive certificate alerts for them.
 
 ![SSL checks for browser checks](/docs/images/alerting/browser_ssl_check.png)

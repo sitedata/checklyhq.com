@@ -9,7 +9,7 @@ menu:
 Webhooks allows you to POST custom payloads to any endpoint in your own infrastructure or a third party provider. In a
 nutshell, you can:
 
-- Create a **custom URL** by adding in authentication tokens or other secret.
+- Create a **custom URL** by adding in authentication tokens or other secrets.
 - Create a **custom payload body** using any environment variables and specific instance variables per event. Note: that means that if you are attaching the webhook to a Group, you will be able to access Group-level variables, too.
 - **Debug and test the webhook** in the editor by sending test messages.
 
@@ -18,11 +18,11 @@ nutshell, you can:
 The example above shows a webhook configured to create a Jira ticket on each event. Notice the following:
 
 - We use the variables `JIRA_USER` and `JIRA_TOKEN` in the URL. We previously stored these variables in the environment variables section.
-- We use the variables `RESULT_LINK` and`ALERT_TITLE` in the payload. These are event based variables and will change with each call.
+- We use the variables `RESULT_LINK` and`ALERT_TITLE` in the payload. These are event-based variables and will change with each call.
 
 In both cases we use the familiar Handlebars templating braces, i.e. `{{ }}` to insert the variable.
 
-You can use the following event related variables in both URL and payload.
+You can use the following event-related variables in both URL and payload.
 
 | Variable            | Description                                                  |
 |---------------------|--------------------------------------------------------------|
@@ -278,7 +278,7 @@ You can send your SSL alerts using webhooks. Using the following body:
 ```
 
 Will yield the following output, where we customize the `ALERT_TITLE` to include the domain and the days remaining till your
-certificate expires
+certificate expires.
 
 ```json
 {

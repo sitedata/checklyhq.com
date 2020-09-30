@@ -13,14 +13,14 @@ If you need more, you can integrate with [Pagerduty]({{< ref "../integrations/pa
 
 ## Alert settings
 
-The alert settings tab give you a lot of options to tailor when, how and how often you want to be alerted when 
-a check fails. This is also sometimes referred to as **threshold alerting** For example:
+The alert settings tab gives you a lot of options to tailor when, how and how often you want to be alerted when 
+a check fails. This is also sometimes referred to as **threshold alerting**. For example:
 
 - Get an alert on the second or third failure.
 - Get an alert after 5 minutes of failures.
 - Get one or more reminders after a failure is triggered.
 
-Configuring is really simple. Just remember that you can configure your alert settings at two levels:
+Configuration is really simple. Just remember that you can configure your alert settings at two levels:
 
 - **Account** level: This is the default level and applies to all of your check unless you override these settings at the check level.
 
@@ -31,10 +31,12 @@ Configuring is really simple. Just remember that you can configure your alert se
 ![alert settings check / threshold alerting](/docs/images/alerting/alert-settings-check.png)
 
 {{<info >}}
+If you are using Groups, all the checks in the same Group will share Group-level alert settings.
+{{</info >}}
+
+{{<info >}}
 Whenever possible, use the alert settings at the account level. This keeps things simple.
 {{</info>}}
-
-Alert settings give you the following options:
 
 ### Escalation
 
@@ -42,10 +44,10 @@ The escalation box allows you to decide when an alert should be triggered. We gi
 
 **1. Run based**
 
-We alert you when a check has failed a number of times consecutively. We call this a *Run Based* escalation. Note that failing checks
-for a different region but part of the same run are not considered "consecutive". 
+We alert you when a check has failed a number of times consecutively. We call this a *Run Based* escalation. Note that failed checks retried
+from a different region are not considered "consecutive". 
 
-Here's an example. You want to be alerted after two failures, so you set the escalation to 
+Here's an example. You want to be alerted after two failures, so you set the escalation to:
 
 ![escalation when a check has failed 2 time(s)](/docs/images/alerting/escalation-1.png) 
 
@@ -86,7 +88,7 @@ you troubleshoot.
 ## Double checking
 
 Checkly runs on cloud infrastructure in data centers around the world. As nothing is perfect, this infrastructure
-occasionally experiences glitches and slow downs. Enabling the  **double check** option makes sure we rerun your check
+occasionally experiences glitches and slowdowns. Enabling the  **double check** option makes sure we rerun your check
 to catch false positives.
 
 - API checks are retried after 5 seconds
