@@ -7,7 +7,7 @@ menu:
 ---
 
 You can reuse commonly used parts of code by referencing code snippets in any browser check. To do this, you use the 
-[Handlebars](https://handlebarsjs.com/partials.html) partial notation `{{> my_code_snippet }}`.
+[Handlebars](https://handlebarsjs.com/guide/partials.html) partial notation `{{> my_code_snippet }}`.
 
 This comes in very handy when you have multiple browser checks targeting the same site or web app that share a:
  
