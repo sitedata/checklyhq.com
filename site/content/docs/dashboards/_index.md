@@ -6,7 +6,7 @@ menu:
     parent: "Dashboards"
 ---
 
-Checkly dashboards are public dashboards available on every plan. Use them on your wall mounted TV's or 
+Checkly dashboards are public dashboards available on every plan. Use them on your wall mounted TVs, on
 shared monitors around the office or as a status page on your site.
 
 An example of a dashboard is [status.checklyhq.com](https://status.checklyhq.com).
@@ -16,8 +16,8 @@ the **Dashboards** button on the Checkly default dashboard page.
 
 ## Custom URL
 
-Every public dashboard comes with a configurable custom sub domain on the checklyhq.com domain. By default, we generate
-a random ID. You can change this sub domain to anything you like as long as it is unique among all Checkly users.
+Every public dashboard comes with a configurable custom subdomain under the checklyhq.com domain. By default, we generate
+a random ID. You can change this subdomain to anything you like as long as it is unique among all Checkly users.
 Typically a company name works best.
 
 ![custom url for public dashboard](/docs/images/dashboards/custom_url.png)
