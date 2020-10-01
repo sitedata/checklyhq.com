@@ -51,7 +51,7 @@ Date: Fri, 29 Jun 2018 12:05:17 GMT
 }
 ```
 
-> Note: triggers are rate limited to **10 requests per minute per trigger** and are only run from the **Frankfurt region**
+> Note: triggers are rate limited to **10 requests per minute per trigger** and are only run from the **Frankfurt region**.
 
 ## Optional deployment parameters
 

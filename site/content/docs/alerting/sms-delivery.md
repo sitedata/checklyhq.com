@@ -19,4 +19,4 @@ The phone numbers used for SMS alerting need to be in E.164 format. Stick to the
 ## Supported countries and regions
 
 Checkly uses Amazon Web Services' SMS functionality to deliver SMS messages. If you are having trouble receiving SMS
-messages, check if your country is in the list on [this AWS support page](https://docs.aws.amazon.com/sns/latest/dg/sms_supported-countries.html)
+messages, check if your country is in the list on [this AWS support page](https://docs.aws.amazon.com/sns/latest/dg/sms_supported-countries.html).

@@ -41,17 +41,17 @@ Now, go to the **CI/CD tab** of the check you want to link to a GitHub repositor
 You can hook up multiple checks to the same repo. We will just run all of them as a test suite.
 {{</info>}}
 
-## Using environment URL's
+## Using environment URLs
 
-GitHub reports a **environment URL** on each deployment event. Depending on what deployment service you use,
+GitHub reports an **environment URL** on each deployment event. Depending on what deployment service you use,
 this environment URL can be used to run your check on different target environments than configured in your check.  
 
-The primary use case for this is that temporary review/branch deployments such as provided by Vercel and Heroku Pipelines
-can be validated before going to production. 
+The primary use case for this is validating temporary review/branch deployments, such as those provided by Vercel 
+and Heroku Pipelines, before going to production. 
 
 So, when you enable the **"Use environment URL from deployment trigger"** checkbox there are two scenarios:
 
-### API checks & environment URL's 
+### API checks & environment URLs 
 
 With API checks, we replace the hostname part of your request url with the host in the environment URL. 
 For example:
@@ -62,10 +62,10 @@ For example:
 
 Notice we only replace the **host** part, not the URL path or any query parameters.
 
-### Browser checks & environment URL's
+### Browser checks & environment URLs
 
 For browser checks, the environment URL is exposed as the `ENVIRONMENT_URL` environment variable. This means you can use that
-variable in your code to replace any hardcoded URL you might have, i.e.
+variable in your code to replace any hardcoded URL you might have, i.e.:
 
 {{< tabs "Environment example" >}}
 {{< tab "Puppeteer" >}}

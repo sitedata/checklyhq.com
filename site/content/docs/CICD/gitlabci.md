@@ -18,7 +18,7 @@ This secret value will allow you to use the Checkly trigger to start your check 
 
 _Note: the Checkly Token is the very last part of the check's command line trigger URL._
 
-The `.gitlab-ci.yml` file, which you can also find on our our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test), is where you will define how your GitLab CI pipeline will look. We will be defining some basic placeholder steps, which you should rearrange to match your use case. Note the post-deployment `trigger_checkly` step to trigger Checkly checks and mark the build passed or failed depending on the outcome.
+The `.gitlab-ci.yml` file, which you can also find on our [checkly-ci-test GitHub repo](https://github.com/checkly/checkly-ci-test), is where you will define how your GitLab CI pipeline will look. We will be defining some basic placeholder steps, which you should rearrange to match your use case. Note the post-deployment `trigger_checkly` step to trigger Checkly checks and mark the build passed or failed depending on the outcome.
 
 ```yml
 stages:
