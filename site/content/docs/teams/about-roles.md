@@ -9,13 +9,14 @@ menu:
 When inviting a team member to join your account you can assign one of three roles that all have different access patterns.
 
 1. **Owner**
-    - Can change the team name
+    - Can change the team name.
 2. **Admin**
-    - Can invite, edit and remove other team members
-    - Can change the account settings
+    - Can invite, edit and remove other team members.
+    - Can change the account settings.
 3. **Read & Write**
-    - Can create, update and delete checks
+    - Can create, update and delete checks.
     - Can create, update and delete alert settings of individual checks.
+    - Can create, update and delete maintenance windows.
 4. **Read Only**
     - Look, no touch.
 
