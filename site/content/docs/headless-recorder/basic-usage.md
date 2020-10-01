@@ -6,7 +6,7 @@ menu:
     parent: "Headless Recorder"
 ---
 
-The goal of Headless Recorder is to be easy to use but with enough depth to also handle complexer scenarios.
+The goal of Headless Recorder is to be easy to use but with enough depth to also handle more complex scenarios.
 
 - Click the icon and hit **Record**.
 - Hit <kbd>tab</kbd> after you finish typing in an `input` element.
@@ -14,7 +14,7 @@ The goal of Headless Recorder is to be easy to use but with enough depth to also
 - Wait for **full page load** on each navigation. The icon will switch from `rec` to `wait`.
 - Click **Pause** when you want to navigate without recording anything. Hit **Resume** to continue recording.
 - Click **Stop** to stop recording and generate the resulting code.
-- Hit **copy to clipboard** 
+- Hit **copy to clipboard**.
 
 With the code on your clipboard, you can save the code to a local file and run it, providing you have the Puppeteer or Playwright npm package 
 installed.
@@ -48,7 +48,7 @@ Headless Recorder has been tested to record the following standard html form inp
 - `button` or `a` submit elements.
 
 As mentioned above, when typing in text inputs, hitting the <kbd>tab</kbd> key "confirms" the input text.
-Not hitting <kbd>tab</kbd> will result in no input being record. 
+Not hitting <kbd>tab</kbd> will result in no input being recorded. 
 
 
 > Reminder: when providing login credentials or other confidential data in forms, make sure to filter them out
@@ -60,16 +60,16 @@ The demo video below gives an impression on how filling out a form works.
 
 ## Screenshots
 
-You can take two kinds of screenshots.
+You can take two kinds of screenshots:
 
 1. A screenshot of the **current visible page**.
 2. A **clipped screenshot** of a part of the page.
 
-Activate either mode by either using the right click context menu
+Activate either mode by either using the right click context menu...
 
 ![puppeteer recorder context menu](/docs/images/puppeteer-recorder/context_menu.png)
 
-Or using keyboard short cuts
+...or using keyboard shortcuts.
 
 | Action             | Short cut    |
 |--------------------|--------------|
