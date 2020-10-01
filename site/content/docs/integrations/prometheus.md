@@ -13,14 +13,14 @@ for dashboarding, you can expose Checkly's core metrics on a dedicated, secured 
 > 💡 Check out our [blog post on using this integration with Prometheus and Grafana](https://blog.checklyhq.com/monitoring-website-performance-with-checkly-prometheus-grafana/) for some cool real-life applications.
 
 
-Checkly exposes two type of metrics in a Prometheus-compatible format.
+Checkly exposes two types of metrics in a Prometheus-compatible format.
  
 1. `checkly_check_status` reports if a check is passing or failing. `1` means the check is passing, `0` means the check is failing.
 2. `checkly_check_degraded_status` reports if a check is degraded. `1` means the check is not-degraded, `0` means the check is degraded.
-3. `checkly_check_result` reports the last collected response time for check in a specific region. This means
+3. `checkly_check_result` reports the last collected response time for a check in a specific region. This means
 you get one checkly_check_result stanza for each region the check is configured to run in.
 
-Each metric has the following labels
+Each metric has the following labels:
 
 - `check_name`, the name of your check.
 - `check_type`, either `api` or `browser`.
