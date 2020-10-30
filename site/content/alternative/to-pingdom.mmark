@@ -23,7 +23,7 @@ Checkly is built for developers and DevOps teams eager to use a modern tool stac
 {{% feature-row header="Pingdom-2-Checkly" img="/alternative/pingdom2checkly.png" %}}
 Easily migrate from Pingdom to Checkly by using our existing Pingdom-2-Checkly migration script. Please get in touch if you have any questions.
 
-{{% cta-link "Learn more" "https://github.com/checkly/pingdom-2-checkly" %}}
+{{% cta-link "Learn more about Pingdom to Checkly" "https://github.com/checkly/pingdom-2-checkly" %}}
 
 {{% /feature-row %}}
 
@@ -37,7 +37,7 @@ Checkly supports you to create flexible HTTP Checks tailored to your needs.
 - Run custom JavaScript before and after your check with setup & teardown Scripts
 - Easily create your checks with Terraform and our Swagger importer
 
-{{% cta-link "Learn more" "/product/api-monitoring/" %}}
+{{% cta-link "More on API monitoring" "/product/api-monitoring/" %}}
 
 {{% /feature-row %}}
 
@@ -48,7 +48,7 @@ Code your checks and control exactly how they interact with a real browser.
 - We support you with examples and our Headless Recorder — coding is optional
 - Run your tests constantly or via our CI/CD integrations
 
-{{% cta-link "Learn more" "/product/synthetic-monitoring/" %}}
+{{% cta-link "More on synthetic monitoring" "/product/synthetic-monitoring/" %}}
 
 {{% /feature-row %}}
 
@@ -64,5 +64,5 @@ Code your checks and control exactly how they interact with a real browser.
 Get a clear picture of how your services perform for all your users around the world. Run your checks from any of our twenty
 data center locations spread over the Americas, EMEA, Asia Pacific, and Africa.
 
-{{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
+{{% cta-link "Our datacenter locations" "/docs/monitoring/global-locations/" %}}
 </p>
