@@ -5,13 +5,16 @@
     src: url("../../../../fonts/fakt/FaktSoftPro-Blond.eot") format("embedded-opentype"), url("../../../../fonts/fakt/FaktSoftPro-Blond.woff") format("woff");
     font-weight: 300;
     font-style: normal;
-    font-display: auto; }
+    font-display: auto;
+    font-display: swap;
+}
 @font-face {
     font-family: 'fakt-soft';
     src: url("../../../../fonts/fakt/FaktSoftPro-Normal.eot") format("embedded-opentype"), url("../../../../fonts/fakt/FaktSoftPro-Normal.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: auto;
+    font-display: swap;
 }
 
 @font-face {
@@ -20,6 +23,7 @@
     font-weight: 500;
     font-style: normal;
     font-display: auto;
+    font-display: swap;
 }
 
 body {
