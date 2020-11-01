@@ -4,6 +4,7 @@ import hugoBin from 'hugo-bin'
 import postcss from 'gulp-postcss'
 import cssImport from 'postcss-import'
 import cssnext from 'postcss-cssnext'
+import purgecss from 'gulp-purgecss'
 import inlineCss from 'gulp-inline-css'
 import sass from 'gulp-sass'
 import revall from 'gulp-rev-all'
@@ -28,6 +29,15 @@ gulp.task('css', function buildCss () {
     .pipe(postcss([cssImport({from: './src/css/main.css'}), cssnext()]))
     .pipe(gulp.dest('./public/css'))
     .pipe(browserSync.stream())
+})
+
+//purgecss
+gulp.task('purgecss', () => {
+    return gulp.src('./public/css/**/*.css')
+        .pipe(purgecss({
+            content: ['./public/**/*.html']
+        }))
+        .pipe(gulp.dest('./public/css'))
 })
 
 // Compile Javascript
@@ -97,14 +107,14 @@ gulp.task('watch', () => {
 })
 
 // Development server with browsersync
-gulp.task('server', gulp.series(['hugo', 'css', 'js', 'fonts', 'serve', 'watch']))
+gulp.task('server', gulp.series(['hugo', 'css', 'js', 'fonts', 'purgecss','serve', 'watch']))
 
 gulp.task('clean', () => {
   return del(['./public/**/*'])
 })
 
 // Build/production tasks
-gulp.task('render', gulp.series(['css', 'js', 'fonts', 'hugo']))
+gulp.task('render', gulp.series(['css', 'js', 'fonts', 'hugo', 'purgecss']))
 gulp.task('build', gulp.series(['clean', 'render', 'hash']))
 
 /**

@@ -41,6 +41,7 @@
     "gulp-postcss": "^7.0.1",
     "gulp-rev-all": "^0.9.8",
     "gulp-sass": "^4.1.0",
+    "gulp-purgecss": "^3.0.0",
     "gulp-watch": "^5.0.1",
     "html-loader": "^0.5.5",
     "hugo-bin": "^0.50.0",
