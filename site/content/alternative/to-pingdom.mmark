@@ -63,9 +63,9 @@ Code your checks and control exactly how they interact with a real browser.
 
 {.text-center .section-header .pt-5}
 ## Global coverage
-{{% alternative-picture alt="alerting options" img="/alternative/data-center-locations@2x.png" class="img-w720 mb-lg-5 text-center"%}}
-
 <p class="text-center lead-text mb-lg-5">
+{{% alternative-picture alt="alerting options" img="/alternative/data-center-locations@2x.png" class="img-w720 mb-lg-5 text-center"%}}
+<br>
 Get a clear picture of how your services perform for all your users around the world. Run your checks from any of our twenty
 data center locations spread over the Americas, EMEA, Asia Pacific, and Africa.
 
