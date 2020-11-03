@@ -4,6 +4,8 @@ import hugoBin from 'hugo-bin'
 import postcss from 'gulp-postcss'
 import cssImport from 'postcss-import'
 import cssnext from 'postcss-cssnext'
+import purgecss from 'gulp-purgecss'
+import cleanCSS from 'gulp-clean-css';
 import inlineCss from 'gulp-inline-css'
 import sass from 'gulp-sass'
 import revall from 'gulp-rev-all'
@@ -29,6 +31,25 @@ gulp.task('css', function buildCss () {
     .pipe(gulp.dest('./public/css'))
     .pipe(browserSync.stream())
 })
+
+//purgecss
+gulp.task('purgecss', () => {
+    return gulp.src('./public/css/**/*.css')
+        .pipe(purgecss({
+            content: ['./public/**/*.html']
+        }))
+        .pipe(gulp.dest('./public/css'))
+})
+
+//minifycss
+gulp.task('minify-css', () => {
+  return gulp.src('./public/css/*.css')
+    .pipe(cleanCSS({debug: true}, (details) => {
+      console.log(`${details.name}: ${details.stats.originalSize}`);
+      console.log(`${details.name}: ${details.stats.minifiedSize}`);
+    }))
+  .pipe(gulp.dest('./public/css'));
+});
 
 // Compile Javascript
 gulp.task('js', (cb) => {
@@ -97,14 +118,14 @@ gulp.task('watch', () => {
 })
 
 // Development server with browsersync
-gulp.task('server', gulp.series(['hugo', 'css', 'js', 'fonts', 'serve', 'watch']))
+gulp.task('server', gulp.series(['hugo', 'css', 'js', 'fonts', 'purgecss', 'minify-css','serve', 'watch']))
 
 gulp.task('clean', () => {
   return del(['./public/**/*'])
 })
 
 // Build/production tasks
-gulp.task('render', gulp.series(['css', 'js', 'fonts', 'hugo']))
+gulp.task('render', gulp.series(['css', 'js', 'fonts', 'hugo', 'purgecss', 'minify-css']))
 gulp.task('build', gulp.series(['clean', 'render', 'hash']))
 
 /**

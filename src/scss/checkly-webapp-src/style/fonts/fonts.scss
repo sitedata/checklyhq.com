@@ -4,7 +4,7 @@
   url("../fonts/fakt/FaktSoftPro-Blond.woff") format("woff");
   font-weight: 300;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   url("../fonts/fakt/FaktSoftPro-Normal.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   url("../fonts/fakt/FaktSoftPro-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -30,5 +30,5 @@
   src: url('../fonts/Source_Code_Pro/SourceCodePro-Regular.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-  font-display: auto;
+  font-display: swap;
 }
