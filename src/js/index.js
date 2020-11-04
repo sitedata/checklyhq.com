@@ -42,16 +42,19 @@ $(document).ready(() => {
 
 
 $(document).ready(() => {
-  fetch('https://api.checklyhq.com/public-stats')
-    .then(function (response) {
-      return response.json()
-    })
-    .then(function (res) {
-      const countApi = res.apiCheckResults.toLocaleString()
-      const countBrowser = res.browserCheckResults.toLocaleString()
-      $('#api-check-results').text(countApi)
-      $('#browser-check-results').text(countBrowser)
-    })
+  if($('body').hasClass('landing')){
+    fetch('https://api.checklyhq.com/public-stats')
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (res) {
+        const countApi = res.apiCheckResults.toLocaleString()
+        const countBrowser = res.browserCheckResults.toLocaleString()
+        $('#api-check-results').text(countApi)
+        $('#browser-check-results').text(countBrowser)
+      })
+  }
+
 })
 
 /**
