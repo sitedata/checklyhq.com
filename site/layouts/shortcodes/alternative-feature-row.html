@@ -10,7 +10,7 @@
     <picture>
       <source type="image/webp" srcset="{{ substr $image 0 -4 | safeURL }}.webp">
       <source type="image/png" srcset="{{$image}}">
-      <img  class="img-w720 big-drop-shadow rounded" src="{{$image}}" alt="{{$header}}"  />
+      <img  class="img-w720 big-drop-shadow rounded" src="{{$image}}" alt="{{$header}}" loading="lazy" />
     </picture>
   </div>
 </div>

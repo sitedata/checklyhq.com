@@ -2,5 +2,5 @@
 <picture>
   <source type="image/webp" srcset="{{ substr $image 0 -4 | safeURL }}.webp">
   <source type="image/png" srcset="{{$image}}">
-  <img  class="{{$class}}" src="{{$image}}" alt="{{$alt}}"  />
+  <img  class="{{$class}}" src="{{$image}}" alt="{{$alt}}" loading="lazy" />
 </picture>
