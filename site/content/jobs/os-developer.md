@@ -2,7 +2,7 @@
 title: Lead Developer Open Source
 subtitle: Full time / Remote
 position_state: Open
-draft: false
+draft: true
 ---
 
 - Remote (GMT +3/-3)
