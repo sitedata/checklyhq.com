@@ -1,33 +1,22 @@
 ---
-title: Alternative to Pingdom
-description: "Checkly is perfect the perfect Pingdom alternative for modern developers to check their APIs and site transaction flows."
-hero: "The modern alternative to Pingdom for developers"
+title: Alternative to Runscope
+description: "Checkly is perfect the perfect Runscope alternative for modern developers to check their APIs and site transaction flows."
+hero: "The modern alternative to Runscope for developers"
 ---
 
 
 {.text-center .section-header .mb-4}
-## Why Checkly and not Pingdom?
+## Why Checkly and not Runscope?
 
 <p class="text-center hero-sub hero-sub-center mb-lg-5">
-Checkly is built for developers and DevOps teams eager to use a modern tool stack.
+Checkly is built for cloud native developers and engineering teams eager to monitor their modern tool stack.
 </p>
 
 <div class="row pt-1 pb-1">
-{{< sm-4-col-item "Deeper Insights" "Pingdom is great when you want to know if your websites are up. But it doesn't show you whether your web app and endpoints are working correctly and performing well." >}}
-{{< sm-4-col-item "Flexible HTTP Checks" "Checkly provides powerful insights and tools to customize your checks. Instead of a simple ping, you can create fully fledged configurable HTTP checks to monitor APIs." >}}
-{{< sm-4-col-item "Powerful E2E Checks" "Monitor your vital click flows in a real Chrome browser. With Checkly you can use Javascript to code your checks, instead of using a restrictive scripting editor." >}}
+{{< sm-4-col-item "Combined E2E & API checks" "Runscope is great when you only want to know if your APIs are up. But it doesn't show you the full picture - whether your UI and enpoints are working correctly." >}}
+{{< sm-4-col-item "Powerful Synthetics" "Monitor your websites with a real Chrome browser. With Checkly you can use JavaScript to code your checks, instead of using a restrictive scripting editor." >}}
+{{< sm-4-col-item "Flexible API Checks" "Checkly provides powerful insights and tools to customize your checks. Instead of a simple ping, you can create fully fledged configurable HTTP checks to monitor APIs." >}}
 </div>
-
-{.text-center .section-header .pt-2}
-## Convert your checks with a simple Node script
-
-{{% alternative-feature-row header="Pingdom-2-Checkly" img="/alternative/pingdom2checkly.png" %}}
-Easily migrate from Pingdom to Checkly by using our existing Pingdom-2-Checkly migration script. Please get in touch if you have any questions.
-
-{{% cta-link "Learn more about Pingdom to Checkly" "https://github.com/checkly/pingdom-2-checkly" %}}
-
-{{% /alternative-feature-row %}}
-
 
 {.text-center .section-header .mb-4}
 ## What makes Checkly unique
