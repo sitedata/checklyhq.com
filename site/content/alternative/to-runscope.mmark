@@ -1,6 +1,6 @@
 ---
 title: Alternative to Runscope
-description: "Checkly is perfect the perfect Runscope alternative for modern developers to check their APIs and site transaction flows."
+description: "Checkly is the perfect Runscope alternative for modern developers to check their APIs and site transaction flows."
 hero: "The modern alternative to Runscope for developers"
 ---
 
@@ -22,10 +22,10 @@ Checkly is built for developers and engineering teams eager to monitor their clo
 ## What makes Checkly unique
 
 {{% alternative-feature-row header="API monitoring for developers" img="/alternative/setup-teardown.png" %}}
-Checkly supports you to create flexible HTTP Checks tailored to your needs.
+Checkly enables you to create flexible HTTP Checks tailored to your needs.
 - Monitor your API for performance & correctness
-- Run custom JavaScript before and after your check with setup & teardown Scripts
-- Easily create your checks with Terraform and our Swagger importer
+- Run custom JavaScript before and after your check with setup & teardown scripts
+- Easily create your checks with Terraform provider and our Swagger importer
 
 {{% cta-link "More on API monitoring" "/product/api-monitoring/" %}}
 
@@ -34,7 +34,7 @@ Checkly supports you to create flexible HTTP Checks tailored to your needs.
 
 {{% alternative-feature-row header="E2E checks with real browsers" img="/alternative/script.png" %}}
 Code your checks and control exactly how they interact with a real browser.
-- Use real and worldwide distributed browsers to validate what you need using Puppeteer or Playwright frameworks
+- Use real and worldwide distributed browsers to validate what you need using Puppeteer or Playwright
 - We support you with examples and our Headless Recorder — coding is optional
 - Run your tests constantly or via our CI/CD integrations
 

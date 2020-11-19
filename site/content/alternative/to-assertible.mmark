@@ -1,6 +1,6 @@
 ---
 title: Alternative to Assertible
-description: "Checkly is perfect the perfect Assertible alternative for modern developers to check their APIs and site transaction flows."
+description: "Checkly is the perfect Assertible alternative for modern developers to check their APIs and site transaction flows."
 hero: "The modern alternative to Assertible for developers"
 ---
 
@@ -13,7 +13,7 @@ Checkly is built for developers and engineering teams eager to monitor their clo
 </p>
 
 <div class="row pt-1 pb-1">
-{{< sm-4-col-item "Combined E2E & API checks" "Assertible is great when you want to know if your APIs are up. But it doesn't show you the full picture - whether your UI flows and enpoints are working correctly." >}}
+{{< sm-4-col-item "Combined E2E & API checks" "Assertible is great when you want to know if your APIs are up. But it doesn't show you the full picture - whether your UI flows and endpoints are working correctly." >}}
 {{< sm-4-col-item "Powerful Synthetics" "Monitor your websites with a real Chrome browser. With Checkly you can use JavaScript to code your checks, instead of using a restrictive scripting editor." >}}
 {{< sm-4-col-item "Developer-first platform" "Use our delightful UI or simply code. Checkly provides powerful API, SDK, and a Terraform provider to enable you to configure your checks via code." >}}
 </div>
@@ -22,10 +22,10 @@ Checkly is built for developers and engineering teams eager to monitor their clo
 ## What makes Checkly unique
 
 {{% alternative-feature-row header="API monitoring for developers" img="/alternative/setup-teardown.png" %}}
-Checkly supports you to create flexible HTTP Checks tailored to your needs.
+Checkly enables you to create flexible HTTP Checks tailored to your needs.
 - Monitor your API for performance & correctness
-- Run custom JavaScript before and after your check with setup & teardown Scripts
-- Easily create your checks with our API, our Terraform and our Swagger importer
+- Run custom JavaScript before and after your check with setup & teardown scripts
+- Easily create your checks with our API, our Terraform provider and our Swagger importer
 
 {{% cta-link "More on API monitoring" "/product/api-monitoring/" %}}
 
@@ -34,7 +34,7 @@ Checkly supports you to create flexible HTTP Checks tailored to your needs.
 
 {{% alternative-feature-row header="E2E checks with real browsers" img="/alternative/script.png" %}}
 Code your checks and control exactly how they interact with a real browser.
-- Use real and worldwide distributed browsers to validate what you need using Puppeteer or Playwright frameworks
+- Use real and worldwide distributed browsers to validate what you need using Puppeteer or Playwright
 - We support you with examples and our Headless Recorder — coding is optional
 - Run your tests constantly or via our CI/CD integrations
 
