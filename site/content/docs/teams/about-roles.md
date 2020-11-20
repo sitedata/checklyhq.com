@@ -4,6 +4,8 @@ weight: 2
 menu:
   docs:
     parent: "Teams"
+aliases:
+- "/docs/teams/roles/"
 ---
 
 When inviting a team member to join your account you can assign one of three roles that all have different access patterns.

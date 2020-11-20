@@ -4,6 +4,9 @@ weight: 4
 menu:
   docs:
     parent: "Alerting"
+aliases:
+- "/whats-new/summer-update/docs/alerting/ssl-expiration/"
+- "/whats-new/introducing-sms-pagerduty/docs/alerting/ssl-delivery/"
 ---
 
 > On August 13, 2020, we [changed how SSL alerting is configured](/docs/alerting/). Your [old settings](https://app.checklyhq.com/alert-settings?showSslAlertingV1Notice=true) will be supported for 3 months until November 13, 2020. This page reflects the current usage.
@@ -17,15 +20,15 @@ Simply create or pick an existing alert channel that your check subscribes to an
 {{<info >}}
 **Tips**
 
-- You can create specific alert channels for certificate expirations and subscribe all checks/groups to that channel. 
+- You can create specific alert channels for certificate expirations and subscribe all checks/groups to that channel.
 
 - You can create multiple alert channels with different thresholds if you want to be alerted at multiple thresholds.
 {{</info>}}
 
-## API checks 
+## API checks
 The domain for the certificate is parsed from the `URL` in the HTTP request settings so it does not require any setup.
 
-## Browser checks 
+## Browser checks
 Since browser checks can connect to multiple domains, you need to set the SSL certificate domain to receive certificate alerts for them.
 
 ![SSL checks for browser checks](/docs/images/alerting/browser_ssl_check.png)
