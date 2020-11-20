@@ -18,7 +18,7 @@ We will start nudging you from 30 days till expiry till D-day. [Read more about 
 ## 📊  Custom Domains for TV-mode dashboards
 
 We tweaked and upgraded the TV mode dashboard which you can now host on a personal sub domain on checklyhq.com or on your own custom domain.
-[Read more about using custom domains](/docs/dashboards/dashboard-url/)
+[Read more about using custom domains](/docs/dashboards/)
 
 ## 🔫  Triggers
 

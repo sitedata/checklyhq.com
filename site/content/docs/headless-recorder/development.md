@@ -20,4 +20,3 @@ If some events are not recorded, please check the source files for which element
 
 
 - [events](https://github.com/checkly/headless-recorder/blob/master/src/code-generator/dom-events-to-record.js)
-- [elements](https://github.com/checkly/headless-recorder/blob/master/src/code-generator/elements-to-bind-to.js)
