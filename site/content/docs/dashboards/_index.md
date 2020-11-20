@@ -6,6 +6,7 @@ menu:
     parent: "Dashboards"
 aliases:
 - "/dashboards/dashboard-url/"
+- "/docs/dashboards/dashboard-url/"
 ---
 
 Checkly dashboards are public dashboards available on every plan. Use them on your wall mounted TVs, on
