@@ -1,5 +1,6 @@
 ---
 title: maintenance
+sitemapExclude: true
 ---
 
 #### Checkly is currently down for some maintenance

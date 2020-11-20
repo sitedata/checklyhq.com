@@ -3,11 +3,12 @@ title: Introducing Browser Checks V2
 date: 2018-10-02
 author: Tim Nolet
 featured_image: "https://checklyhq.com/whats-new/browser_checks_v2.png"
+sitemapExclude: true
 ---
 
 ![](/whats-new/browser_checks_v2.png)
 
-As of today all Checkly's browser checks are running on the second iteration of the browser checks site transaction monitoring system. 
+As of today all Checkly's browser checks are running on the second iteration of the browser checks site transaction monitoring system.
 This upgrade brings the following benefits:
 
 - **Every valid Puppeteer script is now a valid check.** If your Puppeteer script passes, your check passes.
@@ -15,11 +16,11 @@ This upgrade brings the following benefits:
 script is enough to signal something is wrong and trigger an alert.
 - **More and better logging**. We now report debug and console logs directly to the user on each run. This makes debugging
 flaky checks a lot easier.
-- **Use Chai.js assertions**. When you do want to use assertions, you can now use all functions from the popular Chai.js library. 
+- **Use Chai.js assertions**. When you do want to use assertions, you can now use all functions from the popular Chai.js library.
 
 We are confident that this new iteration will make monitoring your vital site transactions a lot easier.  
 
-<!--more--> 
+<!--more-->
 
 ## What are browser checks?
 
