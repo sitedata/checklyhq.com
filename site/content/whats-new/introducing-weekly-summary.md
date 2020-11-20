@@ -2,6 +2,7 @@
 title: Introducing the weekly summary email
 date: 2018-05-15
 author: Tim Nolet
+sitemapExclude: true
 ---
 
 Keeping an eye on the historical performance of your APIs and app's important transactions just became a little bit easier.

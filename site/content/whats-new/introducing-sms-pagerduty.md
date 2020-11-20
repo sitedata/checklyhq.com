@@ -2,12 +2,13 @@
 title: Introducing SMS and Pagerduty integrations
 date: 2018-08-23
 author: Tim Nolet
+sitemapExclude: true
 ---
 
 ![](/whats-new/sms_pagerduty.png)
 
 We did a poll over the last few months what alerting integrations were still missing in Checkly. It was a tie between
-SMS and Pagerduty so we build both! 
+SMS and Pagerduty so we build both!
 
 ## 📞 SMS Alerting
 

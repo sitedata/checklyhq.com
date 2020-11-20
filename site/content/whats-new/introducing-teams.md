@@ -2,6 +2,7 @@
 title: Introducing teams
 date: 2018-06-18
 author: Tim Nolet
+sitemapExclude: true
 ---
 
 You can now invite team members to your Checkly account and collaborate on your API and browser checks.
