@@ -36,7 +36,7 @@ Easily migrate from Pingdom to Checkly by using our existing Pingdom-2-Checkly m
 Checkly enables you to create flexible HTTP Checks tailored to your needs.
 - Monitor your API for performance & correctness
 - Run custom JavaScript before and after your check with setup & teardown scripts
-- Easily create your checks with Terraform provider and our Swagger importer
+- Easily create your checks with our Terraform provider and our Swagger importer
 
 {{% cta-link "More on API monitoring" "/product/api-monitoring/" %}}
 
