@@ -4,6 +4,8 @@ weight: 1
 menu:
   docs:
     parent: "Dashboards"
+aliases:
+- "/dashboards/dashboard-url/"
 ---
 
 Checkly dashboards are public dashboards available on every plan. Use them on your wall mounted TVs, on
@@ -11,7 +13,7 @@ shared monitors around the office or as a status page on your site.
 
 An example of a dashboard is [status.checklyhq.com](https://status.checklyhq.com).
 
-You can create multiple, distinct dashboards based on your plan. Edit your dashboard by clicking on 
+You can create multiple, distinct dashboards based on your plan. Edit your dashboard by clicking on
 the **Dashboards** button on the Checkly default dashboard page.
 
 ## Custom URL
@@ -38,4 +40,4 @@ Any DNS provider will have the option to easily add CNAME records. For example, 
 ![add cname to DNS provider](/docs/images/dashboards/aws_cname.png)
 
 > **SSL/TLS encryption is automatically provisioned** for all dashboards on a custom domain on the first request to that domain. This
-initial request might take a bit longer. 
+initial request might take a bit longer.

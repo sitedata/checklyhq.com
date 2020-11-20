@@ -4,16 +4,18 @@ weight: 1
 menu:
     docs: {parent: Alerting}
 lastmod: 01-06-2020
+aliases:
+    - /alerting/settings/
 ---
 
 Alerting in Checkly is pretty flexible and should address most common needs. You can tweak exactly when and how you should
-be alerted, on what channels like email, [SMS]({{< ref "sms-delivery.md" >}}), [Slack]({{< ref "slack.md" >}}) etc. 
-If you need more, you can integrate with [Pagerduty]({{< ref "../integrations/pagerduty.md" >}}), and 
+be alerted, on what channels like email, [SMS]({{< ref "sms-delivery.md" >}}), [Slack]({{< ref "slack.md" >}}) etc.
+If you need more, you can integrate with [Pagerduty]({{< ref "../integrations/pagerduty.md" >}}), and
 [Opsgenie]({{< ref "../integrations/opsgenie.md" >}})!
 
 ## Alert settings
 
-The alert settings tab gives you a lot of options to tailor when, how and how often you want to be alerted when 
+The alert settings tab gives you a lot of options to tailor when, how and how often you want to be alerted when
 a check fails. This is also sometimes referred to as **threshold alerting**. For example:
 
 - Get an alert on the second or third failure.
@@ -45,11 +47,11 @@ The escalation box allows you to decide when an alert should be triggered. We gi
 **1. Run based**
 
 We alert you when a check has failed a number of times consecutively. We call this a *Run Based* escalation. Note that failed checks retried
-from a different region are not considered "consecutive". 
+from a different region are not considered "consecutive".
 
 Here's an example. You want to be alerted after two failures, so you set the escalation to:
 
-![escalation when a check has failed 2 time(s)](/docs/images/alerting/escalation-1.png) 
+![escalation when a check has failed 2 time(s)](/docs/images/alerting/escalation-1.png)
 
 Your check runs in Frankfurt and Tokio. It fails from both regions because your server is down. We consider this
 one run. Five minutes later, the check fails again - assuming the check runs on a 5 minute schedule. Now we alert you.

@@ -4,10 +4,12 @@ weight: 1
 menu:
   docs:
     parent: "Teams"
+aliases:
+- "/docs/teams/adding-team-members/"  
 ---
 
 You can invite team members to join your Checkly account to view and manage all checks and related settings.
-Team members can have different [roles](/docs/teams/roles/).
+Team members can have different [roles](/docs/teams/about-roles/).
 
 ## Inviting team members
 
@@ -35,4 +37,3 @@ token that allows you to join the team.
 
 If you already have a Checkly account, you can choose to use that account to join. If you don't have a Checkly account yet,
 just create a new one. You will automatically join your teammate's account.
-

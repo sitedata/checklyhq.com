@@ -4,6 +4,9 @@ weight: 9999
 aliases:
     - /api-checks/triggers
     - /browser-checks/triggers
+    - /docs/api-checks/triggers
+    - /docs/browser-checks/triggers
+    - /docs/cicd/trigger/
 menu:
   docs:
     parent: "CI/CD integration"
@@ -55,7 +58,7 @@ Date: Fri, 29 Jun 2018 12:05:17 GMT
 
 ## Optional deployment parameters
 
-You can add the following query parameters to any trigger request. This enables you to record deployments in the Checkly 
+You can add the following query parameters to any trigger request. This enables you to record deployments in the Checkly
 event timeline, in turn enabling you to track application performance across deploys.
 
 | parameter    | type    | required |                                                                               |
