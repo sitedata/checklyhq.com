@@ -16,7 +16,7 @@ The goal of Headless Recorder is to be easy to use but with enough depth to also
 - Click **Stop** to stop recording and generate the resulting code.
 - Hit **copy to clipboard**.
 
-With the code on your clipboard, you can save the code to a local file and run it, providing you have the Puppeteer or Playwright npm package 
+With the code on your clipboard, you can save the code to a local file and run it, providing you have the Puppeteer or Playwright npm package
 installed.
 ```shell
 npm install puppeteer
@@ -29,7 +29,7 @@ node my_generated_script.js
 Headless Recorder does not (yet) record or store any of your session cookies or other local settings. This means you
 can be logged in to some webapp and record a script, but on playback the script fails because you are not logged in.
 
-To work around this limitation you can record the login sequence as part of your script. Always starting Headless Recorder when Chrome 
+To work around this limitation you can record the login sequence as part of your script. Always starting Headless Recorder when Chrome
 is in Incognito Mode helps you dodge this pitfall, as it will become immediately clear when you are not logged in using
 session cookies. You need to explicitly allow the Headless Recorder extension to run in Incognito mode on the details
 section on the Extension page of your Chrome browser:
@@ -48,13 +48,13 @@ Headless Recorder has been tested to record the following standard html form inp
 - `button` or `a` submit elements.
 
 As mentioned above, when typing in text inputs, hitting the <kbd>tab</kbd> key "confirms" the input text.
-Not hitting <kbd>tab</kbd> will result in no input being recorded. 
+Not hitting <kbd>tab</kbd> will result in no input being recorded.
 
 
 > Reminder: when providing login credentials or other confidential data in forms, make sure to filter them out
 after recording. In Checkly, you can replace these credentials with environment variables in your browser check script.
 
-The demo video below gives an impression on how filling out a form works. 
+The demo video below gives an impression on how filling out a form works.
 
 {{< youtube d_9HEmtv52E >}}
 
@@ -67,7 +67,7 @@ You can take two kinds of screenshots:
 
 Activate either mode by either using the right click context menu...
 
-![puppeteer recorder context menu](/docs/images/puppeteer-recorder/context_menu.png)
+![puppeteer recorder context menu](/docs/images/headless-recorder/context_menu.png)
 
 ...or using keyboard shortcuts.
 
@@ -75,5 +75,3 @@ Activate either mode by either using the right click context menu...
 |--------------------|--------------|
 | Screenshot         | Ctrl+Shift+A |
 | Screenshot Clipped | Ctrl+Shift+M |
-
-
