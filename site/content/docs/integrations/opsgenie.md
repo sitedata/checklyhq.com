@@ -1,8 +1,6 @@
 ---
 title: Opsgenie
 weight: 1
-aliases:
-- /docs/integrations
 menu:
   docs:
     parent: "Integrations"
@@ -39,7 +37,7 @@ to any Opsgenie team. You can add as many Opsgenie channels as you wish. After s
 save your changes.  
     ![setup checkly opsgenie integration step 3](/docs/images/integrations/opsgenie/opsgenie_step3.png)
 
-4. Log in to Checkly and navigate to [Alert Settings](https://app.checklyhq.com/alert-settings). 
+4. Log in to Checkly and navigate to [Alert Settings](https://app.checklyhq.com/alert-settings).
 Press the `Add more channels` button, find Opsgenie on the list, and press `Add channel` next to it to
 create a new Opsgenie channel.
     ![setup checkly opsgenie integration step 4](/docs/images/integrations/opsgenie/opsgenie_step4.png)

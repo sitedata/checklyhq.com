@@ -1,8 +1,6 @@
 ---
 title: Terraform
-weight: 3
-aliases:
-- /docs/integrations
+weight: 5
 menu:
   docs:
     parent: "Integrations"

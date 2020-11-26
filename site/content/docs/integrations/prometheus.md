@@ -1,6 +1,6 @@
 ---
 title: Prometheus
-weight: 2
+weight: 4
 menu:
   docs:
     parent: "Integrations"
@@ -14,7 +14,7 @@ for dashboarding, you can expose Checkly's core metrics on a dedicated, secured 
 
 
 Checkly exposes two types of metrics in a Prometheus-compatible format.
- 
+
 1. `checkly_check_status` reports if a check is passing or failing. `1` means the check is passing, `0` means the check is failing.
 2. `checkly_check_degraded_status` reports if a check is degraded. `1` means the check is not-degraded, `0` means the check is degraded.
 3. `checkly_check_result` reports the last collected response time for a check in a specific region. This means
@@ -79,6 +79,6 @@ Here is an example
   scheme: https
   static_configs:  
   - targets: ['api.checklyhq.com']
-``` 
+```
 
 Now restart Prometheus and you should see metrics coming in.
