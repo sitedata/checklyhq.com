@@ -12,10 +12,18 @@
             more</a></div>
       </div>
       <div class="col-sm-7">
-        <div class="image-side right"><img alt="api monitoring"
-                                           class="big-landing-image big-drop-shadow assertions fade-in ml-md-5 lazy" src="/landing/api-assertions@2x.png"/><img
-            alt="api monitoring"
-            class="big-landing-image big-drop-shadow results fade-in ml-md-5 lazy hidden-md-down" src="/landing/api-results@2x.png"/></div>
+        <div class="image-side right">
+          <picture>
+            <source type="image/webp" srcset="landing/api-assertions@2x.webp">
+            <source type="image/png" srcset="landing/api-assertions@2x.png">
+            <img  class="big-landing-image big-drop-shadow assertions fade-in ml-md-5 lazy" src="landing/api-assertions@2x.png" alt="api monitoring"  />
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="landing/api-results@2x.webp">
+            <source type="image/png" srcset="landing/api-results@2x.png">
+            <img  class="big-landing-image big-drop-shadow results fade-in ml-md-5 lazy hidden-md-down" src="landing/api-results@2x.png" alt="api monitoring"  />
+          </picture>
+        </div>
       </div>
     </div>
   </div>
