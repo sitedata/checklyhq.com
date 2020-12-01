@@ -1,0 +1,218 @@
+@import 'variables.scss';
+
+.pricing {
+
+  &__card {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--light {
+      width: 365px;
+      height: 450px;
+      background-color: $white;
+      &--left {
+        border: 1px solid $gray-light;
+        border-right: none;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        padding: 30px 30px 30px 20px;
+        @include media-breakpoint-down(lg) {
+          border: 1px solid $gray-light;
+          padding: 30px;
+        }
+      }
+      &--right {
+        border: 1px solid $gray-light;
+        border-left: none;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        padding: 30px 20px 30px 30px;
+        @include media-breakpoint-down(lg) {
+          border: 1px solid $gray-light;
+          padding: 30px;
+        }
+      }
+    }
+    &--dark {
+      width: 350px;
+      height: 395px;
+      padding: 30px 70px;
+      background-color: $black;
+      border: 1px solid $black;
+      color: $white;
+      margin-right: -4px;
+      h4 {
+        color: $white;
+      }
+      @include media-breakpoint-down(lg) {
+        margin-right: 0;
+      }
+    }
+    &__divider {
+      height: 370px;
+      background-color: $gray-light;
+      width: 1px;
+      @include media-breakpoint-down(lg) {
+        height: 0;
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__enterprise {
+    background-color: $gray-lightest;
+    padding: 40px;
+    margin-top: 6rem;
+  }
+
+  table.pricing__feature-table {
+    display: table;
+    text-indent: initial;
+    width: 100%;
+    max-width: 840px;
+    border-collapse: collapse;
+    background-color: transparent;
+
+    th {
+      padding: 1rem 0.75rem;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    td {
+      padding: 1rem 0.75rem;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    thead {
+      th {
+        font-weight: 500;
+        color: $gray-dark;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    tbody {
+      th {
+        font-weight: 500;
+        color: $gray-dark;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: left;
+        max-width: 120px;
+      }
+      tr {
+        &:nth-of-type(odd) {
+          background-color: $ash;
+        }
+      }
+    }
+  }
+
+  &__faq {
+    max-width: 840px;
+  }
+
+  &__accordion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $white;
+    color: $gray-dark;
+    font-weight: 400;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid $gray-light;
+    outline: none;
+
+    &:after {
+      margin-left: 1rem;
+      color: $gray-dark;
+      font-family: Ionicons;
+      content: '\f123'
+    }
+
+    &.active {
+      background-color: $ash;
+      border-bottom: none;
+
+      &:after {
+        margin-left: 1rem;
+        color: $gray-dark;
+        font-family: Ionicons;
+        content: '\f126'
+      }
+    }
+
+    &--panel {
+      text-align: left;
+      padding: 1rem;
+      color: $gray-darkish;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+  }
+
+  &__fancy-price {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    &__dollar-sign {
+      display: flex;
+      align-self: baseline;
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: normal;
+    }
+
+    &__price {
+      display: flex;
+      font-size: 42px;
+      line-height: 42px;
+      font-weight: 500;
+
+      &--big {
+        font-size: 62px;
+        line-height: 62px;
+      }
+
+      &--large {
+        font-size: 42px;
+        line-height: 48px;
+      }
+    }
+
+    &__interval {
+      display: flex;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+
+  &__list {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
