@@ -14,12 +14,18 @@
         </div>
       </div>
       <div class="col-sm-7">
-        <div class="image-side right"><img alt="synthetic monitoring"
-                                           class="big-landing-image big-drop-shadow code fade-in ml-md-5 lazy"
-                                           src="/landing/browser-code@2x.png"/><img
-            alt="synthetic monitoring"
-            class="big-landing-image big-drop-shadow screenshots fade-in ml-md-5 lazy hidden-md-down"
-            src="/landing/browser-screenshots@2x.png"/></div>
+        <div class="image-side right">
+          <picture>
+            <source type="image/webp" srcset="/landing/browser-code@2x.webp">
+            <source type="image/png" srcset="/landing/browser-code@2x.png">
+            <img  class="big-landing-image big-drop-shadow code fade-in ml-md-5 lazy" src="/landing/browser-code@2x.png" alt="synthetic monitoring"  />
+          </picture>
+          <picture>
+            <source type="image/webp" srcset="/landing/browser-screenshots@2x.webp">
+            <source type="image/png" srcset="/landing/browser-screenshots@2x.png">
+            <img  class="big-landing-image big-drop-shadow screenshots fade-in ml-md-5 lazy hidden-md-down" src="/landing/browser-screenshots@2x.png" alt="synthetic monitoring"  />
+          </picture>
+        </div>
       </div>
     </div>
   </div>
