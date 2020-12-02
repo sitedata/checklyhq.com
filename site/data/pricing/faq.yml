@@ -33,6 +33,10 @@ questions:
       be either requirement related to the purchasing process (PO, ToS, invoice payment, etc.) or on feature levels like SSO,
       premium support, and individual check intervals. When you execute a high amount of check runs, we are happy to provide
       you a custom proposal with volume discounts. Please reach out to support@checklyhq.com.
+  - q: What does fair use mean?
+    a: Fair use limits are soft boundaries that apply to certain features. The limits are set in a way that most customers
+      should not encounter any limitations. On a Prepaid or Pay-as-you-go plan, you can invite up to 99 users, have
+      25 public dashboards, and 200 SMS alerts per month. If you exceed the thresholds, we will reach out and discuss options with you.
   - q: Do you offer volume discounts?
     a: Volume discounts are available for Custom plans. Please reach out to support@checklyhq.com.
   - q: Can I upgrade or downgrade my plan?
