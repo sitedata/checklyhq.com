@@ -88,19 +88,27 @@
         <!-- PREPAID  -->
 
         <div class="pricing__card pricing__card--light pricing__card--light--right">
-          <h4 class="mb-5">Prepaid</h4>
+          <h4 class="mb-2">Prepaid</h4>
+          <div class="d-flex flex-row pricing__toggle mb-1">
+            <div id="toggle-monthly" class="pricing__toggle--text mr-2">MONTHLY</div>
+            <input type="checkbox" id="toggle" class="pricing__toggle--checkbox" />
+            <label for="toggle" class="pricing__toggle--label"></label>
+            <div id="toggle-annual" class="pricing__toggle--text ml-2">ANNUAL</div>
+          </div>
           <div class="d-flex flex-row justify-content-between w-100 mb-5">
             <div class="d-flex flex-column">
               <div class="pricing__fancy-price justify-content-center mb-2">
                 <div class="pricing__fancy-price__dollar-sign">$</div>
-                <div class="pricing__fancy-price__price">0,80</div>
+                <div id="prepaid-api-monthly" class="pricing__fancy-price__price">1,00</div>
+                <div id="prepaid-api-annual" class="pricing__fancy-price__price" style="display: none;">0,80</div>
               </div>
               <div class="text-muted small">for 10k API check runs</div>
             </div>
             <div class="d-flex flex-column">
               <div class="pricing__fancy-price justify-content-center mb-2">
                 <div class="pricing__fancy-price__dollar-sign">$</div>
-                <div class="pricing__fancy-price__price">3,00</div>
+                <div id="prepaid-browser-monthly" class="pricing__fancy-price__price">3,00</div>
+                <div id="prepaid-browser-annual" class="pricing__fancy-price__price" style="display: none;">2,40</div>
               </div>
               <div class="text-muted small">for 1k browser check runs</div>
             </div>
@@ -347,6 +355,7 @@
   </div>
 </div>
 <script>
+  /* eslint-env jquery */
   var acc = document.getElementsByClassName('pricing__accordion')
   var i
 
@@ -365,5 +374,37 @@
       }
     })
   }
+
+  const toggle = document.getElementById('toggle')
+  const monthly = document.getElementById('toggle-monthly')
+  const annual = document.getElementById('toggle-annual')
+  let current = 'MONTH'
+  monthly.classList.add('pricing__toggle--text--selected')
+
+  toggle.addEventListener('click', () => {
+    if (current === 'YEAR') {
+      current = 'MONTH'
+
+      annual.classList.remove('pricing__toggle--text--selected')
+      monthly.classList.add('pricing__toggle--text--selected')
+
+      document.getElementById('prepaid-api-monthly').style.display = 'block'
+      document.getElementById('prepaid-browser-monthly').style.display = 'block'
+
+      document.getElementById('prepaid-api-annual').style.display = 'none'
+      document.getElementById('prepaid-browser-annual').style.display = 'none'
+    } else {
+      current = 'YEAR'
+
+      annual.classList.add('pricing__toggle--text--selected')
+      monthly.classList.remove('pricing__toggle--text--selected')
+
+      document.getElementById('prepaid-api-monthly').style.display = 'none'
+      document.getElementById('prepaid-browser-monthly').style.display = 'none'
+
+      document.getElementById('prepaid-api-annual').style.display = 'block'
+      document.getElementById('prepaid-browser-annual').style.display = 'block'
+    }
+  })
 </script>
 {{end}}
