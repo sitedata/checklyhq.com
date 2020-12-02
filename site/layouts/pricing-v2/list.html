@@ -333,22 +333,13 @@
 
       <div class="pricing__faq d-flex flex-column justify-content-center text-center pt-5 mb-5 mx-auto">
         <h2 class="mb-5" id="faq">FAQ</h2>
-        <button class="pricing__accordion">What are API checks?</button>
-        <div class="pricing__accordion--panel">
-            API checks are monitors that issue POST, GET and other typical HTTP requests at API endpoints.
-            You have full control over the payload, headers etc. In addition, you can create assertions to check if the
-            response from your API is valid and performant.
-        </div>
 
-        <button class="pricing__accordion">What are browser checks?</button>
-        <div class="pricing__accordion--panel">
-          Lorem ipsum
-        </div>
-
-        <button class="pricing__accordion">Do all plans have the same scheduling options?</button>
-        <div class="pricing__accordion--panel">
-          Lorem ipsum
-        </div>
+        {{ range .Site.Data.pricing.faq.questions }}
+          <button class="pricing__accordion">{{ .q }}</button>
+          <div class="pricing__accordion--panel">
+            {{ .a }}
+          </div>
+        {{end}}
       </div>
 
     </div>

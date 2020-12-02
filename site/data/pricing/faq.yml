@@ -1,0 +1,7 @@
+questions:
+  - q: What are API checks?
+    a: API checks are monitors that issue POST, GET and other typical HTTP requests at API endpoints.
+      You have full control over the payload, headers etc. In addition, you can create assertions to check if the
+      response from your API is valid and performant.
+  - q: What are browser checks?
+    a: xyz
