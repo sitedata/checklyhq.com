@@ -5,6 +5,14 @@
     font-size: 18px;
   }
 
+  &__hero {
+    margin-bottom: 5rem;
+  }
+
+  &__lead {
+    color: $gray-dark;
+    font-size: 18px;
+  }
   &__card {
     border-radius: 5px;
     display: flex;
@@ -225,7 +233,7 @@
 
   &__toggle {
     &--text {
-      color: $gray;
+      color: $gray-light;
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 500;
