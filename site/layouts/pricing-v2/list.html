@@ -17,7 +17,7 @@
 
         <!-- FREE CARD -->
 
-        <div class="pricing__card pricing__card--dark">
+        <div class="pricing__card pricing__card--dark mb-5 mb-lg-0">
           <h4 class="mb-5">Free</h4>
           <div class="pricing__fancy-price mb-4 justify-content-center">
             <div class="pricing__fancy-price__dollar-sign">$</div>
@@ -28,11 +28,11 @@
             <ul>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
-                10,000 API check runs
+                10k API check runs&nbsp;<span class="small"> / month</span>
               </li>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
-                5,000 API check runs
+                5k browser check runs&nbsp;<span class="small"> / month</span>
               </li>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
@@ -335,9 +335,9 @@
         <h2 class="mb-5" id="faq">FAQ</h2>
 
         {{ range .Site.Data.pricing.faq.questions }}
-          <button class="pricing__accordion">{{ .q }}</button>
+          <button class="pricing__accordion">{{ .q | markdownify }}</button>
           <div class="pricing__accordion--panel">
-            {{ .a }}
+            {{ .a | markdownify }}
           </div>
         {{end}}
       </div>

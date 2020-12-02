@@ -37,11 +37,14 @@
     &--dark {
       width: 350px;
       height: 395px;
-      padding: 30px 70px;
+      padding: 30px 50px;
       background-color: $black;
       border: 1px solid $black;
       color: $white;
       margin-right: -4px;
+      a {
+        margin-top: 12px;
+      }
       h4 {
         color: $white;
       }
@@ -49,6 +52,7 @@
         margin-right: 0;
       }
     }
+
     &__divider {
       height: 370px;
       background-color: $gray-light;
