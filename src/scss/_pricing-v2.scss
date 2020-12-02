@@ -1,6 +1,9 @@
 @import 'variables.scss';
 
 .pricing {
+  .ion-close-circled, .ion-ios-checkmark {
+    font-size: 18px;
+  }
 
   &__card {
     border-radius: 5px;
