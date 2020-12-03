@@ -8,11 +8,6 @@ questions:
       and Playwright. Each browser check uses an actual Chrome browser to execute clicks, fill out forms and validate if
       these interactions have the correct results. This is also commonly called “synthetic monitoring”. For billing we count
       every executed script as a check run. Browser check runs have a timeout threshold of 60 seconds.
-  - q: What is the Free plan about?
-    a: Checkly supports solo developers and small projects with a Free plan. No credit card required. You can run full-fledged
-      HTTP requests for API monitoring and browser checks in real Chrome browsers for synthetic monitoring. The number of
-      check runs is limited to 50,000 API and 5,000 browser check runs per 30 days. If you exceed the limit, we will
-      automatically pause your runs until the next cycle.
   - q: How does the free trial work?
     a: By signing up for the free trial, you get full access to all of Checkly's functions. You do not need a credit card
       to get started. You can execute up to 100,000 API and 10,000 browser check runs. The trial ends when you have used all
@@ -37,6 +32,10 @@ questions:
     a: Fair use limits are soft boundaries that apply to certain features. The limits are set in a way that most customers
       should not encounter any limitations. On a Prepaid or Pay-as-you-go plan, you can invite up to 99 users, have
       25 public dashboards, and 200 SMS alerts per month. If you exceed the thresholds, we will reach out and discuss options with you.
+  - q: What do the data retention limits mean?
+    a: We store the results from your checks in two ways. First, we store all raw response data. This gives you full insight
+      into all response bodies, logs etc. Second, we store aggregated meta data like response times. The raw data is much larger,
+      so we limit the retention there more than with the aggregated data.
   - q: Do you offer volume discounts?
     a: Volume discounts are available for Custom plans. Please reach out to support@checklyhq.com.
   - q: Can I upgrade or downgrade my plan?
@@ -45,10 +44,6 @@ questions:
       The effect will be that the current billing cycle will end, and a new cycle with the higher amount of prepaid runs will start.<br><br>
       **Downgrade Prepaid plan**: You can reduce the number of Prepaid checks from account settings. The changes will apply after
       your current subscription cycle automatically."
-  - q: How can I cancel my plan?
-    a: You can cancel your plan from the account settings tab. When you are on a Pay-as-you-go plan, we will immediately stop running
-      your checks and convert you to the free plan. When you are on a Prepaid plan, the cancellation will apply only after
-      the current billing cycle, and we will automatically assign you to the Free plan.
   - q: Can I change plans?
     a: When you are on a Free plan or Pay-as-you-go plan, you can switch to all plans anytime, and the changes will apply
       immediately. When you are on a Prepaid plan, you can only change the plan type after the current billing cycle ended.
