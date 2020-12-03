@@ -18,6 +18,10 @@
         <!-- FREE CARD -->
 
         <div class="pricing__card pricing__card--dark mb-5 mb-lg-0">
+          <div class="pricing__love-devs">
+            <img src="/images/love-devs.svg" alt="Checkly" />
+          </div>
+
           <h4 class="mb-5">Free</h4>
           <div class="pricing__fancy-price mb-4 justify-content-center">
             <div class="pricing__fancy-price__dollar-sign">$</div>
@@ -45,99 +49,109 @@
 
         <!-- PAID CARDS -->
 
-        <!-- PAY AS YOU GO -->
+        <div class="pricing__card-right">
 
-        <div class="pricing__card pricing__card--light pricing__card--light--left">
-          <h4 class="mb-5">Pay as you go</h4>
-          <div class="d-flex flex-row justify-content-between w-100 mb-5">
-            <div class="d-flex flex-column">
-              <div class="pricing__fancy-price justify-content-center mb-2">
-                <div class="pricing__fancy-price__dollar-sign">$</div>
-                <div class="pricing__fancy-price__price">1,20</div>
+          <div class="d-flex pricing__card-right--inner">
+            <!-- PAY AS YOU GO -->
+
+            <div class="pricing__card pricing__card--light">
+              <h4 class="mb-5">Pay as you go</h4>
+              <div class="d-flex flex-row justify-content-between w-100 mb-5">
+                <div class="d-flex flex-column">
+                  <div class="pricing__fancy-price justify-content-center mb-2">
+                    <div class="pricing__fancy-price__dollar-sign">$</div>
+                    <div class="pricing__fancy-price__price">1,20</div>
+                  </div>
+                  <div class="text-muted small">for 10k API check runs</div>
+                </div>
+                <div class="d-flex flex-column pt-1">
+                  <div class="pricing__fancy-price justify-content-center mb-2">
+                    <div class="pricing__fancy-price__dollar-sign">$</div>
+                    <div class="pricing__fancy-price__price">3,60</div>
+                  </div>
+                  <div class="text-muted small">for 1k browser check runs</div>
+                </div>
               </div>
-              <div class="text-muted small">for 10k API check runs</div>
+              <div class="pricing__list mb-5">
+                <ul class="pt-1">
+                  <li>
+                    <i class="ion-ios-checkmark text-primary mr-2"></i>
+                    Pay only for what you use
+                  </li>
+                  <li>
+                    <i class="ion-ios-checkmark text-primary mr-2"></i>
+                    No commitment upfront
+                  </li>
+                  <li>
+                    <i class="ion-ios-checkmark text-primary mr-2"></i>
+                    Access to all features
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="d-flex flex-column pt-1">
-              <div class="pricing__fancy-price justify-content-center mb-2">
-                <div class="pricing__fancy-price__dollar-sign">$</div>
-                <div class="pricing__fancy-price__price">3,60</div>
+
+            <div class="pricing__card__divider"></div>
+
+            <!-- PREPAID  -->
+
+            <div class="pricing__card pricing__card--light">
+              <h4 class="mb-3">Prepaid</h4>
+              <div class="d-flex flex-row pricing__toggle mb-2">
+                <div id="toggle-monthly" class="pricing__toggle--text mr-2">MONTHLY</div>
+                <input type="checkbox" id="toggle" class="pricing__toggle--checkbox" />
+                <label for="toggle" class="pricing__toggle--label"></label>
+                <div id="toggle-annual" class="pricing__toggle--text ml-2">ANNUAL</div>
               </div>
-              <div class="text-muted small">for 1k browser check runs</div>
+              <div class="d-flex flex-row justify-content-between w-100 mb-5">
+                <div class="d-flex flex-column">
+                  <div class="pricing__fancy-price justify-content-center mb-2">
+                    <div class="pricing__fancy-price__dollar-sign">$</div>
+                    <div id="prepaid-api-monthly" class="pricing__fancy-price__price">1,00</div>
+                    <div id="prepaid-api-annual" class="pricing__fancy-price__price" style="display: none;">0,80</div>
+                  </div>
+                  <div class="text-muted small">for 10k API check runs</div>
+                </div>
+                <div class="d-flex flex-column pt-1">
+                  <div class="pricing__fancy-price justify-content-center mb-2">
+                    <div class="pricing__fancy-price__dollar-sign">$</div>
+                    <div id="prepaid-browser-monthly" class="pricing__fancy-price__price">3,00</div>
+                    <div id="prepaid-browser-annual" class="pricing__fancy-price__price" style="display: none;">2,40</div>
+                  </div>
+                  <div class="text-muted small">for 1k browser check runs</div>
+                </div>
+              </div>
+              <div class="pricing__list mb-5">
+                <ul class="pt-1">
+                  <li>
+                    <i class="ion-ios-checkmark text-primary mr-2"></i>
+                    Create your own plan
+                  </li>
+                  <li>
+                    <i class="ion-ios-checkmark text-primary mr-2"></i>
+                    Pay upfront, get a discount
+                  </li>
+                  <li>
+                    <i class="ion-ios-checkmark text-primary mr-2"></i>
+                    Access to all features
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="pricing__list mb-5">
-            <ul class="pt-1">
-              <li>
-                <i class="ion-ios-checkmark text-primary mr-2"></i>
-                Pay only for what you use
-              </li>
-              <li>
-                <i class="ion-ios-checkmark text-primary mr-2"></i>
-                No commitment upfront
-              </li>
-              <li>
-                <i class="ion-ios-checkmark text-primary mr-2"></i>
-                Access to all features
-              </li>
-            </ul>
-          </div>
+
+          <a class="btn btn-success pricing__card-right__btn" href="https://app.checklyhq.com/signup">Start your free trial</a>
+
         </div>
 
-        <div class="pricing__card__divider"></div>
-
-        <!-- PREPAID  -->
-
-        <div class="pricing__card pricing__card--light pricing__card--light--right">
-          <h4 class="mb-3">Prepaid</h4>
-          <div class="d-flex flex-row pricing__toggle mb-2">
-            <div id="toggle-monthly" class="pricing__toggle--text mr-2">MONTHLY</div>
-            <input type="checkbox" id="toggle" class="pricing__toggle--checkbox" />
-            <label for="toggle" class="pricing__toggle--label"></label>
-            <div id="toggle-annual" class="pricing__toggle--text ml-2">ANNUAL</div>
-          </div>
-          <div class="d-flex flex-row justify-content-between w-100 mb-5">
-            <div class="d-flex flex-column">
-              <div class="pricing__fancy-price justify-content-center mb-2">
-                <div class="pricing__fancy-price__dollar-sign">$</div>
-                <div id="prepaid-api-monthly" class="pricing__fancy-price__price">1,00</div>
-                <div id="prepaid-api-annual" class="pricing__fancy-price__price" style="display: none;">0,80</div>
-              </div>
-              <div class="text-muted small">for 10k API check runs</div>
-            </div>
-            <div class="d-flex flex-column pt-1">
-              <div class="pricing__fancy-price justify-content-center mb-2">
-                <div class="pricing__fancy-price__dollar-sign">$</div>
-                <div id="prepaid-browser-monthly" class="pricing__fancy-price__price">3,00</div>
-                <div id="prepaid-browser-annual" class="pricing__fancy-price__price" style="display: none;">2,40</div>
-              </div>
-              <div class="text-muted small">for 1k browser check runs</div>
-            </div>
-          </div>
-          <div class="pricing__list mb-5">
-            <ul class="pt-1">
-              <li>
-                <i class="ion-ios-checkmark text-primary mr-2"></i>
-                Create your own plan
-              </li>
-              <li>
-                <i class="ion-ios-checkmark text-primary mr-2"></i>
-                Pay upfront, get a discount
-              </li>
-              <li>
-                <i class="ion-ios-checkmark text-primary mr-2"></i>
-                Access to all features
-              </li>
-            </ul>
-          </div>
-        </div>
-        <a class="btn btn-success" href="https://app.checklyhq.com/signup">Start your free trial</a>
       </div>
 
       <!-- Example CALCULATIONS -->
 
       <div class="d-flex flex-column flex-wrap justify-content-center align-items-center text-center pt-5 mb-5">
         <h2 class="mb-5">How many check runs do I need?</h2>
-        <h4 class="mb-5">5 Browser checks <span class="text-muted">running every</span> 30 minutes <span class="text-muted">makes </span>7,440<span class="text-muted"> check runs per month</span></h4>
+        <h4 class="mb-5">
+          5 Browser checks <span class="text-muted">running every</span> 30 minutes <span class="text-muted">makes </span> <span class="pricing__check-runs-indicator">7,440</span> <span class="text-muted"> check runs per month</span>
+        </h4>
         <div class="d-flex flex-column text-left">
           <div class="text-muted mb-2">Daily runs: 24 x 60/30 = 48 runs</div>
           <div class="text-muted mb-2">Monthly runs: 48 x 31 = 1488 runs</div>

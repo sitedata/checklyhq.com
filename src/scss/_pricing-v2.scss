@@ -22,28 +22,29 @@
       width: 365px;
       height: 450px;
       background-color: $white;
-      &--left {
-        border: 1px solid $gray-light;
-        border-right: none;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-        padding: 30px 30px 30px 20px;
-        @include media-breakpoint-down(lg) {
-          border: 1px solid $gray-light;
-          padding: 30px;
-        }
-      }
-      &--right {
-        border: 1px solid $gray-light;
-        border-left: none;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        padding: 30px 20px 30px 30px;
-        @include media-breakpoint-down(lg) {
-          border: 1px solid $gray-light;
-          padding: 30px;
-        }
-      }
+      padding: 30px 30px 30px 20px;
+      // &--left {
+      //   border: 1px solid $gray-light;
+      //   border-right: none;
+      //   border-bottom-right-radius: 0;
+      //   border-top-right-radius: 0;
+      //   padding: 30px 30px 30px 20px;
+      //   @include media-breakpoint-down(lg) {
+      //     border: 1px solid $gray-light;
+      //     padding: 30px;
+      //   }
+      // }
+      // &--right {
+      //   border: 1px solid $gray-light;
+      //   border-left: none;
+      //   border-bottom-left-radius: 0;
+      //   border-top-left-radius: 0;
+      //   padding: 30px 20px 30px 30px;
+      //   @include media-breakpoint-down(lg) {
+      //     border: 1px solid $gray-light;
+      //     padding: 30px;
+      //   }
+      // }
     }
     &--dark {
       width: 350px;
@@ -53,6 +54,7 @@
       border: 1px solid $black;
       color: $white;
       margin-right: -4px;
+      position: relative;
       a {
         margin-top: 6px;
       }
@@ -69,13 +71,48 @@
       background-color: $gray-light;
       width: 1px;
       @include media-breakpoint-down(lg) {
-        height: 0;
-        display: none;
+        height: 1px;
+        width: 100%;
       }
     }
 
     @include media-breakpoint-down(lg) {
       margin-bottom: 1rem;
+    }
+  }
+  
+  &__card-right {
+    position: relative;
+    &--inner {
+      border: 1px solid $gray-light;
+      border-radius: 5px;
+      align-items: center;
+      @include media-breakpoint-down(lg) {
+        flex-direction: column;
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      bottom: -20px;
+    }
+  }
+
+  &__love-devs {
+    position: absolute;
+    top: -67px;
+  }
+
+  &__check-runs-indicator {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: url("data:image/svg+xml,%3Csvg width='80' height='9' viewBox='0 0 89 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 8.01336C7.33333 4.34669 33.7 -1.88664 88.5 2.51336' stroke='%23FF659D' stroke-width='2'/%3E%3C/svg%3E%0A");
+      left: -10px;
+      bottom: -15px;
     }
   }
 
