@@ -43,7 +43,7 @@
               </li>
             </ul>
           </div>
-          <a class="btn btn-success" href="https://app.checklyhq.com/signup">Start your free trial</a>
+          <a class="btn btn-success" href="https://app.checklyhq.com/signup">Start for free</a>
         </div>
 
         <!-- PAID CARDS -->
@@ -138,7 +138,7 @@
             </div>
           </div>
 
-          <a class="btn btn-success pricing__card-right__btn" href="https://app.checklyhq.com/signup">Start your free trial</a>
+          <a class="btn btn-success pricing__card-right__btn" href="https://app.checklyhq.com/signup">Start for free</a>
 
         </div>
 
@@ -429,33 +429,43 @@
   const toggle = document.getElementById('toggle')
   const monthly = document.getElementById('toggle-monthly')
   const annual = document.getElementById('toggle-annual')
-  let current = 'MONTH'
-  monthly.classList.add('pricing__toggle--text--selected')
+
+  // Default to yearly
+  let current = 'YEAR'
+  toggleAnnual()
 
   toggle.addEventListener('click', () => {
     if (current === 'YEAR') {
-      current = 'MONTH'
-
-      annual.classList.remove('pricing__toggle--text--selected')
-      monthly.classList.add('pricing__toggle--text--selected')
-
-      document.getElementById('prepaid-api-monthly').style.display = 'block'
-      document.getElementById('prepaid-browser-monthly').style.display = 'block'
-
-      document.getElementById('prepaid-api-annual').style.display = 'none'
-      document.getElementById('prepaid-browser-annual').style.display = 'none'
+      toggleMonthly()
     } else {
-      current = 'YEAR'
-
-      annual.classList.add('pricing__toggle--text--selected')
-      monthly.classList.remove('pricing__toggle--text--selected')
-
-      document.getElementById('prepaid-api-monthly').style.display = 'none'
-      document.getElementById('prepaid-browser-monthly').style.display = 'none'
-
-      document.getElementById('prepaid-api-annual').style.display = 'block'
-      document.getElementById('prepaid-browser-annual').style.display = 'block'
+      toggleAnnual()
     }
   })
+
+  function toggleAnnual () {
+    current = 'YEAR'
+    toggle.checked = true
+    annual.classList.add('pricing__toggle--text--selected')
+    monthly.classList.remove('pricing__toggle--text--selected')
+
+    document.getElementById('prepaid-api-monthly').style.display = 'none'
+    document.getElementById('prepaid-browser-monthly').style.display = 'none'
+
+    document.getElementById('prepaid-api-annual').style.display = 'block'
+    document.getElementById('prepaid-browser-annual').style.display = 'block'
+  }
+
+  function toggleMonthly () {
+    current = 'MONTH'
+    toggle.checked = false
+    annual.classList.remove('pricing__toggle--text--selected')
+    monthly.classList.add('pricing__toggle--text--selected')
+
+    document.getElementById('prepaid-api-monthly').style.display = 'block'
+    document.getElementById('prepaid-browser-monthly').style.display = 'block'
+
+    document.getElementById('prepaid-api-annual').style.display = 'none'
+    document.getElementById('prepaid-browser-annual').style.display = 'none'
+  }
 </script>
 {{end}}
