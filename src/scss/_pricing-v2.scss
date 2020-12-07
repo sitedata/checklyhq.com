@@ -312,32 +312,35 @@
 
   &__tooltip {
     border-bottom: 1px dashed;
-    display: inline-block;
+    display: inline;
+    position: relative;
+
     &:hover {
       cursor: help;
       .pricing__tooltip--body {
-        visibility: visible;
+        display: block;
       }
     }
 
     &--body {
-      visibility: hidden;
+      display: none;
       width: 200px;
       color: #fff;
       text-align: center;
-      margin-left: -100px;
       position: absolute;
       z-index: 10000;
       font-size: 13px;
       line-height: 1.2;
       font-weight: 400;
-
-      transform: translateX(50%);
       background-color: #3c4858;
       border-color: #3c4858;
       border-radius: .25rem;
       padding: 1rem;
       box-shadow: 0 18px 18px rgba(0,0,0,.07);
+      position: absolute;
+
+      bottom: 150%;
+      margin-left: -15px;
     }
   }
 }
