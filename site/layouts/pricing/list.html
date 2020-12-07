@@ -31,7 +31,7 @@
             <ul>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
-                10k API check runs&nbsp;<span class="small"> / mo</span>
+                50k API check runs&nbsp;<span class="small"> / mo</span>
               </li>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
@@ -39,7 +39,7 @@
               </li>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
-                5 users, 1 dashboard
+                5 users, basic features
               </li>
             </ul>
           </div>
@@ -83,7 +83,7 @@
                   </li>
                   <li>
                     <i class="ion-ios-checkmark text-primary mr-2"></i>
-                    Access to all features
+                    Unlimited users, all features
                   </li>
                 </ul>
               </div>
@@ -131,7 +131,7 @@
                   </li>
                   <li>
                     <i class="ion-ios-checkmark text-primary mr-2"></i>
-                    Access to all features
+                    Unlimited users, all features
                   </li>
                 </ul>
               </div>
@@ -191,11 +191,11 @@
             <ul>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
-                Concierge onboarding
+                Volume discount
               </li>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
-                Priority support via chat
+                Premium support
               </li>
               <li>
                 <i class="ion-ios-checkmark text-primary mr-2"></i>
@@ -248,21 +248,37 @@
           </tr>
           <tr>
             <th>Check intervals</th>
-            <td>1 min / 5 min</td>
-            <td>1 min / 5 min</td>
+            <td>
+              <div class="pricing__tooltip">
+                  1 min / 5 min
+                <div class="pricing__tooltip--body">
+                  API checks can be scheduled every minute,
+                  browser checks every 5 min.
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="pricing__tooltip">
+                1 min / 5 min
+                <div class="pricing__tooltip--body">
+                  API checks can be scheduled every minute,
+                  browser checks every 5 min.
+                </div>
+              </div>
+            </td>
             <td>Custom</td>
           </tr>
           <tr>
             <th>Users</th>
             <td>5</td>
-            <td>Unlimited</td>
-            <td>Unlimited</td>
+            <td>Unlimited*</td>
+            <td>Unlimited*</td>
           </tr>
           <tr>
             <th>Public dashboards</th>
             <td>1</td>
-            <td>Unlimited</td>
-            <td>Unlimited</td>
+            <td>Unlimited*</td>
+            <td>Unlimited*</td>
           </tr>
           <tr>
             <th>Data center locations</th>
@@ -289,8 +305,8 @@
           <tr>
             <th>SMS credits</th>
             <td><i class="ion-close-circled text-muted"></i></td>
-            <td>Unlimited</td>
-            <td>Unlimited</td>
+            <td>Unlimited*</td>
+            <td>Unlimited*</td>
           </tr>
           <tr>
             <th>SSL monitoring</th>
@@ -305,13 +321,27 @@
             <td><i class="ion-ios-checkmark text-success"></i></td>
           </tr>
           <tr>
-            <th>Threshold based alerting</th>
+            <td>
+              <div class="pricing__tooltip">
+                Threshold based alerting
+                <div class="pricing__tooltip--body">
+                  Configure when and how often your are alerted and how many reminders you should get
+                </div>
+              </div>
+            </td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
           </tr>
           <tr>
-            <th>Setup & teardown scripts </th>
+            <td>
+              <div class="pricing__tooltip">
+                Setup & teardown scripts
+                <div class="pricing__tooltip--body">
+                  Have full control over request data and responses using custom Javascript snippets.
+                </div>
+              </div>
+            </td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
@@ -335,13 +365,26 @@
             <td><i class="ion-ios-checkmark text-success"></i></td>
           </tr>
           <tr>
-            <th>GitHub triggers</th>
+            <td>
+              <div class="pricing__tooltip">
+                GitHub triggers
+                <div class="pricing__tooltip--body">
+                  Automatically trigger checks from GitHub PR or commits. Works out-of-the-box with Vercel, Heroku etc.
+                </div>
+              </div>
+            </td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
           </tr>
           <tr>
-            <th>CI/CD customer triggers</th>
+            <td>
+              <div class="pricing__tooltip">
+                CI/CD custom triggers
+                <div class="pricing__tooltip--body">
+                  Trigger a check run from the terminal or your CI/CD pipeline for automated testing before or after building and deploying. Works with any CI/CD provider.                </div>
+              </div>
+            </td>
             <td><i class="ion-close-circled text-muted"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
@@ -353,7 +396,14 @@
             <td><i class="ion-ios-checkmark text-success"></i></td>
           </tr>
           <tr>
-            <th>Prometheus endpoint</th>
+            <td>
+              <div class="pricing__tooltip">
+                Prometheus endpoint
+                <div class="pricing__tooltip--body">
+                  We provision a custom, secured endpoint that exposes checks statuses and response times in Prometheus format.
+                </div>
+              </div>
+            </td>
             <td><i class="ion-close-circled text-muted"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
             <td><i class="ion-ios-checkmark text-success"></i></td>
@@ -384,7 +434,7 @@
           </tr>
         </tbody>
       </table>
-        <div class="text-muted">All plans are subject to our fair use policy. Check the FAQ below for more details.</div>
+        <div class="text-muted">* All plans are subject to our fair use policy. Check the FAQ below for more details.</div>
       </div>
 
 
