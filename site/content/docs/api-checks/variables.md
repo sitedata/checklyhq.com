@@ -13,7 +13,7 @@ like an authentication token, a specific user name or even just some specific pa
 
 ## Managing variables
 
-You can add variables on the **Environment variables** tab. The variables stored here are globally accessible 
+You can add variables on the **Environment variables** tab. The variables stored here are globally accessible
 throughout Checkly, hence the "Global environment variables" title*.  
 
 All variables are stored as string values. You can click the lock icon to encrypt the values and hide the value from all users
@@ -41,5 +41,5 @@ Note, just the Body input field does not show this helper popup.
 ## Using Handlebars helpers & built in variables
 
 Next to your own variables, we've added some built-in variables and extended the [Handlebars](https://handlebarsjs.com/) templating system:
-                          
-{{< readfile filename="content/_shared/handlebars-helpers.md" >}}
+
+{{< grabpage "_shared/handlebars-helpers.md" >}}
