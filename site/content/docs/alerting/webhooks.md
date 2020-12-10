@@ -45,7 +45,7 @@ You can use the following event-related variables in both URL and payload.
 We've extended the [Handlebars](https://handlebarsjs.com/) templating system with some handy helpers to make our webhooks
 even more powerful.
 
-{{< grabpage "_shared/handlebars-helpers.md" >}}
+{{< markdownpartial "_shared/handlebars-helpers.md" >}}
 
 You can also use conditional helpers like `{{#eq}}` statements. Here is an example:
 

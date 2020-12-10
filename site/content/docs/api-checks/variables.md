@@ -42,4 +42,4 @@ Note, just the Body input field does not show this helper popup.
 
 Next to your own variables, we've added some built-in variables and extended the [Handlebars](https://handlebarsjs.com/) templating system:
 
-{{< grabpage "_shared/handlebars-helpers.md" >}}
+{{< markdownpartial "_shared/handlebars-helpers.md" >}}
