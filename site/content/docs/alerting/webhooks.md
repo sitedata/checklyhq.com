@@ -45,17 +45,17 @@ You can use the following event-related variables in both URL and payload.
 We've extended the [Handlebars](https://handlebarsjs.com/) templating system with some handy helpers to make our webhooks
 even more powerful.
 
-{{< readfile filename="content/_shared/handlebars-helpers.md" >}}
+{{< markdownpartial "_shared/handlebars-helpers.md" >}}
 
 You can also use conditional helpers like `{{#eq}}` statements. Here is an example:
- 
+
 ```json
 {
   "message": "Check is {{#eq ALERT_TYPE 'ALERT_FAILURE'}}DOWN{{/eq}} {{#eq ALERT_TYPE 'ALERT_RECOVERY'}}UP{{/eq}}"
 }
 ```
 
-The above webhook body uses the `{{#eq}}` helper to execute the logic 
+The above webhook body uses the `{{#eq}}` helper to execute the logic
 
 *If the ALERT_TYPE variable equals 'ALERT_FAILURE', print 'DOWN', if it equals 'ALERT_RECOVERY' print 'UP'*
 
@@ -80,10 +80,10 @@ You can validate each webhook we deliver to your endpoint(s). Using the optional
 1. Check if the webhook was sent by Checkly.
 2. Check if the payload was not altered in any way during transmission.
 
-When you create a webhook secret, we proceed to use that secret token to cryptographically sign the webhook payload using 
+When you create a webhook secret, we proceed to use that secret token to cryptographically sign the webhook payload using
 the SHA256 hash algorithm. We add the resulting hash to the HTTP header `x-checkly-signature` on each webhook.
 
-On the receiving end, you can then use the value of the `x-checkly-signature` header to assert the validity and authenticity 
+On the receiving end, you can then use the value of the `x-checkly-signature` header to assert the validity and authenticity
 of the webhook and its payload.
 
 Have a look at the code examples below on how to use the header and your favourite web framework.
@@ -105,7 +105,7 @@ function isVerifiedPayload (payload, signature) {
 }
 
 app.post('/webhook', bodyParser.json({ type: 'application/json' }), (request, response) => {
-  
+
   const signature = request.headers['x-checkly-signature'];
   const payload = JSON.stringify(request.body)
 
@@ -142,7 +142,7 @@ post '/webhook' do
   else
     status 400
     return
-  end	
+  end
 end
 ```
 {{< /tab >}}
@@ -177,7 +177,7 @@ def webhook(request):
 ## Webhook retries
 
 Checkly will retry your webhook up to **5 times** if we get an HTTP response higher than 399, e.g. a 404 or 503. Each retry
-is backed off 20 seconds for a total retry period of `5 * 20 = 100 seconds`. 
+is backed off 20 seconds for a total retry period of `5 * 20 = 100 seconds`.
 
 This means that for checks on a 1 minute schedule, there is a potential overlap between a failure alert and recovery alert. For this
 reason every webhook we send has a timestamp in the `x-checkly-timestamp` header. You can use this timestamp on the receiving
