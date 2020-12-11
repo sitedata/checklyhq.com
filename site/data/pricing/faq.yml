@@ -27,7 +27,7 @@ questions:
     a: Custom plans are based on annual contracts that can be tailored to your or your organization's needs. That could
       be either requirement related to the purchasing process (PO, ToS, invoice payment, etc.) or on feature levels like SSO,
       premium support, and individual check intervals. When you execute a high amount of check runs, we are happy to provide
-      you a custom proposal with volume discounts. Please reach out to support@checklyhq.com.
+      you a custom proposal with volume discounts. Please reach out to sales@checklyhq.com.
   - q: What does fair use mean?
     a: Fair use limits are soft boundaries that apply to certain features. The limits are set in a way that most customers
       should not encounter any limitations. On a Prepaid or Pay-as-you-go plan, you can invite up to 99 users, have
@@ -37,7 +37,7 @@ questions:
       into all response bodies, logs etc. Second, we store aggregated meta data like response times. The raw data is much larger,
       so we limit the retention there more than with the aggregated data.
   - q: Do you offer volume discounts?
-    a: Volume discounts are available for Custom plans. Please reach out to support@checklyhq.com.
+    a: Volume discounts are available for Custom plans. Please reach out to sales@checklyhq.com.
   - q: Can I upgrade or downgrade my plan?
     a: "For the **Free plan or Pay-as-you-go plan** upgrades and downgrades don't apply.<br><br>
       **Upgrade Prepaid plan:** You can increase the number of committed checks at any time. The changes will apply immediately.
