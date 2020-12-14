@@ -207,8 +207,12 @@
       padding: 1rem;
       color: $gray-darkish;
       background-color: white;
+      opacity: 0;
       display: none;
-      overflow: hidden;
+      &.active {
+        display: block;
+        animation: expandAccordion 250ms ease-in-out both;
+      }
     }
   }
 
@@ -344,5 +348,14 @@
       bottom: 150%;
       margin-left: -15px;
     }
+  }
+}
+
+@keyframes expandAccordion {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
