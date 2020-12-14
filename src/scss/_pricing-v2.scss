@@ -120,6 +120,10 @@
     background-color: $gray-lightest;
     padding: 40px;
     margin: 120px 0 160px;
+    &__content {
+      max-width: 840px;
+      margin: 0 auto;
+    }
   }
 
   table.pricing__feature-table {
