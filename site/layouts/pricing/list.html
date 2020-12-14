@@ -14,7 +14,7 @@
 
       <!-- CARDS --->
 
-      <div class="d-flex flex-row flex-wrap justify-content-center align-items-center text-center mb-5">
+      <div class="d-flex flex-row flex-wrap justify-content-center align-items-center text-center">
 
         <!-- FREE CARD -->
 
@@ -147,7 +147,7 @@
 
       <!-- Example CALCULATIONS -->
 
-      <div class="d-flex flex-column flex-wrap justify-content-center align-items-center text-center pt-5 mb-5">
+      <div class="d-flex flex-column flex-wrap justify-content-center align-items-center text-center pricing__calculation">
         <h2 class="mb-5">How many check runs do I need?</h2>
         <h4 class="mb-5">
           5 API checks <span class="text-muted">running every</span> minute <span class="text-muted">makes </span> <span class="pricing__check-runs-indicator">223,200</span> <span class="text-muted"> check runs per month</span>
@@ -162,7 +162,7 @@
 
     <!-- ENTERPRISE -->
 
-    <div class="pricing__enterprise mb-5">
+    <div class="pricing__enterprise">
       <div class="container d-flex flex-row flex-wrap">
         <div class="d-flex flex-column">
           <h2 class="mb-2">Enterprise</h2>
@@ -210,7 +210,7 @@
 
     <!-- SOCIAL PROOF -->
 
-    <div class="pt-5">
+    <div class="pricing__testimonials">
       {{ partial "testimonial-quote-full-width-1" . }}
     </div>
 
@@ -221,7 +221,7 @@
       <!-- FEATURE TABLE -->
 
 
-      <div class="d-flex flex-column align-items-center text-center mb-5">
+      <div class="d-flex flex-column align-items-center text-center">
         <h2 class="mb-5" id="features">Feature overview</h2>
         <table class="pricing__feature-table mb-4">
         <thead>
@@ -441,7 +441,7 @@
 
       <!-- FAQ -->
 
-      <div class="pricing__faq d-flex flex-column justify-content-center text-center pt-4 mb-5 mx-auto">
+      <div class="pricing__faq d-flex flex-column justify-content-center text-center mx-auto">
         <h2 class="mb-5" id="faq">FAQ</h2>
 
         {{ range .Site.Data.pricing.faq.questions }}
@@ -453,7 +453,10 @@
       </div>
 
     </div>
-    {{ partial "start-for-free-row" . }}
+
+    <div class="pricing__trial">
+      {{ partial "start-for-free-row" . }}
+    </div>
   </div>
 </div>
 <script>

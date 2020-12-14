@@ -5,8 +5,9 @@
     font-size: 18px;
   }
 
-  &__hero {
-    margin-bottom: 5rem;
+  &__hero,
+  &__testimonials {
+    margin-bottom: 120px;;
   }
 
   &__lead {
@@ -111,10 +112,14 @@
     }
   }
 
+  &__calculation {
+    margin-top: 120px;
+  }
+
   &__enterprise {
     background-color: $gray-lightest;
     padding: 40px;
-    margin-top: 6rem;
+    margin: 120px 0 160px;
   }
 
   table.pricing__feature-table {
@@ -165,6 +170,11 @@
 
   &__faq {
     max-width: 840px;
+    margin: 120px 0;
+  }
+
+  &__trial {
+    margin-bottom: 140px;
   }
 
   &__accordion {
