@@ -163,14 +163,6 @@ JSONPath                      | Description
 `$..book[?(@.price<30 && @.category=="fiction")]` | Filter all fiction books cheaper than 30
 `$..*`                         | All members of JSON structure
 
-Keep two things in mind:
-
-1. Always start your statement with the `$` sign.
-
-2. Your JSON path expression should return **exactly one value**. JSON path has the option to returns arrays of value,
-but Checkly cannot assert them.
-
-
 Use this [online editor to play around](https://jsonpath.com/), or look at the examples below. We use this [jsonpath NPM 
 module](https://github.com/dchester/jsonpath) under the hood.
 
