@@ -13,6 +13,8 @@ nutshell, you can:
 - Create a **custom payload body** using any environment variables and specific instance variables per event. Note: that means that if you are attaching the webhook to a Group, you will be able to access Group-level variables, too.
 - **Debug and test the webhook** in the editor by sending test messages.
 
+## Using variables
+
 ![webhook editor](/docs/images/alerting/webhook_editor.png)
 
 The example above shows a webhook configured to create a Jira ticket on each event. Notice the following:
@@ -33,6 +35,8 @@ You can use the following event-related variables in both URL and payload.
 | `ALERT_TYPE`        | Type of alert, either "ALERT_FAIL", "ALERT_RECOVERY", "ALERT_DEGRADED" or  "ALERT_DEGRADED_RECOVERY" |
 | `CHECK_RESULT_ID`   | The UUID of the result that triggered this message           |
 | `RESPONSE_TIME`     | The reported response time for this result                   |
+| `API_CHECK_RESPONSE_STATUS_CODE`     | The response status code, e.g. 200. Only populated for API checks.                  |
+| `API_CHECK_RESPONSE_STATUS_TEXT`     | The response status text, e.g. "OK". Only populated for API checks.                  |
 | `RUN_LOCATION`      | The location where the check ran, i.e. "N. California"       |
 | `RESULT_LINK`       | The full link to the check result                            |
 | `SSL_DAYS_REMAINING`| How many days remain on the SSL certificate. For ALERT_SSL only.|
