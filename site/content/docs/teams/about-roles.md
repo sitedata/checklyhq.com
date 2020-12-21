@@ -26,3 +26,8 @@ Only the initial account creator has the **Owner** role. You can always change a
 joined your team.
 
 > Roles are staggered, so any role higher up the totem pole has all the rights of the roles below him/her.
+
+## Transferring ownership
+
+If you have the **Owner** role, you can transfer the ownership to another team member. Just click the "Transfer ownership"
+button at the bottom of the "teams" page and follow the instructions. The owner account will be downgraded to **Admin** role.
