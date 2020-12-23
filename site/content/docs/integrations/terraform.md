@@ -6,16 +6,20 @@ menu:
     parent: "Integrations"
 ---
 
-You can use [Hashicorp's Terraform](https://www.terraform.io/) to create and manage your checks. This allows you to keep
-the definition of your checks entirely in your code repository.
+You can use [Hashicorp's Terraform](https://www.terraform.io/) to create and manage your checks. This allows you to:
 
-## Getting started
+1. Specify your monitoring infrastructure as code, and have it live in source control.
+2. Manage large numbers of checks efficiently and without manual intervention.
+
+If you have a complex active monitoring setup that often need updating, Terraform is our recommended solution.
+
+## Installation
 
 To get started, install the latest version of the Checkly Terraform provider from the [Terraform registry](https://registry.terraform.io/providers/checkly/checkly/latest).
 
 ![Terraform registry](/docs/images/integrations/terraform_registry.png)
 
-Your `main.tf` file should look similar to the following:
+Your `main.tf` file will look similar to the following:
 
 ```terraform
 variable "checkly_api_key" {}
@@ -34,15 +38,14 @@ provider "checkly" {
 }
 ```
 
-After running `terraform init`, you can now start adding resources to your file. You can check the official documentation to see [needed/available parameters](https://registry.terraform.io/providers/checkly/checkly/latest/docs/resources/check) for each resource type. You can also find examples in the following sections on this page.
+After running `terraform init`, you can now start adding resources to your file. You can check the official documentation to see [available parameters](https://registry.terraform.io/providers/checkly/checkly/latest/docs/resources/check) for each resource type. You can also find examples in the following sections on this page.
 
-### Applying changes
+## Adding resources
 
-After each change to your Terraform file, you will need to run both following commands:
-1. `terraform plan -out tf.plan` - to plan the necessary actions that Terraform will need to make.
-2. `terraform apply "tf.plan"` - to apply the plan and have the changes reflected on Checkly.
-
-If you are using [Terraform Cloud](https://www.terraform.io/cloud), the above will be run for you automatically every time a pull request is merged into a main branch.
+There are three different kinds of resources you can manage on Checkly:
+1. [API checks](#api-checks)
+2. [Browser checks](#browser-checks)
+3. [Check groups](#check-groups)
 
 ### API Checks
 
@@ -162,6 +165,20 @@ resource "checkly_check" "test-check" {
 
 The `group_order` attribute specifies in which order the checks will be executed: 1, 2, 3, etc.
 
+## Applying changes
+
+After each change to your Terraform file, you will need to run both following commands:
+1. `terraform plan -out tf.plan` - to plan the necessary actions that Terraform will need to make.
+2. `terraform apply "tf.plan"` - to apply the plan and have the changes reflected on Checkly.
+
+If you are using [Terraform Cloud](https://www.terraform.io/cloud), the above will be run for you automatically every time a pull request is merged into a main branch.
+
+## Additional material
+
+We often publish in-depth articles on how to use Terraform with Checkly on our blog:
+1. [Managing Checkly checks with Terraform](https://blog.checklyhq.com/managing-checkly-checks-with-terraform/)
+2. [Scaling Puppeteer & Playwright on Checkly with Terraform](https://blog.checklyhq.com/scaling-puppeteer-playwright-on-checkly-with-terraform/)
+
 ## Development version
 
 If you want to get your hands dirty on the very last in development version, you can:
@@ -169,5 +186,3 @@ If you want to get your hands dirty on the very last in development version, you
 1. Checkout the Checkly Terraform provider in [this GitHub repo](https://github.com/checkly/terraform-provider-checkly).
 2. Build the provider and add it to your Terraform installation.
 3. Write your first Checkly resource and apply it.
-
-> 💡 Check out our [blog post for a full walk through of using Checkly with Terraform](https://blog.checklyhq.com/managing-checkly-checks-with-terraform/).
