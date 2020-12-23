@@ -13,6 +13,8 @@ You can use [Hashicorp's Terraform](https://www.terraform.io/) to create and man
 
 If you have a complex active monitoring setup that often need updating, Terraform is our recommended solution.
 
+Following is a short introduction to using the Checkly Terraform provider; for in-depth information, please see the [official documentation](https://registry.terraform.io/providers/checkly/checkly/latest/docs).
+
 ## Installation
 
 To get started, install the latest version of the Checkly Terraform provider from the [Terraform registry](https://registry.terraform.io/providers/checkly/checkly/latest).
