@@ -20,7 +20,7 @@ standard library or to arbitrary NPM modules. Currently every runner is equipped
 - **[moment](https://momentjs.com)** 2.22.2: Popular library for all things time related.
 - **[axios](https://github.com/axios/axios)**  0.18.0: A modern HTTP library. Support async/await.
 - **[crypto-js](https://github.com/brix/crypto-js)** 3.1.9: Cryptographic function library.
-- **[lodash](https://lodash.com)** 4.14.11: Javascript toolkit for many object, array and other functions.
+- **[lodash](https://lodash.com)** 4.x.x: Javascript toolkit for many object, array and other functions.
 - **[aws4](https://github.com/mhart/aws4)** 1.8.0: Third-party library for easily signing AWS API requests.
 - **[form-data](https://github.com/form-data/form-data)** 3.x.x: Third-party library for creating form data.
 

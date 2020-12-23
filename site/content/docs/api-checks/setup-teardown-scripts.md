@@ -389,7 +389,7 @@ See the [built-in module documentation on the official Node.js site](https://nod
 - **[btoa](https://www.npmjs.com/package/btoa)** 1.2.1: Binary to base64 encoded ascii. Handy for parsing some response bodies.
 - **[jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)**  8.5.1: Implementation of JSON web tokens. Helps with signing.
 - **[crypto-js](https://github.com/brix/crypto-js)** 3.1.9: Cryptographic function library.
-- **[lodash](https://lodash.com)** 4.14.11: Javascript toolkit for many object, array and other functions.
+- **[lodash](https://lodash.com)** 4.x.x: Javascript toolkit for many object, array and other functions.
 - **[moment](https://momentjs.com)** 2.22.2: Popular library for all things time related.
 - **[node](https://nodejs.org/docs/latest-v10.x/api/)** 10.x: The general Node.js execution environment.
 - **[request](https://github.com/request/request)** 2.88.0: An alternative HTTP client to Axios that supports posting Form data.
