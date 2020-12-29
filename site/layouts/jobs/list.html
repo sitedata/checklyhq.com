@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="row mb-4">
-      {{ if (len .Data.Pages) gt 0 }}
+      {{ if gt (len .Data.Pages) 0 }}
       <div class="col-sm-12 col-lg-8 offset-lg-2 text-left">
         {{ range first 10 .Data.Pages }}<a href="{{.RelPermalink}}"
           ><div class="d-flex flex-row justify-content-start mb-2">
