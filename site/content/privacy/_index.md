@@ -102,8 +102,8 @@ We use Intercom for customer support & product announcements either through emai
 ### Heap Analytics
 We use Heap to give us insights into how customers use our application and where we could improve it.
 
-### Hotjar
-We use Hotjar to give us insights into how customers use our application and where we could improve it.
+### Microsoft Clarity
+We use Microsoft Clarity to give us insights into how customers use our application and where we could improve it.
 
 
 ## 7. Third Parties
