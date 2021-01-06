@@ -56,30 +56,37 @@ We monitor your API as often as once per minute. This gives you a consistent and
 Next to aggregating metrics, we give you **access to each result** from each of the configured data centers.
 {{% /feature-row %}}
 
-{.text-center .section-header .pt-5}
-## Alerting for any situation
-{.text-center .mb-lg-5 .img-w360}
+{.lead-text .img-w360}
 ![alerting options](/landing/alerting-options@2x.png)
+{.lead-text .section-header}
+## Alerting for any situation
 
-<p class="text-center lead-text mb-lg-5">
+
+<p class="lead-text mb-lg-2">
 When a check fails, you and your team need timely and actionable insights to address any down time.
 Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
 Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
+</p>
+<p class="lead-text mb-lg-5">
 {{% cta-link "Learn more" "/product/alerting/" %}}
 </p>
 
 
-{.text-center .section-header .pt-5}
+{.lead-text .section-header .pt-5}
 ## Global coverage
+
+<p class="lead-text mb-lg-2">
+Get a clear picture of how your services perform for all your users around the world. Run your check from any of twenty
+data center locations spread over the Americas, EMEA and Asia Pacific.
+</p>
+<p class="lead-text mb-lg-5">
+{{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
+</p>
+
 {.text-center .mb-lg-5 .img-w720}
 ![alerting options](/landing/data-center-locations@2x.png)
 
-<p class="text-center lead-text mb-lg-5">
-Get a clear picture of how your services perform for all your users around the world. Run your check from any of twenty
-data center locations spread over the Americas, EMEA and Asia Pacific.
 
-{{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
-</p>
 
 
 
