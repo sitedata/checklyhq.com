@@ -9,18 +9,25 @@ section {
   }
 
   .section-super-header{
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    color: $gray-darkish;
-    font-size: .7rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
     display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $gray-darkish;
+    text-transform: uppercase;
   }
 
   .section-header {
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 600;
+  }
+
+  .lead-text {
+    font-size: 1.125rem;
+  }
+
+  h5 {
+    font-weight: 600;
   }
 
   @include media-breakpoint-down(sm) {

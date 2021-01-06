@@ -10,6 +10,11 @@
   margin-bottom: $section-bottom-margin;
   border-bottom: 1px solid $gray-light;
 
+  .display-3 {
+    letter-spacing: $headings-letter-spacing;
+    line-height: 1.2;
+  }
+
   .hero-text {
     font-weight: 500;
     font-size: 3rem;
