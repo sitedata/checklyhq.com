@@ -99,9 +99,6 @@ We use Google Analytics to measure the effectiveness of our website.
 ### Intercom
 We use Intercom for customer support & product announcements either through email or in-app messages. 
 
-### Heap Analytics
-We use Heap to give us insights into how customers use our application and where we could improve it.
-
 ### Microsoft Clarity
 We use Microsoft Clarity to give us insights into how customers use our application and where we could improve it.
 
