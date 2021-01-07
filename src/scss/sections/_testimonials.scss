@@ -14,8 +14,6 @@
   .testimonial-text {
     font-size: $font-size-base;
     color: $gray-dark;
-    line-height: 30px !important;
-    font-weight: 300;
     padding-top: $spacer-y;
   }
   .testimonial-portrait {
@@ -102,7 +100,7 @@
         width: 10px;
         font-size: 6rem;
         right: 50%;
-        top: -1rem;
+        top: -4rem;
         color: $brand-primary;
         @include media-breakpoint-down(sm) {
           display: none;

@@ -10,30 +10,38 @@
           padding-top: 3 * $spacer;
         }
         margin-bottom: 2 * $spacer;
-        font-weight: 500;
-        font-size: 3rem;
+        font-weight: $font-weight-seimi-bold;
+        font-size: 3.625rem;
+        letter-spacing: -0.04em;
+        color: $black;
       }
     }
 
     h2 {
       &.section-header {
-        font-size: 2.5rem;
+        font-size: 2rem;
         border-bottom: none;
+      }
+      &.lead-text {
+        max-width: $product-max-width;
+        margin-left: auto;
+        margin-right: auto;
+        color: $body-text;
       }
     }
 
     h3 {
       &.section-header {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin-top: 0;
         border-bottom: 0;
       }
     }
 
     h5 {
-      font-size: .8rem;
+      font-size: .875rem;
       text-transform: uppercase;
-      font-weight: $font-weight-bold;
+      font-weight: $font-weight-seimi-bold;
       &::before {
         content: "\f4b3" !important;
         color: $yellow;
@@ -44,12 +52,16 @@
       }
     }
 
+    .feature-row-item-wrapper {
+      p {
+        color: $gray-darkish;
+      }
+    }
+
     p {
       color: $body-text;
       &.hero-sub {
-        font-weight: 300;
-        font-size: 1.2rem;
-        line-height: 2rem;
+        font-size: 1.125rem;
         margin-bottom: 1rem;
         color: $body-text;
       }
@@ -72,6 +84,10 @@
       &.text-center {
         margin-left: auto;
         margin-right: auto
+      }
+      &.lead-text {
+        max-width: $product-max-width;
+        margin-left: calc(50% - 380px);
       }
     }
   }

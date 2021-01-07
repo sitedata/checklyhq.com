@@ -5,16 +5,22 @@
     font-size: 18px;
   }
 
-  &__hero,
+  &__hero {
+    .display-3 {
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+      color: $black;
+    }
+  }
   &__testimonials {
     margin-bottom: 120px;;
   }
 
   &__lead {
     color: $gray-dark;
-    font-size: 22px;
+    font-size: 1.125rem;
     max-width: 800px;
-    margin: 1rem;
+    margin: 0 1rem 6rem;
   }
 
   &__plans {
@@ -34,11 +40,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    h4 {
+      font-weight: 600;
+    }
     &--light {
       width: 365px;
       height: 450px;
       background-color: $white;
       padding: 30px 30px 30px 30px;
+      h4 {
+        color: #161616;
+      }
       @include media-breakpoint-down(sm) {
         height: auto;
       }
@@ -161,8 +173,8 @@
 
     thead {
       th {
-        font-weight: 500;
-        color: $gray-dark;
+        font-weight: 600;
+        color: $black;
         font-size: 16px;
         line-height: 20px;
       }
@@ -170,7 +182,7 @@
 
     tbody {
       th {
-        font-weight: 500;
+        font-weight: 600;
         color: $gray-dark;
         font-size: 14px;
         line-height: 20px;
@@ -200,8 +212,9 @@
     justify-content: space-between;
     background-color: $white;
     color: $gray-dark;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 20px;
+    line-height: 30px;
     cursor: pointer;
     padding: 1rem;
     width: 100%;
@@ -251,19 +264,22 @@
 
     &__dollar-sign {
       font-size: 18px;
-      line-height: 18px;
-      font-weight: normal;
+      line-height: 22px;
+      font-weight: 600;
+      color: $black;
     }
 
     &__price {
       display: flex;
       font-size: 42px;
-      line-height: 42px;
-      font-weight: 500;
+      line-height: 50.83px;
+      font-weight: 600;
+      color: $black;
 
       &--big {
         font-size: 62px;
-        line-height: 62px;
+        line-height: 75.3px;
+        font-weight: 600;
       }
 
       &--large {

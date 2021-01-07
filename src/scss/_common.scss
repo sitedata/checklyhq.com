@@ -1,12 +1,12 @@
 // reset
 body {
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
   color: $body-text;
   line-height: $line-height-pub-site;
-  font-weight: 300;
 }
 
 // typography
@@ -34,7 +34,8 @@ p {
 
 .cta-link {
   color: $brand-primary;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
   &:hover {
     text-decoration: none;
