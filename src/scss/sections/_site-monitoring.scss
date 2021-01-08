@@ -1,9 +1,8 @@
 @import '../variables';
 
 .site-monitoring-section {
-  padding-top: 3 * $section-top-padding;
+  padding-top: 2 * $section-top-padding;
   padding-bottom: 3 * $section-bottom-padding;
-  height: 640px;
   overflow: hidden;
 
   img.code {

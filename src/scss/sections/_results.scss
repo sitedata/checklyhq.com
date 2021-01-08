@@ -1,18 +1,24 @@
 @import '../variables';
 
 .results-section {
-  padding-top: 3 * $section-top-padding;
-  padding-bottom: $section-bottom-padding;
+  padding-top: 1.4 * $section-top-padding;
 
-  height: 1100px;
+  height: 1041px;
   overflow: hidden;
 
-  background-color: $ash;
+  .display-4 {
+    margin-bottom: 10px;
+  }
+
+  .lead {
+    margin-bottom: 20px;
+  }
 
   .results-image {
     @include screen-shadow();
     border-radius: 5px;
     border: 1px solid $gray-light;
+    margin-top: 50px;
 
     @include media-breakpoint-up(xs) {
       width: 360px;

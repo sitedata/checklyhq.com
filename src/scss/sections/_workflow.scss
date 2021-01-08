@@ -1,10 +1,29 @@
 @import '../variables';
 
 .workflow-section {
-  padding-top: 3 * $section-top-padding;
-  padding-bottom: 3 * $section-bottom-padding;
+  padding-top: 1.4 * $section-top-padding;
+  padding-bottom: 1.7 * $section-bottom-padding;
+  background: $ash;
 
+  .display-4 {
+  	margin-bottom: 1px;
+  }
+  .lead {
+  	margin-bottom: 104px;
+  }
   img {
-    height: 64px;
+    height: 70px;
+  }
+  h5 {
+  	margin: 20px 0 9px;
+  }
+  .workflow-item {
+  	position: relative;
+  	padding-bottom: 20px;
+
+  	.cta-link {
+  		position: absolute;
+  		bottom: 0;
+  	}
   }
 }

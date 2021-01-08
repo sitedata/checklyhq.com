@@ -115,6 +115,10 @@ p {
   width: 360px;
 }
 
+.img-w435 {
+  width: 435px;
+}
+
 .img-w720 {
   width: 720px;
 }
@@ -136,7 +140,11 @@ img.avatar {
 // alignment
 
 .text-side {
-  margin-top: 80px;
+  margin-top: 50px;
+
+  .lead-text {
+    margin-bottom: 6px;
+  }
 
   @include media-breakpoint-down(sm) {
     margin-top: 0;

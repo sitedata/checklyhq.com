@@ -1,11 +1,30 @@
 @import '../variables';
 
 .alerting-section {
-  padding-top: 3 * $section-top-padding;
-  padding-bottom: $section-bottom-padding;
-  background: $white;
-  height: 880px;
+  padding-top: 1.4 * $section-top-padding;
+  padding-bottom: 0;
+  background: $ash;
+  height: 928px;
   overflow: hidden;
+
+  .section-super-header {
+    width: 100%;
+    margin-bottom: 1.125rem;
+  }
+
+  .display-4 {
+    margin-top: 10px;
+    margin-bottom: 17px;
+  }
+
+  .lead {
+    margin-bottom: 14px;
+  }
+
+  .alerting-top-image {
+    width: 100%;
+    max-width: 677px;
+  }
 
   .alerting-options-image {
     @include media-breakpoint-down(xs) {
@@ -14,6 +33,7 @@
   }
 
   .alerting-image {
+    margin-top: 79px;
     border-radius: 5px;
     border: 1px solid $gray-light;
 

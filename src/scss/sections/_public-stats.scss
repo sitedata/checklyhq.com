@@ -2,8 +2,7 @@
 
 .public-stats-section {
   text-align: center;
-  padding-top: 3 * $spacer;
-  padding-bottom: 4 * $spacer;
+  padding-bottom: $section-bottom-padding;
 
   .counter-text {
     color: $gray;

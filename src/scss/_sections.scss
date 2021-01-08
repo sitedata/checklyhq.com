@@ -5,21 +5,20 @@ section {
   .section-lead-text {
     font-size: 16px;
     color: $body-text;
-    font-weight: 300;
   }
 
   .section-super-header{
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 5px;
     font-size: 0.875rem;
     font-weight: 600;
-    color: $gray-darkish;
     text-transform: uppercase;
   }
 
   .section-header {
     font-size: 2rem;
     font-weight: 600;
+    margin-bottom: 10px;
   }
 
   .lead-text {

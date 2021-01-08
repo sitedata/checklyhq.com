@@ -1,9 +1,11 @@
 @import '../variables';
 
+
 .trusted-by-section {
   text-align: center;
-  padding-top: 3 * $spacer;
-  padding-bottom: 3 * $spacer;
+  padding-top: $section-top-padding;
+  padding-bottom: $section-bottom-padding;
+  background: $ash;
 
   img.trusted-by-image {
     max-width: 1110px;

@@ -1,4 +1,5 @@
 .testimonial-section {
+
   .testimonial-card {
     border: none;
     max-height: 415px;
@@ -32,16 +33,28 @@
   }
 
   &.testimonial-1 {
-    padding-top: $section-top-padding;
-    padding-bottom: 2 * $section-bottom-padding;
+    padding-top: 2.4 * $section-top-padding;
+    padding-bottom: 1.2 * $section-bottom-padding;
 
     .testimonial-card {
       max-height: 415px;
     }
 
+    .card-block {
+      padding: 0;
+      width: 300px;
+    }
+    .second {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .third {
+      margin-left: auto;
+    }
+
     .testimonial-text {
-      min-height: 200px;
-      max-height: 200px;
+      margin: 14px 0 40px;
+      padding-top: 0;
     }
     .testimonial-portrait {
       img {
@@ -88,7 +101,8 @@
   }
 
   &.testimonial-3 {
-    margin-bottom: 4rem;
+    padding-top: 3 * $section-top-padding;
+    padding-bottom: 0;
     .testimonial-text {
       font-weight: 400;
       margin-bottom: 0;
