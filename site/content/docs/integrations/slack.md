@@ -1,9 +1,9 @@
 ---
 title: Slack
-weight: 5
+weight: 2
 menu:
   docs:
-    parent: "Alerting"
+    parent: "Integrations"
 ---
 
 Setting up Slack as an alerting channel is simple:

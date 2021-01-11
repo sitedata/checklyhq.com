@@ -1,6 +1,6 @@
 ---
 title: Prometheus
-weight: 4
+weight: 9
 menu:
   docs:
     parent: "Integrations"
