@@ -25,7 +25,7 @@ deliver failure, degradation, and recovery messages to any project in your Disco
    ![setup checkly discord integration step 3](/docs/images/integrations/discord/discord_step3.png)
 
 
-4. Give the alert channel a name and **paste the Webhook URL** in their respective input fields. You can now also tweak the exactly
+4. Give the alert channel a name and **paste the Webhook URL** in their respective input fields. You can now also tweak
    which alerts you want to be notified of and which checks or check groups should be subscribed to this channel.
 
    ![setup checkly discord integration step 4](/docs/images/integrations/discord/discord_step4.png)

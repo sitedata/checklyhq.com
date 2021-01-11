@@ -34,7 +34,7 @@ To enable the MS Teams alert channel, take the following steps:
    ![setup checkly msteams integration step 5](/docs/images/integrations/msteams/msteams_step5.png)
 
 
-6. Give the alert channel a name and **paste the URL** in the dedicated URL input field. You can now also tweak the exactly
+6. Give the alert channel a name and **paste the URL** in the dedicated URL input field. You can now also tweak
 which alerts you want to be notified of and which checks or check groups should be subscribed to this channel.
 
    ![setup checkly msteams integration step 6](/docs/images/integrations/msteams/msteams_step6.png)

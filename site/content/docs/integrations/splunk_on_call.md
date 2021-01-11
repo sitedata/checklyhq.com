@@ -32,7 +32,7 @@ deliver failure, degradation, and recovery messages to any routing key in any te
    ![setup checkly splunk integration step 3](/docs/images/integrations/splunk/splunk_step3.png)
 
 
-4. Give the alert channel a name and **paste the URL** in the dedicated URL input field. You can now also tweak the exactly
+4. Give the alert channel a name and **paste the URL** in the dedicated URL input field. You can now also tweak
    which alerts you want to be notified of and which checks or check groups should be subscribed to this channel.
 
    ![setup checkly splunk integration step 4](/docs/images/integrations/splunk/splunk_step4.png)

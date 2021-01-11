@@ -33,7 +33,7 @@ and select the **HTTP Endpoint** integration type
    ![setup checkly gitlab_integration step 5](/docs/images/integrations/gitlab/gitlab_step4.png)
 
 
-6. Give the alert channel a name and **paste the Webhook URL and Authorization Key** in their respective input fields. You can now also tweak the exactly
+6. Give the alert channel a name and **paste the Webhook URL and Authorization Key** in their respective input fields. You can now also tweak
    which alerts you want to be notified of and which checks or check groups should be subscribed to this channel.
 
    ![setup checkly gitlab integration step 5](/docs/images/integrations/gitlab/gitlab_step5.png)
