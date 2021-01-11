@@ -5,8 +5,13 @@
   padding-bottom: 3 * $section-bottom-padding;
   overflow: hidden;
 
+  .image-side {
+    img {
+      width: 765px;
+    }
+  }
   img.code {
-    left: -40px;
+    margin-left: 70px;
   }
 
   img.screenshots {
@@ -14,7 +19,6 @@
     top: 320px;
     z-index: auto;
   }
-
 }
 
 @include media-breakpoint-down(sm) {

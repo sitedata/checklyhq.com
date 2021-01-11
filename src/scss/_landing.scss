@@ -12,8 +12,10 @@
   img.big-landing-image {
     width: 800px;
     position: absolute;
-    border: 1px solid $gray-light;
-    border-radius: 5px;
+  }
+
+  .flex-row {
+  	display: flex;
   }
 
   img.landing-image {

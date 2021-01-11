@@ -10,18 +10,15 @@
     margin-top: 195px;
   }
   
-  img.assertions {
-    left: -40px;
-    top: 180px;
-  }
-
-  img.results {
-    left: 180px;
+  img.code {
+    margin-left: 70px;
+    width: 954px;
+    height: 727px;
   }
 }
 
 @include media-breakpoint-down(sm) {
-  .api-monitoring-section {
+  img.code {
     height: 650px;
   }
 }
