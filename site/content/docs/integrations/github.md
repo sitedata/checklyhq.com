@@ -1,6 +1,6 @@
 ---
 title: GitHub
-weight: 3
+weight: 6
 aliases:
 - /docs/integrations
 menu:
