@@ -6,8 +6,12 @@
   }
 
   &__hero {
+    padding-top: 3rem;
     .display-3 {
+      width: 642px;
       letter-spacing: -0.04em;
+      line-height: 70px;
+      margin: auto;
       margin-bottom: 20px;
       color: $black;
     }
@@ -144,7 +148,7 @@
   &__enterprise {
     background-color: $gray-lightest;
     padding: 40px;
-    margin: 120px 0 160px;
+    margin: 120px 0 0;
     &__content {
       max-width: 840px;
       margin: 0 auto;
