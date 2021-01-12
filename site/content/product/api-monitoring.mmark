@@ -35,7 +35,7 @@ Import your HTTP requests or assemble one by hand. Checkly gives you full contro
 token for authentication.
 
 <div class="cta">
-{{% cta-link "Learn more" "/docs/api-checks/assertions/" %}}
+{{% cta-link "Learn more" "/docs/api-checks/request-settings/" %}}
 </div>
 {{% /feature-row %}}
 
@@ -54,7 +54,7 @@ fetch OAuth tokens and update request attributes before any request is done. Use
 **scrub sensitive data** from the response.
 
 <div class="cta">
-{{% cta-link "Learn more" "/docs/api-checks/assertions/" %}}
+{{% cta-link "Learn more" "/docs/api-checks/setup-teardown-scripts/" %}}
 </div>
 {{% /feature-row %}}
 

@@ -20,11 +20,18 @@
         font-size: 3.625rem;
         letter-spacing: -0.04em;
         color: $black;
+        line-height: 1.2;
+      }
+      &.width-645 {
+        max-width: 645px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
     .hero-image {
       max-width: 905px;
+      max-height: 450px;
       margin-bottom: 0 !important;
     }
 
@@ -102,6 +109,8 @@
     }
 
     .grid-section {
+      position: relative;
+      z-index: 10;
       background: $ash;
       width: 100vw;
       margin-left: calc(570px - 16px - 50vw);
@@ -137,8 +146,23 @@
     .mt-1 {
       margin-top: 10px !important;
     }
+    .mt-2 {
+      margin-top: 20px !important;
+    }
+    .mt-4 {
+      margin-top: 40px !important;
+    }
+    .mt-5 {
+      margin-top: 50px !important;
+    }
+    .mt-7 {
+      margin-top: 70px;
+    }
     .mt-8 {
       margin-top: 80px;
+    }
+    .pb-9 {
+      padding-bottom: 90px;
     }
     .feature {
       margin-bottom: 4.5rem;
@@ -161,6 +185,29 @@
       padding-top: 3 * $spacer;
       padding-left: calc(50vw + 16px - 570px);
       padding-right: calc(50vw + 16px - 570px);
+
+      h3 {
+        padding-bottom: 0;
+        margin-bottom: 10px;
+      }
+      .cta {
+        margin-top: 20px;
+      }
+      .col-sm-6 {
+        max-width: 480px;
+        width: 100%;
+      }
+      .col-sm-6:nth-child(1) {
+        margin-right: auto;
+      }
+      .col-sm-6:nth-child(2) {
+        margin-left: auto;
+      }
+      .img-440 {
+        max-width: 440px;
+        width: 100%;
+        margin-top: 30px;
+      }
     }
     .section-super-header {
       margin-bottom: 5px;
