@@ -1,5 +1,6 @@
 .free-trial-section {
-  padding-bottom: 4 * $spacer;
+  padding-top: 3.8 * $section-top-padding;
+  padding-bottom: 3 * $section-bottom-padding;
   .card {
     border: none;
     border-top: 6px solid $brand-accent;
