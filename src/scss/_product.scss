@@ -108,6 +108,10 @@
       max-width: 900px;
     }
 
+    .img-w768 {
+      max-width: 768px;
+    }
+
     .grid-section {
       position: relative;
       z-index: 10;
@@ -178,6 +182,8 @@
       }
     }
     .gray-section {
+      position: relative;
+      z-index: 10;
       background: $ash;
       width: 100vw;
       margin-left: calc(570px - 16px - 50vw);

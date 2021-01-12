@@ -2,7 +2,7 @@
 title: Alerting
 ---
 
-{.text-center .hero-text}
+{.text-center .hero-text .width-645}
 # We hope you'll never see this message...
 
 <p class="text-center hero-sub hero-sub-center mb-lg-5">
@@ -10,42 +10,51 @@ title: Alerting
 you want. Know when your service fails before your customers do.
 </p>
 
-{.text-center .mb-lg-5 .img-w720}
+{.text-center .hero-image .img-w720}
 ![alerting options](/product/alerting/api_alert@2x.png)
 
-{.text-center .section-header .mb-4}
-## How it works
+<div class="gray-section">
+<div class="row justify-content-center">
+<h2 class="text-center section-header">How it works</h3>
 
 {{% feature-row header="Set up your thresholds" img="/product/alerting/alert_settings@2x.png" %}}
 The internet can be flaky. Sometimes a failing service is just fine 2 seconds later. **Dodge false positives** by specifying
 exactly when you should be alerted and how often you want to be reminded.
+<div class="cta">
 {{% cta-link "Learn more" "/docs/alerting/" %}}
+</div>
 {{% /feature-row %}}
 
 {{% feature-row header="Pick your channels" img="/product/alerting/channels@2x.png" %}}
 Choose one or more of the available alerting channels. We have everything from **email, to Pagerduty, Opsgenie and SMS**. Need something
 custom? Use the webhooks or hook up [our Prometheus integration](/docs/integrations/prometheus/) and roll your own alerting.
+<div class="cta">
 {{% cta-link "Learn more" "/docs/alerting/" %}}
+</div>
 {{% /feature-row %}}
+</div>
+</div>
 
 
-{.lead-text .section-header .mb-4}
-## About our webhooks...
+<div class="row justify-content-center header-part mt-8 pb-9">
+	<div class="col-sm-12 col-md-8">
+	  <h2 class="section-header mt-1">About our webhooks...</h2>
+	  <p class="lead-text mb-lg-2">
+		We take webhooks very seriously. That's why we give you a full blown editor so you can hook up Checkly's alerts to basically any (legacy) system out there.
+		</p>
+		<p class="lead-text mb-lg-5">
+		{{% cta-link "Learn more" "/docs/alerting/webhooks/" %}}
+		</p>
+	</div>
+	<div class="img-w768">
+		<img src="/product/alerting/webhooks@2x.png" alt="webhooks editor" />
+	</div>
+</div>
 
-<p class="lead-text hero-sub hero-sub-center mb-lg-2">
-We take webhooks very seriously. That's why we give you a full blown editor so you can hook up Checkly's alerts to basically
-any (legacy) system out there.
-</p>
-<p class="lead-text hero-sub hero-sub-center mb-lg-2">
-{{% cta-link "Learn more" "/docs/alerting/webhooks/" %}}
-</p>
-
-{.text-center .mb-lg-5 .img-w720}
-![webhooks editor](/product/alerting/webhooks@2x.png)
-
-
-<div class="row pt-5 pb-5">
+<section class="grid-section">
+<div class="row">
 {{< sm-4-col-item "No limits" "We don't put any limits on the amount of email, Slack, Pagerduty or webhooks alerts you can send." >}}
 {{< sm-4-col-item "SSL alerting" "We check your domain's SSL certificates for expiry and follow the exact same alerting patterns as all the other checks." >}}
 {{< sm-4-col-item "Double checking" "By default, we retry any failing check from another data center location, just to be sure. " >}}
+</div>
 </div>
