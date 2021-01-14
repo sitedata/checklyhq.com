@@ -32,7 +32,7 @@
   }
 
   .pt-4 {
-  	padding-top: 1.25rem;
+  	padding-top: 1.25rem !important;
   }
 
   .list-group-item:last-child {
@@ -42,5 +42,23 @@
   img.pr-image {
     width: 690px;
     margin-left: 50px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-top: $section-top-padding;
+    padding-bottom: 30px;
+
+    .header-part {
+      margin-bottom: 20px;
+    }
+
+    img.pr-image {
+      position: relative;
+      width: 100%;
+      margin-left: 0;
+    }
+    .pt-4 {
+      padding-top: 10px !important;
+    }
   }
 }

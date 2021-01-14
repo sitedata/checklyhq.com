@@ -33,6 +33,7 @@
     }
     &.navbar-toggler-right {
       right: 0;
+      padding-right: 6px;
     }
   }
 
@@ -81,5 +82,28 @@
 .home-nav-wrapper {
   .navbar {
     top: 28px !important;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .navbar {
+    .container {
+      width: 100%;
+      padding-right: 6px;
+      padding-left: 6px;
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .navbar {
+    .container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .navbar-toggler {
+      &.navbar-toggler-right {
+        padding-right: 0px;
+      }
+    }
   }
 }

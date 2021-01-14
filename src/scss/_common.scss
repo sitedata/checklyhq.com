@@ -146,8 +146,17 @@ img.avatar {
     margin-bottom: 20px;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     margin-top: 0;
-    margin-bottom: 2rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 30px;
+  }
+  @include media-breakpoint-down(xs) {
+    .lead-text {
+      font-size: 14px;
+      line-height: 22.4px;
+    }
   }
 }

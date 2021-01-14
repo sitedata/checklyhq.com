@@ -2,7 +2,7 @@
 
 .public-stats-section {
   text-align: center;
-  padding-bottom: $section-bottom-padding;
+  padding-bottom: 3 * $section-bottom-padding;
 
   .counter-text {
     color: $gray;
@@ -14,7 +14,10 @@
     margin: .5rem;
     font-weight: 500;
   }
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
   @include media-breakpoint-down(sm) {
-    text-align: left;
+    padding-bottom: $section-bottom-padding;
   }
 }

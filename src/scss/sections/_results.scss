@@ -19,23 +19,23 @@
     border-radius: 5px;
     border: 1px solid $gray-light;
     margin-top: 50px;
+  }
+}
 
-    @include media-breakpoint-up(xs) {
-      width: 360px;
-    }
-
-    @include media-breakpoint-up(sm) {
-      width: 480px;
-    }
-
-    @include media-breakpoint-up(md) {
-      width: 900px;
+@include media-breakpoint-down(md) {
+  .results-section {
+    padding-top: $section-top-padding;
+    height: auto;
+    .results-image {
+      margin-bottom: -100px;
     }
   }
 }
 
 @include media-breakpoint-down(sm) {
   .results-section {
-    height: 650px;
+    .results-image {
+      margin-top: 40px;
+    }
   }
 }
