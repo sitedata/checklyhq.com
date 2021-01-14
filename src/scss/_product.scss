@@ -31,7 +31,7 @@
 
     .hero-image {
       max-width: 905px;
-      max-height: 450px;
+      max-height: 470px;
       margin-bottom: -100px;
     }
 
@@ -191,10 +191,6 @@
       padding-left: calc(50vw + 24px - 570px);
       padding-right: calc(50vw + 24px - 570px);
 
-      .row {
-        marign: 0;
-      }
-
       h3 {
         padding-bottom: 0;
         margin-bottom: 10px;
@@ -202,23 +198,26 @@
       .cta {
         margin-top: 20px;
       }
-      .col-sm-6 {
+      .img-w900 {
+        margin-bottom: -160px;
+      }
+    }
+    .two-grid {
+      padding-bottom: 90px !important;
+      .col-md-6 {
         max-width: 480px;
         width: 100%;
       }
-      .col-sm-6:nth-child(1) {
+      .col-md-6:nth-child(1) {
         margin-right: auto;
       }
-      .col-sm-6:nth-child(2) {
+      .col-md-6:nth-child(2) {
         margin-left: auto;
       }
       .img-440 {
         max-width: 440px;
         width: 100%;
         margin-top: 30px;
-      }
-      .img-w900 {
-        margin-bottom: -160px;
       }
     }
     .section-super-header {
@@ -256,6 +255,9 @@
           margin-bottom: 50px;
         }
       }
+      .img-w768 {
+        width: calc(100% - 30px);
+      }
       .grid-section {
         margin-left: -24px;
         padding-left: 24px;
@@ -280,8 +282,30 @@
         padding-top: $section-top-padding;
         padding-bottom: 0px;
       }
+      .two-grid {
+        padding-bottom: 50px !important;
+        .col-md-6 {
+          max-width: 100%;
+        }
+        .col-md-6:nth-child(1) {
+          margin-right: auto;
+          margin-bottom: 50px;
+        }
+        .col-md-6:nth-child(2) {
+          margin-right: auto;
+        }
+        .img-440 {
+          max-width: 100%;
+        }
+      }
     }
     @include media-breakpoint-down(sm) {
+      .mt-8 {
+        margin-top: 50px;
+      }
+      .pb-9 {
+        padding-bottom: 50px;
+      }
       .feature {
         margin-bottom: 3.75rem;
       }
@@ -291,7 +315,7 @@
           max-width: 100%;
         }
         .cta {
-          margin-top: 20px;
+          margin-top: 10px;
         }
       }
       .grid-section {
@@ -356,9 +380,14 @@
           }
         }
       }
+      .section-header {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
       .gray-section {
         .img-w900 {
           margin-bottom: -50px;
+          width: calc(100% - 30px);
         }
       }
     }

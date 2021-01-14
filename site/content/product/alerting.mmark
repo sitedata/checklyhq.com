@@ -10,10 +10,11 @@ title: Alerting
 you want. Know when your service fails before your customers do.
 </p>
 
-{.text-center .hero-image .img-w720}
+{.text-center .hero-image .big-drop-shadow}
 ![alerting options](/product/alerting/api_alert@2x.png)
 
 <div class="gray-section">
+<div class="container">
 <div class="row justify-content-center">
 <h2 class="text-center section-header">How it works</h3>
 
@@ -34,6 +35,7 @@ custom? Use the webhooks or hook up [our Prometheus integration](/docs/integrati
 {{% /feature-row %}}
 </div>
 </div>
+</div>
 
 
 <div class="row justify-content-center header-part mt-8 pb-9">
@@ -42,12 +44,12 @@ custom? Use the webhooks or hook up [our Prometheus integration](/docs/integrati
 	  <p class="lead-text mb-lg-2">
 		We take webhooks very seriously. That's why we give you a full blown editor so you can hook up Checkly's alerts to basically any (legacy) system out there.
 		</p>
-		<p class="lead-text mb-lg-5">
+		<p class="lead-text mt-1 mb-4">
 		{{% cta-link "Learn more" "/docs/alerting/webhooks/" %}}
 		</p>
 	</div>
 	<div class="img-w768">
-		<img src="/product/alerting/webhooks@2x.png" alt="webhooks editor" />
+		<img class="big-drop-shadow" src="/product/alerting/webhooks@2x.png" alt="webhooks editor" />
 	</div>
 </div>
 

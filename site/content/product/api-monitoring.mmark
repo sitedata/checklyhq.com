@@ -68,7 +68,6 @@ Next to aggregating metrics, we give you **access to each result** from each of 
 {{% /feature-row %}}
 
 <div class="gray-section">
-<div class="container">
 <div class="row justify-content-center header-part">
 	<div class="col-sm-12 col-md-8">
 		<h2 class="section-super-header">alerting</h2>
@@ -100,7 +99,6 @@ Next to aggregating metrics, we give you **access to each result** from each of 
 	<div class="lead-text img-w900">
 		<img class="big-drop-shadow" src="/product/api-monitoring/global-coverage-screenshot@2x.png" alt="data centerlocations" />
 	</div>
-</div>
 </div>
 </div>
 

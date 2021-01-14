@@ -13,7 +13,7 @@ With Checkly's Browser checks you can accurately simulate interaction with your 
 correctness and performance of all your crucial click paths.
 </p>
 
-{.text-center .hero-image}
+{.text-center .hero-image .big-drop-shadow}
 ![api monitoring](/product/transaction-monitoring/synthetic-monitoring-screenshot@2x.png)
 
 <section class="grid-section">
@@ -36,7 +36,7 @@ Getting a monitoring script going is a lot easier than you might think. Just fol
 </p>
 
 
-{{% feature-row header="Create a script" img="/product/transaction-monitoring/script.png" %}}
+{{% feature-row header="Create a script" img="/product/transaction-monitoring/synthetic-howitworks-1@2x.png" %}}
 Pick one of the examples from our built-in library as your starting point. Alternatively, you can install and fire up the
 [Headless Recorder](/docs/headless-recorder/) browser extension and record a script in real-time as you click through your site.
 <div class="cta">
@@ -44,7 +44,7 @@ Pick one of the examples from our built-in library as your starting point. Alter
 </div>
 {{% /feature-row %}}
 
-{{% feature-row header="Tweak it" img="/product/transaction-monitoring/tweak.png" %}}
+{{% feature-row header="Tweak it" img="/product/transaction-monitoring/synthetic-howitworks-2@2x.png" %}}
 Use our in app debugger to iterate on your script and directly see the results. Add extra assertions, screenshots
 and navigation actions. Add the industry standard **Mocha and Chai libraries** for a familiar workflow.
 <div class="cta">
@@ -52,7 +52,7 @@ and navigation actions. Add the industry standard **Mocha and Chai libraries** f
 </div>
 {{% /feature-row %}}
 
-{{% feature-row header="Run it every ten minutes" img="/product/transaction-monitoring/results.png" %}}
+{{% feature-row header="Run it every ten minutes" img="/product/transaction-monitoring/synthetic-howitworks-3@2x.png" %}}
 Schedule your script to run as often as every ten minutes. A regular interval gives you an accurate insight into
 how your vital transactions are performing over time. We also give you **full access to the log files** for each run in case
 an alert is triggered.
@@ -62,7 +62,7 @@ an alert is triggered.
 {{% /feature-row %}}
 
 
-<div class="gray-section pb-9">
+<div class="gray-section two-grid">
   <div class="row justify-content-center header-part">
     <div class="col-sm-12 col-md-8">
       <h2 class="section-header mt-1">Learn from the community</h3>
@@ -74,7 +74,7 @@ an alert is triggered.
 
 <div class="row mt-7">
 
-<div class="col-sm-6">
+<div class="col-md-6">
   <div class="flex-wrap">
     <h3 class="section-header" style="margin-right: 1rem;">Headless Recorder</h3>
     <a class="github-button" href="https://github.com/checkly/headless-recorder" data-show-count="true" aria-label="Star checkly/headless-recorder on GitHub">Star</a>
@@ -83,9 +83,9 @@ an alert is triggered.
   <div class="cta">
     {{% cta-link "Learn more" "/docs/headless-recorder/basic-usage/" %}}
   </div>
-  <img class="img-440" src="/product/transaction-monitoring/recorder.png" alt="" />
+  <img class="img-440 big-drop-shadow" src="/product/transaction-monitoring/puppeteer@2x.png" alt="" />
 </div>
-<div class="col-sm-6">
+<div class="col-md-6">
   <div>
     <h3 class="section-header">The Headless Dev</h3>
   </div>
@@ -93,7 +93,7 @@ an alert is triggered.
   <div class="cta">
     {{% cta-link "theheadless.dev" "https://theheadless.dev" %}}
   </div>
-  <img class="img-440" src="/landing/headless.png" alt="" />
+  <img class="img-440 big-drop-shadow" src="/product/transaction-monitoring/thehd@2x.png" alt="" />
 </div>
 </div>
 </div>
@@ -131,7 +131,7 @@ an alert is triggered.
       </p>
     </div>
     <div class="lead-text img-w900 mt-5">
-      <img src="/product/transaction-monitoring/global-coverage-screenshot@2x.png" alt="alerting options" />
+      <img class="big-drop-shadow" src="/product/transaction-monitoring/global-coverage-screenshot@2x.png" alt="alerting options" />
     </div>
   </div>
 </div>
