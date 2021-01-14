@@ -75,7 +75,7 @@ an alert is triggered.
 <div class="row mt-7">
 
 <div class="col-sm-6">
-  <div style="display: flex; flex-direction: row; align-items: baseline;">
+  <div class="flex-wrap">
     <h3 class="section-header" style="margin-right: 1rem;">Headless Recorder</h3>
     <a class="github-button" href="https://github.com/checkly/headless-recorder" data-show-count="true" aria-label="Star checkly/headless-recorder on GitHub">Star</a>
   </div>

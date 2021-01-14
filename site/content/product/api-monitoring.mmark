@@ -5,15 +5,15 @@ monitoring solution checks your mobile, webapp or IoT API for performance, uptim
 ---
 
 {.text-center .hero-text}
-# API monitoring correct *and* fast, 24x7
+# API monitoring correct and fast, 24x7
 
-<p class="text-center hero-sub hero-sub-center mb-lg-5">
+<p class="text-center hero-sub hero-sub-center">
 Downtime caused by API performance has serious business impact. Use Checkly's deep but easy to use API
 monitoring solution to check your mobile, webapp or IoT API for performance, uptime and correctness.
 </p>
 
-{.text-center .hero-image}
-![api monitoring](/product/api-monitoring/api-monitoring-hero-image.png)
+{.text-center .hero-image .big-drop-shadow}
+![api monitoring](/product/api-monitoring/api-monitoring-hero@2x.png)
 
 <section class="grid-section">
 <div class="row">
@@ -29,7 +29,7 @@ monitoring solution to check your mobile, webapp or IoT API for performance, upt
 {.text-center .section-header .mt-8}
 ## How it works
 
-{{% feature-row header="Create an HTTP request" img="/product/api-monitoring/http-request@2x.png" %}}
+{{% feature-row header="Create an HTTP request" img="/product/api-monitoring/api-howitworks-1@2x.png" %}}
 Import your HTTP requests or assemble one by hand. Checkly gives you full control over all HTTP request options:
 **HTTP method, URL, query parameters, headers, and body**. Add credentials or a Bearer
 token for authentication.
@@ -39,7 +39,7 @@ token for authentication.
 </div>
 {{% /feature-row %}}
 
-{{% feature-row header="Add API check assertions" img="/product/api-monitoring/assertions@2x.png" %}}
+{{% feature-row header="Add API check assertions" img="/product/api-monitoring/api-howitworks-2@2x.png" %}}
 Checkly's assertion matrix helps you create as many assertions per check as you want. Monitor your API for correct response times, HTTP status code,
 plain text or JSON bodies and headers. **Drill into JSON payloads with JSON path** or user regular expression.
 
@@ -48,7 +48,7 @@ plain text or JSON bodies and headers. **Drill into JSON payloads with JSON path
 </div>
 {{% /feature-row %}}
 
-{{% feature-row header="Customize setup & teardown" img="/product/api-monitoring/setup-teardown.png" %}}
+{{% feature-row header="Customize setup & teardown" img="/product/api-monitoring/api-howitworks-3@2x.png" %}}
 If needed, you can take full control of how your request executes. Use setup scripts to **cryptographically sign requests**,
 fetch OAuth tokens and update request attributes before any request is done. Use teardown scripts to clean up test data or
 **scrub sensitive data** from the response.
@@ -58,7 +58,7 @@ fetch OAuth tokens and update request attributes before any request is done. Use
 </div>
 {{% /feature-row %}}
 
-{{% feature-row header="Monitor your API every minute" img="/product/api-monitoring/results.png" %}}
+{{% feature-row header="Monitor your API every minute" img="/product/api-monitoring/api-howitworks-4@2x.png" %}}
 We monitor your API as often as once per minute. This gives you a consistent and accurate view of your API performance.
 Next to aggregating metrics, we give you **access to each result** from each of the configured data centers.
 
@@ -68,6 +68,7 @@ Next to aggregating metrics, we give you **access to each result** from each of 
 {{% /feature-row %}}
 
 <div class="gray-section">
+<div class="container">
 <div class="row justify-content-center header-part">
 	<div class="col-sm-12 col-md-8">
 		<h2 class="section-super-header">alerting</h2>
@@ -75,12 +76,12 @@ Next to aggregating metrics, we give you **access to each result** from each of 
 			<img src="/landing/alerting-options@2x.png" alt="alerting options" />
 		</div>
 	  <h2 class="section-header mt-1">Alerting for any situation</h3>
-	  <p class="lead-text mb-lg-2">
+	  <p class="lead-text mb-2">
 		When a check fails, you and your team need timely and actionable insights to address any down time.
 		Add Slack, SMS, email or Pagerduty: Checkly's alerts give you the right information whatever alerting medium you choose.
 		Need more control? Webhooks give you full access to the JSON data we use ourselves for alerting.
 		</p>
-		<p class="lead-text mb-lg-5">
+		<p class="lead-text mb-5">
 		{{% cta-link "Learn more" "/product/alerting/" %}}
 		</p>
 	</div>
@@ -88,17 +89,18 @@ Next to aggregating metrics, we give you **access to each result** from each of 
 <div class="row justify-content-center header-part">
 	<div class="col-sm-12 col-md-8">
 	  <h2 class="section-header mt-1">Global coverage</h3>
-	  <p class="lead-text mb-lg-2">
+	  <p class="lead-text mb-2">
 		Get a clear picture of how your services perform for all your users around the world. Run your check from any of twenty
 		data center locations spread over the Americas, EMEA and Asia Pacific.
 		</p>
-		<p class="lead-text mb-lg-5">
+		<p class="lead-text mb-4">
 		{{% cta-link "Learn more" "/product/alerting/" %}}
 		</p>
 	</div>
 	<div class="lead-text img-w900">
-		<img src="/product/api-monitoring/global-coverage-screenshot@2x.png" alt="data centerlocations" />
+		<img class="big-drop-shadow" src="/product/api-monitoring/global-coverage-screenshot@2x.png" alt="data centerlocations" />
 	</div>
+</div>
 </div>
 </div>
 

@@ -10,4 +10,8 @@
     background-repeat: repeat-x;
     background-size: 100%;
   }
+  @include media-breakpoint-down(sm) {
+    padding-top: $section-top-padding;
+    padding-bottom: $section-bottom-padding;
+  }
 }
