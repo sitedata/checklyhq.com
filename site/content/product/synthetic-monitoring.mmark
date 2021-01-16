@@ -13,8 +13,9 @@ With Checkly's Browser checks you can accurately simulate interaction with your 
 correctness and performance of all your crucial click paths.
 </p>
 
-{.text-center .hero-image .big-drop-shadow}
-![api monitoring](/product/transaction-monitoring/synthetic-monitoring-screenshot@2x.png)
+<div class="row justify-content-center">
+{{< alternative-picture class="text-center hero-image big-drop-shadow" img="/product/transaction-monitoring/synthetic-monitoring-screenshot@2x.png" alt="synthetic monitoring" width="865" height="528" >}}
+</div>
 
 <section class="grid-section">
 <div class="row">
@@ -36,7 +37,7 @@ Getting a monitoring script going is a lot easier than you might think. Just fol
 </p>
 
 
-{{% feature-row header="Create a script" img="/product/transaction-monitoring/synthetic-howitworks-1@2x.png" %}}
+{{% feature-row header="Create a script" img="/product/transaction-monitoring/synthetic-howitworks-1@2x.png" imgWidth="610" imgHeight="261" %}}
 Pick one of the examples from our built-in library as your starting point. Alternatively, you can install and fire up the
 [Headless Recorder](/docs/headless-recorder/) browser extension and record a script in real-time as you click through your site.
 <div class="cta">
@@ -44,7 +45,7 @@ Pick one of the examples from our built-in library as your starting point. Alter
 </div>
 {{% /feature-row %}}
 
-{{% feature-row header="Tweak it" img="/product/transaction-monitoring/synthetic-howitworks-2@2x.png" %}}
+{{% feature-row header="Tweak it" img="/product/transaction-monitoring/synthetic-howitworks-2@2x.png" imgWidth="610" imgHeight="291" %}}
 Use our in app debugger to iterate on your script and directly see the results. Add extra assertions, screenshots
 and navigation actions. Add the industry standard **Mocha and Chai libraries** for a familiar workflow.
 <div class="cta">
@@ -52,7 +53,7 @@ and navigation actions. Add the industry standard **Mocha and Chai libraries** f
 </div>
 {{% /feature-row %}}
 
-{{% feature-row header="Run it every ten minutes" img="/product/transaction-monitoring/synthetic-howitworks-3@2x.png" %}}
+{{% feature-row header="Run it every ten minutes" img="/product/transaction-monitoring/synthetic-howitworks-3@2x.png" imgWidth="610" imgHeight="254" %}}
 Schedule your script to run as often as every ten minutes. A regular interval gives you an accurate insight into
 how your vital transactions are performing over time. We also give you **full access to the log files** for each run in case
 an alert is triggered.
@@ -83,7 +84,7 @@ an alert is triggered.
   <div class="cta">
     {{% cta-link "Learn more" "/docs/headless-recorder/basic-usage/" %}}
   </div>
-  <img class="img-440 big-drop-shadow" src="/product/transaction-monitoring/puppeteer@2x.png" alt="" />
+  {{< alternative-picture class="img-440 big-drop-shadow" img="/product/transaction-monitoring/puppeteer@2x.png" alt="puppeteer screenshot" width="440" height="270" >}}
 </div>
 <div class="col-md-6">
   <div>
@@ -93,7 +94,7 @@ an alert is triggered.
   <div class="cta">
     {{% cta-link "theheadless.dev" "https://theheadless.dev" %}}
   </div>
-  <img class="img-440 big-drop-shadow" src="/product/transaction-monitoring/thehd@2x.png" alt="" />
+  {{< alternative-picture class="img-440 big-drop-shadow" img="/product/transaction-monitoring/thehd@2x.png" alt="thehd screenshot" width="440" height="270" >}}
 </div>
 </div>
 </div>
@@ -103,7 +104,11 @@ an alert is triggered.
     <div class="col-sm-12 col-md-8">
       <h2 class="section-super-header">alerting</h2>
       <div class="lead-text">
-        <img src="/landing/alerting-options@2x.png" alt="alerting options" />
+        <picture>
+          <source type="image/webp" srcset="/landing/alerting-options@2x.webp">
+          <source type="image/png" srcset="/landing/alerting-options@2x.png">
+          <img class="alerting-top-image" src="/landing/alerting-options@2x.png" alt="checkly alerting options" width="750" height="45" />
+        </picture>
       </div>
       <h2 class="section-header mt-1">Alerting for any situation</h3>
       <p class="lead-text mb-lg-2">
@@ -130,8 +135,8 @@ an alert is triggered.
       {{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
       </p>
     </div>
-    <div class="lead-text img-w900 mt-5">
-      <img class="big-drop-shadow" src="/product/transaction-monitoring/global-coverage-screenshot@2x.png" alt="alerting options" />
+    <div class="lead-text mt-5">
+      {{< alternative-picture class="text-center hero-image big-drop-shadow" img="/product/transaction-monitoring/global-coverage-screenshot@2x.png" alt="data centerlocations" width="843" height="486" >}}
     </div>
   </div>
 </div>

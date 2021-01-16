@@ -1,4 +1,4 @@
-{{ $header := .Get "header" }} {{ $image := .Get "img" }}
+{{ $header := .Get "header" }} {{ $image := .Get "img" }} {{ $width := .Get "imgWidth" }} {{ $height := .Get "imgHeight" }}
 <div class="row feature">
   <div class="col-sm-12 col-md-5 text-left d-flex">
     <div class="feature-row-item-wrapper my-auto">
@@ -7,10 +7,10 @@
     </div>
   </div>
   <div class="col-sm-12 col-md-7 text-right">
-    <img
-      src="{{$image}}"
-      alt="{{$header}}"
-      class="img-w720 big-drop-shadow rounded"
-    />
+    <picture>
+      <source type="image/webp" srcset="{{ substr $image 0 -4 | safeURL }}.webp">
+      <source type="image/png" srcset="{{$image}}">
+      <img  class="img-w720 big-drop-shadow rounded" src="{{$image}}" alt="{{$header}}" loading="lazy" width="{{$width}}" height="{{$height}}" />
+    </picture>
   </div>
 </div>
