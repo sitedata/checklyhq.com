@@ -10,6 +10,9 @@
       height: 0px;
       visibility: hidden;
     }
+    img {
+      height: auto !important;
+    }
     h1 {
       &.hero-text {
         &:not(:first-child) {
@@ -31,8 +34,10 @@
 
     .hero-image {
       max-width: 905px;
-      max-height: 470px;
-      margin-bottom: -50px;
+      width: calc(100% - 30px);
+      height: auto;
+      margin: auto;
+      margin-bottom: -100px;
     }
 
     h2 {
@@ -217,6 +222,7 @@
       .img-440 {
         max-width: 440px;
         width: 100%;
+        height: auto;
         margin-top: 30px;
       }
     }
@@ -247,9 +253,6 @@
           font-size: 3rem;
         }
       }
-      .hero-image {
-        margin-bottom: -50px;
-      }
       p {
         &.hero-sub-center {
           margin-bottom: 50px;
@@ -257,9 +260,11 @@
       }
       .img-w768 {
         width: calc(100% - 30px);
+        height: auto;
       }
       .img-w900 {
         width: calc(100% - 30px);
+        height: auto;
       }
       .grid-section {
         margin-left: -24px;
@@ -391,6 +396,7 @@
         .img-w900 {
           margin-bottom: -50px;
           width: calc(100% - 30px);
+          height: auto;
         }
       }
     }

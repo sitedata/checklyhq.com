@@ -13,7 +13,7 @@ With Checkly's Browser checks you can accurately simulate interaction with your 
 correctness and performance of all your crucial click paths.
 </p>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center text-center">
 {{< alternative-picture class="text-center hero-image big-drop-shadow" img="/product/transaction-monitoring/synthetic-monitoring-screenshot@2x.png" alt="synthetic monitoring" width="865" height="528" >}}
 </div>
 
@@ -135,8 +135,8 @@ an alert is triggered.
       {{% cta-link "Learn more" "/docs/monitoring/global-locations/" %}}
       </p>
     </div>
-    <div class="lead-text mt-5">
-      {{< alternative-picture class="text-center hero-image big-drop-shadow" img="/product/transaction-monitoring/global-coverage-screenshot@2x.png" alt="data centerlocations" width="843" height="486" >}}
+    <div class="lead-text mt-5 text-center">
+      {{< alternative-picture class="text-center hero-image big-drop-shadow" img="/product/api-monitoring/global-coverage-screenshot@2x.png" alt="data centerlocations" width="843" height="486" >}}
     </div>
   </div>
 </div>

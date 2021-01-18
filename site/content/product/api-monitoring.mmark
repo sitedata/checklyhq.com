@@ -12,7 +12,7 @@ Downtime caused by API performance has serious business impact. Use Checkly's de
 monitoring solution to check your mobile, webapp or IoT API for performance, uptime and correctness.
 </p>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center text-center">
 {{< alternative-picture class="text-center hero-image big-drop-shadow" img="/product/api-monitoring/api-monitoring-hero@2x.png" alt="api monitoring" width="865" height="528" >}}
 </div>
 
@@ -101,7 +101,7 @@ Next to aggregating metrics, we give you **access to each result** from each of 
 		{{% cta-link "Learn more" "/product/alerting/" %}}
 		</p>
 	</div>
-	<div class="justify-content-center lead-text">
+	<div class="justify-content-center lead-text text-center">
 		{{< alternative-picture class="text-center hero-image big-drop-shadow" img="/product/api-monitoring/global-coverage-screenshot@2x.png" alt="data centerlocations" width="843" height="486" >}}
 	</div>
 </div>

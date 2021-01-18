@@ -7,19 +7,16 @@
 
   img.code {
     margin-left: 70px;
-    width: 594px;
+    width: 600px;
+    height: auto;
   }
 
   img.screenshots {
-    left: 133px;
-    top: 250px;
+    left: 200px;
+    top: 160px;
     z-index: auto;
-    width: 722px;
-  }
-  @media (max-width: 1199px) {
-    img.screenshots {
-      top: 350px;
-    }
+    width: 600px;
+    height: auto;
   }
   @include media-breakpoint-down(md) {
     padding-top: $section-top-padding;
@@ -35,7 +32,6 @@
         height: auto;
       }
       img.screenshots {
-        top: 300px;
         left: 110px;
         width: calc(100% - 128px);
       }
@@ -44,9 +40,6 @@
   @include media-breakpoint-down(sm) {
     .image-side {
       margin-top: 0px;
-      img.screenshots {
-        top: 250px;
-      }
       .big-landing-image {
         position: absolute;
       }
@@ -57,7 +50,7 @@
       height: 200px;
 
       img.screenshots {
-        top: 170px;
+        top: 100px;
         left: 50px;
         width: calc(100% - 68px);
       }
