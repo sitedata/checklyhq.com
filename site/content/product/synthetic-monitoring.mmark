@@ -78,7 +78,7 @@ an alert is triggered.
 <div class="col-md-6">
   <div class="flex-wrap">
     <h3 class="section-header" style="margin-right: 1rem;">Headless Recorder</h3>
-    <a class="github-button" href="https://github.com/checkly/headless-recorder" data-show-count="true" aria-label="Star checkly/headless-recorder on GitHub">Star</a>
+    <a class="github-button" href="https://github.com/checkly/headless-recorder" data-show-count="true" aria-label="Star checkly/headless-recorder on GitHub" rel="noopener">Star</a>
   </div>
   <p>Install the Headless Recorder browser extension in your Chrome browser and start recording scripts in under a minute. This extension has a ton of options for tweaking your scripts as you click through your site and fill out web forms. </p>
   <div class="cta">
