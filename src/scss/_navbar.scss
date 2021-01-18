@@ -1,8 +1,10 @@
+.navbar-home {
+  background-color: $ash;
+}
 .navbar {
   min-height: 4rem;
   transition: all .5s;
   z-index: 9999;
-  background-color: $white;
   .callout {
     font-size: 13px;
     font-weight: 400;
@@ -31,6 +33,7 @@
     }
     &.navbar-toggler-right {
       right: 0;
+      padding-right: 6px;
     }
   }
 
@@ -59,6 +62,14 @@
     }
   }
 
+  .btn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 9px 1rem 10px;
+  }
+  .signup-button {
+    padding: 9px 22px 10px;
+  }
   &.navbar-fixed-drop-shadow {
     box-shadow: 0 1px 2px 0px rgba(31, 45, 61, 0.15);
     position: fixed;
@@ -71,5 +82,28 @@
 .home-nav-wrapper {
   .navbar {
     top: 28px !important;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .navbar {
+    .container {
+      width: 100%;
+      padding-right: 6px;
+      padding-left: 6px;
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .navbar {
+    .container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .navbar-toggler {
+      &.navbar-toggler-right {
+        padding-right: 0px;
+      }
+    }
   }
 }

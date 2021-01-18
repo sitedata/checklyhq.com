@@ -52,3 +52,26 @@ body {
 @import 'pricing-tables-checkly';
 
 @import '../css/vendor/ionicons/css/ionicons.min.css';
+
+
+.container {
+	padding-right: 24px;
+	padding-left: 24px;
+}
+
+.gray-section {
+	background: $ash;
+}
+
+@include media-breakpoint-down(md) {
+	.container {
+		width: 100%;
+	}
+}
+@include media-breakpoint-down(sm) {
+	.container {
+		width: 100%;
+		padding-right: 18px;
+		padding-left: 18px;	
+	}
+}

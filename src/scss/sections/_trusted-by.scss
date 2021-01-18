@@ -1,14 +1,28 @@
 @import '../variables';
 
+
 .trusted-by-section {
   text-align: center;
-  padding-top: 3 * $spacer;
-  padding-bottom: 3 * $spacer;
+  padding-top: $section-top-padding;
+  padding-bottom: $section-bottom-padding;
+  background: $white;
 
   img.trusted-by-image {
     max-width: 1110px;
     width: 100%;
-    padding: 1rem 0;
+    height: auto;
+  }
+
+  .section-super-header {
+    font-size: 16px;
+    line-height:  20px;
+  }
+
+  @include media-breakpoint-down(md) {
+    .section-super-header {
+      font-size: 14px;
+      line-height: 22.4px;
+    }
   }
 
   @include media-breakpoint-down(sm) {
