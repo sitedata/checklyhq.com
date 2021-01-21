@@ -1,0 +1,113 @@
+@import 'variables.scss';
+.integrations {
+	&__hero {
+		.display-3 {
+			width: 100%;
+			max-width: 630px;
+			margin: auto;
+			margin-bottom: 20px;
+			line-height: 120%;
+			letter-spacing: -0.04em;
+		}
+
+		&__lead {
+			width: 100%;
+			max-width: 700px;
+			margin: auto;
+			margin-bottom: 42px;
+
+			font-size: 18px;
+		}
+
+		.cta-link {
+			font-size: 20px;
+			line-height: 20px;
+			font-weight: 600;
+
+			&:after {
+				width: 7px;
+				height: 7px;
+				top: -2px;
+			}
+		}
+	}
+	.d-flex {
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	
+	&__subnav {
+		width: 100%;
+		max-width: 480px;
+		margin: 140px auto 10px;
+
+		.d-flex {
+			a {
+				font-size: 16px;
+				line-height: 20px;
+				color: $gray-darkish;
+				padding-bottom: 5px;
+				border: 0;
+				border-bottom: 1px solid $gray-darkish;
+				border-style: dashed;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	&__cardlist {
+		margin-top: 30px;
+
+		.list-title {
+			font-size: 20px;
+			line-height: 30px;
+			letter-spacing: 0.3px;
+			margin-bottom: 10px;
+		}
+
+		.hidden {
+			opacity: 0;
+			z-index: -1;
+			height: 0 !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		.card {
+			width: 320px;
+			padding: 24px;
+			margin-bottom: 40px;
+
+			border: 1px solid $gray-light;
+			border-radius: 5px;
+			box-sizing: border-box;
+
+			&:hover {
+				background: $gray-lightest;
+				border: 1px solid $blue;
+			}
+
+			&__img {
+				height: 64px;
+			}
+
+			&__title {
+				margin-bottom: 8px;
+
+				font-size: 16px;
+				line-height: 24px;
+			}
+			&__description {
+				margin-bottom: 22px;
+			}
+			&__cta {
+				width: 100% !important;
+			}
+		}
+	}
+	.free-trial-section {
+		padding: 100px 0;
+	}
+}

@@ -40,7 +40,6 @@ $(document).ready(() => {
  * END Navbar
  */
 
-
 $(document).ready(() => {
   if($('body').hasClass('landing')){
     fetch('https://api.checklyhq.com/public-stats')
