@@ -92,6 +92,11 @@
       padding-right: 6px;
       padding-left: 6px;
     }
+    .navbar-toggler {
+      &.navbar-toggler-right {
+        margin-top: 5px;
+      }
+    }
   }
 }
 @include media-breakpoint-down(sm) {

@@ -44,6 +44,7 @@
 		.d-flex {
 			a {
 				font-size: 16px;
+				font-weight: 600;
 				line-height: 20px;
 				color: $gray-darkish;
 				padding-bottom: 5px;
@@ -104,10 +105,81 @@
 			}
 			&__cta {
 				width: 100% !important;
+				font-size: 16px;
+				font-weight: 600;
+				color: $gray;
 			}
 		}
 	}
 	.free-trial-section {
 		padding: 100px 0;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.integrations {
+	 	&__subnav {
+	 		margin-top: 80px;
+	 	}
+	 	&__cardlist {
+	 		max-width: 680px;
+	 		margin: 40px auto;
+	 	}
+	}
+}
+
+@media(max-width: 700px) {
+	.integrations {
+	 	&__subnav {
+	 		max-width: 400px;
+	 		width: 100%;
+	 		margin: 60px auto 0;
+	 	}
+	 	&__cardlist {
+	 		max-width: 500px;
+	 		width: 100%;
+	 		margin: 40px auto;
+	 		.card {
+	 			width: 100%;
+	 		}
+	 	}
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	.integrations {
+		&__hero {
+			.display-3 {
+				max-width: 340px !important;
+				font-size: 32px;
+				line-height: 39px;
+			}
+			&__lead {
+				margin-bottom: 32px;
+				font-size: 16px;
+			}
+		}
+	 	&__subnav {
+	 		width: 210px;
+	 		margin: 60px auto 0;
+
+	 		a:nth-child(1) {
+	 			margin-left: 35px;
+	 			margin-bottom: 20px;
+	 		}
+	 		a:nth-child(2) {
+	 			margin-right: 40px;
+	 			margin-bottom: 20px;
+	 		}
+	 	}
+	 	&__cardlist {
+	 		max-width: 500px;
+	 		width: 100%;
+	 		margin: 40px auto;
+	 		.card {
+	 			width: 100%;
+	 			margin-bottom: 25px;
+	 		}
+	 	}
 	}
 }

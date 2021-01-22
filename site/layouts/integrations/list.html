@@ -38,9 +38,13 @@
                   {{.description}}
                 </p>
                 <div class="card__cta">
+                  {{ if ne .ctaLink "" }}
                   <a class="cta-link" href="{{.ctaLink}}">
                     {{.service}} integration
                   </a>
+                  {{ else }}
+                    Doc is coming soon
+                  {{ end }}
                 </div>
               </div>
             {{ end }}
@@ -64,9 +68,13 @@
                   {{.description}}
                 </p>
                 <div class="card__cta">
+                  {{ if ne .ctaLink "" }}
                   <a class="cta-link" href="{{.ctaLink}}">
                     {{.service}} integration
                   </a>
+                  {{ else }}
+                    Doc is coming soon
+                  {{ end }}
                 </div>
               </div>
             {{ end }}
@@ -90,9 +98,13 @@
                   {{.description}}
                 </p>
                 <div class="card__cta">
+                  {{ if ne .ctaLink "" }}
                   <a class="cta-link" href="{{.ctaLink}}">
                     {{.service}} integration
                   </a>
+                  {{ else }}
+                    Doc is coming soon
+                  {{ end }}
                 </div>
               </div>
             {{ end }}
@@ -116,9 +128,13 @@
                   {{.description}}
                 </p>
                 <div class="card__cta">
+                  {{ if ne .ctaLink "" }}
                   <a class="cta-link" href="{{.ctaLink}}">
                     {{.service}} integration
                   </a>
+                  {{ else }}
+                    Doc is coming soon
+                  {{ end }}
                 </div>
               </div>
             {{ end }}
