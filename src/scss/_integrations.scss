@@ -14,21 +14,9 @@
 			width: 100%;
 			max-width: 700px;
 			margin: auto;
-			margin-bottom: 42px;
+			margin-bottom: 40px;
 
 			font-size: 18px;
-		}
-
-		.cta-link {
-			font-size: 20px;
-			line-height: 20px;
-			font-weight: 600;
-
-			&:after {
-				width: 7px;
-				height: 7px;
-				top: -2px;
-			}
 		}
 	}
 	.d-flex {
@@ -39,7 +27,7 @@
 	&__subnav {
 		width: 100%;
 		max-width: 480px;
-		margin: 140px auto 10px;
+		margin: 80px auto 10px;
 
 		.d-flex {
 			a {
@@ -134,7 +122,6 @@
 	 	&__subnav {
 	 		max-width: 400px;
 	 		width: 100%;
-	 		margin: 60px auto 0;
 	 	}
 	 	&__cardlist {
 	 		max-width: 500px;
@@ -162,7 +149,7 @@
 		}
 	 	&__subnav {
 	 		width: 210px;
-	 		margin: 60px auto 0;
+	 		margin: 0 auto;
 
 	 		a:nth-child(1) {
 	 			margin-left: 35px;
