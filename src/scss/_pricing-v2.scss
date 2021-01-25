@@ -39,6 +39,33 @@
     }
   }
 
+  &__spreadsheet {
+    max-width: 412px;
+    margin: 42px auto 0;
+    border: 1px solid $gray-light;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      background: $gray-lightest;
+    }
+
+    a {
+      font-size: 12px;
+      line-height: 20px;
+      color: $black;
+      text-decoration: none;
+      text-align: left;
+      padding: 15px;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+    
+  }
+
   &__card {
     border-radius: 5px;
     display: flex;
@@ -489,6 +516,13 @@
       }
       .d-flex:nth-child(3) {
         margin-left: 15vw;
+      }
+    }
+    &__spreadsheet {
+      a {
+        img {
+          margin-top: 3px;
+        }
       }
     }
   }
