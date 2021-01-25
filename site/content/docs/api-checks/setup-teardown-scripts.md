@@ -83,8 +83,8 @@ const CryptoJS = require('crypto-js')
 const moment = require('moment')
 
 // get keys stored in environment variables
-const privateKey = process.env.PRIVATE_KEY
-const publicKey = process.env.PUBLIC_KEY
+const privateKey = environment['PRIVATE_KEY']
+const publicKey = environment['PUBLIC_KEY']
 
 // collect the fields used in signing the request
 const method = request.method
@@ -100,9 +100,9 @@ const signature = [method, contentMd5, contentType, timestamp].join(',\n')
 const encryptedSignature = publicKey + ':' + CryptoJS.HmacSHA1(signature, privateKey).toString(CryptoJS.enc.Base64)
 
 // set or update the results as environment variables, to be used in the HTTP request.
-process.env.TIMESTAMP = timestamp
-process.env.ENCRYPTED_SIGNATURE = encryptedSignature
-process.env.CONTENT_TYPE = contentType
+environment['TIMESTAMP'] = timestamp
+environment['ENCRYPTED_SIGNATURE'] = encryptedSignature
+environment['CONTENT_TYPE'] = contentType
 ```
 
 ### Sign an AWS API request
@@ -122,8 +122,8 @@ const options = {
 
 // set up AWS credentials
 const credentials = {
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID
+  secretAccessKey: environment['AWS_SECRET_ACCESS_KEY'],
+  accessKeyId: environment['AWS_ACCESS_KEY_ID']
 }
 
 // use the aws4 library to sign the request
@@ -131,7 +131,7 @@ const signature = aws4.sign(options, credentials)
 
 // fetch the data and store in an environment variable
 const { data } = await axios.get(url, { headers: signature.headers })
-process.env.AWS_V4_RESULT = data
+environment['AWS_V4_RESULT'] = data
 ```
 
 ### fetch an OAuth2 access token using the `client_credentials` grant
@@ -145,7 +145,7 @@ const requestPromise = require('request-promise')
 const btoa = require('btoa')
 
 // grab the necessary credentials set up earlier in your environment variables.
-const { ISSUER, TEST_CLIENT_ID, TEST_CLIENT_SECRET, DEFAULT_SCOPE } = process.env
+const { ISSUER, TEST_CLIENT_ID, TEST_CLIENT_SECRET, DEFAULT_SCOPE } = environment
 
 // assemble a token 
 const token = btoa(`${TEST_CLIENT_ID}:${TEST_CLIENT_SECRET}`)
@@ -179,7 +179,7 @@ provide the "password" grant type. We actually use this one ourselves for monito
 const requestPromise = require('request-promise')
 
 // grab the necessary credentials set up earlier in your environment variables.
-const { ISSUER, USERNAME, PASSWORD, CLIENT_ID, CLIENT_SECRET, AUDIENCE } = process.env
+const { ISSUER, USERNAME, PASSWORD, CLIENT_ID, CLIENT_SECRET, AUDIENCE } = environment
  
 
 // fetch an access token
@@ -207,7 +207,7 @@ request.headers['Authorization'] = `Bearer ${access_token}`
 const jwt = require('jsonwebtoken');
 
 // grab the secret from our environment variables
-const secret = process.env.SECRET
+const secret = environment.SECRET
 
 // define a helper function to sign the token
 const getToken = () => {
@@ -264,8 +264,8 @@ const path = '/checks/' + createdResource.id
 
 // set the correct auth headers
 const headers = {
-  'Authorization': 'Bearer ' + process.env.API_BEARER,
-  'X-Checkly-Account': process.env.CHECKLY_ACCOUNT_ID
+  'Authorization': 'Bearer ' + environment['API_BEARER'],
+  'X-Checkly-Account': environment['CHECKLY_ACCOUNT_ID']
 }
 
 // delete the just created resource using the axios HTTP client
@@ -302,28 +302,30 @@ Inside each script, you have access to certain data structures of the API check 
 
 ### Environment
 
-You have access to all environment variables configured in the variables section on the account page. They are available under `process.env`.
+You have access to all environment variables configured in the variables section on the account page.
+They are exposed as a regular Javascript object named `environment`. 
 
 You can create, read, update and delete any of the attributes in this object.
+
 
 The current data center location the script is running in is exposed as the AWS region code in the `REGION` constant, 
 i.e. `eu-west-1` or `us-east-1`
 
 ```javascript
 // read values and use them for further processing
-const myValue = process.env.MY_KEY
+const myValue = environment.['MY_KEY']
 
 // write values
-process.env.MY_KEY = myValue + 10
+environment['MY_KEY'] = myValue + 10
 
 // add a new key/value pair
-process.env.NEW_KEY = 'new value'
+environment['NEW_KEY'] = 'new value'
 
 // remove a key
-delete process.env.SOME_OTHER_KEY
+delete environment['SOME_OTHER_KEY']
 
 // read the current region
-const region = process.env.REGION
+const region = environment['REGION']
 ```
 
 In setup scripts, the modified environment object is used for the subsequent HTTP request. In teardown
