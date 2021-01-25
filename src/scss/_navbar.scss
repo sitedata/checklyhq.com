@@ -1,10 +1,14 @@
-.navbar-home {
-  background-color: $ash;
-}
+
 .navbar {
   min-height: 4rem;
   transition: all .5s;
   z-index: 9999;
+  background: $white;
+
+  &.navbar-home {
+    background-color: $ash;
+  }
+
   .callout {
     font-size: 13px;
     font-weight: 400;
@@ -91,6 +95,11 @@
       width: 100%;
       padding-right: 6px;
       padding-left: 6px;
+    }
+    .navbar-toggler {
+      &.navbar-toggler-right {
+        margin-top: 5px;
+      }
     }
   }
 }

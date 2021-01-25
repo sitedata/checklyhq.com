@@ -1,0 +1,173 @@
+@import 'variables.scss';
+.integrations {
+	&__hero {
+		.display-3 {
+			width: 100%;
+			max-width: 630px;
+			margin: auto;
+			margin-bottom: 20px;
+			line-height: 120%;
+			letter-spacing: -0.04em;
+		}
+
+		&__lead {
+			width: 100%;
+			max-width: 700px;
+			margin: auto;
+			margin-bottom: 40px;
+
+			font-size: 18px;
+		}
+	}
+	.d-flex {
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__subnav {
+		width: 100%;
+		max-width: 480px;
+		margin: 80px auto 10px;
+
+		.d-flex {
+			a {
+				font-size: 16px;
+				font-weight: 600;
+				line-height: 20px;
+				color: $gray-darkish;
+				padding-bottom: 5px;
+				border: 0;
+				border-bottom: 1px solid $gray-darkish;
+				border-style: dashed;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	&__cardlist {
+		margin-top: 30px;
+
+		.list-title {
+			font-size: 20px;
+			line-height: 30px;
+			letter-spacing: 0.3px;
+			margin-bottom: 10px;
+		}
+
+		.hidden {
+			opacity: 0;
+			z-index: -1;
+			height: 0 !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		.card {
+			width: 320px;
+			padding: 24px;
+			margin-bottom: 40px;
+
+			border: 1px solid $gray-light;
+			border-radius: 5px;
+			box-sizing: border-box;
+
+			&:hover {
+				background: $gray-lightest;
+				border: 1px solid $blue;
+			}
+
+			&__img {
+				height: 64px;
+			}
+
+			&__title {
+				margin-bottom: 8px;
+
+				font-size: 16px;
+				line-height: 24px;
+			}
+			&__description {
+				margin-bottom: 22px;
+			}
+			&__cta {
+				width: 100% !important;
+				font-size: 16px;
+				font-weight: 600;
+				color: $gray;
+                margin-top: auto;
+			}
+		}
+	}
+	.free-trial-section {
+		padding: 100px 0;
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.integrations {
+	 	&__subnav {
+	 		margin-top: 80px;
+	 	}
+	 	&__cardlist {
+	 		max-width: 680px;
+	 		margin: 40px auto;
+	 	}
+	}
+}
+
+@media(max-width: 700px) {
+	.integrations {
+	 	&__subnav {
+	 		max-width: 400px;
+	 		width: 100%;
+	 	}
+	 	&__cardlist {
+	 		max-width: 500px;
+	 		width: 100%;
+	 		margin: 40px auto;
+	 		.card {
+	 			width: 100%;
+	 		}
+	 	}
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	.integrations {
+		&__hero {
+			.display-3 {
+				max-width: 340px !important;
+				font-size: 32px;
+				line-height: 39px;
+			}
+			&__lead {
+				margin-bottom: 32px;
+				font-size: 16px;
+			}
+		}
+	 	&__subnav {
+	 		width: 210px;
+	 		margin: 0 auto;
+
+	 		a:nth-child(1) {
+	 			margin-left: 35px;
+	 			margin-bottom: 20px;
+	 		}
+	 		a:nth-child(2) {
+	 			margin-right: 40px;
+	 			margin-bottom: 20px;
+	 		}
+	 	}
+	 	&__cardlist {
+	 		max-width: 500px;
+	 		width: 100%;
+	 		margin: 40px auto;
+	 		.card {
+	 			width: 100%;
+	 			margin-bottom: 25px;
+	 		}
+	 	}
+	}
+}
