@@ -24,5 +24,25 @@
     padding: 1.5rem 0;
     border-top: 1px solid $gray-light;
     color: $gray-light;
+
+    .github {
+      margin-right: 15px;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .footer {
+    .footer-bottom {
+      .col-12 {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .float-right {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 }
