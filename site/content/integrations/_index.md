@@ -93,7 +93,7 @@ triggers:
     icon: "/integrations/triggers/github@2x.png"
     iconWidth: 40
     iconHeight: 40
-    ctaLink: "/docs/integrations/github/"
+    ctaLink: "/docs/cicd/github/"
     description: >-
       Run your checks right after a deploy and get a detailed report directly in your GitHub pull request.
 frameworks:
