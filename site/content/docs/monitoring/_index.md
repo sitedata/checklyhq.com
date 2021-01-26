@@ -12,13 +12,16 @@ Checkly runs your API & browser checks every x minutes, based on an interval you
 We have different minimum intervals for each check type:
 
 - API checks can be scheduled to run **every 1 minute**.
-- Browser checks can be scheduled to run **every 10 minutes**.
+- Browser checks can be scheduled to run **every 5 minutes**.
 
-You can select one or more data center locations to run your check from. We advise to **always select at least 2 locations**.
-There are two reason for this:
+You can select one or more data center locations to run your checks from. We advise to **always select at least 2 locations**.
+There are two reasons for this:
 
 1. Redundancy: we might have an issue in one location, but not the other. 
 2. Double checking: if your check fails and you have "double check" enabled we will retry the check from the other location.
+
+> Note that **we run checks sequentially**, not in parallel. For example, a 1 minute API check, with data center locations
+> Paris and Frankfurt selected, will first run in Paris and 1 minute in later in Frankfurt.
 
 A picture is a thousand words:
 
