@@ -71,7 +71,7 @@ alerting:
     icon: "/integrations/alerting/spike@2x.png"
     iconWidth: 40
     iconHeight: 40
-    ctaLink: ""
+    ctaLink: "/docs/integrations/spike/"
     description: >-
         Open and close incidents automatically in Spike.sh for as many teams as you need.
   - service: Webhooks
