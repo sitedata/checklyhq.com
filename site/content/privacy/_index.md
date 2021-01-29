@@ -23,8 +23,10 @@ activities may take place in the United States.
 - We will not sell your data to anyone.
 - We will send you some emails regarding product updates and such.
 - If you log in with a third party provider (Google, GitHub etc.) we will read some data from that account.
-- We use services like Intercom to chat with you and help you with support and sales related questions.
-- We use services like Google Analytics and Heap to see how you interact with the product. You can opt out of both.
+- We use Intercom to chat with you and help you with support and sales related questions.
+- We use Google Analytics and Plausible to see how you interact with website. You can opt out of both Google Analytics,
+  Plausible does not collect any personal information.
+- We use Segment and Mixpanel so analyse how you use our product after signing up.
 - We use 3rd party providers like AWS and Heroku to process and store our data.
 
 ## 1. Information Collection and Use
@@ -101,6 +103,13 @@ We use Intercom for customer support & product announcements either through emai
 
 ### Microsoft Clarity
 We use Microsoft Clarity to give us insights into how customers use our application and where we could improve it.
+
+### Segment
+We use Segment to collect basic information on how our product is used and where we can optimize.
+
+### Mixpanel
+We use Mixpanel as the destination for our Segment integration. It helps us see what features are doing well and where
+we can make the product better.
 
 
 ## 7. Third Parties
