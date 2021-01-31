@@ -1,5 +1,4 @@
 /* eslint-env jquery */
-
 /**
  * TRACKING
  */
@@ -55,6 +54,81 @@ $(document).ready(() => {
   }
 
 })
+
+/**
+*get headlessdev posts
+*/
+
+$(document).ready(() => {
+  if($('div').hasClass('opensource')){
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function() {
+      var x2js = new X2JS();
+      const  data = x2js.xml2json(xhr.responseXML.documentElement);
+      var titleId = '';
+      var descId = '';
+      var linkId = '';
+      console.log(data.channel.item);
+      data.channel.item.forEach(function(node, i) {
+        if (i < 6) {
+          titleId ='#card-'+(i+1)+'-title';
+          descId = '#card-'+(i+1)+'-description';
+          linkId = '#card-'+(i+1)+'-link';
+          $(titleId).text(node.title);
+          $(descId).text(node.description);
+          $(linkId).attr('href', node.link);
+        }
+      })
+    }
+
+    xhr.open("GET", "https://theheadless.dev/rss.xml");
+    xhr.responseType = "document";
+    xhr.send();
+
+    fetch("https://api.github.com/repos/checkly/headless-recorder")
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (res) {
+        let stars = ''
+        if (res.stargazers_count > 1000) {
+          stars = (res.stargazers_count/1000).toFixed(1) + "k"
+        } else {
+          stars = res.stargazers_count
+        }
+        $('#headless-recorder').text(stars);
+      })
+    fetch("https://api.github.com/repos/checkly/theheadless.dev")
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (res) {
+        let stars = ''
+        if (res.stargazers_count > 1000) {
+          stars = (res.stargazers_count/1000).toFixed(1) + "k"
+        } else {
+          stars = res.stargazers_count
+        }
+        $('#theheadless-dev').text(stars);
+      })
+    fetch("https://api.github.com/repos/checkly/terraform-provider-checkly")
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (res) {
+        let stars = ''
+        if (res.stargazers_count > 1000) {
+          stars = (res.stargazers_count/1000).toFixed(1) + "k"
+        } else {
+          stars = res.stargazers_count
+        }
+        $('#terraform-provider').text(stars);
+      })
+    
+  }
+})
+
 
 /**
  * START Pricing
