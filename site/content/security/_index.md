@@ -1,7 +1,7 @@
 ---
 title: Security, Privacy and Compliance FAQ  
 ---
-# Security, Privacy and Compliance
+# FAQ - Security, Privacy and Compliance
 
 ## Checkly
 Checkly is the API & E2E monitoring platform for the modern application stack. Checkly monitors the correctness, performance, and uptime of APIs and web applications via synthetic monitoring mechanisms.
@@ -23,6 +23,3 @@ In short, Checkly:
 
 ## Security Response
 We operate a white hat program that encourages developers to investigate and collaborate with Checkly on security vulnerabilities. Please find more here: https://www.checklyhq.com/security/security-response/.
-
-## FAQ
-In the FAQ section, we want to answer the most common questions around Checkly's security and data protection approach. Please reach out to support@checklyhq.com if you have any questions.
