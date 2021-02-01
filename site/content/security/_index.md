@@ -4,7 +4,7 @@ title: Security, Privacy and Compliance FAQ
 # FAQ - Security, Privacy and Compliance
 
 ## Checkly
-Checkly is the API & E2E monitoring platform for the modern application stack. Checkly monitors the correctness, performance, and uptime of APIs and web applications via synthetic monitoring mechanisms.
+Checkly is the API & E2E monitoring platform for developers. Checkly monitors the correctness, performance, and uptime of APIs and web applications via synthetic monitoring mechanisms.
 
 Being a Software as a Service, it operates as an external agent from the public internet with no need for installation within or privileged access to the user's network.
 
