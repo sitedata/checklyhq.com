@@ -1,28 +1,28 @@
 ---
-title: Security response 
+title: Security, Privacy and Compliance FAQ  
 ---
-# 🔑 Checkly security response
+# Security, Privacy and Compliance
 
-## Help us stay secure
-We want to make Checkly as secure as possible. We take measures to not store any PII if possible. However, we are human
-and will make mistakes so your input and feedback on our security is always appreciated.
+## Checkly
+Checkly is the API & E2E monitoring platform for the modern application stack. Checkly monitors the correctness, performance, and uptime of APIs and web applications via synthetic monitoring mechanisms.
 
-## Reporting security problems
-Send urgent reports directly to info@checklyhq.com. We’ll get back to you ASAP, usually within 24 hours. 
-Please follow up or ping us on Twitter [@checklyHQ](https://twitter.com/checklyHQ) if you don’t hear back. For requests that aren’t urgent or sensitive: submit a 
-support request.
+Being a Software as a Service, it operates as an external agent from the public internet with no need for installation within or privileged access to the user's network.
 
-## Disclosing security issues
-We work with security researchers and pen testers to keep up with the state-of-the-art in web security. If you discovered a
-security flaw that might impact our customer and / or our products, please let us know. This is what we'll do:
+Checkly can run two types of monitoring checks:
 
-- We’ll acknowledge your report and keep you updated on its status.
-- We’ll investigate the issue and determine its impact. We won’t disclose issues until our investigation is finished.
-- Once the issue is resolved, we’ll post a security update along with thanks and credit for the discovery.
+1. API checks, which consist of one or more HTTP requests to a user-defined API endpoint
+2. Browser checks, which run a series of user-defined interactions on a web page through a headless browser.
 
-## Thanks for helping small companies stay secure
+Data such as response logs, timings, screenshots, and other similar artifacts are then processed and displayed on Checkly.
 
-- [Faizan Ahmed Kahn](https://www.facebook.com/fizan.ahmed.3998)
-- [Max Schmitt](https://twitter.com/maxibanki)
-- [Rafael Souza](https://www.linkedin.com/in/rafaelsilveiradesouza/)
+In short, Checkly:
 
+- Simulates browser click flows and API requests like a real end-user or connected services.
+- Has no access to the monitored application's source code.
+- Only mock or test data should be used to run the tests.
+
+## Security Response
+We operate a white hat program that encourages developers to investigate and collaborate with Checkly on security vulnerabilities. Please find more here: https://www.checklyhq.com/security/security-response/.
+
+## FAQ
+In the FAQ section, we want to answer the most common questions around Checkly's security and data protection approach. Please reach out to support@checklyhq.com if you have any questions.
