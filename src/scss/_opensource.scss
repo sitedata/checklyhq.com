@@ -82,10 +82,19 @@
 	  border-radius: 5px;
 	  
 	  .card-image {
+	    position: relative;
 	  	width: 100%;
-	  	height: auto;
-	  	object-fit: cover;
+	  	height: 200px;
 	  	margin-bottom: 17px;
+	  	background-image: url('../opensource/image-background-pattern.png');
+	  	background-size: 80px;
+
+	  	img {
+	  	  position: absolute;
+	  		top: 50%;
+	  		left: 50%;
+	  		transform: translate(-50%, -50%);
+	  	}
 	  }
 
 	  h5 {
