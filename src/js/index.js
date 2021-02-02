@@ -69,7 +69,6 @@ $(document).ready(() => {
       var titleId = '';
       var descId = '';
       var linkId = '';
-      console.log(data.channel.item);
       data.channel.item.forEach(function(node, i) {
         if (i < 6) {
           titleId ='#card-'+(i+1)+'-title';

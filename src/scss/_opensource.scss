@@ -49,7 +49,7 @@
 		background: $ash;
 
 		p {
-			max-width: 480px;
+			max-width: 580px;
 			width: 100%;
 			margin: 0 auto 20px;
 			text-align: center;
@@ -62,10 +62,8 @@
 		.section-header {
 		  margin-bottom: 7px;
 
-		  span {
-		  	background: linear-gradient(270deg, #FF0000 -0.64%, #FF619A 100.24%);
-		  	-webkit-background-clip: text;
-		  	-webkit-text-fill-color: transparent;
+		  img {
+		    vertical-align: unset;
 		  }
 		}
 
