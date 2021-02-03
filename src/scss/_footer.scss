@@ -1,18 +1,23 @@
 .footer {
-  background-color: $black;
+  background-color: $gray-lightest;
   color: $white;
   .footer-top {
-    padding: 4 * $spacer 0;
+    padding: 3.75 * $spacer 0 0;
     h6 {
-      color: $ash;
+      color: $black;
+      margin-bottom: 1.25 * $spacer;
     }
     ul {
       list-style-type: none;
       padding-left: 0;
       margin-bottom: 0;
+
+      li {
+        margin-bottom: 10px;
+      }
     }
     a {
-      color: $gray-light;
+      color: $gray-darkish;
     }
     input {
       background-color: $white;
@@ -20,11 +25,25 @@
     }
   }
 
-  .footer-bottom {
-    padding: 1.5rem 0;
+  .footer-divider {
+    margin: 3.125 * $spacer 0 2.5 * $spacer;
+    height: 1px;
+    width: 100%;
     border-top: 1px solid $gray-light;
-    color: $gray-light;
+  }
 
+  .footer-bottom {
+    color: $gray-darkish;
+    padding-bottom: 3.75 * $spacer;
+
+    .flex-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      margin-bottom: 22px;
+    }
     .github {
       margin-right: 15px;
     }
