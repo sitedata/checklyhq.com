@@ -1,5 +1,6 @@
 .footer {
   background-color: $gray-lightest;
+  border-top: 1px solid $gray-light;
   color: $white;
   .footer-top {
     padding: 3.75 * $spacer 0 0;
@@ -78,6 +79,9 @@
           margin-right: 8px;
           margin-top: -3px;
           font-size: 10px;
+        }
+        &:hover {
+          cursor: pointer;
         }
       }
       .rotate {
