@@ -196,11 +196,9 @@ $(document).ready(() => {
 
     menu_header.click(() => {
       if ($(menu_id).attr('class') === 'desktop-show') {
-        $(menu_id).show()
         $(menu_id).addClass('show')
         $(menu_header_id).addClass('rotate')
       } else {
-        $(menu_id).hide()
         $(menu_id).removeClass('show')
         $(menu_header_id).removeClass('rotate')
       }
