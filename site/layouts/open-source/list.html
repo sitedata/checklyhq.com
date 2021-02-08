@@ -1,0 +1,132 @@
+{{ define "main" }}
+  <div class="main py-5">
+    <div class="opensource">
+    	<section class="opensource__hero">
+      	<div class="container">
+      		<h1 class="display-3">Open Source</h1>
+      		<p class="opensource__hero__lead">
+      			Checkly's foundation is Open Source. We are not only using but building and supporting Open Source. To grow the OSS and headless automation community even further, give back and allow developers to keep doing incredible things.  🚀
+      		</p>
+      		<div class="cta-wraps">
+      			<a class="cta-link" href="https://github.com/checkly" target="_blank" rel="noopener">
+              <img src="/images/arrow-up-right.svg" alt="arrow up right" width="8" height="8" />
+              Get involved on GitHub
+            </a>
+      		</div>
+      	</div>
+      </section>
+      <section class="opensource__initiatives">
+      	<div class="container">
+      		<h2 class="section-header">Our Open Source initiatives</h2>
+      		<div class="d-flex">
+      			<div class="card">
+              <div class="card-image">
+      				  <img src="/opensource/headless_recorder_logo.svg" alt="headless recorder logo" width="92" height="92" />
+              </div>
+      				<h5>
+                Headless recorder
+                <span>
+                  <img src="/images/github-star.svg" alt="github start" width="16" height="15" />
+                </span>
+                <span id="headless-recorder"></span>
+              </h5>
+      				<p>
+      					Headless recorder is a Chrome extension that records your browser interactions
+      				</p>
+      				<div class="cta-wraps">
+      					<a class="cta-link" href="https://chrome.google.com/webstore/detail/headless-recorder/djeegiggegleadkkbgopoonhjimgehda?hl=en" target="_blank" rel="noopener">
+		              <img src="/images/arrow-download.svg" alt="arrow download" width="10" height="14" />
+		              Get Headless recorder
+		            </a>
+		            <a class="cta-link" href="https://github.com/checkly/headless-recorder" target="_blank" rel="noopener">
+		              See the code
+		            </a>
+      				</div>
+      			</div>
+      			<div class="card">
+              <div class="card-image">
+      				  <img src="/opensource/headlessdev_logo.svg" alt="headlessdev logo" width="69" height="92" />
+              </div>
+      				<h5>
+                theheadless.dev
+                <span>
+                  <img src="/images/github-star.svg" alt="github start" width="16" height="15" />
+                </span>
+                <span id="theheadless-dev"></span>
+              </h5>
+      				<p>Community driven knowledge base for learning headless browser automation</p>
+      				<div class="cta-wraps">
+      					<a class="cta-link" href="https://theheadless.dev" target="_blank" rel="noopener">
+		              <img src="/images/arrow-download.svg" alt="arrow download" width="10" height="14" />
+		              Visit theheadless.dev
+		            </a>
+		            <a class="cta-link" href="https://github.com/checkly/theheadless.dev" target="_blank" rel="noopener">
+		              See the code
+		            </a>
+      				</div>
+      			</div>
+      			<div class="card">
+              <div class="card-image">
+      				  <img src="/opensource/terraform_logo.svg" alt="terraform logo" width="101" height="92" />
+              </div>
+      				<h5>
+                Terraform Provider
+                <span>
+                  <img src="/images/github-star.svg" alt="github start" width="16" height="15" />
+                </span>
+                <span id="terraform-provider"></span>
+              </h5>
+      				<p>The Terraform provider enables users to manage Checkly resources</p>
+      				<div class="cta-wraps">
+      					<a class="cta-link" href="https://registry.terraform.io/providers/checkly/checkly/latest/docs" target="_blank" rel="noopener">
+		              <img src="/images/arrow-visit.svg" alt="arrow visit" width="13" height="13" />
+		              Get Terraform provider
+		            </a>
+		            <a class="cta-link" href="https://github.com/checkly/terraform-provider-checkly" target="_blank" rel="noopener">
+		              See the code
+		            </a>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </section>
+      <section class="opensource__mmr">
+      	<div class="container text-center">
+      		<h2 class="section-header">1% goes to Open Source</h2>
+      		<p>
+      			We love Open Source and aim to donate 1% of our revenue to non-corporate backed Open Source maintainers building incredible things.
+      		</p>
+      		<a href="https://github.com/orgs/checkly/sponsoring" target="_blank" rel="noopener">
+      			Check who are we supporting
+      		</a>
+      	</div>
+      </section>
+      <section class="opensource__posts">
+      	<div class="container">
+      		<h2 class="section-header">
+      		  Recent posts from
+            <a href="https://theheadless.dev" target="_blank" rel="noopener">
+		          <img src="/opensource/theheadless-dev.svg" alt="theheadless.dev logo" width="271" height="23" />
+            </a>
+      		</h2>
+      		<p class="lead">Puppeteer and Playwright tips, tricks and in-depth guides from the trenches</p>
+          <div class="d-flex">
+          {{ range $index := seq 6 }}
+            <div class="card">
+              <h6 id="card-{{$index}}-title"></h6>
+              <p id="card-{{$index}}-description"></p>
+              <div class="cta-wraps">
+                <a class="cta-link" id="card-{{$index}}-link" target="_blank" rel="noopener">
+                  <img src="/images/arrow-up-right.svg" alt="arrow up right" width="8" height="8" />
+                  Read article
+                </a>
+            </div>
+            </div>
+          {{ end}}
+          </div>
+      	</div>
+      </section>
+    </div>
+    {{ partial "start-for-free-row" . }}
+  </div>
+{{end}}
