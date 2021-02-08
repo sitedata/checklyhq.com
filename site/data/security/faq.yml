@@ -46,7 +46,7 @@ Additionally:
 
 3. Other check result data is stored redundantly on S3 and removed after 30 days.
 
-4. The above measures allow Checkly to fall back in any major AWS region with five business days."
+4. The above measures allow Checkly to fall back in any major AWS region."
   - q: Is the secure isolation of customer data guaranteed?
     a: Customer data is logically split in the database per account.
   - q: How scalable is Checkly's infrastructure?
