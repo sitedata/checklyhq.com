@@ -2,29 +2,35 @@
 <div class="d-flex container-fluid docs">
   {{ partial "docs-menu" .}}
   <div class="docs-page">
-    <article class="markdown">
-      <h1>{{ .Title }}</h1>
+    <div class="d-flex">
+      <article class="markdown">
+        <form class="form-inline">
+          <img src="/docs/images/icons/search@2x.png" alt="search" with="16" height="16" />
+          <input class="form-control py-2" id="search" type="search" placeholder="Type to search the docs..."/>
+        </form>
+        <h1>{{ .Title }}</h1>
+        {{ if .Page.TableOfContents }}
+        <div class="docs-toc-mobile mb-5 pt-3">
+          <div class="docs-toc-header mb-3 pt-3">On this page</div>
+          {{ .Page.TableOfContents }}
+        </div>
+        {{ end }}
+        {{- .Content -}}
+        <hr class="pt-2 mb-2" />
+        {{if .PrevInSection}}
+        <div class="text-right mb-4">
+          <a href="{{.PrevInSection.Permalink}}">Next: {{.PrevInSection.Title }}
+          </a>
+        </div>
+        {{end}}
+      </article>
       {{ if .Page.TableOfContents }}
-      <div class="docs-toc-mobile mb-5 pt-3">
-        <div class="docs-toc-header mb-3 pt-3">On this page</div>
+      <aside class="docs-toc mb-3">
+        <div class="docs-toc-header">On this page</div>
         {{ .Page.TableOfContents }}
-      </div>
+      </aside>
       {{ end }}
-      {{- .Content -}}
-    </article>
-    <hr class="pt-2 mb-2" />
-    {{if .PrevInSection}}
-    <div class="text-right mb-4">
-      <a href="{{.PrevInSection.Permalink}}">Next: {{.PrevInSection.Title }}
-      </a>
     </div>
-    {{end}}
   </div>
-  {{ if .Page.TableOfContents }}
-  <aside class="docs-toc mb-3">
-    <div class="docs-toc-header">On this page</div>
-    {{ .Page.TableOfContents }}
-  </aside>
-  {{ end }}
 </div>
 {{end}}

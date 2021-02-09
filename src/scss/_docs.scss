@@ -1,7 +1,9 @@
 .docs {
-  $top: 5rem;
+  $top: 1rem;
   $menu-width: 15rem;
   $toc-width: 14rem;
+  max-width: 90rem;
+  margin: 0 auto;
 
   .algolia-autocomplete .ds-dropdown-menu {
     width: 500px;
@@ -22,14 +24,13 @@
 
     nav {
       width: $menu-width;
-      padding: 0 1rem 1rem 1rem;
-      bottom: 0;
+      margin: $top 0 $top;
+      padding: 20px;
       overflow-x: hidden;
       overflow-y: auto;
-      margin: 0;
-      margin-top: $top;
-      top: 0;
-      position: fixed;
+      
+      border: 1px solid $gray-light;
+      border-radius: 5px;
       ul {
         list-style: none;
         font-size: 14px;
@@ -49,21 +50,33 @@
     }
 
     &-title {
-      display: inline-block;
+      display: flex;
+      align-items: center;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 14px;
+      line-height: 17px;
+      color: $gray-darkish !important;
       margin-bottom: 5px;
       margin-top: 10px;
+      img {
+        margin-right: 5px;
+      }
       &.active {
-        color: $brand-primary;
+        color: $brand-primary !important;
       }
     }
     &-sub {
       list-style-type: none;
       padding-left: 0;
       margin-bottom: .5rem;
+      display: none;
+
+      &.active {
+        display: block;
+      }
 
       &-item {
+        margin-left: 10px;
         margin-bottom: .2rem;
 
         a {
@@ -97,9 +110,13 @@
     }
 
     .api-reference-link {
-      margin-bottom: 1rem;
+      margin-bottom: 10px;
       display: inline-block;
       color: $gray-dark;
+      padding-bottom: 1rem;
+      width: 100%;
+      border-bottom: 1px solid $gray-light;
+
       &:hover {
         text-decoration: none;
         color: $brand-primary
@@ -115,23 +132,49 @@
 
   &-page {
     min-width: 20rem;
-    max-width: 60rem;
     flex-grow: 1;
-    padding: 1rem 1rem 1rem 1.5rem;
+    padding: 1rem 0 1rem 30px;
     margin-left: 0;
     margin-right: 0;
+
+    .markdown {
+      padding-right: 30px;
+      width: calc(100% - 262px);
+    }
+
+    .form-inline {
+      width: 100%;
+      margin-bottom: 30px;
+      position: relative;
+
+      span {
+        width: 100%;
+      }
+      img {
+        position: absolute;
+        top: 11px;
+        left: 10px;
+      }
+      input {
+       width: 100%;
+       background: none;
+       border: 1px solid $gray-light;
+       padding-left: 30px;
+      }
+    }
   }
 
   &-toc {
     flex: 0 0 $toc-width;
     font-size: .875rem;
     margin-right: auto;
+    width: 232px;
 
     nav {
       width: $toc-width;
       padding: 1rem 0 1rem 0;
       position: fixed;
-      top: $top + 1rem;
+      top: 9 * $top;
       bottom: 0;
       overflow-x: hidden;
       overflow-y: auto
@@ -157,7 +200,7 @@
       color: $gray;
       text-transform: uppercase;
       position: fixed;
-      top: $top;
+      top: 8 * $top;
     }
 
     &-mobile {
@@ -177,6 +220,58 @@
     transition: 0.2s ease-in-out;
     transition-property: transform, margin-left, opacity;
     will-change: transform, margin-left;
+
+    .cards-lits {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 40px;
+
+      .image-wrap {
+        width: 42px;
+        margin-right: 1rem;
+      }
+
+      .text-wrap {
+        width: calc(100% - 58px);
+
+        h3 {
+          margin: 5px 0;
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+
+      .full-width-card {
+        width: 100%;
+        display: flex;
+        justify-content-space: space-between;
+      }
+
+      .two-column-card {
+        width: 47%;
+        display: flex;
+        justify-content-space: space-between;
+      }
+      .three-column-card {
+        width: calc((100% - 50px)/3);
+        display: flex;
+        justify-content-space: space-between;
+        padding: 20px;
+        background: url(/docs/images/icons/pattern@2x.png);
+        border-radius: 6px;
+
+        .text-wrap {
+          width: 100%;
+        }
+      }
+
+    }
   }
 
   @include media-breakpoint-down(md) {

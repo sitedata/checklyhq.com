@@ -1,16 +1,21 @@
 <aside class="docs-menu">
   <nav>
     <a
-        class="api-reference-link"
-        href="/docs/api"
-        target="_blank">API reference
-      <div class="badge badge-accent badge-sm ml-2">beta</div></a>
+      class="api-reference-link"
+      href="/docs/api"
+      target="_blank"
+    >
+      API reference
+    </a>
     <ul class="docs-menu-content">
       {{ $currentPage := . }}
       {{ range .Site.Menus.docs }} {{ if .HasChildren }}
       <li class='docs-menu-item {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}'>
-        <a class='docs-menu-title {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}' href="{{.URL}}">{{.Name}}</a>
-        <ul class="docs-menu-sub">
+        <a class='docs-menu-title {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}' href="{{.URL}}">
+          <img src="{{.Pre}}" width="26" height="26" alt="{{.Name}}" />
+          {{.Name}}
+        </a>
+        <ul class='docs-menu-sub {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}'>
           {{range .Children}} {{ $has := $currentPage.IsMenuCurrent "docs" . }}
           <li class="docs-menu-sub-item {{if $has}}active{{end}}">
             <a href="{{.URL}}">

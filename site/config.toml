@@ -20,57 +20,68 @@ disqusShortname = "checkly"
 [[menu.docs]]
 	name = "Monitoring"
 	url = "/docs/monitoring/"
+	pre="/docs/images/icons/project@2x.png"
 	weight = 10
 
 
 [[menu.docs]]
 	name = "API checks"
 	url = "/docs/api-checks/"
+	pre="/docs/images/icons/api@2x.png"
 	weight = 20
 
 [[menu.docs]]
 	name = "Browser checks"
 	url = "/docs/browser-checks/"
+	pre="/docs/images/icons/chrome@2x.png"
 	weight = 30
 
 [[menu.docs]]
 	name = "Groups"
 	url = "/docs/groups/"
+	pre="/docs/images/icons/file-directory@2x.png"
 	weight = 40
 
 [[menu.docs]]
 	name = "Alerting"
 	url = "/docs/alerting/"
+	pre="/docs/images/icons/bell@2x.png"
 	weight = 50
 
 [[menu.docs]]
 	name = "CI/CD integration"
 	url = "/docs/cicd/"
+	pre="/docs/images/icons/infinity@2x.png"
 	weight = 60
 
 [[menu.docs]]
 	name = "Maintenance windows"
 	url = "/docs/maintenance-windows/"
+	pre="/docs/images/icons/tools@2x.png"
 	weight = 70
 
 [[menu.docs]]
 	name = "Dashboards"
 	url = "/docs/dashboards/"
+	pre="/docs/images/icons/desktop@2x.png"
 	weight = 80
 
 [[menu.docs]]
 	name = "Teams"
 	url = "/docs/teams/"
+	pre="/docs/images/icons/people@2x.png"
 	weight = 90
 
 [[menu.docs]]
 	name = "Integrations"
 	url = "/docs/integrations/"
+	pre="/docs/images/icons/plug@2x.png"
 	weight = 100
 
 [[menu.docs]]
 	name = "Headless Recorder"
 	url = "/docs/headless-recorder/"
+	pre="/docs/images/icons/squirrel@2x.png"
 	weight = 9999
 
 [markup.goldmark.renderer]

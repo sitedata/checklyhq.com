@@ -15,17 +15,11 @@
         <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
         <li class="nav-item"><a class="nav-link" href="/docs">Docs</a></li>
         <li class="nav-item"><a class="nav-link" href="https://blog.checklyhq.com" rel="noopener">Blog</a></li>
-        {{ if eq .Section "docs" }}
-          <form class="form-inline">
-            <input class="form-control py-2" id="search" type="search" placeholder="Search the docs..."/>
-          </form>
-        {{else}}
         <form class="form-inline my-2 my-lg-0 ml-md-3">
           <a class="btn btn-outline-secondary my-2 my-sm-0 mr-3 ml-md-3" id="login-button" href="https://app.checklyhq.com/" rel="noopener">Log in</a>
           <a class="btn btn-outline-secondary my-2 my-sm-0 mr-3 ml-md-3" id="dashboard-button" style="display: none;" href="https://app.checklyhq.com/" rel="noopener">Dashboard<div class="ion-arrow-right-c d-inline ml-2"></div></a>
           <a class="signup-button btn btn-success my-2 my-sm-0" data-signup="data-signup" href="https://app.checklyhq.com/signup" rel="noopener">Start for free</a>
         </form>
-        {{end}}
       </ul>
     </div>
   </div>
