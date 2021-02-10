@@ -6,7 +6,8 @@
   margin: 0 auto;
 
   .algolia-autocomplete .ds-dropdown-menu {
-    width: 500px;
+    width: 100%;
+    max-width: 100%;
     z-index: 99999 !important;
   }
 
@@ -22,12 +23,19 @@
     font-size: 1rem;
     margin-left: auto;
 
+    &-content {
+      max-height: 75vh;
+      overflow-y: auto;
+      margin-left: -6px !important;
+      padding-right: 20px !important;
+    }
+
     nav {
       position: fixed;
       top: 4rem;
       width: $menu-width;
       margin: $top 0 $top;
-      padding: 20px;
+      padding: 20px 0 20px 20px;
       overflow-x: hidden;
       overflow-y: auto;
       
@@ -60,7 +68,6 @@
       color: $gray-darkish !important;
       margin-bottom: 10px;
       margin-top: 10px;
-      margin-left: -6px;
       img {
         margin-right: 5px;
       }
@@ -85,10 +92,11 @@
       }
 
       &-item {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        margin-left: 6px;
 
         a {
-          color: $gray-dark;
+          color: $gray-darkish;
           padding: 0;
         }
         &.active {
@@ -116,9 +124,11 @@
     .api-reference-link {
       margin-bottom: 10px;
       display: inline-block;
+      font-size: 14px;
+      line-height: 16.94px;
       color: $gray-dark;
       padding-bottom: 1rem;
-      width: 100%;
+      width: calc(100% - 20px);
       border-bottom: 1px solid $gray-light;
 
       &:hover {
@@ -189,6 +199,10 @@
       ul {
         border-left: 2px solid $brand-primary;
         padding-left: .5rem;
+
+        li {
+          margin-bottom: 10px;
+        }
       }
       ul > li > ul {
         display: none;
@@ -226,6 +240,10 @@
     transition-property: transform, margin-left, opacity;
     will-change: transform, margin-left;
 
+    h1, h2, h3, h4, h5 {
+      color: $black;
+    }
+
     .cards-list {
       display: flex;
       justify-content: space-between;
@@ -246,7 +264,7 @@
         }
 
         h3 {
-          margin: 5px 0;
+          margin: 2px 0;
           font-size: 20px;
           line-height: 30px;
         }
