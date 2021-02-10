@@ -212,21 +212,18 @@ $(document).ready(() => {
  */
 
 $(document).ready(() => {
-  if($('div').hasClass('docs-menu')){
-    for (var i = 0; i < 11; i++) {
-      const docsMenuTitle_id = '#docs-menu-title-'+i;
-      const docsMenuSub_id = '#docs-menu-'+i+'-sub';
-      var doc_menu_header = $(docsMenuTitle_id);
+      const docs_menu_title_class = '.docs-menu-title'
+      var doc_menu_header = $(docs_menu_title_class);
 
-      doc_menu_header.click(() => {
-        if (doc_menu_header.attr('class') === 'docs-menu-title') {
-          $(docsMenuTitle_id).addClass('active')
-          $(docsMenuSub_id).addClass('sub-display')
+      doc_menu_header.click(function() {
+        var id = $(this).attr('id');
+        var doc_menu_id = '#docs-menu-' + id
+        if ($(this).attr('class') === 'docs-menu-title') {
+          $(this).addClass('active')
+          $(doc_menu_id).addClass('menu-display')
         } else {
-          $(docsMenuTitle_id).removeClass('active')
-          $(docsMenuSub_id).removeClass('sub-display')
+          $(this).removeClass('active')
+          $(doc_menu_id).removeClass('menu-display')
         }
       })
-    }
-  }
 })
