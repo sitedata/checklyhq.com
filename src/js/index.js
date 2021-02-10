@@ -205,3 +205,28 @@ $(document).ready(() => {
     })
   }
 })
+
+
+/**
+ * Docs Menu
+ */
+
+$(document).ready(() => {
+  if($('div').hasClass('docs-menu')){
+    for (var i = 0; i < 11; i++) {
+      const docsMenuTitle_id = '#docs-menu-title-'+i;
+      const docsMenuSub_id = '#docs-menu-'+i+'-sub';
+      var doc_menu_header = $(docsMenuTitle_id);
+
+      doc_menu_header.click(() => {
+        if (doc_menu_header.attr('class') === 'docs-menu-title') {
+          $(docsMenuTitle_id).addClass('active')
+          $(docsMenuSub_id).addClass('sub-display')
+        } else {
+          $(docsMenuTitle_id).removeClass('active')
+          $(docsMenuSub_id).removeClass('sub-display')
+        }
+      })
+    }
+  }
+})

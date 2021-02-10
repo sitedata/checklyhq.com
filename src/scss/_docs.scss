@@ -23,6 +23,8 @@
     margin-left: auto;
 
     nav {
+      position: fixed;
+      top: 4rem;
       width: $menu-width;
       margin: $top 0 $top;
       padding: 20px;
@@ -56,14 +58,21 @@
       font-size: 14px;
       line-height: 17px;
       color: $gray-darkish !important;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       margin-top: 10px;
+      margin-left: -6px;
       img {
         margin-right: 5px;
       }
-      &.active {
-        color: $brand-primary !important;
+      &:hover {
+        cursor: pointer;
       }
+    }
+    .active {
+      color: $gray-dark !important;
+    }
+    .sub-display {
+      display: block;
     }
     &-sub {
       list-style-type: none;
@@ -76,16 +85,11 @@
       }
 
       &-item {
-        margin-left: 10px;
-        margin-bottom: .2rem;
+        margin-bottom: 15px;
 
         a {
           color: $gray-dark;
-          text-decoration: none;
-          padding: .4rem 0;
-          &:hover {
-            color: $brand-primary;
-          }
+          padding: 0;
         }
         &.active {
           a {
@@ -133,13 +137,12 @@
   &-page {
     min-width: 20rem;
     flex-grow: 1;
-    padding: 1rem 0 1rem 30px;
+    padding: 13px 0 1rem 30px;
     margin-left: 0;
     margin-right: 0;
 
     .markdown {
       padding-right: 30px;
-      width: calc(100% - 262px);
     }
 
     .form-inline {
@@ -165,6 +168,7 @@
   }
 
   &-toc {
+    position: relative;
     flex: 0 0 $toc-width;
     font-size: .875rem;
     margin-right: auto;
@@ -197,7 +201,8 @@
     }
 
     &-header {
-      color: $gray;
+      color: $gray-dark;
+      font-weight: 600;
       text-transform: uppercase;
       position: fixed;
       top: 8 * $top;
@@ -221,9 +226,10 @@
     transition-property: transform, margin-left, opacity;
     will-change: transform, margin-left;
 
-    .cards-lits {
+    .cards-list {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       width: 100%;
       margin-top: 40px;
 
@@ -234,6 +240,10 @@
 
       .text-wrap {
         width: calc(100% - 58px);
+
+        h2 {
+          margin: 3px 0;
+        }
 
         h3 {
           margin: 5px 0;
@@ -251,6 +261,7 @@
         width: 100%;
         display: flex;
         justify-content-space: space-between;
+        margin-bottom: 2rem;
       }
 
       .two-column-card {

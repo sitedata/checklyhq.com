@@ -1,4 +1,4 @@
-{{ $title := .Get "title" }} {{ $class := .Get "class" }} {{ $image := .Get "img" }} {{ $description := .Get "description"}}  {{ $link := .Get "link" }}
+{{$header_tag := .Get "headerTag"}} {{ $title := .Get "title" }} {{ $class := .Get "class" }} {{ $image := .Get "img" }} {{ $description := .Get "description"}}  {{ $link := .Get "link" }}
 
 <div class="{{$class}}">
 	{{ if $image }}
@@ -7,7 +7,11 @@
 	</div>
 	{{ end }}
 	<div class="text-wrap">
-		<h3>{{$title}}</h3>
+		{{ if eq $header_tag "h2"}}
+			<h2>{{$title}}</h2>
+		{{ else }}
+			<h3>{{$title}}</h3>
+		{{ end }}
 		<p>{{$description}}</p>
 		<a class="cta-link" href="{{$link}}">Read more</a>
 	</div>

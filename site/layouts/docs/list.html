@@ -24,13 +24,14 @@
         </div>
         {{end}}
       </article>
-      {{ if .Page.TableOfContents }}
-      <aside class="docs-toc mb-3">
-        <div class="docs-toc-header">On this page</div>
-        {{ .Page.TableOfContents }}
-      </aside>
-      {{ end }}
+
     </div>
   </div>
+  {{ if .Page.TableOfContents }}
+  <aside class="docs-toc mb-3">
+    <div class="docs-toc-header">On this page</div>
+    {{ .Page.TableOfContents }}
+  </aside>
+  {{ end }}
 </div>
 {{end}}

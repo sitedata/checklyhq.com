@@ -25,21 +25,50 @@ Proin pulvinar leo scelerisque tellus sodales. Vel commodo praesent ultricies in
 
 Massa, dictum leo nullam in eget risus. Volutpat blandit adipiscing non vitae enim lorem cras habitant. Risus, habitasse amet leo posuere platea pretium cursus diam. Dictum tincidunt orci, turpis lectus cras. Sit vehicula mauris
 
-<div class="cards-lits">
-{{< doc-card class="two-column-card" title="Create API checks"  img="/docs/images/icons/chrome@2x.png" description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam" line="/docs/api-checks" >}}
-{{< doc-card class="two-column-card" title="Create API checks" img="/docs/images/icons/chrome@2x.png" description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam" line="/docs/api-checks" >}}
+<div class="cards-list">
+{{< doc-card 
+	  class="two-column-card"
+	  headerTag="h3"
+	  title="Create API checks"
+	  img="/docs/images/icons/chrome@2x.png" 
+	  description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
+	  link="/docs/api-checks" 
+>}}
+{{< doc-card 
+	  class="two-column-card"
+	  headerTag="h3"
+	  title="Create API checks"
+	  img="/docs/images/icons/api@2x.png" 
+	  description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
+	  link="/docs/api-checks" 
+>}}
 </div>
 
-<div class="cards-lits">
-{{< doc-card class="full-width-card" title="Create API checks" img="/docs/images/icons/chrome@2x.png" description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam" line="/docs/api-checks" >}}
+<div class="cards-list">
+{{< doc-card
+	class="full-width-card"
+	headerTag="h2"
+	title="Create API checks"
+	img="/docs/images/icons/api@2x.png"
+	description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
+	link="/docs/api-checks"
+>}}
+{{< doc-card
+	class="full-width-card"
+	headerTag="h3"
+	title="Create API checks"
+	img="/docs/images/icons/api@2x.png"
+	description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
+	link="/docs/api-checks"
+>}}
 </div>
 
-<div class="cards-lits">
-{{< doc-card class="three-column-card" title="Maintenance windows" description="Sit tellus tincidunt sed blandit elit neque etiam neque eget." line="/docs/api-checks" >}}
+<div class="cards-list">
+{{< doc-card class="three-column-card" title="Maintenance windows" description="Sit tellus tincidunt sed blandit elit neque etiam neque eget." link="/docs/api-checks" >}}
 
-{{< doc-card class="three-column-card" title="Dashboards" description="Diam dui est cursus enim. Morbi eleifend facilisis ligula eu" line="/docs/api-checks" >}}
+{{< doc-card class="three-column-card" title="Dashboards" description="Diam dui est cursus enim. Morbi eleifend facilisis ligula eu" link="/docs/api-checks" >}}
 
-{{< doc-card class="three-column-card" title="Teams" description="Nunc morbi diam dictum pellentesque at consectetur." line="/docs/api-checks" >}}
+{{< doc-card class="three-column-card" title="Teams" description="Nunc morbi diam dictum pellentesque at consectetur." link="/docs/api-checks" >}}
 </div>
 
 ## Featured documentation

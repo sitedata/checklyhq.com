@@ -72,11 +72,17 @@ Lists all configured alert channels and their subscribed checks.
       {
         "id": 0,
         "checkId": "string",
+        "groupId": 0,
         "activated": true
       }
     ],
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "sendRecovery": true,
+    "sendFailure": true,
+    "sendDegraded": true,
+    "sslExpiry": false,
+    "sslExpiryThreshold": 30,
+    "created_at": "2021-02-10T09:52:54Z",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 ```
@@ -86,7 +92,126 @@ Lists all configured alert channels and their subscribed checks.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[AlertChannelsList](#schemaalertchannelslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+
+## Create an alert channel
+
+<a id="opIdpostV1Alertchannels"></a>
+
+> Code samples
+
+```shell
+curl -X POST https://api.checklyhq.com/v1/alert-channels \
+ -H 'Content-Type: application/json' \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`POST /v1/alert-channels`
+
+Creates a new alert channel
+
+> Body parameter
+
+```json
+{
+  "subscriptions": [
+    {
+      "id": 0,
+      "checkId": "string",
+      "groupId": 0,
+      "activated": true
+    }
+  ],
+  "type": "EMAIL",
+  "config": {},
+  "sendRecovery": true,
+  "sendFailure": true,
+  "sendDegraded": true,
+  "sslExpiry": false,
+  "sslExpiryThreshold": 30
+}
+```
+
+<h3 id="create-an-alert-channel-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|body|body|[Model3](#schemamodel3)|none|
+
+> Example responses
+
+> 201 Response
+
+```json
+{
+  "id": 0,
+  "type": "string",
+  "config": {},
+  "subscriptions": [
+    {
+      "id": 0,
+      "checkId": "string",
+      "groupId": 0,
+      "activated": true
+    }
+  ],
+  "sendRecovery": true,
+  "sendFailure": true,
+  "sendDegraded": true,
+  "sslExpiry": false,
+  "sslExpiryThreshold": 30,
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
+}
+```
+
+<h3 id="create-an-alert-channel-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[AlertChannel](#schemaalertchannel)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|402|[Payment Required](https://tools.ietf.org/html/rfc7231#section-6.5.2)|Payment Required|[Model1](#schemamodel1)|
+
+## Delete an alert channel
+
+<a id="opIddeleteV1AlertchannelsId"></a>
+
+> Code samples
+
+```shell
+curl -X DELETE https://api.checklyhq.com/v1/alert-channels/{id} \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`DELETE /v1/alert-channels/{id}`
+
+Permanently removes an alert channel
+
+<h3 id="delete-an-alert-channel-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|id<br><div class="requiredParam">(required)</div>|path|number|none|
+
+> Example responses
+
+> 204 Response
+
+```json
+"string"
+```
+
+<h3 id="delete-an-alert-channel-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|string|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Retrieve an alert channel
 
@@ -124,11 +249,17 @@ Show details of a specific alert channel.
     {
       "id": 0,
       "checkId": "string",
+      "groupId": 0,
       "activated": true
     }
   ],
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "sendRecovery": true,
+  "sendFailure": true,
+  "sendDegraded": true,
+  "sslExpiry": false,
+  "sslExpiryThreshold": 30,
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -137,8 +268,89 @@ Show details of a specific alert channel.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[AlertChannel](#schemaalertchannel)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
+
+## Update an alert channel
+
+<a id="opIdputV1AlertchannelsId"></a>
+
+> Code samples
+
+```shell
+curl -X PUT https://api.checklyhq.com/v1/alert-channels/{id} \
+ -H 'Content-Type: application/json' \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`PUT /v1/alert-channels/{id}`
+
+Update an alert channel
+
+> Body parameter
+
+```json
+{
+  "subscriptions": [
+    {
+      "id": 0,
+      "checkId": "string",
+      "groupId": 0,
+      "activated": true
+    }
+  ],
+  "type": "EMAIL",
+  "config": {},
+  "sendRecovery": true,
+  "sendFailure": true,
+  "sendDegraded": true,
+  "sslExpiry": false,
+  "sslExpiryThreshold": 30
+}
+```
+
+<h3 id="update-an-alert-channel-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|body|body|[Model3](#schemamodel3)|none|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "id": 0,
+  "type": "string",
+  "config": {},
+  "subscriptions": [
+    {
+      "id": 0,
+      "checkId": "string",
+      "groupId": 0,
+      "activated": true
+    }
+  ],
+  "sendRecovery": true,
+  "sendFailure": true,
+  "sendDegraded": true,
+  "sslExpiry": false,
+  "sslExpiryThreshold": 30,
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
+}
+```
+
+<h3 id="update-an-alert-channel-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[AlertChannel](#schemaalertchannel)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|402|[Payment Required](https://tools.ietf.org/html/rfc7231#section-6.5.2)|Payment Required|[Model1](#schemamodel1)|
 
 ## Update the subscriptions of an alert channel
 
@@ -156,14 +368,14 @@ curl -X PUT https://api.checklyhq.com/v1/alert-channels/{id}/subscriptions \
 
 `PUT /v1/alert-channels/{id}/subscriptions`
 
-Update the subscriptions of an alert channel. Use this to add a check to an alert channel so failure and recovery alerts are send out for that check.
+Update the subscriptions of an alert channel. Use this to add a check to an alert channel so failure and recovery alerts are send out for that check. Note: when passing the subscription object, you can only specify a "checkId" or a "groupId, not both.
 
 > Body parameter
 
 ```json
 {
-  "id": 0,
   "checkId": "string",
+  "groupId": 0,
   "activated": true
 }
 ```
@@ -173,7 +385,7 @@ Update the subscriptions of an alert channel. Use this to add a check to an aler
 |Name|In|Type|Description|
 |---|---|---|---|---|
 |id<br><div class="requiredParam">(required)</div>|path|number|none|
-|body|body|[SubscriptionSchema](#schemasubscriptionschema)|none|
+|body|body|[SubscriptionCreateSchema](#schemasubscriptioncreateschema)|none|
 
 > Example responses
 
@@ -183,6 +395,7 @@ Update the subscriptions of an alert channel. Use this to add a check to an aler
 {
   "id": 0,
   "checkId": "string",
+  "groupId": 0,
   "activated": true
 }
 ```
@@ -191,9 +404,9 @@ Update the subscriptions of an alert channel. Use this to add a check to an aler
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[SubscriptionSchema](#schemasubscriptionschema)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[SubscriptionResponseSchema](#schemasubscriptionresponseschema)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-check-groups">Check groups</h1>
 
@@ -272,7 +485,7 @@ Lists all current check groups in your account. The "checks" property is an arra
         "interval": 5
       },
       "sslCertificates": {
-        "enabled": true,
+        "enabled": false,
         "alertThreshold": 30
       }
     },
@@ -286,8 +499,8 @@ Lists all current check groups in your account. The "checks" property is an arra
     "tearDownSnippetId": 0,
     "localSetupScript": "string",
     "localTearDownScript": "string",
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 ```
@@ -297,7 +510,7 @@ Lists all current check groups in your account. The "checks" property is an arra
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckGroupList](#schemacheckgrouplist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Create a check group
 
@@ -355,7 +568,7 @@ Creates a new check group. You can add checks to the group by setting the "group
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -376,7 +589,7 @@ Creates a new check group. You can add checks to the group by setting the "group
 
 |Name|In|Type|Description|
 |---|---|---|---|---|
-|body|body|[Model_5](#schemamodel_5)|none|
+|body|body|[Model7](#schemamodel7)|none|
 
 > Example responses
 
@@ -428,7 +641,7 @@ Creates a new check group. You can add checks to the group by setting the "group
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -442,8 +655,8 @@ Creates a new check group. You can add checks to the group by setting the "group
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -451,9 +664,9 @@ Creates a new check group. You can add checks to the group by setting the "group
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[Model_2](#schemamodel_2)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|402|[Payment Required](https://tools.ietf.org/html/rfc7231#section-6.5.2)|Payment Required|[Model_1](#schemamodel_1)|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[Model4](#schemamodel4)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|402|[Payment Required](https://tools.ietf.org/html/rfc7231#section-6.5.2)|Payment Required|[Model1](#schemamodel1)|
 
 ## Retrieve one check in a specific group with group settings applied
 
@@ -488,7 +701,7 @@ Show details of one check in a specific check group with the group settings appl
   "id": "string",
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -497,20 +710,7 @@ Show details of one check in a specific check group with the group settings appl
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -539,7 +739,7 @@ Show details of one check in a specific check group with the group settings appl
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -581,8 +781,8 @@ Show details of one check in a specific check group with the group settings appl
       }
     ]
   },
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -591,8 +791,8 @@ Show details of one check in a specific check group with the group settings appl
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckGroupCheck](#schemacheckgroupcheck)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Delete a check group.
 
@@ -630,8 +830,8 @@ Permanently removes a check group. You cannot delete a check group if it still c
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|string|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|Conflict|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|Conflict|[Model1](#schemamodel1)|
 
 ## Retrieve a check group
 
@@ -706,7 +906,7 @@ Show details of a specific check group
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -720,8 +920,8 @@ Show details of a specific check group
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -729,9 +929,9 @@ Show details of a specific check group
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Model_2](#schemamodel_2)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Model4](#schemamodel4)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Update a check group
 
@@ -789,7 +989,7 @@ Updates a check group.
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -811,7 +1011,7 @@ Updates a check group.
 |Name|In|Type|Description|
 |---|---|---|---|---|
 |id<br><div class="requiredParam">(required)</div>|path|number|none|
-|body|body|[Model_10](#schemamodel_10)|none|
+|body|body|[Model12](#schemamodel12)|none|
 
 > Example responses
 
@@ -863,7 +1063,7 @@ Updates a check group.
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -877,8 +1077,8 @@ Updates a check group.
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -886,9 +1086,9 @@ Updates a check group.
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Model_2](#schemamodel_2)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Model4](#schemamodel4)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Retrieve all checks in a specific group with group settings applied
 
@@ -925,7 +1125,7 @@ Lists all checks in a specific check group with the group settings applied.
     "id": "string",
     "name": "string",
     "checkType": "BROWSER",
-    "frequency": 5,
+    "frequency": 10,
     "activated": true,
     "muted": false,
     "doubleCheck": true,
@@ -934,20 +1134,7 @@ Lists all checks in a specific check group with the group settings applied.
     "locations": [
       "us-east-1"
     ],
-    "request": {
-      "method": "GET",
-      "url": "localhost",
-      "followRedirects": true,
-      "body": "",
-      "bodyType": "NONE",
-      "headers": [],
-      "queryParameters": [],
-      "assertions": [],
-      "basicAuth": {
-        "username": "",
-        "password": ""
-      }
-    },
+    "request": {},
     "script": "string",
     "environmentVariables": [
       {
@@ -976,7 +1163,7 @@ Lists all checks in a specific check group with the group settings applied.
         "interval": 5
       },
       "sslCertificates": {
-        "enabled": true,
+        "enabled": false,
         "alertThreshold": 30
       }
     },
@@ -1018,8 +1205,8 @@ Lists all checks in a specific check group with the group settings applied.
         }
       ]
     },
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 ```
@@ -1029,8 +1216,8 @@ Lists all checks in a specific check group with the group settings applied.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckGroupChecksList](#schemacheckgroupcheckslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-check-results-rolled-up-">Check results (rolled up)</h1>
 
@@ -1059,8 +1246,8 @@ Lists the rolled up check results *per hour* for a specific check. <br><br>This 
 |limit|query|number|none|
 |page|query|number|none|
 |location|query|string|Provide a data center location, e.g. "eu-west-1" to filter by location|
-|to|query|number|Select results up to this UNIX timestamp date, i.e. < date|
-|from|query|number|Select results from this UNIX timestamp date, i.e. >= date|
+|to|query|string(date)|Select results up to this UNIX timestamp date, i.e. < date|
+|from|query|string(date)|Select results from this UNIX timestamp date, i.e. >= date|
 
 > Example responses
 
@@ -1074,7 +1261,7 @@ Lists the rolled up check results *per hour* for a specific check. <br><br>This 
     "errorCount": 0,
     "failureCount": 0,
     "resultsCount": 0,
-    "hour": "2020-06-23",
+    "hour": "2021-02-10T09:52:54Z",
     "responseTimes": [
       "string"
     ]
@@ -1087,8 +1274,8 @@ Lists the rolled up check results *per hour* for a specific check. <br><br>This 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[RolledUpCheckResultsList](#schemarolledupcheckresultslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-check-results">Check results</h1>
 
@@ -1117,8 +1304,8 @@ Lists the full, raw check results for a specific check. We keep raw results for 
 |limit|query|number|none|
 |page|query|number|none|
 |location|query|string|Provide a data center location, e.g. "eu-west-1" to filter by location|
-|to|query|number|Select results up to this UNIX timestamp date in seconds, i.e. < date|
-|from|query|number|Select results from this UNIX timestamp date in seconds, i.e. >= date|
+|to|query|string(date)|Select results up to this UNIX timestamp date in seconds, i.e. < date|
+|from|query|string(date)|Select results from this UNIX timestamp date in seconds, i.e. >= date|
 |checkType|query|string|The type of the check|
 |hasFailures|query|boolean|Check result has one or more failures|
 
@@ -1144,9 +1331,9 @@ Lists the full, raw check results for a specific check. We keep raw results for 
     "isDegraded": true,
     "overMaxResponseTime": true,
     "runLocation": "string",
-    "startedAt": "2020-06-23",
-    "stoppedAt": "2020-06-23",
-    "created_at": "2020-06-23",
+    "startedAt": "2021-02-10T09:52:54Z",
+    "stoppedAt": "2021-02-10T09:52:54Z",
+    "created_at": "2021-02-10T09:52:54Z",
     "responseTime": 0,
     "apiCheckResult": {},
     "browserCheckResult": {},
@@ -1161,7 +1348,7 @@ Lists the full, raw check results for a specific check. We keep raw results for 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckResultsList](#schemacheckresultslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Retrieve a check result
 
@@ -1201,9 +1388,9 @@ Show details of a specific check result.
   "isDegraded": true,
   "overMaxResponseTime": true,
   "runLocation": "string",
-  "startedAt": "2020-06-23",
-  "stoppedAt": "2020-06-23",
-  "created_at": "2020-06-23",
+  "startedAt": "2021-02-10T09:52:54Z",
+  "stoppedAt": "2021-02-10T09:52:54Z",
+  "created_at": "2021-02-10T09:52:54Z",
   "responseTime": 0,
   "apiCheckResult": {},
   "browserCheckResult": {},
@@ -1217,8 +1404,8 @@ Show details of a specific check result.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckResult](#schemacheckresult)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-check-status">Check status</h1>
 
@@ -1246,6 +1433,7 @@ Shows the current status information for all checks in your account. The check s
 ```json
 [
   {
+    "name": "string",
     "checkId": "string",
     "hasFailures": true,
     "hasErrors": true,
@@ -1255,8 +1443,8 @@ Shows the current status information for all checks in your account. The check s
     "lastRunLocation": "string",
     "lastCheckRunId": "string",
     "sslDaysRemaining": 0,
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 ```
@@ -1266,8 +1454,8 @@ Shows the current status information for all checks in your account. The check s
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckStatusList](#schemacheckstatuslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Retrieve check status details
 
@@ -1298,6 +1486,7 @@ Show the current status information for a specific check.
 
 ```json
 {
+  "name": "string",
   "checkId": "string",
   "hasFailures": true,
   "hasErrors": true,
@@ -1307,8 +1496,8 @@ Show the current status information for a specific check.
   "lastRunLocation": "string",
   "lastCheckRunId": "string",
   "sslDaysRemaining": 0,
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -1317,8 +1506,8 @@ Show the current status information for a specific check.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckStatus](#schemacheckstatus)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-checks">Checks</h1>
 
@@ -1356,7 +1545,7 @@ Lists all current checks in your account.
     "id": "string",
     "name": "string",
     "checkType": "BROWSER",
-    "frequency": 5,
+    "frequency": 10,
     "activated": true,
     "muted": false,
     "doubleCheck": true,
@@ -1365,20 +1554,7 @@ Lists all current checks in your account.
     "locations": [
       "us-east-1"
     ],
-    "request": {
-      "method": "GET",
-      "url": "localhost",
-      "followRedirects": true,
-      "body": "",
-      "bodyType": "NONE",
-      "headers": [],
-      "queryParameters": [],
-      "assertions": [],
-      "basicAuth": {
-        "username": "",
-        "password": ""
-      }
-    },
+    "request": {},
     "script": "string",
     "environmentVariables": [
       {
@@ -1407,7 +1583,7 @@ Lists all current checks in your account.
         "interval": 5
       },
       "sslCertificates": {
-        "enabled": true,
+        "enabled": false,
         "alertThreshold": 30
       }
     },
@@ -1449,8 +1625,8 @@ Lists all current checks in your account.
         }
       ]
     },
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 ```
@@ -1460,7 +1636,7 @@ Lists all current checks in your account.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[CheckList](#schemachecklist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Create a check
 
@@ -1487,7 +1663,7 @@ Creates a new API or browser check. Will return a `402` when you are over the li
 {
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -1496,20 +1672,7 @@ Creates a new API or browser check. Will return a `402` when you are over the li
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -1538,7 +1701,7 @@ Creates a new API or browser check. Will return a `402` when you are over the li
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -1546,7 +1709,13 @@ Creates a new API or browser check. Will return a `402` when you are over the li
   "degradedResponseTime": 10000,
   "maxResponseTime": 20000,
   "groupId": 0,
-  "groupOrder": 0
+  "groupOrder": 0,
+  "alertChannelSubscriptions": [
+    {
+      "alertChannelId": 0,
+      "activated": true
+    }
+  ]
 }
 ```
 
@@ -1565,7 +1734,7 @@ Creates a new API or browser check. Will return a `402` when you are over the li
   "id": "string",
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -1574,20 +1743,7 @@ Creates a new API or browser check. Will return a `402` when you are over the li
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -1616,7 +1772,7 @@ Creates a new API or browser check. Will return a `402` when you are over the li
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -1658,8 +1814,8 @@ Creates a new API or browser check. Will return a `402` when you are over the li
       }
     ]
   },
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -1668,8 +1824,8 @@ Creates a new API or browser check. Will return a `402` when you are over the li
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[Check](#schemacheck)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|402|[Payment Required](https://tools.ietf.org/html/rfc7231#section-6.5.2)|Payment Required|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|402|[Payment Required](https://tools.ietf.org/html/rfc7231#section-6.5.2)|Payment Required|[Model1](#schemamodel1)|
 
 ## Delete a check
 
@@ -1707,7 +1863,7 @@ Permanently removes a API or browser check and all its related status and result
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|string|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Retrieve a check
 
@@ -1741,7 +1897,7 @@ Show details of a specific API or browser check
   "id": "string",
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -1750,20 +1906,7 @@ Show details of a specific API or browser check
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -1792,7 +1935,7 @@ Show details of a specific API or browser check
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -1834,8 +1977,8 @@ Show details of a specific API or browser check
       }
     ]
   },
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -1844,8 +1987,8 @@ Show details of a specific API or browser check
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Check](#schemacheck)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Update a check
 
@@ -1871,7 +2014,7 @@ Updates a new API or browser check.
 {
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -1880,20 +2023,7 @@ Updates a new API or browser check.
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -1922,7 +2052,7 @@ Updates a new API or browser check.
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -1930,7 +2060,13 @@ Updates a new API or browser check.
   "degradedResponseTime": 10000,
   "maxResponseTime": 20000,
   "groupId": 0,
-  "groupOrder": 0
+  "groupOrder": 0,
+  "alertChannelSubscriptions": [
+    {
+      "alertChannelId": 0,
+      "activated": true
+    }
+  ]
 }
 ```
 
@@ -1939,7 +2075,7 @@ Updates a new API or browser check.
 |Name|In|Type|Description|
 |---|---|---|---|---|
 |id<br><div class="requiredParam">(required)</div>|path|string|none|
-|body|body|[Model_15](#schemamodel_15)|none|
+|body|body|[Model19](#schemamodel19)|none|
 
 > Example responses
 
@@ -1950,7 +2086,7 @@ Updates a new API or browser check.
   "id": "string",
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -1959,20 +2095,7 @@ Updates a new API or browser check.
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -2001,7 +2124,7 @@ Updates a new API or browser check.
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -2043,8 +2166,8 @@ Updates a new API or browser check.
       }
     ]
   },
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -2053,7 +2176,7 @@ Updates a new API or browser check.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Check](#schemacheck)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-dashboards">Dashboards</h1>
 
@@ -2110,7 +2233,7 @@ Lists all current dashboards in your account.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[DashboardsList](#schemadashboardslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Create a dashboard
 
@@ -2182,8 +2305,8 @@ Creates a new dashboard. Will return a 409 when attempting to create a dashboard
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[DashboardResponse](#schemadashboardresponse)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|Conflict|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|Conflict|[Model1](#schemamodel1)|
 
 ## Delete a dashboard
 
@@ -2221,7 +2344,7 @@ Permanently removes a dashboard.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|string|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Retrieve a dashboard
 
@@ -2273,8 +2396,8 @@ Show details of a specific dashboard.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[DashboardResponse](#schemadashboardresponse)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Update a dashboard
 
@@ -2347,9 +2470,299 @@ Updates a dashboard. Will return a 409 when attempting to create a dashboard wit
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[DashboardResponse](#schemadashboardresponse)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
-|409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|Conflict|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
+|409|[Conflict](https://tools.ietf.org/html/rfc7231#section-6.5.8)|Conflict|[Model1](#schemamodel1)|
+
+<h1 id="checkly-api-maintenance-windows">Maintenance windows</h1>
+
+## List all maintenance windows
+
+<a id="opIdgetV1Maintenancewindows"></a>
+
+> Code samples
+
+```shell
+curl -X GET https://api.checklyhq.com/v1/maintenance-windows \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`GET /v1/maintenance-windows`
+
+Lists all maintenance windows in your account.
+
+<h3 id="list-all-maintenance-windows-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|limit|query|integer|none|
+|page|query|integer|none|
+
+> Example responses
+
+> 200 Response
+
+```json
+[
+  {
+    "id": 0,
+    "name": "string",
+    "tags": [
+      "string"
+    ],
+    "startsAt": "2021-02-10",
+    "endsAt": "2021-02-10",
+    "repeatInterval": 1,
+    "repeatUnit": "string",
+    "repeatEndsAt": "2021-02-10",
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10"
+  }
+]
+```
+
+<h3 id="list-all-maintenance-windows-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[MaintenanceWindowsList](#schemamaintenancewindowslist)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|[Model1](#schemamodel1)|
+
+## Create a maintenance window
+
+<a id="opIdpostV1Maintenancewindows"></a>
+
+> Code samples
+
+```shell
+curl -X POST https://api.checklyhq.com/v1/maintenance-windows \
+ -H 'Content-Type: application/json' \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`POST /v1/maintenance-windows`
+
+Creates a new maintenance window.
+
+> Body parameter
+
+```json
+{
+  "name": "string",
+  "tags": [
+    "string"
+  ],
+  "startsAt": "2021-02-10",
+  "endsAt": "2021-02-10",
+  "repeatInterval": 1,
+  "repeatUnit": "string",
+  "repeatEndsAt": "2021-02-10"
+}
+```
+
+<h3 id="create-a-maintenance-window-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|body|body|[Model25](#schemamodel25)|none|
+
+> Example responses
+
+> 201 Response
+
+```json
+{
+  "id": 0,
+  "name": "string",
+  "tags": [
+    "string"
+  ],
+  "startsAt": "2021-02-10",
+  "endsAt": "2021-02-10",
+  "repeatInterval": 1,
+  "repeatUnit": "string",
+  "repeatEndsAt": "2021-02-10",
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10"
+}
+```
+
+<h3 id="create-a-maintenance-window-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[Model23](#schemamodel23)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|[Model1](#schemamodel1)|
+
+## Delete a maintenance window
+
+<a id="opIddeleteV1MaintenancewindowsId"></a>
+
+> Code samples
+
+```shell
+curl -X DELETE https://api.checklyhq.com/v1/maintenance-windows/{id} \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`DELETE /v1/maintenance-windows/{id}`
+
+Permanently removes a maintenance window.
+
+<h3 id="delete-a-maintenance-window-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|id<br><div class="requiredParam">(required)</div>|path|integer|none|
+
+> Example responses
+
+> 204 Response
+
+```json
+"string"
+```
+
+<h3 id="delete-a-maintenance-window-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|string|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
+
+## Retrieve a maintenance window
+
+<a id="opIdgetV1MaintenancewindowsId"></a>
+
+> Code samples
+
+```shell
+curl -X GET https://api.checklyhq.com/v1/maintenance-windows/{id} \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`GET /v1/maintenance-windows/{id}`
+
+Show details of a specific maintenance window.
+
+<h3 id="retrieve-a-maintenance-window-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|id<br><div class="requiredParam">(required)</div>|path|integer|none|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "id": 0,
+  "name": "string",
+  "tags": [
+    "string"
+  ],
+  "startsAt": "2021-02-10",
+  "endsAt": "2021-02-10",
+  "repeatInterval": 1,
+  "repeatUnit": "string",
+  "repeatEndsAt": "2021-02-10",
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10"
+}
+```
+
+<h3 id="retrieve-a-maintenance-window-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Model23](#schemamodel23)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
+
+## Update a maintenance window
+
+<a id="opIdputV1MaintenancewindowsId"></a>
+
+> Code samples
+
+```shell
+curl -X PUT https://api.checklyhq.com/v1/maintenance-windows/{id} \
+ -H 'Content-Type: application/json' \
+ -H 'Accept: application/json' \
+ -H 'Authorization: Bearer API_KEY'
+
+```
+
+`PUT /v1/maintenance-windows/{id}`
+
+Updates a maintenance window.
+
+> Body parameter
+
+```json
+{
+  "name": "string",
+  "tags": [
+    "string"
+  ],
+  "startsAt": "2021-02-10",
+  "endsAt": "2021-02-10",
+  "repeatInterval": 1,
+  "repeatUnit": "string",
+  "repeatEndsAt": "2021-02-10"
+}
+```
+
+<h3 id="update-a-maintenance-window-parameters">Parameters</h3>
+
+|Name|In|Type|Description|
+|---|---|---|---|---|
+|id<br><div class="requiredParam">(required)</div>|path|integer|none|
+|body|body|[Model25](#schemamodel25)|none|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "id": 0,
+  "name": "string",
+  "tags": [
+    "string"
+  ],
+  "startsAt": "2021-02-10",
+  "endsAt": "2021-02-10",
+  "repeatInterval": 1,
+  "repeatUnit": "string",
+  "repeatEndsAt": "2021-02-10",
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10"
+}
+```
+
+<h3 id="update-a-maintenance-window-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Model23](#schemamodel23)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-snippets">Snippets</h1>
 
@@ -2387,8 +2800,8 @@ Lists all current snippets in your account.
     "id": 0,
     "name": "string",
     "script": "string",
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10T09:52:54Z",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 ```
@@ -2398,7 +2811,7 @@ Lists all current snippets in your account.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[SnippetsList](#schemasnippetslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Create a snippet
 
@@ -2442,8 +2855,8 @@ Creates a new snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -2452,7 +2865,7 @@ Creates a new snippet.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[Snippet](#schemasnippet)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Delete a snippet
 
@@ -2490,7 +2903,7 @@ Permanently removes a snippet.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|string|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Retrieve a snippet
 
@@ -2524,8 +2937,8 @@ Show details of a specific snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -2534,8 +2947,8 @@ Show details of a specific snippet.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Snippet](#schemasnippet)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Update a snippet
 
@@ -2580,8 +2993,8 @@ Updates a snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 ```
 
@@ -2590,8 +3003,8 @@ Updates a snippet.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[Snippet](#schemasnippet)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 <h1 id="checkly-api-environment-variables">Environment variables</h1>
 
@@ -2638,7 +3051,7 @@ Lists all current environment variables in your account.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[EnvironmentVariablesList](#schemaenvironmentvariableslist)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Create a environment variable
 
@@ -2691,7 +3104,7 @@ Creates a new environment variable.
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Created|[EnvironmentVariable](#schemaenvironmentvariable)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Delete an environment variable
 
@@ -2729,7 +3142,7 @@ Permanently removes an environment variable. Uses the "key" field as the ID for 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |204|[No Content](https://tools.ietf.org/html/rfc7231#section-6.3.5)|No Content|string|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
 
 ## Retrieve an environment variable
 
@@ -2771,8 +3184,8 @@ Show details of a specific environment variable. Uses the "key" field for select
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[EnvironmentVariable](#schemaenvironmentvariable)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 ## Update a environment variable
 
@@ -2826,8 +3239,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Successful|[EnvironmentVariable](#schemaenvironmentvariable)|
-|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model_1](#schemamodel_1)|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model_1](#schemamodel_1)|
+|401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Model1](#schemamodel1)|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Model1](#schemamodel1)|
 
 # Schemas
 
@@ -2844,14 +3257,15 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 *None*
 
-<h2 id="tocSsubscriptionschema">SubscriptionSchema</h2>
+<h2 id="tocSsubscriptionresponseschema">SubscriptionResponseSchema</h2>
 
-<a id="schemasubscriptionschema"></a>
+<a id="schemasubscriptionresponseschema"></a>
 
 ```json
 {
   "id": 0,
   "checkId": "string",
+  "groupId": 0,
   "activated": true
 }
 
@@ -2862,7 +3276,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |Name|Type|Description|
 |---|---|---|---|---|
 |id|number|none|
-|checkId<div class="requiredParam">(required)</div>|string|none|
+|checkId|string|none|
+|groupId|number|none|
 |activated<div class="requiredParam">(required)</div>|boolean|none|
 
 <h2 id="tocSsubscriptions">subscriptions</h2>
@@ -2874,6 +3289,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   {
     "id": 0,
     "checkId": "string",
+    "groupId": 0,
     "activated": true
   }
 ]
@@ -2886,7 +3302,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 |Name|Type|Description|
 |---|---|---|---|---|
-|*anonymous*|[[SubscriptionSchema](#schemasubscriptionschema)]|All checks subscribed to this channel.|
+|*anonymous*|[[SubscriptionResponseSchema](#schemasubscriptionresponseschema)]|All checks subscribed to this channel.|
 
 <h2 id="tocSalertchannel">AlertChannel</h2>
 
@@ -2901,11 +3317,17 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     {
       "id": 0,
       "checkId": "string",
+      "groupId": 0,
       "activated": true
     }
   ],
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "sendRecovery": true,
+  "sendFailure": true,
+  "sendDegraded": true,
+  "sslExpiry": false,
+  "sslExpiryThreshold": 30,
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 
 ```
@@ -2918,8 +3340,13 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |type|string|The type of alert channel, i.e. EMAIL or SLACK.|
 |config|[config](#schemaconfig)|none|
 |subscriptions|[subscriptions](#schemasubscriptions)|All checks subscribed to this channel.|
-|created_at|string(date)|none|
-|updated_at|string(date)|none|
+|sendRecovery|boolean|none|
+|sendFailure|boolean|none|
+|sendDegraded|boolean|none|
+|sslExpiry|boolean|Determines if an alert should be send for expiring SSL certificates|
+|sslExpiryThreshold|integer|At what moment in time to start alerting on SSL certificates|
+|created_at|string(date-time)|none|
+|updated_at|string(date-time)|none|
 
 <h2 id="tocSalertchannelslist">AlertChannelsList</h2>
 
@@ -2935,11 +3362,17 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       {
         "id": 0,
         "checkId": "string",
+        "groupId": 0,
         "activated": true
       }
     ],
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "sendRecovery": true,
+    "sendFailure": true,
+    "sendDegraded": true,
+    "sslExpiry": false,
+    "sslExpiryThreshold": 30,
+    "created_at": "2021-02-10T09:52:54Z",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 
@@ -2950,6 +3383,111 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |Name|Type|Description|
 |---|---|---|---|---|
 |*anonymous*|[[AlertChannel](#schemaalertchannel)]|none|
+
+<h2 id="tocSmodel1">Model1</h2>
+
+<a id="schemamodel1"></a>
+
+```json
+{}
+
+```
+
+### Properties
+
+*None*
+
+<h2 id="tocSmodel2">Model2</h2>
+
+<a id="schemamodel2"></a>
+
+```json
+[
+  {
+    "id": 0,
+    "checkId": "string",
+    "groupId": 0,
+    "activated": true
+  }
+]
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|*anonymous*|[[SubscriptionResponseSchema](#schemasubscriptionresponseschema)]|none|
+
+<h2 id="tocSmodel3">Model3</h2>
+
+<a id="schemamodel3"></a>
+
+```json
+{
+  "subscriptions": [
+    {
+      "id": 0,
+      "checkId": "string",
+      "groupId": 0,
+      "activated": true
+    }
+  ],
+  "type": "EMAIL",
+  "config": {},
+  "sendRecovery": true,
+  "sendFailure": true,
+  "sendDegraded": true,
+  "sslExpiry": false,
+  "sslExpiryThreshold": 30
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|subscriptions|[Model2](#schemamodel2)|none|
+|type|string|none|
+|config<div class="requiredParam">(required)</div>|[config](#schemaconfig)|none|
+|sendRecovery|boolean|none|
+|sendFailure|boolean|none|
+|sendDegraded|boolean|none|
+|sslExpiry|boolean|Determines if an alert should be send for expiring SSL certificates|
+|sslExpiryThreshold|integer|At what moment in time to start alerting on SSL certificates|
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|type|EMAIL|
+|type|SLACK|
+|type|WEBHOOK|
+|type|SMS|
+|type|PAGERDUTY|
+|type|OPSGENIE|
+
+<h2 id="tocSsubscriptioncreateschema">SubscriptionCreateSchema</h2>
+
+<a id="schemasubscriptioncreateschema"></a>
+
+```json
+{
+  "checkId": "string",
+  "groupId": 0,
+  "activated": true
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|checkId|string|You can either pass a checkId or a groupId, but not both|
+|groupId|number|You can either pass a checkId or a groupId, but not both|
+|activated<div class="requiredParam">(required)</div>|boolean|none|
 
 <h2 id="tocStags">tags</h2>
 
@@ -3112,8 +3650,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 |Name|Type|Description|
 |---|---|---|---|---|
-|username|string|none|
-|password|string|none|
+|username<div class="requiredParam">(required)</div>|string|none|
+|password<div class="requiredParam">(required)</div>|string|none|
 
 <h2 id="tocSapicheckdefaults">apiCheckDefaults</h2>
 
@@ -3280,6 +3818,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |amount|3|
 |amount|4|
 |amount|5|
+|amount|100000|
 |interval|5|
 |interval|10|
 |interval|15|
@@ -3302,16 +3841,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |Name|Type|Description|
 |---|---|---|---|---|
 |enabled|boolean|Determines if alert notifications should be send for expiring SSL certificates|
-|alertThreshold|number|At what moment in time to start alerting on SSL certificates|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|alertThreshold|3|
-|alertThreshold|7|
-|alertThreshold|14|
-|alertThreshold|30|
+|alertThreshold|integer|At what moment in time to start alerting on SSL certificates|
 
 <h2 id="tocSalertsettingsschema">AlertSettingsSchema</h2>
 
@@ -3331,7 +3861,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "interval": 5
   },
   "sslCertificates": {
-    "enabled": true,
+    "enabled": false,
     "alertThreshold": 30
   }
 }
@@ -3394,6 +3924,101 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |---|---|---|---|---|
 |*anonymous*|[[AlertChannelSubscription](#schemaalertchannelsubscription)]|none|
 
+<h2 id="tocSmodel4">Model4</h2>
+
+<a id="schemamodel4"></a>
+
+```json
+{
+  "id": 0,
+  "name": "string",
+  "activated": true,
+  "muted": true,
+  "tags": [
+    "string"
+  ],
+  "locations": [
+    "string"
+  ],
+  "concurrency": 3,
+  "apiCheckDefaults": {
+    "url": "",
+    "headers": [],
+    "queryParameters": [],
+    "assertions": [],
+    "basicAuth": {
+      "username": "",
+      "password": ""
+    }
+  },
+  "browserCheckDefaults": {},
+  "environmentVariables": [
+    {
+      "key": "string",
+      "value": "",
+      "locked": false
+    }
+  ],
+  "doubleCheck": true,
+  "useGlobalAlertSettings": true,
+  "alertSettings": {
+    "escalationType": "RUN_BASED",
+    "runBasedEscalation": {
+      "failedRunThreshold": 1
+    },
+    "timeBasedEscalation": {
+      "minutesFailingThreshold": 5
+    },
+    "reminders": {
+      "amount": 0,
+      "interval": 5
+    },
+    "sslCertificates": {
+      "enabled": false,
+      "alertThreshold": 30
+    }
+  },
+  "alertChannelSubscriptions": [
+    {
+      "alertChannelId": 0,
+      "activated": true
+    }
+  ],
+  "setupSnippetId": 0,
+  "tearDownSnippetId": 0,
+  "localSetupScript": "string",
+  "localTearDownScript": "string",
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|id|number|none|
+|name<div class="requiredParam">(required)</div>|string|none|
+|activated<div class="requiredParam">(required)</div>|boolean|none|
+|muted|boolean|none|
+|tags|[tags](#schematags)|none|
+|locations|[locations](#schemalocations)|none|
+|concurrency<div class="requiredParam">(required)</div>|number|none|
+|apiCheckDefaults<div class="requiredParam">(required)</div>|[apiCheckDefaults](#schemaapicheckdefaults)|none|
+|browserCheckDefaults<div class="requiredParam">(required)</div>|[browserCheckDefaults](#schemabrowsercheckdefaults)|none|
+|environmentVariables|[environmentVariables](#schemaenvironmentvariables)|none|
+|doubleCheck|boolean|none|
+|useGlobalAlertSettings|boolean|none|
+|alertSettings|[AlertSettingsSchema](#schemaalertsettingsschema)|none|
+|alertChannelSubscriptions|[alertChannelSubscriptions](#schemaalertchannelsubscriptions)|none|
+|setupSnippetId|number|none|
+|tearDownSnippetId|number|none|
+|localSetupScript|string|none|
+|localTearDownScript|string|none|
+|created_at|string(date)|none|
+|updated_at|string(date-time)|none|
+
 <h2 id="tocScheckgrouplist">CheckGroupList</h2>
 
 <a id="schemacheckgrouplist"></a>
@@ -3445,7 +4070,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         "interval": 5
       },
       "sslCertificates": {
-        "enabled": true,
+        "enabled": false,
         "alertThreshold": 30
       }
     },
@@ -3459,8 +4084,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "tearDownSnippetId": 0,
     "localSetupScript": "string",
     "localTearDownScript": "string",
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 
@@ -3470,7 +4095,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 |Name|Type|Description|
 |---|---|---|---|---|
-|*anonymous*|[[Model_2](#schemamodel_2)]|none|
+|*anonymous*|[[Model4](#schemamodel4)]|none|
 
 <h2 id="tocStags">Tags</h2>
 
@@ -3506,24 +4131,101 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 *None*
 
-<h2 id="tocSrequest">request</h2>
+<h2 id="tocSmodel5">Model5</h2>
 
-<a id="schemarequest"></a>
+<a id="schemamodel5"></a>
+
+```json
+{}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|url|string|The base url for this group which you can reference with the {{GROUP_BASE_URL}} variable in all group checks.|
+|headers|[Headers](#schemaheaders)|none|
+|queryParameters|[QueryParameters](#schemaqueryparameters)|none|
+|assertions|[assertions](#schemaassertions)|Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.|
+|basicAuth|[basicAuth](#schemabasicauth)|none|
+
+<h2 id="tocSmodel6">Model6</h2>
+
+<a id="schemamodel6"></a>
+
+```json
+[
+  {
+    "alertChannelId": 0,
+    "activated": true
+  }
+]
+
+```
+
+*Array of alert channel subscriptions*
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|*anonymous*|[[AlertChannelSubscription](#schemaalertchannelsubscription)]|Array of alert channel subscriptions|
+
+<h2 id="tocSmodel7">Model7</h2>
+
+<a id="schemamodel7"></a>
 
 ```json
 {
-  "method": "GET",
-  "url": "localhost",
-  "followRedirects": true,
-  "body": "",
-  "bodyType": "NONE",
-  "headers": [],
-  "queryParameters": [],
-  "assertions": [],
-  "basicAuth": {
-    "username": "",
-    "password": ""
-  }
+  "name": "string",
+  "activated": true,
+  "muted": false,
+  "tags": [
+    "string"
+  ],
+  "locations": [
+    "us-east-1"
+  ],
+  "concurrency": 3,
+  "apiCheckDefaults": {},
+  "browserCheckDefaults": {},
+  "environmentVariables": [
+    {
+      "key": "string",
+      "value": "",
+      "locked": false
+    }
+  ],
+  "doubleCheck": true,
+  "useGlobalAlertSettings": true,
+  "alertSettings": {
+    "escalationType": "RUN_BASED",
+    "runBasedEscalation": {
+      "failedRunThreshold": 1
+    },
+    "timeBasedEscalation": {
+      "minutesFailingThreshold": 5
+    },
+    "reminders": {
+      "amount": 0,
+      "interval": 5
+    },
+    "sslCertificates": {
+      "enabled": false,
+      "alertThreshold": 30
+    }
+  },
+  "alertChannelSubscriptions": [
+    {
+      "alertChannelId": 0,
+      "activated": true
+    }
+  ],
+  "setupSnippetId": 0,
+  "tearDownSnippetId": 0,
+  "localSetupScript": "string",
+  "localTearDownScript": "string"
 }
 
 ```
@@ -3532,31 +4234,53 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 |Name|Type|Description|
 |---|---|---|---|---|
-|method<div class="requiredParam">(required)</div>|string|none|
-|url<div class="requiredParam">(required)</div>|string|none|
-|followRedirects|boolean|none|
-|body|string|none|
-|bodyType|string|none|
-|headers|[Headers](#schemaheaders)|none|
-|queryParameters|[QueryParameters](#schemaqueryparameters)|none|
-|assertions|[assertions](#schemaassertions)|Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.|
-|basicAuth<div class="requiredParam">(required)</div>|[Model_7](#schemamodel_7)|none|
+|name<div class="requiredParam">(required)</div>|string|The name of the check group|
+|activated|boolean|Determines if the checks in the  group are running or not|
+|muted|boolean|Determines if any notifications will be send out when a check in this group fails and/or recovers|
+|tags|[Tags](#schematags)|Tags for organizing and filtering checks|
+|locations<div class="requiredParam">(required)</div>|[Locations](#schemalocations)|An array of one or more data center locations where to run the checks|
+|concurrency|number|Determines how many checks are invoked concurrently when triggering a check group from CI/CD or through the API.|
+|apiCheckDefaults|[Model5](#schemamodel5)|none|
+|browserCheckDefaults|[browserCheckDefaults](#schemabrowsercheckdefaults)|none|
+|environmentVariables|[environmentVariables](#schemaenvironmentvariables)|none|
+|doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
+|useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check group|
+|alertSettings|[AlertSettingsSchema](#schemaalertsettingsschema)|none|
+|alertChannelSubscriptions|[Model6](#schemamodel6)|Array of alert channel subscriptions|
+|setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check in this group|
+|tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check in this group|
+|localSetupScript|string|A valid piece of Node.js code to run in the setup phase of an API check in this group|
+|localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase of an API check in this group|
 
-#### Enumerated Values
+<h2 id="tocSmodel8">Model8</h2>
 
-|Property|Value|
-|---|---|
-|method|GET|
-|method|POST|
-|method|PUT|
-|method|HEAD|
-|method|DELETE|
-|method|PATCH|
-|bodyType|NONE|
-|bodyType|JSON|
-|bodyType|FORM|
-|bodyType|RAW|
-|bodyType|GRAPHQL|
+<a id="schemamodel8"></a>
+
+```json
+[
+  "us-east-1"
+]
+
+```
+
+*An array of one or more data center locations where to run the this check*
+
+### Properties
+
+*None*
+
+<h2 id="tocSrequest">request</h2>
+
+<a id="schemarequest"></a>
+
+```json
+{}
+
+```
+
+### Properties
+
+*None*
 
 <h2 id="tocSenvironmentvariables">EnvironmentVariables</h2>
 
@@ -3580,6 +4304,48 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |Name|Type|Description|
 |---|---|---|---|---|
 |*anonymous*|[[EnvironmentVariable](#schemaenvironmentvariable)]|Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.|
+
+<h2 id="tocSmodel9">Model9</h2>
+
+<a id="schemamodel9"></a>
+
+```json
+{
+  "escalationType": "RUN_BASED",
+  "runBasedEscalation": {
+    "failedRunThreshold": 1
+  },
+  "timeBasedEscalation": {
+    "minutesFailingThreshold": 5
+  },
+  "reminders": {
+    "amount": 0,
+    "interval": 5
+  },
+  "sslCertificates": {
+    "enabled": false,
+    "alertThreshold": 30
+  }
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|escalationType|string|Determines what type of escalation to use|
+|runBasedEscalation|[runBasedEscalation](#schemarunbasedescalation)|none|
+|timeBasedEscalation|[timeBasedEscalation](#schematimebasedescalation)|none|
+|reminders|[reminders](#schemareminders)|none|
+|sslCertificates|[sslCertificates](#schemasslcertificates)|none|
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|escalationType|RUN_BASED|
+|escalationType|TIME_BASED|
 
 <h2 id="tocSalertemail">AlertEmail</h2>
 
@@ -3804,7 +4570,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "id": "string",
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -3813,20 +4579,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -3855,7 +4608,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -3897,8 +4650,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       }
     ]
   },
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 
 ```
@@ -3910,22 +4663,22 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |id|string|none|
 |name<div class="requiredParam">(required)</div>|string|The name of the check|
 |checkType<div class="requiredParam">(required)</div>|string|The type of the check|
-|frequency|number|none|
+|frequency|integer|how often the check should run in minutes|
 |activated<div class="requiredParam">(required)</div>|boolean|Determines if the check is running or not|
 |muted|boolean|Determines if any notifications will be send out when a check fails and/or recovers|
 |doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
 |sslCheck|boolean|Determines if the SSL certificate should be validated for expiry|
 |shouldFail|boolean|Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404|
-|locations|[Model_6](#schemamodel_6)|An array of one or more data center locations where to run the this check|
-|request|[request](#schemarequest)|none|
-|script|string|A valid piece of Node.js javascript code describing a browser interaction with the Puppeteer framework.|
+|locations|[Model8](#schemamodel8)|An array of one or more data center locations where to run the this check|
+|request<div class="requiredParam">(required)</div>|[request](#schemarequest)|none|
+|script<div class="requiredParam">(required)</div>|string|none|
 |environmentVariables|[EnvironmentVariables](#schemaenvironmentvariables)|Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.|
 |tags|[Tags](#schematags)|Tags for organizing and filtering checks|
 |setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check|
 |tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check|
 |localSetupScript|string|A valid piece of Node.js code to run in the setup phase|
 |localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase|
-|alertSettings|[Model_8](#schemamodel_8)|none|
+|alertSettings|[Model9](#schemamodel9)|none|
 |useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check|
 |degradedResponseTime|number|The response time in milliseconds where a check should be considered degraded|
 |maxResponseTime|number|The response time in milliseconds where a check should be considered failing|
@@ -3934,7 +4687,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |alertChannelSubscriptions|[alertChannelSubscriptions](#schemaalertchannelsubscriptions)|none|
 |alertChannels|[AlertChannels](#schemaalertchannels)|none|
 |created_at|string(date)|none|
-|updated_at|string(date)|none|
+|updated_at|string(date-time)|none|
 
 #### Enumerated Values
 
@@ -3942,13 +4695,144 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |---|---|
 |checkType|BROWSER|
 |checkType|API|
-|frequency|5|
-|frequency|10|
-|frequency|15|
-|frequency|30|
-|frequency|60|
-|frequency|720|
-|frequency|1440|
+
+<h2 id="tocSmodel10">Model10</h2>
+
+<a id="schemamodel10"></a>
+
+```json
+{}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|url|string|The base url for this group which you can reference with the {{GROUP_BASE_URL}} variable in all group checks.|
+|headers|[Headers](#schemaheaders)|none|
+|queryParameters|[QueryParameters](#schemaqueryparameters)|none|
+|assertions|[assertions](#schemaassertions)|Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.|
+|basicAuth|[basicAuth](#schemabasicauth)|none|
+
+<h2 id="tocSmodel11">Model11</h2>
+
+<a id="schemamodel11"></a>
+
+```json
+[
+  {
+    "alertChannelId": 0,
+    "activated": true
+  }
+]
+
+```
+
+*Array of alert channel subscriptions*
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|*anonymous*|[[AlertChannelSubscription](#schemaalertchannelsubscription)]|Array of alert channel subscriptions|
+
+<h2 id="tocSmodel12">Model12</h2>
+
+<a id="schemamodel12"></a>
+
+```json
+{
+  "name": "string",
+  "activated": true,
+  "muted": false,
+  "tags": [
+    "string"
+  ],
+  "locations": [
+    "us-east-1"
+  ],
+  "concurrency": 3,
+  "apiCheckDefaults": {},
+  "browserCheckDefaults": {},
+  "environmentVariables": [
+    {
+      "key": "string",
+      "value": "",
+      "locked": false
+    }
+  ],
+  "doubleCheck": true,
+  "useGlobalAlertSettings": true,
+  "alertSettings": {
+    "escalationType": "RUN_BASED",
+    "runBasedEscalation": {
+      "failedRunThreshold": 1
+    },
+    "timeBasedEscalation": {
+      "minutesFailingThreshold": 5
+    },
+    "reminders": {
+      "amount": 0,
+      "interval": 5
+    },
+    "sslCertificates": {
+      "enabled": false,
+      "alertThreshold": 30
+    }
+  },
+  "alertChannelSubscriptions": [
+    {
+      "alertChannelId": 0,
+      "activated": true
+    }
+  ],
+  "setupSnippetId": 0,
+  "tearDownSnippetId": 0,
+  "localSetupScript": "string",
+  "localTearDownScript": "string"
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|name|string|The name of the check group|
+|activated|boolean|Determines if the checks in the  group are running or not|
+|muted|boolean|Determines if any notifications will be send out when a check in this group fails and/or recovers|
+|tags|[Tags](#schematags)|Tags for organizing and filtering checks|
+|locations|[Locations](#schemalocations)|An array of one or more data center locations where to run the checks|
+|concurrency|number|Determines how many checks are invoked concurrently when triggering a check group from CI/CD or through the API.|
+|apiCheckDefaults|[Model10](#schemamodel10)|none|
+|browserCheckDefaults|[browserCheckDefaults](#schemabrowsercheckdefaults)|none|
+|environmentVariables|[environmentVariables](#schemaenvironmentvariables)|none|
+|doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
+|useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check group|
+|alertSettings|[AlertSettingsSchema](#schemaalertsettingsschema)|none|
+|alertChannelSubscriptions|[Model11](#schemamodel11)|Array of alert channel subscriptions|
+|setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check in this group|
+|tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check in this group|
+|localSetupScript|string|A valid piece of Node.js code to run in the setup phase of an API check in this group|
+|localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase of an API check in this group|
+
+<h2 id="tocSmodel13">Model13</h2>
+
+<a id="schemamodel13"></a>
+
+```json
+[
+  "us-east-1"
+]
+
+```
+
+*An array of one or more data center locations where to run the this check*
+
+### Properties
+
+*None*
 
 <h2 id="tocScheck">Check</h2>
 
@@ -3959,7 +4843,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "id": "string",
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -3968,20 +4852,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -4010,7 +4881,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -4052,8 +4923,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       }
     ]
   },
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 
 ```
@@ -4065,22 +4936,22 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |id|string|none|
 |name<div class="requiredParam">(required)</div>|string|The name of the check|
 |checkType<div class="requiredParam">(required)</div>|string|The type of the check|
-|frequency|number|none|
+|frequency|integer|how often the check should run in minutes|
 |activated<div class="requiredParam">(required)</div>|boolean|Determines if the check is running or not|
 |muted|boolean|Determines if any notifications will be send out when a check fails and/or recovers|
 |doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
 |sslCheck|boolean|Determines if the SSL certificate should be validated for expiry|
 |shouldFail|boolean|Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404|
-|locations|[Model_11](#schemamodel_11)|An array of one or more data center locations where to run the this check|
+|locations|[Model13](#schemamodel13)|An array of one or more data center locations where to run the this check|
 |request|[request](#schemarequest)|none|
-|script|string|A valid piece of Node.js javascript code describing a browser interaction with the Puppeteer framework.|
+|script<div class="requiredParam">(required)</div>|string|none|
 |environmentVariables|[EnvironmentVariables](#schemaenvironmentvariables)|Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.|
 |tags|[Tags](#schematags)|Tags for organizing and filtering checks|
 |setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check|
 |tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check|
 |localSetupScript|string|A valid piece of Node.js code to run in the setup phase|
 |localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase|
-|alertSettings|[Model_8](#schemamodel_8)|none|
+|alertSettings|[Model9](#schemamodel9)|none|
 |useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check|
 |degradedResponseTime|number|The response time in milliseconds where a check should be considered degraded|
 |maxResponseTime|number|The response time in milliseconds where a check should be considered failing|
@@ -4089,7 +4960,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |alertChannelSubscriptions|[alertChannelSubscriptions](#schemaalertchannelsubscriptions)|none|
 |alertChannels|[AlertChannels](#schemaalertchannels)|none|
 |created_at|string(date)|none|
-|updated_at|string(date)|none|
+|updated_at|string(date-time)|none|
 
 #### Enumerated Values
 
@@ -4097,13 +4968,6 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |---|---|
 |checkType|BROWSER|
 |checkType|API|
-|frequency|5|
-|frequency|10|
-|frequency|15|
-|frequency|30|
-|frequency|60|
-|frequency|720|
-|frequency|1440|
 
 <h2 id="tocScheckgroupcheckslist">CheckGroupChecksList</h2>
 
@@ -4115,7 +4979,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "id": "string",
     "name": "string",
     "checkType": "BROWSER",
-    "frequency": 5,
+    "frequency": 10,
     "activated": true,
     "muted": false,
     "doubleCheck": true,
@@ -4124,20 +4988,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "locations": [
       "us-east-1"
     ],
-    "request": {
-      "method": "GET",
-      "url": "localhost",
-      "followRedirects": true,
-      "body": "",
-      "bodyType": "NONE",
-      "headers": [],
-      "queryParameters": [],
-      "assertions": [],
-      "basicAuth": {
-        "username": "",
-        "password": ""
-      }
-    },
+    "request": {},
     "script": "string",
     "environmentVariables": [
       {
@@ -4166,7 +5017,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         "interval": 5
       },
       "sslCertificates": {
-        "enabled": true,
+        "enabled": false,
         "alertThreshold": 30
       }
     },
@@ -4208,8 +5059,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         }
       ]
     },
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 
@@ -4247,7 +5098,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "errorCount": 0,
   "failureCount": 0,
   "resultsCount": 0,
-  "hour": "2020-06-23",
+  "hour": "2021-02-10T09:52:54Z",
   "responseTimes": [
     "string"
   ]
@@ -4264,7 +5115,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |errorCount|number|The total amount of errored out check results for this hour. This value should be 0 in almost all cases as it records failures in the Checkly backend.|
 |failureCount|number|The total amount of failed check results for this hour.|
 |resultsCount|number|The total amount of results recorded for this hour. Depends on how often this check is scheduled to run.|
-|hour|string(date)|All results per time unit / per location are rolled up to a specific hour|
+|hour|string(date-time)|All results per time unit / per location are rolled up to a specific hour|
 |responseTimes|[responseTimes](#schemaresponsetimes)|none|
 
 <h2 id="tocSrolledupcheckresultslist">RolledUpCheckResultsList</h2>
@@ -4279,7 +5130,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "errorCount": 0,
     "failureCount": 0,
     "resultsCount": 0,
-    "hour": "2020-06-23",
+    "hour": "2021-02-10T09:52:54Z",
     "responseTimes": [
       "string"
     ]
@@ -4334,9 +5185,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "isDegraded": true,
   "overMaxResponseTime": true,
   "runLocation": "string",
-  "startedAt": "2020-06-23",
-  "stoppedAt": "2020-06-23",
-  "created_at": "2020-06-23",
+  "startedAt": "2021-02-10T09:52:54Z",
+  "stoppedAt": "2021-02-10T09:52:54Z",
+  "created_at": "2021-02-10T09:52:54Z",
   "responseTime": 0,
   "apiCheckResult": {},
   "browserCheckResult": {},
@@ -4358,9 +5209,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |isDegraded|boolean|A check is degraded if it is over the degradation limit set by the "degradedResponseTime" field on the check. Applies only to API checks.|
 |overMaxResponseTime|boolean|Set to true if the response time is over the limit set by the "maxResponseTime" field on the check. Applies only to API checks.|
 |runLocation|string|What data center location this check result originated from|
-|startedAt|string(date)|none|
-|stoppedAt|string(date)|none|
-|created_at|string(date)|none|
+|startedAt|string(date-time)|none|
+|stoppedAt|string(date-time)|none|
+|created_at|string(date-time)|none|
 |responseTime|number|Describes the time it took to execute relevant parts of this check. Any setup timeor system time needed to start executing this check in the Checkly backend is not part of this.|
 |apiCheckResult|[apiCheckResult](#schemaapicheckresult)|none|
 |browserCheckResult|[browserCheckResult](#schemabrowsercheckresult)|none|
@@ -4382,9 +5233,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "isDegraded": true,
     "overMaxResponseTime": true,
     "runLocation": "string",
-    "startedAt": "2020-06-23",
-    "stoppedAt": "2020-06-23",
-    "created_at": "2020-06-23",
+    "startedAt": "2021-02-10T09:52:54Z",
+    "stoppedAt": "2021-02-10T09:52:54Z",
+    "created_at": "2021-02-10T09:52:54Z",
     "responseTime": 0,
     "apiCheckResult": {},
     "browserCheckResult": {},
@@ -4407,6 +5258,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 ```json
 {
+  "name": "string",
   "checkId": "string",
   "hasFailures": true,
   "hasErrors": true,
@@ -4416,8 +5268,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "lastRunLocation": "string",
   "lastCheckRunId": "string",
   "sslDaysRemaining": 0,
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 
 ```
@@ -4426,6 +5278,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 
 |Name|Type|Description|
 |---|---|---|---|---|
+|name<div class="requiredParam">(required)</div>|string|The name of the check|
 |checkId|string|The ID of check this status belongs to|
 |hasFailures|boolean|Describes if this check is currently failing. If any of the assertions for an API checkfail this value is true. If a browser check fails for whatever reason, this is true|
 |hasErrors|boolean|Describes if due to some error outside of normal operation this check is failing. This should be extremely rare and only when there is an error in the Checkly backend|
@@ -4434,9 +5287,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |shortestRun|number|The shortest ever recorded response time for this check|
 |lastRunLocation|string|What location this check was last run at|
 |lastCheckRunId|string|The unique incrementing ID for each check run|
-|sslDaysRemaining|number|How many days remain till the current SSL certifacte expires|
+|sslDaysRemaining|number|How many days remain till the current SSL certificate expires|
 |created_at|string(date)|none|
-|updated_at|string(date)|none|
+|updated_at|string(date-time)|none|
 
 <h2 id="tocScheckstatuslist">CheckStatusList</h2>
 
@@ -4445,6 +5298,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 ```json
 [
   {
+    "name": "string",
     "checkId": "string",
     "hasFailures": true,
     "hasErrors": true,
@@ -4454,8 +5308,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "lastRunLocation": "string",
     "lastCheckRunId": "string",
     "sslDaysRemaining": 0,
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 
@@ -4477,7 +5331,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "id": "string",
     "name": "string",
     "checkType": "BROWSER",
-    "frequency": 5,
+    "frequency": 10,
     "activated": true,
     "muted": false,
     "doubleCheck": true,
@@ -4486,20 +5340,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "locations": [
       "us-east-1"
     ],
-    "request": {
-      "method": "GET",
-      "url": "localhost",
-      "followRedirects": true,
-      "body": "",
-      "bodyType": "NONE",
-      "headers": [],
-      "queryParameters": [],
-      "assertions": [],
-      "basicAuth": {
-        "username": "",
-        "password": ""
-      }
-    },
+    "request": {},
     "script": "string",
     "environmentVariables": [
       {
@@ -4528,7 +5369,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         "interval": 5
       },
       "sslCertificates": {
-        "enabled": true,
+        "enabled": false,
         "alertThreshold": 30
       }
     },
@@ -4570,8 +5411,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         }
       ]
     },
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 
@@ -4583,6 +5424,45 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |---|---|---|---|---|
 |*anonymous*|[[Check](#schemacheck)]|none|
 
+<h2 id="tocSmodel14">Model14</h2>
+
+<a id="schemamodel14"></a>
+
+```json
+[
+  "us-east-1"
+]
+
+```
+
+*An array of one or more data center locations where to run the this check*
+
+### Properties
+
+*None*
+
+<h2 id="tocSmodel15">Model15</h2>
+
+<a id="schemamodel15"></a>
+
+```json
+[
+  {
+    "alertChannelId": 0,
+    "activated": true
+  }
+]
+
+```
+
+*Array of alert channel subscriptions*
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|*anonymous*|[[AlertChannelSubscription](#schemaalertchannelsubscription)]|Array of alert channel subscriptions|
+
 <h2 id="tocScheckcreate">CheckCreate</h2>
 
 <a id="schemacheckcreate"></a>
@@ -4591,7 +5471,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 {
   "name": "string",
   "checkType": "BROWSER",
-  "frequency": 5,
+  "frequency": 10,
   "activated": true,
   "muted": false,
   "doubleCheck": true,
@@ -4600,20 +5480,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "locations": [
     "us-east-1"
   ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
+  "request": {},
   "script": "string",
   "environmentVariables": [
     {
@@ -4642,7 +5509,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       "interval": 5
     },
     "sslCertificates": {
-      "enabled": true,
+      "enabled": false,
       "alertThreshold": 30
     }
   },
@@ -4650,7 +5517,13 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "degradedResponseTime": 10000,
   "maxResponseTime": 20000,
   "groupId": 0,
-  "groupOrder": 0
+  "groupOrder": 0,
+  "alertChannelSubscriptions": [
+    {
+      "alertChannelId": 0,
+      "activated": true
+    }
+  ]
 }
 
 ```
@@ -4661,27 +5534,28 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |---|---|---|---|---|
 |name<div class="requiredParam">(required)</div>|string|The name of the check|
 |checkType<div class="requiredParam">(required)</div>|string|The type of the check|
-|frequency|number|none|
+|frequency|integer|how often the check should run in minutes|
 |activated<div class="requiredParam">(required)</div>|boolean|Determines if the check is running or not|
 |muted|boolean|Determines if any notifications will be send out when a check fails and/or recovers|
 |doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
 |sslCheck|boolean|Determines if the SSL certificate should be validated for expiry|
 |shouldFail|boolean|Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404|
-|locations|[Model_12](#schemamodel_12)|An array of one or more data center locations where to run the this check|
+|locations|[Model14](#schemamodel14)|An array of one or more data center locations where to run the this check|
 |request|[request](#schemarequest)|none|
-|script|string|A valid piece of Node.js javascript code describing a browser interaction with the Puppeteer framework.|
+|script<div class="requiredParam">(required)</div>|string|none|
 |environmentVariables|[EnvironmentVariables](#schemaenvironmentvariables)|Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.|
 |tags|[Tags](#schematags)|Tags for organizing and filtering checks|
 |setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check|
 |tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check|
 |localSetupScript|string|A valid piece of Node.js code to run in the setup phase|
 |localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase|
-|alertSettings|[Model_8](#schemamodel_8)|none|
+|alertSettings|[Model9](#schemamodel9)|none|
 |useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check|
 |degradedResponseTime|number|The response time in milliseconds where a check should be considered degraded|
 |maxResponseTime|number|The response time in milliseconds where a check should be considered failing|
 |groupId|number|The id of the check group this check is part of|
 |groupOrder|number|The position of this check in a check group. It determines in what order checks are run when a group is triggered from the API or from CI/CD|
+|alertChannelSubscriptions|[Model15](#schemamodel15)|Array of alert channel subscriptions|
 
 #### Enumerated Values
 
@@ -4689,13 +5563,205 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |---|---|
 |checkType|BROWSER|
 |checkType|API|
-|frequency|5|
-|frequency|10|
-|frequency|15|
-|frequency|30|
-|frequency|60|
-|frequency|720|
-|frequency|1440|
+
+<h2 id="tocSmodel16">Model16</h2>
+
+<a id="schemamodel16"></a>
+
+```json
+[
+  "us-east-1"
+]
+
+```
+
+*An array of one or more data center locations where to run the this check*
+
+### Properties
+
+*None*
+
+<h2 id="tocSmodel17">Model17</h2>
+
+<a id="schemamodel17"></a>
+
+```json
+{
+  "escalationType": "RUN_BASED",
+  "runBasedEscalation": {
+    "failedRunThreshold": 1
+  },
+  "timeBasedEscalation": {
+    "minutesFailingThreshold": 5
+  },
+  "reminders": {
+    "amount": 0,
+    "interval": 5
+  },
+  "sslCertificates": {
+    "enabled": false,
+    "alertThreshold": 30
+  }
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|escalationType|string|Determines what type of escalation to use|
+|runBasedEscalation|[runBasedEscalation](#schemarunbasedescalation)|none|
+|timeBasedEscalation|[timeBasedEscalation](#schematimebasedescalation)|none|
+|reminders|[reminders](#schemareminders)|none|
+|sslCertificates|[sslCertificates](#schemasslcertificates)|none|
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|escalationType|RUN_BASED|
+|escalationType|TIME_BASED|
+
+<h2 id="tocSmodel18">Model18</h2>
+
+<a id="schemamodel18"></a>
+
+```json
+[
+  {
+    "alertChannelId": 0,
+    "activated": true
+  }
+]
+
+```
+
+*Array of alert channel subscriptions*
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|*anonymous*|[[AlertChannelSubscription](#schemaalertchannelsubscription)]|Array of alert channel subscriptions|
+
+<h2 id="tocSmodel19">Model19</h2>
+
+<a id="schemamodel19"></a>
+
+```json
+{
+  "name": "string",
+  "checkType": "BROWSER",
+  "frequency": 10,
+  "activated": true,
+  "muted": false,
+  "doubleCheck": true,
+  "sslCheck": true,
+  "shouldFail": true,
+  "locations": [
+    "us-east-1"
+  ],
+  "request": {},
+  "script": "string",
+  "environmentVariables": [
+    {
+      "key": "string",
+      "value": "",
+      "locked": false
+    }
+  ],
+  "tags": [
+    "string"
+  ],
+  "setupSnippetId": 0,
+  "tearDownSnippetId": 0,
+  "localSetupScript": "string",
+  "localTearDownScript": "string",
+  "alertSettings": {
+    "escalationType": "RUN_BASED",
+    "runBasedEscalation": {
+      "failedRunThreshold": 1
+    },
+    "timeBasedEscalation": {
+      "minutesFailingThreshold": 5
+    },
+    "reminders": {
+      "amount": 0,
+      "interval": 5
+    },
+    "sslCertificates": {
+      "enabled": false,
+      "alertThreshold": 30
+    }
+  },
+  "useGlobalAlertSettings": true,
+  "degradedResponseTime": 10000,
+  "maxResponseTime": 20000,
+  "groupId": 0,
+  "groupOrder": 0,
+  "alertChannelSubscriptions": [
+    {
+      "alertChannelId": 0,
+      "activated": true
+    }
+  ]
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|name|string|The name of the check|
+|checkType|string|The type of the check|
+|frequency|integer|how often the check should run in minutes|
+|activated|boolean|Determines if the check is running or not|
+|muted|boolean|Determines if any notifications will be send out when a check fails and/or recovers|
+|doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
+|sslCheck|boolean|Determines if the SSL certificate should be validated for expiry|
+|shouldFail|boolean|Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404|
+|locations|[Model16](#schemamodel16)|An array of one or more data center locations where to run the this check|
+|request<div class="requiredParam">(required)</div>|[request](#schemarequest)|none|
+|script<div class="requiredParam">(required)</div>|string|none|
+|environmentVariables|[EnvironmentVariables](#schemaenvironmentvariables)|Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.|
+|tags|[Tags](#schematags)|Tags for organizing and filtering checks|
+|setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check|
+|tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check|
+|localSetupScript|string|A valid piece of Node.js code to run in the setup phase|
+|localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase|
+|alertSettings|[Model17](#schemamodel17)|none|
+|useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check|
+|degradedResponseTime|number|The response time in milliseconds where a check should be considered degraded|
+|maxResponseTime|number|The response time in milliseconds where a check should be considered failing|
+|groupId|number|The id of the check group this check is part of|
+|groupOrder|number|The position of this check in a check group. It determines in what order checks are run when a group is triggered from the API or from CI/CD|
+|alertChannelSubscriptions|[Model18](#schemamodel18)|Array of alert channel subscriptions|
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+|checkType|BROWSER|
+|checkType|API|
+
+<h2 id="tocSmodel20">Model20</h2>
+
+<a id="schemamodel20"></a>
+
+```json
+[
+  "string"
+]
+
+```
+
+*A list of one or more tags that filter which checks to display on the dashboard.*
+
+### Properties
+
+*None*
 
 <h2 id="tocSdashboardresponse">DashboardResponse</h2>
 
@@ -4732,7 +5798,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |refreshRate<div class="requiredParam">(required)</div>|number|How often to refresh the dashboard in seconds.|
 |paginate<div class="requiredParam">(required)</div>|boolean|Determines of pagination is on or off.|
 |paginationRate<div class="requiredParam">(required)</div>|number|How often to trigger pagination in seconds.|
-|tags|[Model_16](#schemamodel_16)|A list of one or more tags that filter which checks to display on the dashboard.|
+|tags|[Model20](#schemamodel20)|A list of one or more tags that filter which checks to display on the dashboard.|
 |hideTags<div class="requiredParam">(required)</div>|boolean|Show or hide the tags on the dashboard.|
 |dashboardId<div class="requiredParam">(required)</div>|string|none|
 
@@ -4780,6 +5846,23 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |---|---|---|---|---|
 |*anonymous*|[[DashboardResponse](#schemadashboardresponse)]|none|
 
+<h2 id="tocSmodel21">Model21</h2>
+
+<a id="schemamodel21"></a>
+
+```json
+[
+  "string"
+]
+
+```
+
+*A list of one or more tags that filter which checks to display on the dashboard.*
+
+### Properties
+
+*None*
+
 <h2 id="tocSdashboardschema">DashboardSchema</h2>
 
 <a id="schemadashboardschema"></a>
@@ -4814,7 +5897,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |refreshRate<div class="requiredParam">(required)</div>|number|How often to refresh the dashboard in seconds.|
 |paginate<div class="requiredParam">(required)</div>|boolean|Determines of pagination is on or off.|
 |paginationRate<div class="requiredParam">(required)</div>|number|How often to trigger pagination in seconds.|
-|tags|[Model_17](#schemamodel_17)|A list of one or more tags that filter which checks to display on the dashboard.|
+|tags|[Model21](#schemamodel21)|A list of one or more tags that filter which checks to display on the dashboard.|
 |hideTags<div class="requiredParam">(required)</div>|boolean|Show or hide the tags on the dashboard.|
 
 #### Enumerated Values
@@ -4830,6 +5913,138 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |paginationRate|60|
 |paginationRate|300|
 
+<h2 id="tocSmodel22">Model22</h2>
+
+<a id="schemamodel22"></a>
+
+```json
+[
+  "string"
+]
+
+```
+
+*The names of the checks and groups maintenance window should apply to*
+
+### Properties
+
+*None*
+
+<h2 id="tocSmodel23">Model23</h2>
+
+<a id="schemamodel23"></a>
+
+```json
+{
+  "id": 0,
+  "name": "string",
+  "tags": [
+    "string"
+  ],
+  "startsAt": "2021-02-10",
+  "endsAt": "2021-02-10",
+  "repeatInterval": 1,
+  "repeatUnit": "string",
+  "repeatEndsAt": "2021-02-10",
+  "created_at": "2021-02-10",
+  "updated_at": "2021-02-10"
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|id<div class="requiredParam">(required)</div>|number|The id of the maintenance window|
+|name<div class="requiredParam">(required)</div>|string|The maintenance window name|
+|tags<div class="requiredParam">(required)</div>|[Model22](#schemamodel22)|The names of the checks and groups maintenance window should apply to|
+|startsAt<div class="requiredParam">(required)</div>|string(date)|The start date of the maintenance window|
+|endsAt<div class="requiredParam">(required)</div>|string(date)|The end date of the maintenance window|
+|repeatInterval|number|The repeat interval of the maintenance window from the first occurance|
+|repeatUnit<div class="requiredParam">(required)</div>|string|The repeat strategy for the maintenance window|
+|repeatEndsAt|string(date)|The end date where the maintenance window should stop repeating|
+|created_at<div class="requiredParam">(required)</div>|string(date)|The creation date of the maintenance window|
+|updated_at<div class="requiredParam">(required)</div>|string(date)|The last date that the maintenance window was updated|
+
+<h2 id="tocSmaintenancewindowslist">MaintenanceWindowsList</h2>
+
+<a id="schemamaintenancewindowslist"></a>
+
+```json
+[
+  {
+    "id": 0,
+    "name": "string",
+    "tags": [
+      "string"
+    ],
+    "startsAt": "2021-02-10",
+    "endsAt": "2021-02-10",
+    "repeatInterval": 1,
+    "repeatUnit": "string",
+    "repeatEndsAt": "2021-02-10",
+    "created_at": "2021-02-10",
+    "updated_at": "2021-02-10"
+  }
+]
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|*anonymous*|[[Model23](#schemamodel23)]|none|
+
+<h2 id="tocSmodel24">Model24</h2>
+
+<a id="schemamodel24"></a>
+
+```json
+[
+  "string"
+]
+
+```
+
+*The names of the checks and groups maintenance window should apply to*
+
+### Properties
+
+*None*
+
+<h2 id="tocSmodel25">Model25</h2>
+
+<a id="schemamodel25"></a>
+
+```json
+{
+  "name": "string",
+  "tags": [
+    "string"
+  ],
+  "startsAt": "2021-02-10",
+  "endsAt": "2021-02-10",
+  "repeatInterval": 1,
+  "repeatUnit": "string",
+  "repeatEndsAt": "2021-02-10"
+}
+
+```
+
+### Properties
+
+|Name|Type|Description|
+|---|---|---|---|---|
+|name<div class="requiredParam">(required)</div>|string|The maintenance window name|
+|tags<div class="requiredParam">(required)</div>|[Model24](#schemamodel24)|The names of the checks and groups maintenance window should apply to|
+|startsAt<div class="requiredParam">(required)</div>|string(date)|The start date of the maintenance window|
+|endsAt<div class="requiredParam">(required)</div>|string(date)|The end date of the maintenance window|
+|repeatInterval|number|The repeat interval of the maintenance window from the first occurance|
+|repeatUnit<div class="requiredParam">(required)</div>|string|The repeat strategy for the maintenance window|
+|repeatEndsAt|string(date)|The end date where the maintenance window should stop repeating|
+
 <h2 id="tocSsnippet">Snippet</h2>
 
 <a id="schemasnippet"></a>
@@ -4839,8 +6054,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
+  "created_at": "2021-02-10T09:52:54Z",
+  "updated_at": "2021-02-10T09:52:54Z"
 }
 
 ```
@@ -4852,8 +6067,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |id|number|none|
 |name|string|The snippet name|
 |script|string|Your Node.js code that interacts with the API check lifecycle, or functions as a partial for browser checks.|
-|created_at|string(date)|none|
-|updated_at|string(date)|none|
+|created_at|string(date-time)|none|
+|updated_at|string(date-time)|none|
 
 <h2 id="tocSsnippetslist">SnippetsList</h2>
 
@@ -4865,8 +6080,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "id": 0,
     "name": "string",
     "script": "string",
-    "created_at": "2020-06-23",
-    "updated_at": "2020-06-23"
+    "created_at": "2021-02-10T09:52:54Z",
+    "updated_at": "2021-02-10T09:52:54Z"
   }
 ]
 
@@ -4917,841 +6132,4 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
 |Name|Type|Description|
 |---|---|---|---|---|
 |*anonymous*|[[EnvironmentVariable](#schemaenvironmentvariable)]|none|
-
-<h2 id="tocSmodel_1">Model_1</h2>
-
-<a id="schemamodel_1"></a>
-
-```json
-{}
-
-```
-
-### Properties
-
-*None*
-
-<h2 id="tocSmodel_2">Model_2</h2>
-
-<a id="schemamodel_2"></a>
-
-```json
-{
-  "id": 0,
-  "name": "string",
-  "activated": true,
-  "muted": true,
-  "tags": [
-    "string"
-  ],
-  "locations": [
-    "string"
-  ],
-  "concurrency": 3,
-  "apiCheckDefaults": {
-    "url": "",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
-  "browserCheckDefaults": {},
-  "environmentVariables": [
-    {
-      "key": "string",
-      "value": "",
-      "locked": false
-    }
-  ],
-  "doubleCheck": true,
-  "useGlobalAlertSettings": true,
-  "alertSettings": {
-    "escalationType": "RUN_BASED",
-    "runBasedEscalation": {
-      "failedRunThreshold": 1
-    },
-    "timeBasedEscalation": {
-      "minutesFailingThreshold": 5
-    },
-    "reminders": {
-      "amount": 0,
-      "interval": 5
-    },
-    "sslCertificates": {
-      "enabled": true,
-      "alertThreshold": 30
-    }
-  },
-  "alertChannelSubscriptions": [
-    {
-      "alertChannelId": 0,
-      "activated": true
-    }
-  ],
-  "setupSnippetId": 0,
-  "tearDownSnippetId": 0,
-  "localSetupScript": "string",
-  "localTearDownScript": "string",
-  "created_at": "2020-06-23",
-  "updated_at": "2020-06-23"
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|id|number|none|
-|name<div class="requiredParam">(required)</div>|string|none|
-|activated<div class="requiredParam">(required)</div>|boolean|none|
-|muted|boolean|none|
-|tags|[tags](#schematags)|none|
-|locations|[locations](#schemalocations)|none|
-|concurrency<div class="requiredParam">(required)</div>|number|none|
-|apiCheckDefaults<div class="requiredParam">(required)</div>|[apiCheckDefaults](#schemaapicheckdefaults)|none|
-|browserCheckDefaults<div class="requiredParam">(required)</div>|[browserCheckDefaults](#schemabrowsercheckdefaults)|none|
-|environmentVariables|[environmentVariables](#schemaenvironmentvariables)|none|
-|doubleCheck|boolean|none|
-|useGlobalAlertSettings|boolean|none|
-|alertSettings|[AlertSettingsSchema](#schemaalertsettingsschema)|none|
-|alertChannelSubscriptions|[alertChannelSubscriptions](#schemaalertchannelsubscriptions)|none|
-|setupSnippetId|number|none|
-|tearDownSnippetId|number|none|
-|localSetupScript|string|none|
-|localTearDownScript|string|none|
-|created_at|string(date)|none|
-|updated_at|string(date)|none|
-
-<h2 id="tocSmodel_3">Model_3</h2>
-
-<a id="schemamodel_3"></a>
-
-```json
-{}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|url|string|The base url for this group which you can reference with the {{GROUP_BASE_URL}} variable in all group checks.|
-|headers|[Headers](#schemaheaders)|none|
-|queryParameters|[QueryParameters](#schemaqueryparameters)|none|
-|assertions|[assertions](#schemaassertions)|Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.|
-|basicAuth|[basicAuth](#schemabasicauth)|none|
-
-<h2 id="tocSmodel_4">Model_4</h2>
-
-<a id="schemamodel_4"></a>
-
-```json
-{}
-
-```
-
-### Properties
-
-*None*
-
-<h2 id="tocSmodel_5">Model_5</h2>
-
-<a id="schemamodel_5"></a>
-
-```json
-{
-  "name": "string",
-  "activated": true,
-  "muted": false,
-  "tags": [
-    "string"
-  ],
-  "locations": [
-    "us-east-1"
-  ],
-  "concurrency": 3,
-  "apiCheckDefaults": {},
-  "browserCheckDefaults": {},
-  "environmentVariables": [
-    {
-      "key": "string",
-      "value": "",
-      "locked": false
-    }
-  ],
-  "doubleCheck": true,
-  "useGlobalAlertSettings": true,
-  "alertSettings": {
-    "escalationType": "RUN_BASED",
-    "runBasedEscalation": {
-      "failedRunThreshold": 1
-    },
-    "timeBasedEscalation": {
-      "minutesFailingThreshold": 5
-    },
-    "reminders": {
-      "amount": 0,
-      "interval": 5
-    },
-    "sslCertificates": {
-      "enabled": true,
-      "alertThreshold": 30
-    }
-  },
-  "alertChannelSubscriptions": [
-    {
-      "alertChannelId": 0,
-      "activated": true
-    }
-  ],
-  "setupSnippetId": 0,
-  "tearDownSnippetId": 0,
-  "localSetupScript": "string",
-  "localTearDownScript": "string"
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|name<div class="requiredParam">(required)</div>|string|The name of the check group|
-|activated|boolean|Determines if the checks in the  group are running or not|
-|muted|boolean|Determines if any notifications will be send out when a check in this group fails and/or recovers|
-|tags|[Tags](#schematags)|Tags for organizing and filtering checks|
-|locations<div class="requiredParam">(required)</div>|[Locations](#schemalocations)|An array of one or more data center locations where to run the checks|
-|concurrency|number|Determines how many checks are invoked concurrently when triggering a check group from CI/CD or through the API.|
-|apiCheckDefaults|[Model_3](#schemamodel_3)|none|
-|browserCheckDefaults|[Model_4](#schemamodel_4)|none|
-|environmentVariables|[environmentVariables](#schemaenvironmentvariables)|none|
-|doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
-|useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check group|
-|alertSettings|[AlertSettingsSchema](#schemaalertsettingsschema)|none|
-|alertChannelSubscriptions|[alertChannelSubscriptions](#schemaalertchannelsubscriptions)|none|
-|setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check in this group|
-|tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check in this group|
-|localSetupScript|string|A valid piece of Node.js code to run in the setup phase of an API check in this group|
-|localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase of an API check in this group|
-
-<h2 id="tocSmodel_6">Model_6</h2>
-
-<a id="schemamodel_6"></a>
-
-```json
-[
-  "us-east-1"
-]
-
-```
-
-*An array of one or more data center locations where to run the this check*
-
-### Properties
-
-*None*
-
-<h2 id="tocSmodel_7">Model_7</h2>
-
-<a id="schemamodel_7"></a>
-
-```json
-{
-  "username": "",
-  "password": ""
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|username<div class="requiredParam">(required)</div>|string|none|
-|password<div class="requiredParam">(required)</div>|string|none|
-
-<h2 id="tocSmodel_8">Model_8</h2>
-
-<a id="schemamodel_8"></a>
-
-```json
-{
-  "escalationType": "RUN_BASED",
-  "runBasedEscalation": {
-    "failedRunThreshold": 1
-  },
-  "timeBasedEscalation": {
-    "minutesFailingThreshold": 5
-  },
-  "reminders": {
-    "amount": 0,
-    "interval": 5
-  },
-  "sslCertificates": {
-    "enabled": true,
-    "alertThreshold": 30
-  }
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|escalationType|string|Determines what type of escalation to use|
-|runBasedEscalation|[runBasedEscalation](#schemarunbasedescalation)|none|
-|timeBasedEscalation|[timeBasedEscalation](#schematimebasedescalation)|none|
-|reminders|[reminders](#schemareminders)|none|
-|sslCertificates|[sslCertificates](#schemasslcertificates)|none|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|escalationType|RUN_BASED|
-|escalationType|TIME_BASED|
-
-<h2 id="tocSmodel_9">Model_9</h2>
-
-<a id="schemamodel_9"></a>
-
-```json
-{}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|url|string|The base url for this group which you can reference with the {{GROUP_BASE_URL}} variable in all group checks.|
-|headers|[Headers](#schemaheaders)|none|
-|queryParameters|[QueryParameters](#schemaqueryparameters)|none|
-|assertions|[assertions](#schemaassertions)|Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.|
-|basicAuth|[basicAuth](#schemabasicauth)|none|
-
-<h2 id="tocSmodel_10">Model_10</h2>
-
-<a id="schemamodel_10"></a>
-
-```json
-{
-  "name": "string",
-  "activated": true,
-  "muted": false,
-  "tags": [
-    "string"
-  ],
-  "locations": [
-    "us-east-1"
-  ],
-  "concurrency": 3,
-  "apiCheckDefaults": {},
-  "browserCheckDefaults": {},
-  "environmentVariables": [
-    {
-      "key": "string",
-      "value": "",
-      "locked": false
-    }
-  ],
-  "doubleCheck": true,
-  "useGlobalAlertSettings": true,
-  "alertSettings": {
-    "escalationType": "RUN_BASED",
-    "runBasedEscalation": {
-      "failedRunThreshold": 1
-    },
-    "timeBasedEscalation": {
-      "minutesFailingThreshold": 5
-    },
-    "reminders": {
-      "amount": 0,
-      "interval": 5
-    },
-    "sslCertificates": {
-      "enabled": true,
-      "alertThreshold": 30
-    }
-  },
-  "alertChannelSubscriptions": [
-    {
-      "alertChannelId": 0,
-      "activated": true
-    }
-  ],
-  "setupSnippetId": 0,
-  "tearDownSnippetId": 0,
-  "localSetupScript": "string",
-  "localTearDownScript": "string"
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|name|string|The name of the check group|
-|activated|boolean|Determines if the checks in the  group are running or not|
-|muted|boolean|Determines if any notifications will be send out when a check in this group fails and/or recovers|
-|tags|[Tags](#schematags)|Tags for organizing and filtering checks|
-|locations|[Locations](#schemalocations)|An array of one or more data center locations where to run the checks|
-|concurrency|number|Determines how many checks are invoked concurrently when triggering a check group from CI/CD or through the API.|
-|apiCheckDefaults|[Model_9](#schemamodel_9)|none|
-|browserCheckDefaults|[Model_4](#schemamodel_4)|none|
-|environmentVariables|[environmentVariables](#schemaenvironmentvariables)|none|
-|doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
-|useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check group|
-|alertSettings|[AlertSettingsSchema](#schemaalertsettingsschema)|none|
-|alertChannelSubscriptions|[alertChannelSubscriptions](#schemaalertchannelsubscriptions)|none|
-|setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check in this group|
-|tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check in this group|
-|localSetupScript|string|A valid piece of Node.js code to run in the setup phase of an API check in this group|
-|localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase of an API check in this group|
-
-<h2 id="tocSmodel_11">Model_11</h2>
-
-<a id="schemamodel_11"></a>
-
-```json
-[
-  "us-east-1"
-]
-
-```
-
-*An array of one or more data center locations where to run the this check*
-
-### Properties
-
-*None*
-
-<h2 id="tocSmodel_12">Model_12</h2>
-
-<a id="schemamodel_12"></a>
-
-```json
-[
-  "us-east-1"
-]
-
-```
-
-*An array of one or more data center locations where to run the this check*
-
-### Properties
-
-*None*
-
-<h2 id="tocSmodel_13">Model_13</h2>
-
-<a id="schemamodel_13"></a>
-
-```json
-[
-  "us-east-1"
-]
-
-```
-
-*An array of one or more data center locations where to run the this check*
-
-### Properties
-
-*None*
-
-<h2 id="tocSmodel_14">Model_14</h2>
-
-<a id="schemamodel_14"></a>
-
-```json
-{
-  "escalationType": "RUN_BASED",
-  "runBasedEscalation": {
-    "failedRunThreshold": 1
-  },
-  "timeBasedEscalation": {
-    "minutesFailingThreshold": 5
-  },
-  "reminders": {
-    "amount": 0,
-    "interval": 5
-  },
-  "sslCertificates": {
-    "enabled": true,
-    "alertThreshold": 30
-  }
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|escalationType|string|Determines what type of escalation to use|
-|runBasedEscalation|[runBasedEscalation](#schemarunbasedescalation)|none|
-|timeBasedEscalation|[timeBasedEscalation](#schematimebasedescalation)|none|
-|reminders|[reminders](#schemareminders)|none|
-|sslCertificates|[sslCertificates](#schemasslcertificates)|none|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|escalationType|RUN_BASED|
-|escalationType|TIME_BASED|
-
-<h2 id="tocSmodel_15">Model_15</h2>
-
-<a id="schemamodel_15"></a>
-
-```json
-{
-  "name": "string",
-  "checkType": "BROWSER",
-  "frequency": 5,
-  "activated": true,
-  "muted": false,
-  "doubleCheck": true,
-  "sslCheck": true,
-  "shouldFail": true,
-  "locations": [
-    "us-east-1"
-  ],
-  "request": {
-    "method": "GET",
-    "url": "localhost",
-    "followRedirects": true,
-    "body": "",
-    "bodyType": "NONE",
-    "headers": [],
-    "queryParameters": [],
-    "assertions": [],
-    "basicAuth": {
-      "username": "",
-      "password": ""
-    }
-  },
-  "script": "string",
-  "environmentVariables": [
-    {
-      "key": "string",
-      "value": "",
-      "locked": false
-    }
-  ],
-  "tags": [
-    "string"
-  ],
-  "setupSnippetId": 0,
-  "tearDownSnippetId": 0,
-  "localSetupScript": "string",
-  "localTearDownScript": "string",
-  "alertSettings": {
-    "escalationType": "RUN_BASED",
-    "runBasedEscalation": {
-      "failedRunThreshold": 1
-    },
-    "timeBasedEscalation": {
-      "minutesFailingThreshold": 5
-    },
-    "reminders": {
-      "amount": 0,
-      "interval": 5
-    },
-    "sslCertificates": {
-      "enabled": true,
-      "alertThreshold": 30
-    }
-  },
-  "useGlobalAlertSettings": true,
-  "degradedResponseTime": 10000,
-  "maxResponseTime": 20000,
-  "groupId": 0,
-  "groupOrder": 0
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|name|string|The name of the check|
-|checkType|string|The type of the check|
-|frequency|number|none|
-|activated|boolean|Determines if the check is running or not|
-|muted|boolean|Determines if any notifications will be send out when a check fails and/or recovers|
-|doubleCheck|boolean|Setting this to "true" will trigger a retry when a check fails from the failing region and another, randomly selected region before marking the check as failed|
-|sslCheck|boolean|Determines if the SSL certificate should be validated for expiry|
-|shouldFail|boolean|Allows to invert the behaviour of when a check is considered to fail. Allows for validating error status like 404|
-|locations|[Model_13](#schemamodel_13)|An array of one or more data center locations where to run the this check|
-|request|[request](#schemarequest)|none|
-|script|string|A valid piece of Node.js javascript code describing a browser interaction with the Puppeteer framework.|
-|environmentVariables|[EnvironmentVariables](#schemaenvironmentvariables)|Key/value pairs for setting environment variables during check execution. These are only relevant for Browser checks. Use global environment variables whenever possible.|
-|tags|[Tags](#schematags)|Tags for organizing and filtering checks|
-|setupSnippetId|number|An ID reference to a snippet to use in the setup phase of an API check|
-|tearDownSnippetId|number|An ID reference to a snippet to use in the teardown phase of an API check|
-|localSetupScript|string|A valid piece of Node.js code to run in the setup phase|
-|localTearDownScript|string|A valid piece of Node.js code to run in the teardown phase|
-|alertSettings|[Model_14](#schemamodel_14)|none|
-|useGlobalAlertSettings|boolean|When true, the account level alert setting will be used, not the alert setting defined on this check|
-|degradedResponseTime|number|The response time in milliseconds where a check should be considered degraded|
-|maxResponseTime|number|The response time in milliseconds where a check should be considered failing|
-|groupId|number|The id of the check group this check is part of|
-|groupOrder|number|The position of this check in a check group. It determines in what order checks are run when a group is triggered from the API or from CI/CD|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|checkType|BROWSER|
-|checkType|API|
-|frequency|5|
-|frequency|10|
-|frequency|15|
-|frequency|30|
-|frequency|60|
-|frequency|720|
-|frequency|1440|
-
-<h2 id="tocSmodel_16">Model_16</h2>
-
-<a id="schemamodel_16"></a>
-
-```json
-[
-  "string"
-]
-
-```
-
-*A list of one or more tags that filter which checks to display on the dashboard.*
-
-### Properties
-
-*None*
-
-<h2 id="tocSmodel_17">Model_17</h2>
-
-<a id="schemamodel_17"></a>
-
-```json
-[
-  "string"
-]
-
-```
-
-*A list of one or more tags that filter which checks to display on the dashboard.*
-
-### Properties
-
-*None*
-
-<h2 id="tocSschema1">schema1</h2>
-
-<a id="schemaschema1"></a>
-
-```json
-{
-  "key": "string",
-  "value": "",
-  "locked": false
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|key<div class="requiredParam">(required)</div>|string|none|
-|value<div class="requiredParam">(required)</div>|string|none|
-|locked|boolean|none|
-
-<h2 id="tocSschema2">schema2</h2>
-
-<a id="schemaschema2"></a>
-
-```json
-{
-  "source": "STATUS_CODE",
-  "property": "",
-  "comparison": "EQUALS",
-  "target": ""
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|source|string|none|
-|property|string|none|
-|comparison|string|none|
-|target|string|none|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|source|STATUS_CODE|
-|source|JSON_BODY|
-|source|HEADERS|
-|source|TEXT_BODY|
-|source|RESPONSE_TIME|
-|comparison|EQUALS|
-|comparison|NOT_EQUALS|
-|comparison|HAS_KEY|
-|comparison|NOT_HAS_KEY|
-|comparison|HAS_VALUE|
-|comparison|NOT_HAS_VALUE|
-|comparison|IS_EMPTY|
-|comparison|NOT_EMPTY|
-|comparison|GREATER_THAN|
-|comparison|LESS_THAN|
-|comparison|CONTAINS|
-|comparison|NOT_CONTAINS|
-|comparison|IS_NULL|
-|comparison|NOT_NULL|
-
-<h2 id="tocSschema3">schema3</h2>
-
-<a id="schemaschema3"></a>
-
-```json
-[]
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|*anonymous*|[[schema1](#schemaschema1)]|none|
-
-<h2 id="tocSschema4">schema4</h2>
-
-<a id="schemaschema4"></a>
-
-```json
-[]
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|*anonymous*|[[schema1](#schemaschema1)]|none|
-
-<h2 id="tocSschema5">schema5</h2>
-
-<a id="schemaschema5"></a>
-
-```json
-[]
-
-```
-
-*Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.*
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|*anonymous*|[[schema2](#schemaschema2)]|Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.|
-
-<h2 id="tocSschema6">schema6</h2>
-
-<a id="schemaschema6"></a>
-
-```json
-{
-  "username": "",
-  "password": ""
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|username<div class="requiredParam">(required)</div>|string|none|
-|password<div class="requiredParam">(required)</div>|string|none|
-
-<h2 id="tocSschema7">schema7</h2>
-
-<a id="schemaschema7"></a>
-
-```json
-{
-  "method": "GET",
-  "url": "localhost",
-  "followRedirects": true,
-  "body": "",
-  "bodyType": "NONE",
-  "headers": [],
-  "queryParameters": [],
-  "assertions": [],
-  "basicAuth": {
-    "username": "",
-    "password": ""
-  }
-}
-
-```
-
-### Properties
-
-|Name|Type|Description|
-|---|---|---|---|---|
-|method<div class="requiredParam">(required)</div>|string|none|
-|url<div class="requiredParam">(required)</div>|string|none|
-|followRedirects|boolean|none|
-|body|string|none|
-|bodyType|string|none|
-|headers|[schema3](#schemaschema3)|none|
-|queryParameters|[schema4](#schemaschema4)|none|
-|assertions|[schema5](#schemaschema5)|Check the main Checkly documentation on assertions for specific values like regular expressions and JSON path descriptors you can use in the "property" field.|
-|basicAuth<div class="requiredParam">(required)</div>|[schema6](#schemaschema6)|none|
-
-#### Enumerated Values
-
-|Property|Value|
-|---|---|
-|method|GET|
-|method|POST|
-|method|PUT|
-|method|HEAD|
-|method|DELETE|
-|method|PATCH|
-|bodyType|NONE|
-|bodyType|JSON|
-|bodyType|FORM|
-|bodyType|RAW|
-|bodyType|GRAPHQL|
-
-<h2 id="tocSschema8">schema8</h2>
-
-<a id="schemaschema8"></a>
-
-```json
-{}
-
-```
-
-### Properties
-
-*None*
 

@@ -9,13 +9,13 @@
     </a>
     <ul class="docs-menu-content">
       {{ $currentPage := . }}
-      {{ range .Site.Menus.docs }} {{ if .HasChildren }}
-      <li class='docs-menu-item {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}'>
-        <a class='docs-menu-title {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}' href="{{.URL}}">
+      {{ range $index, $element:=.Site.Menus.docs }} {{ if .HasChildren }}
+      <li class='docs-menu-item'>
+        <div class='docs-menu-title {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}' id="docs-menu-title-{{$index}}">
           <img src="{{.Pre}}" width="26" height="26" alt="{{.Name}}" />
           {{.Name}}
-        </a>
-        <ul class='docs-menu-sub {{ if $currentPage.HasMenuCurrent "docs" . }}active{{ end }}'>
+        </div>
+        <ul class='docs-menu-sub {{ if $currentPage.HasMenuCurrent "docs" . }}sub-display{{ end }}' id="docs-menu-{{$index}}-sub">
           {{range .Children}} {{ $has := $currentPage.IsMenuCurrent "docs" . }}
           <li class="docs-menu-sub-item {{if $has}}active{{end}}">
             <a href="{{.URL}}">
@@ -26,7 +26,7 @@
         </ul>
       </li>
       {{else}}
-      <li class="docs-menu-item">
+      <li class="docs-menu-item" id="docs-menu-{{$index}}">
         <div class="docs-menu-title">{{.Name}}</div>
       </li>
       {{end}} {{end}}
@@ -35,6 +35,11 @@
 
   <!-- Restore menu position as soon as possible to avoid flickering -->
   <script>
+    $(document).ready(() => {
+    $('#docs-menu-10').click(() => {
+        $('#docs-menu-header-10').addClass('active')
+    }
+})
     (function () {
       var menu = document.querySelector('aside.docs-menu nav')
   addEventListener('beforeunload', function () {
