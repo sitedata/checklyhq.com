@@ -212,18 +212,41 @@ $(document).ready(() => {
  */
 
 $(document).ready(() => {
-      const docs_menu_title_class = '.docs-menu-title'
-      var doc_menu_header = $(docs_menu_title_class);
+  const docs_menu_title_class = '.docs-menu-title'
+  var doc_menu_header = $(docs_menu_title_class);
 
-      doc_menu_header.click(function() {
-        var id = $(this).attr('id');
-        var doc_menu_id = '#docs-menu-' + id
-        if ($(this).attr('class') === 'docs-menu-title') {
-          $(this).addClass('active')
-          $(doc_menu_id).addClass('menu-display')
-        } else {
-          $(this).removeClass('active')
-          $(doc_menu_id).removeClass('menu-display')
-        }
-      })
+  doc_menu_header.click(function() {
+    var id = $(this).attr('id');
+    var doc_menu_id = '#docs-menu-' + id
+    if ($(this).attr('class') === 'docs-menu-title') {
+      $(this).addClass('active')
+      $(doc_menu_id).addClass('menu-display')
+    } else {
+      $(this).removeClass('active')
+      $(doc_menu_id).removeClass('menu-display')
+    }
+  })
+})
+
+$(document).on( 'keydown', function ( e ) {
+  if ( e.keyCode === 191 ) { //ESC key code
+    $("#search").focus();
+  }
+});
+
+var sideMenuDistance = $("#sideMenu").offset().top - 16;
+var tocMenuDistance = $("#tocMenu").offset().top - 80;
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() >= sideMenuDistance) {
+    $("#sideMenu").addClass('sticky')
+  } else {
+    $("#sideMenu").removeClass('sticky')
+  }
+
+  if ($(window).scrollTop() >= tocMenuDistance) {
+    $("#tocMenu").addClass('sticky')
+  } else {
+    $("#tocMenu").removeClass('sticky')
+  }
 })

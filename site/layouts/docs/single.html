@@ -5,7 +5,7 @@
       <article class="markdown">
         <form class="form-inline">
           <img src="/docs/images/icons/search@2x.png" alt="search" with="16" height="16" />
-          <input class="form-control py-2" id="search" type="search" placeholder="Type to search the docs..."/>
+          <input class="form-control py-2" id="search" type="search" placeholder="Press / to search"/>
         </form>
         <h1>{{ .Title }}</h1>
         {{ if .Page.TableOfContents }}
@@ -25,9 +25,11 @@
       </article>
     </div>
     {{ if .Page.TableOfContents }}
-    <aside class="docs-toc mb-3">
-      <div class="docs-toc-header">On this page</div>
-      {{ .Page.TableOfContents }}
+    <aside class="docs-toc mb-3" id="tocMenu">
+      <div id="tocMenu">
+        <div class="docs-toc-header">On this page</div>
+        {{ .Page.TableOfContents }}
+      </div>
     </aside>
     {{ end }}
   </div>

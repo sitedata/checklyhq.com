@@ -24,15 +24,14 @@
     margin-left: auto;
 
     &-content {
-      max-height: 75vh;
+      max-height: 90vh;
       overflow-y: auto;
       margin-left: -6px !important;
       padding-right: 20px !important;
     }
 
     nav {
-      position: fixed;
-      top: 4rem;
+      position: relative;
       width: $menu-width;
       margin: $top 0 $top;
       padding: 20px 0 20px 20px;
@@ -45,6 +44,10 @@
         list-style: none;
         font-size: 14px;
       }
+    }
+    .sticky {
+      position: fixed;
+      top: 1rem;
     }
 
     a {
@@ -147,7 +150,7 @@
   &-page {
     min-width: 20rem;
     flex-grow: 1;
-    padding: 13px 0 1rem 30px;
+    padding: 1rem 0 1rem 30px;
     margin-left: 0;
     margin-right: 0;
 
@@ -184,12 +187,16 @@
     font-size: .875rem;
     margin-right: auto;
     width: 232px;
+    padding-top: 8rem;
+
+    .sticky {
+      position: fixed;
+      top: 5rem;
+    }
 
     nav {
       width: $toc-width;
       padding: 1rem 0 1rem 0;
-      position: fixed;
-      top: 9 * $top;
       bottom: 0;
       overflow-x: hidden;
       overflow-y: auto
@@ -219,8 +226,6 @@
       color: $gray-dark;
       font-weight: 600;
       text-transform: uppercase;
-      position: fixed;
-      top: 8 * $top;
     }
 
     &-mobile {
@@ -298,6 +303,10 @@
 
         .text-wrap {
           width: 100%;
+          h3 {
+            font-size: 16px;
+            line-height: 24px;
+          }
         }
       }
 
