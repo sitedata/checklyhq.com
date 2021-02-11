@@ -229,7 +229,8 @@ $(document).ready(() => {
 })
 
 $(document).on('keydown', function(e) {
-  if ( e.keyCode === 191 ) { //ESC key code
+  if ( e.keyCode === 191 ) { //'/' key code
+    e.preventDefault()
     $("#search").focus();
   }
 });
