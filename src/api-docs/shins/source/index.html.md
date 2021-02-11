@@ -81,8 +81,8 @@ Lists all configured alert channels and their subscribed checks.
     "sendDegraded": true,
     "sslExpiry": false,
     "sslExpiryThreshold": 30,
-    "created_at": "2021-02-10T19:00:55Z",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11T09:47:33Z",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 ```
@@ -162,8 +162,8 @@ Creates a new alert channel
   "sendDegraded": true,
   "sslExpiry": false,
   "sslExpiryThreshold": 30,
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -258,8 +258,8 @@ Show details of a specific alert channel.
   "sendDegraded": true,
   "sslExpiry": false,
   "sslExpiryThreshold": 30,
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -339,8 +339,8 @@ Update an alert channel
   "sendDegraded": true,
   "sslExpiry": false,
   "sslExpiryThreshold": 30,
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -499,8 +499,8 @@ Lists all current check groups in your account. The "checks" property is an arra
     "tearDownSnippetId": 0,
     "localSetupScript": "string",
     "localTearDownScript": "string",
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 ```
@@ -655,8 +655,8 @@ Creates a new check group. You can add checks to the group by setting the "group
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -781,8 +781,8 @@ Show details of one check in a specific check group with the group settings appl
       }
     ]
   },
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -920,8 +920,8 @@ Show details of a specific check group
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -1077,8 +1077,8 @@ Updates a check group.
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -1205,8 +1205,8 @@ Lists all checks in a specific check group with the group settings applied.
         }
       ]
     },
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 ```
@@ -1261,7 +1261,7 @@ Lists the rolled up check results *per hour* for a specific check. <br><br>This 
     "errorCount": 0,
     "failureCount": 0,
     "resultsCount": 0,
-    "hour": "2021-02-10T19:00:55Z",
+    "hour": "2021-02-11T09:47:33Z",
     "responseTimes": [
       "string"
     ]
@@ -1331,9 +1331,9 @@ Lists the full, raw check results for a specific check. We keep raw results for 
     "isDegraded": true,
     "overMaxResponseTime": true,
     "runLocation": "string",
-    "startedAt": "2021-02-10T19:00:55Z",
-    "stoppedAt": "2021-02-10T19:00:55Z",
-    "created_at": "2021-02-10T19:00:55Z",
+    "startedAt": "2021-02-11T09:47:33Z",
+    "stoppedAt": "2021-02-11T09:47:33Z",
+    "created_at": "2021-02-11T09:47:33Z",
     "responseTime": 0,
     "apiCheckResult": {},
     "browserCheckResult": {},
@@ -1388,9 +1388,9 @@ Show details of a specific check result.
   "isDegraded": true,
   "overMaxResponseTime": true,
   "runLocation": "string",
-  "startedAt": "2021-02-10T19:00:55Z",
-  "stoppedAt": "2021-02-10T19:00:55Z",
-  "created_at": "2021-02-10T19:00:55Z",
+  "startedAt": "2021-02-11T09:47:33Z",
+  "stoppedAt": "2021-02-11T09:47:33Z",
+  "created_at": "2021-02-11T09:47:33Z",
   "responseTime": 0,
   "apiCheckResult": {},
   "browserCheckResult": {},
@@ -1443,8 +1443,8 @@ Shows the current status information for all checks in your account. The check s
     "lastRunLocation": "string",
     "lastCheckRunId": "string",
     "sslDaysRemaining": 0,
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 ```
@@ -1496,8 +1496,8 @@ Show the current status information for a specific check.
   "lastRunLocation": "string",
   "lastCheckRunId": "string",
   "sslDaysRemaining": 0,
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -1625,8 +1625,8 @@ Lists all current checks in your account.
         }
       ]
     },
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 ```
@@ -1814,8 +1814,8 @@ Creates a new API or browser check. Will return a `402` when you are over the li
       }
     ]
   },
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -1977,8 +1977,8 @@ Show details of a specific API or browser check
       }
     ]
   },
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -2166,8 +2166,8 @@ Updates a new API or browser check.
       }
     ]
   },
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -2512,13 +2512,13 @@ Lists all maintenance windows in your account.
     "tags": [
       "string"
     ],
-    "startsAt": "2021-02-10",
-    "endsAt": "2021-02-10",
+    "startsAt": "2021-02-11",
+    "endsAt": "2021-02-11",
     "repeatInterval": 1,
     "repeatUnit": "string",
-    "repeatEndsAt": "2021-02-10",
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10"
+    "repeatEndsAt": "2021-02-11",
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11"
   }
 ]
 ```
@@ -2557,11 +2557,11 @@ Creates a new maintenance window.
   "tags": [
     "string"
   ],
-  "startsAt": "2021-02-10",
-  "endsAt": "2021-02-10",
+  "startsAt": "2021-02-11",
+  "endsAt": "2021-02-11",
   "repeatInterval": 1,
   "repeatUnit": "string",
-  "repeatEndsAt": "2021-02-10"
+  "repeatEndsAt": "2021-02-11"
 }
 ```
 
@@ -2582,13 +2582,13 @@ Creates a new maintenance window.
   "tags": [
     "string"
   ],
-  "startsAt": "2021-02-10",
-  "endsAt": "2021-02-10",
+  "startsAt": "2021-02-11",
+  "endsAt": "2021-02-11",
   "repeatInterval": 1,
   "repeatUnit": "string",
-  "repeatEndsAt": "2021-02-10",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10"
+  "repeatEndsAt": "2021-02-11",
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11"
 }
 ```
 
@@ -2674,13 +2674,13 @@ Show details of a specific maintenance window.
   "tags": [
     "string"
   ],
-  "startsAt": "2021-02-10",
-  "endsAt": "2021-02-10",
+  "startsAt": "2021-02-11",
+  "endsAt": "2021-02-11",
   "repeatInterval": 1,
   "repeatUnit": "string",
-  "repeatEndsAt": "2021-02-10",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10"
+  "repeatEndsAt": "2021-02-11",
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11"
 }
 ```
 
@@ -2719,11 +2719,11 @@ Updates a maintenance window.
   "tags": [
     "string"
   ],
-  "startsAt": "2021-02-10",
-  "endsAt": "2021-02-10",
+  "startsAt": "2021-02-11",
+  "endsAt": "2021-02-11",
   "repeatInterval": 1,
   "repeatUnit": "string",
-  "repeatEndsAt": "2021-02-10"
+  "repeatEndsAt": "2021-02-11"
 }
 ```
 
@@ -2745,13 +2745,13 @@ Updates a maintenance window.
   "tags": [
     "string"
   ],
-  "startsAt": "2021-02-10",
-  "endsAt": "2021-02-10",
+  "startsAt": "2021-02-11",
+  "endsAt": "2021-02-11",
   "repeatInterval": 1,
   "repeatUnit": "string",
-  "repeatEndsAt": "2021-02-10",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10"
+  "repeatEndsAt": "2021-02-11",
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11"
 }
 ```
 
@@ -2800,8 +2800,8 @@ Lists all current snippets in your account.
     "id": 0,
     "name": "string",
     "script": "string",
-    "created_at": "2021-02-10T19:00:55Z",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11T09:47:33Z",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 ```
@@ -2855,8 +2855,8 @@ Creates a new snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -2937,8 +2937,8 @@ Show details of a specific snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -2993,8 +2993,8 @@ Updates a snippet.
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 ```
 
@@ -3326,8 +3326,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "sendDegraded": true,
   "sslExpiry": false,
   "sslExpiryThreshold": 30,
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 
 ```
@@ -3371,8 +3371,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "sendDegraded": true,
     "sslExpiry": false,
     "sslExpiryThreshold": 30,
-    "created_at": "2021-02-10T19:00:55Z",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11T09:47:33Z",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 
@@ -3988,8 +3988,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "tearDownSnippetId": 0,
   "localSetupScript": "string",
   "localTearDownScript": "string",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 
 ```
@@ -4084,8 +4084,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "tearDownSnippetId": 0,
     "localSetupScript": "string",
     "localTearDownScript": "string",
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 
@@ -4650,8 +4650,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       }
     ]
   },
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 
 ```
@@ -4923,8 +4923,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
       }
     ]
   },
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 
 ```
@@ -5059,8 +5059,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         }
       ]
     },
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 
@@ -5098,7 +5098,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "errorCount": 0,
   "failureCount": 0,
   "resultsCount": 0,
-  "hour": "2021-02-10T19:00:55Z",
+  "hour": "2021-02-11T09:47:33Z",
   "responseTimes": [
     "string"
   ]
@@ -5130,7 +5130,7 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "errorCount": 0,
     "failureCount": 0,
     "resultsCount": 0,
-    "hour": "2021-02-10T19:00:55Z",
+    "hour": "2021-02-11T09:47:33Z",
     "responseTimes": [
       "string"
     ]
@@ -5185,9 +5185,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "isDegraded": true,
   "overMaxResponseTime": true,
   "runLocation": "string",
-  "startedAt": "2021-02-10T19:00:55Z",
-  "stoppedAt": "2021-02-10T19:00:55Z",
-  "created_at": "2021-02-10T19:00:55Z",
+  "startedAt": "2021-02-11T09:47:33Z",
+  "stoppedAt": "2021-02-11T09:47:33Z",
+  "created_at": "2021-02-11T09:47:33Z",
   "responseTime": 0,
   "apiCheckResult": {},
   "browserCheckResult": {},
@@ -5233,9 +5233,9 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "isDegraded": true,
     "overMaxResponseTime": true,
     "runLocation": "string",
-    "startedAt": "2021-02-10T19:00:55Z",
-    "stoppedAt": "2021-02-10T19:00:55Z",
-    "created_at": "2021-02-10T19:00:55Z",
+    "startedAt": "2021-02-11T09:47:33Z",
+    "stoppedAt": "2021-02-11T09:47:33Z",
+    "created_at": "2021-02-11T09:47:33Z",
     "responseTime": 0,
     "apiCheckResult": {},
     "browserCheckResult": {},
@@ -5268,8 +5268,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "lastRunLocation": "string",
   "lastCheckRunId": "string",
   "sslDaysRemaining": 0,
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 
 ```
@@ -5308,8 +5308,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "lastRunLocation": "string",
     "lastCheckRunId": "string",
     "sslDaysRemaining": 0,
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 
@@ -5411,8 +5411,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
         }
       ]
     },
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 
@@ -5941,13 +5941,13 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "tags": [
     "string"
   ],
-  "startsAt": "2021-02-10",
-  "endsAt": "2021-02-10",
+  "startsAt": "2021-02-11",
+  "endsAt": "2021-02-11",
   "repeatInterval": 1,
   "repeatUnit": "string",
-  "repeatEndsAt": "2021-02-10",
-  "created_at": "2021-02-10",
-  "updated_at": "2021-02-10"
+  "repeatEndsAt": "2021-02-11",
+  "created_at": "2021-02-11",
+  "updated_at": "2021-02-11"
 }
 
 ```
@@ -5979,13 +5979,13 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "tags": [
       "string"
     ],
-    "startsAt": "2021-02-10",
-    "endsAt": "2021-02-10",
+    "startsAt": "2021-02-11",
+    "endsAt": "2021-02-11",
     "repeatInterval": 1,
     "repeatUnit": "string",
-    "repeatEndsAt": "2021-02-10",
-    "created_at": "2021-02-10",
-    "updated_at": "2021-02-10"
+    "repeatEndsAt": "2021-02-11",
+    "created_at": "2021-02-11",
+    "updated_at": "2021-02-11"
   }
 ]
 
@@ -6024,11 +6024,11 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "tags": [
     "string"
   ],
-  "startsAt": "2021-02-10",
-  "endsAt": "2021-02-10",
+  "startsAt": "2021-02-11",
+  "endsAt": "2021-02-11",
   "repeatInterval": 1,
   "repeatUnit": "string",
-  "repeatEndsAt": "2021-02-10"
+  "repeatEndsAt": "2021-02-11"
 }
 
 ```
@@ -6054,8 +6054,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
   "id": 0,
   "name": "string",
   "script": "string",
-  "created_at": "2021-02-10T19:00:55Z",
-  "updated_at": "2021-02-10T19:00:55Z"
+  "created_at": "2021-02-11T09:47:33Z",
+  "updated_at": "2021-02-11T09:47:33Z"
 }
 
 ```
@@ -6080,8 +6080,8 @@ Updates an environment variable. Uses the "key" field as the ID for updating. On
     "id": 0,
     "name": "string",
     "script": "string",
-    "created_at": "2021-02-10T19:00:55Z",
-    "updated_at": "2021-02-10T19:00:55Z"
+    "created_at": "2021-02-11T09:47:33Z",
+    "updated_at": "2021-02-11T09:47:33Z"
   }
 ]
 

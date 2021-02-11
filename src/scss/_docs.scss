@@ -7,12 +7,8 @@
 
   .algolia-autocomplete .ds-dropdown-menu {
     width: 100%;
-    max-width: 100% !important;
+    max-width: 2000px !important;
     z-index: 99999 !important;
-  }
-
-  .algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu{
-    max-width: 100% !important;
   }
 
   aside nav ul {
@@ -166,6 +162,7 @@
 
       span {
         width: 100%;
+        max-width: 2000px;
       }
       img {
         position: absolute;
