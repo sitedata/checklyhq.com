@@ -240,7 +240,7 @@ $(window).on('scroll', function() {
   if ($(window).scrollTop() >= sideMenuDistance) {
     $("#sideMenu").css({
       position: 'fixed',
-      top: '10px'
+      top: '0px'
     })
     $("#tocMenu").css({
       position: 'fixed',
