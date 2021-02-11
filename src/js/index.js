@@ -234,18 +234,17 @@ $(document).on('keydown', function(e) {
   }
 });
 
-var sideMenuDistance = $("#sideMenu").offset().top - 16;
-var tocMenuDistance = $("#tocMenu").offset().top - 80;
+var sideMenuDistance = $("#sideMenu").offset().top - 10;
 
 $(window).on('scroll', function() {
   if ($(window).scrollTop() >= sideMenuDistance) {
     $("#sideMenu").css({
       position: 'fixed',
-      top: '16px'
+      top: '10px'
     })
     $("#tocMenu").css({
       position: 'fixed',
-      top: '60px'
+      top: '50px'
     })
   } else {
     $("#sideMenu").css({
