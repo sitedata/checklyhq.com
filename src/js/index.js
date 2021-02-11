@@ -228,7 +228,7 @@ $(document).ready(() => {
   })
 })
 
-$(document).on( 'keydown', function ( e ) {
+$(document).on('keydown', function(e) {
   if ( e.keyCode === 191 ) { //ESC key code
     $("#search").focus();
   }
@@ -237,16 +237,22 @@ $(document).on( 'keydown', function ( e ) {
 var sideMenuDistance = $("#sideMenu").offset().top - 16;
 var tocMenuDistance = $("#tocMenu").offset().top - 80;
 
-$(window).scroll(function() {
+$(window).on('scroll', function() {
   if ($(window).scrollTop() >= sideMenuDistance) {
-    $("#sideMenu").addClass('sticky')
+    $("#sideMenu").css({
+      position: 'fixed',
+      top: '16px'
+    })
+    $("#tocMenu").css({
+      position: 'fixed',
+      top: '60px'
+    })
   } else {
-    $("#sideMenu").removeClass('sticky')
-  }
-
-  if ($(window).scrollTop() >= tocMenuDistance) {
-    $("#tocMenu").addClass('sticky')
-  } else {
-    $("#tocMenu").removeClass('sticky')
+    $("#sideMenu").css({
+      position: 'relative'
+    })
+    $("#tocMenu").css({
+      position: 'relative',
+    })
   }
 })

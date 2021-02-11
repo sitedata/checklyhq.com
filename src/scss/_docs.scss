@@ -44,10 +44,7 @@
         list-style: none;
         font-size: 14px;
       }
-    }
-    .sticky {
-      position: fixed !important;
-      top: 1rem;
+
     }
 
     a {
@@ -188,11 +185,6 @@
     margin-right: auto;
     width: 232px;
     padding-top: 8rem;
-
-    .sticky {
-      position: fixed !important;
-      top: 5rem;
-    }
 
     nav {
       width: $toc-width;

@@ -35,11 +35,6 @@
 
   <!-- Restore menu position as soon as possible to avoid flickering -->
   <script>
-    $(document).ready(() => {
-    $('#docs-menu-10').click(() => {
-        $('#docs-menu-header-10').addClass('active')
-    }
-})
     (function () {
       var menu = document.querySelector('aside.docs-menu nav')
   addEventListener('beforeunload', function () {
