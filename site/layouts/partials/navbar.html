@@ -1,15 +1,48 @@
-<nav class="navbar navbar-toggleable-md">
+<nav class="navbar {{ if .IsHome }} navbar-home {{ end }} navbar-toggleable-md">
   <div class="container">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"><span></span><span></span><span></span></button>
     <a class="navbar-brand mr-2" href="/"><img src="/images/text_racoon_logo.svg" width="120" height="43" alt="checkly logo"/></a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown"
-                                         id="navbarDropdownMenuLink" href="#">Product</a>
-          <div class="dropdown-menu big-drop-shadow product-dropdown"><a class="dropdown-item"
-                                                                         href="/product/api-monitoring/">API
-            Monitoring</a><a class="dropdown-item" href="/product/synthetic-monitoring/">Synthetic Monitoring</a><a class="dropdown-item" href="/product/alerting/">Alerting</a></div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="navbarDropdownMenuLink" href="#">Product</a>
+          <div class="dropdown-menu big-drop-shadow product-dropdown">
+            <div class="dropmenu-triangle"></div>
+            <a class="dropdown-item" href="/product/api-monitoring/">
+              <div class="d-flex">
+                <div class="menu-icon">
+                  <img src="images/icons/api.svg" alt="Api monitoring" width="32" height="32" />
+                </div>
+                <div>
+                  <div class="menu-title">API Monitoring</div>
+                  <div class="menu-text">Metus risus, ac nunc, integer sed donec pharetra, imperdiet. Mauris id.</div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="/product/synthetic-monitoring/">
+              <div class="d-flex">
+                <div class="menu-icon">
+                  <img src="images/icons/chrome.svg" alt="Synthetic Monitoring" width="32" height="32" />
+                </div>
+                <div>
+                  <div class="menu-title">Synthetic Monitoring</div>
+                  <div class="menu-text">Vitae nunc, molestie id nunc lorem ac nec est. Velit tellus quisque dictumst.</div>
+                </div>
+              </div>
+            </a>
+            <a class="dropdown-item" href="/product/alerting/">
+              <div class="d-flex">
+                <div class="menu-icon">
+                  <img src="images/icons/alert.svg" alt="Alerting" width="32" height="32" />
+                </div>
+                <div>
+                  <div class="menu-title">Alerting</div>
+                  <div class="menu-text">Sem urna, varius curabitur amet. Commodo mi morbi pretium velit.</div>
+                </div>
+              </div>
+            </a>
+          </div>
         </li>
         <li class="nav-item"><a class="nav-link" href="/integrations">Integrations</a></li>
         <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
