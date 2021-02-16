@@ -228,12 +228,47 @@ $(document).ready(() => {
   })
 })
 
+
+/**
+ * Docs Mobile Menu
+ */
+
+$(document).ready(() => {
+  var flag = true;
+  $('.mobile-toc-button').click(function() {
+    $(".docs-menu").css({
+      left: '0',
+    })
+    $("#sideMenu").css({
+      transform: 'translateX(260px)',
+    })
+    flag = false;
+  })
+  $('.docs-menu-mobile-right-space').click(function() {
+    $(".docs-menu").css({
+      left: '-100%'
+    })
+    $("#sideMenu").css({
+      transform: 'translateX(-260px)',
+    })
+    flag = true;
+  })
+})
+
+/**
+ * '/' press for the search
+ */
+
 $(document).on('keydown', function(e) {
   if ( e.keyCode === 191 ) { //'/' key code
     e.preventDefault()
     $("#search").focus();
   }
 });
+
+/**
+ * Sidemenu fixed position after some scroll-up
+ */
 
 var sideMenuDistance = $("#sideMenu").offset().top - 10;
 
@@ -256,3 +291,5 @@ $(window).on('scroll', function() {
     })
   }
 })
+
+
