@@ -46,6 +46,12 @@
       }
 
     }
+    .right-transform {
+      transform: none;
+    }
+    .left-transform {
+      transform: none;
+    }
     .docs-menu-mobile-right-space {
       display: none;
       width: 0;
@@ -351,6 +357,12 @@
         margin-top: 0px;
         background: white;
       }
+      .right-transform {
+        transform: translateX(260px);
+      }
+      .left-transform {
+        transform: translateX(-260px);
+      }
       .docs-menu-mobile-right-space {
         display: block;
         position: fixed;
@@ -381,6 +393,10 @@
           background: $gray-lightest;
           font-size: 14px;
           line-height: 20px;
+
+          &:hover {
+            cursor: pointer;
+          }
 
           img {
             margin-top: -4px;

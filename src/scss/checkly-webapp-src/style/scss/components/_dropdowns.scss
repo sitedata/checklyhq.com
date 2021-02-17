@@ -39,6 +39,11 @@
 .dropdown-item {
   padding: 15px 24px;
   white-space: unset;
+  :hover {
+    .menu-title {
+      color: $black;
+    }
+  }
 }
 
 .dropdown-toggle {

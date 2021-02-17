@@ -239,18 +239,16 @@ $(document).ready(() => {
     $(".docs-menu").css({
       left: '0',
     })
-    $("#sideMenu").css({
-      transform: 'translateX(260px)',
-    })
+    $("#sideMenu").removeClass('left-transform')
+    $("#sideMenu").addClass('right-transform')
     flag = false;
   })
   $('.docs-menu-mobile-right-space').click(function() {
     $(".docs-menu").css({
       left: '-100%'
     })
-    $("#sideMenu").css({
-      transform: 'translateX(-260px)',
-    })
+    $("#sideMenu").removeClass('right-transform')
+    $("#sideMenu").addClass('left-transform')
     flag = true;
   })
 })
@@ -265,6 +263,22 @@ $(document).on('keydown', function(e) {
     $("#search").focus();
   }
 });
+
+/**
+ * Hover Dropdown
+ */
+
+
+$(document).ready(function() {
+  $('#dropdown-li').mouseenter(function(){
+    console.log('here')
+    $('#dropdown-li').addClass('show');
+  })
+  $('#dropdown-menu, #dropdown-li').mouseleave(function() {
+    $('#dropdown-li').removeClass('show');
+  })
+})
+
 
 /**
  * Sidemenu fixed position after some scroll-up
@@ -291,5 +305,4 @@ $(window).on('scroll', function() {
     })
   }
 })
-
 
