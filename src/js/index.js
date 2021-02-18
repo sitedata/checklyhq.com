@@ -305,9 +305,10 @@ $(document).ready(function() {
  */
 
 var sideMenuDistance = $("#sideMenu").offset().top - 10;
+var footerDistance = $('.footer').offset().top - 10;
 
 $(window).on('scroll', function() {
-  if ($(window).scrollTop() >= sideMenuDistance) {
+  if (($(window).scrollTop() >= sideMenuDistance)&&($(window).scrollTop() + 600 < footerDistance )) {
     $("#sideMenu").css({
       position: 'fixed',
       top: '0px'
