@@ -81,7 +81,7 @@ disqusShortname = "checkly"
 [[menu.docs]]
 	name = "Headless Recorder"
 	url = "/docs/headless-recorder/"
-	pre="/docs/images/icons/squirrel@2x.png"
+	pre="/docs/images/icons/headless-recorder@2x.png"
 	weight = 9999
 
 [markup.goldmark.renderer]
