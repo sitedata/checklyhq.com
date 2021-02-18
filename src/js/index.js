@@ -239,6 +239,9 @@ $(document).ready(() => {
     $(".docs-menu").css({
       left: '0',
     })
+    $('.docs-menu-mobile-right-space').css({
+      display: 'block',
+    })
     $("#sideMenu").removeClass('left-transform')
     $("#sideMenu").addClass('right-transform')
     flag = false;
@@ -246,6 +249,9 @@ $(document).ready(() => {
   $('.docs-menu-mobile-right-space').click(function() {
     $(".docs-menu").css({
       left: '-100%'
+    })
+    $('.docs-menu-mobile-right-space').css({
+      display: 'none',
     })
     $("#sideMenu").removeClass('right-transform')
     $("#sideMenu").addClass('left-transform')
@@ -268,10 +274,8 @@ $(document).on('keydown', function(e) {
  * Hover Dropdown
  */
 
-
 $(document).ready(function() {
   $('#dropdown-li').mouseenter(function(){
-    console.log('here')
     $('#dropdown-li').addClass('show');
   })
   $('#dropdown-menu, #dropdown-li').mouseleave(function() {
@@ -294,7 +298,7 @@ $(window).on('scroll', function() {
     })
     $("#tocMenu").css({
       position: 'fixed',
-      top: '50px'
+      top: '30px'
     })
   } else {
     $("#sideMenu").css({
@@ -302,6 +306,7 @@ $(window).on('scroll', function() {
     })
     $("#tocMenu").css({
       position: 'relative',
+      top: '0'
     })
   }
 })

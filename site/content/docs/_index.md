@@ -70,19 +70,3 @@ Massa, dictum leo nullam in eget risus. Volutpat blandit adipiscing non vitae en
 
 {{< doc-card class="three-column-card" title="Teams" description="Nunc morbi diam dictum pellentesque at consectetur." link="/docs/api-checks" >}}
 </div>
-
-## Featured documentation
-
-- [API checks](/docs/api-checks/)
-- [Browser checks](/docs/browser-checks/)
-- [Groups](/docs/groups/)
-- [Alerting](/docs/alerting/)
-- [CI/CD](/docs/cicd/)
-- [Maintenance windows](/docs/maintenance-windows)
-- [Dashboards](/docs/dashboards)
-- [Teams](/docs/teams/)
-- [Integrations](/docs/integrations)
-- [Headless Recorder](/headless-recorder/)
-- [API reference](/docs/api)
-
-
