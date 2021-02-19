@@ -1,10 +1,13 @@
 .docs {
-  $top: 5rem;
+  $top: 1rem;
   $menu-width: 15rem;
   $toc-width: 14rem;
+  max-width: 90rem;
+  margin: 0 auto;
 
   .algolia-autocomplete .ds-dropdown-menu {
-    width: 500px;
+    width: 100%;
+    max-width: 2000px !important;
     z-index: 99999 !important;
   }
 
@@ -20,20 +23,39 @@
     font-size: 1rem;
     margin-left: auto;
 
+    &-content {
+      max-height: 78vh;
+      overflow-y: auto;
+      margin-left: -6px !important;
+      padding-right: 20px !important;
+    }
+
     nav {
+      position: relative;
       width: $menu-width;
-      padding: 0 1rem 1rem 1rem;
-      bottom: 0;
+      margin: $top 0 $top;
+      padding: 20px 0 20px 20px;
       overflow-x: hidden;
       overflow-y: auto;
-      margin: 0;
-      margin-top: $top;
-      top: 0;
-      position: fixed;
+      
+      border: 1px solid $gray-light;
+      border-radius: 5px;
       ul {
         list-style: none;
         font-size: 14px;
       }
+
+    }
+    .right-transform {
+      transform: none;
+    }
+    .left-transform {
+      transform: none;
+    }
+    .docs-menu-mobile-right-space {
+      display: none;
+      width: 0;
+      height: 0;
     }
 
     a {
@@ -49,30 +71,44 @@
     }
 
     &-title {
-      display: inline-block;
+      display: flex;
+      align-items: center;
       font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 5px;
+      font-size: 14px;
+      line-height: 17px;
+      color: $gray-darkish !important;
+      margin-bottom: 10px;
       margin-top: 10px;
-      &.active {
-        color: $brand-primary;
+      img {
+        margin-right: 5px;
       }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .active {
+      color: $gray-dark !important;
+    }
+    .menu-display {
+      display: block;
     }
     &-sub {
       list-style-type: none;
       padding-left: 0;
       margin-bottom: .5rem;
+      display: none;
+
+      &.active {
+        display: block;
+      }
 
       &-item {
-        margin-bottom: .2rem;
+        margin-bottom: 10px;
+        margin-left: 6px;
 
         a {
-          color: $gray-dark;
-          text-decoration: none;
-          padding: .4rem 0;
-          &:hover {
-            color: $brand-primary;
-          }
+          color: $gray-darkish;
+          padding: 0;
         }
         &.active {
           a {
@@ -97,9 +133,15 @@
     }
 
     .api-reference-link {
-      margin-bottom: 1rem;
+      margin-bottom: 10px;
       display: inline-block;
+      font-size: 14px;
+      line-height: 16.94px;
       color: $gray-dark;
+      padding-bottom: 1rem;
+      width: calc(100% - 20px);
+      border-bottom: 1px solid $gray-light;
+
       &:hover {
         text-decoration: none;
         color: $brand-primary
@@ -115,23 +157,58 @@
 
   &-page {
     min-width: 20rem;
-    max-width: 60rem;
     flex-grow: 1;
-    padding: 1rem 1rem 1rem 1.5rem;
+    padding: 1rem 0 1rem 30px;
     margin-left: 0;
     margin-right: 0;
+
+    .markdown {
+      padding-right: 30px;
+
+      .mobile-toc-button {
+        display: none;
+      }
+
+      .search {
+        margin-bottom: 30px;
+      }
+    }
+
+    .form-inline {
+      width: 100%;
+      position: relative;
+
+      span {
+        width: 100%;
+        max-width: 2000px;
+        height: 100%;
+      }
+      img {
+        position: absolute;
+        top: 11px;
+        left: 10px;
+      }
+      input {
+       width: 100%;
+       height: 100%;
+       background: none;
+       border: 1px solid $gray-light;
+       padding-left: 30px;
+      }
+    }
   }
 
   &-toc {
+    position: relative;
     flex: 0 0 $toc-width;
     font-size: .875rem;
     margin-right: auto;
+    width: 232px;
+    padding-top: 8rem;
 
     nav {
       width: $toc-width;
       padding: 1rem 0 1rem 0;
-      position: fixed;
-      top: $top + 1rem;
       bottom: 0;
       overflow-x: hidden;
       overflow-y: auto
@@ -142,6 +219,10 @@
       ul {
         border-left: 2px solid $brand-primary;
         padding-left: .5rem;
+
+        li {
+          margin-bottom: 10px;
+        }
       }
       ul > li > ul {
         display: none;
@@ -154,10 +235,9 @@
     }
 
     &-header {
-      color: $gray;
+      color: $gray-dark;
+      font-weight: 600;
       text-transform: uppercase;
-      position: fixed;
-      top: $top;
     }
 
     &-mobile {
@@ -177,6 +257,78 @@
     transition: 0.2s ease-in-out;
     transition-property: transform, margin-left, opacity;
     will-change: transform, margin-left;
+
+    h1, h2, h3, h4, h5 {
+      color: $black;
+    }
+    nav#TableOfContents {
+      ul {
+        border-left: 2px solid $brand-primary;
+        padding-left: .5rem;
+      }
+    }
+
+    .cards-list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 40px;
+
+      .image-wrap {
+        width: 42px;
+        margin-right: 1rem;
+      }
+
+      .text-wrap {
+        width: calc(100% - 58px);
+
+        h2 {
+          margin: 3px 0;
+        }
+
+        h3 {
+          margin: 2px 0;
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+
+      .full-width-card {
+        width: 100%;
+        display: flex;
+        justify-content-space: space-between;
+        margin-bottom: 2rem;
+      }
+
+      .two-column-card {
+        width: 47%;
+        display: flex;
+        justify-content-space: space-between;
+      }
+      .three-column-card {
+        width: calc((100% - 50px)/3);
+        display: flex;
+        justify-content-space: space-between;
+        padding: 20px;
+        background: url(/docs/images/icons/pattern@2x.png);
+        border-radius: 6px;
+
+        .text-wrap {
+          width: 100%;
+          h3 {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+
+    }
   }
 
   @include media-breakpoint-down(md) {
@@ -187,8 +339,38 @@
     }
 
     .docs-menu {
-      margin-left: -$menu-width;
+      position: fixed;
+      z-index: 10000;
+      width: 100%;
+      height: calc(100vh + 80px);
+      top: 0px;
+      left: -100%;
       font-size: $font-size-base;
+      background: rgba(0, 0, 0, .2);
+
+      nav {
+        border: 0;
+        border-radius: 0;
+        height: 100%;
+        width: 260px;
+        left: -260px;
+        margin-top: 0px;
+        background: white;
+      }
+      .right-transform {
+        transform: translateX(260px);
+      }
+      .left-transform {
+        transform: translateX(-260px);
+      }
+      .docs-menu-mobile-right-space {
+        display: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: calc(100% - 260px);
+        height: 100%;
+      }
     }
 
     .docs-toc {
@@ -196,6 +378,37 @@
     }
     .docs-toc-mobile {
       display: block;
+    }
+    .docs-page {
+      .markdown {
+        padding-right: 0;
+        .mobile-toc-button {
+          display: block;
+          width: 155px;
+          margin-right: 10px;
+          padding: 12px 9px;
+          color: $gray-dark;
+          border: 1px solid $gray;
+          border-radius: 5px;
+          background: $gray-lightest;
+          font-size: 14px;
+          line-height: 20px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          img {
+            margin-top: -4px;
+          }
+        }
+        .form-inline {
+          width: calc(100% - 165px);
+          img {
+            top: 15px;
+          }
+        }
+      }
     }
   }
 
@@ -216,6 +429,30 @@
 
       .markdown {
         opacity: 0.25;
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    .docs-page {
+      .markdown {
+        .search {
+          flex-wrap: wrap;
+        }
+        .mobile-toc-button {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
+        .form-inline {
+          width: 100%;
+          span {
+            height: 45px;
+          }
+          img {
+            top: 15px;
+          }
+        }
       }
     }
   }
