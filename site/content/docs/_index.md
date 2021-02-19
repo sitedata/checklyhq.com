@@ -1,45 +1,29 @@
 ---
-title: Checkly docs
+title: Checkly documentation
 ---
-Checkly is an API monitoring and synthetic monitoring solution aimed at development and operations teams. Checkly gives you broad, deep and
-exact control over how your APIs and web apps should be monitored.
+Learn how to use Checkly to monitor your vital frontend webapp transactions and backend API's. Our docs cover everything 
+from initial setup, scripting with extensive JavaScript examples to alerting and integrations.
 
-## Getting started with Checkly
+## Getting started: monitoring & alerting
 
-Nulla sed ac consequat sed augue velit vivamus senectus volutpat. A in commodo dolor odio morbi tellus eu morbi auctor. Nulla nunc bibendum integer sem. Id rhoncus ullamcorper viverra lacus urna. Pellentesque tortor vitae.
-
-
-## Set alerting channels
-
-Sed velit dolor id tempor, tortor, amet, ornare vitae faucibus. Lacus aliquet egestas tristique sit sapien faucibus ut tortor dictum. Eu, sit enim mauris elit vel tincidunt arcu nec blandit. Lectus nisl risus eget quam consectetur lorem
-
-{{% cta-link "Learn more" "/docs/api-checks" %}}
-
-## Leverage the power of Headless Recorder
-
-Proin pulvinar leo scelerisque tellus sodales. Vel commodo praesent ultricies in lacus pretium. Tempus sodales adipiscing erat leo fringilla semper. Ultrices et nec cursus et. Et ultricies tempor id in metus. Sem scelerisque
-
-{{% cta-link "Learn more" "/docs/api-checks" %}}
-
-## Expand your monitoring habits
-
-Massa, dictum leo nullam in eget risus. Volutpat blandit adipiscing non vitae enim lorem cras habitant. Risus, habitasse amet leo posuere platea pretium cursus diam. Dictum tincidunt orci, turpis lectus cras. Sit vehicula mauris
+Start with monitoring your key webapp flows, your backend API's and set up alerting, so you get a notification when things
+break or slow down.
 
 <div class="cards-list">
 {{< doc-card 
 	  class="two-column-card"
 	  headerTag="h3"
-	  title="Create API checks"
+	  title="Create browser checks"
 	  img="/docs/images/icons/chrome@2x.png" 
-	  description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
-	  link="/docs/api-checks" 
+	  description="Use JavaScript and Headless browsers to navigate, screenshot and assert your key webapp flows. E2E monitoring as it should be."
+	  link="/docs/browser-checks" 
 >}}
 {{< doc-card 
 	  class="two-column-card"
 	  headerTag="h3"
 	  title="Create API checks"
 	  img="/docs/images/icons/api@2x.png" 
-	  description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
+	  description="Monitor the latency and assert the correctness of your API endpoints. Use inline scripts and code to customize everything."
 	  link="/docs/api-checks" 
 >}}
 </div>
@@ -47,26 +31,55 @@ Massa, dictum leo nullam in eget risus. Volutpat blandit adipiscing non vitae en
 <div class="cards-list">
 {{< doc-card
 	class="full-width-card"
-	headerTag="h2"
-	title="Create API checks"
-	img="/docs/images/icons/api@2x.png"
-	description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
-	link="/docs/api-checks"
+	headerTag="h3"
+	title="Set up alert channels"
+	img="/docs/images/icons/bell@2x.png"
+	description="Get notified about outages, broken transactions or slow downs in your webapps and APIs. Connect to one of our many integrations like Slack, Pagerduty and Discord. Our Webhooks are especially flexible."
+	link="/docs/alerting"
+>}}
+</div>
+
+## Diving deeper
+
+Checkly offers a lot of power and perks to modern developers and DevOps teams. Manage checks at scale with Terraform, hook into your CI/CD and deployment flow. 
+
+<div class="cards-list">
+{{< doc-card
+	class="full-width-card"
+	headerTag="h3"
+	title="Terraform"
+	img="/docs/images/icons/plug@2x.png"
+	description="Manage and scale your complete monitoring configuration right from your code base with our official Hashicorp Terraform provider."
+	link="/docs/integrations/terraform/"
 >}}
 {{< doc-card
 	class="full-width-card"
 	headerTag="h3"
-	title="Create API checks"
-	img="/docs/images/icons/api@2x.png"
-	description="Mi senectus mauris vitae aenean velit dignissim aliquet ultricies. Amet, volutpat sit quam suspendisse adipiscing. Nibh enim, vitae non nam"
-	link="/docs/api-checks"
+	title="CI/CD and deployments"
+	img="/docs/images/icons/infinity@2x.png"
+	description="Catch bugs and breakage early by triggering your checks from your deployment platforms and CI/CD pipelines. Integrates with GitHub, Vercel, Heroku and basically all CI providers."
+	link="/docs/cicd/"
+>}}
+{{< doc-card
+	class="full-width-card"
+	headerTag="h3"
+	title="Headless Recorder"
+	img="/docs/images/icons/headless-recorder@2x.png"
+	description="Create Puppeteer and Playwright E2E testing scripts super fast with our open source Headless Recorder Chrome extension. Click record, navigate your site and export."
+	link="/docs/headless-recorder/"
 >}}
 </div>
 
+## Additional resources
+
 <div class="cards-list">
-{{< doc-card class="three-column-card" title="Maintenance windows" description="Sit tellus tincidunt sed blandit elit neque etiam neque eget." link="/docs/api-checks" >}}
+{{< doc-card class="three-column-card" title="Groups" description="Organize your checks and D.R.Y. up your code and configuration." link="/docs/groups" >}}
 
-{{< doc-card class="three-column-card" title="Dashboards" description="Diam dui est cursus enim. Morbi eleifend facilisis ligula eu" link="/docs/api-checks" >}}
+{{< doc-card class="three-column-card" title="Dashboards" description="Whip up a status page on your own domain or create an internal dashboard." link="/docs/dashboards" >}}
 
-{{< doc-card class="three-column-card" title="Teams" description="Nunc morbi diam dictum pellentesque at consectetur." link="/docs/api-checks" >}}
+{{< doc-card class="three-column-card" title="Maintenance Windows" description="Manage your scheduled maintenance periods so your numbers don't get skewed." link="/docs/maintenance-windows" >}}
+
 </div>
+
+
+
