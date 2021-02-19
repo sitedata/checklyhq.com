@@ -40,7 +40,8 @@ export default {
 
   context: path.join(__dirname, "src"),
   entry: {
-    index: ["./js/index"]
+    index: ["./js/index"],
+    docs: ["./js/docs"]
   },
   output: {
     path: path.join(__dirname, "public/js"),
