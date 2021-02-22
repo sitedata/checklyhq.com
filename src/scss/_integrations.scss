@@ -19,6 +19,66 @@
 			font-size: 18px;
 		}
 	}
+	&__highlights {
+		margin: 50px 0;
+
+		&__tabs {
+			width: 480px;
+			margin: auto;
+
+			.integration-tab {
+			  width: 160px;
+			  text-align: center;
+			  padding-bottom: 10px;
+			  border-bottom: 2px solid $blue;
+			  opacity: 0.2;
+
+			  &:hover {
+			    cursor: pointer;
+			  }
+			}
+			.active {
+			  opacity: 1;
+			}
+		}
+		&__contents {
+		  max-width: 900px;
+		  width: 100%;
+		  margin: 30px auto;
+
+			.integration-tab-content {
+			  display: none;
+			  align-items: center;
+			  justify-content: space-between;
+			}
+			.active {
+			  display: flex;
+			}
+		  .image-wrap {
+		    width: 424px;
+		    height: 280px;
+
+		    img {
+		      width: 100%;
+		      border: 1px solid $gray-light;
+		      border-radius: 3px; 
+		    }
+		  }
+		  .text-wrap {
+		    width: 419px;
+
+		    .label {
+		      color: $pink;
+		      font-weight: 600;
+		    }
+		    .display-4 {
+		      margin-top: 5px;
+		      font-size: 24px;
+		      line-height: 36px;
+		    }
+		  }
+		}
+	}
 	.d-flex {
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -26,10 +86,12 @@
 
 	&__subnav {
 		width: 100%;
-		max-width: 480px;
 		margin: 80px auto 10px;
 
 		.d-flex {
+		  max-width: 480px;
+		  margin-left: auto;
+		  margin-right: auto;
 			a {
 				font-size: 16px;
 				font-weight: 600;
@@ -117,6 +179,28 @@
 	}
 }
 
+@include media-breakpoint-down(md) {
+  .integrations {
+	 	&__highlights {
+			&__contents {
+			  .image-wrap {
+			    width: 47%;
+			    height: auto;
+			    img {
+			      height: auto;
+			    }
+			  }
+			  .text-wrap {
+			    width: 50%;
+			    .display-4 {
+			      font-size: 20px;
+			    }
+			  }
+			}
+		}
+	}
+}
+
 @media(max-width: 700px) {
 	.integrations {
 	 	&__subnav {
@@ -133,7 +217,6 @@
 	 	}
 	}
 }
-
 @include media-breakpoint-down(xs) {
 	.integrations {
 		&__hero {
@@ -148,8 +231,12 @@
 			}
 		}
 	 	&__subnav {
-	 		width: 210px;
-	 		margin: 0 auto;
+	 	  margin-top: 50px;
+
+	 		.d-flex {
+	 			width: 210px;
+		 		margin: 0 auto;
+	 		}
 
 	 		a:nth-child(1) {
 	 			margin-left: 35px;
@@ -169,5 +256,24 @@
 	 			margin-bottom: 25px;
 	 		}
 	 	}
+	 	&__highlights {
+
+			&__tabs {
+				width: 321px;
+				margin: auto;
+
+				.integration-tab {
+				  width: 107px;
+				}
+			}
+			&__contents {
+			  .image-wrap {
+			    display: none;
+			  }
+			  .text-wrap {
+			    width: 100%;
+			  }
+			}
+		}
 	}
 }

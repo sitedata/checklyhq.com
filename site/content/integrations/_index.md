@@ -3,6 +3,28 @@ title: Integration
 heroTitle: Connect to the tools you already use
 heroDescription: >-
   Checkly works with the key tools, frameworks and platforms in the modern development eco-system.
+highlights:
+  - label: FEATURED TERRAFORM INTEGRATION
+    title: Run automatic checks on every deploy
+    description: >-
+      Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions.
+    image: "/integrations/highlight/vercel@2x.png"
+    tabIcon: "/integrations/highlight/vercel-logo@2x.png"
+    ctaLink: "/"
+  - label: FEATURED VERCEL INTEGRATION
+    title: Run automatic checks on every deploy
+    description: >-
+      Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions.
+    image: "/integrations/highlight/vercel@2x.png"
+    tabIcon: "/integrations/highlight/vercel-logo@2x.png"
+    ctaLink: "/"
+  - label: FEATURED DISCORD INTEGRATION
+    title: Run automatic checks on every deploy
+    description: >-
+      Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions.
+    image: "/integrations/highlight/vercel@2x.png"
+    tabIcon: "/integrations/highlight/vercel-logo@2x.png"
+    ctaLink: "/"
 alerting:
   - service: Email
     icon: "/integrations/alerting/email@2x.png"
