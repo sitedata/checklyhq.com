@@ -4,7 +4,7 @@
   color: $white;
   .footer-top {
     padding: 3.75 * $spacer 0 0;
-    
+
     h6 {
       color: $black;
       margin-bottom: 1.25 * $spacer;
@@ -55,9 +55,13 @@
     }
   }
 
-  #menu_5_header {
+  #menu_4_header {
     margin-top: 30px;
   }
+  #menu_6_header {
+    margin-top: 30px;
+  }
+
 
   .desktop-show {
     display: block;
