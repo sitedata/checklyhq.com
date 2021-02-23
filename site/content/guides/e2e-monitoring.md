@@ -1,10 +1,8 @@
 ---
 title: End-to-End Monitoring
+description: >-
+  End-to-End monitoring uses headless browser automation tools like Puppeteer and Playwright to continuously test your website's key user flows. This article summarises the most important points on this topic and gets you up and running in 10 minutes.
 ---
-
-# End-to-End Monitoring
-
-_End-to-End monitoring_ uses headless browser automation tools like Puppeteer and Playwright to continuously test your website's key user flows. This article summarises the most important points on this topic and gets you up and running in 10 minutes.
 
 ## Headless browser testing
 
@@ -188,11 +186,11 @@ As soon as a check runs red, we are alerted in real time and can **intervene bef
 
 **Active monitoring and event-triggered testing do not exclude one another.** You might want to have checks kicked off every time you deploy to production, or on every merge, PR or commit, or you might also want to run against your staging or development server. The choice has to be made based on your workflow and on your automation strategy.
 
-#### CI/CD
+## CI/CD
 
 Tests can be kicked off of CI pipelines. You might want to use different hooks (for e.g. smoke vs regression testing) in different stages and against different targets. [Checkly supports all major CI servers](https://www.checklyhq.com/docs/cicd).
 
-#### Develop-preview-test
+## Develop-preview-test
 
 If you are using provider like Vercel, you can automatically trigger your checks to run on deployed PRs, too, to reap the benefits of the [develop-preview-test approach](https://rauchg.com/2020/develop-preview-test).
 
