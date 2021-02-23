@@ -8,8 +8,8 @@ highlights:
     title: Achieve monitoring as code
     description: >-
       Our Terraform provider enables codified monitoring - manage, scale and alter your checks through a powerful CLI workflow.
-    image: "/integrations/highlight/vercel@2x.png"
-    tabIcon: "/integrations/highlight/vercel-logo@2x.png"
+    image: "/integrations/highlight/terraform-featured-image@2x.png"
+    tabIcon: "/integrations/highlight/terraform-logo@2x.png"
     ctaLink: "/"
   - label: FEATURED VERCEL INTEGRATION
     title: Run checks on every deploy
@@ -22,8 +22,8 @@ highlights:
     title: Get alerted when things go wrong
     description: >-
       Get detailed alerts and logs in Slack when a check fails, degrades, or recovers.
-    image: "/integrations/highlight/vercel@2x.png"
-    tabIcon: "/integrations/highlight/vercel-logo@2x.png"
+    image: "/integrations/highlight/slack-featured-image@2x.png"
+    tabIcon: "/integrations/highlight/slack-logo@2x.png"
     ctaLink: "/"
 alerting:
   - service: Email
