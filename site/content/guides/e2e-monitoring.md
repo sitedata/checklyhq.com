@@ -203,5 +203,3 @@ We learned things the hard way so you do not have to. When starting out, keep an
 * Long, unfocused tests: checking too much in a single test will make failures harder to debug. [Break it up instead](https://theheadless.dev/posts/valuable-tests/#keep-tests-focused), and enjoy the added parallelisation.
 
 * Messing up your own metrics, KPIs: remember, if you are not running against production, you want to make sure your E2E monitoring checks or tests are filtered out of your analytics. This is [rather easy to do](https://www.checklyhq.com/docs/monitoring/whitelisting), with most headless browser tools normally identifying themselves as such from the start.
-
-> [Register for a free account on Checkly](https://app.checklyhq.com/signup) and get started in minutes.

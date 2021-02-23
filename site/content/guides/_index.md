@@ -1,4 +1,0 @@
----
-title: Guides
-sitemapExclude: true
----
