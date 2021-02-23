@@ -12,7 +12,7 @@ highlights:
     tabIcon: "/integrations/highlight/vercel-logo@2x.png"
     ctaLink: "/"
   - label: FEATURED VERCEL INTEGRATION
-    title: Run automatic checks on every deploy
+    title: Run checks on every deploy
     description: >-
       Run your auto-generated health-, E2E- and API-checks on every deploy to make sure never to deploy broken apps.
     image: "/integrations/highlight/vercel@2x.png"
