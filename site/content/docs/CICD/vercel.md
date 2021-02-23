@@ -6,4 +6,7 @@ menu:
     parent: "CI/CD integration"
 ---
 
-If you are using Vercel to develop, preview, and ship your application, you can leverage Checkly's [GitHub Deployments integration](/docs/cicd/github/) for a seamless integration.
+If you are using Vercel to develop, preview, and ship your application have two options:
+
+1. Directly integrate with Vercel by [installing the Checkly integration from the Vercel Marketplace](https://vercel.com/integrations/checkly) and following the easy install wizard.
+2. Leverage Checkly's [GitHub Deployments integration](/docs/cicd/github/)

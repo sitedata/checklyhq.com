@@ -86,7 +86,7 @@ triggers:
     icon: "/integrations/triggers/vercel@2x.png"
     iconWidth: 40
     iconHeight: 40
-    ctaLink: ""
+    ctaLink: "/docs/cicd/vercel/"
     description: >-
       Create and run checks automatically against production and preview environments for all your Vercel projects.
   - service: GitHub Deployments
