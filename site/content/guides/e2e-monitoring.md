@@ -29,7 +29,7 @@ A few key flows for an e-commerce websites could be:
 
 Let's see how to set them up - for this example, we will do that on our [demo web shop](https://danube-webshop.herokuapp.com).
 
-![Danube web shop](/guides/images/guides-danube.png)
+{{< figure src="/guides/images/guides-danube.png" alt="Danube web shop" title="Danube web shop" >}}
 
 ### Local Playwright setup
 
