@@ -5,23 +5,23 @@ heroDescription: >-
   Checkly works with the key tools, frameworks and platforms in the modern development eco-system.
 highlights:
   - label: FEATURED TERRAFORM INTEGRATION
-    title: Run automatic checks on every deploy
+    title: Achieve monitoring as code
     description: >-
-      Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions.
+      Our Terraform provider enables codified monitoring - manage, scale and alter your checks through a powerful CLI workflow.
     image: "/integrations/highlight/vercel@2x.png"
     tabIcon: "/integrations/highlight/vercel-logo@2x.png"
     ctaLink: "/"
   - label: FEATURED VERCEL INTEGRATION
     title: Run automatic checks on every deploy
     description: >-
-      Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions.
+      Run your auto-generated health-, E2E- and API-checks on every deploy to make sure never to deploy broken apps.
     image: "/integrations/highlight/vercel@2x.png"
     tabIcon: "/integrations/highlight/vercel-logo@2x.png"
     ctaLink: "/"
-  - label: FEATURED DISCORD INTEGRATION
-    title: Run automatic checks on every deploy
+  - label: FEATURED SLACK INTEGRATION
+    title: Get alerted when things go wrong
     description: >-
-      Your checks are run in actual Chrome browsers to achieve a 100% match with real world conditions.
+      Get detailed alerts and logs in Slack when a check fails, degrades, or recovers.
     image: "/integrations/highlight/vercel@2x.png"
     tabIcon: "/integrations/highlight/vercel-logo@2x.png"
     ctaLink: "/"
