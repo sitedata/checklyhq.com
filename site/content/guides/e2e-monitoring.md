@@ -29,7 +29,7 @@ A few key flows for an e-commerce websites could be:
 
 Let's see how to set them up - for this example, we will do that on our [demo web shop](https://danube-webshop.herokuapp.com).
 
-{{< figure src="/guides/images/guides-danube.png" alt="Danube web shop" title="Danube web shop" >}}
+{{< figure src="/guides/images/guides-danube.png" alt="demo website screenshot" title="Our demo website" >}}
 
 ### Local Playwright setup
 
@@ -172,15 +172,15 @@ These can be run on our own machine without issues with [very little preparation
 
 Unlike headful tools, headless ones tend to not be very resource-hungry, which makes it easier to move our scripts to the cloud. Checkly runs on top of AWS Lambda, and enables us to quickly copy-paste our script and set it up to run on a schedule from locations around the world.
 
-![Checkly check creation](/guides/images/guides-checkly-check.png)
+{{< figure src="/guides/images/guides-checkly-check.png" alt="checkly check creation screenshot" title="Check creation on Checkly" >}}
 
 We can move our scripts to separate checks to keep them [independent](https://theheadless.dev/posts/valuable-tests/#keep-tests-independent) - we want to optimise for parallelisation and clarity of feedback.
 
-![Checkly dashboard](/guides/images/guides-checkly-dashboard.png)
+{{< figure src="/guides/images/guides-checkly-dashboard.png" alt="checkly dashboard screenshot" title="Checkly's dashboard" >}}
 
 As soon as a check runs red, we are alerted in real time and can **intervene before the issue impacts our users**. Alerting can be set up with all the industry-standard channels like Pagerduty, Opsgenie, Slack, email, SMS and more.
 
-![Checkly alerting](/guides/images/guides-checkly-alerting.png)
+{{< figure src="/guides/images/guides-checkly-alerting.png" alt="checkly alerting screenshot" title="Alert channels on Checkly" >}}
 
 ### On-demand checking
 
