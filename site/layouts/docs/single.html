@@ -14,13 +14,18 @@
         </div>
         <div class="breadcrumb">
           {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "/" }}
+
           {{ range $index, $element := split $url "/" }}
             {{ if ne $element "" }}
               {{ if eq $element "docs" }}
-                <a href="{{ . | absURL }}">Checkly docs</a>
+                <a href="/docs">Checkly docs</a>
               {{ else }}
                 <span>/</span>
-                <a href="{{ . | absURL }}">{{ humanize . }}</a>
+                {{ if eq $index 3 }}
+                <a href="/docs/{{ . }}">{{ humanize . }}</a>
+                {{ else }}
+                  <div>{{ humanize . }}</div>
+                {{ end }}
               {{ end }}
             {{ end }}
           {{ end }}

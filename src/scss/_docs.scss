@@ -262,6 +262,8 @@
       color: $black;
     }
     .breadcrumb {
+      display: flex;
+      align-items: center;
       margin: 30px 0 20px;
       padding: 0;
       background: none;
