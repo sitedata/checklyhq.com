@@ -24,7 +24,7 @@
                 {{ if eq $index 3 }}
                 <a href="/docs/{{ . }}">{{ humanize . }}</a>
                 {{ else }}
-                  <div>{{ humanize . }}</div>
+                {{ humanize . }}
                 {{ end }}
               {{ end }}
             {{ end }}
