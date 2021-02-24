@@ -11,4 +11,4 @@ jobs:
         with:
           algolia_application_id: ${{ secrets.ALGOLIA_APP_ID }}
           algolia_api_key: ${{ secrets.ALGOLIA_API_KEY }}
-          file: 'algolia.config.json'
+          file: 'algolia/config.json'
