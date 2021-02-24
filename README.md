@@ -13,9 +13,9 @@ Deploy
 
 ## Updating search
 
-This is done automatically through a github action, see `.github/worksflows/algolia-docsearch.yml`
+This is done automatically through a github action, see `.github/worksflows/algolia-docsearch.yml`.
 
-If you need to do it manually, go to the `docsearch-scraper` directory and run:
+If you need to do it manually, go to the `algolia` directory and run the following.
 
 ```bash
 pipenv shell
