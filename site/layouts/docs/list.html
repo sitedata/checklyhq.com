@@ -21,8 +21,9 @@
         {{ if ne $element "" }}
           {{ if eq $element "docs" }}
             <a href="/docs">Checkly docs</a>
+            <span>/</span> 
           {{ else }}
-            <span>/</span> {{ humanize . }}
+            {{ humanize . }}<span>/</span>
           {{ end }}
         {{ end }}
       {{ end }}

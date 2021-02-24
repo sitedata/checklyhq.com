@@ -19,13 +19,14 @@
             {{ if ne $element "" }}
               {{ if eq $element "docs" }}
                 <a href="/docs">Checkly docs</a>
-              {{ else }}
                 <span>/</span>
+              {{ else }}
                 {{ if eq $index 3 }}
                 <a href="/docs/{{ . }}">{{ humanize . }}</a>
                 {{ else }}
                 {{ humanize . }}
                 {{ end }}
+                <span>/</span>
               {{ end }}
             {{ end }}
           {{ end }}
