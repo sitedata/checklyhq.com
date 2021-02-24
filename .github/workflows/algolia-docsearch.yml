@@ -4,6 +4,7 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - name: Run doc-search
