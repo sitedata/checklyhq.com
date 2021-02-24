@@ -261,13 +261,34 @@
     h1, h2, h3, h4, h5 {
       color: $black;
     }
+    .breadcrumb {
+      margin: 30px 0 20px;
+      padding: 0;
+      background: none;
+      
+      & a {
+        color: $gray;
+        &:hover {
+          text-decoration: none;
+          color: $gray-dark;
+        }
+      }
+
+      & a:last-child {
+        color: $gray-dark;
+      }
+
+      & span {
+        margin: 0 5px;
+        color: $gray;
+      }
+    }
     nav#TableOfContents {
       ul {
         border-left: 2px solid $brand-primary;
         padding-left: .5rem;
       }
     }
-
     .cards-list {
       display: flex;
       justify-content: space-between;
