@@ -31,8 +31,8 @@
 			  height: auto;
 			  text-align: center;
 			  padding-bottom: 10px;
-			  border-bottom: 2px solid $blue;
-			  opacity: 0.2;
+			  border-bottom: 2px solid $gray;
+			  opacity: 0.3;
 
 			  &:hover {
 			    cursor: pointer;
@@ -40,6 +40,7 @@
 			}
 			.active {
 			  opacity: 1;
+			  border-color: $blue;
 			}
 		}
 		&__contents {
