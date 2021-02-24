@@ -20,10 +20,9 @@
       {{ range $index, $element := split $url "/" }}
         {{ if ne $element "" }}
           {{ if eq $element "docs" }}
-            <a href="/docs">Checkly docs</a>
-            <span>/</span> 
+            <a href="/docs/">Checkly docs</a>
           {{ else }}
-            {{ humanize . }}<span>/</span>
+            <span>/</span> {{ humanize . }}
           {{ end }}
         {{ end }}
       {{ end }}
