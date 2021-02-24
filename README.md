@@ -8,12 +8,14 @@ npm run start
 
 Deploy
 
-- push to any branch will deploy to preview via Vercel / Zeit
-- push to `master` will deploy to production via Vercel / Zeit
+- push to any branch will deploy to preview via Vercel
+- push to `master` will deploy to production via Vercel
 
 ## Updating search
 
-Go to the `docsearch-scraper` directory
+This is done automatically through a github action, see `.github/worksflows/algolia-docsearch.yml`.
+
+If you need to do it manually, go to the `algolia` directory and run the following.
 
 ```bash
 pipenv shell
