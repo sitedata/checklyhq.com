@@ -128,6 +128,35 @@ $(document).ready(() => {
   }
 })
 
+/**
+ * Pricing Toggle Card
+ */
+$(document).ready(() => {
+  const toggle = $('.pricing__plans--toggle')
+  const toggleCard = $('#pricing__plans--toggle-card')
+  const toggleArrow = $('.pricing__plans--toggle-arrow')
+  var toggleFlag = 0
+  toggle.click(() => {
+    if (toggleFlag === 0) {
+      toggleCard.css({
+        display: 'block',
+      })
+      toggleArrow.css({
+        transform: 'rotate(180deg)',
+      })
+      toggleFlag = 1
+    } else {
+      toggleCard.css({
+        display: 'none',
+      })
+      toggleArrow.css({
+        transform: 'rotate(0)',
+      })
+      toggleFlag = 0
+    }
+  })
+})
+
 
 /**
  * START Pricing
