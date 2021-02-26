@@ -56,8 +56,10 @@
         cursor: pointer;
       }
     }
-    @include media-breakpoint-down(lg) {
-      flex-direction: column;
+    @include media-breakpoint-down(sm) {
+      &--toggle{
+        display: none;
+      }
     }
   }
 
@@ -163,6 +165,32 @@
       @include media-breakpoint-down(sm) {
         height: 1px;
         width: 90%;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      width: 45%;
+      &--light {
+        .d-flex {
+          flex-wrap: wrap;
+        }
+        .pricing {
+          width: 100%;
+        }
+        .pricing__list {
+          margin: 50px auto 0;
+        }
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      &--gray {
+        margin-right: 0 !important;
+      }
+      &--gray:first-child {
+        margin-bottom: 50px;
+      }
+      &--light {
+        display: none !important;
       }
     }
   }
@@ -514,6 +542,9 @@
       }
     }
 
+    &__calculation {
+      margin-top: 0px;
+    }
     .pricing__enterprise {
       text-align: center;
 
