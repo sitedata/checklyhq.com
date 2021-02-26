@@ -184,7 +184,10 @@
     @include media-breakpoint-down(sm) {
       width: 100%;
       &--gray {
-        margin-right: 0 !important;
+        max-width: 365px;
+        width: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
       &--gray:first-child {
         margin-bottom: 50px;
