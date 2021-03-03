@@ -14,20 +14,19 @@ A new generation of tools has emerged to serve this use case, the most notable e
 
 Terraform can be used to provision infrastructure on many different cloud vendors thanks to its provider ecosystem: each provider maps to the vendor's API, exposing different resources in a domain-specific language known as [HCL](https://www.terraform.io/docs/language/syntax/configuration.html).
 
-## Monitoring is infrastructure
+## Monitoring the IaC way
 
-When provisioning monitoring infrastructure, perhaps not surprisingly, we run into the same issues that ultimately led to the birth of the IaC workflow. That is because **our monitoring setup is also a piece of infrastructure**, and it should be treated as such.
+Setting up monitoring can present some of the same issues as provisioning infrastructure. This becomes apparent when we move past the initial rollout or proof-of-concept and onboard multiple products and/or teams, and see our monitoring setup rapidly grow in scope - along with its maintenance needs, that is. 
 
-This becomes apparent when we move past the initial rollout or proof-of-concept and onboard multiple products and/or teams, and see our monitoring setup rapidly grow in scope - along with its maintenance needs, that is. This is not limited to large businesses: even smaller organisations might find that managing their monitoring infrastructure as code can save them significant amounts of resources.
+Monitoring-as-Code learns from IaC and brings your monitoring config closer to your application and your development workflows. How? By having it also declared as code, much like you would do with any kind of IT infrastructure.
 
 ## Why Monitoring-as-Code
 
-What does one gain when moving to a Monitoring-as-Code approach? The **main advantages** are:
+What does one gain when moving from a manual to a Monitoring-as-Code approach? The **main advantages** are:
 
-1. No more fragmented manual workflows across different cloud providers.
-2. Better scalability through faster provisioning and easier maintenance.
-3. Better history and documentation: config files can be checked into source control.
-4. Shared monitoring setup visibility (and easier shared ownership) in DevOps teams.
+1. Better scalability through faster provisioning and easier maintenance.
+2. Better history and documentation: config files can be checked into source control.
+3. Shared monitoring setup visibility (and easier shared ownership) in DevOps teams.
 
 ## Monitoring-as-Code with Checkly
 
@@ -37,7 +36,7 @@ You can [find the Checkly Terraform provider](https://registry.terraform.io/prov
 
 {{< figure src="/guides/images/guides-provider.png" alt="official Checkly Terraform provider on Terraform Registry" title="Official Checkly Terraform provider" >}}
 
-## Monitoring an ecommerce website as code
+## Monitoring an e-commerce website - as code
 
 How does this all look like in practice? Let's find out by creating a small monitoring setup for our [demo e-commerce website](https://danube-webshop.herokuapp.com).
 
@@ -216,7 +215,7 @@ We are ready to initialise our project and have the Checkly Terraform provider s
 After a few seconds, you should see a similar message to the following:
 
 ```
-ragog@Giovannis-MacBook-Pro learn-terraform % terraform init
+ragog@macpro learn-terraform % terraform init
 
 Initializing the backend...
 
@@ -318,7 +317,7 @@ Terraform will determine all the needed changes to be performed to replicate our
  We can expose this as an environment variable in order to avoid having to copy-paste it all the time: `export TF_VAR_checkly_api_key=<YOUR_API_KEY>`.
 
 ```
-ragog@Giovannis-MacBook-Pro learn-terraform % terraform plan
+ragog@macpro learn-terraform % terraform plan
 
 An execution plan has been generated and is shown below.
 Resource actions are indicated with the following symbols:
@@ -366,6 +365,54 @@ Logging in to our Checkly account, we will see the dashboard has been populated 
 
 {{< figure src="/guides/images/guides-terraform-checks.png" alt="terraform-created checks on checkly dashboard" title="Terraform-provisioned checks on Checkly" >}}
 
+### Monitoring API correctness and performance
+
+Browser checks are now there to keep us informed on the status of our key website flows. What about our APIs, though? Whether they make up the foundation of our service or they are consumed directly by the customer, we need to ensure our endpoints are working as expected. This is easily achieved by setting up API check resources.
+
+{{< tabs "Terraform example 3" >}}
+{{< tab "API check resource" >}}
+```terraform
+resource "checkly_check" "webstore-list-books" {
+  name                      = "list-books"
+  type                      = "API"
+  activated                 = true
+  should_fail               = false
+  frequency                 = 1
+  double_check              = true
+  ssl_check                 = true
+  use_global_alert_settings = true
+  degraded_response_time    = 5000
+  max_response_time         = 10000
+
+  locations = [
+    "eu-central-1",
+    "us-west-1"
+  ]
+
+  request {
+    url              = "https://danube-webshop.herokuapp.com/api/books"
+    follow_redirects = true
+    assertion {
+      source     = "STATUS_CODE"
+      comparison = "EQUALS"
+      target     = "200"
+    }
+    assertion {
+      source     = "JSON_BODY"
+      property   = "$.length"
+      comparison = "EQUALS"
+      target     = "30"
+    }
+  }
+}
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+We can now once more run `terraform plan`, followed by `terraform apply` to see the new check on Checkly:
+
+{{< figure src="/guides/images/guides-terraform-api-check.png" alt="terraform-created api check on checkly" title="Our API and Browser checks on Checkly" >}}
+
 ### Alerting
 
 Now that we have our checks in place, we want to set up alerting to ensure we are informed as soon as a failure takes place. Alert channels can be declared as resources, just like the checks. Let's add the following to our `main.tf` file:
@@ -409,11 +456,13 @@ resource "checkly_check" "login" {
 }
 ```
 
-We can now once more run `terraform plan`, followed by `terraform apply` to see the new changes applied on our Checkly account:
+Going through the usual `terraform plan` and `terraform apply` sequence will apply the changes on our Checkly account:
 
 {{< figure src="/guides/images/guides-terraform-alerts.png" alt="terraform-created alert on checkly" title="Terraform-provisioned alert on Checkly" >}}
 
-We are now fully up and running with our monitoring-as-code setup. Our checks will run on a schedule, informing us promptly if anything were to go wrong. Rapidly getting to know about failures in key website flows will allow us to react fast and mitigate impact on our users, ensuring a better experience with our product.
+We are now fully up and running with our monitoring-as-code setup. Our checks will run on a schedule, informing us promptly if anything were to go wrong. Rapidly getting to know about failures in our API and key website flows will allow us to react fast and mitigate impact on our users, ensuring a better experience with our product.
+
+You can find the complete setup described in this guide on our [dedicated repository](https://github.com/checkly/guides-monitoring-as-code).
 
 ### Expanding our setup
 
@@ -422,4 +471,4 @@ As our setup expands, we might want to deploy additional tools to make our lives
 1. Iterate over existing Playwright scripts and [create multiple checks while declaring only one resource](https://blog.checklyhq.com/scaling-puppeteer-playwright-on-checkly-with-terraform#iterating-through-scripts-for-shorter-config).
 2. [Group checks together](https://blog.checklyhq.com/scaling-puppeteer-playwright-on-checkly-with-terraform#grouping-checks-together) to better handle them in large numbers.
 3. [Use code snippets](https://blog.checklyhq.com/scaling-puppeteer-playwright-on-checkly-with-terraform#reducing-code-duplication-with-snippets) to avoid code duplication and reduce maintenance.
-4. [Add API checks](https://blog.checklyhq.com/synthetic-monitoring-with-terraform-cloud-checkly#setting-up-deep-api-monitoring) to monitor key endpoints and user flows which do not happen through a webpage or UI.
+4. Move your workflow to [Terraform Cloud](https://www.terraform.io/cloud) to easily collaborate with your team when managing your Monitoring-as-Code configuration.
