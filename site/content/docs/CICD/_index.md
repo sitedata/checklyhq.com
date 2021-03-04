@@ -8,9 +8,11 @@ menu:
 
 Checkly enables you to trigger **single checks or groups of checks** as you deploy your code from your CI/CD pipeline. 
 
-The easiest way to get started is by using our GitHub integration to leverage the GitHub deployments API. This requires minimal setup and works great with providers like **Vercel** and **Heroku**.
+The easiest way to get started is by using our Vercel integration or GitHub integration. Both require minimal setup.
+The direct Vercel integration also works with GitLab and Bitbucket.
 
 - [GitHub deployments](/docs/cicd/github/)
+- [Vercel](/docs/cicd/vercel/)
 
 You can also integrate with your CI/CD using our API directly:
 
@@ -20,7 +22,6 @@ You can also integrate with your CI/CD using our API directly:
 - [Jenkins](/docs/cicd/jenkins/)
 - [Travis CI](/docs/cicd/travisci/)
 - [GitLab CI](/docs/cicd/gitlabci)
-- [Vercel](/docs/cicd/vercel/)
 
 For any other platform, check out how to use our command line trigger API:
 
