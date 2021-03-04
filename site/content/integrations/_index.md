@@ -3,6 +3,28 @@ title: Integration
 heroTitle: Connect to the tools you already use
 heroDescription: >-
   Checkly works with the key tools, frameworks and platforms in the modern development eco-system.
+highlights:
+  - label: FEATURED TERRAFORM INTEGRATION
+    title: Achieve monitoring as code
+    description: >-
+      Our Terraform provider enables codified monitoring - manage, scale and alter your checks through a powerful CLI workflow.
+    image: "/integrations/highlight/terraform-featured-image@2x.png"
+    tabIcon: "/integrations/highlight/terraform-logo@2x.png"
+    ctaLink: "/docs/integrations/terraform/"
+  - label: FEATURED VERCEL INTEGRATION
+    title: Run checks on every deploy
+    description: >-
+      Run your auto-generated health-, E2E- and API-checks on every deploy to make sure never to deploy broken apps.
+    image: "/integrations/highlight/vercel@2x.png"
+    tabIcon: "/integrations/highlight/vercel-logo@2x.png"
+    ctaLink: "/docs/integrations/vercel"
+  - label: FEATURED SLACK INTEGRATION
+    title: Get alerted when things go wrong
+    description: >-
+      Get detailed alerts and logs in Slack when a check fails, degrades, or recovers.
+    image: "/integrations/highlight/slack-featured-image@2x.png"
+    tabIcon: "/integrations/highlight/slack-logo@2x.png"
+    ctaLink: "/docs/integrations/slack"
 alerting:
   - service: Email
     icon: "/integrations/alerting/email@2x.png"

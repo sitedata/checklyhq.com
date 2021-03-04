@@ -214,6 +214,28 @@ $(document).ready(() => {
  * END Pricing
  */
 
+
+/**
+ * Integration tabs
+ */
+
+$(document).ready(() => {
+  $('#integration-tab-0').addClass('active');
+  $('#integration-tab-0-content').addClass('active');
+  var integrationTab = $('.integration-tab');
+  var tabContent = $('.integration-tab-content');
+
+  integrationTab.click(function() {
+    var id = $(this).attr('id');
+    var content_id = '#' + id + '-content'
+    $(integrationTab).removeClass('active')
+    $(tabContent).removeClass('active')
+    $(this).addClass('active')
+    $(content_id).addClass('active')
+  })
+})
+
+
  /**
  *Footer DropDown in Tablet&Mobile
  */
