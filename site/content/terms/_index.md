@@ -43,7 +43,7 @@ d. In case of late payment, you, in addition to the amount owed, are responsible
 
 ## 4. Termination
 
-a. You are solely responsible for properly canceling your account, which you can do in the "Account" section of the Service only. Any other form of cancellation is not accepted and therefore not processed.  
+a. You are solely responsible for properly canceling your account by opening a support ticket via support@checklyhq.com. Any other form of cancellation is not accepted and therefore not processed.
 b. If you cancel your account before the end of your current paid up month or year, your cancellation will take effect at the end of that period and you will not be charged again.  
 c. All of your content will be immediately deleted from the Service upon cancellation. This information can not be recovered once your account is cancelled.  
 d. You are at all times responsible for any legal obligation to keep your invoices, even after canceling your account.  
