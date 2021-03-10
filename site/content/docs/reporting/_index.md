@@ -23,13 +23,15 @@ Here you can use the toolbar to filter / sort by the following metrics:
 - Name (ASC / DESC)
 - Check Type (ASC / DESC)
 
+![Reporting Dashboard](/docs/images/reporting/dashboard.png)
+
 ## Graphs
 
 Clicking on a check will open a graph of the **response times** and **success ratio**. These graphs are tied to the date range selected in the toolbar above.
 
-In the **response times** graph, all three metrics (average, p95, p99) are shown by default. However, you can toggle these on and off by clicking on the pills with their respective names to the right.
+In the **response time** graph, all three metrics (`average`, `p95`, `p99`) are shown by default. However, you can individually toggle these on and off by clicking on the pills with their respective names to the right of the graph.
 
-![Reporting Dashboard Graphs](/docs/images/reporting/dashboard.png)
+![Reporting Dashboard Graphs](/docs/images/reporting/dashboard-graph.png)
 
 ## CSV Export
 
@@ -44,4 +46,4 @@ In the reporting overview, you can export all available statistics to a CSV. Sel
 - Response Time (`P99`)
 - Check Tags
 
-Remember these statistics, like success ratio and response times, are calculated based upon the date range selected. By default, this is **Last 24 Hours**.
+Remember these statistics, like success ratio and response times, are calculated based upon the selected date range. By default, this is set to "**Last 24 Hours**".
