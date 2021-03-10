@@ -8,7 +8,7 @@ menu:
     parent: "Reporting"
 ---
 
-With the reporting dashboard one can get an overview of all of their checks and their average, p95, and p99 response times as well as the success ratio and more. One can also export this data to a CSV for further processing by any other tools one might have. 
+With the reporting dashboard one can get an overview of all of their checks and their `average`, `p95`, and `p99` response times as well as the success ratio and more. One can also export this data to a CSV for further processing by any other tools one might have. 
 
 ## Overview
 
@@ -39,9 +39,9 @@ In the reporting overview one can export all available statistics to a CSV file 
 - Check ID
 - Check Type
 - Success Ratio
-- Response Time (Average)
-- Response Time (P95)
-- Response Time (P99)
+- Response Time (`Average`)
+- Response Time (`P95`)
+- Response Time (`P99`)
 - Check Tags
 
-Remember these statistics, like success ratio and response times, are calculated based upon the date range selected. By default this is 'Last 24 Hours'. 
+Remember these statistics, like success ratio and response times, are calculated based upon the date range selected. By default this is **Last 24 Hours**. 
