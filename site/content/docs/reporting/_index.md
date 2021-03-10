@@ -8,13 +8,13 @@ menu:
     parent: "Reporting"
 ---
 
-With the reporting dashboard one can get an overview of all of their checks and their `average`, `p95`, and `p99` response times as well as the success ratio and more. One can also export this data to a CSV for further processing by any other tools one might have. 
+With the reporting dashboard, you can get an overview of all your checks, including `average`, `p95`, and `p99`, response times, as well as the success ratio and more. You can also export this data to a CSV for further processing by any other tools.
 
 ## Overview
 
-When navigating to the reporting dashboard, one first lands on the overview screen with a list of their first 15 checks. 
+When navigating to the reporting dashboard, you will see an overview screen with a list of your first 15 checks.
 
-Here one can use the toolbar to filter / sort by the following metrics:
+Here you can use the toolbar to filter / sort by the following metrics:
 
 - Date Range
 - Check Type
@@ -25,15 +25,15 @@ Here one can use the toolbar to filter / sort by the following metrics:
 
 ## Graphs
 
-By clicking on a check it will open a graph of the **response times** and **success ratio**. These graphs are tied to the date range selected in the toolbar above.
+Clicking on a check will open a graph of the **response times** and **success ratio**. These graphs are tied to the date range selected in the toolbar above.
 
-In the **response times** graph, all three metrics (average, p95, p99) are shown by default. However, one can toggle these on and off by clicking on the pills with their respective names to the right.
+In the **response times** graph, all three metrics (average, p95, p99) are shown by default. However, you can toggle these on and off by clicking on the pills with their respective names to the right.
 
 ![Reporting Dashboard Graphs](/docs/images/reporting/dashboard.png)
 
 ## CSV Export
 
-In the reporting overview one can export all available statistics to a CSV file in the click of a button. Select the date range for which you'd like to export statistics, and then simply click **Download as CSV** on the right side of the toolbar. This will generate and download a CSV file with the following columns/fields:
+In the reporting overview, you can export all available statistics to a CSV. Select the date range for which you'd like to export statistics, and then click **Download as CSV** on the right side of the toolbar. The generated CSV file will include the following columns/fields:
 
 - Name
 - Check ID
@@ -44,4 +44,4 @@ In the reporting overview one can export all available statistics to a CSV file 
 - Response Time (`P99`)
 - Check Tags
 
-Remember these statistics, like success ratio and response times, are calculated based upon the date range selected. By default this is **Last 24 Hours**. 
+Remember these statistics, like success ratio and response times, are calculated based upon the date range selected. By default, this is **Last 24 Hours**.
