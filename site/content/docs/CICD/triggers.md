@@ -61,11 +61,16 @@ Date: Fri, 29 Jun 2018 12:05:17 GMT
 You can add the following query parameters to any trigger request. This enables you to record deployments in the Checkly
 event timeline, in turn enabling you to track application performance across deploys.
 
-| parameter    | type    | required |                                                                               |
-|--------------|---------|----------|-------------------------------------------------------------------------------|
-| `deployment` | Boolean | false    | Set to true to record each trigger invocation as a deployment event.          |
-| `repository` | String  | true     | Repository name, i.e. "checkly/backend-api"                                   |
-| `sha`        | String  | true     | Git hash, tag, version "v1.0.1" or other identifier making this deploy unique |
+| parameter        | type    | required |                                                                               |
+|------------------|---------|----------|-------------------------------------------------------------------------------|
+| `deployment`     | Boolean | false    | Set to true to record each trigger invocation as a deployment event.          |
+| `repository`     | String  | false    | Repository name, i.e. "checkly/backend-api"                                   |
+| `sha`            | String  | false    | Git hash, tag, version "v1.0.1" or other identifier making this deploy unique |
+| `environmentUrl` | String  | false    | A staging or preview URL injected as ENVIRONMENT_URL in browser checks and auto-replaced in API checks |
+
+
+
+## Example 1: Recording deployments
 
 For example, this cURL request
 
@@ -78,3 +83,22 @@ would record the following deployment on your events tab:
 ![deployment parameters from CI/CD](/docs/images/cicd/trigger_parameters.png)
 
 > Note: if you want to run multiple triggers for one deployment, just provide the same `repository` and `sha` parameter on each request. We will only record one deployment.
+ 
+## Example 2: Using the environmentUrl
+
+By providing the `environmentUrl` parameter with a correct url to a staging or preview environment, you can effectively 
+change the URL's your checks are targeting. 
+
+For example, this cURL request
+
+```bash
+curl -X GET "https://api.checklyhq.com/checks/<uuid>/trigger/c0hYw?deployment=true&repository=acme/customer-api&sha=v1.0.2-beta&environmentUrl=https://staging.example.com"
+```
+
+would record the same deployment as in the first example, but would do two extra things:
+
+1. Inject the given URL into the environment variable `ENVIRONMENT_URL` for all browser checks.
+2. Automatically replace the URL in any API check.
+
+This behaviour is exactly the same as with our GitHub integration. [Check the GitHub integration's environment URL documentation
+to find out how this exactly works.](/docs/cicd/github/#using-environment-urls)
