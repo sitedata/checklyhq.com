@@ -1,18 +1,4 @@
 /* eslint-env jquery */
-/**
- * TRACKING
- */
-
-function handleGoogleTrackSignup () {
-  // eslint-disable-next-line no-undef
-  gtag('event', 'sign_up', {
-    'event_category': 'engagement'
-  })
-}
-
-$('[data-signup]').click(function () {
-  handleGoogleTrackSignup()
-})
 
 /**
  * START Navbar
