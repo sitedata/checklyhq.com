@@ -79,10 +79,16 @@ disqusShortname = "checkly"
 	weight = 100
 
 [[menu.docs]]
+	name = "Reporting"
+	url = "/docs/reporting/"
+	pre="/docs/images/icons/reporting.svg"
+	weight = 110
+
+[[menu.docs]]
 	name = "Headless Recorder"
 	url = "/docs/headless-recorder/"
 	pre="/docs/images/icons/headless-recorder@2x.png"
-	weight = 9999
+	weight = 120
 
 [markup.goldmark.renderer]
 unsafe = true
