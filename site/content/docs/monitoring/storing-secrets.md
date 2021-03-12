@@ -1,6 +1,6 @@
 ---
 title: Storing secrets
-weight: 4
+weight: 5
 menu:
   docs:
     parent: "Monitoring"

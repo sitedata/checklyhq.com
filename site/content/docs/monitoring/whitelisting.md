@@ -1,6 +1,6 @@
 ---
 title: Whitelisting & filtering traffic
-weight: 5
+weight: 6
 menu:
   docs:
     parent: "Monitoring"

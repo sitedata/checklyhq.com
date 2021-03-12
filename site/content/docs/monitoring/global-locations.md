@@ -1,6 +1,6 @@
 ---
 title: Global locations
-weight: 2
+weight: 3
 menu:
   docs:
     parent: "Monitoring"
