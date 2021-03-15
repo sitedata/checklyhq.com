@@ -39,11 +39,11 @@
   <script>
     (function () {
       var menu = document.querySelector('aside.docs-menu nav')
-  addEventListener('beforeunload', function () {
+      addEventListener('beforeunload', function () {
         localStorage.setItem('menu.scrollTop', menu.scrollTop)
-  })
-  menu.scrollTop = localStorage.getItem('menu.scrollTop')
-})()
+      })
+      menu.scrollTop = localStorage.getItem('menu.scrollTop')
+    })()
   </script>
 
 </aside>
