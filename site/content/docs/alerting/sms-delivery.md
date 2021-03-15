@@ -14,7 +14,7 @@ The phone numbers used for SMS alerting need to be in E.164 format. Stick to the
 
 ![send monitoring alerts with SMS](/docs/images/alerting/sms.png)
 
-> SMS alert channels are only available at the account level in the global alert channels. You can add up to 5 phone numbers.
+You can add as many SMS channels as you like.
 
 ## Supported countries and regions
 
