@@ -37,7 +37,7 @@ Request interception enables us to observe which requests and responses are bein
 {{< /tab >}}
 {{< /tabs >}}
 
-We might want to intervene and filter the outgoing requests. For example, when [scraping web pages](basics-scraping/), we might want to block unnecessary elements from loading in order to speed up the procedure and lower bandwidth usage.
+We might want to intervene and filter the outgoing requests. For example, when [scraping web pages](/learn/headless/basics-scraping/), we might want to block unnecessary elements from loading in order to speed up the procedure and lower bandwidth usage.
 
 In the following snippet we are going to abort all requests for images on our test website. We will identify them based off of their [`resourceType`](https://pptr.dev/#?product=Puppeteer&version=v5.2.1&show=api-httprequestresourcetype), while letting all other requests through without modification.
 

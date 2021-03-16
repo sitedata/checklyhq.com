@@ -23,7 +23,7 @@ The way you reference a UI element of your target web application for Puppeteer 
 You can find/generate selectors by:
 
 1. Using your browser's inspector tool (as found e.g. in the [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/dom)).
-2. Leveraging an automated recording tool (e.g. the open-source [Puppeteer Recorder](https://github.com/checkly/puppeteer-recorder)).
+2. Leveraging an automated recording tool (e.g. the open-source [Headless Recorder](https://github.com/checkly/headless-recorder)).
 3. Looking at the source code of the page.
 
 ## Choosing selectors

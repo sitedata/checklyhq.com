@@ -12,7 +12,7 @@ const fs = require('fs');
 
   await page.emulateMediaType('screen')
 
-  await page.goto('https://theheadless.dev/posts')
+  await page.goto('/learn/headless')
 
   await navigationPromise
 

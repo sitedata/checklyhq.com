@@ -36,8 +36,8 @@ Regardless of the approach you choose, you will want to inspect the output scrip
 
 That being said, you should always double-check the newly created scripts and tweak it when necessary, especially keeping an eye out for:
 
-1. Selectors, which should be in line with common [best practices](basics-selectors/).
-2. [Waits](basics-navigation/), which should ensure the right element is present and/or ready for interaction at the right time; also, make sure you get rid of unnecessary waits.
+1. Selectors, which should be in line with common [best practices](/learn/headless/basics-selectors/).
+2. [Waits](/learn/headless/basics-navigation/), which should ensure the right element is present and/or ready for interaction at the right time; also, make sure you get rid of unnecessary waits.
 3. Any sort of needless duplication.
 
 An example of recorded Puppeteer script:
@@ -55,7 +55,7 @@ We can modify this script to improve readability and efficiency:
 1. The duplicated `await navigationPromise` on line 14 serves no purpose and can be deleted.
 2. The `page.waitForSelector` on line 16 is not needed as we already are waiting on the navigationPromise.
 3. The `page.waitForSelector` on line 19 can be skipped as the element is present on the same page as the previous one.
-4. All the selectors used can be [refactored](basics-selectors/).
+4. All the selectors used can be [refactored](/learn/headless/basics-selectors/).
 
 {{< tabs "2" >}}
 {{< tab "Puppeteer" >}}
@@ -65,7 +65,7 @@ We can modify this script to improve readability and efficiency:
 {{< /tab >}}
 {{< /tabs >}}
 
-Like all scripts, recorded scripts need to be maintained in order to [remain useful](valuable-tests/) over time.
+Like all scripts, recorded scripts need to be maintained in order to [remain useful](/learn/headless/valuable-tests/) over time.
 
 ## Takeaways
 

@@ -113,7 +113,7 @@ const [response] = await Promise.all([
 Interestingly, Playwright offers pretty much the same API for waiting on events and elements but again stresses its automatic handling
 of the wait states under the hood.
 
-> gree Playwright handles a lot of the common waiting scenario's using its built-in "auto waiting". Depending on your use case, it might serve all your needs
+> Playwright handles a lot of the common waiting scenario's using its built-in "auto waiting". Depending on your use case, it might serve all your needs
 
 
 ## Timeouts
@@ -121,7 +121,7 @@ of the wait states under the hood.
 The `page.waitForNavigation()` method — but also similar methods like `page.reload()` and `page.goBack()` — all take some
 options that determine "how" it should wait and what the timeout limits are.
 
-These options come in two flavours:
+These options come in two flavors:
 
 **1. Hard timeout**
 
@@ -159,7 +159,7 @@ Which of these options is useful to you depends on your situation:
 - You server render and load in some non-crucial element in a lazy fashion? go for one of the `networkidle` variant.
 
 
-Now that we know how to start a browser and navigate to a URL, the clear next step is to learn how to [interact with a webpage](basics-clicking-typing/).
+Now that we know how to start a browser and navigate to a URL, the clear next step is to learn how to [interact with a webpage](/learn/headless/basics-clicking-typing/).
 
 ## Further reading
 1. [Playwright general navigation docs](https://playwright.dev/#version=v1.3.0&path=docs%2Floading.md&q=)
