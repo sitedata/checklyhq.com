@@ -96,10 +96,10 @@ await page.setViewport({ width: 1280, height: 800 })
 await page.goto('https://checklyhq.com/login')
 
 const navigationPromise = page.waitForNavigation()
+await page.goto('https://app.checklyhq.com/')
 
 // Click Google login and wait for redirect
-await page.waitForSelector('div > .social > .text-center > .login-google-button > span')
-await page.click('div > .social > .text-center > .login-google-button > span')
+await page.click('a[data-provider="google-oauth2"]')
 await navigationPromise
 
 // provide email address and click next
@@ -127,24 +127,18 @@ const browser = await playwright.chromium.launch()
 const page = await browser.newPage()
 
 await page.setViewportSize({ width: 1280, height: 800 })
-await page.goto('https://checklyhq.com/login')
+await page.goto('https://app.checklyhq.com/')
 
-const navigationPromise = page.waitForNavigation()
-
-// Click Google login and wait for redirect
-await page.click('div > .social > .text-center > .login-google-button > span')
-await navigationPromise
+// Click Google login
+await page.click('a[data-provider="google-oauth2"]')
 
 // provide email address and click next
-await page.type('input[type="email"]', process.env.GOOGLE_USER)
+await page.fill('input[type="email"]', process.env.GOOGLE_USER)
 await page.click('#identifierNext')
 
 // provide password, click next and wait for redirect back to Checkly
-await page.type('input[type="password"]', process.env.GOOGLE_PWD)  
-
-const navigationPromise2 = page.waitForNavigation()
+await page.fill('input[type="password"]', process.env.GOOGLE_PWD)
 await page.click('#passwordNext')
-await navigationPromise2
 
 await browser.close()
 ```
