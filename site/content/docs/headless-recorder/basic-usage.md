@@ -67,7 +67,7 @@ You can take two kinds of screenshots:
 
 Activate either mode by either using the right click context menu...
 
-![puppeteer recorder context menu](/docs/images/headless-recorder/context_menu.png)
+![headless recorder context menu](/docs/images/headless-recorder/context_menu.png)
 
 ...or using keyboard shortcuts.
 

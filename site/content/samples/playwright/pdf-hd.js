@@ -10,7 +10,7 @@ const fs = require('fs');
   const templateHeader = fs.readFileSync('template-header.html', 'utf-8')
   const templateFooter = fs.readFileSync('template-footer.html', 'utf-8')
 
-  await page.goto('https://theheadless.dev/posts')
+  await page.goto('/learn/headless')
 
   await navigationPromise
 
