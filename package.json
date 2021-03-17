@@ -6,15 +6,12 @@
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
-    "build": "gulp build && npm run generate-api-docs && npm run copy-api-docs",
+    "build": "gulp build && npm run copy-api-docs",
     "build-preview": "gulp build-preview",
-    "start": "gulp server",
+    "start": "gulp api-docs && gulp server",
     "lint": "eslint src",
-    "generate-api-docs": "curl -OL https://api.checklyhq.com/swagger.json && widdershins --user_templates src/api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o src/api-docs/shins/source/index.html.md && cd src/api-docs/shins && shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss --inline --output ./index.html",
-    "generate-api-docs:dev": "curl -OL http://localhost:3000/swagger.json && widdershins --user_templates src/api-docs/widdershins-user-templates --resolve --search  --language_tabs 'shell:curl' --summary swagger.json -o src/api-docs/shins/source/index.html.md && cd src/api-docs/shins && shins --logo ../logo.png --logo-url 'https://checklyhq.com/'  --customcss --inline --output ./index.html",
     "copy-api-docs": "gulp api-docs"
   },
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.3",
