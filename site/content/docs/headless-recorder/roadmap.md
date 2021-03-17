@@ -6,10 +6,10 @@ menu:
     parent: "Headless Recorder"
 ---
 
-We created Headless Recorder (formerly know as Puppeteer Recorder) as a cool Sunday afternoon side project while working on Checkly. The project is now at 
-20k+ users and 10K GitHub stars! Things were a little quiet around the project, but that's going to change. 
+We created Headless Recorder (formerly know as Headless Recorder) as a cool Sunday afternoon side project while working on Checkly. The project is now at
+20k+ users and 10K GitHub stars! Things were a little quiet around the project, but that's going to change.
 
-Checkly is growing and we want to double down on making Headless Recorder the most awesome 100% open source E2E test 
+Checkly is growing and we want to double down on making Headless Recorder the most awesome 100% open source E2E test
 recorder on the planet. To be 100% transparent, we want to do this because:
 
 1. It is good for unsucking E2E test creation in general.
@@ -17,10 +17,10 @@ recorder on the planet. To be 100% transparent, we want to do this because:
 
 ## Survey results
 
-We ran a [survey]((https://surveys.hotjar.com/s?siteId=717179&surveyId=137462)) among Puppeteer Recorder users the last months. 
+We ran a [survey]((https://surveys.hotjar.com/s?siteId=717179&surveyId=137462)) among Headless Recorder users the last months.
 We got ~400 responses. Here are the annotated results.
 
-**1. What are you using Puppeteer Recorder for now?** 
+**1. What are you using Headless Recorder for now?**
 
 |   | | count    | % respondents      |   % answers    |
 |---|------------------------------------------------|-----|-------|-------|
@@ -32,7 +32,7 @@ We got ~400 responses. Here are the annotated results.
 
 *684 answers from 398 respondents.*
 
-**2. If you could add one feature to Puppeteer Recorder, what would it be?**
+**2. If you could add one feature to Headless Recorder, what would it be?**
 
 |   | |  count   |    %   |
 |---|-----------------------------------------------------------------------|-----|-------|
@@ -58,7 +58,7 @@ We got ~400 responses. Here are the annotated results.
 
 *627 answers from 398 respondents*
 
-**4. What do you expect from a Pro version of Puppeteer Recorder?**
+**4. What do you expect from a Pro version of Headless Recorder?**
 
 This is an open ended question. Here is a curated overview of replies:
 
@@ -71,16 +71,16 @@ This is an open ended question. Here is a curated overview of replies:
 - mouse tracking
 - hover tracking
 - better handling of iframes, tabs and new windows
- 
-
-**5. How would you score the current version of Puppeteer Recorder?**
 
 
-⭐️⭐️⭐️⭐️⭐️ 84 / 21,1%  
-⭐️⭐️⭐️⭐️ **148 / 37,2%**  
-⭐️⭐️⭐️ 136 / 34,2%  
-⭐️⭐️ 23 / 5,8%  
-⭐️ 7 / 1,8%  
+**5. How would you score the current version of Headless Recorder?**
+
+
+⭐️⭐️⭐️⭐️⭐️ 84 / 21,1%
+⭐️⭐️⭐️⭐️ **148 / 37,2%**
+⭐️⭐️⭐️ 136 / 34,2%
+⭐️⭐️ 23 / 5,8%
+⭐️ 7 / 1,8%
 
 
 ## Roadmap (work in progress)

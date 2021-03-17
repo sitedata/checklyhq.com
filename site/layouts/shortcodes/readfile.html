@@ -1,2 +1,2 @@
 {{ $filename := .Get "filename" }}
-<p>{{ readFile $filename | markdownify}}</p>
+{{ readFile $filename | safeHTML }}

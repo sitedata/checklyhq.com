@@ -107,7 +107,7 @@ await browser.close()
 ```
 {{< /tab >}}
 {{< /tabs >}}
- 
+
 1. We select all `<a>` elements that have the CSS class `storylink`.
 2. We pass these into the callback and use the `map()` method to return just the link text.
 3. We slice of the first 10 items.
@@ -127,7 +127,7 @@ const expect = require('chai').expect
 const browser = await puppeteer.launch()
 const page = await browser.newPage()
 
-await page.goto('https://duckduckgo.com/', { waitUntil: 'networkidle2' })  
+await page.goto('https://duckduckgo.com/', { waitUntil: 'networkidle2' })
 await page.type('#search_form_input_homepage', 'Puppeteer')
 const searchValue = await page.$eval('#search_form_input_homepage', el => el.value)
 expect(searchValue).to.equal('Puppeteer')
@@ -143,7 +143,7 @@ const expect = require('chai').expect
 const browser = await playwright.chromium.launch()
 const page = await browser.newPage()
 
-await page.goto('https://duckduckgo.com/', { waitUntil: 'networkidle' })  
+await page.goto('https://duckduckgo.com/', { waitUntil: 'networkidle' })
 await page.type('#search_form_input_homepage', 'Playwright')
 const searchValue = await page.$eval('#search_form_input_homepage', el => el.value)
 expect(searchValue).to.equal('Playwright')
@@ -261,7 +261,7 @@ console.log('Page width is:', viewport.width)
 ```
 {{< /tab >}}
 {{< /tabs >}}
- 
+
 ## More resources
 
 - [Scraping guides on theheadless.dev](https://theheadless.dev/tag/scraping/)

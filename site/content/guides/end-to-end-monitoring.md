@@ -8,7 +8,7 @@ description: >-
 
 Over the course of the last decade, especially thanks to tools such as [Selenium](https://www.selenium.dev/) and (more recently) [Cypress](https://www.cypress.io/), **automated End-to-End testing (E2E testing) has become widespread across industries**. Broadly speaking, E2E testing entails running fully automated test suites with the goal of catching bugs before they hit production and, therefore, negatively affect the user experience. These test suites need to be carefully scripted using dedicated tools, as well as to be made stable and fast enough to test the most important end-user flows on every build, PR or commit, depending on the application under test and the organisation's automation maturity.
 
-The industry has learned to struggle with the challenges this approach presents: long-running suites, test flakiness, expensive test infrastructure - all leading to higher costs and slower delivery. 
+The industry has learned to struggle with the challenges this approach presents: long-running suites, test flakiness, expensive test infrastructure - all leading to higher costs and slower delivery.
 
 The appearance of mature **headless browser automation tools, such as [Puppeteer](https://pptr.dev) and [Playwright](https://playwright.dev), offers a response** to many of the above issues by allowing testing in the browser without its GUI, which yields higher speed and stability coupled with lower resource consumption.
 
@@ -174,7 +174,7 @@ Unlike headful tools, headless ones tend to not be very resource-hungry, which m
 
 {{< figure src="/guides/images/guides-checkly-check.png" alt="checkly check creation screenshot" title="Check creation on Checkly" >}}
 
-We can move our scripts to separate checks to keep them [independent](https://theheadless.dev/posts/valuable-tests/#keep-tests-independent) - we want to optimise for parallelisation and clarity of feedback.
+We can move our scripts to separate checks to keep them [independent](/learn/headless/valuable-tests/#keep-tests-independent) - we want to optimise for parallelisation and clarity of feedback.
 
 {{< figure src="/guides/images/guides-checkly-dashboard.png" alt="checkly dashboard screenshot" title="Checkly's dashboard" >}}
 
@@ -198,8 +198,8 @@ If you are using provider like Vercel, you can automatically trigger your checks
 
 We learned things the hard way so you do not have to. When starting out, keep an eye out for the following pitfalls:
 
-* Non-independent tests: tests that rely on one another in any way (e.g. order of execution, test data) are hard to parallelise, resulting in longer execution times and potentially higher flakiness. [Keep your tests independent](https://theheadless.dev/posts/valuable-tests/#keep-tests-independent).
+* Non-independent tests: tests that rely on one another in any way (e.g. order of execution, test data) are hard to parallelise, resulting in longer execution times and potentially higher flakiness. [Keep your tests independent](/learn/headless/valuable-tests/#keep-tests-independent).
 
-* Long, unfocused tests: checking too much in a single test will make failures harder to debug. [Break it up instead](https://theheadless.dev/posts/valuable-tests/#keep-tests-focused), and enjoy the added parallelisation.
+* Long, unfocused tests: checking too much in a single test will make failures harder to debug. [Break it up instead](/learn/headless/valuable-tests/#keep-tests-focused), and enjoy the added parallelisation.
 
 * Messing up your own metrics, KPIs: remember, if you are not running against production, you want to make sure your E2E monitoring checks or tests are filtered out of your analytics. This is [rather easy to do](https://www.checklyhq.com/docs/monitoring/whitelisting), with most headless browser tools normally identifying themselves as such from the start.
