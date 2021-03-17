@@ -9,7 +9,7 @@ menu:
 ---
 
 Scenarios where a user provides credentials to get access to a web app are extremely common. They are also
-a great candidate for a browser check as these site transactions tend to be very crucial. 
+a great candidate for a browser check as these site transactions tend to be very crucial.
 
 ## Username / password login
 
@@ -80,8 +80,8 @@ await browser.close()
 
 ## Social Login
 
-Authenticating via social login providers like Facebook, Google and GitHub can be a bit tricky to script because of the 
-redirects involved. Also, many providers make their login pages "bot resistant" which makes scripting harder. The example 
+Authenticating via social login providers like Facebook, Google and GitHub can be a bit tricky to script because of the
+redirects involved. Also, many providers make their login pages "bot resistant" which makes scripting harder. The example
 below uses the Google social login option on the Checkly login page.
 
 {{< tabs "Social login" >}}
@@ -109,7 +109,7 @@ await page.click('#identifierNext')
 
 // provide password, click next and wait for redirect back to Checkly
 await page.waitForSelector('input[type="password"]', { visible: true })
-await page.type('input[type="password"]', process.env.GOOGLE_PWD)  
+await page.type('input[type="password"]', process.env.GOOGLE_PWD)
 
 const navigationPromise2 = page.waitForNavigation()
 await page.waitForSelector('#passwordNext', { visible: true })
@@ -153,4 +153,5 @@ Note the following:
 
 # More resources
 
-- [Login guides on theheadless.dev](https://theheadless.dev/tag/login/)
+- [Microsoft Live Login](/learn/headless/microsoft-live-login/)
+- [Login with Google](/learn/headless/google-login/)

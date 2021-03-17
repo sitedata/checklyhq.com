@@ -88,11 +88,11 @@ an alert is triggered.
 </div>
 <div class="col-md-6">
   <div>
-    <h3 class="section-header">The Headless Dev</h3>
+    <h3 class="section-header">Headless Automation Guides</h3>
   </div>
-  <p>Learning headless automation for testing or monitoring from scratch, or improving on existing expertise? The Headless Dev</p>
+  <p>Learning headless automation for testing or monitoring from scratch, or improving on existing expertise? The Headless Automation Guides</p>
   <div class="cta">
-    {{% cta-link "theheadless.dev" "https://theheadless.dev" %}}
+    {{% cta-link "Learn more" "/learn/headless" %}}
   </div>
   {{< alternative-picture class="img-440 big-drop-shadow" img="/product/transaction-monitoring/thehd@2x.png" alt="thehd screenshot" width="440" height="270" >}}
 </div>

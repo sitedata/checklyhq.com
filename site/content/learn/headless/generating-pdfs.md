@@ -52,7 +52,7 @@ In certain cases, our webpage might look significantly different in our PDF comp
 
 ## Customising header and footer
 
-We can also have custom headers and footers added to our pages, displaying values such as title, page number and more. Let's see how this looks on your [favourite website](https://theheadless.dev):
+We can also have custom headers and footers added to our pages, displaying values such as title, page number and more. Let's see how this looks on your [favourite website](https://checklyhq.com):
 
 {{< tabs "2" >}}
 {{< tab "Puppeteer" >}}
@@ -67,8 +67,10 @@ We can also have custom headers and footers added to our pages, displaying value
 {{< /tab >}}
 {{< /tabs >}}
 
-We are including the following template files for our header...
+We are including the following template files for our header and footer.
 
+{{< tabs "3" >}}
+{{< tab "template-header.html" >}}
 ```html
 <html>
   <head>
@@ -104,9 +106,8 @@ We are including the following template files for our header...
   </body>
 </html>
 ```
-
-...and footer:
-
+{{< /tab >}}
+{{< tab "template-footer.html" >}}
 ```html
 <html>
   <head>
@@ -135,6 +136,8 @@ We are including the following template files for our header...
   </body>
 </html>
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 The first page of the generated PDF looks as follows:
 

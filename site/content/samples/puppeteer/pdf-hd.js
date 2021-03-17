@@ -12,16 +12,12 @@ const fs = require('fs');
 
   await page.emulateMediaType('screen')
 
-  await page.goto('/learn/headless')
+  await page.goto('https://checklyhq.com/learn/headless')
 
   await navigationPromise
 
-  await page.waitForSelector('.accept', { visible: true })
-  await page.evaluate(() => document.querySelector('.accept').click())
-  await page.waitForSelector('.accept', { hidden: true })
-
   await page.pdf({
-    path: 'hd-posts.pdf',
+    path: 'checkly.pdf',
     displayHeaderFooter: true,
     headerTemplate: templateHeader,
     footerTemplate: templateFooter,

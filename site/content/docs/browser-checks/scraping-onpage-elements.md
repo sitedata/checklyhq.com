@@ -264,4 +264,4 @@ console.log('Page width is:', viewport.width)
 
 ## More resources
 
-- [Scraping guides on theheadless.dev](https://theheadless.dev/tag/scraping/)
+- [Scraping guides](/learn/headless/basics-scraping/)

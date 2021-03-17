@@ -217,8 +217,8 @@ alerting channels will be triggered, notifying your team that something is up.
 
 ## More Puppeteer and Playwright resources
 
-- [theheadless.dev](https://theheadless.dev/) free & open source knowledge base for Puppeteer and Playwright
-(maintained by Checkly).  
+- [Headless Automation guides](/learn/headless), a free & open source knowledge base for Puppeteer and Playwright
+(maintained by Checkly).
 - [pptr.dev](https://pptr.dev/) is the official API documentation site for the Puppeteer framework.
 - [playwright.dev](https://playwright.dev/) is the official API documentation site for the Playwright framework.
 - [awesome-puppeteer](https://github.com/transitive-bullshit/awesome-puppeteer) is a great GitHub repo full of Puppeteer
