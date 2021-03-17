@@ -6,8 +6,7 @@ menu:
     parent: "Browser checks"
 ---
 
-All browser checks are capped at **60 seconds**. This means everything in your script needs to happen within
-those 60 seconds.  
+All browser checks are capped at **120 seconds**. This means everything in your script needs to happen within those 120 seconds.  
 
 ## Dealing with timeouts
 
