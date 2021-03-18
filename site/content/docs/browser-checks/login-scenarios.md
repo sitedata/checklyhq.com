@@ -151,6 +151,59 @@ Note the following:
 - We of course store our credentials in environment variables.
 - We use the `visible: true`/`state: 'visible'` (for Puppeteer and Playwright, respectively) option when waiting for the buttons and input fields to appear. The script fails otherwise.
 
+## Password-protected websites
+
+In certain cases, for example with [Vercel password-protected deployments](https://vercel.com/blog/protecting-deployments), websites might require a password to be entered before the target page is made available. Much like login cases, this can be solved directly using Puppeteer or Playwright:
+
+{{< tabs "Password-protected deployment" >}}
+{{< tab "Puppeteer" >}}
+```javascript
+const puppeteer = require("puppeteer");
+
+(async () => {
+
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    // If the check is being triggered via GitHub deployments, you might
+    // want to change the below environment variable to ENVIRONMENT_URL
+    await page.goto(process.env.URL);
+
+    await page.type('input', 'password')
+    await page.click('button')
+
+    // Your check logic here
+
+    await browser.close();
+
+})()
+```
+{{< /tab >}}
+{{< tab "Playwright" >}}
+```javascript
+const {chromium} = require("playwright");
+
+(async () => {
+
+    const browser = await chromium.launch();
+    const page = await browser.newPage();
+
+    // If the check is being triggered via GitHub deployments, you might
+    // want to change the below environment variable to ENVIRONMENT_URL
+    await page.goto(process.env.URL);
+
+    await page.type('input', 'password')
+    await page.click('button')
+
+    // Your check logic here
+
+    await browser.close();
+
+})()
+```
+{{< /tab >}}
+{{< /tabs >}}
+
 # More resources
 
 - [Microsoft Live Login](/learn/headless/microsoft-live-login/)
