@@ -87,6 +87,8 @@ The target field is a free form text field that determines the desired outcome o
 You can use **JSON path** to specify which field of a JSON response body should be asserted. JSON path is a query language 
 similar to Xpath for XML, but in general a lot more intuitive and simpler to use.
 
+> For Checkly to be able to parse the JSON body, the `Content-Type` header of the response should be set to `application/json`.
+
 ### JSON path primer
 
 JSON path only uses a handful of operators in its queries. Not all of them are useful in the context of assertions.
