@@ -2,7 +2,7 @@
 title: Full Stack JavaScript developer
 subtitle: Full time / Remote
 position_state: Open
-draft: false
+draft: true
 ---
 
 - Remote within CET -3 / +3 timezone
