@@ -226,19 +226,17 @@ $(document).ready(() => {
  *Footer DropDown in Tablet&Mobile
  */
  $(document).ready(() => {
-  for (var i = 1; i < 6; i++) {
-    const menu_header_id = '#menu_' + i + '_header'
-    const menu_id = '#menu_' + i
-    var menu_header = $(menu_header_id)
-
-    menu_header.click(() => {
-      if ($(menu_id).attr('class') === 'desktop-show') {
-        $(menu_id).addClass('show')
-        $(menu_header_id).addClass('rotate')
-      } else {
-        $(menu_id).removeClass('show')
-        $(menu_header_id).removeClass('rotate')
-      }
-    })
-  }
+  var menuHeader = $('.menu_header');
+  menuHeader.click(function() {
+    var id = $(this).attr('id');
+    const menu_header_id = '#' + id
+    const menu_id = '#' + id + '_drop'
+    if ($(menu_id).attr('class') === 'desktop-show') {
+      $(menu_id).addClass('show')
+      $(menu_header_id).addClass('rotate')
+    } else {
+      $(menu_id).removeClass('show')
+      $(menu_header_id).removeClass('rotate')
+    }
+  })
 })

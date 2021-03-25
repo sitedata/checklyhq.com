@@ -62,7 +62,6 @@
     margin-top: 30px;
   }
 
-
   .desktop-show {
     display: block;
   }
@@ -104,8 +103,8 @@
     .desktop-show {
       display: none;
     }
-    #menu_5_header {
-      margin-top: 0px;
+    .menu_header {
+      margin-top: 0 !important;
     }
   }
 }
