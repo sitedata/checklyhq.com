@@ -118,3 +118,19 @@ $(window).on('scroll', function() {
     })
   }
 })
+
+/**
+ * Handle run in checkly button
+ */
+
+const isDev = window.location.host.includes('localhost')
+
+$('.run-in-checkly').on('click', function () {
+  const data = $(this).data()
+  fetch(data.script)
+    .then(response => response.text())
+    .then(body => {
+      const script = encodeURIComponent(btoa(body))
+      window.location.href = `${isDev ? 'http://localhost:8081' : 'https://app.checklyhq.com'}/checks/new/browser?framework=${data.framework}&script=${script}`
+    })
+})

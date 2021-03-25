@@ -65,11 +65,13 @@ We can use the Navigation Timing API to retrieve timestamps of key events in the
 ```js
 {{< readfile filename="samples/puppeteer/basic-performance-navigation.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-performance-navigation.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-performance-navigation.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-performance-navigation.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -80,11 +82,13 @@ The Resource Timing API allows us to zoom in to single resources and get accurat
 ```js
 {{< readfile filename="samples/puppeteer/basic-performance-resource.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-performance-resource.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-performance-resource.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-performance-resource.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -99,11 +103,13 @@ One important example is network throttling, through which we can simulate the e
 ```js
 {{< readfile filename="samples/puppeteer/basic-performance-emulation.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-performance-emulation.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-performance-emulation.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-performance-emulation.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 

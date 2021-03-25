@@ -32,11 +32,13 @@ We will use [Chai](https://www.chaijs.com/api/assert/) as an assertion library f
 ```js
 {{< readfile filename="samples/puppeteer/search.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/search.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/search.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/search.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 

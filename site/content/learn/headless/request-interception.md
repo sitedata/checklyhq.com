@@ -29,11 +29,13 @@ Request interception enables us to observe which requests and responses are bein
 ```js
 {{< readfile filename="samples/puppeteer/request-interception-read.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/request-interception-read.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/request-interception-read.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/request-interception-read.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -46,11 +48,13 @@ In the following snippet we are going to abort all requests for images on our te
 ```js {9-14}
 {{< readfile filename="samples/puppeteer/request-interception-block.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/request-interception-block.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js {9-13}
 {{< readfile filename="samples/playwright/request-interception-block.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/request-interception-block.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 

@@ -32,11 +32,13 @@ Below is an example running against our [test site](https://danube-webshop.herok
 ```js 7
 {{< readfile filename="samples/puppeteer/basic-get-href-value.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-get-href-value.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js 7
 {{< readfile filename="samples/playwright/basic-get-href-value.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-get-href-value.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -47,11 +49,13 @@ As an alternative, it is also possible to retrieve an [ElementHandle](https://pp
 ```js 7,8
 {{< readfile filename="samples/puppeteer/basic-get-href-handle.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-get-href-handle.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js 7,8
 {{< readfile filename="samples/playwright/basic-get-href-handle.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-get-href-handle.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -66,11 +70,13 @@ Scraping element lists is just as easy. For example, let's grab the `innerText` 
 ```js 7-9
 {{< readfile filename="samples/puppeteer/basic-get-text-values.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-get-text-values.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js 7-9
 {{< readfile filename="samples/playwright/basic-get-text-values.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-get-text-values.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -83,11 +89,13 @@ Scraping images from a page is also possible. For example, we can easily get the
 ```js [9,11,12]
 {{< readfile filename="samples/puppeteer/basic-get-image.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-get-image.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js [9,11,12]
 {{< readfile filename="samples/playwright/basic-get-image.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-get-image.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -106,11 +114,13 @@ The code for that could look like this:
 ```js
 {{< readfile filename="samples/puppeteer/basic-get-data-json.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-get-data-json.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-get-data-json.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-get-data-json.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 

@@ -47,6 +47,7 @@ An example of recorded Puppeteer script:
 ```js
 {{< readfile filename="samples/puppeteer/recorder-rough.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/recorder-rough.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -62,6 +63,7 @@ We can modify this script to improve readability and efficiency:
 ```js
 {{< readfile filename="samples/puppeteer/recorder-refactored.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/recorder-refactored.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 

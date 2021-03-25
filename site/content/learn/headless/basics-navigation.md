@@ -44,11 +44,13 @@ In the example below we trigger two navigations:
 ```js
 {{< readfile filename="samples/puppeteer/basic-browser-navigation.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-browser-navigation.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-browser-navigation.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-browser-navigation.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -80,11 +82,13 @@ the Puppeteer and Playwright example.
 ```js
 {{< readfile filename="samples/puppeteer/basic-browser-waiting.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-browser-waiting.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-browser-waiting.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-browser-waiting.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 

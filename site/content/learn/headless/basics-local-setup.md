@@ -42,12 +42,15 @@ Puppeteer and Playwright come bundled with their respective browsers, so we now 
 ```js
 {{< readfile filename="samples/puppeteer/basic-navigation.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-navigation.js" "puppeteer"  >}}
+
 {{< /tab >}}
 
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-navigation.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-navigation.js" "playwright"  >}}
 {{< /tab >}}
 
 {{< /tabs >}}

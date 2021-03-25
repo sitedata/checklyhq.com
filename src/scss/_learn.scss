@@ -523,3 +523,17 @@
     background: $blue-lightest;
   }
 }
+
+.run-in-checkly {
+  position: absolute;
+  bottom: 47px;
+  background-color: #45C8F1;
+  z-index: 100000000;
+  right: 22px;
+  color: #FFF;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}

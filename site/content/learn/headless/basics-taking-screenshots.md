@@ -27,11 +27,13 @@ The `page.screenshot` command is consistent across Puppeteer and Playwright, and
 ```js {6,8}
 {{< readfile filename="samples/puppeteer/basic-screenshot.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-screenshot.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js {6,8}
 {{< readfile filename="samples/playwright/basic-screenshot.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-screenshot.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -52,11 +54,13 @@ Having our screenshot limited to a smaller portion of the viewport is also possi
 ```js
 {{< readfile filename="samples/puppeteer/basic-screenshot-clipped.js" >}}
 ```
+{{< run-in-checkly "/samples/puppeteer/basic-screenshot-clipped.js" "puppeteer"  >}}
 {{< /tab >}}
 {{< tab "Playwright" >}}
 ```js
 {{< readfile filename="samples/playwright/basic-screenshot-clipped.js" >}}
 ```
+{{< run-in-checkly "/samples/playwright/basic-screenshot-clipped.js" "playwright"  >}}
 {{< /tab >}}
 {{< /tabs >}}
 
