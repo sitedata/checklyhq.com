@@ -223,8 +223,3 @@ alerting channels will be triggered, notifying your team that something is up.
 - [playwright.dev](https://playwright.dev/) is the official API documentation site for the Playwright framework.
 - [awesome-puppeteer](https://github.com/transitive-bullshit/awesome-puppeteer) is a great GitHub repo full of Puppeteer
 related libraries, tips and resources.
-
-{{< info >}}
-You can find a ton more Puppeteer and Playwright examples in the **theheadless.dev** GitHub repo
-[checkly/theheadless.dev](https://github.com/checkly/theheadless.dev/tree/master/blog/snippets)
-{{< /info >}}

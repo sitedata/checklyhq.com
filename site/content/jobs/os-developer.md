@@ -14,23 +14,22 @@ draft: true
 Checkly is 100% committed to open source. That's why we are looking for an experienced developer to drive our open source initiatives:
 
  - [headless recorder](https://github.com/checkly/headless-recorder)
- - [theheadless.dev](https://theheadless.dev/)
  - All our integrations with the Puppeteer and Playwright eco systems.
  - Our integrations with Terraform and Prometheus
  - Any future initiatives!
- 
-You will be the "spider in the web" for Checkly, our customers and the external open source developers we work with on a daily basis. 
+
+You will be the "spider in the web" for Checkly, our customers and the external open source developers we work with on a daily basis.
 
 ## Your responsibilities
 
 This job is mostly a coding job, but has a crucial advocacy & community component.
- 
+
  - Make sure our projects are relevant and useful to the community.
  - Evangelize and educate the community: GitHub, Twitter, blogs, talks, video etc.
  - Evolve and expand our existing projects.
  - Ship awesome features.
  - Kill terrible bugs!
- 
+
 ## Your skills
 
 - You have deep experience in building JavaScript applications in the open source arena.
@@ -53,5 +52,5 @@ This job is mostly a coding job, but has a crucial advocacy & community componen
 - Contribute to open source.
 - Modern laptop and equipment provided.
 
-This is a great opportunity to join an early stage company, influence the product road map and help us do what we love most: 
+This is a great opportunity to join an early stage company, influence the product road map and help us do what we love most:
 building the best active monitoring service for modern developers.
