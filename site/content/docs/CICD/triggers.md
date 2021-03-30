@@ -54,7 +54,15 @@ Date: Fri, 29 Jun 2018 12:05:17 GMT
 }
 ```
 
-> Note: triggers are rate limited to **10 requests per minute per trigger** and are only run from the **Frankfurt region**.
+{{< warning >}}
+The total run time of all checks cannot exceed **30 seconds** or you will receive a timeout error.
+{{< /warning >}}
+
+{{< warning >}}
+Triggers are rate limited to **10 requests / minute / trigger** and are only run from the **Ireland region**.
+{{< /warning >}}
+
+
 
 ## Optional deployment parameters
 
