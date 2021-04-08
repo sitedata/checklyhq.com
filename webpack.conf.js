@@ -42,6 +42,7 @@ export default {
   entry: {
     index: ["./js/index"],
     docs: ["./js/docs"],
+    whyCheckly: ["./js/whyCheckly"],
     learn: ["./js/learn"]
   },
   output: {
