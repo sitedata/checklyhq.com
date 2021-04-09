@@ -1,34 +1,36 @@
 ---
-title: API Monitoring for the Jamstack
+title: API Monitoring for the JAMStack
 description: >-
-  Application Programming Interfaces (APIs) are used throughout software to define interactions between different software applications. In this article we focus on web APIs specifically, taking a look at how they fit in the JAMStack architecture and how they should be monitored in order to ensure that they function reliably.
+  Application Programming Interfaces (APIs) are used throughout software to define interactions between different software applications. In this article we focus on web APIs specifically, taking a look at how they fit in the JAMStack architecture and how we can set up API monitoring in order to make sure they don't break and respond fast.
 ---
+
+{{< figure src="/guides/images/guides-checkly-jamstack-header.png" alt="jamstack architecture diagram" title="JAMStack applications heavily rely on APIs" >}}
 
 ## APIs and the JAMStack
 
-APIs were born as a way to expose the functionality of an application while hiding the underlying implementation. This concept proved immensely popular, and now APIs permeate the world of software. 
+With the rise of the [JAMStack](https://jamstack.org/), the already broadly used web APIs have been brought further into the spotlight and explicitly named as cornerstone of a new way of building web applications. In the JAMStack paradigm, applications rely on APIs (the _A_ in "JAM") returning structured data (JSON or XML) when queried via the HTML and Javascript-based frontend. 
 
-With the rise of the [JAMStack](https://jamstack.org/), the already broadly used web APIs have been brought further into the spotlight and explicitly named as cornerstone of a new way of building web applications. In the JAMStack paradigm, applications rely on APIs (the _A_ in _JAM_) returning structured data (JSON or XML) when queried via the HTML and Javascript-based frontend. The API calls might be aimed at internal services or at third-parties handling complex flows such as content management, authentication, merchant services and more. An example of third-party API could be [Stripe](https://stripe.com/), which acts as payment infrastructure for a multitude of businesses.
+The API calls might be aimed at internal services or at third-parties handling complex flows such as content management, authentication, merchant services and more. An example of third-party API could be [Stripe](https://stripe.com/), which acts as payment infrastructure for a multitude of businesses.
 
-Given their importance in this new kind of web application, APIs need to be tightly monitored, as failures and performance degradations will immediately be felt by the end-user.
+Given their importance in this new kind of web application, APIs both internal and external need to be tightly monitored, as failures and performance degradations will immediately be felt by the end-user.
 
 ## API failures
 
 API endpoints can break in a variety of ways. The most obvious examples are:
 
-1. The endpoint is unresponsive/unreachable
-2. The response is incorrect
-3. The response time is too high
+1. The endpoint is unresponsive/unreachable.
+2. The response is incorrect.
+3. The response time is too high.
 
-All of the above can result in the application becoming broken for the end-user. This applies to internal APIs and, especially in the case of JAMStack applications, to third parties as well. API checks allow us to monitor both, as we will be mimicking the end-user's own behaviour.
+All of the above can result in the application becoming broken for the end-user. This applies to internal APIs and, especially in the case of JAMStack applications, to third parties as well. API checks allow us to monitor both by mimicking the end-user's own behaviour.
 
 ## API checks
 
-Given it is single endpoints that can exhibit breaking issues, instead of whole servers for which simple ping/uptime monitoring would be sufficient, we need to be granular in how we monitor them. API checks do exactly that, and they are composed of the following:
+If we were interested in just verifying a server or a virtual machine's availability, we could rely on a simple ping/uptime monitoring solution. API monitoring is more fine-grained than that though, as we need to validate functionality and performance on each API endpoint. API checks do exactly that, and they are composed of the following:
 
-1. An HTTP request
-2. One or more assertions, used to specify exactly what the response should look like, and fail the check if the criteria are not met
-3. A threshold indicating the maximum acceptable response time
+1. An HTTP request.
+2. One or more assertions, used to specify exactly what the response should look like, and fail the check if the criteria are not met.
+3. A threshold indicating the maximum acceptable response time.
 
 The more customisable the HTTP request is, the more cases can be covered, for example with authentication, headers and payloads. 
 
@@ -40,11 +42,11 @@ Let's dive in deeper into each point.
 
 There is a large variety of valid requests that a user might make to a given endpoint. Being able to customise all aspects of our test request is therefore fundamental. Key aspects are:
 
-1. Method, like `GET`, `PUT`, `POST`, `DELETE`, etc
-2. Headers, like `Accept`, `Authorization`, `Content-Type`, `Cookie`, `User-Agent`, etc
+1. [Method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), like `GET`, `PUT`, `POST`, `DELETE`, etc
+2. [Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers), like `Accept`, `Authorization`, `Content-Type`, `Cookie`, `User-Agent`, etc
 3. [Query parameters](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#query)
 
-![TODO](/guides/images/guides-checkly-swagger.png)
+{{< figure src="/guides/images/guides-checkly-swagger.png" alt="swagger api documentation" title="Swagger is a popular tool for generating API documentation" >}}
 
 Essentially, we are trying to craft a complete request for exact endpoint. Not only that, but we might want to have multiple requests set up to cover specific options or negative cases, too.
 
@@ -94,7 +96,7 @@ To validate the API response, we should be able to check against
 Let's look at an example: creating a customer via the [Stripe Customer API](https://stripe.com/docs/api/customers/create?lang=curl). Since we are not the API's developers, we are assuming the result we get running call right now is correct and can be used to model our assertions. Let's run the following curl command in verbose mode:
 
 ```sh
-curl https://api.stripe.com/v1/customers \
+curl -v https://api.stripe.com/v1/customers \
   -u sk_test_4eC39HqLyjWDarjtT1zdp7dc: \
   -d description="My First Test Customer (created for API docs)"
 ```
@@ -161,7 +163,7 @@ axios({
 })
 ```
 
-We are now asserting against all three point mentioned above. Nothing would prevent you from adding additional assertions against both headers and body conditions.
+We are now asserting against all three point mentioned above. We could of course go on and add additional assertions against both headers and body.
 
 ### Response time thresholds
 
@@ -171,23 +173,46 @@ The easiest way to handle this requirement would be to assert that the specific 
 
 Instead of simply asserting against a specific response, we might want to set different thresholds: based on the nature of our service, a 2x slowdown might still leave it in what we define as an operational state, while a 10x one might not.
 
-## Scheduled API checks on Checkly
+## API monitoring best practices
 
-![TODO](/guides/images/guides-checkly-dashboard-short.png)
+Now that we are clear on the key requirements for setting up API checks, let's think about what and how we should monitor.
 
-Checkly specialises in API monitoring and allows users to run API checks automatically on a schedule. An API check is comprised of the following components.
+### Monitor every endpoint
 
-### The main HTTP request
+We want to monitor every API endpoint our application exposes. Remember that different HTTP methods define different API endpoints. For example:
 
-The most basic building block of our API check is the main HTTP request. This can be fully configured in its method, url, parameters and body to fully reproduce a real-world web API call.
+1. `GET /user/:id`
+2. `PUT /user/:id`
 
-![TODO](/guides/images/guides-checkly-stripe-check.png)
+The above count as two separate endpoints, even though the URL is the same.
+
+### Cover key API parameters
+
+Some parameters can change the endpoint's response significantly. We shoud strive to have separate checks verifying that the endpoint is behaving correctly across different configurations.
+
+### Keep checks focused & independent
+
+API monitoring checks must be organised as to minimise the time needed to identify resolve the underlying issue. This means we need to keep our checks focused on a specific case (vs trying to have a single check do many things) and independent from each other (vs building chains of checks that build on top of one another).
+
+## Scheduled global API checks
+
+Checkly specialises in API monitoring and allows users to run API checks on a schedule from [global locations](https://www.checklyhq.com/docs/monitoring/global-locations/). We can combine these checks with [custom alerting](https://www.checklyhq.com/docs/alerting/) to be able to quickly respond and remediate potential API issues. 
+
+{{< figure src="/guides/images/guides-checkly-dashboard-short.png" alt="checkly dashboard with API checks" title="Checkly API checks shown on a dashboard" >}}
+
+A Checkly API check is comprised of the following components.
+
+### Main HTTP request
+
+The most basic building block of Checkly's API check is the main HTTP request. This can be fully configured in its method, url, parameters and body to fully reproduce a real-world web API call.
+
+{{< figure src="/guides/images/guides-checkly-stripe-check.png" alt="checkly check creation process" title="Checkly API check creation" >}}
 
 ### Assertions
 
 Assertions allow us to check for every key aspect of the response. A check with one or more failing assertions will enter failing state and trigger any connected alert channel.
 
-![TODO](/guides/images/guides-checkly-assertions.png)
+{{< figure src="/guides/images/guides-checkly-assertions.png" alt="setting up assertions in an api check" title="Setting up assertions for our check" >}}
 
 In this example, we are checking against:
 
@@ -199,18 +224,26 @@ In this example, we are checking against:
 
 Response time limits enable us to set different thresholds to decide exactly which response time maps to a hard failure, a pass or a degradation. We can use transitions between these states to trigger different kinds of alerts using our preferred channels.
 
-![TODO](/guides/images/guides-checkly-response-limits.png)
+{{< figure src="/guides/images/guides-checkly-response-limits.png" alt="setting up response time limits in an api check" title="Choosing response time limits" >}}
 
-### Setup and teardown methods
+### Setup and teardown scripts
 
-TODO Setup scripts give you access to properties like the URL, headers and query parameters of the HTTP request as well as all environment variables. Popular use cases are signing HMAC requests, requesting tokens and setting up test data.
-Teardown scripts give you access to all the same data as the setup scripts plus the response object, allowing you to read and modify the response. Use cases are cleaning up test data and scrubbing sensitive response data for regulatory reasons.
+Checkly is highly programmable and allows users to run scripts before and after the main HTTP request of an API check.
 
-TODO redo example with stripe API?
+{{< figure src="/guides/images/guides-checkly-setup.png" alt="programmable setup scripts" title="Setup and teardown methods are fully scriptable using NodeJS" >}}
 
-TODO API checks can be defined as code -> check MaC
+Setup scripts run before our check and give us access to properties like the URL, headers and query parameters, enabling us to set up all the prerequisites for a successful request. Some examples could be:
 
-TODO re-read docs for non obvious tidbits
+1. Fetching a token from a different API endpoint.
+2. Setting up test data on the target system.
+3. Formatting data to be sent as part of the request.
 
-THIS works outside the jamstack too
-GRAPHQL too
+Teardown scripts run after the request has executed, bur right before the assertions. They are useful for manipulating the response (for example to remove sensitive information) or removing any test data on the target system.
+
+## Improving our monitoring
+
+As we increase our monitoring coverage across our APIs, we can also increase the efficacy of our setup by:
+
+1. Importing existing [Swagger/OpenAPI specs](https://www.checklyhq.com/docs/api-checks/request-settings/#import-a-swagger--openapi-specification) or even [cURL commands](https://www.checklyhq.com/docs/api-checks/request-settings/#import-a-curl-request) using built-in functionality.
+2. [Defining our API checks as code](/guides/monitoring-as-code) to scale our setup while lowering maintenance needs.
+3. Combining our API checks with [E2E monitoring](/guides/e2e-monitoring) for any website or web app service whose API we might be monitoring.
