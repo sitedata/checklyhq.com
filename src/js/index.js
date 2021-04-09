@@ -110,6 +110,19 @@ $(document).ready(() => {
         }
         $('#terraform-provider').text(stars);
       })
+    fetch("https://api.github.com/repos/checkly/jamstack-deploy")
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (res) {
+        let stars = ''
+        if (res.stargazers_count > 1000) {
+          stars = (res.stargazers_count/1000).toFixed(1) + "k"
+        } else {
+          stars = res.stargazers_count
+        }
+        $('#jamstack-deploy').text(stars);
+      })
 
   }
 })
