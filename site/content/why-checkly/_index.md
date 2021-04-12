@@ -4,7 +4,7 @@ hero:
   label: 'Why Checkly?'
   title: More reliable with less effort
   description: >-
-    Checkly helps developers setup, maintain, and scale monitoring with little effort so you can focus on shipping great products. We'll make sure you're the first to know when things break or slow down.
+    Checkly helps developers set up, maintain, and scale monitoring with little effort, so you can focus on shipping great products.
   heroBg: "/why-checkly/hero@2x.png"
   logos:
     - logo: "/why-checkly/vercel.svg"
@@ -28,9 +28,9 @@ hero:
       width: "94px"
       height: "19px"
 feature:
-  title: "Every minute of downtime equals $5,600 to $9,000 in average losses."
+  title: "Every minute of downtime equals $5,600 to $9,000 in losses."
   description: >-
-    Checkly helps you to mitigate the risk and recover from incidents faster!
+    Checkly helps you to mitigate risk and recover from incidents faster!
   features:
     - title: Easy monitoring at scale
       description: "Instantly setup deep monitoring for your web apps and APIs."
@@ -39,36 +39,36 @@ feature:
       description: "Be the first one to know when things break or slow down."
       icon: "/why-checkly/bell.svg"
     - title: Less downtime
-      description: "Immediately take action shorten your time to recover."
+      description: "Immediately take action and shorten your time to recover."
       icon: "/why-checkly/smiley.svg"
 videosection:
-  title: "Plug and play"
+  title: "Monitoring has never been easier"
   description: >-
-    Checkly is easy in any regard. The intuitive UI lets you create checks seamlessly. From signup to running your first checks, it will only take you a few minutes. 
+    Checkly is easy to use across the board. The intuitive UI lets you create checks seamlessly. From signup to running your first checks, it will only take you a few minutes.
   video: "/why-checkly/plugandplay_amazon_nobars.mp4"
 codes:
   title: Flexible and programmable
   description: >-
-    Checkly is built with the developer in mind. While easy to use, it comes with flexible and powerful features for in-depth monitoring. Cover complex E2E scenarios using JavaScript. Adapt checks with Node.js-based setup and teardown scripts.
+    Checkly is built with the developer in mind. While easy to use, it comes with flexible and powerful features for in-depth monitoring. Cover complex E2E scenarios using JavaScript. Adapt checks with Node.js-based setup & teardown scripts.
 integrates:
   title: Integrates with your workflow
   description: >-
     Checkly natively integrates with the tools you love. Trigger checks from Github and Vercel, manage checks with Terraform, and get alerts via Slack, Pagerduty, Discord, and more. Something is missing? Use our top-notch webhooks to build your own integration!
   image: "/why-checkly/integrates@2x.png"
 monitor:
-  title: Monitor as code
+  title: Monitoring as code
   description: >-
     We support a git-based workflow to create and manage large suites. Use our best in class Terraform provider to configure synthetic and API monitoring as part of your existing infrastructure codebase.
   image: "/why-checkly/monitor@2x.png"
 alerting:
-  title: Reliable alerting
+  title: Reliable
   description: >-
-    We support a git-based workflow to create and manage large suites. Use our best in class Terraform provider to configure synthetic and API monitoring as part of your existing infrastructure codebase.
+    Being called at night when things go sideways - and only then! - is key. We use reliable frameworks to run millions of checks every day. Checkly has deep-grained alerting with distributed auto retries to separate the signal from the noise.
   icon: "/why-checkly/code.svg"
-open: 
+open:
   title: Open
   description: >-
-    Checkly runs on open-source and integrates with popular open-source tools. We are supporting Puppeteer and Playwright for reliable and blazing fast E2E tests and synthetic monitoring executions.
+    Checkly runs on open-source and integrates with popular open-source tools. We are supporting Puppeteer and Playwright for reliable and blazing fast E2E tests and synthetic monitoring.
   icon: "/why-checkly/smiley.svg"
 testimonial:
   author: Connor Hicks
@@ -79,36 +79,36 @@ testimonial:
     “Checkly is a fabulous developer tool! The flexible features and developer-friendly API made the integration super easy.”
 scale:
   title: "Built for developers<br /> and engineering teams of all sizes"
-  first: 
+  first:
     title: From small to large teams
     features:
       - header: "Free plan"
         description: >-
           We support solo developers and small projects with a powerful forever free plan.
-      - header: "Self-service"
+      - header: "Fair and flexible pricing"
         description: >-
-          You can easily configure paid plans exactly to your needs—no need to talk with Sales if you don't want to.
+          You can easily configure paid plans precisely to your needs, so you only pay for what you use.
       - header: "Easy to start and use"
         description: >-
-          Checkly is designed to make it simple and fun. You won't need support from a Solution Engineer.
-      - header: "Support"
+          Checkly is designed to make it simple and fun. You won't need technical support to get started
+      - header: "Friendly support"
         description: >-
-          We take care of excellent documentation and API description. When you encounter issues, you get knowledgeable and friendly support via chat.
+          We are proud of our excellent documentation and API reference. When you encounter issues, you get knowledgeable and friendly support via chat.
   second:
     title: Enterprise
     features:
       - header: "Scalable"
         description: >-
           Checkly is built to support a high load. We run millions of checks daily. Do you need to grow instantly? We are ready!
-      - header: "Flexibility"
+      - header: "Flexible"
         description: >-
-          Our platform is programmable and open. It can adapt to your workflow. From team structure to check management to alerting.
+          Checkly is programmable and open. It can adapt to your organizations' workflow, from team structure to asset management to alerting.
       - header: "Secure and reliable"
         description: >-
-          Checkly is built on a modern cloud infrastructure. Our architecture is in fact as reliable (separation of concerns) that we can even alert ourselves.
-      - header: "Support"
+          Checkly is built on a secure and modern cloud infrastructure.
+      - header: "Customer Success"
         description: >-
-          We are industry experts who can actively support you with the right strategy to become reliable.
+          We are industry experts who can actively support you with the right strategy to become more reliable.
 ---
 
 <div class="code-block show" id="puppeteer">
@@ -165,4 +165,3 @@ const { chromium } = require("playwright");
 ```
 
 </div>
-
